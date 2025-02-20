@@ -1,0 +1,94 @@
+
+
+\section{Barr--Beck for localizing ideals}
+\label{ch2:app:barr-beck}
+
+In this appendix we prove that the monoidal Barr--Beck theorem---a monoidal version of Lurie's $\infty$-categorical version of the classical Barr--Beck monadicity theorem, see \cite[Section 4.7]{Lurie_HA}---interacts nicely with local duality.
+
+\begin{theorem}[{\cite[5.29]{mathew-naumann-noel_2017}}]
+    \label{ch2:thm:modular-bb}
+    Let $\C, \D \in \Alg(\Pr)$ and $(F\dashv G)\colon \C\longrightarrow \D$ be a monoidal adjunction. If in addition 
+    \begin{enumerate}
+        \item $G$ is conservative, 
+        \item $G$ preserves colimits, and
+        \item the projection formula holds,
+    \end{enumerate}
+    then $(F,G)$ is a monoidally monadic adjunction and the monad $GF$ is equivalent to the monad $G(\1_\D)\otimes (-)$. In particular this gives a symmetric monoidal equivalence $\D\simeq \Mod_{G(\1_\D)}(\C).$
+\end{theorem}
+\begin{proof}
+    By \cite[4.7.3.5]{Lurie_HA} the adjunction is monadic by the first two criteria, giving an equivalence $\D\simeq \Mod_{GF}(\C)$. The map of monads $G(\1_\D)\otimes (-)\to GF$ given by \cite[3.6]{elmanto-kolderup_2020}, is seen to be an equivalence by applying the projection formula to the unit $\1_\D$. 
+\end{proof}
+
+\begin{definition}
+    \index{Monoidal Barr--Beck adjunction}
+    When the three criteria above hold for a given monoidal adjunction $(F\dashv G)$, we will say that the adjunction satisfies the monoidal Barr--Beck criteria or that it is a \emph{monoidal Barr--Beck adjunction}. We will sometimes omit the prefix monoidal when it is clear from context. 
+\end{definition}
+
+Let $(\C, \K)$ be a local duality context. We wish to prove that the associated local duality diagram is compatible with \cref{ch2:thm:modular-bb}. By modifying \cite[3.7]{behrens-shaw_2020} slightly, we know that any Barr--Beck adjunction induces a Barr--Beck adjunction on $\K$-local and $\K$-complete objects. Hence, it remains only to prove a similar statement for the $\K$-torsion objects. 
+
+\begin{definition}
+    \index{Map of local duality contexts}
+    Let $(\C, \K)$ and $(\D, \L)$ be local duality contexts. A \emph{map of local duality contexts} is a symmetric monoidal colimit-preserving functor $F\colon \C\longrightarrow \D$ such that $F(\K)\subseteq \L$. If, in addition $\Loc_\D^\otimes(F(\K)) = \Loc_\D^\otimes(\L)$, then we say $F$ is a \emph{strict} map of local duality contexts. A monoidal adjunction $(F\dashv G)\colon \C\longrightarrow \D$ such that $F$ is a strict map of local duality contexts is called a \emph{local duality adjunction}, sometimes denoted 
+    $$(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L).$$
+\end{definition}
+
+Given a local duality context and an appropriate functor, one can always extend the functor to a strict map of local duality context in the following way. 
+
+\begin{construction}
+    Let $(\C, \K)$ be a local duality context, $\D \in \Alg(\Pr)$ and $F\colon \C\longrightarrow \D$ be a symmetric monoidal colimit-preserving functor. The image of $\K$ under $F$ generates a localizing ideal $\Loc^\otimes_\D(F(\K))$ in $\D$, which makes $F$ a map of local duality contexts. We call this the local duality context on $\D$ induced by $\C$ via $F$. 
+\end{construction}
+
+The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{balmer-sanders_2017}. The proof is also similar, but as we have phrased it in a different and slightly more general language, we present a full proof. 
+
+\begin{lemma}
+    \label{ch2:lm:induced-torsion-adjunction}
+    Let $(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L)$ be a local duality adjunction. Then, the adjunction induces a monoidal adjunction on localizing ideals
+    \begin{center}
+    \begin{tikzcd}
+        \Loc_\C^\otimes(\K) \arrow[rr, "F'", yshift=2] &  & \Loc_\D^\otimes(\L) \arrow[ll, "G'", yshift=-2].
+    \end{tikzcd}
+    \end{center}
+\end{lemma}
+\begin{proof}
+    From \cref{ch2:rm:monoidal-structure-in-local-duality} we know that the symmetric monoidal structures on $\Loc^\otimes_\C(\K)$ and $\Loc^\otimes_\D(\L)$ is simply the symmetric monoidal structures on $\C$ and $\D$, restricted to the full subcategories. 
+    
+    Since $F$ is a map of local duality contexts, we have an inclusion $F(\K)\subseteq \L$, which gives inclusions  
+    $$F(\Loc^\otimes_{\C}(\K))\subseteq \Loc^\otimes_\D(F(\K))\subseteq \Loc^\otimes_\D(\L),$$
+    meaning that the functor $F$ restricts to the torsion objects. In particular we have for any object $X\in \C^{\K-tors}$ an equivalence $\Gamma_\L F(X) \simeq F(X)$. We let $F'=F_{|\Loc^\otimes_\C(\K)}$ and define $G'$ to be the composition 
+    $$Loc^{\otimes}_\D(\L)\overset{i_{\L-tors}}\longrightarrow \D\overset{G}\longrightarrow \C\overset{\Gamma_\K}\longrightarrow \Loc_\C^{\otimes}(\K),$$
+    which is an adjoint to $F'$. We need to show that $F$ is a symmetric monoidal functor, but, as the inclusions $i_{\K-loc}$ and $i_{\L-loc}$ are non-unitally monoidal all that remains to be proven is that $F'$ sends the monoidal unit $\Gamma_\K \1_\C$ to the monoidal unit $\Gamma_\L \1_\D$. 
+
+    The localizing ideals $\Loc_\C^\otimes(\K)$ and $\Loc_\D^\otimes(\L)$ are equal to the localizing ideals generated by the respective units, i.e. 
+    $$\Loc_\C^\otimes(\K) = \Loc_\C^\otimes(\Gamma_\K\1_\C) \quad \text{and}\quad \Loc_\D^\otimes(\L) = \Loc_\D^\otimes(\Gamma_\L\1_\D).$$
+    Since $(F\dashv G)$ is a local duality adjunction we also know that $\Loc^\otimes_\D(F(\K))= \Loc_\D^\otimes(\L)$, which also means $\Loc_\D(F(\Gamma_\K \1_\C)) = \Loc_\D^\otimes(\L)$.
+
+    Let $\mathcal{G}$ be the full subcategory of $\Loc_\D^\otimes(\L)$ where $F(\Gamma_\K\1_\C)$ acts as a unit, in other words objects $M\in \Loc_\D^\otimes(\L)$ such that $F(\Gamma_\K\1_\C)\otimes_{\D} M\simeq M$. In particular, $F(\Gamma_\K\1_\C)$ is in $\mathcal{G}$. The category $\mathcal{G}$ is closed under retracts, suspension, and colimits, as well as tensoring with objects in $\D$, as we have 
+    $$F(\Gamma_\K\1_\C) \otimes_\D (M\otimes_\D D)\simeq (F(\Gamma_\K\1_\C)\otimes_\D M) \otimes_\D D \simeq M\otimes_\D D$$
+    for any $M\in \mathcal{G}$ and $D\in \D$. Hence, it is a localizing tensor ideal of $\D$, with a symmetric monoidal structure where the unit is $F(\Gamma_\K\1_\C)$. In particular, $\mathcal{G} = \Loc_\D^\otimes(F(\Gamma_\K\1_\C))$, which we already know is equivalent to $\Loc_\D^\otimes(\L).$
+    
+    Since the ideals are equivalent, and the unit is unique, we must have $F(\Gamma_\K\1_\C)\simeq \Gamma_\L \1_D$, which finishes the proof. 
+\end{proof}
+
+The key feature for us is that such an induced adjunction inherits the property of being a Barr--Beck adjunction, i.e., that the right adjoint is conservative, preserves colimits, and has a projection formula. An analogous, but not equivalent, statement was proven in \cite[4.5]{behrens-shaw_2020}. Another related, but not equivalent statement, is Greenlees--Shipley's Cellularization principle, see \cite{greenlees-shipley_2013}. 
+
+\begin{theorem}
+    \label{ch2:thm:modular-bb-torsion}
+    Let $(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L)$ be a local duality adjunction. If $(F\dashv G)$ satisfies the Barr--Beck criteria, then the induced monoidal adjunction on localizing ideals
+    \begin{center}
+        \begin{tikzcd}
+            \Loc_\C^\otimes(\K) \arrow[rr, "F'", yshift=2] &  & \Loc_\D^\otimes(\L) \arrow[ll, "G'", yshift=-2]
+        \end{tikzcd}
+    \end{center}
+    constructed in \cref{ch2:lm:induced-torsion-adjunction}, also satisfies the Barr--Beck criteria. 
+\end{theorem}
+\begin{proof}
+    We need to prove that $G'$ is conservative and colimit-preserving and that the projection formula holds. The first two will both follow from the following computation, showing that also $G'$ is just the restriction of $G$ to $\Loc_\D^\otimes(\L)$. 
+
+    Let $X\in \Loc_\D^\otimes(\L)$. By definition we have $G'(X) = \Gamma_\K G(X)$, where we have omitted the inclusions from the notation for simplicity. Since $\Gamma_\K$ is smashing and $(F\dashv G)$ by assumption has a projection formula we have 
+    $$\Gamma_\K G(X)\simeq G(X)\otimes_\C \Gamma_\K\1_\C \simeq G(X\otimes_\D F(\Gamma_\K\1_\C)).$$
+    By \cref{ch2:lm:induced-torsion-adjunction} $F'$ is symmetric monoidal, hence $F(\Gamma_\K\1_\C)\simeq \Gamma_\L \1_\D$, which acts on $X$ as the monoidal unit. Thus, we can summarize with
+    $$G'(X)\simeq G(X\otimes_\D F(\Gamma_\K\1_\C))\simeq G(X\otimes_\D \Gamma_\L\1_\D)\simeq G(X),$$
+    which shows that also $G'$ is the restriction of $G$. 
+
+    Now, as $G$ is both conservative and preserves colimits, and colimits in the localizing ideals are computed in $\C$ and $\D$ respectively, then also $G'$ is conservative and colimit-preserving. The projection formula for $(F'\dashv G')$ also automatically follows from the projection formula for $(F\dashv G)$.  
+\end{proof}

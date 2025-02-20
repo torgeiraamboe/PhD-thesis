@@ -1,0 +1,22 @@
+
+\section{Addendum: Subcategories of synthetic spectra}
+
+One of the main motivations for \cref{ch4:thm:main} was to understand localizing subcategories of Pstr\a{}gowski's category of $E_n$-based synthetic spectra --- see \cite{pstragowski_2022}. This section is not part of the paper \cite{aambo_2024_localizing}, but is added to flesh out this example further, and to relate this paper to \cref{ch:2}. We have also included some conjectures which we hope to pursue in future work. 
+
+\begin{proposition}[{\cite[2.17]{barthel-heard_2018}}]
+    Let $\T$ be a localizing subcategory in a Grothendieck abelian category $\A$, and $\Psi\:\A\to \A/\T$ the associated Gabriel quotient. If $S$ is a localizing subcategory in $\A/\T$, then there is a localizing subcategory $\overline{S}$ in $\A$ containing $\T$ such that $\Psi(\overline{S})=S$. 
+\end{proposition}
+
+This result was used by Barthel--Heard to classify localizing subcategories in $\ComodE$, as a corollary to the partial classification of localizing subcategories in $\Comod_{BP_*BP}$, due to Hovey--Strickland in \cite{hovey-strickland_2005a}. 
+
+\begin{theorem}[{\cite[2.21]{barthel-heard_2018}}]
+    \label{thm:classification-of-HTTs}
+    If $\T$ is a localizing subcategory in $\ComodE$, then there is an $0\leq k\leq n$ such that $\T \simeq \ComodE^{I_k-tors}$. 
+\end{theorem}
+
+\begin{remark}
+    Note that the Gabriel quotient $\ComodE/\ComodE^{I_k-tors}\simeq \Comod_{E(k)_*E(k)}$. Hence we get a chain of localizing subcategories
+    \[\T_0 \subseteq \T_1\subseteq \cdots \subseteq \T_n \]
+    in $\ComodE$, corresponding each to one of the generators in the Landweber ideal $I_n=(v_1, v_2, \ldots, v_n)\subseteq E_*$. Hence this result also classifies the localizing subcategories in the torsion categories $\ComodE^{I_k-tors}$. 
+\end{remark}
+

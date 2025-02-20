@@ -1,0 +1,247 @@
+
+\section{General preliminaries}
+
+The goal of this section is to introduce comodules and contramodules over an $\E_\infty$-coalgebra in some $\infty$-category $\C$. In order to do this we first review some basic facts about coalgebras, monads and comonads. 
+
+We will for the rest of this section work in some fixed presentably symmetric monoidal $\infty$-category $\C$. In other words, $\C$ is an commutative algebra object in $\PrL$, the category of presentable $\infty$-categories and left adjoint functors. In particular, the monoidal product, which we denote by $-\otimes-\:\C\times \C\to\C$ preserves colimits in both variables. We denote the unit of the monoidal structure by $\1$. 
+
+
+\subsection{Coalgebras, monads and comonads}
+
+We denote the category of commutative algebras in $\C$ by $\CAlg(\C)$. These are the coherently commutative ring objects in $\C$. By \cite[2.4.2.7]{Lurie_HA} there is a symmetric monoidal structure on $\C\op$, and we define the category of $\E_\infty$-coalgebras in $\C$ to be the category $\cCAlg(\C):= \CAlg(\C\op)\op$. We will from now on omit the prefix $\E_\infty$ and refer to objects in $\cCAlg(\C)$ as \emph{commutative coalgebras}\index{Cocommutative coalgebra}, or simply just \emph{coalgebras}. Classical coalgebras will be referred to as \emph{discrete} in order to avoid confusion. 
+
+\begin{proposition}
+    The following properties hold for the category $\cCAlg(\C)$. 
+    \begin{enumerate}
+        \item The forgetful functor $U\:\cCAlg(\C)\to \C$ is conservative and creates colimits. \label{ch3:prop:properties-coalgebras:item1}
+        \item The categorical product of two coalgebras $C, D$ is given by the tensor product of their underlying objects $C\otimes D$. \label{ch3:prop:properties-coalgebras:item2}
+        \item The category $\cCAlg(\C)$ is presentably symmetric monoidal when equipped with the cartesian monoidal structure. In particular, this means that the forgetful functor $U$ is symmetric monoidal. \label{ch3:prop:properties-coalgebras:item3}
+        \item The forgetful functor $U$ has a lax-monoidal right adjoint $cf\:\C\to\cCAlg(\C)$. The image of an object $X\in \C$ is called the cofree coalgebra on $X$. \label{ch3:prop:properties-coalgebras:item4}
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    The presentability and creation of colimits by the forgetful functor is proven in \cite[3.1.2]{lurie_2018_ELL1} and \cite[3.1.4]{lurie_2018_ELL1}. The cartesian symmetric monoidal structure on $\cCAlg(\C)$ follows from \cite[3.2.4.7]{Lurie_HA}. The last item follows from the first three together with the adjoint functor theorem, \cite[5.5.2.9]{lurie_09}. 
+\end{proof}
+
+% Old proof 
+% \cref{ch3:prop:properties-coalgebras:item1} follows from \cite[3.2.2.5, 3.2.2.6]{Lurie_HA} while \cref{ch3:prop:properties-coalgebras:item2} follows from \cite[3.2.4.7]{Lurie_HA}. \cref{ch3:prop:properties-coalgebras:item3} is \cite[3.1.4]{lurie_2018_ELL1}, while \cref{ch3:prop:properties-coalgebras:item4} follows from \cref{ch3:prop:properties-coalgebras:item1} and \cref{ch3:prop:properties-coalgebras:item3} via the adjoint functor theorem \cite[5.5.2.9]{lurie_09}. 
+
+
+Given any $\infty$-category $\D$, the category of endofunctors $\Fun(\D, \D)$ can be given the structure of a monoidal category via composition of functors. 
+
+\begin{definition}
+    \index{Monad}
+    \index{Comonad}
+    A monad $M$ on $\D$ is an $\E_1$-algebra in $\Fun(\D, \D)$, and a comonad $C$ is an $\E_1$-coalgebra in $\Fun(\D, \D)$. 
+\end{definition}
+
+\begin{example}
+    Any adjunction of $\infty$-categories $F:\D\rightleftarrows \mathcal{E}:G$ gives rise to a monad $GF\: \D\to \D$ and a comonad $FG\:\mathcal{E}\to \mathcal{E}$. We call these the \emph{adjunction monad} and \emph{adjunction comonad} of the adjunction $F\dashv G$. 
+\end{example}
+
+The category $\D$ is left tensored over $\Fun(\D, \D)$ via evaluation of functors. Hence, for any monad $M$ on $\D$ we get a category of left modules over $M$ in $\D$. 
+
+\begin{definition}
+    \index{Eilenberg--Moore category}
+    Let $\D$ be an $\infty$-category and $M$ a monad on $\D$. We define the \emph{Eilenberg--Moore category} of $M$ to be the category of left modules $\LMod_M(\D)$. Objects in $\LMod_M(\D)$ are referred to as \emph{modules over M}. 
+\end{definition}
+
+\begin{remark}
+    Dually, any comonad $C$ on $\D$ gives rise to a category of left comodules over $C$ in $\D$. We also call this the Eilenberg--Moore category of $C$, and denote it by $\LComod_C(\D)$. Its objects are referred to as \emph{comodules} over $C$. 
+\end{remark}
+
+Given a monad $M$ on $\D$ we have a forgetful functor $U_M\: \LMod_M(\D)\to \D$. By \cite[4.2.4.8]{Lurie_HA} this functor admits a left adjoint $F_M\: \D\to \LMod_M(\D)$ given by $X\longmapsto MX$. We call this the free module functor. The adjunction $F_M\dashv U_M$ is called the \emph{free-forgetful} adjunction of $M$. 
+
+\begin{definition}
+    \index{Monadic adjunction}
+    \index{Monadic functor}
+    An adjunction is said to be \emph{monadic} if it is equivalent to the free-forgetful adjunction $F_M\dashv U_M$ of a monad $M$. A functor $G\: \D\to \mathcal{E}$ is called \emph{monadic} if it is equivalent to the right adjoint $U_M$ for some monadic adjunction. 
+\end{definition}
+
+The existence of the free-forgetful adjunction for a monad $M$ implies that any monad is the adjunction monad of some adjunction. However, there can be more than one adjunction $F\dashv G$ such that $M$ is the adjunction monad for this adjunction.
+
+\begin{definition}
+    \index{Free module}
+    \index{Kleisli category}
+    Let $\D$ be an $\infty$-category and $M$ a monad on $\D$. A left $M$-module $B\in \LMod_M(\D)$ is \emph{free} if it is equivalent to an object in the image of $F_M$. The full subcategory of free modules is called the \emph{Kleisli category} of $M$, and is denoted $\LMod_M\fr(\D)$. 
+\end{definition}
+
+The free-forgetful adjunction restricts to an adjunction $F_M:\D\rightleftarrows \LMod_M\fr(\D):U_M\fr$. By \cite[1.8]{christ_2023} this is the minimal adjunction with adjunction monad equivalent to $M$. Using Lurie's $\infty$-categorical version of the Barr--Beck theorem we can also identify the free-forgetful adjunction as the maximal adjunction with adjunction monad $M$. 
+
+\begin{theorem}[{\cite[4.7.3.5]{Lurie_HA}}]
+    \label{ch3:thm:Lurie-BB}
+    A functor $G\: \D\to \mathcal{E}$ of $\infty$-categories is monadic if and only if 
+    \begin{enumerate}
+        \item $G$ admits a left adjoint,
+        \item $G$ is conservative, and
+        \item the category $\D$ admits colimits of $G$-split simplicial objects, and these are preserved under $G$. 
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    By definition, if a functor $G\: \D\to \mathcal{E}$ is monadic, then there is an equivalence of categories $\mathcal{E}\simeq \LMod_{GF}(\D)$, where $F$ is the left adjoint of $G$. 
+\end{remark}
+
+\begin{definition}
+    \index{Cofree comodule}
+    \index{Comonadic adjunction}
+    Dually, given any comonad $C$ on an $\infty$-category $\D$, there is a forgetful functor $U_C\: \LComod_C(\D)\to \D$, which admits a right adjoint 
+    \[F_C\: \D\to \LComod_C(\D).\] 
+    We call this the \emph{cofree comodule functor}, and hence the adjunction $U_C\dashv F_C$ is called the \emph{cofree-forgetful} adjunction of $C$. Any adjunction equivalent to a cofree-forgetful adjunction for some comonad $C$ is said to be \emph{comonadic}. A functor $G\: \D\to \mathcal{E}$ is said to be \emph{comonadic} if it is equivalent to the left adjoint of a comonadic adjunction. 
+\end{definition}
+
+\begin{remark}
+    The essential image of $F_C$ in $\LComod_C(\D)$ determines the Kleisli category $\LComod_C\fr(\D)$ of cofree coalgebras. The cofree-forgetful adjunction restricts to an adjunction on cofree comodules, $U_C\fr : \LComod_C\fr(\D)\rightleftarrows \D: F_C$, which is the minimal adjunction whose adjunction comonad is $C$. 
+\end{remark}
+
+
+\subsection{Comodules and contramodules}
+
+Recall that we have fixed a presentably symmetric monoidal $\infty$-category $\C$. Let us now construct the monads and comonads of interest for this paper. 
+
+\begin{example}
+    \label{ch3:ex:algebra-module-monad}
+    Let $A\in \CAlg(\C)$ be a commutative algebra object in $\C$. The endofunctor $A\otimes(-)\:\C\to \C$ is a monad on $\C$. By \cite[1.17]{christ_2023} the Eilenberg--Moore category of this monad is equivalent to the category of modules over $A$ in $\C$. As $A$ is commutative we denote this by $\Mod_A(\C)$. As $\C$ is presentable and the monad $A\otimes(-)$ preserves colimits, there is a right adjoint $\iHom(A,-)\:\C\to \C$. This is a comonad on $\C$. Since these form an adjoint monad-comonad pair, their Eilenberg--Moore categories are equivalent,
+    \[\Mod_A(\C)\simeq \LMod_{A\otimes(-)}(\C)\simeq \LComod_{\iHom(A,-)}(\C),\]
+    see \cite[V.8.2]{maclane-moerdijk_1994} in the $1$-categorical situation. The $\infty$-categorical version is exactly the same, and follows from the monadicity and comonadicity of the adjunctions. 
+\end{example}
+
+% Since $\C$ is a symmetric monoidal category, we can restrict our attention to \emph{monoidal monads} and \emph{monoidal comonads}. For us these are exactly the monads (resp. comonads) that appear as the adjunction monad for a monoidal adjunctions, i.e., $F:\C\rightleftarrows \D:G$ such that $F$ (resp. $G$) is symmetric monoidal. Given a monoidal monad $M$, the corresponding Eilenberg--Moore category $\LMod_M(\C)$ inherits the structure of a presentably symmetric monoidal $\infty$-category. Since $\C$ is symmetric monoidal, the tensor product of two free $M$-modules is still free, hence this restricts to a symmetric monoidal structure on $\LMod_M\fr(\C)$. 
+
+The above example changes in an interesting way when replacing the algebra $A$ with a coalgebra $C$. 
+
+\begin{example}
+    \label{ch3:ex:coalgebra-comonad}
+    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra in $\C$. By an $\infty$-categorical version of \cite[2.5]{hristova-jones-rumynin_2023} the endofunctor $C\otimes(-)\:\C\to\C$ is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, which we denote by $\Comod_C(\C)$. Since $C\otimes (-)$ preserves colimits there is a right adjoint $\iHom(C,-)$, and this functor is a comonad on $\C$, again by \cite[2.5]{hristova-jones-rumynin_2023}. Note that the category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}, as $C\otimes (-)$ is accessible. 
+\end{example}
+
+Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair --- it is now an an adjoint comonad-monad pair. This means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows. 
+
+% \begin{lemma}
+%     For any adjoint comonad-monad pair $C\dashv M$ on a presentable $\infty$-category $\C$, there is an equivalence 
+%     \[\Comod\fr_C(\C)\simeq \Mod\fr_M(\C).\]
+% \end{lemma}
+% \begin{proof}
+%     The objects in the categories are the same, given by an underlying object in $\C$ with additional structure. Hence, it is enough to show that the mapping spaces in the two categories are equivalent. Let $X, Y$ be two objects in $\C$. As the cofree comodule functor $F_C$ is right adjoint to the forgetful functor $U_C$, we get $\Hom_{\Comod_C}(F_C X, F_C Y)\simeq \Hom_\C(C (X), Y)$. By the adjunction $C\dashv M$ on $\C$ we get $\Hom_\C(C(X), Y) \simeq \Hom_\C(X, M(Y))$, which gives finally $\Hom_\C(X, M(Y))\simeq \Hom_{\Mod_M}(F_M X, F_M Y)$, as the free module functor $F_M$ is a left adjoint to the forgetful functor $U_M$.
+% \end{proof}
+
+% \begin{remark}
+%     This has been noted and proved several times in the $1$-categorical literature on monads and comonads, see for example \cite[Theorem 3]{kleiner_1990}. The proof above is by \cite[2.5]{bohm-brzezinski-wisbauer_2009}. 
+% \end{remark}
+
+
+
+\begin{definition}
+    \index{Contramodule}
+    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra. A \emph{contramodule} over $C$ is a module over the internal hom-monad $\iHom_\C(C,-)\:\C\to \C$. The category of contramodules over $C$ in $\C$ is the corresponding Eilenberg--Moore category, which will be denoted $\ContraC(\C)$. 
+\end{definition}
+
+\begin{notation}
+    Since we are working in a fixed category $\C$ we will often simply write $\ContraC$ for the category of contramodules, and $\ComodC$ for the category of comodules. 
+\end{notation}
+
+\begin{remark}
+    \label{ch3:rm:internal-adjunction}
+    We also mention that the hom-tensor adjunction is an \emph{internal adjunction}, in the sense that there is an equivalence of internal hom-objects 
+    \[\iHom(X\otimes Y, Z) \simeq \iHom(X, \iHom(Y, Z)).\]
+    This follows from the hom-tensor adjunction together with a Yoneda argument. 
+\end{remark}
+
+\begin{notation}
+    We denote the mapping space in $\Comod_C$ by $\Hom_C$ and the mapping space in $\Contra_C$ by $\Hom^C$. Similarly, the forgetful functors will be denoted $U_C\:\Comod_C\to \C$ and $U^C\: \Contra_C\to \C$ respectively, while the cofree and free adjoints will be denoted $C\otimes (-)\:\C\to \Comod_C$ and $\iHom(C, -)\: \C\to \Contra_C$, hoping that it is clear from context whether we use them as above or as endofunctors on $\C$.
+\end{notation}
+
+The following proposition is standard for monads and comonads, see for example \cite[5.7]{riehl-verity_2015}. 
+
+\begin{proposition}
+    Let $C$ be a cocommutative coalgebra in $\C$. The forgetful functor $U_C\:\Comod_C\to \C$ creates colimits, while the forgetful functor $U^C\:\Contra_C\to \C$ creates limits. 
+\end{proposition}
+
+
+
+
+
+
+
+\subsection{The dual monoidal Barr--Beck theorem}
+\label{ch3:ssec:dual-barr-beck}
+
+Lurie's version of the Barr--Beck monadicity theorem, see \cite[Section 4.7]{Lurie_HA}, allows us to recognize monadic functors from simple criteria. Combined with a recognition theorem for when a monoidal monadic functor is equivalent to $R\otimes -$ for some commutative ring $R$, Mathew--Neumann--Noel extended the Barr--Beck theorem to a monoidal version. In this short section we prove a categorical dual version of their result. 
+
+Let $F:\C\rightleftarrows \D:G$ pair of adjoint functors between symmetric monoidal categories, such that the left adjoint $F$ is symmetric monoidal. This means that the right adjoint $G$ is lax-monoidal, and does in particular preserve algebra objects. There is for any two objects $X\in \C$ and $Y\in \D$, a natural map
+\[F(G(Y)\otimes_\C X)\overset{\simeq}\to FG(Y)\otimes_\D F(X) \to Y\otimes_\D F(X)\]
+where the last map is given by the adjunction counit. By the adjunction property, there is an adjoint map 
+\[G(Y)\otimes_\C X \to G(Y\otimes_\D F(X)).\]
+
+\begin{definition}
+    \index{Monadic projection formula}
+    An adjoint pair $F\dashv G$ as above is said to satisfy the \emph{monadic projection formula} if the map 
+    \[G(Y)\otimes_\C X \to G(Y\otimes_\D F(X))\]
+    is an equivalence for all $X\in \C$ and $Y\in \D$. 
+\end{definition}
+
+We now state the monoidal Barr--Beck theorem of Mathew--Neumann--Noel. 
+
+\begin{theorem}[{\cite[5.29]{mathew-naumann-noel_2017}}]
+    \label{ch3:thm:monoidal-BB}
+    Let $F:\C\rightleftarrows \D:G$ be an adjunction of presentably symmetric monoidal $\infty$-categories, such that the left adjoint $F$ is symmetric monoidal. If, in addition
+    \begin{enumerate}
+        \item $G$ is conservative,
+        \item $G$ preserves arbitrary colimits, and
+        \item $F\dashv G$ satisfies the monadic projection formula,
+    \end{enumerate}
+    then the adjunction is monadic, and there is an equivalence of monads 
+    \[GF \simeq G(\1_\D)\otimes_\C(-).\]
+    In particular, there is a symmetric monoidal equivalence $\D\simeq \Mod_{G(\1_\D)}(\C).$
+\end{theorem}
+
+\begin{remark}
+    Note that this result is stated only for stable $\infty$-categories in \cite{mathew-naumann-noel_2017}, but also holds unstably by a combination of Lurie's $\infty$-categorical Barr--Beck theorem, \cref{ch3:thm:Lurie-BB}, together with the fact that the monadic projection formula applied to the unit gives an equivalence of monads by \cite[3.6]{elmanto-kolderup_2020}. 
+\end{remark}
+
+There is also a dual version of the classical Barr--Beck theorem, see for example \cite[4.5]{brantner-mathew_2023}. We wish to extend this to a monoidal version. 
+
+Let $F:\C\rightleftarrows \D:G$ pair of adjoint functors between symmetric monoidal categories, such that the right adjoint $G$ is symmetric monoidal. This means that the left adjoint $F$ is op-lax-monoidal, and does in particular preserve coalgebra objects. There is for any two objects $X\in \C$ and $Y\in \D$, a natural map
+\[G(F(X)\otimes_\D Y)\overset{\simeq}\to GF(X)\otimes_\C G(Y) \to X\otimes_\C G(Y)\]
+where the last map is given by the adjunction unit. By the adjunction property, there is an adjoint map 
+\[F(X)\otimes_\D Y \to F(X\otimes_\C G(Y)).\]
+
+\begin{definition}
+    \index{Comonadic projection formula}
+    An adjoint pair $F\dashv G$ as above is said to satisfy the \emph{comonadic projection formula} if the map 
+    \[F(X)\otimes_\D Y \to F(X\otimes_\C G(Y))\]
+    is an equivalence for all $X\in \C$ and $Y\in \D$. 
+\end{definition}
+
+\begin{theorem}
+    \label{ch3:thm:dual-monoidal-BB}
+    Let $F:\C\rightleftarrows \D:G$ be an adjunction of presentably symmetric monoidal $\infty$-categories, such that the right adjoint $G$ is symmetric monoidal. If, in addition
+    \begin{enumerate}
+        \item $F$ is conservative,
+        \item $F$ preserves arbitrary limits, and
+        \item $F\dashv G$ satisfies the comonadic projection formula,
+    \end{enumerate}
+    then the adjunction is comonadic, and there is an equivalence of comonads 
+    \[FG\simeq F(\1_C)\otimes_\D (-)\] 
+    In particular, this gives an equivalence $\C\simeq \Comod_{F(\1_\C)}(\D).$
+\end{theorem}
+
+\begin{remark}
+    Before the proof we just remark why the above statement makes sense. The unit $\1_\C$ in a presentably symmetric monoidal $\infty$-category $\C$ is both an $\E_\infty$-algebra and an $\E_\infty$-coalgebra. In the above adjunction we have that the right adjoint $G$ is symmetric monoidal, hence its left adjoint $F$ is op-lax monoidal. In particular, it sends coalgebras to coalgebras, meaning that $F(\1_\C)$ is an $\E_\infty$-coalgebra in $\D$. By \cref{ch3:ex:coalgebra-comonad} tensoring with $F(\1_\C)$ is a comonad, not a monad, as for \cref{ch3:thm:monoidal-BB}. 
+\end{remark}
+
+\begin{proof}
+    By \cite[4.5]{brantner-mathew_2023} the adjunction is comonadic. A dual version of \cite[3.6]{elmanto-kolderup_2020} shows that there is a map of comonads $\phi\: FG \to F(\1_\C)\otimes_\D (-)$, and consequently an adjunction 
+    \begin{center}
+        \begin{tikzcd}
+            \Comod_{FG}(\D) \arrow[r, yshift=2pt, "\phi_*"] & \Comod_{F(\1_\C)\otimes_\D (-)}(\D) \arrow[l, yshift=-2pt, "\phi^*"]
+        \end{tikzcd}
+    \end{center}
+    By applying the projection formula to the unit $\1_\C$ we get that $\phi$ is a natural equivalence, which means that the adjunction $(\phi_*, \phi^*)$ is an adjoint equivalence. By \cref{ch3:ex:coalgebra-comonad} the Eilenberg--Moore category of the comonad $F(\1_\C)\otimes_\D (-)$ is equivalent to the category of comodules over the $\E_\infty$-coalgebra $F(\1_\C)$, finishing the proof. 
+\end{proof}
+
+\begin{remark}
+    \label{ch3:rm:monoidal-structure-comodules}
+    We want to specify when the above equivalence is an equivalence of symmetric monoidal categories. We could hope for the existence of a symmetric monoidal structure on $\Comod_C$ for a cocommutative coalgebra $C\in \C$. For the category $\Mod_R(\C)$ of modules over a commutative algebra $R\in \C$ this is done by Lurie's relative tensor product, see \cite[Section 4.5.2]{Lurie_HA}. But, for such a relative monoidal product to exist on $\Comod_C$ one needs the tensor product in $\C$ to commute with cosifted limits, which is rarely the case. But, as we will see in \cref{ch3:ssec:idempotent-coalgebras} we sometimes get a monoidal structure, and when this is the case, the equivalence in \cref{ch3:thm:dual-monoidal-BB} is symmetric monoidal. 
+\end{remark}
+

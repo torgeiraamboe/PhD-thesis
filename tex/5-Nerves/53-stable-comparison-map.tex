@@ -1,0 +1,399 @@
+
+
+
+\section{The stable comparison map}
+
+Having now set the stage, we can finally start the main act. 
+
+The construction of the map $\Phi\: \Spch(\Co)\to \SpcH(\Co)$ will require some legwork, as unfortunately, the functor $\pi_0\: \sFE \to \FE$ is not symmetric monoidal, nor does it preserves compacts. This means that we cannot simply define it by pulling back homological primes, at least not without checking that this makes sense. 
+
+
+
+\subsection{Lifting Serre ideals}
+
+In \cref{ch:4} we developed a framework for uniquely lifting localizing subcategories of an abelian category along a $t$-structure. In \cref{app:A} we have added a version of this construction for $\otimes$-ideals, and we would recommend, for readers who want a thorough understanding of the below construction, to familiarize themselves with the results there. 
+
+For the remainder of this section we fix a homological prime $B\in \Spch(\Co)$. The goal of this section is essentially to prove that the unique lifts from \cref{app:A} interact well with compact objects. In particular, if we lift $\Loc(B)$ then we could in theory end up with a localizing $\otimes$-ideal $\L$ of $\sFE$ that contain no non-zero compact objects. We want to avoid this happening, as otherwise there would be no map into the homological Balmer spectrum for us to study. 
+
+For any symmetric monoidal Grothendieck prestable category $\D\geqz$ we have a functor 
+\[\pi_0 := \tau\leqz \: \D\geqz \to \D^\heart\]
+which agrees with the heart-valued homotopy groups functor for the associated $t$-structure on the stabilization $\D$. This functor preserves compact objects, and is in fact symmetric monoidal by \cite[A.12]{antieau_nikolaus_2020}. 
+
+\begin{definition}
+    A full subcategory $\T \subseteq \pFEo$ is \emph{thick} if it is closed under finite coproducts, cofiber sequences and subobjects. 
+\end{definition}
+
+\begin{remark}
+    This is exactly the definition of a localizing subcategory of a prestable $\infty$-category, just with finite coproducts rather than all coproducts. This distinction is then similar to the distinction between localizing and Serre subcategories of abelian categories, and localizing vs. thick subcategories of stable $\infty$-categories. 
+\end{remark}
+
+We can further sharpen the analogy between Serre $\otimes$-ideals and thick subcategories. 
+
+\begin{lemma}
+    If $A$ is a Serre subcategory of $\FEo$, then the full subcategory $\widetilde{A}\subseteq \pFEo$ such that $a\in \widetilde{A}$ if and only if $\pi_k a \in A$ for all $k\geq 0$, is a thick subcategory of $\pFEo$. 
+\end{lemma}
+\begin{proof}
+    The proof of the fact that $\widetilde{A}$ is a thick subcategory is identical to \cite[C.5.2.7]{lurie_SAG}, just with finite coproducts rather than all coproducts. 
+\end{proof}
+
+\begin{lemma}
+    \label{lm:pullback-along-pi0}
+    The lift $\widetilde{A}$ of $A$ coicides with the preimage of $A$ under the functor $\pi_0$.
+\end{lemma}
+\begin{proof}
+    This follows from the fact that $\widetilde{A}$ is closed under loops $\Omega$, and that $A$ is closed under shift. 
+\end{proof}
+
+As $\pi_0$ is symmetric monoidal, we then get the following corollary. 
+
+\begin{corollary}
+    If $B$ is a homological prime, then $\widetilde{B}$ is a thick $\otimes$-ideal. 
+\end{corollary}
+
+\begin{remark}
+    In the language of \cite[App. C]{lurie_SAG}, the $\otimes$-ideal $\widetilde{B}$ might be called a \emph{separating} thick $\otimes$-ideal. 
+\end{remark}
+
+As we have now properly lifted our homological prime $B$ to the prestable category $\pFEo$, the next step is to pass to the stable category $\sFEo$. As in \cref{ch:4} and \cref{app:A} this is done through stabilization. 
+
+\begin{definition}
+    Let $\E$ be a pointed category with finite limits. The \emph{Spanier--Whitehead category} of $\E$ is defined to be the colimit of the diagram 
+    \begin{center}
+        \begin{tikzcd}
+            \E \arrow[r, "\Sigma"] & \E \arrow[r, "\Sigma"] & \E \arrow[r, "\Sigma"] & \cdots
+        \end{tikzcd}
+    \end{center}
+    where $\Sigma$ is the functor given by the cofiber of the map $0\rightarrow x$ for $x\in \E$. 
+\end{definition}
+
+The first thing we need is to compare prestable and stable compact objects. 
+
+\begin{theorem}
+    \label{prestable-freyd-stabilizes-to-stable-Freyd}
+    The is an equivalence $\SW(\pFEo)\simeq \sFEo$ of symmetric monoidal stable $\infty$-categories.  
+\end{theorem}
+\begin{proof}
+    By \cite[4.26]{patchkoria-pstragowski_2021} $\pFEo$ is a prestable category closed under finite limits, hence it is the connected part of a $t$-structure on some stable $\infty$-category, which is precicely the Spanier--Whitehead category $\SW(\pFEo)$, see \cite[C.1.1, C.1.2]{lurie_SAG}. 
+
+    By \cite[C.1.1.6]{lurie_SAG} there is a commutative diagram of $\infty$-categories
+    \begin{center}
+        \begin{tikzcd}
+            \Cat^{\mathrm{rex}}_\infty \arrow[r, "\SW(-)"] \arrow[d, "\Ind(-)"'] & \Cat^{\mathrm{rex}}_\infty \arrow[d, "\Ind(-)"] \\
+            \PrL \arrow[r, "\Sp(-)"']                                                    & \PrL                                           
+        \end{tikzcd}
+    \end{center}
+    meaning that there is an equivalence
+    \[\Ind(\SW(\pFEo))\simeq \Sp(\Ind(\pFEo)).\]
+    As all functors are symmetric monoidal, the equivalence is also symmetric monoidal. The category $\Ind(\pFEo)$ is $\pFE$, which we know stabilizes to $\sFE$. This has a collection of compact generators, $\sFE$, which is a small stable $\infty$-category, giving an equivalence $\Ind(\sFEo)\simeq \sFE$ by definition. As the functor $\Ind$ is an equivalence between small stable $\infty$-categories and compactly generated $\infty$-categories, we get our wanted equivalence $\SW(\pFEo)\simeq \sFEo$. 
+\end{proof}
+
+This now allows us to finally define the lift of a homological prime to the stable $\infty$-world. 
+
+\begin{definition}
+    Given a homological prime $B$, we define its \emph{stable lift} $\oB := \SW(\widetilde{B})$ to be the Spanier--Whitehead category of its prestable lift $\widetilde{B}$. 
+\end{definition}
+
+\begin{remark}
+    Intuitively one should think about this as the ``small'' version of the construction from \cref{app:A}, where one lifts an abelian localizing ideal hrough the $t$-structure by first lifting to the prestable category and then stabilizing. The Spanier--Whitehead construction is the natural verison of stabilization for small categories, as is made clear by the commutative diagram in the above proof. 
+\end{remark}
+
+\begin{remark}
+    The readers equipped with their tensor-triangular goggles, rather than their $\infty$ ones, can rejoice in the fact that $h\SW(\widetilde{B})\simeq \SW(h\widetilde{B})$, see \cite[C.1.1.3]{lurie_SAG}. This means that there is still nothing to worry about when it comes to the difference between $\infty$-categorical $tt$-geometry and classical $tt$-geometry. 
+\end{remark}
+
+We have now defined our lift, and it remains to prove that it has the expected properties: it should be a thick $\otimes$-ideal. Let us start with the former. 
+
+\begin{lemma}
+    \label{lm:stable-lift-is-thick}
+    The stable lift $\oB$ is a thick subcategory of $\sFEo$. 
+\end{lemma}
+\begin{proof}
+    We have a fully faithful inclusion $\widetilde{B}\hookrightarrow\pFEo$, which gives a fully faithful inclusion 
+    \[\oB = \SW(\widetilde{B})\hookrightarrow \SW(\pFEo)\simeq \sFEo\]
+    by \cref{prestable-freyd-stabilizes-to-stable-Freyd}. As $\oB$ is a stable $\infty$-category by definiton, we need only to check that it is closed under finite colimits in $\sFEo$. 
+    
+    Given a finite colimit in $\oB$, it factors through $\widetilde{B}$ at some finite stage in the diagram 
+    \begin{center}
+        \begin{tikzcd}
+            \widetilde{B} \arrow[r, "\Sigma"] & \widetilde{B} \arrow[r, "\Sigma"] & \widetilde{B} \arrow[r, "\Sigma"] & \cdots
+        \end{tikzcd}
+    \end{center}
+    As $\widetilde{B}$ is closed under finite colimits in $\pFEo$, together with the fact that
+    \begin{center}
+        \begin{tikzcd}
+            \widetilde{B} \arrow[r, "\Sigma"] \arrow[d] & \widetilde{B} \arrow[d] \\
+            \pFEo \arrow[r, "\Sigma"']                  & \pFEo                  
+        \end{tikzcd}
+    \end{center}
+    commutes, and lastly that all of the maps $\widetilde{B}\to \SW(\widetilde{B})\simeq \oB$ and 
+    \[\pFEo \to \SW(\pFEo)\simeq \sFEo\] 
+    preserve finite colimits --- see \cite[C.1.1.5]{lurie_SAG} --- this implies that also the fully faithful inclusion $\oB \subseteq \sFEo$ preserves finite colimits, finishing the proof. 
+\end{proof}
+
+In order to prove that the stable lift $\oB$ is a $\otimes$-ideal, and that it satisfies some uniqueness property, we compare it to the classification result in \cref{app:A}. In particular, we know that there is a unique $\pi$-exact lift of $\Loc^\otimes(B)$ via \cref{thm:classification-ideals-t-structure}, which wenote by $\L$. We now prove that this lift $\L$ is in fact uniquely determined by $B$. 
+
+\begin{lemma}
+    \label{lm:lift-of-B-works-with-localizing-lift}
+    For any homological prime $B$, we have $\L\cap \sFEo = \oB$. 
+\end{lemma}
+\begin{proof}
+    As $B \subseteq \Loc(B)$ we also have $\oB \subseteq \L$ by \cref{ch4:lm:pi-stable-are-the-biggest}, as the latter is $\pi$-stable. This gives the first of the inclusions:
+    \[\oB = \oB \cap \sFEo\subseteq \L \cap \sFEo.\]
+    
+    Let $l$ be an object in $(\L\cap \sFEo)\geqz$. This means that $l\in \L\geqz$ and $l \in \sFEo\geqz \simeq \pFEo$. Hence, $\pi_k l \in \Loc^\otimes(B)\cap \FEo \simeq B$ for all $k$, which by definition implies $l \in \widetilde{B}$, giving 
+    \[(\L\cap \sFEo)\geqz \subseteq \widetilde{B}.\]
+    This gives the other inclusion upon taking Spanier--Whitehead categories. 
+\end{proof}
+
+\begin{corollary}
+    \label{cor:stable-lift-is-ideal}
+    The lift $\oB$ is a thick $\otimes$-ideal of $\sFEo$.
+\end{corollary}
+\begin{proof}
+    We know that the localizing subcategory $\L$ is an ideal by \cref{thm:classification-ideals-t-structure}. This means that $b \otimes m \in \L$ for all $b\in \oB$ and $m \in \sFEo$. As the monoidal structure on $\sFE$ restricts to compact objects, we also have $b\otimes m \in \sFEo$, which gives $b\otimes m \in \L \cap \sFEo = \oB$ by \cref{lm:lift-of-B-works-with-localizing-lift}. 
+\end{proof}
+
+For the uniqueness of $\oB$ we will need the following lemma, stating that the lift of a compactly generated abelian localizing $\otimes$-ideal is a compactly generated stable localizing $\otimes$-ideal. 
+
+\begin{lemma}
+    \label{lm:loc-of-lift-is-localizing-lift}
+    There is an equivalence of localizing ideals $\Loc^\otimes(\oB) = \L$. 
+\end{lemma}
+\begin{proof}
+    By \cref{lm:lift-of-B-works-with-localizing-lift} these have the same compact objects, hence $\Loc^\otimes(\oB)\subseteq \L$. If we can prove that $\Loc^\otimes(\oB)$ is a $\pi$-stable localizing ideal with heart $\Loc(B)$, then we are done by the uniqueness of the lift $\L$. 
+
+    Now, $\oB$ is $\pi$-stable, hence we have $\pi_k b \in \Loc^\otimes(B)$ if and only if $b\in \Loc^\otimes(\oB)$ for all compact $b$. We know that $\Loc^\otimes(\oB)$ is generated by $\oB$ under filtered colimits, which means, as $\pi_0$ preserves filtered colimits and $\Loc^\otimes(B)$ is closed under these, that also $\pi_k b\in \Loc^\otimes(B)$ if and only if $b\in \Loc^\otimes(\oB)$ for all (not neccessarily compact) objects $b$. It also follows from this that $\Loc^\otimes(\oB)^\heart = \Loc^\otimes(B)$, hence we get $\Loc^\otimes(\oB) = \L$ by uniqueness of the lift. 
+\end{proof}
+
+We can now finally prove that the lift $\oB$ is unique. 
+
+\begin{theorem}
+    \label{thm:uniqueness-of-lift}
+    Given a homological prime $B$, the lift $\oB$ is unique. 
+\end{theorem}
+\begin{proof}
+    Let $\oB'$ be another stable lift of $B$, in other words it is a $\pi$-stable thick $\otimes$-ideal with heart $B$. By the same arguments as in \cref{lm:loc-of-lift-is-localizing-lift}, we get two $\pi$-stable localizing $\otimes$-ideals $\Loc(\oB)$ and $\Loc(\oB')$, which neccessarily must have the same heart $\Loc(B)$. By uniqueness of the lift $\L$ we must then have $\Loc(\oB) = \L = \Loc(\oB')$. By \cref{lm:lift-of-B-works-with-localizing-lift} we conclude that 
+    \[\oB = \Loc(\oB)\cap \sFEo = \Loc(\oB')\cap \sFEo = \oB',\]
+    finishing the proof. 
+\end{proof}
+
+\begin{remark}
+    It should be possible to make a classification of thick $\otimes$-ideals along a $t$-structure on small stable $\infty$-categories, generalizing the above result and making it more structural. This clasification should then induce a ``compactly generated'' version of \cref{thm:classification-ideals-t-structure} upon passing to $\Ind$-categories. The ideas are roughly laid out above for the specific case of $\sFEo$, but as it would take some time to set up, we decided not to pursue such a result in this paper. 
+\end{remark}
+
+\begin{remark}
+    To a homological prime $B$, there is an associated \emph{homological residue field} $\A_B:= \FE/\Loc(B)$. As the unique lift $\L$ associated to $\Loc(B)$ is $\pi$-exact, the quotient $\Der_B(\C):= \sFE/\L$ is a compactly generated symmetric monoidal stable $\infty$-category with a $t$-structure that has heart $\A_B$. As these are stable enhancements of the homological residue fields, we call these the \emph{spectral residue field} of $\C$ at $B$. The notation $\Der_B(\C)$ is inspired by \cite{patchkoria-pstragowski_2021}, as the connected part of this $t$-structure is equivalent to the separated perfect derived category of $\C$ as presented in \emph{loc. sit}. We do not believe that these spectral residue fields are $tt$-fields in the sense of \cite[Definition 1.1]{balmer_krause_stevenson_2019}. However, their $t$-structure compactible thick $\otimes$-ideals are very simple, hence they are in a certain sense ``$ttt$-fields''. There is a deformation parameter $\tau$ acting on this category, and we believe that the $\tau$-invertible objects in $\Der_B(\C)$ might be actual $tt$-fields. This makes the induced functor $\C\to \Der_B(\C)^{\tau=1}$ interesting to study, which we plan to do in future work. To justify its interestingness, we note that the homological residue fields of $\Sp_{(p)}$ are $\Comod_{K(n)_*K(n)}$, where $K(n)$ is the height $n$ Morava $K$-theory at a prime $p$. The associated spectral residue field is the category of hypercomplete $K(n)$-based synthetic spectra, in the sense of \cite{pstragowski_2022}, and the $\tau$-invertible objects are precicely the $K(n)$-local spectra, $\Sp_{K(n)}$. 
+\end{remark}
+
+
+
+
+
+
+
+
+\subsection{Topological properties}
+
+We can now finally define the map of interest.
+
+\begin{theorem}
+    \label{thm:existence-of-Phi}
+    There is a map of sets $\Phi\: \Spch(\Co)\to \SpcH(\Co)$, given by sending a homological prime $B$ to $\oB$.
+\end{theorem}
+\begin{proof}
+    The lift $\oB$ of $B$ to $\sFEo$ is a thick $\otimes$-ideal by \cref{lm:stable-lift-is-thick} and \cref{cor:stable-lift-is-ideal}, so it remains to show that $\oB$ is in fact a \emph{prime} $\otimes$-ideal. 
+
+    Let $a, b$ be objects in $\sFEo$ such that $a\otimes b\in \oB$. We wish to show that $a\in \oB$ or $b\in \oB$. This is, due to the $\pi$-stability of $\oB$, equivalent to showing that either $\pi_0 a \in B$ or $\pi_0 b \in B$ whenever $\pi_0(a\otimes b) \in B$. 
+    
+    The compact object $a$ is a finite colimit of compact representables $\nu (c)$, and as both $\oB$ and $B$ are closed under finite colimits, and $\pi_0$ preserves these, it is enough to check for $a = \nu c$ for $c\in \C^\omega$. This means that $\pi_0 a = \pi_0 \nu c = y(c)$, as $\nu$ is a stable enhancement of $y$. In particular, $\pi_0 a$ is $\otimes$-flat, which gives an isomorphism $\pi_0 (a\otimes b) \simeq \pi_0 a \otimes \pi_0 b \simeq y(c) \otimes \pi_0 b$. 
+    
+    The rest of the proof is based on \cite[3.3]{balmer_2019}. We assume $a \not\in B$ and show that $b \in B$. Define
+    \[U = \{M \in \FEo \mid y(c) \otimes M \in B\},\]
+    which by the flatness of $y(c)$ is a thick $\otimes$-ideal. Since $B$ is an ideal $U$ neccessarily contains $B$, which gives $U=B$ by the maximality of $B$. We have $\pi_0 b \in U$ by assumption, hence $\pi_0 b \in B$. By the $\pi$-stability of $\oB$ this means finally that $b\in \oB$, meaning that it is in fact prime. 
+\end{proof}
+
+\begin{definition}
+    We call $\Phi$ the \emph{stable comparison map}. 
+\end{definition}
+
+\begin{remark}
+    \label{rm:t-spectrum}
+    As $B$ was a maximal thick $\otimes$-ideal, the $\otimes$-ideal $\oB$ is also maximal with respect to $t$-exact ideals. This is because $\oB$ is $\pi$-stable, and hence the largest $t$-exact ideal with heart $B$. Any $t$-exact ideal $\T$ containing $\oB$ has a heart $\T^\heart$ that contains $B$ by \cref{ch4:lm:pi-exact-are-the-biggest}. This means that, as $B$ was maximal, also $\oB$ must be. As maximal ideals are usually prime, it is then perhaps not that surprising that $\oB$ is prime. 
+\end{remark}
+
+\begin{remark}
+    A natural thing to try, is to define a support theory on $\SpcH(\Co)$ using $\Spch(\Co)$, and try to get the map $\Phi$ via the universal property of the $tt$-support. The author finds in plausible that one can use 
+    \[\sigma(m) := \{B\in \Spch(\Co)\mid m \not\in \overline{B}\},\]
+    or 
+    \[\sigma'(m) := \{B\in \Spch(\Co)\mid [m, \nu(E_B)] \neq 0\}\]
+    where $E_B$ is the pure-injective associated to $B$, see \cite{balmer_krause_stevenson_2019}. Both of these agree with the homological support on all representables, in the sense that $\Supph(c) = \sigma(\nu(c))$. We were, however, unable to prove the tensor-product formula for non-representables, and not able to reduce proving it to representables. 
+\end{remark}
+
+The goal is now to show that stable comparison map $\Phi$ is an injective continuous closed map. This is going to exhibit $\Spch(\Co)$ as being homeomorphic to a subspace of $\SpcH(\Co)$, which is a $T_0$ space, hence proving \cref{conj:nerves-of-steel}. We start with the easiest property. 
+
+\begin{lemma}
+    \label{lm:Phi-is-injective}
+    The map $\Phi\: \Spch(\Co)\to \SpcH(\Co)$ is an injective map of sets. 
+\end{lemma}
+\begin{proof}
+    This follows immediately from \cref{thm:uniqueness-of-lift}. 
+\end{proof}
+
+One helpful trick when trying to prove that a certain map is continuous, is to reduce to the map being continuous onto its image, treated as a subspace. The same reduction also works for proving a map is closed. In light of this we first spend some time understanding the subspace topology of $\Ima\Phi \subseteq \SpcH(\Co)$. In particular, we will show that the topology is completely determined by the compact representable presheaves, $\nu(c)$. This is precicely what one would expec if the nerves of steel conjecture were true. 
+
+By definition the subspace topology on $\Ima\Phi$ has a basis for the closed sets given by $\Supp(m)\cap \Ima\Phi$ for all $m\in \sFEo$. This is the initial topology making the inclusion $\Ima\Phi \hookrightarrow \SpcH(\Co)$ a continuous map. 
+
+\begin{remark}
+    \label{rm:retopologizing-homological-spectrum}
+    We could now, in theory, define a new topology on $\Spch(\Co)$, given by a basis for the closed sets being $\Phi^{-1}(\Supp(m)\cap \Ima\Phi)$. This would make $\Phi$ a continuous closed map. But, it is not easy to see that this does in fact give the standard topology on $\Spch(\Co)$, as 
+    \[\Phi^{-1}(\Supp(m)\cap \Ima\Phi) = \{B \in \Spch(\Co)\mid \pi_0 m \not\in B\}.\]
+    This does give the basis elements --- the homological support --- for $m=\nu(c)$, but there seem to be a plethora of additional closed sets. The goal of the next couple results is to prove that all of these extra closed sets are redundant. 
+\end{remark}
+
+\begin{lemma}
+    \label{lm:support-of-connected-cover}
+    For any $m\in \sFEo$ such that $\tau\geqz m$ is compact, we have
+    \[\Supp(m)\cap \Ima\Phi = \Supp(\tau_{\geq 0}m)\cap \Ima\Phi.\]
+\end{lemma}
+\begin{proof}
+    Any prime $\overline B$ in the image of $\Phi$ is $\pi$-stable. Hence, if $\overline B \in \Supp(\tau_{\geq 0}m)$, then by definition $\tau_{\geq 0}m \not\in \overline B$, which happens if and only if $\pi_0 m$ not in $B$ by \cref{lm:pullback-along-pi0}, hence also $m\not \in \overline B$. Similarly, as $\oB$ is $t$-stable, $\overline B \not \in \Supp(m)$ implies $\overline B \not \in \Supp(\tau_{\geq 0}m)$. This means that $\Ima\Phi \cap \Supp(m) = \Ima\Phi \cap \Supp(\tau_{\geq 0}m)$. 
+\end{proof}
+
+We will also need the following lemma, which is the stable analog of \cite[4.25]{patchkoria-pstragowski_2021}. 
+
+\begin{lemma}
+    \label{lm:compacts-are-loop-representable}
+    For any compact presheaf $m\in \sFEo$ there is an integer $k$ such that $\tau\geqz\Omega^{k} m \simeq \nu(c)$ for some $c\in \Co$.
+\end{lemma}
+\begin{proof}
+    Let $\mathcal{U}$ be the collection of objects satisfying the claim. 
+    
+    The spectral Yoneda embedding is exact, thus commutes with the formation of loops. Hence, as $\tau\geqz \Omega Y(c) \simeq \tau\geqz Y(\Omega c) \simeq \nu \Omega c$, the collection $\mathcal{U}$ contains $Yc$ for all $c\in \C$. If $m\in \mathcal{U}$ is a compact such that $\tau\geqz m$ is still compact, then we have $\Omega^k_p\tau\geqz m \simeq \yo c$ for some $k$ and $c$ by \cite[4.25]{patchkoria-pstragowski_2021}, where $\Omega_p$ denotes the prestable loop functor, given by $\Omega_p = \tau\geqz \Omega \Sigma^\infty$. This means that 
+    \[\tau\geqz \Omega^k \tau\geqz m \simeq \Sigma^\infty\Omega^k_p\tau\geqz m \simeq \Sigma^\infty\yo c \simeq \nu c\]
+    and hence also $\tau\geqz m \in \mathcal{U}$. This implies that $\nu c$ is in $\mathcal{U}$ for all $c\in \Co$. As these generate $\sFEo$ under finite limits, it remains only to show that $\mathcal{U}$ is closed under these. 
+
+    Note that, if $m\in \mathcal{U}$, then also $\Omega m\in \mathcal{U}$, as 
+    \[\tau\geqz \Omega^k \Omega m \simeq \tau\geqz \Omega \tau\geqz \Omega^k m \simeq \tau\geqz\Omega \nu(c) \simeq \nu(\Omega c)\]
+    for some $k$ and $c$. 
+
+    Now, if $x\rightarrow y\rightarrow z$ is a cofiber sequence with $x, y\in \mathcal{U}$, then we have a cofiber sequence 
+    \[\Omega^k x \to  \Omega^k y\to \Omega^k z\]
+    for all $k\geq 0$. Choose $k$ such that both $\tau\geqz\Omega^k x$ and $\tau\geqz\Omega^k y$ are representable. Then, we have a fiber sequence 
+    \[\nu (c)\to \nu (d)\to \tau\geqz\Omega^k z.\]
+    The cofiber is exactly $\nu (e)$, where $e$ is the cofiber of a map $c \to d$, as $\nu$ is exact on connective objects. 
+\end{proof}
+
+% Do we need also finite coproducts? 
+% Given a finite coproduct of objects $m_i\in \mathcal{U}$, then also $\bigoplus_i m_i \in \mathcal{U}$. Chose $k$ large enough such that $\tau\geqz\Omega^k m_i \simeq \nu(c_i)$ for all $i$. Then $\$
+
+We can now prove our wanted description of the subspace topology on $\Ima\Phi$. 
+
+\begin{lemma}
+    \label{cor:base-for-topology-on-ImPhi}
+    The collection $\mathcal{R} = \{\Supp(\nu(c))\cap \Ima\Phi \mid c\in \Co\}$ is a basis for the closed sets of the subspace topology on $\Ima\Phi\subseteq \SpcH(\Co)$. 
+\end{lemma}
+\begin{proof}
+    By definition we have a basis for the closed sets given by $\Supp(m)\cap \Ima \Phi$ for all $m\in \sFEo$. For all $k$ we have $\Supp(m) = \Supp(\Omega^k m)$, which by \cref{lm:compacts-are-loop-representable} and \cref{lm:support-of-connected-cover} implies that 
+    \[\Supp(m)\cap \Ima\Phi = \Supp(\tau\geqz \Omega^k m)\cap \Ima\Phi = \Supp(\nu c) \cap \Ima\Phi\]
+    for some $c\in \Co$. 
+\end{proof}
+
+In light of \cref{rm:retopologizing-homological-spectrum} this now means that the initial topology for $\Phi$ should coincide with the topology determied by the homological supports, in other words, this makes the stable comparison map continuous and closed, as the following lemma shows.
+
+\begin{lemma}
+    \label{lm:Phi-is-continuous-and-closed}
+    The stable comparison map $\Phi\: \Spch(\Co)\to \SpcH(\Co)$ is a closed continuous map. 
+\end{lemma}
+\begin{proof}
+    By \cref{cor:base-for-topology-on-ImPhi} there is a base of closed sets given by $\Supp(\nu(c))\cap \Ima\Phi$ for all $c\in \Co$. 
+
+    By definition we have $\oB \in \Supp(\nu c) \iff \nu c \not\in \oB$. As $\oB$ is $\pi$-stable, we can check this on the heart: $\nu c \not\in \oB$ if and only if $\pi_k \nu c \not\in B$ for all $k$. In particular, $\pi_0 \nu c = yc \not\in B$, which as $c$ is compact implies $B\in \Supph(c)$. 
+    
+    Now, this shows, as $\Phi$ is injective by \cref{lm:Phi-is-injective}, and is surjective onto its image, that 
+    \[B\in \Phi^{-1}(\Supp(\nu c)) \iff B\in \Supph(c)\]
+    and that 
+    \[\oB\in \Phi(\Supph(c)) \iff \oB\in \Supp(\nu c)\]
+    This means that we have $\Phi^{-1}(\Supp(\nu c)) = \Supph(c),$ which is a closed subset of $\Spch(\C)$, and that $\Phi(\Supph(c)) = \Supp(\nu c)\cap \Ima\Phi$, which is a closed subset of $\Ima\Phi$. Hence, $\Phi$ is both closed and continuous. 
+\end{proof}
+
+
+
+As announced in the introduction this immediately implies the nerves of steel conjecture for all rigidly compactly generated symmetric monoidal stable $\infty$-categories. 
+
+\begin{theorem}
+    \label{thm:nerves-of-steel}
+    Let $\C$ be a rigidly compactly generated symmetric monoidal stable $\infty$-category. The comparison map $\phi\: \Spch(\Co)\to \Spc(\Co)$ is a homeomorphism.  
+\end{theorem}
+\begin{proof}
+    By \cref{thm:existence-of-Phi}, \cref{lm:Phi-is-injective} and \cref{lm:Phi-is-continuous-and-closed}, there is an injective continuous closed map $\Phi\: \Spch(\Co)\to \SpcH(\Co)$, which means that the homological spectrum embeds as a subspace of the homological Balmer spectrum. As the latter is $T_0$ by \cite[2.9]{balmer_2005}, and any subspace of a $T_0$ space is it self $T_0$, also the homological spectrum is $T_0$. This finishes the claim due to \cite[4.5]{barthel_heard_sanders_2022}.
+\end{proof}
+
+\begin{remark}
+    By \cref{rm:t-spectrum} the homological spectrum is isomorphic to the ``maximal $t$-structure spectrum'' of $\sFE$, as maximal ideals in $\FEo$ uniquely correspond to maximal ideals in $\sFEo$. In light of \cref{thm:nerves-of-steel} this means that prime thick $\otimes$-ideals in $\Co$ are in bijection with maximal $t$-exact thick $\otimes$-ideals of $\sFEo$, also compatible with the topology. We plan to revisit these ``$t$-structure spectra'' in future work, as we believe them to be interesting objects. 
+\end{remark}
+
+
+We claimed that the map $\Phi$ factors $\phi$, so let us also prove this fact. 
+
+\begin{proposition}
+    \label{prop:Phi-factors-phi}
+    There is an equivalence of maps $\phi \simeq f\circ \Phi$. 
+\end{proposition}
+\begin{proof}
+    One can see this quite easily by just writing out the definitions. Alternatively the claim follows from \cite[3.3]{balmer_2005}, as the preimages of the closed sets $\Supp(c)$ coincide for both maps $\phi$ and $f\circ \Phi$. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Some consequences}
+
+We conclude the paper by noting some consequences of \cref{thm:nerves-of-steel}. In \cite[A.1]{balmer_2020} Balmer shows that the nerves of steel conjecture is equivalent to the following statement, whenever $\C$ is a \emph{local} $tt$-category. 
+
+\begin{corollary}
+    For any two maps $f$ and $g$ in $\Co$ such that $f\otimes g = 0$, then either $f$ or $g$ is $\otimes$-nilpotent on a zon-zero compact. In other words, there exists a non-zero compact $c$ such that either $f^{\otimes n} \otimes c =0$ or $g^{\otimes n} \otimes c = 0$ for large $n$.  
+\end{corollary}
+
+\begin{remark}
+    This also proves the similar nilpotence condition proved by Hyslop in \cite[4.3]{hyslop_2024}, which makes a more uniform bound on the nilpotency degree $n$. 
+\end{remark}
+
+We can now also completely classify jointly nil-conservative functors between rigidly compactly generated $tt$-categories. In particular, we can now strengthen \cite[1.4]{barthel_castellana_heard_sanders_2024} to an if-and-only-if statement. 
+
+\begin{corollary}
+    If $\{F_i\: \C \to \mathcal{S}_i\}_{i\in I}$ is a family of geometric functors, then this family is jointly nil-conservative if and only if the induced map on Balmer spectra 
+    \[f\: \bigcup \Spc(\mathcal{S}^\omega_i) \to \Spc(\Co)\]
+    is surjective. 
+\end{corollary}
+\begin{proof}
+    This statement holds on homological spectra by \cite[1.9]{barthel_castellana_heard_sanders_2024}, which by \cref{thm:nerves-of-steel} means it also holds on Balmer spectra. 
+\end{proof}
+
+Recent work of Barthel, Heard, Sanders and Zou --- see \cite{barthel_heard_sanders_zou_2024} --- compares $tt$-stratification for $tt$-categories with weakly noetherian Balmer spectra to \emph{homological stratification}, defined using the homological spectrum. We can then get the following result. 
+
+\begin{corollary}
+    If $\C$ is a rigidly compactly generated $tt$-category such that $\Spc(\Co)$ is weakly noetherian, then $\C$ is $tt$-stratified if and only if $\C$ is $h$-stratified. 
+\end{corollary}
+\begin{proof}
+    This is a combination of \cite[8.6]{barthel_heard_sanders_zou_2024} and \cref{thm:nerves-of-steel}. 
+\end{proof}
+
+Lastly, we can confirm that the $tt$-support and the homological support always simultaneously detect zero-objects. Recall that a support theory $\sigma(-)$ is said to have the detection property if $\sigma(t)=\emptyset$ if and only if $t = 0$. 
+
+\begin{corollary}
+    The $tt$-support $\Supp(-)$ has the detection property if and only if the homological support $\Supph(-)$ has the detection property. 
+\end{corollary}
+\begin{proof}
+    This follows immediately from \cref{thm:nerves-of-steel} and \cite[3.10, 3.13]{barthel_heard_sanders_2022}. 
+\end{proof}

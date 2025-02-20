@@ -1,0 +1,106 @@
+
+\section{Introduction}
+
+Let $k$ be a field and a $C$ a cocommutative coalgebra in the abelian category $\Vect_k$. A \emph{comodule} over $C$ is a vector space $V$ together with a coassociative counital map $V\to V\otimes_k C$. These objects were introduced in the seminal paper \cite{eilenberg-moore_65} and are categorically dual to modules over algebras. In the same paper Eilenberg and Moore introduced a further dual to comodules, which they called \emph{contramodules}. These are vector spaces $V$ with a map $\Hom_k(C, V)\to V$ satisfying similar axioms called contra-associativity and contra-unitality. 
+
+While modules and comodules got their fair share of fame throughout the decades following their introduction, contramodules were seemingly lost to history --- virtually forgotten --- until dug out from their grave of obscurity by Positselski in the early 2000's. Positselski has since developed a considerable body of literature on contramodules, see for example \cite{positselski_2010, positselski_2011, positselski_2016, positselski_2017_contraadjusted, positselski_2020} or the survey paper \cite{positselski_2022_contramodules}. 
+
+In \cite{positselski_2010} Positselski introduced the co/contra correspondence, which is an adjunction between the category of comodules and the category of contramodules over a cocommutative coalgebra $C$. This correspondence sat existing duality theories on a common footing, for example Serre--Grothendieck duality and Feigin--Fuchs central charge duality. Positselski also introduced the coderived and contraderived categories of $C$-comodules and $C$-contramodules respectively, and used this to prove a derived co/contra correspondence of the form 
+\[\Der^{co}(\ComodC)\simeq \Der^{contra}(\ContraC),\]
+generalizing for example Matlis--Greenlees--May duality and Dwyer--Greenlees duality --- see \cite{positselski_2016}. 
+
+The goal of the present paper is to generalize the co/contra correspondence --- which we will refer to as Positselski duality --- to cocommutative coalgebras in $\infty$-categories. We will also use the correspondence in stable $\infty$-categories, which are natural enhancements of triangulated categories. These serve as the natural place to study similar correspondences and equivalences as in the derived co/contra correspondence. The canonical references for $\infty$-categories are \cite{lurie_09} and \cite{Lurie_HA}, and we will throughout the paper freely use their language instead of the more standard language of triangulated categories in the homological algebra literature. 
+
+
+
+
+
+\subsection*{Motivation}
+
+Let us try to both make a motivation for the traditional Positselski duality theory and for the connection to coalgebras in stable $\infty$-categories. 
+
+We let $X$ be a separated noetherian scheme, $Z\subset X$ a closed subscheme and $U = X\backslash Z$ its open complement. The derived category of all $\O_X$-modules, $\Der(\O_X)$, has a full subcategory $\Der(X)$ consisting of complexes with quasi-coherent homology. We define $\Der(U)$ similarly. These are all stable $\infty$-categories, with homotopy categories $h\Der(X)$ being the more traditional triangulated derived category.  
+
+Letting $i\:U\to X$ be the inclusion we get a functor $i^*\: \Der(X)\to \Der(U)$ by pulling back along $i$. This has a fully faithful right adjoint $i_*\: \Der(U)\to \Der(X)$, which itself has a further right adjoint $i^!\: \Der(X)\to \Der(U)$. The kernels of $i^*$ and $i^!$ determine two equivalent subcategories of $\Der(X)$, the former of which is the full subcategory $\Der_Z(X)\subseteq \Der(X)$ consisting of complexes with homology supported on $Z$. The fully faithful functor $j_!\: \Der_Z(X)\to \Der(X)$ has a colimit preserving right adjoint $j^!$. The kernel of $i^!$ is identified with the full subcategory of $\Der(X)$ with homology supported on the formal completion of $X$ along $Z$, which we denote $\Der(X)^\wedge_Z$. The fully faithful inclusion $j_*\:\Der(X)^\wedge_Z \to \Der(X)$ has a left adjoint $j^*$. 
+
+As mentioned these two categories are equivalent, and the equivalence is given by the composite $j^* j_!$ with inverse $j^! j_*$. In fact we get a stable recollement
+\begin{center}
+    \begin{tikzcd}
+        \Der_Z(X) 
+        \arrow[rd, yshift=2pt, xshift=1pt, "j_!"] 
+        \arrow[dd, "\simeq"] 
+        && \\
+        
+        &\Der(X) 
+        \arrow[lu, yshift=-2pt, xshift=-1pt, "j^!"] 
+        \arrow[ld, yshift=2pt, xshift=-1pt, "j^*", swap] 
+        \arrow[r, yshift=5pt, bend left, "i^*"] 
+        \arrow[r, yshift=-5pt, bend right, "i^!"] 
+        &\Der(U) \arrow[l, "i_*", swap] \\
+        
+        \Der(X)^\wedge_Z \arrow[ru, yshift=-2pt, xshift=1pt, "j_*", swap]  
+        &&                  
+    \end{tikzcd}
+\end{center}
+
+
+This equivalence does not on the surface have anything to do with comodules or contramodules, so let us fix this. For simplicity we assume that $X = \Spec(\Z)$, such that $\Der(X)\simeq \Der(\Z)$. Any prime $p$ determines a closed subscheme $P$ of $X$. With this setup we can identify $\Der_P(X) \simeq \Der(\Comod_{\Z/p^\infty})$ and $\Der(X)^\wedge_Z\simeq \Der(\Contra_{\Z/p^\infty})$, where $\Z/p^\infty$ is the $p$-Prüfer coalgebra of $\Z$. It is the Pontryagin dual of the $p$-adic completion of $\Z$, often denoted $\Z_p$. 
+
+\begin{introrm}
+    There is a more familiar description of $\Comod_{\Z/p^\infty}$ as the $p$-power torsion objects in $\mathrm{Ab}$ and $\Contra_{\Z/p^\infty}$ as the $L$-complete objects in $\mathrm{Ab}$. The above then reduces to the derived version of Grothendieck local duality by Dwyer--Greenlees, showing that this is a certain version of Positselski duality. In \cite[2.2(1), 2.2(3)]{positselski_2017_abelian} Positselski proves that the derived complete modules also correspond to a suitably defined version of contramodules over an adic ring. For the above example this is precicely the $p$-adic integers $\Z_p$. The comodules over $\Z/p^\infty$ then correspond to discrete $\Z_p$-modules, see \cite[Sec. 1.9, Sec. 1.10]{positselski_2022_contramodules}. 
+\end{introrm}
+
+
+The above motivates the classical co/contra correspondence, so let us now see how we wish to abstract this.  
+
+As $i^*$ is a symmetric monoidal localization the category $\Der_Z(X)$ is a localizing ideal. By \cite[6.8]{rouquier_2008} there is a compact object $F\in \Der(X)$ with homology supported on $Z$ such that $F$ generates $\Der_Z(X)$ under colimits. Now, as $\Der_Z(X)$ is a compactly generated localizing ideal of a compactly generated symmetric monoidal stable $\infty$-category, the right adjoint $j^*\: \Der(X)\to \Der_Z(X)$ is smashing, hence given as $j_* j^*(\1)\otimes_{\Der(X)} (-)$, where $\1$ denotes the unit in $\Der(X)$. In $\Der(X)$ the object $j_* j^* (\1)$ is the fiber of the unit map $\1\to i_* i^* (\1)$. In fact, $i_* i^* (\1)$ is an idempotent $\E_\infty$-algebra in $\Der(X)$, hence the fiber of the unit map, i.e. $j_* j^*(\1)$, is an idempotent $\E_\infty$-coalgebra. 
+
+Using a dual version of Barr--Beck monadicity, see \cref{ch3:ssec:dual-barr-beck}, one can prove that 
+\[\Der_Z(X)\simeq \Comod_{j_* j^* (\1)}(\Der(X)).\] 
+Similarly, there is an equivalence 
+\[\Der(X)^\wedge_Z \simeq \Contra_{j_* j^* (\1)}(\Der(X)),\]
+which, put together gives us an instance of Positselski duality for stable $\infty$-categories:
+\[\Comod_{j_* j^* (\1)}(\Der(X)) \simeq \Contra_{j_* j^* (\1)}(\Der(X)).\]
+This is a special case of our second main theorem, \cref{ch3:introthm:B}, which is an application of the Positselski duality for $\E_\infty$-coalgebras  set up in \cref{ch3:introthm:A}. 
+ 
+
+\subsection*{Overview of results}
+
+As mentioned, the main goal of this paper is to introduce the notion of comodules and contramodules in $\infty$-categories. Our main result is the following. 
+
+\begin{introthm}[{\cref{ch3:thm:Positselski-duality-idempotent}}]
+    \label{ch3:introthm:A}
+    Let $\C$ be a presentably symmetric monoidal $\infty$-category. For any idempotent cocommutative coalgebra $C$, there are mutually inverse equivalences
+    \begin{center}
+        \begin{tikzcd}
+            \Comod_C(\C) \arrow[r, yshift=2pt] & \Contra_C(\C) \arrow[l, yshift=-2pt]
+        \end{tikzcd}
+    \end{center}
+    given by the free contramodule and cofree comodule functor respectively. 
+\end{introthm}
+
+Our main application of this is to give an alternative perspective on local duality, in the sense of \cite{hovey-palmiery-strickland_97} and \cite{barthel-heard-valenzuela_2018}. 
+
+\begin{introthm}[{\cref{ch3:thm:local-duality-co-contra}}]
+    \label{ch3:introthm:B}
+    Let $(\C, \K)$ be a pair consisting of a rigidly compactly generated symmetric monoidal stable $\infty$-category $(\C, \otimes, \1)$ and a set of compact objects $\K\subseteq \C$. Let $\Gamma$ be the right adjoint to the fully faithful inclusion of the localizing tensor ideal generated by $\K$, i.e. $i\:\C^{\K-tors}:= \Loc_\C^\otimes (\K)\hookrightarrow \C$. Then Positselski duality for the $\E_\infty$-coalgebra $i\Gamma \1$, recovers the local duality equivalence $\C^{\K-tors} \simeq \C^{\K-comp}$. 
+\end{introthm}
+
+As an example of why the two theorems above might be interesting, we have the following descriptions of the categories $\Sp_{K(n)}$ and $\Sp_{T(n)}$ in chromatic homotopy theory. 
+
+\begin{introcor}
+    There are symmetric monoidal equivalences $\Sp_{K(n)}\simeq \Contra_{M_n\S}(\Sp_n)$ and $\Sp_{T(n)}\simeq \Contra_{M_n^f \S}(\Sp_n^f)$. 
+\end{introcor}
+
+
+
+% \subsection*{Conventions}
+
+% We freely use the notion of $\infty$-categories, as developed by Lurie in \cite{lurie_09} and \cite{Lurie_HA}. Unless otherwise stated, all coalgebras (resp. algebras) will be fully coherently cocommutative (resp. commutative).
+
+
+\subsection*{Acknowledgements and personal remarks}
+
+The contents of this paper go back to one of the first ideas I had at the beginning of my PhD. I had my two favorite mathematical hammers --- local duality and the monoidal Barr--Beck theorem --- and was trying to see if these were really one and the same tool. Local duality consists of three parts: local objects, torsion objects and complete objects. The core idea came from the fact that the local objects are modules over an idempotent algebra, and I thus wanted a similar description of the other two parts. Drew Heard's guidance led me to a dual monoidal Barr--Beck result, checking off the torsion part. I got the first hints of the last piece after an email correspondence with Marius Nielsen, where we discussed a local duality type statement for mapping spectra. The solution clicked into place during a research visit to Aarhus University. During my stay Sergey Arkhipov gave two talks on contramodules, for completely unrelated reasons, and I immediately knew this was the last piece of the puzzle. Greg Stevenson taught me some additional details, solidifying my ideas, which led me to conjecture one of the main results of the present paper during my talk in their seminar. The crowd nodded in approval, thus, being satisfied I knew the answer, I naturally spent almost two years not writing it up. 
+
+I want to thank all of the people mentioned above for their insights and pathfinding skills, without which this project would still have been a rather simple-minded idea in the optimistic brain of a young PhD student. 

@@ -1,0 +1,83 @@
+\documentclass[12pt, b5paper]{book}
+\usepackage{article}
+\addbibresource{references.bib}
+\author{Torgeir Aamb\o}
+\title{Template}
+\date{}
+
+\begin{document}
+\color{myblack}
+%\maketitle 
+
+% Information section
+\frontmatter
+
+\input{tex/0-Information/00-titlepage.tex}
+\input{tex/0-Information/01-formalities.tex}
+\input{tex/0-Information/02-abstract.tex}
+\input{tex/0-Information/03-information.tex}
+\input{tex/0-Information/04-acknowledgements.tex}
+
+\newpage\vspace*{-2.3cm}
+{\hypersetup{linkcolor=myblack}
+\tableofcontents}
+
+\mainmatter
+
+% Introduction
+\input{tex/1-Introduction/chapter1.tex}
+\input{tex/1-Introduction/10-overview.tex}\newpage
+\input{tex/1-Introduction/11-central.tex}\newpage
+\input{tex/1-Introduction/12-summary-algebraicity.tex}
+\input{tex/1-Introduction/13-summary-positselski.tex}
+\input{tex/1-Introduction/14-summary-classification.tex}
+
+
+% Algebraicity of monochromatic homotopy theory
+\input{tex/2-Algebraicity/chapter2.tex}
+\input{tex/2-Algebraicity/20-abstract.tex}
+\input{tex/2-Algebraicity/21-introduction.tex}
+\input{tex/2-Algebraicity/22-setup.tex}
+\input{tex/2-Algebraicity/23-algebraic-models.tex}
+\input{tex/2-Algebraicity/24-algebraicity.tex}
+\input{tex/2-Algebraicity/25-barr-beck.tex}
+
+
+% Positselski duality in stable categories
+\input{tex/3-Positselski/chapter3.tex}
+\input{tex/3-Positselski/30-abstract.tex}
+\input{tex/3-Positselski/31-introduction.tex}
+\input{tex/3-Positselski/32-setup.tex}
+\input{tex/3-Positselski/33-idempotent.tex}
+\input{tex/3-Positselski/35-examples.tex}
+\input{tex/3-Positselski/36-addendum-proalgebras.tex}
+
+
+% Classification of localizing subcategories along t-structures
+\input{tex/4-Classification/chapter4.tex}
+\input{tex/4-Classification/40-abstract.tex}
+\input{tex/4-Classification/41-introduction.tex}
+\input{tex/4-Classification/42-setup.tex}
+\input{tex/4-Classification/43-stabilizing.tex}
+\input{tex/4-Classification/44-correspondence.tex}
+\input{tex/4-Classification/45-addendum-synthetic.tex}
+
+
+% Balmer didn't need nerves of steel
+%\input{tex/5-Nerves/chapter5.tex}
+%\input{tex/5-Nerves/50-abstract.tex}
+%\input{tex/5-Nerves/51-introduction.tex}
+%\input{tex/5-Nerves/52-homological-tt-spectrum.tex}
+%\input{tex/5-Nerves/53-stable-comparison-map.tex}
+%\input{tex/5-Nerves/54-classification_of_ideals.tex}
+
+
+
+\printbibliography{}
+\printindex
+
+
+%\textbf{Torgeir Aamb\o:} Department of Mathematical Sciences, Norwegian University of Science and Technology, Trondheim \\
+%\textbf{Email address:} torgeir.aambo@ntnu.no \\
+%\textbf{Website:} \href{https://folk.ntnu.no/torgeaam/ }{https://folk.ntnu.no/torgeaam/}  
+\end{document}

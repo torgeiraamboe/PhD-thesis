@@ -1,0 +1,556 @@
+\ProvidesPackage{article}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+%\RequirePackage{times}
+\RequirePackage{geometry}
+\RequirePackage[%
+				backend=biber,%
+				url=false,%
+				isbn=false,%
+				doi=false,%
+				maxnames=4,%
+				style=alphabetic,%
+				sorting=nyt,%
+				backref=true%
+				]{biblatex}
+\RequirePackage[english]{babel}
+\RequirePackage{microtype}
+\RequirePackage{pdfpages}
+\RequirePackage{bbm, dsfont}
+\RequirePackage{tocloft}
+%\RequirePackage{bookmark}
+%\RequirePackage{mathabx}
+\RequirePackage{imakeidx}
+%\RequirePackage{mathtools} %For harpoons 
+\RequirePackage{mathrsfs}
+\RequirePackage{titling}
+\RequirePackage{csquotes}
+\RequirePackage{%
+				amsmath,%
+				amssymb,% 
+				amsthm,% 
+				amsfonts%
+				}
+\setlength{\marginparwidth }{2.6cm}
+\setlength{\headheight}{14.5pt}
+\RequirePackage{todonotes, verbatim}
+%\RequirePackage{faktor}
+\RequirePackage{fancyhdr}
+\RequirePackage{euscript}
+\RequirePackage{parskip}
+\RequirePackage{pgfplots}
+%\RequirePackage{adjustbox}
+\RequirePackage{tikz-cd}
+\usetikzlibrary{decorations.pathmorphing}
+\RequirePackage{xcolor}
+\RequirePackage{multicol}
+
+\RequirePackage{hyperref}
+\RequirePackage[capitalize, nameinlink]{cleveref}
+
+\setcounter{secnumdepth}{3}
+\cftsetindents{section}{2em}{2em}
+\cftsetindents{subsection}{4em}{3em}
+\cftsetindents{subsubsection}{6em}{3em}
+
+%\setlength{\parindent}{3em}
+%\setlength{\parskip}{5pt}
+
+\graphicspath{{./images/}}
+\pgfplotsset{compat=1.15}
+
+
+\makeindex
+
+
+
+\definecolor{mycolor}{RGB}{190,80,0}
+\definecolor{myblack}{RGB}{20, 20, 20}
+
+\DeclareFieldFormat{postnote}{#1} %Removes p. in citations
+
+\newcommand*\backref[1]{\ifx#1\relax \else (Cited on #1) \fi}
+\DefineBibliographyStrings{english}{%
+  backrefpage = {Page},% originally "cited on page"
+  backrefpages = {Pages},% originally "cited on pages"
+}
+
+
+\hypersetup{
+colorlinks=true,
+citecolor=teal,
+linkcolor=teal,
+urlcolor=myblack
+}
+\newcommand{\defn}{\color{teal}}
+
+%\newcommand*\backref[1]{\ifx#1\relax \else (Cited on #1) \fi}
+
+
+\geometry{
+    top=30mm, 
+    bottom=30mm, 
+    left=30mm, 
+    right=30mm
+}
+
+%% code from mathabx.sty and mathabx.dcl
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
+
+\def\cs#1{\texttt{\char`\\#1}}
+
+
+\newcommand{\crefme}{{\color{red}CREF}}
+\newcommand{\citeme}{{\color{red}{CITE}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{introthm}{Theorem}
+\renewcommand*{\theintrothm}{\Alph{introthm}}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{warning}[theorem]{Warning}
+%\theoremstyle{remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{exremark}{Meta remark}
+\newtheorem*{introrm}{Remark}
+\newtheorem*{introcor}{Corollary}
+\newtheorem{digression}[theorem]{Digression}
+\newtheorem*{abstract}{Abstract}
+\newtheorem{addendum}{Addendum}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Symbols
+\renewcommand*{\le}{\leqslant}
+\renewcommand*{\leq}{\leqslant}
+\renewcommand*{\ge}{\geqslant}
+\renewcommand*{\geq}{\geqslant}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\:}{\colon}
+\renewcommand{\to}{\longrightarrow}
+\newcommand{\adjoint}{\xleftrightharpoons{\rule{1cm}{0pt}}}
+\renewcommand{\a}{{\k a}}
+\newcommand{\n}{{\' n}}
+\newcommand{\hotimes}{\widehat{\otimes}}
+\renewcommand{\mod}{~\mathrm{mod}~}
+\renewcommand{\empty}{\varnothing}
+\newcommand{\heart}{\heartsuit}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Id}{\mathrm{Id}}
+\DeclareFontFamily{U}{dmjhira}{}
+\DeclareFontShape{U}{dmjhira}{m}{n}{ <-> dmjhira }{}
+\DeclareRobustCommand{\yo}{\text{\usefont{U}{dmjhira}{m}{n}\symbol{"48}}}
+
+% Sub- and superscripts
+\newcommand{\np}{_{n}}
+\newcommand{\EE}{_{E_*E}}
+\newcommand{\Int}{^{I_n-tors}}
+\newcommand{\Inc}{^{I_n-comp}}
+\newcommand{\cn}{_{\geq 0}}
+\newcommand{\ccn}{_{\leq 0}}
+\newcommand{\fp}{^{\mathrm{fp}}}
+\newcommand{\fr}{^{\mathrm{fr}}}
+\newcommand{\op}{^{\mathrm{op}}}
+\newcommand{\fpop}{^{\mathrm{fp}, \mathrm{op}}}
+\newcommand{\geqz}{_{\hspace{-1pt}\scriptscriptstyle\geq 0}}
+\newcommand{\leqz}{_{\hspace{-1pt}\scriptscriptstyle\leq 0}}
+\newcommand{\geqn}{_{\hspace{-1pt}\scriptscriptstyle\geq n}}
+\newcommand{\leqn}{_{\hspace{-1pt}\scriptscriptstyle\leq n}}
+\newcommand{\gr}{^{\mathrm{gr}}}
+
+% Letters
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\C}{\EuScript{C}}
+\newcommand{\D}{\EuScript{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\A}{\EuScript{A}}
+\newcommand{\B}{\EuScript{B}}
+\newcommand{\K}{\mathcal{K}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\T}{\mathcal{T}}
+\renewcommand{\O}{\mathcal{O}}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\Co}{\EuScript{C}^\omega}
+\newcommand{\Do}{\EuScript{D}^\omega}
+\newcommand{\oB}{\overline{B}}
+
+% Operators
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\iHom}{\underline{Hom}}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\map}{map}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Alg}{Alg}
+\DeclareMathOperator{\CAlg}{CAlg}
+\DeclareMathOperator{\cCAlg}{cCAlg}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\cd}{cdim}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\Lim}{lim}
+\DeclareMathOperator{\Fil}{Fil}
+\DeclareMathOperator{\Loc}{Loc}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\fib}{fib}
+\DeclareMathOperator{\HTT}{HTT}
+\DeclareMathOperator{\Cofib}{Cofib}
+\DeclareMathOperator{\QCoh}{QCoh}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spc}{Spc}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\Eq}{Eq}
+\DeclareMathOperator{\Pro}{Pro}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\SW}{SW}
+
+% Categorical
+\newcommand{\PrLs}{\ensuremath{\mathrm{Pr}_{st}^L}}
+\newcommand{\PrL}{\ensuremath{\mathrm{Pr}^L}}
+\newcommand{\Ch}{\mathrm{Ch}}
+\newcommand{\Chp}{\mathrm{Ch}^{per}}
+\newcommand{\Der}{\mathrm{D}}
+\newcommand{\Dper}{\Der^{per}}
+\newcommand{\Stable}{\mathrm{Stable}}
+\newcommand{\Ab}{\mathrm{Ab}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\Groth}{\mathrm{Groth}_\infty}
+\newcommand{\Cat}{\mathrm{Cat}}
+
+% Spectra and spaces
+\newcommand{\Sp}{\mathrm{Sp}}
+\renewcommand{\sp}{\mathrm{Sp}}
+\newcommand{\An}{\mathrm{An}}
+\newcommand{\Spaces}{\EuScript{S}}
+\newcommand{\Kn}{K(n)}
+\newcommand{\Tn}{T(n)}
+\newcommand{\Kpn}{K_p(n)}
+\newcommand{\En}{\mathrm{E}_n}
+\newcommand{\SpK}{\Sp_{\Kn}}
+\newcommand{\SpKn}{\Sp_{\Kn}}
+\newcommand{\SpKpn}{\Sp_{\Kpn}}
+\newcommand{\Spn}{\Sp\np}
+\newcommand{\SpE}{\Sp_E}
+\newcommand{\Mn}{\M\np}
+\newcommand{\BP}{\mathrm{BP}}
+
+% Sheaves 
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\wSh}{\widehat{\mathrm{S}}\mathrm{h}}
+\newcommand{\hSh}{\wSh}
+\newcommand{\ShSp}{\Sh_\Sigma^{\Sp}}
+\newcommand{\ShAn}{\Sh_\Sigma^{\An}}
+\newcommand{\ShAb}{\Sh_\Sigma^{\Ab}}
+\newcommand{\ShSet}{\Sh_\Sigma^{\Set}}
+\newcommand{\hShSp}{\wSh_\Sigma^{\Sp}}
+\newcommand{\hShAn}{\wSh_\Sigma^{\An}}
+\newcommand{\wShSp}{\hSh}
+
+
+
+% Synthetic spectra
+\newcommand{\Syn}{\mathrm{Syn}}
+\newcommand{\SynE}{\Syn_{E}}
+\newcommand{\SynR}{\Syn_{R}}
+\newcommand{\Synn}{\Syn_{n}}
+\newcommand{\hSyn}{\widehat{\mathrm{S}}\mathrm{yn}}
+\newcommand{\hSynE}{\hSyn_{E}}
+
+% Perfect derived
+\newcommand{\DPS}{\Der_{H}^{\omega}(\C)}
+\newcommand{\DPSGr}{\Der_{H}^{\omega, \mathrm{Gr}}(\C)}
+\newcommand{\DPSGrE}{\Der_{E}^{\omega, \mathrm{Gr}}(\Sp)}
+\newcommand{\DPSGrn}{\Der_{E}^{\omega, \mathrm{Gr}}(\Spn)}
+\newcommand{\DPSE}{\Der_{E}^{\omega}(\Sp)}
+\newcommand{\DPSn}{\Der_{E}^{\omega}(\Spn)}
+\newcommand{\DPSnInt}{\Der_{E}^{\omega}(\Spn\Int)}
+\newcommand{\DPSMn}{\Der_{E}^{\omega}(\Mn)}
+
+
+
+
+% Modules
+\newcommand{\Mod}{\mathrm{Mod}}
+\newcommand{\LMod}{\mathrm{LMod}}
+\newcommand{\ModE}{\Mod_{E}}
+\newcommand{\modE}{\Mod_{E_*}}
+\newcommand{\Modt}{\ModE\Int}
+\newcommand{\Modc}{\ModE\Inc}
+\newcommand{\modt}{\modE\Int}
+\newcommand{\Vect}{\mathrm{Vect}}
+
+
+% Comodules
+\newcommand{\Comod}{\mathrm{Comod}}
+\newcommand{\LComod}{\mathrm{LComod}}
+\newcommand{\Contra}{\mathrm{Contra}}
+\newcommand{\Cocontra}{\mathrm{Cocontra}}
+\newcommand{\comod}{\Comod}
+\newcommand{\Comodn}{\Comod_{n}}
+\newcommand{\ComodE}{\Comod\EE}
+\newcommand{\ComodR}{\Comod_{R_*R}}
+\newcommand{\Comodt}{\ComodE\Int}
+\newcommand{\Tors}{\mathrm{Tors}}
+\newcommand{\TorsE}{\mathrm{Tors}\EE\fp}
+\newcommand{\Fr}{\mathrm{Fr}}
+\newcommand{\Frn}{\Fr\np}
+\newcommand{\Frt}{\Fr\np\Int}
+\newcommand{\Frc}{\Fr\np\Inc}
+\newcommand{\ComodC}{\Comod_C}
+\newcommand{\ContraC}{\Contra_C}
+
+
+% Freyd envelopes
+\newcommand{\FE}{\mathrm{P}_\Sigma^\Ab(\Co)}
+\newcommand{\FEo}{\mathrm{P}_\Sigma^\Ab(\Co)\fp}
+\newcommand{\sFE}{\mathrm{P}_\Sigma^\Sp(\Co)}
+\newcommand{\pFE}{\mathrm{P}_\Sigma^\EuScript{S}(\Co)}
+\newcommand{\pFEo}{\mathrm{P}_\Sigma^\EuScript{S}(\Co)^\omega}
+\newcommand{\sFEo}{\mathrm{P}_\Sigma^\Sp(\Co)^\omega}
+\newcommand{\FEFE}{\mathrm{P}_\Sigma^\Ab(\sFEo)}
+
+% tt-spectra
+\newcommand{\Spch}{\Spc^\mathrm{h}\hspace{-1pt}}
+\newcommand{\Spcc}{\Spc^{\geq 0}\hspace{-1pt}}
+\newcommand{\Spcp}{\Spc^\mathrm{p}\hspace{-1pt}}
+\newcommand{\SpcH}{\Spc^{\mathrm{H}}\hspace{-1pt}}
+\newcommand{\Supph}{\Supp^\mathrm{h}\hspace{-1pt}}
+\newcommand{\Suppp}{\Supp^\mathrm{p}\hspace{-1pt}}
+
+
+
+
+
+\def\pistable{\left\{
+\begin{matrix}
+\pi\text{-stable localizing}\\
+\text{subcategories of }\C
+\end{matrix}
+\right\}}
+
+\def\pistableD{\left\{
+\begin{matrix}
+\pi\text{-stable localizing}\\
+\text{subcategories of }\D
+\end{matrix}
+\right\}}
+
+\def\pistablethick{\left\{
+\begin{matrix}
+\pi\text{-stable thick}\\
+\text{subcategories of }\C
+\end{matrix}
+\right\}}
+
+\def\tcompatible{\left\{
+\begin{matrix}
+t\text{-stable localizing}\\
+\text{subcategories of }\C
+\end{matrix}
+\right\}}
+
+\def\piexact{\left\{
+\begin{matrix}
+\pi\text{-exact localizing}\\
+\text{subcategories of }\C
+\end{matrix}
+\right\}}
+
+\def\piexactD{\left\{
+\begin{matrix}
+\pi\text{-exact localizing}\\
+\text{subcategories of }\D
+\end{matrix}
+\right\}}
+
+\def\texact{\left\{
+\begin{matrix}
+t\text{-exact localizing}\\
+\text{subcategories of }\C
+\end{matrix}
+\right\}}
+
+\def\separating{\left\{
+\begin{matrix}
+\text{separating localizing}\\
+\text{subcategories of }\C\geqz
+\end{matrix}
+\right\}}
+
+\def\separatingD{\left\{
+\begin{matrix}
+\text{separating localizing}\\
+\text{subcategories of }\D\geqz
+\end{matrix}
+\right\}}
+
+\def\prlocalizing{\left\{
+\begin{matrix}
+\text{localizing}\\
+\text{subcategories of }\C\geqz
+\end{matrix}
+\right\}}
+
+\def\weaklocalizing{\left\{
+\begin{matrix}
+\text{weak localizing}\\
+\text{subcategories of }\C^\heart
+\end{matrix}
+\right\}}
+
+\def\weakserre{\left\{
+\begin{matrix}
+\text{weak Serre}\\
+\text{subcategories of }\C^\heart
+\end{matrix}
+\right\}}
+
+\def\ablocalizing{\left\{
+\begin{matrix}
+\text{localizing}\\
+\text{subcategories of }\C^\heart
+\end{matrix}
+\right\}}
+
+\def\QCohlocalizing{\left\{
+\begin{matrix}
+\text{localizing subcategories}\\
+\text{of }\QCoh(X)
+\end{matrix}
+\right\}}
+
+\def\QCohlocalizingthree{\left\{
+\begin{matrix}
+\text{localizing}\\
+\text{subcategories}\\
+\text{of }\QCoh(X)
+\end{matrix}
+\right\}}
+
+\def\QCohweak{\left\{
+\begin{matrix}
+\text{weak localizing}\\
+\text{subcategories}\\
+\text{of }\QCoh(X)
+\end{matrix}
+\right\}}
+
+\def\DXlocalizing{\left\{
+\begin{matrix}
+\pi\text{-exact localizing}\\
+\text{subcategories of }\Der_{qc}(X)
+\end{matrix}
+\right\}}
+
+\def\DXstable{\left\{
+\begin{matrix}
+\pi\text{-stable localizing}\\
+\text{subcategories of }\Der_{qc}(X)
+\end{matrix}
+\right\}}
+
+\def\subsetsX{\left\{
+\begin{matrix}
+\text{specialization closed}\\
+\text{subsets of }X
+\end{matrix}
+\right\}}
+
+
+\def\coherentX{\color{lightgray}\left\{
+\begin{matrix}
+\text{coherent subsets}\\
+\text{ of }X
+\end{matrix}
+\right\}}
+
+\def\DXsmashing{\left\{
+\begin{matrix}
+\text{smashing subcategories}\\
+\text{of }\Der_{qc}(X)
+\end{matrix}
+\right\}}
+
+% Ideals
+
+\def\heartideals{\left\{
+\begin{matrix}
+\text{localizing}\\
+\otimes\text{-ideals of }\D^\heart
+\end{matrix}
+\right\}}
+
+\def\piexactideals{\left\{
+\begin{matrix}
+\pi\text{-exact localizing}\\
+\otimes\text{-ideals of }\D
+\end{matrix}
+\right\}}
+
+\def\separatingideals{\left\{
+\begin{matrix}
+\text{separating localizing}\\
+\otimes\text{-ideals of }\D\geqz
+\end{matrix}
+\right\}}
+
+
+\pagestyle{plain}
+
+%\pagestyle{fancy}
+% \fancyhf{}
+%\setlength{\headheight}{28pt}
+
+%\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\textit{\nouppercase{\leftmark}}}{\textit{\nouppercase{\rightmark}}}
+%\cfoot{\thepage}
+
+
+
+%%% Tikz settings
+
+\tikzset{
+%->,  
+%>=stealth, 
+node distance=2.3cm, 
+every state/.style={thick, fill=gray!10},  
+auto,
+snake it/.style={decorate, decoration=snake}
+}
+\tikzstyle{every path}=[line width=0.8pt]

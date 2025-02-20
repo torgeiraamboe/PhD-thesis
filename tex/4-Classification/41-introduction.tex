@@ -1,0 +1,74 @@
+
+
+\section{Introduction}
+
+The concept of a $t$-structure on a triangulated category was introduced in \cite{beilinson-bernstein-deligne_1983}, and in a way axiomatizes the concept of taking the homology of a chain complex in the derived category of a ring. Most interesting triangulated categories arise as the homotopy category of a stable $\infty$-category, and the concept of a $t$-structure lifts to this setting. Having a $t$-structure allows us to naturally compare features of a stable $\infty$-category $\C$ to features of an abelian category $\C^\heart$, called the heart of the given $t$-structure. 
+
+In order to understand the internal structure of a stable $\infty$-category, is its important to understand its \emph{localizing subcategories}. A full subcategory is called localizing if it is a stable full subcategory closed under colimits. The goal of this paper is to classify the localizing subcategories of $\C$ that interact well with $t$-structures. These are the localizing subcategories $\L\subseteq \C$ that inherit a $t$-structure, and you can check if an object $X$ is in $\L$ by checking whether $\pi_n^\heart X\in \L^\heart$. We call these the \emph{$\pi$-stable localizing subcategories} --- see \cref{ch4:def:pi-stable-localizing-subcategory}. 
+
+We want to compare these localizing subcategories of $\C$ to subcategories of $\C^\heart$. The abelian analog of localizing subcategories of a stable $\infty$-category, are the \emph{weak Serre subcategories} closed under coproducts. We call these the \emph{weak localizing subcategories}. Our first main result is the following classification of $\pi$-stable localizing subcategories in $\C$ via the heart construction. This generalizes a similar correspondence due to Takahashi (\cite{takahashi_2009}) for commutative noetherian rings, see \cref{ch4:cor:takahashi-weak-localizing}. 
+
+\begin{introthm}[\cref{ch4:thm:premain}]
+    \label{ch4:thm:A}
+    Let $\C$ be a stable $\infty$-category with a $t$-structure. If the $t$-structure is right complete and compatible with filtered colimits, then the map $\L\longmapsto \L^\heart$ gives a one-to-one correspondence between $\pi$-stable localizing subcategories of $\C$ and weak localizing subcategories in $\C^\heart$.
+\end{introthm}
+
+The above theorem also holds when we exclude the existence of coproducts, giving a one-to-one correspondence between $\pi$-stable thick subcategories of $\C$ and weak Serre subcategories of $\C^\heart$. This generalizes the similar result of Zhang--Cai (\cite{zhang-cai_2017}) to the setting of unbounded $t$-structures, see \cref{ch4:prop:classification-weak-serre} and \cref{ch4:cor:classification-weak-serre-bounded}. 
+
+We also want a way to study the analog of (non-weak) Serre subcategories of $\C^\heart$ closed under coproducts --- called the \emph{localizing subcategories} of $\C^\heart$ --- in the stable $\infty$-category $\C$. In order to do this we use the bridge between stable $\infty$-categories with a $t$-structure and prestable $\infty$-categories, as developed mainly by Lurie in \cite[App. C]{lurie_SAG}. A prestable $\infty$-category acts as the connected part of the $t$-structure, denoted $\C\geqz$, and they allow us to study $t$-structures on $\C$ indirectly, without carrying around extra data. 
+
+Lurie introduced the notion of localizing subcategories of the prestable $\infty$-category $\C\geqz$, which more closely mimics the construction of localizing subcategories of abelian categories. The analog of $\pi$-stable localizing subcategory in this situation are called \emph{separating localizing subcategories} by Lurie. Using the heart construction for prestable $\infty$-categories, Lurie classified the separating localizing subcategories of $\C\geqz$ in \cite[C.5.2.7]{lurie_SAG}, by proving that there is a one-to-one correspondence
+\[\separating \simeq \ablocalizing.\]
+Our second main theorem provides an extension of this correspondence to the stable $\infty$-category $\C$, allowing us to strengthen \cref{ch4:thm:A} to non-weak localizing sucategories. This interacts well with existing classifications of localizing subcategories in modules over noetherian rings and quasicoherent sheaves on noetherian schemes. 
+
+% In order to avoid confusion we follow \cite{hovey-strickland_2005a} and \cite{barthel-heard_2018} in using the name \emph{hereditary torsion theories} instead of localizing subcategories of the heart $\C^\heart$. These two notions are equivalent in Grothendieck abelian categories, hence a natural alternative. 
+
+\begin{introthm}[{\cref{ch4:thm:main}}]
+    \label{ch4:thm:B}
+    Let $\C$ be a stable category with a $t$-structure. If the $t$-structure is right complete and compatible with filtered colimits, then the map $\L\longmapsto \L^\heart$ gives a one-to-one correspondence between localizing subcategories of $\C^\heart$, and $\pi$-stable localizing subcategories of $\C$ that are kernels of a $t$-exact localization.
+\end{introthm}
+
+Note that any stable $\infty$-category is prestable, hence the above result might at first glance seem to follow trivially from Luries's classification. But, any separating localizing subcategory of a stable $\infty$-category $\C$, viewed as a prestable one, is the whole category $\C$ by \cite[C.1.2.14, C.5.2.4]{lurie_SAG}. This means that the stable situation needs its own separate treatment, hence the existence of the current paper. 
+
+The results of the paper can be summarized in the following diagram, showcasing the bijections ($\simeq$) and the inclusions ($\subseteq$) between the different types of subcategories. 
+
+\begin{center}
+    \begin{tikzcd}
+        \tcompatible 
+        \arrow[rrd, "(-)^\heart"]
+        &&\\
+        \pistable 
+        \arrow[rr, "\simeq"] 
+        \arrow[u, hook, "\subseteq", swap] 
+        && 
+        \weaklocalizing  
+        \\
+        \piexact 
+        \arrow[r, "\simeq"] 
+        \arrow[d, hook, "\subseteq"]
+        \arrow[u, hook, "\subseteq", swap] 
+        & 
+        \separating 
+        \arrow[r, "\simeq"]
+        \arrow[d, hook, "\subseteq"]
+        & 
+        \ablocalizing
+        \arrow[u, hook, "\subseteq", swap]
+        \\
+        \texact 
+        \arrow[r, "(-)\geqz"]
+        & 
+        \prlocalizing 
+        \arrow[ru, "(-)\leqz", swap] 
+        &                                
+        \end{tikzcd}
+\end{center}
+
+
+
+
+\textbf{Linear overview:} We start \cref{ch4:sec:prestable-and-stable-categories} with some recollections on $t$-structures, prestable $\infty$-categories, and their interactions, before we introduce the notion of localizing subcategories in \cref{ch4:ssec:localizing-subcategories}. We then study some further interactions between these, which we use to prove \cref{ch4:thm:A} in \cref{ch4:ssec:classificartion-weak-localizing} and \cref{ch4:thm:B} in \cref{ch4:ssec:classificartion-localizing}. We finish the paper by looking at some consequences and applications of our results. 
+
+\textbf{Conventions:} We will work in the setting of $\infty$-categories, as developed by Lurie in \cite{lurie_09} and \cite{Lurie_HA}. We will restrict our attention to presentable stable $\infty$-categories, which we will just call \emph{stable categories}. Given a stable category $\C$ with a nice $t$-structure, its associated prestable category will be denoted $\C\geqz$ and its heart by $\C^\heart$. We assume all $t$-structures to be accessible.
+
+\textbf{Acknowledgements:} We wish to thank Drew Heard and Marius Nielsen for helpful conversations. This work was partially finished during the authors visit to the GeoTop center at the University of Copenhagen, which we gratefully thank for their hospitality. This work was supported by grant number TMS2020TMT02 from the Trond Mohn Foundation.    
