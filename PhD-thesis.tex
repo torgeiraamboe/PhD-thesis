@@ -13,12 +13,12 @@
 \frontmatter
 
 \input{tex/0-Information/00-titlepage.tex}
-\input{tex/0-Information/01-formalities.tex}
-\input{tex/0-Information/02-abstract.tex}
-\input{tex/0-Information/03-information.tex}
-\input{tex/0-Information/04-acknowledgements.tex}
+\input{tex/0-Information/01-formalities.tex}\newpage
+\input{tex/0-Information/02-abstract.tex}\newpage
+\input{tex/0-Information/03-information.tex}\newpage
+\input{tex/0-Information/04-acknowledgements.tex}\newpage
 
-\newpage\vspace*{-2.3cm}
+\vspace*{-1.5cm}
 {\hypersetup{linkcolor=myblack}
 \tableofcontents}
 
@@ -26,7 +26,7 @@
 
 % Introduction
 \input{tex/1-Introduction/chapter1.tex}
-\input{tex/1-Introduction/10-overview.tex}\newpage
+\input{tex/1-Introduction/10-layperson.tex}\newpage
 \input{tex/1-Introduction/11-central.tex}\newpage
 \input{tex/1-Introduction/12-summary-algebraicity.tex}
 \input{tex/1-Introduction/13-summary-positselski.tex}
@@ -35,6 +35,8 @@
 
 % Algebraicity of monochromatic homotopy theory
 \input{tex/2-Algebraicity/chapter2.tex}
+\input{tex/2-Algebraicity/drawing.tex}
+\input{tex/2-Algebraicity/lemmarick.tex}\newpage
 \input{tex/2-Algebraicity/20-abstract.tex}
 \input{tex/2-Algebraicity/21-introduction.tex}
 \input{tex/2-Algebraicity/22-setup.tex}
@@ -45,6 +47,8 @@
 
 % Positselski duality in stable categories
 \input{tex/3-Positselski/chapter3.tex}
+\input{tex/3-Positselski/drawing.tex}
+\input{tex/3-Positselski/lemmarick.tex}\newpage
 \input{tex/3-Positselski/30-abstract.tex}
 \input{tex/3-Positselski/31-introduction.tex}
 \input{tex/3-Positselski/32-setup.tex}
@@ -55,7 +59,9 @@
 
 % Classification of localizing subcategories along t-structures
 \input{tex/4-Classification/chapter4.tex}
-\input{tex/4-Classification/40-abstract.tex}
+\input{tex/4-Classification/drawing.tex}
+\input{tex/4-Classification/lemmarick.tex}\newpage
+\input{tex/4-Classification/40-abstract.tex}\newpage
 \input{tex/4-Classification/41-introduction.tex}
 \input{tex/4-Classification/42-setup.tex}
 \input{tex/4-Classification/43-stabilizing.tex}
@@ -74,7 +80,9 @@
 
 
 \printbibliography{}
+\addcontentsline{toc}{chapter}{Bibliography}
 \printindex
+\addcontentsline{toc}{chapter}{Index}
 
 
 %\textbf{Torgeir Aamb\o:} Department of Mathematical Sciences, Norwegian University of Science and Technology, Trondheim \\

@@ -49,6 +49,9 @@
 \RequirePackage{hyperref}
 \RequirePackage[capitalize, nameinlink]{cleveref}
 
+
+\setcounter{chapter}{-1}
+
 \setcounter{secnumdepth}{3}
 \cftsetindents{section}{2em}{2em}
 \cftsetindents{subsection}{4em}{3em}
@@ -176,6 +179,7 @@ urlcolor=myblack
 \newcommand{\fp}{^{\mathrm{fp}}}
 \newcommand{\fr}{^{\mathrm{fr}}}
 \newcommand{\op}{^{\mathrm{op}}}
+\newcommand{\dual}{^{\mathrm{dual}}}
 \newcommand{\fpop}{^{\mathrm{fp}, \mathrm{op}}}
 \newcommand{\geqz}{_{\hspace{-1pt}\scriptscriptstyle\geq 0}}
 \newcommand{\leqz}{_{\hspace{-1pt}\scriptscriptstyle\leq 0}}
@@ -240,6 +244,8 @@ urlcolor=myblack
 \DeclareMathOperator{\Pro}{Pro}
 \DeclareMathOperator{\Ind}{Ind}
 \DeclareMathOperator{\SW}{SW}
+\newcommand{\prolim}{``\!\lim\!"_{\hspace{-5pt} j}}
+\newcommand{\indcolim}{``\!\colim\!"_{\hspace{-5pt} j}}
 
 % Categorical
 \newcommand{\PrLs}{\ensuremath{\mathrm{Pr}_{st}^L}}
@@ -256,6 +262,7 @@ urlcolor=myblack
 
 % Spectra and spaces
 \newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\coSp}{\mathrm{coSp}}
 \renewcommand{\sp}{\mathrm{Sp}}
 \newcommand{\An}{\mathrm{An}}
 \newcommand{\Spaces}{\EuScript{S}}
