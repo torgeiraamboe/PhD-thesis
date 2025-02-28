@@ -6,8 +6,8 @@ We ended the last section by wishing for a way to construct a well behaved categ
 The category of contramodules over a topological ring $R$ is defined by Positselski to be the category of modules over a certain bracketing-opening monad on the category of sets, determined by $R$, see \cite{positselski_2022_contramodules}. However, in nice enough situations this can be compared to other descriptions, which more easily generalize to $\infty$-categories. 
 
 \begin{remark}
-    \label{ch3:rm:contra-as-op-pro-modules}
-    Let $R$ be the $I$-adic completion of a commutative noetherian ring. In this situation there is an equivalence between the category of contramodules over $R$ and $I$-complete $R$-modules in the sense of \cref{ch3:ssec:derived-completion}. Similarily, there is an equivalence between discrete $R$-modules and $I$-torsion $R$-modules, and a further equivalence between discrete $R$-modules and the opposite category of profinite $R$-modules via Pontryagin duality. To summarize we have  
+    \label{ch2:rm:contra-as-op-pro-modules}
+    Let $R$ be the $I$-adic completion of a commutative noetherian ring. In this situation there is an equivalence between the category of contramodules over $R$ and $I$-complete $R$-modules in the sense of \cref{ch2:ssec:derived-completion}. Similarily, there is an equivalence between discrete $R$-modules and $I$-torsion $R$-modules, and a further equivalence between discrete $R$-modules and the opposite category of profinite $R$-modules via Pontryagin duality. To summarize we have  
     \[\Contra_R \simeq \Mod_R^{I-comp} \not\simeq \Mod_R^{I-tors}\simeq \Pro\Mod_R\op\]
     where we have highlighted that the complete and torsion objects are not equivalent as abelian categories. However, by local duality this issue is fixed when passing to the associated derived categories, as described in the previous seection. Similarily, it is fixed by using ring spectra rather than discrete rings. This gives a heuristic defintion in the context of $\infty$-cayegories: contramodules over a ``topological algebra'' $R\in \CAlg(\C)$ is a ``profinite module over $R$'', and maps are reversed module morphisms.  
 \end{remark}
@@ -51,7 +51,7 @@ The right adjoint functor is rather opaque, but on dualizable coalgebras we have
 \end{remark}
 
 \begin{lemma}
-    \label{ch3:lm:sweedler-duality}
+    \label{ch2:lm:sweedler-duality}
     The duality functor $(-)^\vee = \iHom_\C(-,\1_\C)$ gives an equivalence 
     \[\cCAlg(\C)\op\simeq \CAlg(\Pro(\C\dual)),\]
     between cocommutative coalgebras and pro-dualizable algebras.
@@ -71,19 +71,19 @@ The right adjoint functor is rather opaque, but on dualizable coalgebras we have
 \end{proof}
 
 \begin{remark}
-    \label{ch3:rm:coalebra-in-Ind}
+    \label{ch2:rm:coalebra-in-Ind}
     Analyzing the definitions one can see that the $\C$-linear dual $(-)^\vee$ sends a coalgebra $C$ presented by an ind-system $\indcolim C_j$ to the algebra $C^\vee$ presented by the pro-tower $\prolim C_j^\vee$. The inverse to $(-)^\vee$ is given by applying $(-)^\vee$ pointwise to the dualizable objects in the pro-tower, and taking the limit in the opposite category, i.e. the colimit in $\C$. 
 \end{remark}
 
 The goal is to recover more global information about general objects in $\C$, not just algebras and coalgebras. In order to do this we utilize a duality between stabilization and costabilization of $\infty$-categories. 
 
 \begin{proposition}
-    \label{ch3:prop:comodules-and-promodules}
+    \label{ch2:prop:comodules-and-promodules}
     For any cocommutative coalgebra $C\in \cCAlg(\C)$ there is an equivalence 
     \[\Comod\op_C(\C)\simeq \Mod_{C^\vee}(\Pro(\C\dual)).\]  
 \end{proposition}
 \begin{proof}
-    The equivalence from \cref{ch3:lm:sweedler-duality} induces an equivalence of slice categories 
+    The equivalence from \cref{ch2:lm:sweedler-duality} induces an equivalence of slice categories 
     \[(\cCAlg(\C)\op)_{/C}\simeq \CAlg(\Pro(\C\dual))_{/C^\vee},\]
     see \cite[5.2.5.1]{lurie_09}. The slice category over $C$ of the opposite category is equivalent to the opposite category of the coslice category over $C$, giving 
     \[(\cCAlg(\C)\op)_{/C} \simeq \cCAlg(\C)\op_{C/}.\]
@@ -109,7 +109,7 @@ Let $X$ be any spectrum. By \cite[7.10]{hovey-strickland_99} there is a tower of
 such that $L_\Kn X \simeq \lim_j (L_n X \otimes M_j)$. In particular, any $K(n)$-local spectrum is a pro-spectrum indexed by the generalized Moore tower. Now, consider the pro-tower $\prolim (L_n X \otimes M_j)$ for $X=\S$. As $\En$-localization is smashing, there is an equivalence $\prolim (L_n \S \otimes M_j)\simeq \prolim L_n M_j$. 
 
 \begin{lemma}
-    \label{ch3:lm:Moore-tower-in-local-dualizable}
+    \label{ch2:lm:Moore-tower-in-local-dualizable}
     The pro-tower $\prolim L_n M_j$ is a commutative algebra in $\Pro(\SpE\dual)$. 
 \end{lemma}
 \begin{proof}
@@ -117,7 +117,7 @@ such that $L_\Kn X \simeq \lim_j (L_n X \otimes M_j)$. In particular, any $K(n)$
 \end{proof}
 
 \begin{lemma}
-    \label{ch3:lm:coalgebra-ind-presentation-of-monochromatic-sphere}
+    \label{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}
     The ind-system $\indcolim L_n M_j^\vee$ dual to the pro-tower $\prolim L_n M_j$ is an cocommutative coalgebra in $\Ind(\SpE\dual)$, and taking the colimit gives an equivalence 
     \[\colim_j L_n M_j^\vee \simeq M_n\S\] 
     of cocommutative coalgebras in $\SpE$. 
@@ -129,7 +129,7 @@ such that $L_\Kn X \simeq \lim_j (L_n X \otimes M_j)$. In particular, any $K(n)$
     \[M_n \S \simeq \colim_j M_j^\vee \otimes \S_n \simeq \colim_j L_n M_j^\vee.\]
     Hence it remains to show that $\indcolim L_n M_j^\vee$ is a cocommutative coalgebra in $\Ind(\SpE\dual)$ and that the equivalence above is an equivalence of cocommutative coalgebras. 
 
-    By \cref{ch3:lm:Moore-tower-in-local-dualizable} the pro-tower $\prolim L_n M_j$ is a commutative algebra in $\Pro(\SpE\dual)$, hence \cref{ch3:rm:coalgebra-in-Ind} implies that the linear dual, which is $\indcolim L_n M_j^\vee$, is a cocommutative coalgebra in $\Ind(\SpE\dual)$. As the equivalence $\Ind(\SpE\dual)\simeq \SpE$ is symmetric monoidal, and given by taking the colimit of the ind-systems, the equivalence $\colim_j L_n M_j^\vee \simeq M_n \S$ is an equivalence of cocommutative coalgebras.  
+    By \cref{ch2:lm:Moore-tower-in-local-dualizable} the pro-tower $\prolim L_n M_j$ is a commutative algebra in $\Pro(\SpE\dual)$, hence \cref{ch2:rm:coalebra-in-Ind} implies that the linear dual, which is $\indcolim L_n M_j^\vee$, is a cocommutative coalgebra in $\Ind(\SpE\dual)$. As the equivalence $\Ind(\SpE\dual)\simeq \SpE$ is symmetric monoidal, and given by taking the colimit of the ind-systems, the equivalence $\colim_j L_n M_j^\vee \simeq M_n \S$ is an equivalence of cocommutative coalgebras.  
 \end{proof}
 
 \begin{remark}
@@ -141,22 +141,22 @@ We can now summarize the discussion above as follows. The monochromatic sphere $
 This allows us to conclude with our wanted description of the category of $K(n)$-local spectra. 
 
 \begin{theorem}
-    \label{ch3:thm:Kn-is-pro-modules}
+    \label{ch2:thm:Kn-is-pro-modules}
     There is a symmetric monoidal equivalence 
     \[\Sp_\Kn \simeq \Mod_{\prolim L_n M_j}(\Pro(\SpE\dual))\op\]
     between $\Kn$-local spectra and modules over the pro-dualizable algebra $\prolim L_n M_j$ presenting the $K(n)$-local sphere $\S_\Kn$. 
 \end{theorem}
 \begin{proof}
-    \cref{ch3:prop:comodules-and-promodules} gives an equivalence between $\Comod_{M_n \S}(\SpE)$ and modules over its linear dual. By chosing the ind-presentation of $M_n \S$ constructed in \cref{ch3:lm:coalgebra-ind-presentation-of-monochromatic-sphere}, the linear dual is precicely the pro-tower $\prolim L_n M_j$, which is a commutative algebra in $\Pro(\SpE\dual)$. Hence we have a symmetric monoidal equivalence 
+    \cref{ch2:prop:comodules-and-promodules} gives an equivalence between $\Comod_{M_n \S}(\SpE)$ and modules over its linear dual. By chosing the ind-presentation of $M_n \S$ constructed in \cref{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}, the linear dual is precicely the pro-tower $\prolim L_n M_j$, which is a commutative algebra in $\Pro(\SpE\dual)$. Hence we have a symmetric monoidal equivalence 
     \[\Comod_{M_n\S}(\SpE)\simeq \Mod_{\prolim L_n M_j}(\Pro(\SpE\dual))\]
-    By \cref{ch3:thm:dual-monoidal-BB} there is a symmetric monoidal equivalence $\Comod_{M_n\S}(\SpE)\simeq \Mn$, and by \cite[6.19]{hovey-strickland_99} there is a symmetric monoidal equivalence $\Mn \simeq \Sp_\Kn$. 
+    By \cref{ch2:thm:dual-monoidal-BB} there is a symmetric monoidal equivalence $\Comod_{M_n\S}(\SpE)\simeq \Mn$, and by \cite[6.19]{hovey-strickland_99} there is a symmetric monoidal equivalence $\Mn \simeq \Sp_\Kn$. 
 \end{proof}
 
 \begin{remark}
-    By definition this implies that we have a description of $K(n)$-local spectra as contramodules over the $K(n)$-local sphere, $\Sp_\Kn \simeq \Contra_{\S_\Kn}$. This might seem ad-hoc, but we feel that this is justifiable by \cref{ch3:rm:contra-as-op-pro-modules}.
+    By definition this implies that we have a description of $K(n)$-local spectra as contramodules over the $K(n)$-local sphere, $\Sp_\Kn \simeq \Contra_{\S_\Kn}$. This might seem ad-hoc, but we feel that this is justifiable by \cref{ch2:rm:contra-as-op-pro-modules}.
 \end{remark}
 
 \begin{remark}
-    The above construction works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch3:thm:Positselski-duality-idempotent}. In particular, there is a similar pro-presentation of $\S_\Tn$, giving rise to an equivalence $\Sp_\Tn\simeq \Contra_{\S_\Tn}$.
+    The above construction works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch2:thm:Positselski-duality-idempotent}. In particular, there is a similar pro-presentation of $\S_\Tn$, giving rise to an equivalence $\Sp_\Tn\simeq \Contra_{\S_\Tn}$.
 \end{remark}
 

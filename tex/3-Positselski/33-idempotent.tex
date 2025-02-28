@@ -1,11 +1,11 @@
 
 \section{Positselski duality}
-\label{ch3:sec:positselski-duality}
+\label{ch2:sec:positselski-duality}
 
-Classical Positselski duality, usually called the co-contra correspondence, is an adjunction between comodules and contramodules over a $R$-coalgebra $C$, where $R$ is an algebra over a field $k$. In particular, the categories involved are abelian, which makes some constructions easier. For example, the monoidal structure on $\Mod_R$ induces monoidal structures on $\Comod_C$ via the relative tensor construction --- given by a certain equalizers. For $\infty$-categories the relative tensor construction is more complicated, as we need the monoidal structure to behave well with all higher coherencies, as mentioned in \cref{ch3:rm:monoidal-structure-comodules}. We can, however, restrict our attention to a certain type of coalgebra, fixing these issues. This also puts us in the setting we are interested in regarding local duality --- see \cref{ch3:ssec:local-duality}. 
+Classical Positselski duality, usually called the co-contra correspondence, is an adjunction between comodules and contramodules over a $R$-coalgebra $C$, where $R$ is an algebra over a field $k$. In particular, the categories involved are abelian, which makes some constructions easier. For example, the monoidal structure on $\Mod_R$ induces monoidal structures on $\Comod_C$ via the relative tensor construction --- given by a certain equalizers. For $\infty$-categories the relative tensor construction is more complicated, as we need the monoidal structure to behave well with all higher coherencies, as mentioned in \cref{ch2:rm:monoidal-structure-comodules}. We can, however, restrict our attention to a certain type of coalgebra, fixing these issues. This also puts us in the setting we are interested in regarding local duality --- see \cref{ch2:ssec:local-duality}. 
 
 \subsection{Idempotent coalgebras}
-\label{ch3:ssec:idempotent-coalgebras}
+\label{ch2:ssec:idempotent-coalgebras}
 
 We now restrict our attention to the special class of coalgebras that we will focus on for the remainder of the paper. 
 
@@ -16,14 +16,14 @@ We now restrict our attention to the special class of coalgebras that we will fo
 \end{definition}
 
 \begin{remark}
-    \label{ch3:rm:idempotent-implies-separable}
+    \label{ch2:rm:idempotent-implies-separable}
     Any idempotent coalgebra is in particular separable, see \cite[1.6(1)]{ramzi_2023} for a formally dual statement. 
 \end{remark}
 
-The first reason for our focus on idempotent coalgebras is that their categories of comodules inherit a symmetric monoidal structure from $\C$, which is rarely the case for general coalgebras, see \cref{ch3:rm:monoidal-structure-comodules}. 
+The first reason for our focus on idempotent coalgebras is that their categories of comodules inherit a symmetric monoidal structure from $\C$, which is rarely the case for general coalgebras, see \cref{ch2:rm:monoidal-structure-comodules}. 
 
 \begin{lemma}
-    \label{ch3:lm:idempotent-then-comod-monoidal}
+    \label{ch2:lm:idempotent-then-comod-monoidal}
     Let $C$ be an idempotent cocommutative coalgebra in $\C$. The category of $C$-comodules $\Comod_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category making the cofree comodule functor a symmetric monoidal smashing colocalization.
 \end{lemma}
 \begin{proof}
@@ -46,7 +46,7 @@ The first reason for our focus on idempotent coalgebras is that their categories
 \end{proof}
 
 \begin{remark}
-    This adjunction, being a hom-tensor adjunction is also internally adjoint in the sense of \cref{ch3:rm:internal-adjunction}. Hence we have an equivalence 
+    This adjunction, being a hom-tensor adjunction is also internally adjoint in the sense of \cref{ch2:rm:internal-adjunction}. Hence we have an equivalence 
     \[\iHom_C(M\otimes_C N, A) \simeq \iHom_C(M, \iHom_C(N, A))\]
     for all comodules $M, N$ and $A$. 
 \end{remark}
@@ -54,13 +54,13 @@ The first reason for our focus on idempotent coalgebras is that their categories
 Another important reason for using idempotent coalgebras in this paper is the following result. Recall that a comodule over a coalgebra $C$ is called cofree, if it is of the form $M\otimes C$ for some $M\in \C$. These are precisely the comodules in the image of the right adjoint to the forgetful functor $U_C\:\Comod_C\to \C$, when $C$ is idempotent. This is a slightly weaker coalgebraic version of \cite[1.13, 1.14]{ramzi_2023}. See also \cite[3.6]{brzezinski_2010} for a related $1$-categorical version. 
 
 \begin{lemma}
-    \label{ch3:lm:comod-over-separable-are-cofree}
+    \label{ch2:lm:comod-over-separable-are-cofree}
     Every comodule over an idempotent coalgebra $C$ is a retract of a cofree comodule. In particular, there is an equivalence 
     \[\ComodC(\C)\simeq \ComodC\fr(\C)\]
     between the Eilenberg--Moore category and the Kleisli category of the comonad $C\otimes (-)$ on $\C$. 
 \end{lemma}
 \begin{proof}
-    As idempotent coalgebras are separable, see \cref{ch3:rm:idempotent-implies-separable}, the result will follow from the fact that the forgetful functor $U_C\: \Comod_C\to \C$ is separable, in the sense that the adjunction unit map 
+    As idempotent coalgebras are separable, see \cref{ch2:rm:idempotent-implies-separable}, the result will follow from the fact that the forgetful functor $U_C\: \Comod_C\to \C$ is separable, in the sense that the adjunction unit map 
     \[\Id_{\Comod_C}\to C\otimes U(-)\]
     has a $\C$-linear section, whenever $C$ is separable. The section is given by 
     \[C\otimes M \overset{\simeq}\to (C\otimes C)\otimes_C M \to C\otimes_C M\overset{\simeq}\longleftarrow M\]
@@ -68,33 +68,33 @@ Another important reason for using idempotent coalgebras in this paper is the fo
 \end{proof}
 
 \begin{remark}
-    \label{ch3:rm:unique-structure}
+    \label{ch2:rm:unique-structure}
     The fact that $C$ is idempotent implies that any $C$-comodule $M$ has a unique comodule structure. In particular, if $M$ is a comodule, then the cofree comodule $C\otimes M$ is equivalent to $M$. 
 \end{remark}
 
 We get a similar statement for contramodules over $C$. Recall that a contramodule is said to be free if it is of the form $\iHom(C,M)$ for some $M\in \C$. 
 
 \begin{proposition}
-    \label{ch3:prop:contra-over-separable-are-free}
+    \label{ch2:prop:contra-over-separable-are-free}
     Let $C\in \cCAlg(\C)$ be a separable coalgebra. Then every contramodule over $C$ is a retract of a free contramodule. In particular, there is an equivalence 
     \[\ContraC(\C)\simeq \ContraC\fr(\C)\]
     between the Eilenberg--Moore category and the Kleisli category of the monad $\iHom(C,-)$ on $\C$. 
 \end{proposition}
 \begin{proof}
-    We can prove this by showing that the section for the separable coalgebra $C$ gives a section of the forgetful functor $U^C\:\Contra_C\to \C$. The section is, for a contramodule $X$, given by the adjoint map $M\to \iHom(C, M)$ to the section of the forgetful functor $U_C$ on $\Comod_C$ from \cref{ch3:lm:comod-over-separable-are-cofree}.  
+    We can prove this by showing that the section for the separable coalgebra $C$ gives a section of the forgetful functor $U^C\:\Contra_C\to \C$. The section is, for a contramodule $X$, given by the adjoint map $M\to \iHom(C, M)$ to the section of the forgetful functor $U_C$ on $\Comod_C$ from \cref{ch2:lm:comod-over-separable-are-cofree}.  
 \end{proof}
 
 
-We know from \cref{ch3:lm:idempotent-then-comod-monoidal} that the cofree comodule functor $C\otimes(-)\: \C\to \Comod_C$ can be given the structure of a symmetric monoidal functor when the coalgebra $C$ is idempotent. Naturally we want a similar statement for the free contramodule functor $\iHom(C,-)\: \C\to \Contra_C$. 
+We know from \cref{ch2:lm:idempotent-then-comod-monoidal} that the cofree comodule functor $C\otimes(-)\: \C\to \Comod_C$ can be given the structure of a symmetric monoidal functor when the coalgebra $C$ is idempotent. Naturally we want a similar statement for the free contramodule functor $\iHom(C,-)\: \C\to \Contra_C$. 
 
 \begin{remark}
-    \label{ch3:rm:contramodule-structure-on-hom-from-comodule}
+    \label{ch2:rm:contramodule-structure-on-hom-from-comodule}
     Let $M$ be a $C$-comodule and $V$ any object in $\C$. The structure map $\rho_M\: M\to C\otimes M$ induces a $C$-contramodule structure on the internal hom-object $\iHom(M, V)$, via 
     \[\iHom(C, \iHom(M, V))\simeq \iHom(C\otimes M, V)\overset{-\circ \rho_M}\to \iHom(M, V).\]
 \end{remark}
 
 \begin{lemma}
-    \label{ch3:lm:free-contra-monoidal}
+    \label{ch2:lm:free-contra-monoidal}
     Let $C$ be an idempotent cocommutative coalgebra in $\C$. The category of $C$-contramodules $\Contra_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category making the free contramodule functor a symmetric monoidal localization.
 \end{lemma}
 \begin{proof}
@@ -102,9 +102,9 @@ We know from \cref{ch3:lm:idempotent-then-comod-monoidal} that the cofree comodu
     \[\iHom(C, \iHom(C,-))\simeq \iHom(C\otimes C, -)\simeq \iHom(C,-)\]
     by the internal adjunction property together with the idempotency of $C$. The forgetful functor $U^C\: \Contra_C\to \C$ is fully faithful, which means that the cofree functor $\iHom(C,-)\:\C\to \Contra_C$ is a localization. 
     
-    In order to determine that it induces a symmetric monoidal structure on $\Contra_C$ we need to check that the free functor is compatible with the monoidal structure in $\C$. By \cite[2.12(3)]{nikolaus_2016} it is enough to check that $\iHom(V,X)\in \Contra_C$ for any $X\in \Contra_C$ and $V\in \C$. By \cref{ch3:prop:contra-over-separable-are-free} we can assume that $X \simeq \iHom(C, A)$ for some $A\in \C$. By the hom-tensor adjunction we get 
+    In order to determine that it induces a symmetric monoidal structure on $\Contra_C$ we need to check that the free functor is compatible with the monoidal structure in $\C$. By \cite[2.12(3)]{nikolaus_2016} it is enough to check that $\iHom(V,X)\in \Contra_C$ for any $X\in \Contra_C$ and $V\in \C$. By \cref{ch2:prop:contra-over-separable-are-free} we can assume that $X \simeq \iHom(C, A)$ for some $A\in \C$. By the hom-tensor adjunction we get 
     \[\iHom(A, \iHom(C, V))\simeq \iHom(C\otimes V, A).\]
-    The latter is a $C$-contramodule by \cref{ch3:rm:contramodule-structure-on-hom-from-comodule}, as $C\otimes V$ is a $C$-comodule. 
+    The latter is a $C$-contramodule by \cref{ch2:rm:contramodule-structure-on-hom-from-comodule}, as $C\otimes V$ is a $C$-comodule. 
 
     We can then apply \cite[2.2.1.9]{lurie_09}, which tells us that the free contramodule functor $\iHom(C,-)\: \C\to \Contra_C$ can be given the structure of a symmetric monoidal functor. As $\Contra_C$ is a localization of a presentably symmetric monoidal category by an accessible functor, it is also presentably symmetric monoidal.  
 \end{proof}
@@ -119,10 +119,10 @@ We know from \cref{ch3:lm:idempotent-then-comod-monoidal} that the cofree comodu
 %     as objects in $\C$. 
 % \end{lemma}
 
-% We saw in \cref{ch3:rm:cofree-comodule-smashing-colocalization} that the cofree comodule functor was a smashing colocalization. We can naturally wonder whether the corresponding free contramodule functor has the same property. It turns out not to be a localization of $\C$, but not a smashing one.
+% We saw in \cref{ch2:rm:cofree-comodule-smashing-colocalization} that the cofree comodule functor was a smashing colocalization. We can naturally wonder whether the corresponding free contramodule functor has the same property. It turns out not to be a localization of $\C$, but not a smashing one.
 
 % \begin{lemma}
-%     \label{ch3:lm:free-contramodule-functor-localization}
+%     \label{ch2:lm:free-contramodule-functor-localization}
 %     The free contramodule functor $\iHom(C,-)\: \C\to \Contra_C$ is a localization. 
 % \end{lemma}
 % \begin{proof}
@@ -132,13 +132,13 @@ We know from \cref{ch3:lm:idempotent-then-comod-monoidal} that the cofree comodu
 % \end{proof}
 
 % \begin{remark}
-%     We will see in \cref{ch3:cor:free-contra-monoidal-localization} that it is in fact a symmetric monoidal localization. 
+%     We will see in \cref{ch2:cor:free-contra-monoidal-localization} that it is in fact a symmetric monoidal localization. 
 % \end{remark}
 
 We can now deduce our main result, namely that Positselski duality is a symmetric monoidal equivalence for idempotent coalgebras. 
 
 \begin{theorem}
-    \label{ch3:thm:Positselski-duality-idempotent}
+    \label{ch2:thm:Positselski-duality-idempotent}
     Let $\C$ be a presentably symmetric monoidal category and $C\in \C$ an idempotent cocommutative coalgebra. In this situation there are mutually inverse symmetric monoidal functors
     \begin{center}
         \begin{tikzcd}
@@ -148,7 +148,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
     given on the underlying objects by the free contramodule functor and the cofree comodule functor respectively. 
 \end{theorem}
 \begin{proof}
-    By \cref{ch3:lm:comod-over-separable-are-cofree} and \cref{ch3:prop:contra-over-separable-are-free} every $C$-comodule (resp. $C$-contramodule) is a retract of a cofree comodule (resp. free contramodule). Hence, it is enough to prove that the functors are mutually inverse equivalences between cofree and free objects.  
+    By \cref{ch2:lm:comod-over-separable-are-cofree} and \cref{ch2:prop:contra-over-separable-are-free} every $C$-comodule (resp. $C$-contramodule) is a retract of a cofree comodule (resp. free contramodule). Hence, it is enough to prove that the functors are mutually inverse equivalences between cofree and free objects.  
     
     Let $A$ be any object in $\C$. Denote by $C\otimes A$ the corresponding cofree comodule and $\iHom(C, A)$ the corresponding cofree contramodule. A simple adjunction argument, using both the cofree-forgetful adjunction and the hom-tensor adjunctions in $\C$ and $\Comod_C$, shows that there is an equivalence 
     \[\iHom_C(M, C\otimes A)\simeq C\otimes \iHom(U_C M, A)\]
@@ -156,7 +156,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
     \[C\otimes \iHom(C, A)\simeq \iHom_C(C, C\otimes A)\]
     which is equivalent to $C\otimes A$ as $C$ is the unit in $\Comod_C$. 
 
-    We wish to show that $\iHom(C, C\otimes A) \simeq \iHom(C, A)$. We do this by showing that the cofree-forgetful functor is an internal adjunction, in the sense of \cref{ch3:rm:internal-adjunction}. 
+    We wish to show that $\iHom(C, C\otimes A) \simeq \iHom(C, A)$. We do this by showing that the cofree-forgetful functor is an internal adjunction, in the sense of \cref{ch2:rm:internal-adjunction}. 
 
     Let $B$ be an arbitrary object in $\C$, and recall our notation $\Hom(-,-)$ for the mapping space in $\C$. By the hom-tensor adjunction in $\C$ we have 
     \[\Hom(B, \iHom(C, C\otimes A)) \simeq \Hom(C\otimes B, C\otimes A).\]
@@ -168,7 +168,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
     \[\Hom(C\otimes B, A) \simeq \Hom(B, \iHom(C, C\otimes A)).\]
     Summarizing the equivalences we have $\Hom(B, \iHom(C, C\otimes A))\simeq \Hom(B, \iHom(C, A))$, which by a Yoneda argument implies that there is an equivalence of internal hom-objects $\iHom(C, C\otimes A)\simeq \iHom(C, A)$. 
 
-    % Since comodule structures are unique in $\Comod_C$, see \cref{ch3:rm:unique-structure}, there is an equivalence $C\otimes U_C M \simeq M$ for any comodule $M$. This means that we can assume our object $A\in \C$ to be in the image of the forgetful functor. There is a comodule structure on $\iHom(U_C M, C\otimes A)$, given by the equivalence  
+    % Since comodule structures are unique in $\Comod_C$, see \cref{ch2:rm:unique-structure}, there is an equivalence $C\otimes U_C M \simeq M$ for any comodule $M$. This means that we can assume our object $A\in \C$ to be in the image of the forgetful functor. There is a comodule structure on $\iHom(U_C M, C\otimes A)$, given by the equivalence  
     % \[ C\otimes \iHom(U_C M, C\otimes A) \iHom_C(M, C\otimes C\otimes A) \simeq \iHom(M, C\otimes A)\]
     % and the comodule structure on $\iHom(M, C\otimes A)$. By uniqueness, this implies that $\iHom(M, C\otimes A) \simeq \iHom_C(M, C\otimes A)$ for any comodule $M$. Which by the earlier uniqueness remark implies
     % \[\iHom(C, C\otimes A) \simeq \iHom_C(C, C\otimes A)\simeq C\otimes \iHom(C, A)\simeq \iHom(C, A),\]
@@ -178,7 +178,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
     % \[X\otimes^C Y := \iHom(C, (C\otimes X)\otimes_C (C\otimes Y)).\]
     % By definition this makes $\iHom(C, -) \: \Comod_C \to \Contra_C$ a symmetric monoidal functor. The functor $C\otimes - \: \Contra_C \to \Comod_C$ is symmetric monoidal because $C\otimes (-)$ is a smashing colocalization. 
 
-    We know by \cref{ch3:lm:idempotent-then-comod-monoidal} and \cref{ch3:lm:free-contra-monoidal} that the cofree comodule functor and the free contramodule functor are both symmetric monoidal. By the arguments above, we know that the equivalence $\Comod_C\simeq \Contra_C$ is given by the compositions 
+    We know by \cref{ch2:lm:idempotent-then-comod-monoidal} and \cref{ch2:lm:free-contra-monoidal} that the cofree comodule functor and the free contramodule functor are both symmetric monoidal. By the arguments above, we know that the equivalence $\Comod_C\simeq \Contra_C$ is given by the compositions 
     \begin{center}
         \begin{tikzcd}
             \Comod_C 
@@ -196,14 +196,14 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
 \end{proof}
 
 \begin{remark}
-    \label{ch3:rm:holds-generally-for-separable}
+    \label{ch2:rm:holds-generally-for-separable}
     We do believe that the above result to hold more generally. In fact, we believe it should hold for all separable cocommutative coalgebras, as this holds in the $1$-categorical situation. However, it will in general not be a monoidal equivalence, due to the lack of monoidal structures. 
 \end{remark}
 
 
 % \begin{corollary}
-%     \label{ch3:cor:free-contra-monoidal-localization}
-%     Equipped with the symmetric monoidal structure from \cref{ch3:thm:Positselski-duality-idempotent} the free contramodule functor $\iHom(C, -)\: \C\to \Contra_C$ is symmetric monoidal. 
+%     \label{ch2:cor:free-contra-monoidal-localization}
+%     Equipped with the symmetric monoidal structure from \cref{ch2:thm:Positselski-duality-idempotent} the free contramodule functor $\iHom(C, -)\: \C\to \Contra_C$ is symmetric monoidal. 
 % \end{corollary}
 % \begin{proof}
 %     By definition we have
@@ -212,7 +212,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
 %     \[\iHom(C, (C\otimes \iHom(C, A))\otimes_C (C\otimes \iHom(C, B)) \simeq \iHom(C, (C\otimes A)\otimes_C (C\otimes B)).\]
 %     By construction of the monoidal structure on $\Comod_C$ we have $(C\otimes A)\otimes_C (C\otimes B)\simeq C\otimes (A\otimes B)$, hence we have
 %     \[\iHom(C, (C\otimes A) \otimes_C (C\otimes B))\simeq \iHom(C, C\otimes (A \otimes B))\simeq \iHom(C, A\otimes B),\]
-%     where the last equivalence follows from the proof of \cref{ch3:thm:Positselski-duality-idempotent}. 
+%     where the last equivalence follows from the proof of \cref{ch2:thm:Positselski-duality-idempotent}. 
 % \end{proof}
 
 % \begin{remark}

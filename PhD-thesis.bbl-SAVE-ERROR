@@ -129,6 +129,7 @@
       \strng{authorbibnamehash}{c1f2666f76567c50375b60e9c91567b4}
       \strng{authornamehash}{c1f2666f76567c50375b60e9c91567b4}
       \strng{authorfullhash}{c1f2666f76567c50375b60e9c91567b4}
+      \field{extraname}{1}
       \field{labelalpha}{Ada58}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
@@ -150,6 +151,43 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1007/BF02564578
+      \endverb
+    \endentry
+    \entry{adams_74}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c1f2666f76567c50375b60e9c91567b4}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={John\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chicago, IL}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{c1f2666f76567c50375b60e9c91567b4}
+      \strng{fullhash}{c1f2666f76567c50375b60e9c91567b4}
+      \strng{bibnamehash}{c1f2666f76567c50375b60e9c91567b4}
+      \strng{authorbibnamehash}{c1f2666f76567c50375b60e9c91567b4}
+      \strng{authornamehash}{c1f2666f76567c50375b60e9c91567b4}
+      \strng{authorfullhash}{c1f2666f76567c50375b60e9c91567b4}
+      \field{extraname}{2}
+      \field{labelalpha}{Ada95}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{ISBN: 978-0-226-00524-9}
+      \field{series}{Chicago {Lectures} in {Mathematics}}
+      \field{title}{Stable {Homotopy} and {Generalised} {Homology}}
+      \field{year}{1995}
+      \verb{urlraw}
+      \verb https://press.uchicago.edu/ucp/books/book/chicago/S/bo21302708.html
+      \endverb
+      \verb{url}
+      \verb https://press.uchicago.edu/ucp/books/book/chicago/S/bo21302708.html
       \endverb
     \endentry
     \entry{tarrio-lopez-salorio_2004}{article}{}
@@ -1016,7 +1054,7 @@
       \field{volume}{100}
       \field{year}{1982}
     \endentry
-    \entry{bousfield_1979_localization}{article}{}
+    \entry{bousfield_1979_bool}{article}{}
       \name{author}{1}{}{%
         {{hash=b363c70746e25c87d8d891aeefc9f697}{%
            family={Bousfield},
@@ -1034,6 +1072,46 @@
       \field{labelalpha}{Bou79}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1420-8946}
+      \field{journaltitle}{Commentarii Mathematici Helvetici}
+      \field{number}{1}
+      \field{title}{The {Boolean} algebra of spectra}
+      \field{volume}{54}
+      \field{year}{1979}
+      \field{pages}{368\bibrangedash 377}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/BF02566281
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF02566281
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF02566281
+      \endverb
+    \endentry
+    \entry{bousfield_1979_localization}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b363c70746e25c87d8d891aeefc9f697}{%
+           family={Bousfield},
+           familyi={B\bibinitperiod},
+           given={Aldridge\bibnamedelima K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{fullhash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{bibnamehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{authorbibnamehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{authornamehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{authorfullhash}{b363c70746e25c87d8d891aeefc9f697}
+      \field{extraname}{2}
+      \field{labelalpha}{Bou79}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extraalpha}{2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0040-9383}
@@ -1068,7 +1146,7 @@
       \strng{authorbibnamehash}{b363c70746e25c87d8d891aeefc9f697}
       \strng{authornamehash}{b363c70746e25c87d8d891aeefc9f697}
       \strng{authorfullhash}{b363c70746e25c87d8d891aeefc9f697}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{labelalpha}{Bou85}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
@@ -1091,6 +1169,39 @@
       \verb{url}
       \verb https://www.jstor.org/stable/2374361?origin=crossref
       \endverb
+    \endentry
+    \entry{bousfield_1996}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=b363c70746e25c87d8d891aeefc9f697}{%
+           family={Bousfield},
+           familyi={B\bibinitperiod},
+           given={Aldridge\bibnamedelima K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Basel}%
+      }
+      \list{publisher}{1}{%
+        {Birkhäuser Basel}%
+      }
+      \strng{namehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{fullhash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{bibnamehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{authorbibnamehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{authornamehash}{b363c70746e25c87d8d891aeefc9f697}
+      \strng{authorfullhash}{b363c70746e25c87d8d891aeefc9f697}
+      \field{extraname}{4}
+      \field{labelalpha}{Bou96}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Algebraic {Topology}: {New} {Trends} in {Localization} and {Periodicity}}
+      \field{isbn}{978-3-0348-9018-2}
+      \field{title}{Unstable localization and periodicity}
+      \field{year}{1996}
+      \field{pages}{33\bibrangedash 50}
+      \range{pages}{18}
     \endentry
     \entry{brantner-mathew_2023}{misc}{}
       \name{author}{2}{}{%
@@ -1881,6 +1992,48 @@
       \field{note}{Available at \href{http://www.math.harvard.edu/lurie/papers/Brauer.pdf}{the authors website}}
       \field{title}{On {B}rouer groups of {Lubin}--{Tate} spectra {I}}
       \field{year}{2017}
+    \endentry
+    \entry{hopkins-smith_1998}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b0d11472e9bb092317f71e67e46d1f55}{%
+           family={Hopkins},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a5a6f7a2471ecea0898b4cd6a9b4db14}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Jeffrey\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{022c0d7380d2b8b8b1a3d9ba2b853d1e}
+      \strng{fullhash}{022c0d7380d2b8b8b1a3d9ba2b853d1e}
+      \strng{bibnamehash}{022c0d7380d2b8b8b1a3d9ba2b853d1e}
+      \strng{authorbibnamehash}{022c0d7380d2b8b8b1a3d9ba2b853d1e}
+      \strng{authornamehash}{022c0d7380d2b8b8b1a3d9ba2b853d1e}
+      \strng{authorfullhash}{022c0d7380d2b8b8b1a3d9ba2b853d1e}
+      \field{labelalpha}{HS98}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0003-486X}
+      \field{journaltitle}{Annals of Mathematics}
+      \field{number}{1}
+      \field{title}{Nilpotence and {Stable} {Homotopy} {Theory} {II}}
+      \field{volume}{148}
+      \field{year}{1998}
+      \field{pages}{1\bibrangedash 49}
+      \range{pages}{49}
+      \verb{doi}
+      \verb 10.2307/120991
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/120991
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/120991
+      \endverb
     \endentry
     \entry{hovey_95}{incollection}{}
       \name{author}{1}{}{%

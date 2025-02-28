@@ -1,7 +1,7 @@
 
 
 \section{Positselski duality}
-%\label{ch3:sec:positselski-duality}
+%\label{ch2:sec:positselski-duality}
 
 Let us now set up the associated functors between comodules and contramodules. We fix a cocommutative coalgebra $C\in \cCAlg(\C)$ in a presentably symmetric monoidal $\infty$-category $\C$. Denote the unit in $\C$ by $\1$. Unless otherwise stated we will try to reserve $M, N$ for $C$-comodules and $X, Y$ for $C$-contramodules. 
 
@@ -17,7 +17,7 @@ between comodules and contramodules.
 \begin{remark}
     Something one could hope for is that $\Comod_C(\C)$ inherits a monoidal structure from $\C$. In this case, we would get an internal hom 
     \[\iHom^C(-,-)\:\Comod_C\op\times \Comod_C\to \Comod_C \]
-    as its right adjoint. For any $C$-comodule $M$, the object $\iHom^C(C,M)$ can be proven to land in contramodules, hence this would provide our functor $L$ above. But, as seen in \cref{ch3:rm:monoidal-structure-comodules}, such a monoidal structure rarely exists.   However, it turns out that we can almost construct the functor $L$ as above without referencing monoidal structures --- giving a ``relative internal hom''. If the relative tensor existed, the relative internal hom would be its adjoint. Note that when the coalgebra $C$ is idempotent we can construct a relative monoidal structure, see \cref{ch3:lm:idempotent-then-monoidal-structure}. 
+    as its right adjoint. For any $C$-comodule $M$, the object $\iHom^C(C,M)$ can be proven to land in contramodules, hence this would provide our functor $L$ above. But, as seen in \cref{ch2:rm:monoidal-structure-comodules}, such a monoidal structure rarely exists.   However, it turns out that we can almost construct the functor $L$ as above without referencing monoidal structures --- giving a ``relative internal hom''. If the relative tensor existed, the relative internal hom would be its adjoint. Note that when the coalgebra $C$ is idempotent we can construct a relative monoidal structure, see \cref{ch2:lm:idempotent-then-monoidal-structure}. 
 \end{remark}
 
 \begin{remark}
@@ -40,7 +40,7 @@ between comodules and contramodules.
 % where the maps are determined by the comodule structure maps $\rho_M\: M\to C\otimes M$ and $\rho_N \:N\to C\otimes N$. As $\iHom(M, -)$ preserves limits we avoid the problem described earlier for the relative tensor product. 
 
 % \begin{lemma}
-%     \label{ch3:lm:internal-hom-agree-on-cofree}
+%     \label{ch2:lm:internal-hom-agree-on-cofree}
 %     Let $M$ be a $C$-comodule. The relative internal hom into a cofree comodule is equivalent to the internal hom in $\C$. More precicely, there is an equivalence
 %     \[\iHom^C(M, C\otimes N) \simeq \iHom(M, N)\]
 %     for any $N\in \C$. 
@@ -56,7 +56,7 @@ between comodules and contramodules.
 % as an object in $\C$. 
 
 % \begin{lemma}
-%     \label{ch3:lm:relative-tensor-agree-on-free}
+%     \label{ch2:lm:relative-tensor-agree-on-free}
 %     Let $X$ be a $C$-contramodule. The relative tensor by a free contramodule is equivalent to the tensor product in $\C$. More precisely, there is an equivalence
 %     \[X\boxtimes_C \iHom(C, Y)\]
 %     for any $Y\in \C$. 
@@ -72,7 +72,7 @@ between comodules and contramodules.
 
 
 \begin{definition}
-    %\label{ch3:def:internal-hom-contra}
+    %\label{ch2:def:internal-hom-contra}
     Let $X, Y$ be $C$-contramodules. The \emph{contra-hom} $\iHom^C(X, Y)$ is defined to be the limit (in $\C$) of the diagram 
     \begin{center}
         \begin{tikzcd}
@@ -108,7 +108,7 @@ between comodules and contramodules.
             & M\otimes X
         \end{tikzcd}
     \end{center}
-    or using the notation from \cref{ch3:def:internal-hom-contra}, 
+    or using the notation from \cref{ch2:def:internal-hom-contra}, 
     \[M\odot_C X := \colim(M\otimes \iHom^n(C, X)).\]
 \end{definition}
 
@@ -117,7 +117,7 @@ between comodules and contramodules.
 \end{remark}
 
 \begin{remark}
-    %\label{ch3:rm:contramodule-structure-on-hom-from-comodule}
+    %\label{ch2:rm:contramodule-structure-on-hom-from-comodule}
     Let $M$ be a $C$-comodule and $V$ any object in $\C$. The structure map $\rho_M\: M\to C\otimes M$ induces a $C$-contramodule structure on the internal hom-object $\iHom(M, V)$, via 
     \[\iHom(C, \iHom(M, V))\simeq \iHom(C\otimes M, V)\overset{-\circ \rho_M}\to \iHom(M, V).\]
 \end{remark}
@@ -126,7 +126,7 @@ between comodules and contramodules.
 \begin{proposition}
     For any $C$-comodule $M$, $C$-contramodule $X$ and object $V\in \C$ we have an equivalence
     \[\iHom(M\odot_C X, V)\simeq \iHom^C(X, \iHom(M, V)),\]
-    where $\iHom(M, V)$ has the contramodule structure from \cref{ch3:rm:contramodule-structure-on-hom-from-comodule}. 
+    where $\iHom(M, V)$ has the contramodule structure from \cref{ch2:rm:contramodule-structure-on-hom-from-comodule}. 
 \end{proposition}
 \begin{proof}
     Remembering that colimits in $\C$ are limits in $\C\op$, we have by definition 
@@ -135,7 +135,7 @@ between comodules and contramodules.
     \[\iHom(\colim(M\otimes \iHom^n(C, X), V))\simeq \lim (\iHom(M\otimes \iHom^n(C, X), V)).\]
     As the functor $\iHom(C, -)$ is internally right adjoint to $C\otimes (-)$, there is an equivalence 
     \[\lim (\iHom(M\otimes \iHom^n(C, X), V)) \simeq \lim(\iHom(\iHom^n(C, X), \iHom(M, V))).\] 
-    Given the contramodule structure from \cref{ch3:rm:contramodule-structure-on-hom-from-comodule}, this limit is the definition of the contra-hom $\iHom^C(X, \iHom(M, V)),$
+    Given the contramodule structure from \cref{ch2:rm:contramodule-structure-on-hom-from-comodule}, this limit is the definition of the contra-hom $\iHom^C(X, \iHom(M, V)),$
     finishing the proof. 
 \end{proof}
 
@@ -151,7 +151,7 @@ between comodules and contramodules.
 
 
 \begin{theorem}
-    %\label{ch3:thm:positselski-duality-adjunction}
+    %\label{ch2:thm:positselski-duality-adjunction}
     Let $\C$ be a presentably symmetric monoidal $\infty$-category. For any cocommutative coalgebra $C\in \cCAlg(\C)$ there is an adjunction 
     \begin{center}
         \begin{tikzcd}
@@ -163,7 +163,7 @@ between comodules and contramodules.
 
 
 \begin{corollary}
-    %\label{ch3:cor:positselski-duality-kleisli}
+    %\label{ch2:cor:positselski-duality-kleisli}
     The Positselski duality adjunction induces an equivalence
     \begin{center}
         \begin{tikzcd}
@@ -173,15 +173,15 @@ between comodules and contramodules.
     between cofree $C$-comodules and free $C$-contramodules. 
 \end{corollary}
 \begin{proof}
-    Let $M\in \C$, and $C\otimes M$ be the cofree comodule of $M$. By \cref{ch3:lm:internal-hom-agree-on-cofree} we have an equivalence 
+    Let $M\in \C$, and $C\otimes M$ be the cofree comodule of $M$. By \cref{ch2:lm:internal-hom-agree-on-cofree} we have an equivalence 
     \[R(C\otimes M) = \iHom^C(C, C\otimes M)\simeq \iHom(C, M),\]
     which is the free contramodule on the same underlying object $M\in \C$. Similarily, we have 
     \[L(\iHom(C, M))= C\boxtimes_C \iHom(C, M) \simeq C\otimes M\] 
-    where the last equivalence is by \cref{ch3:lm:relative-tensor-agree-on-free}. Hence, both compositions are the respective identity functors on cofree (resp. free) objects. 
+    where the last equivalence is by \cref{ch2:lm:relative-tensor-agree-on-free}. Hence, both compositions are the respective identity functors on cofree (resp. free) objects. 
 \end{proof}
 
 \begin{remark}
-    In particular this means that the underlying objects of the two categories are the same, and just their additional structures are different. \cref{ch3:cor:positselski-duality-kleisli} has been noted and proved several times in the $1$-categorical literature on monads and comonads, see for example \cite[Theorem 3]{kleiner_1990} or \cite[2.5]{bohm-brzezinski-wisbauer_2009}. 
+    In particular this means that the underlying objects of the two categories are the same, and just their additional structures are different. \cref{ch2:cor:positselski-duality-kleisli} has been noted and proved several times in the $1$-categorical literature on monads and comonads, see for example \cite[Theorem 3]{kleiner_1990} or \cite[2.5]{bohm-brzezinski-wisbauer_2009}. 
 \end{remark}
 
 
@@ -195,7 +195,7 @@ between comodules and contramodules.
 The main reason to focus in on separable coalgebras in this paper is the following result. 
 
 \begin{lemma}
-    %\label{ch3:lm:separable-coalgebra-if-separable-forgetful}
+    %\label{ch2:lm:separable-coalgebra-if-separable-forgetful}
     A coalgebra $C\in \cCAlg(\C)$ is separable if and only if the forgetful functor $U_{C\otimes -}\:\ComodC\to \C$ is a separable functor, i.e., the adjunction unit map 
     \[\Id_{\Comod_C}\to C\otimes U(-)\]
     has a $\C$-linear section. 
@@ -207,7 +207,7 @@ The main reason to focus in on separable coalgebras in this paper is the followi
 Recall that a comodule over a coalgebra $C$ is called cofree, if it is of the form $M\otimes C$ for some $M\in \C$. These are precicely the comodules in the image of the right adjoint to the forgetful functor $U_{C\otimes -}\:\Comod_C\to \C$, hence we get the following corollary, just as in \cite[1.14]{ramzi_2023}. 
 
 \begin{corollary}
-    %\label{ch3:cor:comod-over-separable-are-cofree}
+    %\label{ch2:cor:comod-over-separable-are-cofree}
     Let $C\in \cCAlg(\C)$ be a separable coalgebra. Then every comodule over $C$ is a retract of a cofree comodule. In particular, there is an equivalence 
     \[\ComodC(\C)\simeq \ComodC\fr(\C)\]
     between the Eilenberg--Moore category and the Kleisli category of the comonad $C\otimes (-)$ on $\C$. 
@@ -216,7 +216,7 @@ Recall that a comodule over a coalgebra $C$ is called cofree, if it is of the fo
 We get a similar statement for contramodules over $C$. Recall that a contramodule is said to be free if it is of the form $\iHom(C,M)$ for some $M\in \C$. 
 
 \begin{proposition}
-    %\label{ch3:prop:contra-over-separable-are-free}
+    %\label{ch2:prop:contra-over-separable-are-free}
     Let $C\in \cCAlg(\C)$ be a separable coalgebra. Then every contramodule over $C$ is a retract of a free contramodule. In particular, there is an equivalence 
     \[\ContraC(\C)\simeq \ContraC\fr(\C)\]
     between the Eilenberg--Moore category and the Kleisli category of the monad $\iHom(C,-)$ on $\C$. 
@@ -237,7 +237,7 @@ We can now immediately deduce our second main result, namely that Positselski du
     given by the free contramodule functor and the cofree comodule functor respectively. 
 \end{theorem}
 \begin{proof}
-    This follows directly from \cref{ch3:cor:positselski-duality-kleisli}, \cref{ch3:cor:comod-over-separable-are-cofree} and \cref{ch3:prop:contra-over-separable-are-free}. 
+    This follows directly from \cref{ch2:cor:positselski-duality-kleisli}, \cref{ch2:cor:comod-over-separable-are-cofree} and \cref{ch2:prop:contra-over-separable-are-free}. 
 \end{proof}
 
 

@@ -1,9 +1,9 @@
 
 
 \subsection{Local duality}
-\label{ch3:ssec:local-duality}
+\label{ch2:ssec:local-duality}
 
-Our main interest for constructing an $\infty$-categorical version of Positselski duality is related to local duality, in the sense of \cite{hovey-palmiery-strickland_97} and \cite{barthel-heard-valenzuela_2018}. In this section we use \cref{ch3:thm:Positselski-duality-idempotent} to to construct an alternative proof of \cite[2.21]{barthel-heard-valenzuela_2018}. We first recall the construction of local duality. 
+Our main interest for constructing an $\infty$-categorical version of Positselski duality is related to local duality, in the sense of \cite{hovey-palmiery-strickland_97} and \cite{barthel-heard-valenzuela_2018}. In this section we use \cref{ch2:thm:Positselski-duality-idempotent} to to construct an alternative proof of \cite[2.21]{barthel-heard-valenzuela_2018}. We first recall the construction of local duality. 
 
 Let $(\C, \otimes, \1)$ be a presentably symmetric monoidal $\infty$-category. The tensor product $\otimes$ preserves filtered colimits separately in each variable, which by the adjoint functor theorem (\cite[5.5.2.9]{lurie_09}) means that the functor $X\otimes (-)$ has a right adjoint $\iHom(X, -)$, making $\C$ a closed symmetric monoidal category. From this internal hom-object we get a functor 
 \[(-)^\vee = \iHom(-, \1)\: \C\op \to \C,\] 
@@ -34,7 +34,7 @@ The category $\C$ is said to be \emph{rigidly compactly generated}\index{Rigidly
 \end{remark}
 
 \begin{theorem}
-    \label{ch3:thm:local-duality-co-contra}
+    \label{ch2:thm:local-duality-co-contra}
     \index{Local duality}
     For any local duality context $(\C, \K)$, 
     \begin{enumerate}
@@ -47,7 +47,7 @@ The category $\C$ is said to be \emph{rigidly compactly generated}\index{Rigidly
 \end{theorem}
 
 \begin{remark}
-    The result will essentially follow from recognizing $(\Gamma, \Lambda)$, viewed as endofunctors on $\C$ as the adjoint comonad-monad pair $C\otimes (-)\dashv \iHom(C,-)$ for a certain idempotent $\E_\infty$-coalgebra $C$, and then applying \cref{ch3:thm:Positselski-duality-idempotent}. 
+    The result will essentially follow from recognizing $(\Gamma, \Lambda)$, viewed as endofunctors on $\C$ as the adjoint comonad-monad pair $C\otimes (-)\dashv \iHom(C,-)$ for a certain idempotent $\E_\infty$-coalgebra $C$, and then applying \cref{ch2:thm:Positselski-duality-idempotent}. 
 \end{remark}
 
 \begin{proof}
@@ -55,24 +55,24 @@ The category $\C$ is said to be \emph{rigidly compactly generated}\index{Rigidly
 
     As $\Gamma$ is smashing it is given by $\Gamma X \simeq \Gamma \1 \otimes X$, and as $\C^{\K-tors}$ is an ideal, it inherits a symmetric monoidal structure from $\C$, making $\Gamma$ a symmetric monoidal functor. In particular, the object $\Gamma \1$ is the unit in $\C^{\K-tors}$. The unit in a compactly generated symmetric monoidal stable $\infty$-category is both an $\E_\infty$-algebra and an $\E_\infty$-coalgebra. The inclusion $i_{\K-tors}\: \C^{\K-tors}\hookrightarrow \C$ is op-lax monoidal, as it is the left adjoint of a symmetric monoidal functor, meaning that it preserves coalgebras. In particular, $\Gamma\1$ treated as an object in $\C$ is a cocommutative coalgebra. Since $\Gamma$ is a smashing colocalization $\Gamma \1$ is an idempotent coalgebra. 
 
-    By \cref{ch3:thm:Positselski-duality-idempotent} we then get an equivalence of categories 
+    By \cref{ch2:thm:Positselski-duality-idempotent} we then get an equivalence of categories 
     \[\Comod_{\Gamma \1}(\C) \simeq \Contra_{\Gamma \1}(\C)\]
     given by the mutually inverse equivalences 
     \[\iHom(\Gamma \1,-)\: \Comod_{\Gamma\1}(\C) \to \Contra_{\Gamma \1}(\C)\] 
     and 
     \[\Gamma \1\otimes -\: \Contra_{\Gamma\1}(\C) \to \Comod_{\Gamma \1}(\C).\]
-    By \cref{ch3:thm:dual-monoidal-BB} there is an equivalence $\C^{\K-tors}\simeq \Comod_{\Gamma\1}(\C)$, so it remains to show that $\C^{\K-comp}\simeq \Contra_{\Gamma \1}(\C)$. This follows from \cite[2.2]{barthel-heard-valenzuela_2018}, just as in the proof of \cite[2.21(4)]{barthel-heard-valenzuela_2018}, as it gives a sequence of equivalences 
+    By \cref{ch2:thm:dual-monoidal-BB} there is an equivalence $\C^{\K-tors}\simeq \Comod_{\Gamma\1}(\C)$, so it remains to show that $\C^{\K-comp}\simeq \Contra_{\Gamma \1}(\C)$. This follows from \cite[2.2]{barthel-heard-valenzuela_2018}, just as in the proof of \cite[2.21(4)]{barthel-heard-valenzuela_2018}, as it gives a sequence of equivalences 
     \[\iHom(\Gamma X, Y) \simeq \iHom(\Lambda X, \Lambda Y)\simeq \iHom(X, \Lambda Y)\]
     which reduces to $\iHom(\Gamma \1, Y) \simeq \Lambda Y$ when applied to $X=\1$. 
 \end{proof}
 
 \begin{remark}
-    \label{ch3:rm:contramodular-BB}
+    \label{ch2:rm:contramodular-BB}
     The author feels that the equivalence $\C^{\K-comp}\simeq \Contra_{\Gamma\1}$ should be a formal consequence of a ``contramodular'' Barr--Beck theorem, but such a result has so far escaped our grasp. 
 \end{remark}
 
 \begin{remark}
-    If the more general version of Positselski duality from \cref{ch3:rm:holds-generally-for-separable} holds, one could be able to generalize local duality to slightly more exotic situations, where the functors are not localizations. 
+    If the more general version of Positselski duality from \cref{ch2:rm:holds-generally-for-separable} holds, one could be able to generalize local duality to slightly more exotic situations, where the functors are not localizations. 
 \end{remark}
 
 The motivation for proving local duality in this setup was to have the following visually beautiful description of local duality. 
@@ -103,12 +103,12 @@ The motivation for proving local duality in this setup was to have the following
 Here the dotted arrows correspond to taking the right-orthogonal complement. 
 
 \begin{remark}
-    \label{ch3:rm:contramodule-over-pro-ring}
-    A visual, and intuitional, problem with the above picture is that the contramodule category is dependent on the coalgebra $\Gamma\1$ and not on its unit $\Lambda \1$. In the abelian situation, there is a notion of contramodule over a topological ring which would perfectly fix this issue, as one can show that $\Lambda \1$ is always an adic $\E_\infty$-ring. We plan to explore this connection in future work. The above comment in \cref{ch3:rm:contramodular-BB} on a Barr--Beck result for contramodules might then be more easily accessible in this case, as one does not have to construct the unit in a dual but equal category. It might also be possible directly by using Positselski's notion of a \emph{dedualizing complex}, see \cite{positselski_2016}. 
+    \label{ch2:rm:contramodule-over-pro-ring}
+    A visual, and intuitional, problem with the above picture is that the contramodule category is dependent on the coalgebra $\Gamma\1$ and not on its unit $\Lambda \1$. In the abelian situation, there is a notion of contramodule over a topological ring which would perfectly fix this issue, as one can show that $\Lambda \1$ is always an adic $\E_\infty$-ring. We plan to explore this connection in future work. The above comment in \cref{ch2:rm:contramodular-BB} on a Barr--Beck result for contramodules might then be more easily accessible in this case, as one does not have to construct the unit in a dual but equal category. It might also be possible directly by using Positselski's notion of a \emph{dedualizing complex}, see \cite{positselski_2016}. 
 \end{remark}
 
 \begin{remark}
-    In local duality there is another functor, that we did not really consider here, which is the right adjoint to the inclusion $\C^{\K-loc}\hookrightarrow \C$. This functor is given by $V = \iHom(L\1, -)$. As discussed in \cref{ch3:ex:algebra-module-monad} it is a comonadic functor, and its category of comodules is equivalent to $\Mod_{L\1}$. We can think of the objects in $\Comod_{\iHom(L\1,-)}$ as ``co-contramodules''. Adding these to the picture gives 
+    In local duality there is another functor, that we did not really consider here, which is the right adjoint to the inclusion $\C^{\K-loc}\hookrightarrow \C$. This functor is given by $V = \iHom(L\1, -)$. As discussed in \cref{ch2:ex:algebra-module-monad} it is a comonadic functor, and its category of comodules is equivalent to $\Mod_{L\1}$. We can think of the objects in $\Comod_{\iHom(L\1,-)}$ as ``co-contramodules''. Adding these to the picture gives 
     \begin{center}
         \begin{tikzcd}
             \Mod_{L\1} 
@@ -143,7 +143,7 @@ Here the dotted arrows correspond to taking the right-orthogonal complement.
 
 \subsection{Examples}
 
-Our main interest in \cref{ch3:thm:local-duality-co-contra} is related to chromatic homotopy theory and derived completion of rings. We will not present comprehensive introductions to these topics here, hence the interested reader is referred to \cite{barthel-beaudry_19} for details on the former and \cite{barthel-heard-valenzuela_2020} for the latter.
+Our main interest in \cref{ch2:thm:local-duality-co-contra} is related to chromatic homotopy theory and derived completion of rings. We will not present comprehensive introductions to these topics here, hence the interested reader is referred to \cite{barthel-beaudry_19} for details on the former and \cite{barthel-heard-valenzuela_2020} for the latter.
 
 \subsubsection*{Chromatic homotopy theory}
 
@@ -157,7 +157,7 @@ In the light of local duality, the category $\Sp_{n-1}$ is the category of local
     For any non-negative integer $n$, there are symmetric monoidal equivalences $\Mn \simeq \Comod_{M_n\S}(\Sp_n)$ and $\SpKn\simeq \Contra_{M_n\S}(\Sp_n)$.
 \end{proposition}
 \begin{proof}
-    This follows directly from \cref{ch3:thm:local-duality-co-contra}, as the pair $(\Sp_n, L_nV_n)$ is a local duality context. 
+    This follows directly from \cref{ch2:thm:local-duality-co-contra}, as the pair $(\Sp_n, L_nV_n)$ is a local duality context. 
 \end{proof}
 
 We also have a similar description of the objects coming from the finite chromatic filtration. 
@@ -166,15 +166,15 @@ We also have a similar description of the objects coming from the finite chromat
     For any non-negative integer $n$, there are symmetric monoidal equivalences $\Mn^f \simeq \Comod_{M^f_n\S}(\Sp^f_n)$ and $\Sp_{T(n)}\simeq \Contra_{M^f_n\S}(\Sp^f_n)$.
 \end{proposition}
 \begin{proof}
-    As the functor $M_n^f\: \Sp_n^f \to \M_n^f$ is a smashing colocalization, \cref{ch3:thm:dual-monoidal-BB} gives an equivalence $\M_n^f \simeq \Comod_{M_n^f \S}(\Sp_n^f)$. As there is an equivalence $\M_n^f \simeq \Sp_{T(n)}$ the claim of the result is then a formal consequence of \cref{ch3:thm:Positselski-duality-idempotent}.
+    As the functor $M_n^f\: \Sp_n^f \to \M_n^f$ is a smashing colocalization, \cref{ch2:thm:dual-monoidal-BB} gives an equivalence $\M_n^f \simeq \Comod_{M_n^f \S}(\Sp_n^f)$. As there is an equivalence $\M_n^f \simeq \Sp_{T(n)}$ the claim of the result is then a formal consequence of \cref{ch2:thm:Positselski-duality-idempotent}.
 \end{proof}
 
 \begin{remark}
-    In light of \cref{ch3:rm:contramodule-over-pro-ring} we would really like to have a description of $\Sp_{K(n)}$ and $\Sp_{T(n)}$ via certain contramodules over their respective units, which are the $K(n)$-local and $T(n)$-local spheres respectively. These spheres are both naturally $\E_\infty$-algebras in $\Pro(\Sp_n^\omega)$ and $\Pro(\Sp_n^{f, \omega})$ respectively, hence a natural starting point is to take advantage of this fact. We will investigate this in joint work with Florian Riedel. 
+    In light of \cref{ch2:rm:contramodule-over-pro-ring} we would really like to have a description of $\Sp_{K(n)}$ and $\Sp_{T(n)}$ via certain contramodules over their respective units, which are the $K(n)$-local and $T(n)$-local spheres respectively. These spheres are both naturally $\E_\infty$-algebras in $\Pro(\Sp_n^\omega)$ and $\Pro(\Sp_n^{f, \omega})$ respectively, hence a natural starting point is to take advantage of this fact. We will investigate this in joint work with Florian Riedel. 
 \end{remark}
 
 \subsubsection*{Derived completion}
-\label{ch3:ssec:derived-completion}
+\label{ch2:ssec:derived-completion}
 
 Let $R$ be a commutative noetherian ring and $I\subseteq R$ an ideal generated by a finite regular sequence. The $I$-adic completion functor $C^I\: \Mod_R \to \Mod_R$, defined by $C^I(M)=\lim_k M/I^k$ is neither a left, nor right exact functor. However, by \cite[5.1]{greenlees-may_92} the higher right derived functors vanish. We denote the higher left derived functors of $C^I$ by $L^I_i$. An $R$-module $M$ is said to be \emph{$I$-adically complete}\index{I-adic completion} if the natural map $M\to C^I (M)$ is an isomorphism. It is said to be \emph{$L$-complete}\index{$L$-complete} if the natural map $M\to L_0^I(M)$ is an isomorphism. The map $M\to C^I(M)$ factors through $L_0^I(M)$, and the map $L_0^I(M)\to C^I(M)$ is always an epimorphism, but usually not an isomorphism. The full subcategory consisting of the $L$-complete modules form an abelian category $\Mod_R^{I-comp}$. The full subcategory of $I$-adically complete modules, $\Mod_R^\wedge$ is usually not abelian. 
 
@@ -184,7 +184,7 @@ We say an $R$-module $M$ is $I$-power torsion\index{I-power torsion} if the natu
 
 The object $R/I$ is compact in $\Der(R)$, which is a rigidly compactly generated symmetric monoidal stable $\infty$-category\index{Rigidly compactly generated}. Hence, $(\Der(R), R/I)$ is a local duality context. The category $\Der(R)^{R/I-tors}$ is by \cite[3.7(2)]{barthel-heard-valenzuela_2020} equivalent to $\Der(\Mod_R^{I-tors})$, the derived category $I$-power torsion modules. The category $\Der(R)^{R/I-comp}$ is by \cite[3.7(1)]{barthel-heard-valenzuela_2020} equivalent to the right completion of the derived category of $\Mod_R^{I-comp}$. 
 
-The functors $\Gamma$ and $\Lambda$ coming from this local duality context can by \cite[3.16]{barthel-heard-valenzuela_2018} be identified with the total right derived functor $\mathbb{R}T_I$ and the total left derived functor $\mathbb{L}C^I$ respectively. By \cref{ch3:thm:Positselski-duality-idempotent} we know that these are the cofree comodule functor and the free contramodule functor, hence we can conclude with the following. 
+The functors $\Gamma$ and $\Lambda$ coming from this local duality context can by \cite[3.16]{barthel-heard-valenzuela_2018} be identified with the total right derived functor $\mathbb{R}T_I$ and the total left derived functor $\mathbb{L}C^I$ respectively. By \cref{ch2:thm:Positselski-duality-idempotent} we know that these are the cofree comodule functor and the free contramodule functor, hence we can conclude with the following. 
 
 \begin{proposition}
     There are symmetric monoidal equivalences

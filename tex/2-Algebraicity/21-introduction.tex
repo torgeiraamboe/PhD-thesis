@@ -1,7 +1,7 @@
 
 
 \section{Introduction}
-\label{ch2:sec:introduction}
+\label{ch1:sec:introduction}
 
 The central idea in chromatic homotopy theory is to study the symmetric monoidal stable $\infty$-category of spectra, $\Sp$, via its smaller building blocks. These are the categories $\Sp\np$ and $\SpK$ of $E\np$-local and $K_p(n)$-local spectra, where $E=E\np$ is Morava $E$-theory, and $K_p(n)$ is Morava $K$-theory, see for example \cite{hovey-strickland_99}. These categories depend on a prime $p$ and an integer $n$, called the height. For a fixed height $n$, increasing the prime $p$ makes both categories behave more algebraically. This manifests itself, for example, in the $E$-Adams spectral sequence of signature
 $$E^{s,t}_2 (L_n\S) = \Ext_{E_*E}^{s,t}(E_*,E_*)\Longrightarrow \pi_{t-s} L_n\S$$
@@ -49,31 +49,31 @@ We can summarize the most general of the above algebraicity results in the follo
 
 A natural question arises: Is there a finite prime exotic algebraicity for $\SpK$? The goal of this paper is to give an affirmative answer. More precisely, we prove the following. 
 
-\begin{introthm}[\cref{ch2:thm:main-spectra-dual}]
-    \label{ch2:thm:A}
+\begin{introthm}[\cref{ch1:thm:main-spectra-dual}]
+    \label{ch1:thm:A}
     Let $p$ be a prime and $n\in \N$. If $k=2p-2-n^2-n>0$,  then there is an equivalence of $k$-categories 
     $$h_k \SpK\simeq h_k \Frc.$$
     In other words, $K_p(n)$-local spectra are exotically algebraic at large primes. 
 \end{introthm}
 
-The available tools for proving such a statement require an abelian category with enough injective objects admitting lifts to a stable $\infty$-category. In lack of such a well-behaved abelian approximation for $\SpK$, we take inspiration from \cite{barthel-schlank-stapleton_2021} and instead use the dual category $\M\np$ of monochromatic spectra, which we show has the needed properties. \cref{ch2:thm:A} will then follow from the following result. 
+The available tools for proving such a statement require an abelian category with enough injective objects admitting lifts to a stable $\infty$-category. In lack of such a well-behaved abelian approximation for $\SpK$, we take inspiration from \cite{barthel-schlank-stapleton_2021} and instead use the dual category $\M\np$ of monochromatic spectra, which we show has the needed properties. \cref{ch1:thm:A} will then follow from the following result. 
 
-\begin{introthm}[\cref{ch2:thm:main-spectra}]
-    \label{ch2:thm:B}
+\begin{introthm}[\cref{ch1:thm:main-spectra}]
+    \label{ch1:thm:B}
     Let $p$ be a prime and $n\in \N$. If $k=2p-2-n^2-n>0$,  then there is an equivalence of $k$-categories $h_k \M\np\simeq h_k \Fr\np^{I_n-tors}.$
 \end{introthm}
 
-In order to prove \cref{ch2:thm:B}, we first prove the analogous statement for monochromatic $E$-modules. 
+In order to prove \cref{ch1:thm:B}, we first prove the analogous statement for monochromatic $E$-modules. 
     
-\begin{introthm}[\cref{ch2:thm:main-modules}]
-    \label{ch2:thm:C}
+\begin{introthm}[\cref{ch1:thm:main-modules}]
+    \label{ch1:thm:C}
     Let $p$ be a prime and $n\in \N$. If $k=2p-2-n>0$,  then there is an equivalence of $k$-categories $h_k \Modt\simeq h_k \Dper(\modt).$
 \end{introthm}
 
 
 \subsection*{Overview of the paper}
 
-\cref{ch2:sec:introduction} introduces local duality, and the proposed exotic algebraic model using periodic chain complexes of torsion comodules. \cref{ch2:sec:exotic-algebraic-models} focuses on Franke's algebraicity theorem. Most of the new results of the paper are presented in \cref{ch2:ssec:algebraicity-modules} and \cref{ch2:ssec:algebraicity-spectra}, where we prove \cref{ch2:thm:A}, \cref{ch2:thm:B} and \cref{ch2:thm:C}. In \cref{ch2:app:barr-beck} we prove that Barr--Beck adjunctions interact well with local duality, which is used to prove that periodization, torsion and taking the derived category all commute. 
+\cref{ch1:sec:introduction} introduces local duality, and the proposed exotic algebraic model using periodic chain complexes of torsion comodules. \cref{ch1:sec:exotic-algebraic-models} focuses on Franke's algebraicity theorem. Most of the new results of the paper are presented in \cref{ch1:ssec:algebraicity-modules} and \cref{ch1:ssec:algebraicity-spectra}, where we prove \cref{ch1:thm:A}, \cref{ch1:thm:B} and \cref{ch1:thm:C}. In \cref{ch1:app:barr-beck} we prove that Barr--Beck adjunctions interact well with local duality, which is used to prove that periodization, torsion and taking the derived category all commute. 
 
 
-\textbf{Acknowledgements.} We want to thank Drew Heard, Irakli Patchkoria and Marius Nielsen for helpful conversations and for proof-reading the paper. We also want to thank Piotr Pstr\a{}gowski for finding a mistake in the proof of a previous version of \cref{ch2:lm:cohomological-dimension-torsion-comodules}, and the anonymous referee for helpful and constructive comments. Lastly, we want to thank the University of Copenhagen for their hospitality while writing most of this paper. This work forms a part of the authors thesis, partially supported by grant number TMS2020TMT02 from the Trond Mohn Foundation. 
+\textbf{Acknowledgements.} We want to thank Drew Heard, Irakli Patchkoria and Marius Nielsen for helpful conversations and for proof-reading the paper. We also want to thank Piotr Pstr\a{}gowski for finding a mistake in the proof of a previous version of \cref{ch1:lm:cohomological-dimension-torsion-comodules}, and the anonymous referee for helpful and constructive comments. Lastly, we want to thank the University of Copenhagen for their hospitality while writing most of this paper. This work forms a part of the authors thesis, partially supported by grant number TMS2020TMT02 from the Trond Mohn Foundation. 

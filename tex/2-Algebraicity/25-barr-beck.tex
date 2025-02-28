@@ -1,12 +1,12 @@
 
 
 \section{Barr--Beck for localizing ideals}
-\label{ch2:app:barr-beck}
+\label{ch1:app:barr-beck}
 
 In this appendix we prove that the monoidal Barr--Beck theorem---a monoidal version of Lurie's $\infty$-categorical version of the classical Barr--Beck monadicity theorem, see \cite[Section 4.7]{Lurie_HA}---interacts nicely with local duality.
 
 \begin{theorem}[{\cite[5.29]{mathew-naumann-noel_2017}}]
-    \label{ch2:thm:modular-bb}
+    \label{ch1:thm:modular-bb}
     Let $\C, \D \in \Alg(\PrLs)$ and $(F\dashv G)\colon \C\longrightarrow \D$ be a monoidal adjunction. If in addition 
     \begin{enumerate}
         \item $G$ is conservative, 
@@ -24,7 +24,7 @@ In this appendix we prove that the monoidal Barr--Beck theorem---a monoidal vers
     When the three criteria above hold for a given monoidal adjunction $(F\dashv G)$, we will say that the adjunction satisfies the monoidal Barr--Beck criteria or that it is a \emph{monoidal Barr--Beck adjunction}. We will sometimes omit the prefix monoidal when it is clear from context. 
 \end{definition}
 
-Let $(\C, \K)$ be a local duality context. We wish to prove that the associated local duality diagram is compatible with \cref{ch2:thm:modular-bb}. By modifying \cite[3.7]{behrens-shaw_2020} slightly, we know that any Barr--Beck adjunction induces a Barr--Beck adjunction on $\K$-local and $\K$-complete objects. Hence, it remains only to prove a similar statement for the $\K$-torsion objects. 
+Let $(\C, \K)$ be a local duality context. We wish to prove that the associated local duality diagram is compatible with \cref{ch1:thm:modular-bb}. By modifying \cite[3.7]{behrens-shaw_2020} slightly, we know that any Barr--Beck adjunction induces a Barr--Beck adjunction on $\K$-local and $\K$-complete objects. Hence, it remains only to prove a similar statement for the $\K$-torsion objects. 
 
 \begin{definition}
     \index{Map of local duality contexts}
@@ -41,7 +41,7 @@ Given a local duality context and an appropriate functor, one can always extend 
 The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{balmer-sanders_2017}. The proof is also similar, but as we have phrased it in a different and slightly more general language, we present a full proof. 
 
 \begin{lemma}
-    \label{ch2:lm:induced-torsion-adjunction}
+    \label{ch1:lm:induced-torsion-adjunction}
     Let $(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L)$ be a local duality adjunction. Then, the adjunction induces a monoidal adjunction on localizing ideals
     \begin{center}
     \begin{tikzcd}
@@ -50,7 +50,7 @@ The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{
     \end{center}
 \end{lemma}
 \begin{proof}
-    From \cref{ch2:rm:monoidal-structure-in-local-duality} we know that the symmetric monoidal structures on $\Loc^\otimes_\C(\K)$ and $\Loc^\otimes_\D(\L)$ is simply the symmetric monoidal structures on $\C$ and $\D$, restricted to the full subcategories. 
+    From \cref{ch1:rm:monoidal-structure-in-local-duality} we know that the symmetric monoidal structures on $\Loc^\otimes_\C(\K)$ and $\Loc^\otimes_\D(\L)$ is simply the symmetric monoidal structures on $\C$ and $\D$, restricted to the full subcategories. 
     
     Since $F$ is a map of local duality contexts, we have an inclusion $F(\K)\subseteq \L$, which gives inclusions  
     $$F(\Loc^\otimes_{\C}(\K))\subseteq \Loc^\otimes_\D(F(\K))\subseteq \Loc^\otimes_\D(\L),$$
@@ -72,21 +72,21 @@ The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{
 The key feature for us is that such an induced adjunction inherits the property of being a Barr--Beck adjunction, i.e., that the right adjoint is conservative, preserves colimits, and has a projection formula. An analogous, but not equivalent, statement was proven in \cite[4.5]{behrens-shaw_2020}. Another related, but not equivalent statement, is Greenlees--Shipley's Cellularization principle, see \cite{greenlees-shipley_2013}. 
 
 \begin{theorem}
-    \label{ch2:thm:modular-bb-torsion}
+    \label{ch1:thm:modular-bb-torsion}
     Let $(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L)$ be a local duality adjunction. If $(F\dashv G)$ satisfies the Barr--Beck criteria, then the induced monoidal adjunction on localizing ideals
     \begin{center}
         \begin{tikzcd}
             \Loc_\C^\otimes(\K) \arrow[rr, "F'", yshift=2] &  & \Loc_\D^\otimes(\L) \arrow[ll, "G'", yshift=-2]
         \end{tikzcd}
     \end{center}
-    constructed in \cref{ch2:lm:induced-torsion-adjunction}, also satisfies the Barr--Beck criteria. 
+    constructed in \cref{ch1:lm:induced-torsion-adjunction}, also satisfies the Barr--Beck criteria. 
 \end{theorem}
 \begin{proof}
     We need to prove that $G'$ is conservative and colimit-preserving and that the projection formula holds. The first two will both follow from the following computation, showing that also $G'$ is just the restriction of $G$ to $\Loc_\D^\otimes(\L)$. 
 
     Let $X\in \Loc_\D^\otimes(\L)$. By definition we have $G'(X) = \Gamma_\K G(X)$, where we have omitted the inclusions from the notation for simplicity. Since $\Gamma_\K$ is smashing and $(F\dashv G)$ by assumption has a projection formula we have 
     $$\Gamma_\K G(X)\simeq G(X)\otimes_\C \Gamma_\K\1_\C \simeq G(X\otimes_\D F(\Gamma_\K\1_\C)).$$
-    By \cref{ch2:lm:induced-torsion-adjunction} $F'$ is symmetric monoidal, hence $F(\Gamma_\K\1_\C)\simeq \Gamma_\L \1_\D$, which acts on $X$ as the monoidal unit. Thus, we can summarize with
+    By \cref{ch1:lm:induced-torsion-adjunction} $F'$ is symmetric monoidal, hence $F(\Gamma_\K\1_\C)\simeq \Gamma_\L \1_\D$, which acts on $X$ as the monoidal unit. Thus, we can summarize with
     $$G'(X)\simeq G(X\otimes_\D F(\Gamma_\K\1_\C))\simeq G(X\otimes_\D \Gamma_\L\1_\D)\simeq G(X),$$
     which shows that also $G'$ is the restriction of $G$. 
 
