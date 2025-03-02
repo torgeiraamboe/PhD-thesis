@@ -515,6 +515,7 @@ By work of Kanda we can almost extend this to the locally noetherian setting. In
 
 
 
+
 % -------------------------- Surjectivity 1 -----------------------------
 
 % For surjectivity we follow the proof of \cite[C.5.2.7]{lurie_SAG}, adapted to the stable setting. Let $\A$ be a hereditary torsion theory in $\C^\heart$. Define $\L\subseteq \C$ to be the full subcategory spanned by objects $X$ such that $\pi_n^\heart X\in \A$. We prove that it is a stable localizing subcategory---it will obviously be $t$-stable by definition. By \cref{ch3:rm:prestable-localizing-in-stable-then-stable-localizing} it is enough to show that it is a prestable localizing subcategory of $\C$, i.e., that it is closed under coproducts, cofiber sequences and sub-objects. 
@@ -621,6 +622,15 @@ We can then functorially relate the $\pi$-stable localizing subcategories of $\D
 \begin{remark}
     By \cref{ch3:prop:pi-stable-then-t-stable} the $\pi$-stable localizing subcategory $\A_\C$ is also $t$-stable, with heart $\A$. Hence, there is also a realization functor $R'\: \Der(\A)\to \A_\C$, and a natural question to ask is wether this coincides with the above restricted functor $R\: \A_{\Der(\C^\heart)}\to \A_\C$. There is an inclusion $\Der(\A)\subseteq \A_{\Der(\C^\heart)}$, as the latter is a $\pi$-stable localizing subcategory of $\Der(\C^\heart)$, but we do not know if this is always an equivalence. In particular, we don't know whether $\D(\A)$, treated as a subcategory of $\Der(\C^\heart)$, is always a $\pi$-stable localizing subcategory. 
 \end{remark}
+
+\begin{addendum}
+    To add some credibility to the above remark we recall 
+    the localizing subcategory $\Comodt$ of $I_n$-torsion comodules in $\ComodE$, that we studied in \cref{ch1}. We know that $\Der(\A)$ comes equipped with a natural $t$-structure for any Grothendieck abelian category $\A$, making $\Der(\A)$ into a $t$-stable category. In particular, this holds for $\Der(\ComodE)$. By \cref{ch3:thm:main} we know that there is a unique $\pi$-exact localizing subcategory $\L \subseteq \Der(\ComodE)$ such that $\L^\heart \simeq \Comodt$. By \cite[3.7(2)]{barthel-heard-valenzuela_2020} this localizing subcategory is precicely 
+    \[\Der(\ComodE)^{I_n-tors} \simeq \Der(\Comodt),\]
+    as it is $\pi$-stable, hence equivalent to $\L$ by a maximality argument --- see \cref{ch3:lm:pi-stable-are-the-biggest}. 
+
+    By \cref{ch1:thm:pulling-out-torsion} this example also holds for the periodic derived category $\Dper(\Comodt)$, which we also studied in \cref{ch1}. 
+\end{addendum}
 
 
 

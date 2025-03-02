@@ -27,6 +27,10 @@ Let us make this heuristic more precise. For the rest of this section we let $\C
     These definitions make sense more generally as well --- we do not need the dualizable objects to generate $\C$. But, the examples we are interested in will have this feature, and we will not attempt to introduce the most general possible framework here. 
 \end{remark}
 
+
+
+\subsection{Dualities}
+
 For any algebra $A\in \CAlg(\C)$ we have a lax monoidal functor $\iHom(A,-)\: \C\op \to \C$, adjoint to $A\otimes(-)\: \C\to \C$. Fixing the other input defines another functor $\iHom(-,A)$, which induces a functor 
 \[\iHom(-,A)\: \cCAlg(\C)\op \to \CAlg(\C)\]
 as it sends coalgebras to algebras. Chosing $A=\1_\C$ defines a functor 
@@ -99,6 +103,8 @@ The goal is to recover more global information about general objects in $\C$, no
 \begin{remark}
     This should be viewed as an $\infty$-categorical analog of the anti-equivalence between comodules over a cocommutative coalgebra $C\in \Vect_k$ and the category of linearly compact modules over $C^\vee$, see \cite[II.29]{lefschetz_1942}. 
 \end{remark}
+
+\subsection{Monochromatic contramodules}
 
 Let us now turn our attention to the setting of chromatic homotopy theory. As $M_n\S$ is a cocommutative coalgebra we know that its dual $M_n\S^\vee$ is a commutative ring spectrum in $\SpE$. By \cite[2.21(4)]{barthel-heard-valenzuela_2018} the $K(n)$-localization functor, treated as an endofunctor on $\SpE$, is equivalent to $\iHom(M_n\S,-)$. Applied to the $\En$-local sphere $\S_n$ this is exactly the dual of $M_n\S$
 \[M_n \S^\vee \simeq \iHom(M_n\S, \S_n)\simeq L_\Kn \S_n \simeq \S_\Kn.\]

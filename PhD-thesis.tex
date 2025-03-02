@@ -1,4 +1,4 @@
-\documentclass[12pt, b5paper]{book}
+\documentclass[12pt, b5paper, twoside]{book}
 \usepackage{article}
 \addbibresource{references.bib}
 \author{Torgeir Aamb\o}
@@ -84,10 +84,12 @@
 
 
 
-\printbibliography{}
-\addcontentsline{toc}{chapter}{Bibliography}
-\printindex
+\printbibliography[heading=bibintoc]{}
+
+\cleardoublepage
+\phantomsection
 \addcontentsline{toc}{chapter}{Index}
+\printindex
 
 
 %\textbf{Torgeir Aamb\o:} Department of Mathematical Sciences, Norwegian University of Science and Technology, Trondheim \\
