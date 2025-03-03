@@ -115,12 +115,12 @@ To understand local duality, and also the use of localizing subcategories, we lo
 
 \begin{definition}
     \label{ch0:def:L-equivalence}
-    Let $\C, \D\in \Alg(\PrLs)$ and $f\colon \C\longrightarrow \D$ a functor. A map $\phi$ in $\C$ is called an {\defn $f$-equivalence} if $f(\phi)$ is an equivalence. The functor $f$ is said to be {\defn tensor-compatible} if being an $f$-equivalence is stable under tensor product: in the sense that for any $f$-equivalence $X\longrightarrow Y$ and object $Z\in \C$, the induced map $X\otimes Z\longrightarrow Y\otimes Z$ is again an $f$-equivalence. 
+    Let $\C, \D\in \Alg(\PrLs)$ and $f\colon \C\longrightarrow \D$ a functor. A map $\phi$ in $\C$ is called an \emph{$f$-equivalence} if $f(\phi)$ is an equivalence. The functor $f$ is said to be \emph{tensor-compatible} if being an $f$-equivalence is stable under tensor product: in the sense that for any $f$-equivalence $X\longrightarrow Y$ and object $Z\in \C$, the induced map $X\otimes Z\longrightarrow Y\otimes Z$ is again an $f$-equivalence. 
 \end{definition}
 
 \begin{definition}
     \label{ch0:def:localization}
-    Let $\C, \D\in \Alg(\Pr)$. A (monoidal) {\defn localization} is a tensor-compatible functor $f\colon \C\longrightarrow \D$ with a fully faithful right adjoint $i$. 
+    Let $\C, \D\in \Alg(\Pr)$. A (monoidal) \emph{localization} is a tensor-compatible functor $f\colon \C\longrightarrow \D$ with a fully faithful right adjoint $i$. 
 \end{definition}
 
 \begin{remark}
@@ -133,7 +133,7 @@ To understand local duality, and also the use of localizing subcategories, we lo
 \end{remark}
 
 \begin{definition}
-    Given a localization $L\colon \C\longrightarrow \C_L$, any object $C\in \C$ admits a map $C\longrightarrow LC$ coming from the unit of the adjunction, called its {\defn $L$-localization}. The object $C$ is said to be {\defn $L$-local} if this is an $L$-equivalence. 
+    Given a localization $L\colon \C\longrightarrow \C_L$, any object $C\in \C$ admits a map $C\longrightarrow LC$ coming from the unit of the adjunction, called its \emph{$L$-localization}. The object $C$ is said to be \emph{$L$-local} if this is an $L$-equivalence. 
 \end{definition}
 
 \begin{proposition}[{\cite[1.3.4.3]{Lurie_HA}}]
@@ -146,19 +146,18 @@ To understand local duality, and also the use of localizing subcategories, we lo
 \end{remark}
 
 \begin{remark}
-    Similarly to localizations, we can define {\defn colocalizations} as functors $g\colon \C\longrightarrow \D$ admitting a fully faithful left adjoint $i$. The composition $i\circ g$ is denoted $\Gamma$. The adjoint gives an equivalence between $\D$ and a full subcategory $\C^\Gamma$ of $\C$, and the datum of a colocalization is equivalent to the datum of a functor $\Gamma\colon \C\longrightarrow \C^\Gamma$ that is right adjoint to the inclusion. 
-    Dually to localizations, we get for any $C\in \C$ a colocalization map $\Gamma C\to C$, and we say $C$ is $\Gamma$-colocal if this is an equivalence. 
+    Similarly to localizations, we can define \emph{colocalizations} as functors $g\colon \C\longrightarrow \D$ admitting a fully faithful left adjoint $i$. The composition $i\circ g$ is denoted $\Gamma$. The adjoint gives an equivalence between $\D$ and a full subcategory $\C^\Gamma$ of $\C$, and the datum of a colocalization is equivalent to the datum of a functor $\Gamma\colon \C\longrightarrow \C^\Gamma$ that is right adjoint to the inclusion. Dually to localizations, we get for any $C\in \C$ a colocalization map $\Gamma C\to C$, and we say $C$ is \emph{$\Gamma$-colocal} if this is an equivalence. 
 \end{remark}
 
 For any localization $L\colon \C\longrightarrow \C_L$, the image of the unit $L\1_\C$ is a ring object, and any $L$-local object $X$ admits the structure of an $L\1_\C$ module via a map $L\1_\C\otimes X \longrightarrow X$. Equivalently, there is a map of functors $L\1_\C \otimes L(-)\longrightarrow L(-)$. Via the tensor-internal hom adjunction this is equivalently a map $L(-)\longrightarrow \iHom(L\1_\C,-)$. 
 
 \begin{definition}
     \label{ch0:def:smashing-localization}
-    We say a localization $L$ is {\defn smashing} if the $L\1_\C$-module map above is an equivalence. This is equivalent to the dual map $L(-)\longrightarrow \iHom_\C(L\1, -)$ being an equivalence. 
+    We say a localization $L$ is \emph{smashing} if the $L\1_\C$-module map above is an equivalence. This is equivalent to the dual map $L(-)\longrightarrow \iHom_\C(L\1, -)$ being an equivalence. 
 \end{definition}
 
 \begin{remark}
-    Similarily, for a colocalization $\Gamma$ there are maps $\Gamma \1_\C \otimes \Gamma(-)\longrightarrow \Gamma (-)$ and $\Gamma(-)\longrightarrow \iHom(\Gamma \1_\C, -)$. The colocalization $\Gamma$ is said to be smashing if the former is an equivalence, and {\defn cosmashing} if the latter is. Note that being smashing and cosmashing is not equivalent for colocalizations, as was the case for localizations. We plan to investigate this distinction, and its relationship with comodules, contramodules and Positselski duality, in future work. 
+    Similarily, for a colocalization $\Gamma$ there are maps $\Gamma \1_\C \otimes \Gamma(-)\longrightarrow \Gamma (-)$ and $\Gamma(-)\longrightarrow \iHom(\Gamma \1_\C, -)$. The colocalization $\Gamma$ is said to be smashing if the former is an equivalence. Note that it is no longer equivalent that these two functors arre equivalences, as was the case for localizations. This is precisely the discrepancy that allow for the definition of a contramodule, which we study in \cref{ch2}. 
 \end{remark}
 
 \begin{remark}
@@ -169,7 +168,7 @@ There are several ways to construct localizations, but one method particularly i
 
 \begin{definition}
     \label{ch0:def:left-orthogonal-complement}
-    Let $\L\subseteq \C$ be a full subcategory. The {\defn left orthogonal complement} of $\L$, is the full subcategory ${\defn \L^\perp}$ consisting of objects $C\in \C$ such that $\Hom_\C(L,C)\simeq 0$ for all $L\in \L$.  
+    Let $\L\subseteq \C$ be a full subcategory. The \emph{left orthogonal complement} of $\L$, is the full subcategory $\L^\perp$ consisting of objects $C\in \C$ such that $\Hom_\C(L,C)\simeq 0$ for all $L\in \L$.  
 \end{definition}
 
 \begin{example}
@@ -191,6 +190,7 @@ We are now ready to present the setup for local duality. In essence, it can be v
 Any choice of local duality context allows us to assign three new categories, which together decomposes the category $\C$. 
 
 \begin{construction}
+    \label{ch0:const:local-duality-categories}
     Let $(\C, \K)$ be a local duality context. We define $\C^{\K-tors}$ to be the localizing tensor ideal generated by $\K$, denoted $\Loc^\otimes_\C(\K)$. Further we define $\C^{\K-loc}$ to be the left orthogonal complement $(\C^{\K-tors})^\perp$, i.e., the full subcategory consisting of objects $C\in \C$ such that $\Hom_\C(T,C)\simeq 0$ for all $T\in \C^{\K-tors}$. Similarly, define $\C^{\K-comp}$ to be the left-orthogonal complement of $\C^{\K-loc}$, i.e. $\C^{\K-comp}= (\C^{\K-loc})^\perp$. These full subcategories are respectively called the $\K$-torsion, $\K$-local and $\K$-complete objects in $\C$. We have inclusions into $\C$, denoted $i_{\K-tors}$, $i_{\K-loc}$ and $i_{\K-comp}$ respectively. 
     
     By the adjoint functor theorem, \cite[5.5.2.9]{lurie_09}, the inclusions $i_{\K-loc}$ and $i_{\K-comp}$ have left adjoints $L_\K$ and $\Lambda_\K$ respectively, while $i_{\K-tors}$ and $i_{\K-loc}$ have right adjoints $\Gamma_\K$ and $V_\K$ respectively. These are then, by definition, localizations and colocalizations. Since the torsion, local and complete objects are ideals, these localizations and colocalizations are compatible with the symmetric monoidal structure of $\C$, in the sense of \cite[2.2.1.7]{Lurie_HA}. In particular, by \cite[2.2.1.9]{Lurie_HA} we get unique induced symmetric monoidal structures such that $L_\K$, $\Lambda_\K$, $\Gamma_\K$ and $V_\K$ are symmetric monoidal functors. 

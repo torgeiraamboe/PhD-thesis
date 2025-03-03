@@ -1,5 +1,7 @@
 \section{Summaries}
 
+Even though each of the papers contain an introduction with their respective results, we include a short summary of the main ideas from each paper here in the introduction. As to not repeat ourselves too much we have made these summaries more focused on the ideas and concepts, and not that much on technicalities and specificity. They still contain the main results from each paper, but also include some descriptions of why they are as they are. 
+
 \subsection{Paper I}
 
 In \cite{patchkoria-pstragowski_2021} the authors prove, among other things, an algebraicity result for chromatic homotopy theory, based on earlier work by Franke in \cite{franke_96} and Pstr\a{}gowski in \cite{pstragowski_2021}. More precisely they prove that there is an equivalence of homotopy $k$-categories 
@@ -8,7 +10,7 @@ for all primes $p$ and chromatic heights $n$ such that $k = 2p-2-n^2-n > 0$. Her
 
 The main goal of the first paper of this thesis, \cite{aambo_2024_algebraicity}, is to prove a similar result for the category $\SpKpn$. 
 
-\begin{theorem}
+\begin{theorem}[{\cref{ch1:thm:A}}]
     \label{ch0:summary1:thm:main}
     If $p$ is a prime number, and $n$ a non-negative integer such that $k = 2p-2-n^2-n > 0$, then there is an equivalence of homotopy $k$-categories 
     \[h_k \SpKpn \simeq h_k\Fr\np^{I_n-comp},\]
@@ -36,39 +38,80 @@ whenever $k= 2p-2-n^2-2>0$. Using a sequence of local duality arguments, as reca
 
 \subsection{Paper II}
 
-Positselski's comodule-contramodule correspondence, see \citeme,  gives an adjunction between comodules and contramodules over coalgebras in certain categories --- like vector spaces over a field. In many nice cases this adjunction is actually an equivalence, for example when the coalgebra $K$ is co-separable. 
+Positselski's comodule-contramodule correspondence gives an adjunction between comodules and contramodules over coalgebras in certain categories --- like vector spaces over a field. In many nice cases this adjunction is actually an equivalence, for example when the coalgebra $K$ is co-separable. 
 
 We had two central goals for the second paper, \cite{aambo_2024_positselski}: 
 \begin{enumerate}
-    \item Set up a Positselski duality for cocommutative coalgebras in symmetric monoidal $\infty$-categories. 
-    \item Prove that for compactly generated symmetric monoidal stable $\infty$-categories, Positselski duality recovers local duality, in the sense of \citeme. 
+    \item Set up a similar duality theory for cocommutative coalgebras in presentably symmetric monoidal $\infty$-categories, which we have called Positselski duality. 
+    \item Prove that for compactly generated symmetric monoidal stable $\infty$-categories, Positselski duality recovers local duality, in the sense of \cite{hovey-palmiery-strickland_97} --- see also \cref{ch0:ssec:local-duality}. 
 \end{enumerate}
 
-The latter would give new categorical descriptions of categories of interest, like $\SpKpn$ and $\Der(R)^\wedge_p$, as certain categories of contramodules. Admittedly, these new descriptions does not offer any great new insight into the categories, but having a description of ``algebraic nature'' can often be enlightening in itself, as it could allow us to pull in ideas from other areas of mathematics. 
+Most mathematicians know the concept of a module over a ring $R$, as an abelian group with a unital associative action of $R$. Dually, given a coalgebra $C$ one can define comodules to be abelian groups with a counital coassociative coaction from $C$. The concept of a contramodule was introduced by Eilenberg and Moore in \cite{eilenberg-moore_65}, but was not much used or studied until the early 2000's, when Positselski found several important uses for them. A contramodule over a coalgebra $C$ is an abelian group with a ``contraaction'' $\Hom(C, G)\to G$, satisfying some natural axioms similar to unitality and associativity. 
 
-\begin{theorem}
+One way to phrase this action is to say it is a module over the monad $\Hom(C,-)$ as an endofunctor on abelian groups. This definition is easy to generalize to the $\infty$-categorical setting, as the internal hom functor $\iHom_\C(C,-)$ for any cocommutative coalgebra in a presentably symmetric monoidal $\infty$-category $\C$, is still a monad. 
+
+However, in the $\infty$-categorical setting the monoidal structure on $\Comod_C$ is more evasive for general coalegbras $C$, as one would need the tensor product in $\C$ to preserve cosifted limits, which rarely holds. To avoid this issue we restrict ourselves to coidempotent coalebras, and obtain the following $\infty$-categorical version of Positselski's co-contra correspondence. 
+
+\begin{theorem}[{\cref{ch2:introthm:A}}]
     If $\C$ is a presentably symmetric monoidal $\infty$-category, and $C\in \C$ a cocummutative coidempotent coalgebra, then there is an equivalence 
     \[\Comod_C(\C)\simeq \Contra_C(\C)\]
     of symmetric monoidal $\infty$-categories. 
 \end{theorem}
+
+This takes care of the first goal for the paper, so let us move on to the second. Recall from \cref{ch0:ssec:local-duality} that a local duality context is a pair $(\C, \K)$, where $\C$ is a presentably symmetric monoidal stable $\infty$-category compactly generated by dualizable objects, and $\K\subseteq \Co$ is a subset of compact objects. The second goal is to prove that we can recover the equivalence $\C^{\K-tors}\simeq \C^{\K-comp}$ --- see \cref{ch0:const:local-duality-categories} and \cref{ch0:thm:local-duality} --- as the Positselski duality from a naturally associated coidempotent coalgebra. 
+
+\begin{theorem}[{\cref{ch2:introthm:B}}]
+    If $(\C, \K)$ is a local duality context, then there are equivalences 
+    \[\C^{\K-tors}\simeq \Comod_{i\Gamma \1_\C} \text{ and } \C^{\K-comp}\simeq \Contra_{i\Gamma \1_\C},\]
+    where $\Gamma$ is the smashing colocalization associated to $(\C, \K)$. In particular, $i\Gamma \1_\C$ is a coidempotent coalgebra in $\C$, hence Positselski duality implies that there is an equivalence 
+    \[\C^{\K-tors}\simeq \C^{\K-comp}\]
+    of symmetric monoidal stable $\infty$-categories. 
+\end{theorem}
+
+This gives some new categorical descriptions of categories of interest, like $\SpKpn$ and $\Der(R)^\wedge_p$, as certain categories of contramodules. Admittedly, these new descriptions does not offer any great new insight into the categories, but having a description of ``algebraic nature'' can often be enlightening in itself, as it could allow us to pull in ideas from other areas of mathematics. 
 
 \begin{example}
     In the case $\C= \Spn$ and $C = \Mn\S$, we get symmetric monoidal equivalences 
     \[\Comod_{\Mn\S}(\Spn) \simeq \Mn \text{ and } \Contra_{\Mn\S}(\Spn)\simeq \SpKpn.\]
 \end{example}
 
+As an added bonus we have in \cref{ch2:addendum} included some work on defining contramodules over topological algebras in the $\infty$-categorical setting. This is not featured in the original paper, but tries to answer some of the questions that arose. We prove that there is an equivalence between comodules over $C$, and the opposite category of modules over the $\C$-linear dual of $C$, which is a pro-dualizable commutative alebra in $\C$ --- which is a way to incorporate a topology on it in the $\infty$-categorical setting. We also argue why this category deserves to be called the category of contramodules over these pro-dualizable algebras. The main takeaway from this added content is that there is an equivalence between $K(n)$-local spectra, $\SpKn$ and contramodules over the $K(n)$-local sphere $\S_{K(n)}$. 
+
 
 
 
 \subsection{Paper III}
 
-In paper 1 we studied a specific interaction between a localizing subcategory of an abelian category, and a localizing subcategory of a stable $\infty$-category. More precicely, we studied how the adapted homology theory $E_* \: \Spn \to \ComodE$ could be restricted to an adapted homology theory $E_* \: \Mn \to \Comodt$, where $\Mn$ is a localizing subcategory of $\Spn$, while $\Comodt$ is a localizing subcategory of $\ComodE$. 
+In paper I we studied a specific interaction between a localizing subcategory of an abelian category, and a localizing subcategory of a stable $\infty$-category. More precicely, we studied how the adapted homology theory $E_* \: \Spn \to \ComodE$ could be restricted to an adapted homology theory $E_* \: \Mn \to \Comodt$, where $\Mn$ is a localizing subcategory of $\Spn$, while $\Comodt$ is a localizing subcategory of $\ComodE$. 
 
-These former homology theory has an associated category of synthetic spectra, $\SynE$, which is a presentable stable $\infty$-category with a right complete $t$-structure compatible with filtered colimits. The heart of this category is precicely $\ComodE$. 
+The former homology theory has an associated category of synthetic spectra, $\SynE$, which is a presentable stable $\infty$-category with a right complete $t$-structure compatible with filtered colimits. The heart of this category is precicely $\ComodE$. 
 
-Motivated by this setup the goal of the paper \cite{aambo_2024_localizing} is to understand how to lift localizing subcategories of an abelian category $\A$ through a $t$-structure on a stable $\infty$-category $\C$, with a $t$-structure with heart $\C^\heart \simeq \A$. Using an analogous prestable classification due to Lurie in \citeme, we proved the following classification result. 
+Motivated by this setup we wanted to understand the interactions between localizing subcategories in a presentable stable $\infty$-category $\C$ with a well-behaved $t$-structure $(\C\geqz, \C\leqz)$, and localizing subcategories of the Grothendieck abelian heart $\C^\heart = \C\geqz\cap \C\leqz$. The main goal of the third paper, \cite{aambo_2024_localizing}, is to classify which subcategories in $\C$ that are uniquely determined by information in $\C^\heart$. 
+
+There are two levels to such a classification. A localizing subcategory of $\C$ determines a weak localizing subcategory of $\C^\heart$, and our first result attempts to classify which of the localizing subcategories that are uniquely determined by its associated weak localizing subcategory. 
+
+As a short hand name we say a category $\C$ is $t$-stable if it is a presentable stable $\infty$-category with a right complete $t$-structure $(\C\geqz, \C\leqz)$, that is compatible with filtered colimits. A localizing ideal $\L\subseteq \C$ is said to be $\pi$-stable, if $X\in \L$ if and only if $\pi_k^\heart X \in \L^\heart$ for all $k\in \Z$.  
+
+\begin{theorem}[{\cref{ch3:thm:premain}}]
+    If $\C$ is a $t$-stable $\infty$-category, then there is a one-to-one correspondence
+    \[\pistable \simeq \weaklocalizing\]
+    between $\pi$-stable localizing subcategories in $\C$ and weak localizing subcategories in $\C^\heart$. 
+\end{theorem}
+
+This generalizes a correspondence for noetherian commutative rings, due to Takahashi in \cite{takahashi_2009}, where he proves that there is a bijection between $\pi$-stable localizing subcategories of $\Der(R)$ and weak localizing subcategories of $\Mod_R$. For example, it lifts Takahashi's correspondence to noetherian schemes. 
+
+The second level comes from starting with a localizing subcategory $\L^\heart$ of $\C^\heart$, and try to understand how to lift such a category to a localizing subcategory of $\C$. The difference between a weak localizing subcategory and a localizing subcategory is given by certain exact sequences in $\C^\heart$. One should then perhaps expect that the difference between a classification of localizing subcategories of $\C$ that have a weak localizing heart, compared to a localizing heart, is also detected by certian exact sequences. This is precisely what happens. 
+
+A localizing subcategory $\L\subseteq \C$ is said to be $\pi$-exact if it is $\pi$-stable and is the kernel of a $t$-exact functor on $\C$. 
 
 \begin{theorem}
-    If $\C$ is a presentable stable $\infty$-category, with a right complete $t$-structure $(\C\geqz, \C\leqz)$, compatible with filtered colimits, then there are one-to-one correspondences 
-    \[\piexact \simeq \separating \simeq \ablocalizing.\]
+    If $\C$ is a $t$-stable $\infty$-category, then there is a one-to-one correspondence
+    \[\piexact \simeq \ablocalizing,\]
+    which factors through the correspondence
+    \[\separating \simeq \ablocalizing\]
+    due to Lurie.  
 \end{theorem}
+
+As an added bonus, we have in this thesis included an addendum on the motivating example $\Syn_E$, see \cref{ch3:addendum}, which is not featured in the original paper. There we prove some added results about compact generation of the $\pi$-exact lift, as well as relate these ideas back to their source in Paper I. In particular, we prove that the $\pi$-exact lift of $\Comodt$ in $\SynE$ is a compactly generated localizing $\otimes$-ideal, which allows us to compute its deformation theoretical properties: it has generic fiber $\Mn$ and special fiber $\Der(\Comodt)$. This is exactly the properties one would expect for it to be the underlying deformation associated to the adapted homology theory $E_* \: \Mn \to \Comodt$, as studied in \cref{ch1}. 
+
+

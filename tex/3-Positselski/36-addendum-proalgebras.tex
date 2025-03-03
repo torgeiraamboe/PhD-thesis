@@ -1,5 +1,6 @@
 
 \section{Addendum: Modules over pro-algebras}
+\label{ch2:addendum}
 
 We ended the last section by wishing for a way to construct a well behaved category of contramodules over the $K(n)$-local and $T(n)$-local spheres, $\S_\Kn$ and $\S_\Tn$. The current section is not a part of the paper \cite{aambo_2024_positselski}, but we wanted to include some progress on the above question. 
 
@@ -103,6 +104,31 @@ The goal is to recover more global information about general objects in $\C$, no
 \begin{remark}
     This should be viewed as an $\infty$-categorical analog of the anti-equivalence between comodules over a cocommutative coalgebra $C\in \Vect_k$ and the category of linearly compact modules over $C^\vee$, see \cite[II.29]{lefschetz_1942}. 
 \end{remark}
+
+Using the version of local duality in \cref{ch2:introthm:B}, this means that we have the following visually beautiful depiction of local duality: 
+
+\begin{center}
+    \begin{tikzcd}
+        & 
+        \Mod_{L\1} 
+        \arrow[d, xshift=-2pt] 
+        \arrow[rdd, dotted, bend left] 
+        & \\
+        & 
+        \C \arrow[u, xshift=2pt] 
+        \arrow[ld, yshift=-2pt, xshift=1pt] 
+        \arrow[rd, yshift=2pt, xshift=1pt]                  
+        & \\
+        \Comod_{\Gamma \1} 
+        \arrow[ru, yshift=2pt, xshift=-1pt] 
+        \arrow[rr, yshift=2pt, "\simeq"] 
+        \arrow[ruu, dotted, bend left] 
+        &                                                     
+        & \Contra_{\Lambda\1} 
+        \arrow[lu, yshift=-2pt, xshift=-1pt] 
+        \arrow[ll, yshift=-2pt]
+    \end{tikzcd}
+\end{center}
 
 \subsection{Monochromatic contramodules}
 
