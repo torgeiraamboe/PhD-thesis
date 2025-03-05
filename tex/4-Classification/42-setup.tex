@@ -19,15 +19,17 @@ This is equivalent to choosing a $t$-structure on the homotopy category $h\C$, w
 We will assume all $t$-structures to be accessible, in the sense that the connected part $\C\geqz$ is presentable. By \cite[1.2.16]{Lurie_HA} the inclusions $\C\geqz\to \C$ and $\C\leqz\to \C$ have a right adjoint $\tau\geqz$ and a left adjoint $\tau\leqz$ respectively. We denote $\C_{\geq n} := \C\geqz[n]$ and $\C_{\leq n} := \C\leqz[n]$. 
 
 \begin{definition}
-    \index{Heart of $t$-structure}
+    \index{$t$-structure!Heart}
     The heart of a $t$-structure $(\C\geqz, \C\leqz)$ on $\C$ is defined as the full subcategory $\C^\heart := \C\geqz\cap\C\leqz$.
 \end{definition}
 
 The heart $\C^\heart$ is always equivalent to the nerve of its homotopy category $h\C^\heart$, which was proven in \cite{beilinson-bernstein-deligne_1983} to be an abelian category. It is standard to follow \cite[1.2.1.12]{Lurie_HA} and identify the two. 
 
 \begin{definition}
-    \index{Heart-valued homotopy groups}
-    The composite functor $\tau\geqz\circ\tau\leqz\simeq\tau\leqz\circ\tau\geqz \: \C\to \C^\heart$ is denoted by $\pi_0^\heart$ and its composition with the shift functor $X\to X[-n]$ by $\pi_n^\heart$. These are called the \emph{heart-valued homotopy groups} of $X$. 
+    \index{$t$-structure!Homotopy groups}
+    The composite functor 
+    \[\tau\geqz\circ\tau\leqz\simeq\tau\leqz\circ\tau\geqz \: \C\to \C^\heart\]
+    is denoted by $\pi_0^\heart$ and its composition with the shift functor $X\to X[-n]$ by $\pi_n^\heart$. These are called the \emph{heart-valued homotopy groups} of $X$. 
 \end{definition}
 
 The last definition we will need, before going on to prestable categories is the following niceness condition. 
@@ -45,7 +47,7 @@ We now recall the notion of prestable $\infty$-categories, which, similarily to 
 \end{definition}
 
 \begin{remark}
-    This is not the most general, nor the standard, definition of a prestable category --- see \cite[C.1.2.1]{lurie_SAG} --- but by \cite[C.1.2.9]{lurie_SAG} the above definition describes all prestable categories admitting finite limits, hence it is not a very severe restriction. The category $\D$ is also not unique, see \cite[C.1.2.10]{lurie_SAG}, but we will mostly focus on the choice 
+    This is not the most general, nor the standard, definition of a prestable category---see \cite[C.1.2.1]{lurie_SAG}---but by \cite[C.1.2.9]{lurie_SAG} the above definition describes all prestable categories admitting finite limits, hence it is not a very severe restriction. The category $\D$ is also not unique, see \cite[C.1.2.10]{lurie_SAG}, but we will mostly focus on the choice 
     \[\D=\Sp(\C\geqz) = \colim (\cdots\overset{\Omega}\to\C\geqz\overset{\Omega}\to\C\geqz).\]
 \end{remark}
 
@@ -66,7 +68,7 @@ We will restrict our attention to Grothendieck prestable categories, which are p
 The following example is perhaps the main reason for the naming convention.
 
 \begin{example}
-    For any Grothendieck abelian category $\A$, the derived category category $\D(\A)$ has a natural $t$-structure with heart $\A$. The connected component $\D(\A)\geqz$, which consists of complexes $X_\bullet$ such that $H_i(X_\bullet) = 0$ for $i<0$ is a Grothendieck prestable category.  
+    For any Grothendieck abelian category $\A$, the derived category category $\Der(\A)$ has a natural $t$-structure with heart $\A$. The connected component $\Der(\A)\geqz$, which consists of complexes $X_\bullet$ such that $H_i(X_\bullet) = 0$ for $i<0$ is a Grothendieck prestable category.  
 \end{example}
 
 We also have some examples showing up in stable homotopy theory. 
@@ -76,6 +78,7 @@ We also have some examples showing up in stable homotopy theory.
 \end{example}
 
 \begin{example}
+    \index{Synthetic spectra}
     Important for modern homotopy theory is the category of $E$-based synthetic spectra $\SynE$ for some Landweber exact homology theory $E$, see \cite{pstragowski_2022}. This has a naturally occurring $t$-structure with heart $\Comod\EE$, and its connected component $\SynE^{\geq 0}$ is Grothendieck prestable. This example is one of our main motivations for this work, and we plan to study the applications of the contents in this paper to synthetic spectra in future work. 
 \end{example}
 
@@ -143,7 +146,7 @@ This fact also extends to equivalences of categories, as proven by Antieau.
 We can also naturally go in the other direction. If we have an equivalence of stable categories $\C\simeq \D$, that is compatible with the $t$-structures, then we get an induced equivalence on the connected components. The precise definition of being compatible with the $t$-structures is as follows. 
 
 \begin{definition}
-    \index{Functor!$t$-exact}
+    \index{$t$-exact functor}
     Let $\C, \D$ be stable categories with $t$-structures. An exact functor $F\:\C\to\D$ is \emph{right $t$-exact} if $F(\C\geqz)\subseteq \D\geqz$. The notion of \emph{left $t$-exactness} is defined similarly. If $F$ satisfies both, we say that it is a \emph{$t$-exact functor}. 
 \end{definition}
 
@@ -197,10 +200,10 @@ For the rest of the paper we will use the following terminology.
 \subsection{Localizing subcategories}
 \label{ch3:ssec:localizing-subcategories}
 
-We now turn our attention to localizing subcategories. As we are working in three interconnected settings --- stable, prestable and abelian --- and all settings use the same terminology, we feel that this section is very ripe for confusions to occur . In an attempt to clarify which setting we are in, we will usually refer to localizing subcategories of stable categories as \emph{stable localizing subcategories}, localizing subcategories of prestable categories as \emph{prestable localizing subcategories} and localizing subcategories of abelian categories as \emph{abelian localizing subcategories}. We will, however, sometimes omit the categorical prefix when we feel that it is clear from context. 
+We now turn our attention to localizing subcategories. As we are working in three interconnected settings---stable, prestable and abelian---and all settings use the same terminology, we feel that this section is very ripe for confusions to occur . In an attempt to clarify which setting we are in, we will usually refer to localizing subcategories of stable categories as \emph{stable localizing subcategories}, localizing subcategories of prestable categories as \emph{prestable localizing subcategories} and localizing subcategories of abelian categories as \emph{abelian localizing subcategories}. We will, however, sometimes omit the categorical prefix when we feel that it is clear from context. 
 
 \begin{definition}
-    \index{Thick subcategory}
+    \index{Thick subcategory!Stable}
     \index{Localizing subcategory!Stable}
     Let $\C$ be a stable category. A full subcategory $\L\subseteq \C$ is said to be \emph{thick} if it is a full stable subcategory closed under finite colimits. In particular, it is closed under extensions and desuspensions. We say $\L$ is a \emph{stable localizing subcategory} if it is thick and closed under filtered colimits. 
 \end{definition}
@@ -211,9 +214,11 @@ Stable localizing subcategories are uniquely determined by localization functors
     A full subcategory $\L$ of a stable category $\C$, is a stable localizing subcategory if and only if there is a stable category $\D$, and an exact localization $L\:\C\to\D$, such that $\L$ is the kernel of $L$. 
 \end{lemma}
 \begin{proof}
-    Let $\L$ be a localizing subcategory of $\C$. The right-orthogonal complement 
-    \[\L^\perp = \{C\in \C \mid \Hom(X, C)\simeq 0, \forall X\in \C\}\]
-    is closed under limits in $\C$, hence the fully faithful inclusion $\L^\perp \hookrightarrow \C$ has a left adjoint $L$. This is an exact localization of stable $\infty$-categories, and the kernel is precisely $\L$. Now, given an exact localization $L\: \C\to \D$ such that $\L = \Ker L$, then $\L$ is a stable category by the exactness of $L$, which is in addition closed under colimits as $L$ preserves these by being a left adjoint. 
+    Let $\L$ be an arbitrary localizing subcategory of $\C$. The right-orthogonal complement\index{Right orthgonal complement} of $\L$, denoted
+    \[\L^\perp = \{C\in \C \mid \Hom(X, C)\simeq 0, \forall X\in \C\},\]
+    is closed under all limits in $\C$, meaning that the fully faithful inclusion $\L^\perp \hookrightarrow \C$ has a left adjoint $L$. This is an exact localization of stable $\infty$-categories, and the kernel is precisely $\L$. 
+    
+    For the converse, assume we are given an exact localization functor $L\: \C\to \D$ such that $\L = \Ker L$. Then $\L$ is a stable category by the exactness of $L$, which is in addition closed under colimits as $L$ preserves these by being a left adjoint. 
 \end{proof}
 
 % The definition of a localizing subcategory of a prestable category is meant to generalize this slightly. Since all stable categories are prestable, we want a localizing subcategory $\L$ of a prestable category $\C\geqz$ to coincide with the above definition wenever $\C$ is stable. 
@@ -248,7 +253,7 @@ As in the stable situation we have a description of prestable localizing subcate
 
 \begin{proposition}[{\cite[C.2.3.8]{lurie_SAG}}]
     \label{ch3:prop:Lurie-prestable-localizing-left-exact-functor}
-    A full subcategory $\L\geqz\subseteq \C\geqz$ of a Grothendieck prestable category is localizing if and only if there is a Grothendieck prestable category $\D\geqz$, and left exact localization $L\:\C\geqz\to\D\geqz$, such that $\L\geqz$ is the kernel of $L$. 
+    A full subcategory $\L\geqz$ of a Grothendieck prestable category $\C\geqz$ is localizing if and only if there is a Grothendieck prestable category $\D\geqz$, and left exact localization $L\:\C\geqz\to\D\geqz$, such that $\L\geqz$ is the kernel of $L$. 
 \end{proposition}
 
 
@@ -309,17 +314,20 @@ We will from now on assume that a $t$-stable localizing subcategory is equipped 
 The last thing to introduce in this section are the abelian analogs of the above definitions. 
 
 \begin{definition}
+    \index{Serre subcategory!Weak}
+    \index{Localizing subcategory!Abelian weak}
     A full subcategory $\T$ of a Grothendieck abelian category $\A$ is called a \emph{weak Serre subcategory}, if for any exact sequence 
     \[A_1 \to A_2 \to A_3 \to A_4 \to A_5\]
     in $\A$ such that $A_1, A_2, A_4, A_5$ are all in $\T$, then also $A_3 \in \T$. It is a \emph{abelian weak localizing subcategory} it it is a weak Serre subcategory closed under arbitrary coproducts. 
 \end{definition}
 
 \begin{remark}
-    A full subcategory is a weak Serre subcategory if it is closed under kernels, cokernels and extensions. In particular it is an abelian subcategory, and the fully faithful inclusion $\T\hookrightarrow \A$ is exact. 
+    A full subcategory is a weak Serre subcategory if it is closed under kernels, cokernels and extensions. In particular it is an abelian subcategory, and the fully faithful inclusion functor $\T\hookrightarrow \A$ is exact. 
 \end{remark}
 
 \begin{definition}
     \index{Serre subcategory}
+    \index{Localizing subcategory!Abelian}
     A full subcategory $\T$ of a Grothendieck abelian category $\A$ is called a \emph{Serre subcategory} if for any short exact sequence 
     \[0\to A\to B\to C\to 0\]
     in $\A$, we have $B\in \T$ if and only if $A, C \in \T$. It is an \emph{abelian localizing subcategory} if it is a Serre subcategory closed under arbitrary coproducts. 
@@ -333,11 +341,11 @@ The last thing to introduce in this section are the abelian analogs of the above
     Weak Serre subcategories seem to also be called \emph{thick} or \emph{wide} subcategories in the homological algebra literature. But, to make the connection with abelian localizing subcategories clearer we chose to use this terminology. 
 \end{remark}
 
-As one perhaps should expect at this point, Abelian localizing subcategories are also determined by localization functors --- as above, so below. 
+As one perhaps should expect at this point, Abelian localizing subcategories are also determined by localization functors---as above, so below. 
 
 \begin{proposition}[{\cite[C.5.1.1, C.5.1.6]{lurie_SAG}}]
     \label{ch3:prop:abelian-localizing-iff-kernel-of-localization}
-    A full subcategory $\T$ of a Grothendieck abelian category $\A$ is an abelian localizing subcategory if and only if there is an exact localization $L\:\A\to \B$, where $\B$ is a Grothendieck abelian category, such that $\T$ is the kernel of $L$. 
+    A full subcategory $\T$ of a Grothendieck abelian category $\A$ is an abelian localizing subcategory if and only if there is an exact localization functor $L\:\A\to \B$, where $\B$ is a Grothendieck abelian category, such that $\T$ is the kernel of $L$. 
 \end{proposition}
 
 % Later in the paper we will need the following technical lemma, which allows us to define weak Serre subcategories via short exact sequences instead of $5$-term ones. 
@@ -414,14 +422,16 @@ Recall that any stable localizing subcategory $\L\subseteq \C$ is equivalently d
     Let $L\:\C\to\D$ be a localization of stable categories with $t$-structures. If $L$ is $t$-exact, then $\Ker(L)$ is a $t$-stable localizing subcategory.  
 \end{lemma}
 \begin{proof}
-    Let $X\in \Ker(L)$. Since $L$ is $t$-exact we have $L(\tau\geqz X)\simeq \tau\geqz L(X)\simeq 0$, hence also $\tau\geqz X$ is in $\Ker(L)$. We have $\tau\leqz X\in \Ker(L)$ by an identical argument.  
+    Let $X\in \Ker(L)$. Since $L$ is $t$-exact we have 
+    \[L(\tau\geqz X)\simeq \tau\geqz L(X)\simeq 0,\] 
+    hence also $\tau\geqz X$ is in $\Ker(L)$. We have $\tau\leqz X\in \Ker(L)$ by an identical argument.  
 \end{proof}
 
 We can then relate this to the prestable situation via the following lemma. 
 
 \begin{lemma}[{\cite[C.2.4.4]{lurie_SAG}}]
     \label{ch3:lm:exact-functor-induces-left-exact-functor}
-    If $F\:\C\to \D$ is an $t$-exact functor between stable categories with right complete $t$-structures, then the induced functor of Grothendieck prestable categories $F\geqz\:\C\geqz\to\D\geqz$ is left exact. 
+    If $F\:\C\to \D$ is an $t$-exact functor between $t$-stable categories, then the induced functor of Grothendieck prestable categories $F\geqz\:\C\geqz\to\D\geqz$ is left exact. 
 \end{lemma}
 
 \begin{remark}
@@ -436,7 +446,7 @@ We also want a converse to this statement.
     If $\L\geqz$ is a prestable localizing subcategory of a Grothendieck prestable category $\C\geqz$, then its stabilization $\Sp(\L\geqz)$ is the kernel of a $t$-exact localization $L$ on $\Sp(\C\geqz)$.  
 \end{lemma}
 \begin{proof}
-    By \cref{ch3:prop:Lurie-prestable-localizing-left-exact-functor} there is a left exact localization $L\geqz \: \C\geqz \to \D\geqz$ such that $\L\geqz$ is the kernel of $L\geqz$. In particular it is a colimit preserving functor. The induced functor $\Sp(\L\geqz)\:\Sp(\C\geqz)\to \Sp(\D\geqz)$ is then left $t$-exact by \cite[C.3.2.1]{lurie_SAG} and right $t$-exact by \cite[C.3.1.1]{lurie_SAG}. 
+    By \cref{ch3:prop:Lurie-prestable-localizing-left-exact-functor} we know that $\L\geqz$ is the kernel of a left exact localization $L\geqz \: \C\geqz \to \D\geqz$. This is a colimit preserving functor, hence the induced functor $\Sp(\L\geqz)\:\Sp(\C\geqz)\to \Sp(\D\geqz)$ is then left $t$-exact by \cite[C.3.2.1]{lurie_SAG} and right $t$-exact by \cite[C.3.1.1]{lurie_SAG}. 
 \end{proof}
 
 \begin{remark}

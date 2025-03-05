@@ -6,7 +6,7 @@ As a backdrop for this entire thesis lies the ubiquitous concept of \emph{$\inft
 
 Most $\infty$-categories considered will be \emph{presentable}, in the sense of \cite[Chapter 5]{lurie_09}. The $(\infty, 2)$-category of presentable $\infty$-categories and colimit-preserving functors, $\PrL$, has a symmetric monoidal structure via the Lurie tensor product $\otimes^L$, and we will say a presentable $\infty$-category is \emph{presentably symmetric monoidal} if it is a commutative monoid in $\PrL$. Any such category $\C$ has a symmetric monoidal structure, with the property that the tensor product in $\C$ preserves colimits separately in each variable. The unit for the Lurie tensor product on $\PrL$ is the category of \emph{spaces}, denoted $\Spaces$, which is an $\infty$-categorical version of the classical category of topological spaces. 
 
-We will also assume knowledge about \emph{stable} $\infty$-categories, which are an $\infty$-categorical enhancement of triangulated categories. The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
+We will also assume knowledge about \emph{stable} $\infty$-categories\index{Stable category}, which are an $\infty$-categorical enhancement of triangulated categories. The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
 
 The unit for the Lurie tensor product on $\PrLs$ is the category of \emph{spectra}, denoted $\Sp$. Given any presentable $\infty$-category, one can form its \emph{stabilization}, given by formally inverting the desuspension functor $\Omega$. The category of spectra can then be defined as the stabilization of the category of spaces. 
 
@@ -14,11 +14,13 @@ The categories of spaces, spectra, and many other interesting categories, satisf
 
 \begin{definition}
     \label{ch0:def:compact-object}
+    \index{Compact object}
     An object $c\in \C$ is said to be \emph{compact} if the functor $\Hom_\C(c,-)$ commutes with filtered colimits. The full subcategory of compact objects in $\C$ will be denoted $\Co$.
 \end{definition}
 
 \begin{definition}
     \label{ch0:def:compactly-generated-category}
+    \index{Compactly generated}
     A presentable $\infty$-category $\C$ is \emph{compactly generated} if $\Co$ generates $\C$ under filtered colimits. 
 \end{definition}
 
@@ -30,6 +32,7 @@ In the presence of symmetric monoidal structures we have another ``smallness'' c
 
 \begin{definition}
     \label{ch0:def:dualizable-object}
+    \index{Dualizable object}
     An object $X\in \C$ is \emph{dualizable} if for any other object $Y$, the map $X^\vee\otimes Y\to \iHom(X,Y)$, adjoint to the map $ev\otimes Y$, is an equivalence. The full subcategory of dualizable objects in $\C$ will be denoted $\C\dual$. 
 \end{definition}
 
@@ -37,7 +40,8 @@ In a certain sense, being compact is about being small with respect to colimits,
 
 \begin{definition}
     \label{ch0:rigidly-generated-category}
-    A presentably symmetric monoidal $\infty$-category $\C$ is \emph{rigidly compactly generated} if it is compactly generated and $\Co\simeq \C\dual$. 
+    \index{Compactly generated!Rigid}
+    A presentably symmetric monoidal stable $\infty$-category $\C$ is \emph{rigidly compactly generated} if it is compactly generated and $\Co\simeq \C\dual$. 
 \end{definition}
 
 \begin{remark}
@@ -65,6 +69,7 @@ Given a presentable stable $\infty$-category $\C$, one should think about a loca
 
 \begin{definition}
     \label{ch0:def:localizing-subcategory}
+    \index{Localizing subcategory}
     If $\C$ is a presentable stable $\infty$-category, then a full subcategory $\L\subseteq \C$ is \emph{localizing} if it is closed under desuspensions, colimits and retracts. 
 \end{definition}
 
@@ -76,11 +81,12 @@ This means that $\L$ is itself a presentable stable $\infty$-category, and that 
 
 \begin{remark}
     \label{ch0:rm:compactly-generated-localizing-subcategory}
+    \index{Localizing subcategory!Compactly generated}
     If the collection $\K \subseteq \C$ consists of only compact objects, in the sense of \cref{ch0:def:compact-object}, then the localizing subcategory $\Loc(\K)$ is said to be a \emph{compactly generated} localizing subcategory. 
 \end{remark}
 
 \begin{remark}
-    A more rigorous way to state that a presentable stable $\infty$-category $\C$ is compactly generated --- as in \cref{ch0:def:compactly-generated-category} --- is to say that it is so if and only if the smallest localizing subcategory containing the collection of all compact objects $\Co$ is the entire $\infty$-category $\C$. In other words, there is an equivalence  
+    A more rigorous way to state that a presentable stable $\infty$-category $\C$ is compactly generated---as defined in \cref{ch0:def:compactly-generated-category}---is to say that it is so if and only if the smallest localizing subcategory containing the collection of all compact objects $\Co$ is the entire $\infty$-category $\C$. In other words, there is an equivalence  
     \[\C\simeq \Loc(\Co)\]
     of presentable stable $\infty$-categories. 
 \end{remark}
@@ -89,6 +95,7 @@ If our presentable stable $\infty$-category is also symmetric monoidal, then we 
 
 \begin{definition}
     \label{ch0:def:localizing-ideal}
+    \index{Localizing subcategory!$\otimes$-ideal}
     If $\C$ is a presentably symmetric monoidal stable $\infty$-category, then a full subcategory $\L\subseteq \C$ is a \emph{localizing $\otimes$-ideal} if it is a localizing subcategory, and for any $L\in \L$ and $C\in \C$, we have $L\otimes C\in \L$. 
 \end{definition}
 
@@ -120,6 +127,7 @@ To understand local duality, and also the use of localizing subcategories, we lo
 
 \begin{definition}
     \label{ch0:def:localization}
+    \index{Localization}
     Let $\C, \D\in \Alg(\Pr)$. A (monoidal) \emph{localization} is a tensor-compatible functor $f\colon \C\longrightarrow \D$ with a fully faithful right adjoint $i$. 
 \end{definition}
 
@@ -133,6 +141,7 @@ To understand local duality, and also the use of localizing subcategories, we lo
 \end{remark}
 
 \begin{definition}
+    \index{Local object}
     Given a localization $L\colon \C\longrightarrow \C_L$, any object $C\in \C$ admits a map $C\longrightarrow LC$ coming from the unit of the adjunction, called its \emph{$L$-localization}. The object $C$ is said to be \emph{$L$-local} if this is an $L$-equivalence. 
 \end{definition}
 
@@ -146,29 +155,34 @@ To understand local duality, and also the use of localizing subcategories, we lo
 \end{remark}
 
 \begin{remark}
-    Similarly to localizations, we can define \emph{colocalizations} as functors $g\colon \C\longrightarrow \D$ admitting a fully faithful left adjoint $i$. The composition $i\circ g$ is denoted $\Gamma$. The adjoint gives an equivalence between $\D$ and a full subcategory $\C^\Gamma$ of $\C$, and the datum of a colocalization is equivalent to the datum of a functor $\Gamma\colon \C\longrightarrow \C^\Gamma$ that is right adjoint to the inclusion. Dually to localizations, we get for any $C\in \C$ a colocalization map $\Gamma C\to C$, and we say $C$ is \emph{$\Gamma$-colocal} if this is an equivalence. 
+    \index{Colocalization}
+    Similarly to localizations, we can define \emph{colocalizations} as functors $g\colon \C\longrightarrow \D$ admitting a fully faithful left adjoint $i$. The composition $i\circ g$ is denoted $\Gamma$. The adjoint gives an equivalence between $\D$ and a full subcategory $\C^\Gamma$ of $\C$, and the datum of a colocalization is equivalent to the datum of a functor $\Gamma\colon \C\longrightarrow \C^\Gamma$ that is right adjoint to the inclusion. Dually to localizations, we get for any $C\in \C$ a colocalization map $\Gamma C\to C$, and we say $C$ is \emph{$\Gamma$-colocal}\index{Colocal object} if this is an equivalence. 
 \end{remark}
 
-For any localization $L\colon \C\longrightarrow \C_L$, the image of the unit $L\1_\C$ is a ring object, and any $L$-local object $X$ admits the structure of an $L\1_\C$ module via a map $L\1_\C\otimes X \longrightarrow X$. Equivalently, there is a map of functors $L\1_\C \otimes L(-)\longrightarrow L(-)$. Via the tensor-internal hom adjunction this is equivalently a map $L(-)\longrightarrow \iHom(L\1_\C,-)$. 
+For any localization $L\colon \C\longrightarrow \C_L$, the image of the unit $L\1_\C$ is a ring object, and any $L$-local object $X$ admits the structure of an $L\1_\C$ module via a map $L\1_\C\otimes X \longrightarrow X$. Equivalently, there is a map of functors $L\1_\C \otimes L(-)\longrightarrow L(-)$. Via the tensor-internal hom adjunction this is equivalently a map 
+\[L(-)\longrightarrow \iHom(L\1_\C,-).\]
 
 \begin{definition}
     \label{ch0:def:smashing-localization}
+    \index{Localization!Smashing}
     We say a localization $L$ is \emph{smashing} if the $L\1_\C$-module map above is an equivalence. This is equivalent to the dual map $L(-)\longrightarrow \iHom_\C(L\1, -)$ being an equivalence. 
 \end{definition}
 
 \begin{remark}
-    Similarily, for a colocalization $\Gamma$ there are maps $\Gamma \1_\C \otimes \Gamma(-)\longrightarrow \Gamma (-)$ and $\Gamma(-)\longrightarrow \iHom(\Gamma \1_\C, -)$. The colocalization $\Gamma$ is said to be smashing if the former is an equivalence. Note that it is no longer equivalent that these two functors arre equivalences, as was the case for localizations. This is precisely the discrepancy that allow for the definition of a contramodule, which we study in \cref{ch2}. 
+    \index{Colocalization!Smashing}
+    Similarily, for a colocalization $\Gamma$ there are maps $\Gamma \1_\C \otimes \Gamma(-)\longrightarrow \Gamma (-)$ and $\Gamma(-)\longrightarrow \iHom(\Gamma \1_\C, -)$. The colocalization $\Gamma$ is said to be \emph{smashing} if the former is an equivalence. Note that it is no longer equivalent that these two functors arre equivalences, as was the case for localizations. This is precisely the discrepancy that allow for the definition of a contramodule, which we study in \cref{ch2}. 
 \end{remark}
 
 \begin{remark}
     Any localization $L$ equips $\C_L$ with a symmetric monoidal structure, as seen in \cref{ch0:rm:monoidal-localization}. If $L$ is a smashing localization, then the induced tensor product is the same as in the category $\C$. The same applies to smashing colocalizations. 
 \end{remark}
 
-There are several ways to construct localizations, but one method particularly important for us will be via localizing subcategories --- see \cref{ch0:ssec:localizing-subcategories-and-ideals}. 
+There are several ways to construct localizations, but one method particularly important for us will be via localizing subcategories---see \cref{ch0:ssec:localizing-subcategories-and-ideals}. 
 
 \begin{definition}
     \label{ch0:def:left-orthogonal-complement}
-    Let $\L\subseteq \C$ be a full subcategory. The \emph{left orthogonal complement} of $\L$, is the full subcategory $\L^\perp$ consisting of objects $C\in \C$ such that $\Hom_\C(L,C)\simeq 0$ for all $L\in \L$.  
+    \index{Right orthogonal complement}
+    Let $\L\subseteq \C$ be a full subcategory. The \emph{right orthogonal complement} of $\L$, is the full subcategory $\L^\perp$ consisting of objects $C\in \C$ such that $\Hom_\C(L,C)\simeq 0$ for all $L\in \L$.  
 \end{definition}
 
 \begin{example}
@@ -184,6 +198,7 @@ We are now ready to present the setup for local duality. In essence, it can be v
 
 \begin{definition}
     \label{ch0:def:local-duality-context}
+    \index{Local duality!Context}
     A pair $(\C, \K)$, where $\C$ is a presentably symmetric monoidal stable $\infty$-category compactly generated by dualizable objects, and $\K\subseteq \Co$ is a subset of compact objects, is called a \emph{local duality context}.
 \end{definition}
 
@@ -191,7 +206,8 @@ Any choice of local duality context allows us to assign three new categories, wh
 
 \begin{construction}
     \label{ch0:const:local-duality-categories}
-    Let $(\C, \K)$ be a local duality context. We define $\C^{\K-tors}$ to be the localizing tensor ideal generated by $\K$, denoted $\Loc^\otimes_\C(\K)$. Further we define $\C^{\K-loc}$ to be the left orthogonal complement $(\C^{\K-tors})^\perp$, i.e., the full subcategory consisting of objects $C\in \C$ such that $\Hom_\C(T,C)\simeq 0$ for all $T\in \C^{\K-tors}$. Similarly, define $\C^{\K-comp}$ to be the left-orthogonal complement of $\C^{\K-loc}$, i.e. $\C^{\K-comp}= (\C^{\K-loc})^\perp$. These full subcategories are respectively called the $\K$-torsion, $\K$-local and $\K$-complete objects in $\C$. We have inclusions into $\C$, denoted $i_{\K-tors}$, $i_{\K-loc}$ and $i_{\K-comp}$ respectively. 
+    \index{Local duality!Torsion}
+    Let $(\C, \K)$ be a local duality context. We define $\C^{\K-tors}$ to be the localizing tensor ideal generated by $\K$, denoted $\Loc^\otimes_\C(\K)$. Further we define $\C^{\K-loc}$ to be the left orthogonal complement $(\C^{\K-tors})^\perp$, i.e., the full subcategory consisting of objects $C\in \C$ such that $\Hom_\C(T,C)\simeq 0$ for all $T\in \C^{\K-tors}$. Similarly, define $\C^{\K-comp}$ to be the left-orthogonal complement of $\C^{\K-loc}$, i.e. $\C^{\K-comp}= (\C^{\K-loc})^\perp$. These full subcategories are respectively called the $\K$-torsion\index{Local duality!Torsion objects}, $\K$-local\index{Local duality!Local objects} and $\K$-complete\index{Local duality!Complete objects} objects in $\C$. We have inclusions into $\C$, denoted $i_{\K-tors}$, $i_{\K-loc}$ and $i_{\K-comp}$ respectively. 
     
     By the adjoint functor theorem, \cite[5.5.2.9]{lurie_09}, the inclusions $i_{\K-loc}$ and $i_{\K-comp}$ have left adjoints $L_\K$ and $\Lambda_\K$ respectively, while $i_{\K-tors}$ and $i_{\K-loc}$ have right adjoints $\Gamma_\K$ and $V_\K$ respectively. These are then, by definition, localizations and colocalizations. Since the torsion, local and complete objects are ideals, these localizations and colocalizations are compatible with the symmetric monoidal structure of $\C$, in the sense of \cite[2.2.1.7]{Lurie_HA}. In particular, by \cite[2.2.1.9]{Lurie_HA} we get unique induced symmetric monoidal structures such that $L_\K$, $\Lambda_\K$, $\Gamma_\K$ and $V_\K$ are symmetric monoidal functors. 
 
@@ -209,14 +225,19 @@ The following theorem is a slightly restricted version of the abstract local dua
 
 \begin{theorem}
     \label{ch0:thm:local-duality}
-    \index{Local duality}
+    \index{Local duality!Theorem}
     Let $(\C, \K)$ be a local duality context. Then
     \begin{enumerate}
-        \item the functors $\Gamma$ and $L$ are \emph{smashing}, meaning that there are natural equivalences $\Gamma X\simeq X\otimes \Gamma \1$ and $LX\simeq X\otimes L\1$,
-        \item the functors $\Lambda$ and $V$ are \emph{cosmashing}, meaning there are natural equivalences $\Lambda X\simeq \iHom(\Gamma \1,X)$ and $VX\simeq \iHom(L\1, X)$, and 
-        \item the functors $\Gamma\colon \C^{\K-comp}\longrightarrow \C^{\K-tors}$ and $\Lambda\colon \C^{\K-tors}\longrightarrow \C^{\K-comp}$ are mutually inverse symmetric monoidal equivalences of categories,
+        \item the functors $\Gamma$ and $L$ are \emph{smashing}, meaning that there are natural equivalences 
+        \[\Gamma X\simeq X\otimes \Gamma \1 \text{ and } LX\simeq X\otimes L\1,\]
+        \item the functors $\Lambda$ and $V$ are \emph{cosmashing}, meaning there are natural equivalences 
+        \[\Lambda X\simeq \iHom(\Gamma \1,X) \text{ and } VX\simeq \iHom(L\1, X),\]
+        and
+        \item the functors 
+        \[\Gamma\colon \C^{\K-comp}\longrightarrow \C^{\K-tors} \text{ and } \Lambda\colon \C^{\K-tors}\longrightarrow \C^{\K-comp}\]
+        are mutually inverse symmetric monoidal equivalences of categories.
     \end{enumerate}
-    This can be summarized by the following diagram of adjoints
+    This can be summarized by the following diagram of adjoints\index{Local duality!Diagram}
     \begin{center}
         \begin{tikzcd}
                 & {\C^{\K-loc}} \\

@@ -17,6 +17,7 @@ Let us make this heuristic more precise. For the rest of this section we let $\C
 \[\C \simeq \Ind(\C^\omega) \simeq \Ind(\C\dual).\]
 
 \begin{definition}
+    \index{Algebra!Pro-dualizable}
     A \emph{pro-dualizable algebra} in $\C$ is a commutative algebra in $\Pro(\C\dual)$. 
 \end{definition}
 
@@ -36,7 +37,7 @@ For any algebra $A\in \CAlg(\C)$ we have a lax monoidal functor $\iHom(A,-)\: \C
 \[\iHom(-,A)\: \cCAlg(\C)\op \to \CAlg(\C)\]
 as it sends coalgebras to algebras. Chosing $A=\1_\C$ defines a functor 
 \[(-)^\vee:=\iHom(-,\1_\C)\: \cCAlg(\C)\op\to \CAlg(\C)\] 
-which we call the \emph{$\C$-linear dual}. Colimits of coalgebras, as well as limits of algebras are computed underlying, hence the functor $(-)^\vee$ sends colimits to limits. In particular we get a right adjoint $(-)^\circ$ by the adjoint functor theorem: 
+which we call the \emph{$\C$-linear dual}\index{Linear dual}. Colimits of coalgebras, as well as limits of algebras are computed underlying, hence the functor $(-)^\vee$ sends colimits to limits. In particular we get a right adjoint $(-)^\circ$ by the adjoint functor theorem: 
 \begin{center}
     \begin{tikzcd}
         \cCAlg(\C)\op \arrow[r, yshift=2pt, "(-)^\vee"] & \CAlg(\C) \arrow[l, yshift=-2pt,"(-)^\circ"]
@@ -138,7 +139,8 @@ Note that, as an endofunctor on $\SpE$, the $K(n)$-localization functor is not s
 
 Let $X$ be any spectrum. By \cite[7.10]{hovey-strickland_99} there is a tower of generalized Moore spectra 
 \[\cdots \to M_2 \to M_1 \to M_0\]
-such that $L_\Kn X \simeq \lim_j (L_n X \otimes M_j)$. In particular, any $K(n)$-local spectrum is a pro-spectrum indexed by the generalized Moore tower. Now, consider the pro-tower $\prolim (L_n X \otimes M_j)$ for $X=\S$. As $\En$-localization is smashing, there is an equivalence $\prolim (L_n \S \otimes M_j)\simeq \prolim L_n M_j$. 
+such that $L_\Kn X \simeq \lim_j (L_n X \otimes M_j)$. In particular, any $K(n)$-local spectrum\index{$K(n)$-local spectra} is a pro-spectrum indexed by the generalized Moore tower. Now, consider the pro-tower $\prolim (L_n X \otimes M_j)$ for $X=\S$. As $\En$-localization is smashing, there is an equivalence 
+\[\prolim (L_n \S \otimes M_j)\simeq \prolim L_n M_j.\]
 
 \begin{lemma}
     \label{ch2:lm:Moore-tower-in-local-dualizable}
@@ -165,10 +167,10 @@ such that $L_\Kn X \simeq \lim_j (L_n X \otimes M_j)$. In particular, any $K(n)$
 \end{proof}
 
 \begin{remark}
-    Li--Zhang also proved in \cite[2.1.5]{li-zhang_2023} that $\S_\Kn \simeq \lim_j M_j$ as $\Kn$-local ring spectra. As the inclusion $\SpKn\hookrightarrow \SpE$ is lax symmetric monoidal, these are also equivalent as $\En$-local ring spectra, which is where our story takes place. Alternatively one can prove this directly using \cite[2.1.6]{li-zhang_2023}. 
+    Li--Zhang also proved in \cite[2.1.5]{li-zhang_2023} that there is an equivalence $\S_{\Kn} \simeq \lim_j M_j$ as $\Kn$-local ring spectra. As the inclusion $\SpKn\hookrightarrow \SpE$ is lax symmetric monoidal, these are also equivalent as $\En$-local ring spectra, which is where our story takes place. Alternatively one can prove this directly using \cite[2.1.6]{li-zhang_2023}. 
 \end{remark}
 
-We can now summarize the discussion above as follows. The monochromatic sphere $M_n\S$ is an $\E_\infty$-coalgebra in $\SpE$. It is presented by the ind-system $\indcolim L_n M_j^\vee$, which is a cocommutative coalgebra in $\Ind(\SpE\dual)$. The linear dual is a pro-tower $\prolim L_n M_j$ which is a commutative algebra in $\Pro(\SpE\dual)$. Its materialization is the $\Kn$-local sphere as an commutative algebra in $\SpE$. 
+We can now summarize the discussion above as follows. The monochromatic sphere $M_n\S$ is a cocommutative coalgebra in $\SpE$. It is presented by the ind-system $\indcolim L_n M_j^\vee$, which is a cocommutative coalgebra in $\Ind(\SpE\dual)$. The linear dual is a pro-tower $\prolim L_n M_j$ which is a commutative algebra in $\Pro(\SpE\dual)$. Its materialization is the $\Kn$-local sphere as an commutative algebra in $\SpE$. 
 
 This allows us to conclude with our wanted description of the category of $K(n)$-local spectra. 
 
@@ -176,19 +178,19 @@ This allows us to conclude with our wanted description of the category of $K(n)$
     \label{ch2:thm:Kn-is-pro-modules}
     There is a symmetric monoidal equivalence 
     \[\Sp_\Kn \simeq \Mod_{\prolim L_n M_j}(\Pro(\SpE\dual))\op\]
-    between $\Kn$-local spectra and modules over the pro-dualizable algebra $\prolim L_n M_j$ presenting the $K(n)$-local sphere $\S_\Kn$. 
+    between $\Kn$-local spectra and modules over the pro-dualizable algebra $\prolim L_n M_j$ presenting the $K(n)$-local sphere $\S_{\Kn}$. 
 \end{theorem}
 \begin{proof}
-    \cref{ch2:prop:comodules-and-promodules} gives an equivalence between $\Comod_{M_n \S}(\SpE)$ and modules over its linear dual. By chosing the ind-presentation of $M_n \S$ constructed in \cref{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}, the linear dual is precicely the pro-tower $\prolim L_n M_j$, which is a commutative algebra in $\Pro(\SpE\dual)$. Hence we have a symmetric monoidal equivalence 
-    \[\Comod_{M_n\S}(\SpE)\simeq \Mod_{\prolim L_n M_j}(\Pro(\SpE\dual))\]
-    By \cref{ch2:thm:dual-monoidal-BB} there is a symmetric monoidal equivalence $\Comod_{M_n\S}(\SpE)\simeq \Mn$, and by \cite[6.19]{hovey-strickland_99} there is a symmetric monoidal equivalence $\Mn \simeq \Sp_\Kn$. 
+    \cref{ch2:prop:comodules-and-promodules} gives an equivalence between the category of comodules over the monochromatic sphere, $\Comod_{M_n \S}(\SpE)$, and modules over its linear dual. By chosing the ind-presentation of $M_n \S$ constructed in \cref{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}, the linear dual is precicely the pro-tower $\prolim L_n M_j$, which is a commutative algebra in $\Pro(\SpE\dual)$. Hence we have a symmetric monoidal equivalence 
+    \[\Comod_{M_n\S}(\SpE)\simeq \Mod_{\prolim L_n M_j}(\Pro(\SpE\dual))\op.\]
+    By \cref{ch2:thm:dual-monoidal-BB} there is a symmetric monoidal equivalence $\Comod_{M_n\S}(\SpE)\simeq \Mn$, and by \cite[6.19]{hovey-strickland_99} there is a symmetric monoidal equivalence $\Mn \simeq \Sp_{\Kn}$. 
 \end{proof}
 
 \begin{remark}
-    By definition this implies that we have a description of $K(n)$-local spectra as contramodules over the $K(n)$-local sphere, $\Sp_\Kn \simeq \Contra_{\S_\Kn}$. This might seem ad-hoc, but we feel that this is justifiable by \cref{ch2:rm:contra-as-op-pro-modules}.
+    By definition this implies that we have a description of $K(n)$-local spectra as contramodules over the $K(n)$-local sphere, $\SpK \simeq \Contra_{\S_\Kn}$. This might seem ad-hoc, but we feel that this is justifiable by \cref{ch2:rm:contra-as-op-pro-modules}.
 \end{remark}
 
 \begin{remark}
-    The above construction works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch2:thm:Positselski-duality-idempotent}. In particular, there is a similar pro-presentation of $\S_\Tn$, giving rise to an equivalence $\Sp_\Tn\simeq \Contra_{\S_\Tn}$.
+    The above construction works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch2:thm:Positselski-duality-idempotent}. In particular, there is a similar pro-presentation of $\S_{\Tn}$, giving rise to an equivalence $\Sp_{\Tn}\simeq \Contra_{\S_{\Tn}}$.
 \end{remark}
 

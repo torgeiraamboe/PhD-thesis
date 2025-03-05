@@ -22,8 +22,10 @@
 \RequirePackage{tocloft}
 %\RequirePackage{bookmark}
 %\RequirePackage{mathabx}
+%\RequirePackage{index}
+%\RequirePackage[columns=1, totoc]{idxlayout}
 \usepackage{imakeidx}
-%\makeindex[intoc]
+\makeindex
 %\RequirePackage{mathtools} %For harpoons 
 \RequirePackage{mathrsfs}
 \RequirePackage{titling}
@@ -66,8 +68,18 @@
 \pgfplotsset{compat=1.15}
 
 
-\makeindex
-
+% \renewenvironment{theindex}{%
+%   \@makeschapterhead{\indexname}%
+%   \@mkboth{\MakeUppercase\indexname}%
+%           {\MakeUppercase\indexname}%
+%   \thispagestyle{plain}%
+%   \parindent\z@
+%   \parskip\z@ \@plus .3\p@\relax
+%   \let\item\@idxitem
+%   \addcontentsline{toc}{chapter}{\indexname}
+% }{%
+%   \clearpage
+% }
 
 
 \definecolor{mycolor}{RGB}{190,80,0}
@@ -232,6 +244,7 @@ urlcolor=myblack
 \DeclareMathOperator{\Lim}{lim}
 \DeclareMathOperator{\Fil}{Fil}
 \DeclareMathOperator{\Loc}{Loc}
+\DeclareMathOperator{\Thick}{Thick}
 \DeclareMathOperator{\Supp}{Supp}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Ima}{Im}
@@ -268,10 +281,10 @@ urlcolor=myblack
 \renewcommand{\sp}{\mathrm{Sp}}
 \newcommand{\An}{\mathrm{An}}
 \newcommand{\Spaces}{\EuScript{S}}
-\newcommand{\Kn}{K(n)}
-\newcommand{\Tn}{T(n)}
-\newcommand{\Kpn}{K_p(n)}
-\newcommand{\En}{\mathrm{E}_n}
+\newcommand{\Kn}{{K(n)}}
+\newcommand{\Tn}{{T(n)}}
+\newcommand{\Kpn}{{K_p(n)}}
+\newcommand{\En}{{\mathrm{E}_n}}
 \newcommand{\SpK}{\Sp_{\Kn}}
 \newcommand{\SpKn}{\Sp_{\Kn}}
 \newcommand{\SpKpn}{\Sp_{\Kpn}}
@@ -299,7 +312,7 @@ urlcolor=myblack
 \newcommand{\SynE}{\Syn_{E}}
 \newcommand{\SynR}{\Syn_{R}}
 \newcommand{\Synn}{\Syn_{n}}
-\newcommand{\hSyn}{\widehat{\mathrm{S}}\mathrm{yn}}
+\newcommand{\hSyn}{\widetilde{\mathrm{S}}\mathrm{yn}}
 \newcommand{\hSynE}{\hSyn_{E}}
 
 % Perfect derived

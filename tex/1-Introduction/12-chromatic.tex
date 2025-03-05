@@ -32,7 +32,7 @@ In light of Waldhausen's viewpoint of stable homotopy theory as an enhancement o
 % \end{construction}
 
 \begin{remark}
-    Both $L_{(p)}\colon D(\Z)\longrightarrow D(\Z)_{(p)}$ and $L_{(p)}\colon \sp\longrightarrow \sp_{(p)}$ are smashing localizations. 
+    Both of the functors $L_{(p)}\colon D(\Z)\longrightarrow D(\Z)_{(p)}$ and $L_{(p)}\colon \sp\longrightarrow \sp_{(p)}$ are smashing localizations. 
 \end{remark}
 
 %Via the lens of tensor-triangulated geometry, one could think of $\sp$ as the category of quasi-coherent sheaves of tensor-triangulated categories over the Balmer spectrum $\mathrm{Spc}(\sp)$, and similarily for $D(\Z)$. On a spectrum $X$, $p$-localization is given by restricting the corresponding sheaf to the subspectrum lying under the closed point corresponding to $p$. Similarily, for $D(\Z)$: its balmer spectrum is homeomorphic to $\mathrm{Spec}(\Z)$, and localization is restriction to the closed(?) set containing only $p$ and the generic point.
@@ -42,6 +42,7 @@ The study of $D(\Z)_{(p)}$ can be further reduced to the study of its ``atomic p
 
 \begin{definition}
     \label{ch0:def:minimal-localizing-subcategory}
+    \index{Localizing subcategory!Minimal}
     A localizing subcategory $\L\subseteq \C$ is said to be \emph{minimal} if any proper localizing subcategory $\L'\subset \L$ is $(0)$.  
 \end{definition}
 
@@ -71,7 +72,7 @@ where $(-)_p^\wedge$ denotes derived $p$-completion --- for more on this see \cr
 
 Now, if $\sp_{(p)}$ is supposed to be a homotopical enrichment, we should expect there to be an analogy of this decomposition for $p$-local spectra, which is indeed the case. The first to study such squares in topology was Sullivan in his 1970 MIT notes, where he constructed the analogous square for nilpotent spaces, see \cite[3.20]{sullivan_05}. This was later lifted up to spectra by Bousfield in \cite[2.9]{bousfield_1979_localization}, and takes the following form. 
 
-If $\S_{(p)}$ denotes the $p$-local sphere spectrum, we have a spectral artithmetic fracture square 
+If $\S_{(p)}$ denotes the $p$-local sphere spectrum, we have a spectral artithmetic fracture square\index{Arithmetic fracture square}
 
 \begin{center}
     \begin{tikzcd}
@@ -82,12 +83,17 @@ If $\S_{(p)}$ denotes the $p$-local sphere spectrum, we have a spectral artithme
 
 where $\S_p^\wedge$ denotes the $p$-complete sphere. This also extends to any object $X\in \sp_{(p)}$, just like for $A\in D(\Z)_{(p)}$. 
 
-We can then ask the same natural question as we did above: do these give all the minimal localizing subcategories of $\sp_{(p)}$? Recall that this was indeed the case before, but now, this is no longer true. In fact, we now have an infinite sequence of minimal localizing subcategories, indexed by a natural number $n$, interpolating between the rational spectra $\sp_{\Q}$ and the $p$-complete spectra $\sp_p^\wedge$. \footnote{In fact even more is true: By \cite{burklund-hahn-levy-schlank_23}, there are at least two such infinite sequences. We can make sure that there is a single such sequence if we translate over to tensor-triangulated ideals of compact objects, but for the above exposition, we have chosen to push these details under a huge telescope-shaped rug.}
+We can then ask the same natural question as we did above: do these give all the minimal localizing subcategories of $\sp_{(p)}$? Recall that this was indeed the case before, but now, this is no longer true. We now have an infinite sequence of minimal localizing subcategories, indexed by a natural number $n$, interpolating between the rational spectra $\sp_{\Q}$ and the $p$-complete spectra $\sp_p^\wedge$. 
 
-We can identify these ``intermediary'' subcategories by an analysis of field objects. For $D(\Z)_{(p)}$ there are exactly two field objects associated to $\Z_{(p)}$, namely $\Q$ and $\F_p$. For $Sp_{(p)}$ we have a field object for any number $n\in \N\cup \{\infty\}$, usually denoted $K(n)$, or $K_p(n)$ if we want to remember the prime. As we have $K(0)=H\Q$ and $K(\infty) = H\F_p$, this sequence of field objects really forms an interpolation between the two field objects coming from algebra. 
+\begin{remark}
+    In fact, even more is true: By \cite{burklund-hahn-levy-schlank_23}, there are at least two such infinite sequences. We can make sure that there is a single such sequence if we translate over to tensor-triangulated ideals of compact objects, but for the above exposition, we have chosen to push these details under a huge telescope-shaped rug.
+\end{remark}
+
+We can identify these ``intermediary'' subcategories by an analysis of field objects. For $D(\Z)_{(p)}$ there are exactly two field objects associated to $\Z_{(p)}$, namely $\Q$ and $\F_p$. For $\Sp_{(p)}$ we have a field object for any number $n\in \N\cup \{\infty\}$, usually denoted $K(n)$, or $K_p(n)$ if we want to remember the prime. As we have $K(0)=H\Q$ and $K(\infty) = H\F_p$, this sequence of field objects really forms an interpolation between the two field objects coming from algebra. 
 
 \begin{notation}
-    The object $K_p(n)$ is called the \emph{height $n$ Morava K-theory}. Its associated minimal localizing subcategory is the category of $K(n)$-local spectra, denoted $\SpK$.  
+    \index{Morava $K$-theory}
+    The object $K_p(n)$ is called the \emph{Morava K-theory of height $n$}. Its associated minimal localizing subcategory is the category of $K(n)$-local spectra, denoted $\SpK$.  
 \end{notation}
 
 These field objects $K_p(n)$ were constructed by Morava in the early 70's, and the categories $\SpK$ have been under intense study ever since. We do not cover precise constructions here and instead refer the interested reader to \cite{hovey-strickland_99}. 
@@ -96,17 +102,17 @@ These field objects $K_p(n)$ were constructed by Morava in the early 70's, and t
     \label{ch0:prop:properties-of-K(n)}
     Let $p$ be a prime and $n$ a natural number. The height $n$ Morava K-theory spectrum $K_p(n)$ is a complex oriented $\E_1$-ring spectrum with coefficients 
     $$K_p(n)_*:=\pi_* K_p(n) \simeq \F_p[v_n^{\pm}],$$ 
-    with $|v_n|=2p^n-2$, whose associated formal group is the height $n$ Honda formal group. Furthermore, for any two spectra $X, Y\in \sp$, there is a Künneth isomorphism 
+    with $|v_n|=2p^n-2$, whose associated formal group is the height $n$ Honda formal group. Furthermore, for any two spectra $X$ and $Y$, there is a Künneth isomorphism 
     $$K_p(n)_*(X\times Y)\simeq K_p(n)_*X\otimes_{K_p(n)_*} K_p(n)_*Y.$$
 \end{proposition}
 
 \begin{remark}
-    While the $\E_1$-ring structure on $K_p(n)$ can be shown to be essentially unique, it does admit uncountably many $\E_1$-$MU$-algebra structures -- see \cite{angeltveit_2011}. 
+    While the $\E_1$-ring structure on $K_p(n)$ can be shown to be essentially unique, it does admit uncountably many $\E_1$-$MU$-algebra structures---see \cite{angeltveit_2011}. 
 \end{remark}
 
 \begin{remark}
     \label{ch0:rm:SpKn-not-rigidly-generated}
-    The category $\SpK$ is compactly generated by dualizable objects, but it is \emph{not} a rigidly compactly generated category, in the sense of \cref{ch0:rigidly-generated-category}, as the unit $\S_\Kn$ --- the $\Kn$-local sphere --- is not compact.  
+    The category $\SpK$ is compactly generated by dualizable objects, but it is \emph{not} a rigidly compactly generated category, in the sense of \cref{ch0:rigidly-generated-category}, as the unit $\S_\Kn$---the $\Kn$-local sphere---is not compact.  
 \end{remark}
 
 So, how are these new field objects related to the fracture squares above? If the $\SpK$'s form minimal localizing subcategories, then we should, by the previous discussion, expect there to be an infinite sequence of pullback squares converging to $\S_{(p)}$. This is indeed the case. 
@@ -125,14 +131,14 @@ making the general square have the form
         L_{n-1}\S \arrow[r] & L_{n-1}\S\otimes L_{K_p(n)}\S 
     \end{tikzcd}    
 \end{center}
-This is called the \emph{chromatic fracture square}, see for example \cite[4.3]{hovey_95}. The spectra $L_n\S$ assemble into a tower 
+This is called the \emph{chromatic fracture square}\index{Chromatic fracture square}, see for example \cite[4.3]{hovey_95}. The spectra $L_n\S$ assemble into a tower 
 $$\cdots \longrightarrow L_3\S \longrightarrow L_2\S \longrightarrow L_1\S \longrightarrow L_0 \S = L_\Q\S$$
 called the chromatic filtration, and by the chromatic convergence theorem of Hopkins-Ravenel, see \cite[7.5.7]{ravenel_92}, we can recover $\S_{(p)}$ as the limit of this diagram. 
 
 
 \begin{remark}
     \label{ch0:rm:chromatic-square-from-duality}
-    Reducing to the subcategory of $\sp_{(p)}$ containing the $L_n$-local spectra, we should then expect there to be a local duality diagram categorifying the chromatic fracture square. This is precisely the goal of \cref{ch0:sssec:monochromatic-duality}, but first, we need to understand this $L_n$-local category. 
+    Reducing to the subcategory of $\Sp_{(p)}$ containing the $L_n$-local spectra, we should then expect there to be a local duality diagram categorifying the chromatic fracture square. This is precisely the goal of \cref{ch0:sssec:monochromatic-duality}, but first, we need to understand this $L_n$-local category. 
 \end{remark}
 
 
@@ -146,15 +152,17 @@ called the chromatic filtration, and by the chromatic convergence theorem of Hop
 \subsubsection{Morava \texorpdfstring{$E$}{E}-theories}
 \label{ch0:sssec:morava-E-theories}
 
-In the previous section, we obtained a localization functor $L_n$, which collected the information coming from height $0$ up to, and including, height $n$. This localization is good for many purposes, but when we later want to tie the homotopy theory to algebra, we need another approach. In particular, we want a spectrum $E$ such that localizing at $E$ is the same as using $L_n$, but with some additional better properties. There are several approaches to obtaining such a spectrum $E$, and the goal of this short section is to give a brief overview of the ones we will need later. We will assume general knowledge about formal groups -- all needed background can be found in \cite[Appendix 2]{ravenel_86}. 
+In the previous section, we obtained a localization functor $L_n$, which collected the information coming from height $0$ up to, and including, height $n$. This localization is good for many purposes, but when we later want to tie the homotopy theory to algebra, we need another approach. In particular, we want a spectrum $E$ such that localizing at $E$ is the same as using $L_n$, but with some additional better properties. There are several approaches to obtaining such a spectrum $E$, and the goal of this short section is to give a brief overview of the ones we will need later. We will assume general knowledge about formal groups --- all needed background can be found in \cite[Appendix 2]{ravenel_86}. 
 
 \begin{remark}
+    \index{Lubin--Tate ring}
     Let $p$ be a prime and $k$ be a perfect field of characteristic $p$. Lubin and Tate proved in \cite{lubin-tate_66} that for any formal group law $F$ of height $n$ over $k$, there is a universal deformation $\bar{F}$ over the \emph{Lubin-Tate ring} $E(k, F)=\W(k)[\![ u_1, \ldots, u_{n-1}]\!]$ of formal power series over the Witt vectors of $k$. Using the algebraic geometry of formal groups, Morava interpreted this universal deformation as a normal bundle over a formal neighborhood of the height $n$ Honda formal group law, leading to a spectrum $E^{Mor}_n$. 
 \end{remark} 
 
 Using the theory of manifolds with singularities developed by Baas-Sullivan (see \cite{baas_73a} and \cite{baas_73b}), Johnson and Wilson constructed in \cite{johnson-wilson_75} an alternative spectrum exhibiting the same information as Morava's spectrum. Using Landweber's exact functor theorem, we can obtain a simpler description. 
 
 \begin{definition}
+    \index{Johnson--Wilson theory}
     Let $p$ be a prime, $n$ a natural number and $E(n)_* := \Z_{(p)}[v_1, \ldots, v_{n-1}, v_n^{\pm}]$. The ideal $(p, v_1, \ldots, v_{n-1})$ is a regular invariant ideal, meaning in particular that $E(n)_*$ is Landweber exact. In particular, there is a spectrum $E(n)$, called the height $n$ \emph{Johnson-Wilson theory}, with coefficients $E(n)_*$. 
 \end{definition}
 
@@ -172,7 +180,7 @@ Using the theory of manifolds with singularities developed by Baas-Sullivan (see
     Let $p$ be a prime and $n$ a natural number. Height $n$ Johnson-Wilson theory $E(n)$ is a complex oriented, Landweber exact, $\E_1$-ring spectrum concentrated in degrees divisible by $2p-2$. 
 \end{proposition}
 
-Later, using a $2$-periodic analogue of the universal deformation theory of Lubin and Tate, Hopkins and Miller constructed a $2$-periodic $\E_1$-version of Morava's spectrum, which was later enhanced to an $\E_\infty$-ring spectrum $E_n$ via Goerss--Hopkins theory, see \cite{goerss-hopkins_04} or \cite{pstragowski_vankoughnett_2022} for a modern treatment. In essence, Hopkins--Miller constructed a functor from pairs $(k, F)$ of a perfect field $k$ of characteristic $p$, together with a choice of height $n$ formal group law $F$, to even periodic ring spectra. For a specific choice of $(k, F)$, we can summarize the properties as follows.  
+Later, using a $2$-periodic analogue of the universal deformation theory of Lubin and Tate, Hopkins and Miller constructed a $2$-periodic $\E_1$-version of Morava's spectrum, which was later enhanced to an $\E_\infty$-ring spectrum $E_n$ via Goerss--Hopkins theory, see \cite{goerss-hopkins_04}, or \cite{pstragowski_vankoughnett_2022} for a modern treatment. In essence, Hopkins and Miller constructed a functor from pairs $(k, F)$ of a perfect field $k$ of characteristic $p$, together with a choice of height $n$ formal group law $F$, to even periodic ring spectra. For a specific choice of $(k, F)$, we can summarize the properties as follows.  
 
 \begin{proposition}
     Let $p$ be a prime, $k$ a perfect field of characteristic $p$, and $F$ a formal group law of height $n$ over $k$. The spectrum $E(k,F)$ is a $2$-periodic, complex oriented, Landweber exact, $\E_\infty$-ring spectrum, such that $\pi_0 E(k,F)=\W(k)[\![ u_1, \ldots, u_{n-1}]\!]$ and the associated formal group law is the universal deformation of $F$. 
@@ -186,15 +194,20 @@ Later, using a $2$-periodic analogue of the universal deformation theory of Lubi
 %\end{theorem}
 
 \begin{definition}
+    \index{Morava $E$-theory}
     For the specific choice $(k,F) = (\F_{p^n}, H_n)$ we simply write $E(\F_{p^n}, H_n) = E_n$, and call it the height $n$ \emph{Morava $E$-theory}. 
 \end{definition}
 
 \begin{remark}
-    One can also study maps of ring spectra $E_n \longrightarrow K_n$ such that the induced map on homotopy groups is given by taking the quotient by the maximal ideal, just as in \cref{ch0:rm:K-as-quotient-of-E}. Such spectra $K_n$ are $2$-periodic versions of Morava $K$-theory and have been studied, for example, in \cite{hopkins-lurie_17} and \cite{barthel-pstragowski_2021}. 
+    One can also study maps of ring spectra 
+    \[E_n \longrightarrow K_n\] 
+    such that the induced map on homotopy groups is given by taking the quotient by the maximal ideal, just as in \cref{ch0:rm:K-as-quotient-of-E}. Such spectra $K_n$ are $2$-periodic versions of Morava $K$-theory and have been studied, for example, in \cite{hopkins-lurie_17} and \cite{barthel-pstragowski_2021}. 
 \end{remark}
 
 \begin{remark}
-    One nice benefit with $E_n$ over $E(n)$ is that the former is $K(n)$-local, making its chromatic behavior even more interesting. In fact, the unit map $L_{K_p(n)}\S \longrightarrow E_n$ is a pro-Galois extension in the sense of \cite{rognes_08}, where the Galois group is the extended Morava stabilizer group $\G_n$, see \cite{devinatz-hopkins_2004}. We can, however, fix this by instead using a completed version $\widehat{E}(n)$, often called \emph{completed Johnson-Wilson theory}. It has most of the same properties as that of $E(n)$, except that it is $K_p(n)$-local and its coefficients are $p$-adic and $I_n$-complete: $\widehat{E}(n)_* \simeq \Z_p[v_1, \cdots, v_{n-1}, v_n^{\pm}]^\wedge_{I_n}$. 
+    \index{Johnson--Wilson theory!Complete}
+    One nice benefit with $E_n$ over $E(n)$ is that the former is $K(n)$-local, making its chromatic behavior even more interesting. In fact, the unit map $L_{K_p(n)}\S \longrightarrow E_n$ is a pro-Galois extension in the sense of \cite{rognes_08}, where the Galois group is the extended Morava stabilizer group $\G_n$, see \cite{devinatz-hopkins_2004}. We can, however, fix this by instead using a completed version $\widehat{E}(n)$, often called \emph{completed Johnson-Wilson theory}. It has most of the same properties as that of $E(n)$, except that it is $K_p(n)$-local and its coefficients are $p$-adic and $I_n$-complete: 
+    \[\widehat{E}(n)_* \simeq \Z_p[v_1, \cdots, v_{n-1}, v_n^{\pm}]^\wedge_{I_n}.\]
 \end{remark}
 
 \begin{remark}
@@ -211,15 +224,16 @@ We have now introduced several versions of $E$-theory, all in light of trying to
 \end{proposition}
 
 \begin{notation}
-    We will use the common notation $\sp\np$ for any of the above categories. 
+    \index{$E_n$-local spectra}
+    We will use the common notation $\sp\np$ for any of the above categories, and call it the category of $E_n$-local spectra, or sometimes the category of height $n$ spectra.  
 \end{notation}
 
 \begin{remark}
-    The category $\Sp\np$ is compactly generated by the collection of dualizable objects $\{L_n K\}$, where $K$ is a finite spectrum. In fact, the monoidal unit $\S_{\En}$ \emph{is} a compact object, hence $\Sp\np$ is rigidly compactly generated, in contrast to $\SpK$ --- see \cref{ch0:rm:SpKn-not-rigidly-generated}.
+    The category $\Sp\np$ is compactly generated by the collection of dualizable objects $\{L_n K\}$, where $K$ is a finite spectrum. In fact, the monoidal unit $\S_{\En}$ \emph{is} a compact object, hence $\Sp\np$ is rigidly compactly generated, in contrast to $\SpK$---see \cref{ch0:rm:SpKn-not-rigidly-generated}.
 \end{remark}
 
 \begin{remark}
-    Note that even though the different models for $\sp\np$ are equivalent, some of them have non-equivalent associated module categories. For example, $\Mod_{E_n}\not \simeq \Mod_{E(n)}$, as the ring spectra $E_n$ and $E(n)$ have different periodicity -- the former is $2$-periodic while the latter is $(2p^n-2)$-periodic. Whenever such a distinction is relevant, we will make this explicit. 
+    Note that even though the different models for $\Sp\np$ are equivalent, some of them have non-equivalent associated module categories. For example, $\Mod_{E_n}\not \simeq \Mod_{E(n)}$, as the ring spectra $E_n$ and $E(n)$ have different periodicity -- the former is $2$-periodic while the latter is $(2p^n-2)$-periodic. Whenever such a distinction is relevant, we will make this explicit. 
 \end{remark}
 
 
@@ -235,16 +249,19 @@ Recall from \cref{ch0:sssec:fracture-squares} that our goal is to understand the
 
 \begin{definition}
     \label{ch0:def:monochromatic-spectrum}
+    \index{Monochromatic!spectrum}
     A spectrum $X$ is called \emph{$n$-monochromatic} if it is $E_n$-local and $E_{n-1}$-acyclic. The full subcategory of $n$-monochromatic spectra will be denoted $\M\np$ and referred to as the height $n$ monochromatic category.
 \end{definition}
 
 If the height is understood, we will sometimes drop the $n$ from the notation. We have a convenient way to produce monochromatic spectra from $E_n$-local ones. 
 
 \begin{definition}
+    \index{Monochromatic!Layer}
     Let $X\in \sp\np$. The fiber of the localization $X\longrightarrow L_{n-1}X$, which we denote $M_n X$ is called the $n$'th \emph{monochromatic layer} of $X$. 
 \end{definition}
 
 \begin{remark}
+    \index{Monochromatization}
     If $X$ is a monochromatic spectrum, then it is $L_{n-1}$-local by definition, i.e., $L_{n-1}X\simeq 0$. Hence the fiber sequence 
     \[M_n X\longrightarrow X\longrightarrow L_{n-1}X\]
     gives an equivalence $X\simeq M_n X$. The fully faithful inclusion $\M\np\longrightarrow \sp\np$ has a right adjoint, given by $X\longmapsto M_nX$, which we call the \emph{monochromatization}. 
@@ -252,7 +269,10 @@ If the height is understood, we will sometimes drop the $n$ from the notation. W
 
 \begin{proposition}
     \label{ch0:prop:monochromatization-is-smashing}
-    The monochromatization functor $M_n\colon \sp\np\longrightarrow \M\np$ is a smashing colocalization. 
+    \index{Localization!Smashing}
+    The monochromatization functor 
+    \[M_n\colon \sp\np\longrightarrow \M\np\] 
+    is a smashing colocalization. 
 \end{proposition}
 \begin{proof}
     As far as the authors are aware, this proposition was first proved in \cite[Sec 6.3]{bousfield_1996} in the case of finite monochromatization, i.e., the fiber functor of the finite localization $L_n^f$. The proof, however, uses the arguments from \cite[2.10]{bousfield_1979_bool}, which also work for the non-finite case. An even simpler argument uses the before-mentioned smash product theorem, which states that the localization $L_{n-1} = L_{E_{n-1}}$ is smashing. Hence, we can compare the two fiber sequences
@@ -269,6 +289,7 @@ We are now almost ready to construct local duality for chromatic homotopy theory
 
 \begin{definition}
     \label{ch0:def:type-n-spectrum}
+    \index{Type $n$ spectrum}
     A compact $p$-local spectrum $X$ is said to be of \emph{type $n$} if $K_p(n)_* X\not\cong 0$ and $K_p(m)_*X\cong 0$ for all $m<n$. 
 \end{definition}
 
@@ -276,7 +297,8 @@ As a consequence of the thick subcategory theorem of Hopkins--Smith, \cite[Theor
 
 \begin{construction}
     \label{ch0:const:chromatic-duality}
-    Let $n$ be a non-negative integer and $p$ a prime. For a type $n$ spectrum $F(n)$ the $L_n$-localization $\K=\{L_nF(n)\}$ is a compact object in $\Sp\np$ and hence generates a localizing tensor ideal $\Sp\np^{\K-tors}$ in $\Sp\np$. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\Sp\np, \K)$:
+    \index{Local duality!Diagram}
+    Let $n$ be a non-negative integer and $p$ a prime. For a finite type $n$ spectrum $F(n)$, its $L_n$-localization $L_nF(n)$ is a compact object in $\Sp\np$ and hence generates a localizing tensor ideal $\Sp\np^{\K-tors}$ in $\Sp\np$, where $\K$ denotes the singleton set $\{L_nF(n)\}$. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\Sp\np, \K)$:
     \begin{center}
     \begin{tikzcd}
             & {\sp\np^{\K-loc}} \\
@@ -299,14 +321,21 @@ Even though these categories arise abstractly from the local duality process, we
 
 \begin{proposition}
     \label{ch0:prop:torsion-is-monochromatic}
-    There are symmetric monoidal equivalences of stable $\infty$-categories 
-    \[(1)~\Sp\np^{\K-tors}\simeq \M\np, \quad (2)~\sp\np^{\K-loc}\simeq \Sp_{n-1,p} \quad \text{and}\quad (3)~\Sp\np^{\K-comp}\simeq \SpKn.\]
+    There are equivalences
+    \begin{enumerate}
+        \item $\Sp\np^{\K-tors}\simeq \M\np$
+        \item $\sp\np^{\K-loc}\simeq \Sp_{n-1,p}$
+        \item $\Sp\np^{\K-comp}\simeq \SpKn$
+    \end{enumerate} 
+    of symmetric monoidal stable $\infty$-categories. 
 \end{proposition}
 
 These equivalences are classical, but we recall their arguments for the reader's convenience and for building intuition. 
 
 \begin{proof}
-    By definition $\M\np$ is the full subcategory of $L_{n-1}$-acyclics in $\sp\np$ and $M_n$ coincides with the $L_{n-1}$-acyclification. By \cite[6.10]{hovey-strickland_99} $L_{n-1}$-localization is the finite localization away from $L_nF(n)$, which proves equivalence $(2)$. This also means that the $L_{n-1}$-acyclics are precicely the objects in $\Loc^\otimes_{\sp\np}(K)$, which by definition is $\sp\np^{\K-tors}$. This gives the equivalences $\M\np \simeq \sp\np^{\K-tors}$ and $\Gamma \simeq M_n$, which proves $(1)$. One can also see this by the fact that $M_n$ preserves compact objects, as it is smashing by \cref{ch0:prop:monochromatization-is-smashing}, which also implies that $\M\np$ is closed under colimits. The compact objects $L_n X\in \sp\np$ for $X$ any finite spectrum of type $\geq n$ are also monochromatic, as $E_{n-1 *} L_n X \cong E_{n-1 *}X\cong 0$, and do in fact generate $\M\np$ under colimits. 
+    By definition $\M\np$ is the full subcategory of $L_{n-1}$-acyclics in $\sp\np$ and $M_n$ coincides with the $L_{n-1}$-acyclification. By \cite[6.10]{hovey-strickland_99} $L_{n-1}$-localization is the finite localization away from $L_nF(n)$, which proves equivalence $(2)$. This also means that the $L_{n-1}$-acyclics are precicely the objects in $\Loc^\otimes_{\sp\np}(K)$, which by definition is $\sp\np^{\K-tors}$. This gives the equivalences $\M\np \simeq \sp\np^{\K-tors}$ and $\Gamma \simeq M_n$, which proves $(1)$. One can also see this by the fact that $M_n$ preserves compact objects, as it is smashing by \cref{ch0:prop:monochromatization-is-smashing}, which also implies that $\M\np$ is closed under colimits. The compact objects $L_n X\in \sp\np$ for $X$ any finite spectrum of type $\geq n$ are also monochromatic, as 
+    \[E_{n-1 *} L_n X \cong E_{n-1 *}X\cong 0,\]
+    and they do in fact generate $\M\np$ under colimits. 
 
 
 
@@ -330,7 +359,8 @@ These equivalences are classical, but we recall their arguments for the reader's
 \end{remark}
 
 \begin{remark}
-    The local duality diagram from \cref{ch0:const:chromatic-duality} gives via \cite[2.26]{barthel-heard-valenzuela_2018} precisely the chromatic fracture square, as wanted in \cref{ch0:rm:chromatic-square-from-duality}.   
+    \index{Chromatic fracture square}
+    The local duality diagram we saw in \cref{ch0:const:chromatic-duality} gives via \cite[2.26]{barthel-heard-valenzuela_2018} precisely the chromatic fracture square, as wanted in \cref{ch0:rm:chromatic-square-from-duality}.   
 \end{remark}
 
 \begin{remark}
