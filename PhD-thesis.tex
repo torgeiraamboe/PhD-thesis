@@ -12,11 +12,12 @@
 % Information section
 \frontmatter
 
-\input{tex/0-Information/00-titlepage.tex}
-\input{tex/0-Information/01-formalities.tex}\newpage
-\input{tex/0-Information/02-abstract.tex}\newpage
-\input{tex/0-Information/03-information.tex}\newpage
-\input{tex/0-Information/04-acknowledgements.tex}\newpage
+\input{tex/00-Information/titlepage.tex}
+\input{tex/00-Information/formalities.tex}\newpage
+\input{tex/00-Information/abstract.tex}\newpage
+\input{tex/00-Information/information.tex}\newpage
+\input{tex/00-Information/acknowledgements.tex}\newpage
+\input{tex/00-Information/notation.tex}\newpage
 
 \vspace*{-1.1cm}
 {\hypersetup{linkcolor=myblack}
@@ -25,62 +26,57 @@
 \mainmatter
 
 % Introduction
-\input{tex/1-Introduction/chapter1.tex}
-\input{tex/1-Introduction/10-layperson.tex}\newpage
-\input{tex/1-Introduction/11-general.tex}
-\input{tex/1-Introduction/12-chromatic.tex}
-\input{tex/1-Introduction/13-hopf-algebroids.tex}\newpage
-\input{tex/1-Introduction/14-summaries.tex}
+\input{tex/0-Introduction/00-chapter1.tex}
+\input{tex/0-Introduction/00-layperson.tex}\newpage
+\input{tex/0-Introduction/01-general.tex}
+\input{tex/0-Introduction/02-chromatic.tex}
+\input{tex/0-Introduction/03-hopf-algebroids.tex}\newpage
+\input{tex/0-Introduction/04-summaries.tex}
 
 
 % Algebraicity of monochromatic homotopy theory
-\input{tex/2-Algebraicity/chapter2.tex}
-\input{tex/2-Algebraicity/drawing.tex}
-\input{tex/2-Algebraicity/lemmarick.tex}\newpage
-\input{tex/2-Algebraicity/20-abstract.tex}
-\input{tex/2-Algebraicity/21-introduction.tex}
-\input{tex/2-Algebraicity/22-setup.tex}
-\input{tex/2-Algebraicity/23-algebraic-models.tex}
-\input{tex/2-Algebraicity/24-algebraicity.tex}
-\renewcommand\thesection{\Alph{section}}
-\input{tex/2-Algebraicity/25-barr-beck.tex}
-\renewcommand\thesection{\arabic{section}}
+\input{tex/1-Algebraicity/00-chapter2.tex}
+\input{tex/1-Algebraicity/00-drawing.tex}
+\input{tex/1-Algebraicity/00-lemmarick.tex}\newpage
+\input{tex/1-Algebraicity/10-abstract.tex}
+\input{tex/1-Algebraicity/11-introduction.tex}
+\input{tex/1-Algebraicity/12-setup.tex}
+\input{tex/1-Algebraicity/13-algebraic-models.tex}
+\input{tex/1-Algebraicity/14-algebraicity.tex}
+\setcounter{section}{0}
+\renewcommand\thesection{\thechapter.\Alph{section}}
+\input{tex/1-Algebraicity/15-barr-beck.tex}
+\renewcommand\thesection{\thechapter.\arabic{section}}
 
 
 % Positselski duality in stable categories
-\input{tex/3-Positselski/chapter3.tex}
-\input{tex/3-Positselski/drawing.tex}
-\input{tex/3-Positselski/lemmarick.tex}\newpage
-\input{tex/3-Positselski/30-abstract.tex}
-\input{tex/3-Positselski/31-introduction.tex}
-\input{tex/3-Positselski/32-setup.tex}
-\input{tex/3-Positselski/33-idempotent.tex}
-\input{tex/3-Positselski/35-examples.tex}
-\renewcommand\thesection{\Alph{section}}
-\input{tex/3-Positselski/36-addendum-proalgebras.tex}
-\renewcommand\thesection{\arabic{section}}
+\input{tex/2-Positselski/00-chapter3.tex}
+\input{tex/2-Positselski/00-drawing.tex}
+\input{tex/2-Positselski/00-lemmarick.tex}\newpage
+\input{tex/2-Positselski/20-abstract.tex}
+\input{tex/2-Positselski/21-introduction.tex}
+\input{tex/2-Positselski/22-setup.tex}
+\input{tex/2-Positselski/23-idempotent.tex}
+\input{tex/2-Positselski/25-examples.tex}
+\setcounter{section}{0}
+\renewcommand\thesection{\thechapter.\Alph{section}}
+\input{tex/2-Positselski/26-addendum-proalgebras.tex}
+\renewcommand\thesection{\thechapter.\arabic{section}}
 
 
 % Classification of localizing subcategories along t-structures
-\input{tex/4-Classification/chapter4.tex}
-\input{tex/4-Classification/drawing.tex}
-\input{tex/4-Classification/lemmarick.tex}\newpage
-\input{tex/4-Classification/40-abstract.tex}\newpage
-\input{tex/4-Classification/41-introduction.tex}
-\input{tex/4-Classification/42-setup.tex}
-\input{tex/4-Classification/43-stabilizing.tex}
-\input{tex/4-Classification/44-correspondence.tex}
-\renewcommand\thesection{\Alph{section}}
-\input{tex/4-Classification/45-addendum-synthetic.tex}
-\renewcommand\thesection{\arabic{section}}
-
-% Balmer didn't need nerves of steel
-%\input{tex/5-Nerves/chapter5.tex}
-%\input{tex/5-Nerves/50-abstract.tex}
-%\input{tex/5-Nerves/51-introduction.tex}
-%\input{tex/5-Nerves/52-homological-tt-spectrum.tex}
-%\input{tex/5-Nerves/53-stable-comparison-map.tex}
-%\input{tex/5-Nerves/54-classification_of_ideals.tex}
+\input{tex/3-Classification/00-chapter4.tex}
+\input{tex/3-Classification/00-drawing.tex}
+\input{tex/3-Classification/00-lemmarick.tex}\newpage
+\input{tex/3-Classification/30-abstract.tex}\newpage
+\input{tex/3-Classification/31-introduction.tex}
+\input{tex/3-Classification/32-setup.tex}
+\input{tex/3-Classification/33-stabilizing.tex}
+\input{tex/3-Classification/34-correspondence.tex}
+\setcounter{section}{0}
+\renewcommand\thesection{\thechapter.\Alph{section}}
+\input{tex/3-Classification/35-addendum-synthetic.tex}
+\renewcommand\thesection{\thechapter.\arabic{section}}
 
 
 

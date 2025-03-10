@@ -2,8 +2,8 @@
 \section{Exotic algebraic models}
 \label{ch1:sec:exotic-algebraic-models}
 
-We now have two sets of local duality diagrams, one coming from chromatic homotopy theory, see \cref{ch1:ex:local-duality-chromatic}, and one from the homological algebra of Adams Hopf algebroids, see \cref{ch1:ex:local-duality-comod}. We can also pass between these duality theories, by using homology theories. In particular, if we let $E=E_n$ be height $n$ Morava $E$-theory at a prime $p$, then we have the $E$-homology functor 
-\[E_*\colon \Sp\np\longrightarrow \comod\EE\] 
+We now have two sets of local duality diagrams, one coming from chromatic homotopy theory, see \cref{ch1:ex:local-duality-chromatic}, and one from the homological algebra of Adams Hopf algebroids, see \cref{ch1:ex:local-duality-comod}. We can also pass between these duality theories, by using homology theories. In particular, if we let $E=E\np$ be height $n$ Morava $E$-theory at a prime $p$, then we have the $E$-homology functor 
+\[E_*\colon \Sp\np\longrightarrow \Comod\EE\] 
 converting between homotopy theory and algebra. We can, in some sense, say that $E_*$ approximates homotopical information by algebraic information. 
 
 The goal of this section is to set up an abstract framework for studying how good such approximations are. The version we recall below was developed in \cite{patchkoria-pstragowski_2021}, taking inspiration from \cite{franke_96} and \cite{pstragowski_2022}. 
@@ -41,10 +41,10 @@ Adapted homology theories are particularly well behaved homology theories that h
 \end{example}
 
 \begin{remark}
-    Recall that we are really interested in the category $\SpK$ of $K_p(n)$-local spectra. The spectrum $K_p(n)$ is a field object in $\Sp$, and its homotopy groups $\pi_* K_p(n)$ are graded fields. Hence the homology theory $K_p(n)_*\colon \SpK\longrightarrow \Mod_{K_p(n)_*}$ is too simple to exhibit the algebraicity properties that we want. As $K_p(n)$ is Adams type $K_p(n)_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. We learnt the argument for why this is the case from \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $K_p(n)$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $K_p(n)$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $K_p(n)$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
+    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra. The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory $\Kpn_*\colon \SpKpn\longrightarrow \Mod_{\Kpn_*}$ is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. We learnt the argument for why this is the case from \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
     
-    There is, however, a version of $E_*$-homology on $\SpK$, defined by sending a $K(n)$-local spectrum $X$ to 
-    \[E_*^\vee (X) := \pi_*L_{K_p(n)}(E\otimes X).\]
+    There is, however, a version of $E_*$-homology on $\SpKpn$, defined by sending a $K(n)$-local spectrum $X$ to 
+    \[E_*^\vee (X) := \pi_*L_{\Kpn}(E\otimes X).\]
     The functor does land in a category of comodules, specifically over the $L$-complete Hopf algebroid $(E_*, E_*^\vee E)$, see \cite[5.3]{baker_2009}. However, the category $\Comod_{E_*^\vee E}$ is not abelian. This is the reason for instead using the monochromatic category $\M\np$ and the category of $I_n$-power torsion comodules, as these inherit nicer homological properties we can exploit. 
 \end{remark}
 
@@ -73,7 +73,7 @@ Adapted homology theories are particularly well behaved homology theories that h
     induced by $H$. Because $\A$ has enough injective objects, we can use these equivalences to approximate homotopy classes of maps by repeatedly mapping into injectives. This gives precisely an associated Adams spectral sequence for the homology theory $H$. In fact, Patchkoria and Pstr{\k a}gowski proved that there is a bijection between adapted homology theories and Adams spectral sequences, see \cite[3.24, 3.25]{patchkoria-pstragowski_2021}. The construction of the Adams spectral sequence associated to an adapted homology theory $H\colon \C\longrightarrow \A$ is given in \cite[2.24]{patchkoria-pstragowski_2021}, or alternatively as a totalization spectral sequence in \cite[2.27]{patchkoria-pstragowski_2021}. 
 \end{remark}
 
-In our particular interest $R=E_n$, the associated adapted homology theories $\pi_*$ and $E_*$ are even nicer than a general adapted homology theory. This is because the category of comodules is particularly simple. 
+In our particular interest $R=E\np$, the associated adapted homology theories $\pi_*$ and $E_*$ are even nicer than a general adapted homology theory. This is because the category of comodules is particularly simple. 
 
 \begin{definition}
     \label{ch1:def:cohomological-dimension}
@@ -83,7 +83,7 @@ In our particular interest $R=E_n$, the associated adapted homology theories $\p
 
 \begin{example}
     \label{ch1:ex:cohomological-dimension-comodEE}
-    Let $n$ be an integer, $p$ a prime such that $p>n+1$ and $E=E_n$ Morava $E$-theory at height $n$. Then by \cite[2.5]{pstragowski_2021} the category $\Comod\EE$ has cohomological dimension $n^2+n$. 
+    Let $n$ be an integer, $p$ a prime such that $p>n+1$ and $E=E\np$ Morava $E$-theory at height $n$. Then by \cite[2.5]{pstragowski_2021} the category $\Comod\EE$ has cohomological dimension $n^2+n$. 
 \end{example}
 
 For certain Adams type ring spectra $R$ we get decompositions of the category $\Comod_{R_*R}$ into periodic families of subcategories. Such decompositions allows for the construction of partial inverses to the associated homology theories. 
@@ -118,7 +118,7 @@ In order to mimic this behavior for a general adapted homology theory, Franke in
 \end{example}
 
 \begin{example}
-    In the case $R=E(1)$ this has been written out in detail in \cite[Section 4]{barnes-roitzheim_2011}. The Serre subcategories are all copies of the category of $p$-local abelian groups together with Adams operations $\psi^k$ for $k\neq 0$ in $\Z_{(p)}$. The shift leaves the underlying module unchanged, but changes the Adams operation. 
+    In the case $R=E_p(1)$ this has been written out in detail in \cite[Section 4]{barnes-roitzheim_2011}. The Serre subcategories are all copies of the category of $p$-local abelian groups together with Adams operations $\psi^k$ for $k\neq 0$ in $\Z_{(p)}$. The shift leaves the underlying module unchanged, but changes the Adams operation. 
 \end{example}
     
 \begin{definition}
@@ -165,7 +165,7 @@ There are several interesting examples of homology theories satisfying \cref{ch1
 
 \begin{example}[{\cite[8.7]{patchkoria-pstragowski_2021}}]
     \label{ch1:ex:chromatic-algebraicity-modules}
-    Let $p$ be a prime, $n$ be a non-negative integer, and $E$ a height $n$ Morava $E$-theory concentrated in degrees divisible by $2p-2$, for example Johnson-Wilson theory $E(n)$. If $k=2p-2-n>0$, then the functor 
+    Let $p$ be a prime, $n$ be a non-negative integer, and $E$ a height $n$ Morava $E$-theory concentrated in degrees divisible by $2p-2$, for example Johnson-Wilson theory $E_p(n)$. If $k=2p-2-n>0$, then the functor 
     \[\pi_* \colon \ModE \longrightarrow \modE\]
     is a $k$-exotic homology theory, giving an equivalence 
     \[h_k \ModE \simeq h_k \Dper(\modE).\]
@@ -173,12 +173,12 @@ There are several interesting examples of homology theories satisfying \cref{ch1
     
 \begin{notation}
     \index{Franke category}
-    For the following example and the rest of the paper, we follow the notation of \cite{barthel-schlank-stapleton_2020}, \cite{barthel-schlank-stapleton_2021} and \cite{barkan_2023} and denote the category $\Dper(\comod\EE)$ by $\Fr\np$. 
+    For the following example and the rest of the paper, we follow the notation of \cite{barthel-schlank-stapleton_2020}, \cite{barthel-schlank-stapleton_2021} and \cite{barkan_2023} and denote the category $\Dper(\Comod\EE)$ by $\Fr\np$. 
 \end{notation}
     
 \begin{example}[{\cite[8.13]{patchkoria-pstragowski_2021}}]
     \label{ch1:ex:chromatic-algebraicity}
-    Let $p$ be a prime, $n$ be a non-negative integer, and $E$ any height $n$ Morava $E$-theory. If $k=2p-2-n^2-n>0$, then the functor $E_* \colon \Sp\np\longrightarrow \comod\EE$ is a $k$-exotic homology theory, giving an equivalence 
+    Let $p$ be a prime, $n$ be a non-negative integer, and $E$ any height $n$ Morava $E$-theory. If $k=2p-2-n^2-n>0$, then the functor $E_* \colon \Sp\np\longrightarrow \Comod\EE$ is a $k$-exotic homology theory, giving an equivalence 
     \[h_k \Sp\np \simeq h_k \Fr\np.\]
 \end{example}
 

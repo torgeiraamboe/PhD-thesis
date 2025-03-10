@@ -16,6 +16,8 @@
 				]{biblatex}
 \RequirePackage[english]{babel}
 \RequirePackage{microtype}
+\RequirePackage{nomencl}
+\makenomenclature
 \RequirePackage{pdfpages}
 \RequirePackage{appendix}
 \RequirePackage{bbm, dsfont}
@@ -54,6 +56,8 @@
 \RequirePackage[capitalize, nameinlink]{cleveref}
 
 
+
+% Chapters and sections
 \setcounter{chapter}{-1}
 
 \setcounter{secnumdepth}{3}
@@ -82,9 +86,10 @@
 % }
 
 
-\definecolor{mycolor}{RGB}{190,80,0}
-\definecolor{myblack}{RGB}{20, 20, 20}
 
+
+
+% Backreferencing
 \DeclareFieldFormat{postnote}{#1} %Removes p. in citations
 
 \newcommand*\backref[1]{\ifx#1\relax \else (Cited on #1) \fi}
@@ -94,6 +99,25 @@
 }
 
 
+% List of symbols
+\newcommand{\addsymbol}[3]{%
+  \symboldisplay{#1}{#2}\\%
+  \setelem{#3}{#1}
+}
+\newcommand{\symboldisplay}[2]{%
+  $#1$ \dotfill #2%
+}
+
+\def\setelem#1{\expandafter\gdef\csname myarray(#1)\endcsname}
+\def\dispsymbol#1{\csname myarray(#1)\endcsname}
+
+
+
+
+% Colors
+\definecolor{mycolor}{RGB}{190,80,0}
+\definecolor{myblack}{RGB}{20, 20, 20}
+
 \hypersetup{
 colorlinks=true,
 citecolor=teal,
@@ -102,7 +126,7 @@ urlcolor=myblack
 }
 \newcommand{\defn}{\color{teal}}
 
-%\newcommand*\backref[1]{\ifx#1\relax \else (Cited on #1) \fi}
+
 
 
 \geometry{
@@ -184,10 +208,17 @@ urlcolor=myblack
 \DeclareRobustCommand{\yo}{\text{\usefont{U}{dmjhira}{m}{n}\symbol{"48}}}
 
 % Sub- and superscripts
-\newcommand{\np}{_{n}}
+\newcommand{\np}{_{n,p}}
 \newcommand{\EE}{_{E_*E}}
-\newcommand{\Int}{^{I_n-tors}}
-\newcommand{\Inc}{^{I_n-comp}}
+\newcommand{\Int}{^{I_n-\mathrm{tors}}}
+\newcommand{\Inc}{^{I_n-\mathrm{comp}}}
+\newcommand{\Inl}{^{I_n-\mathrm{loc}}}
+\newcommand{\Ktors}{^{\K-\mathrm{tors}}}
+\newcommand{\Kcomp}{^{\K-\mathrm{comp}}}
+\newcommand{\Kloc}{^{\K-\mathrm{loc}}}
+\newcommand{\Itors}{^{I-\mathrm{tors}}}
+\newcommand{\Icomp}{^{I-\mathrm{comp}}}
+\newcommand{\Iloc}{^{I-\mathrm{loc}}}
 \newcommand{\cn}{_{\geq 0}}
 \newcommand{\ccn}{_{\leq 0}}
 \newcommand{\fp}{^{\mathrm{fp}}}
@@ -266,9 +297,9 @@ urlcolor=myblack
 \newcommand{\PrLs}{\ensuremath{\mathrm{Pr}_{st}^L}}
 \newcommand{\PrL}{\ensuremath{\mathrm{Pr}^L}}
 \newcommand{\Ch}{\mathrm{Ch}}
-\newcommand{\Chp}{\mathrm{Ch}^{per}}
+\newcommand{\Chp}{\mathrm{Ch}^{\mathrm{per}}}
 \newcommand{\Der}{\mathrm{D}}
-\newcommand{\Dper}{\Der^{per}}
+\newcommand{\Dper}{\Der^{\mathrm{per}}}
 \newcommand{\Stable}{\mathrm{Stable}}
 \newcommand{\Ab}{\mathrm{Ab}}
 \newcommand{\Set}{\mathrm{Set}}
@@ -285,13 +316,16 @@ urlcolor=myblack
 \newcommand{\Tn}{{T(n)}}
 \newcommand{\Kpn}{{K_p(n)}}
 \newcommand{\En}{{\mathrm{E}_n}}
-\newcommand{\SpK}{\Sp_{\Kn}}
+\newcommand{\Enp}{{\mathrm{E}\np}}
+\newcommand{\SpK}{\Sp_{K}}
 \newcommand{\SpKn}{\Sp_{\Kn}}
 \newcommand{\SpKpn}{\Sp_{\Kpn}}
 \newcommand{\Spn}{\Sp\np}
 \newcommand{\SpE}{\Sp_E}
 \newcommand{\Mn}{\M\np}
 \newcommand{\BP}{\mathrm{BP}}
+\newcommand{\MU}{\mathrm{MU}}
+\newcommand{\KO}{\mathrm{KO}}
 
 % Sheaves 
 \newcommand{\Sh}{\mathrm{Sh}}
@@ -309,10 +343,13 @@ urlcolor=myblack
 
 % Synthetic spectra
 \newcommand{\Syn}{\mathrm{Syn}}
+\newcommand{\LSyn}{\mathrm{LSyn}}
 \newcommand{\SynE}{\Syn_{E}}
+\newcommand{\LSynE}{\LSyn_{E}}
+\newcommand{\MSynE}{\M\Syn_{E}}
 \newcommand{\SynR}{\Syn_{R}}
 \newcommand{\Synn}{\Syn_{n}}
-\newcommand{\hSyn}{\widetilde{\mathrm{S}}\mathrm{yn}}
+\newcommand{\hSyn}{\widehat{\mathrm{S}}\mathrm{yn}}
 \newcommand{\hSynE}{\hSyn_{E}}
 
 % Perfect derived

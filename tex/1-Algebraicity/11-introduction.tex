@@ -3,17 +3,17 @@
 \section{Introduction}
 \label{ch1:sec:introduction}
 
-The central idea in chromatic homotopy theory is to study the symmetric monoidal stable $\infty$-category of spectra, $\Sp$, via its smaller building blocks. These are the categories $\Sp\np$ and $\SpK$ of $E\np$-local and $K_p(n)$-local spectra, where $E=E\np$ is Morava $E$-theory, and $K_p(n)$ is Morava $K$-theory, see for example \cite{hovey-strickland_99}. These categories depend on a prime $p$ and an integer $n$, called the height. For a fixed height $n$, increasing the prime $p$ makes both categories behave more algebraically. This manifests itself, for example, in the $E$-Adams spectral sequence of signature
-\[E^{s,t}_2 (L_n\S) = \Ext_{E_*E}^{s,t}(E_*,E_*)\Longrightarrow \pi_{t-s} L_n\S\]
-computing the homotopy groups of the $E$-local sphere. By the smash product theorem of Ravenel, see \cite[7.5.6]{ravenel_92}, this spectral sequence has a horizontal vanishing line at a finite page. If $p>n+1$, this vanishing line appears already on the second page, where the information is completely described by the homological algebra of $\comod\EE$---the Grothendieck abelian category of comodules over the Hopf algebroid $(E_*, E_*E)$. 
+The central idea in chromatic homotopy theory is to study the symmetric monoidal stable $\infty$-category of spectra, $\Sp$, via its smaller building blocks. These are the categories $\Sp\np$ and $\SpKpn$ of $\Enp$-local and $\Kpn$-local spectra, where $E=\Enp$ is Morava $E$-theory, and $\Kpn$ is Morava $K$-theory, see for example \cite{hovey-strickland_99}. These categories depend on a prime $p$ and an integer $n$, called the chromatic height. For a fixed height $n$, increasing the prime $p$ makes both categories behave more algebraically. This manifests itself, for example, in the $E$-Adams spectral sequence of signature
+\[E^{s,t}_2 (L\np\S) = \Ext_{E_*E}^{s,t}(E_*,E_*)\Longrightarrow \pi_{t-s} L\np\S\]
+computing the homotopy groups of the $E$-local sphere. By the smash product theorem of Ravenel, see \cite[7.5.6]{ravenel_92}, this spectral sequence has a horizontal vanishing line at a finite page. If $p>n+1$, this vanishing line appears already on the second page, where the information is completely described by the homological algebra of $\ComodE$---the Grothendieck abelian category of comodules over the Hopf algebroid $(E_*, E_*E)$. 
 
 Increasing the prime $p$ correspondingly increases the distance between objects appearing in the $E$-Adams spectral sequence. When $2p-2$ exceeds $n^2+n$, there is no longer room for any differentials, and the  spectral sequence in fact collapses to an isomorphism
-\[\pi_* L_n\S\cong \Ext^{*,*}_{\EE}(E_*, E_*),\]
+\[\pi_* L\np\S\cong \Ext^{*,*}\EE(E_*, E_*),\]
 for degree reasons. In other words, the homotopy groups are completely algebraic in this range. 
 
-A natural question to ask is whether this collapse is a feature solely of the $E$-Adams spectral sequence or if it is a feature of the category $\Sp\np$. More precisely, is the entire category of $E$-local spectra algebraic, in the sense that it is equivalent to a derived category of an abelian category, whenever $2p-2>n^2+n$? What about the category of $K_p(n)$-local spectra?
+A natural question to ask is whether this collapse is a feature solely of the $E$-Adams spectral sequence or if it is a feature of the category $\Sp\np$. More precisely, is the entire category of $E$-local spectra algebraic, in the sense that it is equivalent to a derived category of an abelian category, whenever $2p-2>n^2+n$? What about the category of $\Kpn$-local spectra?
 
-At height $n=0$, both categories $\Sp\np$ and $\SpK$ is the category of rational spectra $\Sp_\Q$, which can be seen to be equivalent to the derived $\infty$-category of rational vector spaces, but at positive heights $n>0$, there can never be an equivalence of $\infty$-categories $\Sp\np \simeq \Der(\A)$ or $\SpK \simeq \Der(\A)$. 
+At height $n=0$, both categories $\Sp\np$ and $\SpKpn$ is the category of rational spectra $\Sp_\Q$, which can be seen to be equivalent to the derived $\infty$-category of rational vector spaces, but at positive heights $n>0$, there can never be an equivalence of $\infty$-categories $\Sp\np \simeq \Der(\A)$ or $\SpKpn \simeq \Der(\A)$. 
 
 However, in \cite{bousfield_1985} Bousfield showed that for $p>2$ and $n=1$, that there is an equivalence of homotopy categories
 \[h \Sp_{1,p}\simeq h \Fr_{1,p},\]
@@ -23,15 +23,15 @@ Franke expanded upon this in \cite{franke_96} by conjecturing---and attempting t
 \[h \Sp\np\simeq h \Fr\np.\]
 Unfortunately, a subtle error was discovered in the proof by Patchkoria in \cite{patchkoria_2013}, but the result was recovered in \cite{pstragowski_2021} with a slightly worse bound: $2p-2>2n^2+2n$. Pstr{\k a}gowski also proved that this equivalence gets ``stronger'' the larger the prime, where we not only get an equivalence of categories but an equivalence of $k$-categories 
 \[h_k \Sp\np\simeq h_k \Fr\np,\]
-for $k=2p-2-2n^2-2n$. Here $h_k \C$ denotes taking the homotopy $k$-category, given by $(k-1)$-truncating the mapping spaces in $\C$. At $k=1$, this gives the classical situation of taking the homotopy category $h\C$. Using and developing a more general machinery, Pstr{\k a}gowski and Patchkoria proved in \cite{patchkoria-pstragowski_2021} that the above equivalence holds in Franke's conjectured bound, 
+for $k=2p-2-2n^2-2n$. Here $h_k \C$ denotes taking the homotopy $k$-category, given by $(k-1)$-truncating the mapping spaces in $\C$. At $k=1$, this gives the classical situation of taking the homotopy category $h\C$. Using and developing a more general machinery, Pstr{\k a}gowski and Patchkoria proved in \cite{patchkoria-pstragowski_2021} that the above equivalence holds in Franke's conjectured bound:
 \[2p-2>n^2+n.\] 
 
-The current belief is that these bounds are optimal. We know this to be true at the prime $2$, as Roitzheim proved in \cite{roitzheim_07} that the category $\Sp_{1,2}$ is \emph{rigid}, in the sense that any equivalence of homotopy categories $h\Sp_{1,2} \simeq h\C$ lifts to an equivalence $\Sp_{1,2}\simeq \C$. The $K_p(n)$-local analogue of Roitzheim's result also holds, as Ishak proved in \cite{ishak_19} that $\Sp_{K_2(1)}$ is rigid as well. Hence, exotic equivalences for $\Sp\np$ or $\SpK$ can only exist at primes that are large compared to the height. 
+The current belief is that these bounds are optimal. We know this to be true at the prime $2$, as Roitzheim proved in \cite{roitzheim_07} that the category $\Sp_{1,2}$ is \emph{rigid}, in the sense that any equivalence of homotopy categories $h\Sp_{1,2} \simeq h\C$ lifts to an equivalence $\Sp_{1,2}\simeq \C$. The $K_p(n)$-local analogue of Roitzheim's result also holds, as Ishak proved in \cite{ishak_19} that $\Sp_{K_2(1)}$ is rigid as well. Hence, exotic equivalences for $\Sp\np$ or $\SpKpn$ can only exist at primes that are large compared to the height. 
 
 The above results imply that increasing the prime $p$ decreases how destructive the $k$-truncation of the mapping spaces needs to be. In the limit $p\rightarrow \infty$, we might expect that there is no need to truncate at all, giving an equivalence of $\infty$-categories. But, there needs to be an appropriate notion of what ``going to the infinite prime'' should be. In \cite{barthel-schlank-stapleton_2020}, the authors use a notion of ultraproducts over a non-principal ultrafilter of primes, $\mathcal{F}$, to formalize this limiting process. They use this to prove the existence of a symmetric monoidal equivalence of $\infty$-categories
 \[\prod_{\mathcal{F}}\Sp\np \simeq \prod_{\mathcal{F}}\Fr\np.\] 
-Expanding on their work, Barthel, Schlank, and Stapleton proved in \cite{barthel-schlank-stapleton_2021} a $K_p(n)$-local version of the above result. More precisely, they show that there is a symmetric monoidal equivalence of $\infty$-categories
-\[\prod_{\mathcal{F}}\SpK \simeq \prod_{\mathcal{F}}\Frc,\]
+Expanding on their work, Barthel, Schlank, and Stapleton proved in \cite{barthel-schlank-stapleton_2021} a $\Kpn$-local version of the above result. More precisely, they show that there is a symmetric monoidal equivalence of $\infty$-categories
+\[\prod_{\mathcal{F}}\SpKpn \simeq \prod_{\mathcal{F}}\Frc,\]
 where the right-hand side consists of derived complete twisted comodules for the naturally occurring Landweber ideal $I_n\subseteq E_*$. 
 
 
@@ -44,25 +44,25 @@ We can summarize the most general of the above algebraicity results in the follo
         & $p<\infty $ & $p\rightarrow \infty$ \\
         \hline 
         $\Sp\np$& \cite{patchkoria-pstragowski_2021} & \cite{barthel-schlank-stapleton_2020} \\
-        $\SpK$ &  & \cite{barthel-schlank-stapleton_2021} 
+        $\SpKpn$ &  & \cite{barthel-schlank-stapleton_2021} 
     \end{tabular}
 \end{table}
 
-A natural question arises: Is there a finite prime exotic algebraicity for $\SpK$? The goal of this paper is to give an affirmative answer. More precisely, we prove the following. 
+A natural question arises: Is there a finite prime exotic algebraicity for $\SpKpn$? The goal of this paper is to give an affirmative answer. More precisely, we prove the following. 
 
 \begin{introthm}[\cref{ch1:thm:main-spectra-dual}]
     \label{ch1:thm:A}
     Let $p$ be a prime and $n\in \N$. If $k=2p-2-n^2-n>0$,  then there is an equivalence of $k$-categories 
-    \[h_k \SpK\simeq h_k \Frc.\]
+    \[h_k \SpKpn\simeq h_k \Frc.\]
     In other words, $K_p(n)$-local spectra are exotically algebraic at large primes. 
 \end{introthm}
 
-The available tools for proving such a statement require an abelian category with enough injective objects admitting lifts to a stable $\infty$-category. In lack of such a well-behaved abelian approximation for $\SpK$, we take inspiration from \cite{barthel-schlank-stapleton_2021} and instead use the dual category $\M\np$ of monochromatic spectra, which we show has the needed properties. \cref{ch1:thm:A} will then follow from the following result. 
+The available tools for proving such a statement require an abelian category with enough injective objects admitting lifts to a stable $\infty$-category. In lack of such a well-behaved abelian approximation for $\SpKpn$, we take inspiration from \cite{barthel-schlank-stapleton_2021} and instead use the dual category $\M\np$ of monochromatic spectra, which we show has the needed properties. \cref{ch1:thm:A} will then follow from the following result. 
 
 \begin{introthm}[\cref{ch1:thm:main-spectra}]
     \label{ch1:thm:B}
-    Let $p$ be a prime and $n\in \N$. If $k=2p-2-n^2-n>0$,  then there is an equivalence 
-    \[h_k \M\np\simeq h_k \Fr\np^{I_n-tors}\]
+    Let $p$ be a prime and $n$ a positive natural number. If $k=2p-2-n^2-n>0$,  then there is an equivalence 
+    \[h_k \M\np\simeq h_k \Fr\np\Int\]
     as $k$-categories.
 \end{introthm}
 
@@ -70,7 +70,7 @@ In order to prove \cref{ch1:thm:B}, we first prove the analogous statement for m
     
 \begin{introthm}[\cref{ch1:thm:main-modules}]
     \label{ch1:thm:C}
-    Let $p$ be a prime and $n\in \N$. If $k=2p-2-n>0$,  then there is an equivalence
+    Let $p$ be a prime and $n$ a positive natural number. If $k=2p-2-n>0$,  then there is an equivalence
     \[h_k \Modt\simeq h_k \Dper(\modt)\]
     as $k$-categories.
 \end{introthm}

@@ -6,8 +6,8 @@ We are now ready to prove our main results. We start by proving \cref{ch1:thm:C}
 \subsection{Monochromatic modules}
 \label{ch1:ssec:algebraicity-modules}
 
-For the rest of this section, we assume that $E$ is the height $n$ Johnson--Wilson theory $E(n)$\index{Johnson--Wilson theory}. This is an $\E_1$-ring spectrum concentrated in degrees divisible by $2p-2$, with coefficient ring 
-\[\pi_* E(n) \cong \Z_{(p)}[v_1, v_2, \ldots, v_{n-1}, v_n^{\pm 1}],\] 
+For the rest of this section, we assume that $E$ is the height $n$ Johnson--Wilson theory $E_p(n)$\index{Johnson--Wilson theory}. This is an $\E_1$-ring spectrum concentrated in degrees divisible by $2p-2$, with coefficient ring 
+\[\pi_* E_p(n) \cong \Z_{(p)}[v_1, v_2, \ldots, v_{n-1}, v_n^{\pm 1}],\] 
 where $|v_i| = 2p^i-2$. The goal of this section is to prove \cref{ch1:thm:C}, which we do in three steps. First we show that the functor 
 \[\pi_*\colon \Modt \longrightarrow \modt\] 
 is a conservative adaped homology theory. We then show that $\modt$ has finite cohomological dimension, and lastly that it admits a splitting. 
@@ -19,7 +19,7 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
     If $M$ is an $E$-module, then $M\in \Modt$ if and only if $\pi_* M\in \modt$. 
 \end{lemma}
 \begin{proof}
-    Let $X\in \Modt$. By \cite[3.19]{barthel-heard-valenzuela_2018} there is a strongly convergent spectral sequence of $E(n)_*$-modules with signature 
+    Let $X\in \Modt$. By \cite[3.19]{barthel-heard-valenzuela_2018} there is a strongly convergent spectral sequence of $E_*$-modules with signature 
     \[E_2^{s,t} = (H_{I_n}^{-s}\pi_* X)_t \implies \pi_{s+t}M_n X,\]
     where $H_{I_n}^{-s}$ denotes local cohomology. By \cite[2.1.3(ii)]{brodmann-sharp_1998} the $E_2$-page consist of only $I_n$-power torsion modules. As $\modt$ is abelian, it is closed under quotients and subobjects, as as the higher pages are created from the $E_2$-page using quotients and subobjects, they must also consist of only $I_n$-power torsion modules. In particular, the $E_\infty$-page is all $I_n$-power torsion. By Grothendieck's vanishing theorem, see for example \cite[6.1.2]{brodmann-sharp_1998}, $H_{I_n}^s(-)\cong 0$ for $s>n$, hence the abutment of the spectral sequence $\pi_* M_n X$ is a finite filtration of $I_n$-power torsion $E_*$-modules, and is therefore itself an $I_n$-power torsion module. Since $X$ was assumed to be monochromatic, i.e. $X\in \Modt$, we have $\pi_* M_n X\cong \pi_* X$, and thus $\pi_* X\in \modt$. 
 
@@ -65,11 +65,11 @@ Let $C^{I_n}$ denote the $I_n$-adic completion functor on $\modE$. It is neither
     For any prime $p$ and non-negative integer $n$, the category $\modt$ has a splitting of order $2p-2$. 
 \end{lemma}
 \begin{proof}
-    By \cite[8.1]{patchkoria-pstragowski_2021} the category $\modE$ has a splitting of order $2p-2$. We define the pure weight $\phi$ component of $\modt$, denoted $\Mod_{E_*, \phi}^{I_n-tors}$, to be the essential image of 
+    By \cite[8.1]{patchkoria-pstragowski_2021} the category $\modE$ has a splitting of order $2p-2$. We define the pure weight $\phi$ component of $\modt$, denoted $\Mod_{E_*, \phi}\Int$, to be the essential image of 
     \[T_{I_n}^{E_*}\colon \modE\longrightarrow \modt\]
     restricted to the pure weight $\phi$ component $\Mod_{E_*, \phi}$. We claim that this defines a splitting of order $2p-2$ on $\modt$. 
 
-    As $\Mod_{E_*, \phi}$ is a Serre subcategory, and being $I_n$-power torsion is a property closed under sub-objects, quotients, and extensions, also $\Mod_{E_*, \phi}^{I_n-tors}$ is a Serre subcategory. As $E_*$ is concentrated in degrees divisible by $2p-2$ every $I_n$-power torsion module decomposes into its pure weight components. This also gives a decomposition of $\modt$. The shift functor on $I_n$-power torsion modules simply shifts the underlying module, hence shift-invariance follows from the shift-invariance on $\modE$. 
+    As $\Mod_{E_*, \phi}$ is a Serre subcategory, and being $I_n$-power torsion is a property closed under sub-objects, quotients, and extensions, also $\Mod_{E_*, \phi}\Int$ is a Serre subcategory. As $E_*$ is concentrated in degrees divisible by $2p-2$ every $I_n$-power torsion module decomposes into its pure weight components. This also gives a decomposition of $\modt$. The shift functor on $I_n$-power torsion modules simply shifts the underlying module, hence shift-invariance follows from the shift-invariance on $\modE$. 
 \end{proof}
 
 % For $(2)$, we note that we have a diagram of adjoint functors 
@@ -80,11 +80,11 @@ Let $C^{I_n}$ denote the $I_n$-adic completion functor on $\modE$. It is neither
     %     \end{tikzcd}
     % \end{center}
     % which is commutative from bottom left to top right. Here $[1]$ denotes the local grading on $\modt$. We want the diagram to commute from top left to bottom right, which can be obtained by the dual Beck-Chevalley condition. This reduces to checking $[-1]\circ i \simeq i\circ [-1]$, which is true due to the commutativity and the fact that $[1]$ and $[-1]$ are autoequivalences. Hence we have $[1]\circ T_{I_n}^{E_*} \simeq T_{I-n}^{E_*}\circ [1]$. In fact, the diagram is commutative in all possible directions. This means that for any $I_n$-power torsion $E_*$-module $M$ of pure weight $\phi$, we have 
-    % $$[k]M \cong [k]T_{I_n}^{E_*}M \cong T_{I_n}^{E_*}[k]N \in \Mod_{E_*, \phi + k \mod 2p-2}^{I_n-tors}$$
+    % $$[k]M \cong [k]T_{I_n}^{E_*}M \cong T_{I_n}^{E_*}[k]N \in \Mod_{E_*, \phi + k \mod 2p-2}\Int$$
     % as $[k]M\in \Mod_{E_*, \phi+k \mod 2p-2}$. 
     
     % For the final point $(3)$, note that any subcategory of a product category is a product of subcategories. Hence, the $\modt$ splits as a product of the pure weight components. In particular, the functor 
-    % $$\prod_{\phi \in \Z/(2p-2)}\Mod_{E_*, \phi}^{I_n-tors}\longrightarrow \modt$$
+    % $$\prod_{\phi \in \Z/(2p-2)}\Mod_{E_*, \phi}\Int\longrightarrow \modt$$
     % defined by $(M_\phi) \longmapsto \bigoplus_\phi M_\phi$ is an equivalence of categories. 
 
 % \begin{remark}
@@ -109,13 +109,13 @@ We can now summarize the above discussion with the first of our main results.
     by \cref{ch1:thm:franke-algebraicity}.
 \end{proof}
 
-We can also phrase this dually in terms of $K_p(n)$-local $E$-modules. 
+We can also phrase this dually in terms of $\Kpn$-local $E$-modules. 
 
 \begin{corollary}
     \label{ch1:cor:main-modules-dual}
-    Let $p$ be a prime, $n$ a positive integer and $K_p(n)$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n>0$, then we have a $k$-exotic algebraic equivalence 
-    \[h_k L_{K_p(n)}\ModE \simeq h_k \Dper(\modE)^{I_n-comp}.\]
-    In particular, $K_p(n)$-local $E$-modules are exotically algebraic at large primes. 
+    Let $p$ be a prime, $n$ a positive integer and $\Kpn$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n>0$, then we have a $k$-exotic algebraic equivalence 
+    \[h_k L_{\Kpn}\ModE \simeq h_k \Dper(\modE)\Inc.\]
+    In particular, $\Kpn$-local $E$-modules are exotically algebraic at large primes. 
 \end{corollary}
 \begin{proof}
     The equivalence is constructed from the equivalences obtained from \cref{ch1:rm:local-duality-modules}, \cref{ch1:thm:main-modules}, \cref{ch1:thm:pulling-out-torsion} and \cref{ch1:const:periodic-derived-local-duality}. In particular, we have
@@ -126,9 +126,9 @@ We can also phrase this dually in terms of $K_p(n)$-local $E$-modules.
         &\hspace{2pt}\overset{\ref{ch1:thm:main-modules}}\simeq 
         \hspace{2pt} h_k \Dper(\modt) \\
         &\overset{\ref{ch1:thm:pulling-out-torsion}}\simeq
-        h_k \Dper(\modE)^{I_n-tors} \\
+        h_k \Dper(\modE)\Int \\
         &\overset{\ref{ch1:const:periodic-derived-local-duality}}\simeq 
-        h_k \Dper(\modE)^{I_n-comp},
+        h_k \Dper(\modE)\Inc,
     \end{align*}
     where we have used that an equivalence of $\infty$-categories induces an equivalence on homotopy $k$-categories.
 \end{proof}
@@ -136,12 +136,12 @@ We can also phrase this dually in terms of $K_p(n)$-local $E$-modules.
 Now, let $HE_*$ be the Eilenberg--MacLane spectrum of $E_*$. By Schwede--Shipleys's derived Morita theory, see \cite[7.1.1.16]{Lurie_HA}, there is a symmetric monoidal equivalence of categories 
 \[\Der(E_*)\simeq \Mod_{HE_*},\] 
 and we can form a local duality diagram for $\Mod_{HE_*}$ corresponding to \cref{ch1:ex:local-duality-comod} for the discrete Hopf algebroid $(E_*, E_*)$. By arguments similar to \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:lm:conservative-adapted-torsion-modules} one can show that the homotopy groups functor $\pi_*\colon \Mod_{HE_*}\longrightarrow \modE$ restricts to a conservative adapted homology theory 
-\[\pi_* \colon \Mod_{HE_*}^{I_n-tors}\longrightarrow \modt.\]
+\[\pi_* \colon \Mod_{HE_*}\Int\longrightarrow \modt.\]
 In the same range as \cref{ch1:thm:main-modules} this is also $k$-exotic. We can then combine the algebraicity for $\Modt$ and $\Mod_{HE_*}$ to get the following statement. 
 
 \begin{corollary}
     Let $p$ be a prime and $n$ a non-negative integer. If $k=2p-2-n>0$, then there is an exotic equivalence 
-    \[h_k \Modt \simeq h_k \Mod_{HE_*}^{I_n-tors}\]
+    \[h_k \Modt \simeq h_k \Mod_{HE_*}\Int\]
     of homotopy $k$-categories. 
 \end{corollary}
 
@@ -150,18 +150,18 @@ In the same range as \cref{ch1:thm:main-modules} this is also $k$-exotic. We can
 \subsection{Monochromatic spectra}
 \label{ch1:ssec:algebraicity-spectra}
 
-Having proven that monochromatic $E$-modules are algebraic at large primes, we now turn to the larger category of all monochromatic spectra $\M\np$ with the same goal. The strategy is exactly the same as in \cref{ch1:ssec:algebraicity-modules}: we first prove that the conservative adapted homology theory $E_*\colon \Sp\np\longrightarrow \comod\EE$ restricts to a conservative adapted homology theory on $\M\np$, before proving that $\Comod\EE^{I_n-tors}$ has a splitting and finite cohomological dimension. This will prove \cref{ch1:thm:B}, which we then convert into a proof of \cref{ch1:thm:A}, as in \cref{ch1:cor:main-modules-dual}. 
+Having proven that monochromatic $E$-modules are algebraic at large primes, we now turn to the larger category of all monochromatic spectra $\M\np$ with the same goal. The strategy is exactly the same as in \cref{ch1:ssec:algebraicity-modules}: we first prove that the conservative adapted homology theory $E_*\colon \Sp\np\longrightarrow \comod\EE$ restricts to a conservative adapted homology theory on $\M\np$, before proving that $\Comod\EE\Int$ has a splitting and finite cohomological dimension. This will prove \cref{ch1:thm:B}, which we then convert into a proof of \cref{ch1:thm:A}, as in \cref{ch1:cor:main-modules-dual}. 
 
-In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ does not matter, as the categories $\Sp\np$ and $\comod\EE$ are equivalent for all such spectra---see \cite[1.12]{hovey_95} and \cite[4.2]{hovey-strickland_2005a} respectively. However, to make the interaction with \cref{ch1:ssec:algebraicity-modules} as simple as possible we will continue to use the height $n$ Johnson--Wilson spectrum $E(n)$.
+In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ does not matter, as the categories $\Sp\np$ and $\comod\EE$ are equivalent for all such spectra---see \cite[1.12]{hovey_95} and \cite[4.2]{hovey-strickland_2005a} respectively. However, to make the interaction with \cref{ch1:ssec:algebraicity-modules} as simple as possible we will continue to use the height $n$ Johnson--Wilson spectrum $E_p(n)$.
 
 \begin{lemma}
     \label{ch1:lm:monochromatic-iff-torsion-comodules}
     If $X$ is a $E$-local spectrum, then $X\in \M\np$ if and only if $E_*X\in \Comodt$. 
 \end{lemma}
 \begin{proof}
-    Assume first that $X\in \M\np$. We have $E\otimes X\in \ModE^{I_n-tors}$ as
+    Assume first that $X\in \M\np$. We have $E\otimes X\in \Modt$ as
     $$E\otimes X\simeq E\otimes M_n X\simeq M_n (E\otimes X),$$
-    where the last equivalence follows from $M_n$ being smashing. In particular, the restricted functor $E_*\colon \M\np\longrightarrow \comod\EE$ factors through $\ModE^{I_n-tors}$. By \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:rm:torsion-iff-underlying-is-torsion} this means that $E_*X$ is an $I_n$-power torsion $E_*E$-comodule. 
+    where the last equivalence follows from $M_n$ being smashing. In particular, the restricted functor $E_*\colon \M\np\longrightarrow \ComodE$ factors through $\Modt$. By \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:rm:torsion-iff-underlying-is-torsion} this means that $E_*X$ is an $I_n$-power torsion $E_*E$-comodule. 
 
     For the converse, assume that we have $X\in \Sp\np$ such that $E_*X\in \Comodt$. Using the monochromatization functor we obtain a comparison map $M_n X\longrightarrow X$, which induces a map on $E$-modules $E\otimes M_n X\longrightarrow E\otimes X$. This map is an isomorphism on homotopy groups, as $E_*X$ was assumed to be $I_n$-power torsion. As $E_*$ is conservative on $\Sp\np$, the original comparison map $M_n X\longrightarrow X$ was an isomorphism, meaning that $X\in \M\np$. 
 \end{proof}
@@ -235,7 +235,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 \end{proof}
 
 \begin{remark}
-    In a previous version of this paper, we claimed that the cohomological dimension was $n^2$. We want to thank Piotr Pstr\a{}gowski for pointing out the gap in the proof. This means that $\ComodE^{I_n-tors}$ has the same cohomological dimension as the non-torsion category $\ComodE$, as seen in \cref{ch1:ex:cohomological-dimension-comodEE}. However, we do obtain something slightly stronger, as our result holds for all $p-1\nmid n$, while the analogue in $\ComodE$ only holds when $p-1>n$. In fact, $\Comod\EE$ does not have finite cohomological dimension when $p-1\leq n$, as noted in \cite[2.6]{pstragowski_2021}. This difference happens because we only need the $\Ext^s$-groups out of $E_*/I_n$ to vanish for large $s$, which is given to us by Morava's vanishing theorem whenever $p-1\nmid n$. For non-torsion comodules one has to have stronger vanishing results. These can be obtained by using the chromatic spectral sequence, which only gives the vanishing results for $p-1>n$ instead of for $p-1\nmid n$. 
+    In a previous version of this paper, we claimed that the cohomological dimension was $n^2$. We want to thank Piotr Pstr\a{}gowski for pointing out the gap in the proof. This means that $\Comodt$ has the same cohomological dimension as the non-torsion category $\ComodE$, as seen in \cref{ch1:ex:cohomological-dimension-comodEE}. However, we do obtain something slightly stronger, as our result holds for all $p-1\nmid n$, while the analogue in $\ComodE$ only holds when $p-1>n$. In fact, $\ComodE$ does not have finite cohomological dimension when $p-1\leq n$, as noted in \cite[2.6]{pstragowski_2021}. This difference happens because we only need the $\Ext^s$-groups out of $E_*/I_n$ to vanish for large $s$, which is given to us by Morava's vanishing theorem whenever $p-1\nmid n$. For non-torsion comodules one has to have stronger vanishing results. These can be obtained by using the chromatic spectral sequence, which only gives the vanishing results for $p-1>n$ instead of for $p-1\nmid n$. 
 \end{remark}
 
 \begin{lemma}
@@ -243,7 +243,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
     For any prime $p$ and non-negative integer $n$, the category $\Comodt$ has a splitting of order $2p-2$. 
 \end{lemma}
 \begin{proof}
-    As $E$ is concentrated in degrees divisible by $2p-2$, \cite[8.13]{patchkoria-pstragowski_2021} shows that $\comod\EE$ has a splitting of order $2p-2$. The proof of the induced splitting on the $I_n$-torsion category is then identical to \cref{ch1:lm:splitting-torsion-modules}. 
+    As $E$ is concentrated in degrees divisible by $2p-2$, \cite[8.13]{patchkoria-pstragowski_2021} shows that $\ComodE$ has a splitting of order $2p-2$. The proof of the induced splitting on the $I_n$-torsion category is then identical to \cref{ch1:lm:splitting-torsion-modules}. 
 \end{proof}
 
 We can now summarize the above results with our second main result, which is the monochromatic analogue of \cref{ch1:ex:chromatic-algebraicity}. 
@@ -252,7 +252,7 @@ We can now summarize the above results with our second main result, which is the
     \label{ch1:thm:main-spectra}
     \index{Exotic algebraic model}
     Let $p$ be a prime and $n$ a non-negative integer. If we have $k=2p-2-n^2-n>0$, then the restricted functor $E_*\colon \M\np\longrightarrow \Comodt$ is $k$-exotic. In particular, there is an equivalence 
-    \[h_k \M\np \simeq h_k\Dper(E_*E^{I_n-tors}),\]
+    \[h_k \M\np \simeq h_k\Dper(E_*E\Int),\]
     meaning that monochromatic homotopy theory is exotically algebraic at large primes. 
 \end{theorem}
 \begin{proof}
@@ -261,25 +261,25 @@ We can now summarize the above results with our second main result, which is the
 
 \begin{remark}
     \label{ch1:rm:monochromatic-corresponds-to-torsion}
-    By \cref{ch1:thm:pulling-out-torsion} there is an equivalence $\Dper(E_*E^{I_n-tors})\simeq \Fr\np^{I_n-tors}$ and by \cref{ch1:ex:local-duality-chromatic} there is an equivalence $\M\np\simeq \Sp\np^{I_n-tors}$. This means that we can write the equivalence in \cref{ch1:thm:main-spectra} as 
-    \[h_k\Sp\np^{I_n-tors}\simeq h_k\Fr\np^{I_n-tors}\]
+    By \cref{ch1:thm:pulling-out-torsion} there is an equivalence $\Dper(E_*E\Int)\simeq \Fr\np\Int$ and by \cref{ch1:ex:local-duality-chromatic} there is an equivalence $\M\np\simeq \Sp\np\Int$. This means that we can write the equivalence in \cref{ch1:thm:main-spectra} as 
+    \[h_k\Sp\np\Int\simeq h_k\Fr\np\Int\]
     for $k=2p-2-n^2-n>0$. This is more in line with thinking about \cref{ch1:thm:main-spectra} as ``coming from'' the chromatic algebraicity of \cref{ch1:ex:chromatic-algebraicity} on localizing ideals. This formulation is perhaps also easier to connect to the limiting case $p\to \infty$ as described using ultra-products in \cite{barthel-schlank-stapleton_2021}, which can be stated informally as 
-    \[\lim_{p\to \infty} \Sp\np^{I_n-tors}\simeq \lim_{p\to \infty} \Fr\np^{I_n-tors}.\]
+    \[\lim_{p\to \infty} \Sp\np\Int\simeq \lim_{p\to \infty} \Fr\np\Int.\]
 \end{remark}
 
 
-Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebraicity statement for the category of $K_p(n)$-local spectra.
+Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebraicity statement for the category of $\Kpn$-local spectra.
 
 \begin{theorem}[\cref{ch1:thm:A}]
     \label{ch1:thm:main-spectra-dual}
-    Let $p$ be a prime, $n$ a non-negative integer and $K_p(n)$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n^2>0$, then we have a $k$-exotic algebraic equivalence 
-    \[h_k \SpK \simeq h_k \Fr\np^{I_n-comp}.\]
-    In other words, $K_p(n)$-local homotopy theory is exotically algebraic at large primes. 
+    Let $p$ be a prime, $n$ a non-negative integer and $\Kpn$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n^2>0$, then we have a $k$-exotic algebraic equivalence 
+    \[h_k \SpKpn \simeq h_k \Fr\np\Inc.\]
+    In other words, $\Kpn$-local homotopy theory is exotically algebraic at large primes. 
 \end{theorem}
 \begin{proof}
     As we did in \cref{ch1:cor:main-modules-dual}, we construct the equivalence from a sequence of equivalences coming from \cref{ch1:thm:local-duality} and \cref{ch1:thm:main-spectra}. More precisely we use equivalences coming from \cref{ch1:ex:local-duality-chromatic}, \cref{ch1:thm:main-spectra}, \cref{ch1:thm:pulling-out-torsion} and \cref{ch1:const:periodic-derived-local-duality}, which give
     \begin{align*}
-        h_k \SpK
+        h_k \SpKpn
         &\overset{\hspace{2pt}\ref{ch1:ex:local-duality-chromatic}\hspace{2pt}}
         \simeq 
         h_k \M\np \\
@@ -288,20 +288,20 @@ Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebra
         h_k \Dper(\Comodt) \\
         &\overset{\ref{ch1:thm:pulling-out-torsion}}
         \simeq 
-        h_k \Fr\np^{I_n-tors} \\
+        h_k \Fr\np\Int \\
         &\overset{\ref{ch1:const:periodic-derived-local-duality}}
         \simeq 
-        h_k \Fr\np^{I_n-comp},
+        h_k \Fr\np\Inc,
     \end{align*}
     where we again have used that an equivalence of $\infty$-categories induces an equivalence on homotopy $k$-categories.
 \end{proof}
 
 \begin{remark}
-    As in \cref{ch1:rm:monochromatic-corresponds-to-torsion} we can phrase the equivalence from \cref{ch1:thm:main-spectra-dual} as $h_k\Sp\np^{I_n-comp}\simeq h_k\Fr\np^{I_n-comp}$. 
+    As in \cref{ch1:rm:monochromatic-corresponds-to-torsion} we can phrase the equivalence from \cref{ch1:thm:main-spectra-dual} as $h_k\Sp\np\Inc\simeq h_k\Fr\np\Inc$. 
 \end{remark}
 
 \begin{addendum}
-    One of the interesting features of the category $\SpK$ is that it is $\infty$-semiadditive, meaning that limits and colimits indexed over $\pi$-finite spaces agree. The $1$-semiadditive case is equivalent to the vanishing of the Tate construction in $\SpK$, and the $\infty$-semiadditivity was shown by Hopkins--Lurie in \cite{hopkins-lurie_17}. We thought originally that the above result gave a strong indication that also $\Fr\np^{I_n-comp}$ was $\infty$-semiadditive, or at least $1$-semiadditive. But, as we learned from Tomer Schlank, any $\Z$-linear $1$-semiadditive category is $\Q$-linear, which destroys this dream outside of $n=0$. 
+    One of the interesting features of the category $\SpKpn$ is that it is $\infty$-semiadditive, meaning that limits and colimits indexed over $\pi$-finite spaces agree. The $1$-semiadditive case is equivalent to the vanishing of the Tate construction in $\SpKpn$, and the $\infty$-semiadditivity was shown by Hopkins--Lurie in \cite{hopkins-lurie_17}. We thought originally that the above result gave a strong indication that also $\Fr\np\Inc$ was $\infty$-semiadditive, or at least $1$-semiadditive. But, as we learned from Tomer Schlank, any $\Z$-linear $1$-semiadditive category is $\Q$-linear, which destroys this dream outside of $n=0$. 
 \end{addendum}
 
 
@@ -319,13 +319,13 @@ Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebra
 
 The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there is a deformation of stable $\infty$-categories lurking behind the scenes. One does not need this in order to apply the theorem, but it is there regardless. In the case of some $v_n$-periodic Landweber exact ring spectrum $E$, the deformation associated with the adapted homology theory $E_*\colon \Sp\np \longrightarrow \comod\EE$ is equivalent to the category of hypercomplete $E$-based synthetic spectra, $\hSynE$\index{Synthetic spectra}, introduced in \cite{pstragowski_2022}. As both $\Sp\np$ and $\comod\EE$ are invariant under the choice of such $E$, we conjecture that this is true also for $\hSynE$. 
 
-Our restricted homology theory $E_*\colon \M_{n,p}\longrightarrow \Comodt$ should then be associated to a deformation $\hSynE^{I_n-tors}$ coming from a local duality theory for $\hSynE$, in the sense that there is a diagram of stable $\infty$-categories 
+Our restricted homology theory $E_*\colon \M_{n,p}\longrightarrow \Comodt$ should then be associated to a deformation $\hSynE\Int$ coming from a local duality theory for $\hSynE$, in the sense that there is a diagram of stable $\infty$-categories 
 \begin{center}
     \begin{tikzcd}
-        \M_{n,p}\simeq\Sp\np^{I_n-tors} & \hSynE^{I_n-tors} \arrow[l, "\tau^{-1}"'] \arrow[r, "\tau\sim 0"] & \Fr\np^{I_n-tors}.
+        \M_{n,p}\simeq\Sp\np\Int & \hSynE\Int \arrow[l, "\tau^{-1}"'] \arrow[r, "\tau\sim 0"] & \Fr\np\Int.
     \end{tikzcd}    
 \end{center}
-Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr{\k a}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np^{I_n-tors}$ and $\Der(E_*E)^{I_n-tors}\simeq \Der(E_*E^{I_n-tors})$. 
+Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr{\k a}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
 
 \begin{addendum}
     Since writing this paper we have investigated this idea further. We have added a construction of a category we call \emph{monochromatic syntehtic spectra} in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\hSynE$, that it has the correct deformation properties as above, and that it has a universal property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}.  
@@ -336,14 +336,14 @@ In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:frank
 \begin{conjecture}
     \label{ch1:conj:monochromatic-monoidally-algebraic}
     Let $p$ be a prime and $n$ a natural number. If $k$ is a positive natural number such that $2p-2>n^2+(k+3)n+k-1$, then we have a symmetric monoidal equivalence 
-    \[h_k \M\np\simeq h_k \Fr\np^{I_n-tors}\]
+    \[h_k \M\np\simeq h_k \Fr\np\Int\]
     of $k$-categories. 
 \end{conjecture}
 
-As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $K_p(n)$-local category, i.e., a symmetric monoidal equivalence 
-\[h_k \SpK\simeq h_k \Fr\np^{I_n-comp}.\]
+As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $\Kpn$-local category, i.e., a symmetric monoidal equivalence 
+\[h_k \SpKpn\simeq h_k \Fr\np\Inc.\]
 
-Since $E$-based synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE^{I_n-comp}$, which categorifies the $K_p(n)$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $K_p(n)$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
+Since $E$-based synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
 
 \begin{addendum}
     We were reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence, which we feel is still an interesting problem, hence the conjecture stands, at least morally. 
