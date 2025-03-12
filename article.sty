@@ -160,7 +160,7 @@ urlcolor=myblack
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{introthm}{Theorem}
-\renewcommand*{\theintrothm}{\Alph{introthm}}
+\renewcommand*{\theintrothm}{\thechapter.\Alph{introthm}}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -231,6 +231,7 @@ urlcolor=myblack
 \newcommand{\geqn}{_{\hspace{-1pt}\scriptscriptstyle\geq n}}
 \newcommand{\leqn}{_{\hspace{-1pt}\scriptscriptstyle\leq n}}
 \newcommand{\gr}{^{\mathrm{gr}}}
+\newcommand{\per}{{\mathrm{per}}}
 
 % Letters
 \newcommand{\1}{\mathbbm{1}}
@@ -384,6 +385,7 @@ urlcolor=myblack
 \newcommand{\comod}{\Comod}
 \newcommand{\Comodn}{\Comod_{n}}
 \newcommand{\ComodE}{\Comod\EE}
+\newcommand{\StableE}{\Stable\EE}
 \newcommand{\ComodR}{\Comod_{R_*R}}
 \newcommand{\Comodt}{\ComodE\Int}
 \newcommand{\Tors}{\mathrm{Tors}}

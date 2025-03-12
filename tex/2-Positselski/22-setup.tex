@@ -121,7 +121,7 @@ The above example changes in an interesting way when replacing the algebra $A$ w
     Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra in $\C$. By an $\infty$-categorical version of \cite[2.5]{hristova-jones-rumynin_2023} the endofunctor $C\otimes(-)\:\C\to\C$ is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, which we denote by $\Comod_C(\C)$. Since $C\otimes (-)$ preserves colimits there is a right adjoint $\iHom(C,-)$, and this functor is a comonad on $\C$, again by \cite[2.5]{hristova-jones-rumynin_2023}. Note that the category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}, as $C\otimes (-)$ is accessible. 
 \end{example}
 
-Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair --- it is now an an adjoint comonad-monad pair. This means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows. 
+Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair---it is now an an adjoint comonad-monad pair. This means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows. 
 
 % \begin{lemma}
 %     For any adjoint comonad-monad pair $C\dashv M$ on a presentable $\infty$-category $\C$, there is an equivalence 
@@ -251,6 +251,6 @@ where the last map is given by the adjunction unit. By the adjunction property, 
 
 \begin{remark}
     \label{ch2:rm:monoidal-structure-comodules}
-    We want to specify when the above equivalence is an equivalence of symmetric monoidal categories. We could hope for the existence of a symmetric monoidal structure on $\Comod_C$ for a cocommutative coalgebra $C\in \C$. For the category $\Mod_R(\C)$ of modules over a commutative algebra $R\in \C$ this is done by Lurie's relative tensor product, see \cite[Section 4.5.2]{Lurie_HA}. But, for such a relative monoidal product to exist on $\Comod_C$ one needs the tensor product in $\C$ to commute with cosifted limits, which is rarely the case. But, as we will see in \cref{ch2:ssec:idempotent-coalgebras} we sometimes get a monoidal structure, and when this is the case, the equivalence in \cref{ch2:thm:dual-monoidal-BB} is symmetric monoidal. 
+    We want to specify when the above equivalence is an equivalence of symmetric monoidal categories. We could hope for the existence of a symmetric monoidal structure on $\Comod_C$ for a cocommutative coalgebra $C\in \C$. For the category $\Mod_R(\C)$ of modules over a commutative algebra $R\in \C$ this is done by Lurie's relative tensor product, see \cite[Section 4.5.2]{Lurie_HA}. But, for such a relative monoidal product to exist on $\Comod_C$ one needs the tensor product in $\C$ to commute with cosifted limits, which is rarely the case. But, as we will see in \cref{ch2:ssec:coidempotent-coalgebras} we sometimes get a monoidal structure, and when this is the case, the equivalence in \cref{ch2:thm:dual-monoidal-BB} is symmetric monoidal. 
 \end{remark}
 

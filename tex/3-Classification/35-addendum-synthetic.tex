@@ -4,20 +4,27 @@
 
 One of the main motivations for \cref{ch3:thm:main} was to understand localizing subcategories of Pstr\a{}gowski's category of $E$-based synthetic spectra---the main reference is \cite{pstragowski_2022}. This section is not part of the paper \cite{aambo_2024_localizing}, but is added to flesh out this example further, and to relate this paper to \cref{ch1}. 
 
-We will focus only on the case of synthetic spectra based on height $n$ Morava $E$-theory $E=E\np$ in this section, even though synthetic spectra, and all of the results we cover will also work over many other Adams type ring spectra. We will also not use the standard category of syntehtic spectra, but instead a ``local'' variant, that for familiar readers lie somewhere between $E$-based syntehtic spectra and its hypercompletion. 
+We will focus only on the case of synthetic spectra based on height $n$ Morava $E$-theory $E=E\np$ in this section, even though the results we cover will also work in more general setups. We will \emph{not} use the standard category of synthetic spectra, but instead a ``local'' variant, that for familiar readers lie somewhere between $E$-based synthetic spectra and its hypercompletion. 
 
 \begin{definition}
-    A finite pectrum $P\in \Sp^\omega$ is said to \emph{$E$-finite projective} if its $E$-homology is finitely generated and projective as an $E_{*}$-module. The full subcategory of $E$-finite projectives is denoted $\Sp\fp$. 
+    A finite spectrum $P\in \Sp^\omega$ is said to \emph{$E$-finite projective} if its $E$-homology is finitely generated and projective as an $E_{*}$-module. The full subcategory of $E$-finite projective spectra is denoted $\Sp\fp$. 
 \end{definition}
 
 \begin{remark}
     By \cref{ch0:rm:dualizable/compact-comodules}, a finite spectrum $P$ is $E$-finite projective if and only if $E_{*}P$ is a dualizable comodule. 
 \end{remark}
 
-We can equip the category $\Sp\fp$ with a Grothendieck topology, defined by covers being single maps $P\to P'$ such that the induced map on $E$-homology is an epimorphism. This makes $\Sp\fp$ an excellent $\infty$-site---see \cite[Section 2.3]{pstragowski_2022} for details. Localizing all of the finite projectives at $E$ gives us another excellent $\infty$-site, which we denote by $\Sp\np\fp$. 
+We can equip the category $\Sp\fp$ with a Grothendieck topology, defined by covers being single maps $P\to P'$ such that the induced map on $E$-homology is an epimorphism. This makes $\Sp\fp$ an excellent $\infty$-site---see \cite[Section 2.3]{pstragowski_2022} for details. 
 
 \begin{definition}
     \index{Synthetic spectra}
+    An \emph{synthetic spectrum} is an additive sheaf $X\: \Sp^{\mathrm{fp}, \mathrm{op}}\to \Sp$. The category of synthetic spectra will be denoted $\SynE := \mathrm{P}_\Sigma(\Sp\np\fp;\Sp)$. 
+\end{definition}
+
+Localizing all of the finite projective spectra at $E$ gives us another excellent $\infty$-site, which we denote by $\Sp\np\fp$. To be clear, objects in $\Sp\np\fp$ are of the form $L\np P$, for $P\in \Sp\fp$. 
+
+\begin{definition}
+    \index{Synthetic spectra!$E$-local}
     An $E$-local synthetic spectrum is an additive sheaf $X\: \Sp\np^{\mathrm{fp}, \mathrm{op}}\to \Sp$. The category of $E$-local synthetic spectra will be denoted $\LSynE := \mathrm{P}_\Sigma(\Sp\np\fp;\Sp)$. 
 \end{definition}
 
@@ -26,14 +33,22 @@ We can equip the category $\Sp\fp$ with a Grothendieck topology, defined by cove
 \end{remark}
 
 \begin{remark}
-    A slightly more high-brow perspective on $E$-local synthetic spectra is the following. One reason normal syntehtic spectra based on $\MU$ work so well is that the sphere $\S$ is $\MU$-nilpotent complete, meaning that the Adams--Novikov spectral sequence converges to $\pi_*\S$. For $E$ this is not the case, the sphere is not $E$-nilpotent complete. But, as $E$-localization is smashing, the $E$-nilpotent completion of the sphere is precisely the $E$-local sphere $L\np \S$. Hence one can think about $\LSynE$ as the natural category of formal ``conditionally convergent'' $E$-Adams spectral sequences, similarily to how $\Syn_\MU$ is the category of formal ``conditionally convergent'' Adams--Novikov spectral sequences. 
+    A slightly more high-brow perspective on $E$-local synthetic spectra is the following. One reason normal synthetic spectra based on $\MU$ work so well is that the sphere $\S$ is $\MU$-nilpotent complete, meaning that the Adams--Novikov spectral sequence converges to $\pi_*\S$. For $E$ this is not the case, the sphere is not $E$-nilpotent complete. But, as $E$-localization is smashing, the $E$-nilpotent completion of the sphere is precisely the $E$-local sphere $L\np \S$. Hence one can think about $\LSynE$ as the natural category of formal ``conditionally convergent'' $E$-Adams spectral sequences, similarly to how $\Syn_\MU$ is the category of formal ``conditionally convergent'' Adams--Novikov spectral sequences. 
 \end{remark}
 
-We will not go through the theory of $E$-local synthetic spectra in detail here, as all of it works completely analogously to normal syntehtic spectra. 
+Most of the theory for synthetic spectra work straight out of the box also for $\LSynE$, and their proofs are completely analogous. We mention only the most important ones.  
 
-There is by \cite[4.4, 4.38]{pstragowski_2022} a lax monoidal fully faithful functor $\nu\:\Sp\np \to \LSynE$ called the synthetic analog. The category $\LSynE$ is compactly generated by the objects $\nu L\np P$ for $P\in \Sp\fp$, which are also dualizable. The unit is also compact, which implies that $\LSynE$ is rigidly compactly generated. 
+There is a map of excellent $\infty$-sites $f\: \Sp\fp\to \Sp\np\fp$ given by $E$-localizaton, which satisfies the covering lifting property of \cite[A.12]{pstragowski_2022}. Hence, the associated adjunction 
+\[f^*:\SynE \rightleftarrows \LSynE:f_*\]
+has $f_* \: \LSynE \to \SynE$ a colimit preserving $t$-exact functor by \cite[2.22, 2.23]{pstragowski_2022}, given by precomposing with $f$. As $E$-localization does not alter the $E_*$-homology of a spectrum, the $t$-structure on $\LSynE$ is also $\ComodE$, and the functor $f_*$ extends the identity on the level of hearts. 
 
-The category of hypercomplete synthetic spectra has a natural right complete $t$-structure that is compatible with filtered colimits. The heart of this $t$-structure is the category of comodules over $E_{*}E$, which as before we denote by $\ComodE$. \index{$E_*E$-comodules}
+Similarily to \cite[4.4, 4.38]{pstragowski_2022}, there is a lax monoidal fully faithful functor $\nu\:\Sp\np \to \LSynE$ called the synthetic analog. The category $\LSynE$ is compactly generated by the objects $\nu L\np P$ for $P\in \Sp\fp$, which are also dualizable, just as in \cite[4.14]{pstragowski_2022}. The unit is also compact, which implies that $\LSynE$ is rigidly compactly generated. 
+
+The functor $f^*$ is the unique colimit preserving functor such that $f^* \nu P \simeq \nu f P$, and as noted above, $f_*$ is given by precomposition. As both $f^*$ and $f_*$ preserve colimits, we can easily check that $f_*$ is fully faithful, via checking that the counit map $f^*f_* \nu P \to \nu P$ is an equivalence. By the description of $f^*$ above, this is obvious, as $E$-localization is an idempotent functor. It follows then, that $\LSynE$ is a smashing localization of $\SynE$---the fact that $f^*$ is compatible with the monoidal structure follows from the fact that it preserves colimits, and $\nu$ is symmetric monoidal on $\Sp\fp$. 
+
+\begin{remark}
+    As the hypercompletion functor $(-)^\wedge$, which agrees with $\nu E$-localization by \cite[5.4]{pstragowski_2022} on normal synthetic spectra is not smashing---a fact following from $\eta$ not being nilpotent in the homotopy groups of spheres---this means that our category of $E$-local synthetic spectra is not equivalent to hypercomplete $E$-based synthetic spectra. 
+\end{remark}
 
 The functor $\nu$ induces a deformation parameter $\tau$ on any synthetic spectrum $X$, see \cite[Section 4.3]{pstragowski_2022}, making $\LSynE$ act as a one-parameter deformation between $\Sp\np$ and $\Stable\EE$, as in the following result. 
 
@@ -45,6 +60,13 @@ The functor $\nu$ induces a deformation parameter $\tau$ on any synthetic spectr
     \[\Mod_{C\tau}(\LSynE)\simeq \Stable\EE\]
     of symmetric monoidal stable $\infty$-categories. 
 \end{theorem}
+\begin{proof}
+    The proof of the first equivalence is completely analogous to the setting of normal syntehtic spectra, see \cite[4.37, 4.40]{pstragowski_2022}, except that the associated spectral Yoneda embedding used to give the equivalence starts in $E$-local spectra, i.e., $Y\: \Sp\np \to \LSynE[\tau^{-1}]$. 
+
+    For the second we note that $E$-localization does not alter the $E_*$-homology. Via \cite[2.22, 4.43]{pstragowski_2022} this gives an adjunction 
+    \[\LSynE \rightleftarrows \StableE,\]
+    which by following the rest of \cite[Section 4.5]{pstragowski_2022} is an equivalence. 
+\end{proof}
 
 In a certain sense, this makes $\LSynE$ a categorification of the \emph{conservative} adapted homology theory $E_{n*}\: \Sp\np\to \ComodE$, instead of normal synthetic spectra $\SynE$ being a categorification of $E_* \: \Sp\to \ComodE$. The main result for this addendum is to construct a categorification of the restricted adapted homology theory $E_{*}\: \Mn \to \Comodt$ that we studied in \cref{ch1}, with associated natural deformation properties as above. 
 
@@ -57,14 +79,16 @@ In a certain sense, this makes $\LSynE$ a categorification of the \emph{conserva
 % All of the natural constructions for $\SynE$ also go through for $\LSynE$. We will not go through these here, but refer to \cite{pstragowski_2022}. We do, however, summarize the main properties that we will use for th rest of this addendum. 
 
 
-
+\begin{conjecture}
+    The connected part of the $t$-structure on $\LSynE$ is equivalent to Patchkoria--Pstr\a{}gowski's separated perfect derived category $\Der^\omega(\Sp\np)$, see \cite[6.49]{patchkoria-pstragowski_2021}. We know this to be true at large primes $p-1>n$, due to the argument in \cite[6.57]{patchkoria-pstragowski_2021}, together with the fact that the category $\ComodE$ has finite cohomological dimension in this range, implying that both the categories are already hypercomplete.
+\end{conjecture}
 
 
 
 
 \subsection{Monochromatic synthetic spectra}
 
-One of the reason we chose to work with $E=E\np$ spesifically, rather than more general Adams type ring spectra, is that we have a very good understanding of localizing subcategories of the heart of the natural $t$-structure on $\LSynE$. In fact, using the partial classification of localizing subcategories in $\Comod_{\BP_*\BP}$, due to Hovey--Strickland in \cite{hovey-strickland_2005a}, Barthel and Heard was able to classify localizing subcategories in $\ComodE$ completely. 
+One of the reason we chose to work with $E=E\np$ specifically, rather than more general Adams type ring spectra, is that we have a very good understanding of localizing subcategories of the heart of the natural $t$-structure on $\LSynE$. In fact, using the partial classification of localizing subcategories in $\Comod_{\BP_*\BP}$, due to Hovey--Strickland in \cite{hovey-strickland_2005a}, Barthel and Heard was able to classify localizing subcategories in $\ComodE$ completely. 
 
 \begin{proposition}[{\cite[2.17]{barthel-heard_2018}}]
     Let $\T$ be a localizing subcategory in a Grothendieck abelian category $\A$, and $\Psi\:\A\to \A/\T$ the associated Gabriel quotient. If $S$ is a localizing subcategory in $\A/\T$, then there is a localizing subcategory $\overline{S}$ in $\A$ containing $\T$ such that $\Psi(\overline{S})=S$. 
@@ -92,7 +116,7 @@ For simplicity we will focus only on the case when $k=n$, giving us the category
     The unique $\pi$-exact lift of the localizing subcategory $\Comodt$ is denoted $\MSynE$. We call it the category of height $n$ \emph{monochromatic synthetic spectra}. 
 \end{definition}
 
-The justification for this name also in syntehtic spectra is due to the following result. 
+The justification for this name also in synthetic spectra is due to the following result. 
 
 \begin{lemma}
     \label{ch3:add:lm:mono-iff-syn-mono}
@@ -147,7 +171,7 @@ We can further sharpen the analogy between Serre subcategories and thick subcate
 \end{definition}
 
 \begin{definition}
-    Similarily to Lurie's classification of abelian localizing subcategories, see \cref{ch3:thm:Lurie-correspondence}, one gets a one-to-one correspondence between separating thick subcategories and Serre subcategories. Hence, the prestable lift is unique, as it is separating by definition. 
+    Similarly to Lurie's classification of abelian localizing subcategories, see \cref{ch3:thm:Lurie-correspondence}, one gets a one-to-one correspondence between separating thick subcategories and Serre subcategories. Hence, the prestable lift is unique, as it is separating by definition. 
 \end{definition}
 
 After lifting to the prestable category, the next step---as before---is to stabilize. In order to do this in the case where we only have compact objects, we utilize another ``small'' stabilization instead of using $\Sp(-)$. 
@@ -192,10 +216,10 @@ This now allows us to finally define the lift of a Serre subcategory to the stab
 \end{definition}
 
 \begin{remark}
-    Intuitively one should think about this as the ``small'' version of the construction from \cref{ch3}, where one lifts an abelian localizing subcategory through the $t$-structure by first lifting to the prestable category and then stabilizing. The Spanier--Whitehead construction is the natural verison of stabilization for small categories, as is made clear by the commutative diagram in the above proof. 
+    Intuitively one should think about this as the ``small'' version of the construction from \cref{ch3}, where one lifts an abelian localizing subcategory through the $t$-structure by first lifting to the prestable category and then stabilizing. The Spanier--Whitehead construction is the natural version of stabilization for small categories, as is made clear by the commutative diagram in the above proof. 
 \end{remark}
 
-We have now defined our lift, and it remains to prove that it has the expected properties: it should in particular be a thick subcategory --- in the stable sense. 
+We have now defined our lift, and it remains to prove that it has the expected properties: it should in particular be a thick subcategory---in the stable sense. 
 
 \begin{lemma}
     \label{ch3:add:lm:stable-lift-is-thick}
@@ -204,7 +228,7 @@ We have now defined our lift, and it remains to prove that it has the expected p
 \begin{proof}
     We have a fully faithful inclusion $\T\geqz\hookrightarrow\LSyn_{E, \geq 0}^\omega$, which gives a fully faithful inclusion 
     \[\T = \SW(\T\geqz)\hookrightarrow \SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega\]
-    by \cref{ch3:add:thm:prestable-freyd-stabilizes-to-stable-Freyd}. As $\T$ is a stable $\infty$-category by definiton, we need only to check that it is closed under finite colimits in $\LSynE^\omega$. 
+    by \cref{ch3:add:thm:prestable-freyd-stabilizes-to-stable-Freyd}. As $\T$ is a stable $\infty$-category by definition, we need only to check that it is closed under finite colimits in $\LSynE^\omega$. 
     
     Given a finite colimit in $\T$, it factors through $\T\geqz$ at some finite stage in the diagram 
     \begin{center}
@@ -224,7 +248,7 @@ We have now defined our lift, and it remains to prove that it has the expected p
     preserve finite colimits---see \cite[C.1.1.5]{lurie_SAG}---this implies that also the fully faithful inclusion $\T \subseteq \LSynE^\omega$ preserves finite colimits, finishing the proof. 
 \end{proof}
 
-We know that there is a unique $\pi$-exact lift of $\Loc(B)$ via \cref{ch3:thm:main}, which wenote by $\L$. We now prove that this lift $\L$ is in fact uniquely determined by $B$. 
+We know that there is a unique $\pi$-exact lift of $\Loc(B)$ via \cref{ch3:thm:main}, which we denote by $\L$. We now prove that this lift $\L$ is in fact uniquely determined by $B$. 
 
 \begin{lemma}
     \label{ch3:add:lm:lift-of-B-works-with-localizing-lift}
@@ -249,7 +273,7 @@ For the uniqueness of $\T$ we will need the following lemma, stating that the li
 \begin{proof}
     By \cref{ch3:add:lm:lift-of-B-works-with-localizing-lift} these have the same compact objects, hence $\Loc(\T)\subseteq \L$. If we can prove that $\Loc(\T)$ is a $\pi$-stable localizing subcategory with heart $\Loc(\T^\heart)$, then we are done by the uniqueness of the lift $\L$. 
 
-    Now, $\T$ is $\pi$-stable, hence we have $\pi_k t \in \Loc(\T^\heart)$ if and only if $t\in \Loc(\T)$ for all compact $t$. We know that $\Loc(\T)$ is generated by $\T$ under filtered colimits, which means, as $\pi_0$ preserves filtered colimits and $\Loc(\T^\heart)$ is closed under these, that also $\pi_k t\in \Loc(\T)$ if and only if $t\in \Loc(\T)$ for all (not neccessarily compact) objects $t$. It also follows from this that 
+    Now, $\T$ is $\pi$-stable, hence we have $\pi_k t \in \Loc(\T^\heart)$ if and only if $t\in \Loc(\T)$ for all compact $t$. We know that $\Loc(\T)$ is generated by $\T$ under filtered colimits, which means, as $\pi_0$ preserves filtered colimits and $\Loc(\T^\heart)$ is closed under these, that also $\pi_k t\in \Loc(\T)$ if and only if $t\in \Loc(\T)$ for all (not necessarily compact) objects $t$. It also follows from this that 
     \[\Loc(\T)^\heart = \Loc(\T^\heart),\]
     hence we get $\Loc(\T) = \L$ by uniqueness of the lift. 
 \end{proof}
@@ -261,7 +285,7 @@ We can now finally prove that the lift $\T$ is unique.
     Given a Serre subcategory $\T\subseteq \ComodE^\omega$, the lift $\T$ is unique. 
 \end{theorem}
 \begin{proof}
-    Let $\T'$ be another stable lift of $\T^\heart$, in other words it is a $\pi$-stable thick subcategory with heart $\T^\heart$. By the same arguments as in \cref{ch3:add:lm:loc-of-lift-is-localizing-lift}, we get two $\pi$-stable localizing subcategories $\Loc(\T)$ and $\Loc(\T')$, which neccessarily must have the same heart $\Loc(\T^\heart)$. By uniqueness of the lift $\L$ we must then have $\Loc(\T) = \L = \Loc(\T')$. By \cref{ch3:add:lm:lift-of-B-works-with-localizing-lift} we conclude that 
+    Let $\T'$ be another stable lift of $\T^\heart$, in other words it is a $\pi$-stable thick subcategory with heart $\T^\heart$. By the same arguments as in \cref{ch3:add:lm:loc-of-lift-is-localizing-lift}, we get two $\pi$-stable localizing subcategories $\Loc(\T)$ and $\Loc(\T')$, which necessarily must have the same heart $\Loc(\T^\heart)$. By uniqueness of the lift $\L$ we must then have $\Loc(\T) = \L = \Loc(\T')$. By \cref{ch3:add:lm:lift-of-B-works-with-localizing-lift} we conclude that 
     \[\T = \Loc(\T)\cap \LSynE^\omega = \Loc(\T')\cap \LSynE^\omega = \T',\]
     finishing the proof. 
 \end{proof}
@@ -355,9 +379,9 @@ Our goal is to show that such a synthetic type $n$ spectrum $\nu L\np F(n)$ does
     \[\Loc(\nu L\np F(n))\subseteq \MSynE.\]
     By \cite[2.2]{neeman_1992} the compact objects in $\MSynE$ are precisely those compact objects in $\LSynE$ that lie in $\MSynE$. As we have shown that $\MSynE$ is compactly generated, we must then have 
     \[\MSynE \simeq \Loc(\{\nu M\np P\}),\]
-    for $P \in \Sp\fp$ all the $E$-finite projectives. This is because $\nu L\np P$ compactly generate $\LSynE$, and these lie in $\MSynE$ precicely when $L\np P\in \M\np$, again by \cref{ch3:add:lm:mono-iff-syn-mono}. 
+    for $P \in \Sp\fp$ all the $E$-finite projective spectra. This is because $\nu L\np P$ compactly generate $\LSynE$, and these lie in $\MSynE$ precisely when $L\np P\in \M\np$, again by \cref{ch3:add:lm:mono-iff-syn-mono}. 
 
-    Now, as $\nu$ presrves filtered colimits we have 
+    Now, as $\nu$ preserves filtered colimits we have 
     \[\nu \Loc(L\np F(n))\subseteq \Loc(\nu L\np F(n)).\]
     As $L\np F(n)$ generates $\M\np$ under filtered colimits, this implies that 
     \[\Loc(\{\nu M\np P\})\subseteq \Loc{\{\nu M\}} \subseteq \Loc(\nu L\nu F(n)),\]
@@ -371,7 +395,7 @@ Our goal is to show that such a synthetic type $n$ spectrum $\nu L\np F(n)$ does
 We now round off this addendum by showing that $\MSynE$ has the desired deformation properties. First we need to show that it is in fact a localizing $\otimes$-ideal, and not just a localizing subcategory. 
 
 \begin{lemma}
-    The syntehtic type $n$ spectrum $nu L\np F(n)$ generates the category $\MSynE$ as a localizing $\otimes$-ideal. In other words, there is an equivalence $\MSynE \simeq \Loc^\otimes(\nu L\np F(n))$ of symmetric monoidal stable $\infty$-categories. 
+    The synthetic type $n$ spectrum $nu L\np F(n)$ generates the category $\MSynE$ as a localizing $\otimes$-ideal. In other words, there is an equivalence $\MSynE \simeq \Loc^\otimes(\nu L\np F(n))$ of symmetric monoidal stable $\infty$-categories. 
 \end{lemma}
 \begin{proof}
     By \cref{ch3:add:monochromatic-synthetic-is-gen-by-type-n} it is enough to show that $\MSynE$ is closed under tensoring with objects of $\LSynE$. As the tensor product commutes with colimits separately in each variable, and the category $\MSynE$ is closed under colimits, it is enough to check this on generators of $\LSynE$ and $\MSynE$, namely $\nu L\np P$ and $\nu L\np F(n)$ respectively. By \cite[4.24]{pstragowski_2022} we have an equivalence 
@@ -379,9 +403,9 @@ We now round off this addendum by showing that $\MSynE$ has the desired deformat
     As $\M\np$ is a localizing ideal of $\Sp\np$, the spectrum $L\np P \otimes L\np F(n)$ is monochromatic. This means that its synthetic analog is a synthetic monochromatic spectrum by \cref{ch3:add:lm:mono-iff-syn-mono}. 
 \end{proof}
 
-The computations for the generic and special fibres of the deformation parameter $\tau$ now follow quite easily from the results in \cref{ch1:app:barr-beck}. Let us start with the special fibre. 
+The computations for the generic and special fibers of the deformation parameter $\tau$ now follow quite easily from the results in \cref{ch1:app:barr-beck}. Let us start with the special fibre. 
 
-Recall the definition of the derived $I_n$-torsion stable category of comodules in \cite[2.4]{barthel-heard-valenzuela_2020} as $\Stable\EE\Int := \Loc^\otimes(E_{*}/I_n)$ as a localizing subcategory of $\Stable\EE$. We furthermore recall the definiton of the stable category of $I_n$-power torsion comodules, see \cite[3.5]{barthel-heard-valenzuela_2020}, as 
+Recall the definition of the derived $I_n$-torsion stable category of comodules in \cite[2.4]{barthel-heard-valenzuela_2020} as $\Stable\EE\Int := \Loc^\otimes(E_{*}/I_n)$ as a localizing subcategory of $\Stable\EE$. We furthermore recall the definition of the stable category of $I_n$-power torsion comodules, see \cite[3.5]{barthel-heard-valenzuela_2020}, as 
 \[\Stable(\Comodt) := \Ind(\Thick^\otimes(\TorsE),\]
 where $\TorsE$ denotes a collection of compact generators of $\Comodt$, see \cref{ch1:lm:torsion-comodules-generated-by-compacts}. 
 
@@ -398,7 +422,7 @@ where $\TorsE$ denotes a collection of compact generators of $\Comodt$, see \cre
     \[(\LSynE, \nu L\np F(n))\rightleftarrows (\Stable\EE, E_{*}F(n)).\]
     By \cref{ch1:thm:modular-bb-torsion} there is an induced monoidal Barr--Beck adjunction 
     \[\Loc^\otimes(\nu L\np F(n))\rightleftarrows \Loc^\otimes(E_{*}F(n)).\]
-    The left hand side is equivalent to $\MSynE$ by \cref{ch3:add:monochromatic-synthetic-is-gen-by-type-n}, so we need only to identify the right. The localizing ideal is only dependent on the radical of the ideal $J$ used to constructu the type $n$ synthetic spectrum $F(n)$, and the radical of $J$ is equivalent to the radical of $I_n$, meaning that the right hand side can be identified with $E_{*}/I_n$, which gives 
+    The left hand side is equivalent to $\MSynE$ by \cref{ch3:add:monochromatic-synthetic-is-gen-by-type-n}, so we need only to identify the right. The localizing ideal is only dependent on the radical of the ideal $J$ used to construct the type $n$ synthetic spectrum $F(n)$, and the radical of $J$ is equivalent to the radical of $I_n$, meaning that the right hand side can be identified with $E_{*}/I_n$, which gives 
     \[\Loc^\otimes(E_{*}/I_n) \simeq \Stable\EE\Int\simeq \Stable(\Comodt),\]
     where the last equivalence is due to \cite[3.17]{barthel-heard-valenzuela_2020}. Hence, as the above adjunction is Barr--Beck, we get 
     \[\Mod_{C\tau}(\MSynE) \simeq \Stable(\Comodt),\]

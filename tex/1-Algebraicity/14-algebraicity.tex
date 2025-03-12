@@ -10,7 +10,7 @@ For the rest of this section, we assume that $E$ is the height $n$ Johnson--Wils
 \[\pi_* E_p(n) \cong \Z_{(p)}[v_1, v_2, \ldots, v_{n-1}, v_n^{\pm 1}],\] 
 where $|v_i| = 2p^i-2$. The goal of this section is to prove \cref{ch1:thm:C}, which we do in three steps. First we show that the functor 
 \[\pi_*\colon \Modt \longrightarrow \modt\] 
-is a conservative adaped homology theory. We then show that $\modt$ has finite cohomological dimension, and lastly that it admits a splitting. 
+is a conservative adapted homology theory. We then show that $\modt$ has finite cohomological dimension, and lastly that it admits a splitting. 
 
 The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frankland_15}, and the proof is similar.
 
@@ -25,7 +25,7 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
 
     Assume now $X\in \ModE$ such that its homotopy groups are $I_n$-power torsion. Monochromatization gives a map $\phi\colon M_n X\longrightarrow X$, and as $\pi_*M_nX$ is $I_n$-power torsion this map factors on homotopy groups as 
     \[\pi_* M_n X\longrightarrow H^0_{I_n}\pi_* X\longrightarrow \pi_* X,\]
-    where the first map is the edge morphism in the above-mentioned spectral sequence. As $\pi_* X$ was assumed to be $I_n$-power torsion we have $\pi_*X\cong H^0_{I_n}\pi_* X$, and $H^s_{I_n}\pi_* X \cong 0$ for $s>0$. Hence the spectral sequence collapses to give the isomorphism $\pi_* M_n X\cong H^0_{I_n}\pi_* X$, which shows that $\pi_* \phi$ is an isomorphism. As $\pi_*$ is conservative $\phi$ was already an isomorphism, hence $X\in \Modt$. 
+    where the first map is the edge morphism in the above-mentioned spectral sequence. As $\pi_* X$ was assumed to be $I_n$-power torsion we have $\pi_*X\cong H^0_{I_n}\pi_* X$, and $H^s_{I_n}\pi_* X \cong 0$ for $s>0$. Hence the spectral sequence collapses to give the isomorphism $\pi_* M_n X\cong H^0_{I_n}\pi_* X$, which shows that $\pi_* \phi$ is an isomorphism. As $\pi_*$ is conservative, $\phi$ was already an isomorphism, hence we have $X\in \Modt$. 
 \end{proof}
 
 \begin{lemma}
@@ -35,9 +35,9 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
     is a conservative adapted homology theory. 
 \end{lemma}
 \begin{proof}
-    We first note that the functor $\pi_*\colon \ModE\longrightarrow \modE$ is a conservative adapted homology theory. By \cref{ch1:lm:monochromatic-iff-torsion-modules} its restriction to $\Modt$ lands in $\modt$, hence autmoatically $\pi_*\colon \Modt\longrightarrow \modt$ is a conservative homology theory. 
+    We first note that the functor $\pi_*\colon \ModE\longrightarrow \modE$ is a conservative adapted homology theory. By \cref{ch1:lm:monochromatic-iff-torsion-modules} its restriction to $\Modt$ lands in $\modt$, hence automatically $\pi_*\colon \Modt\longrightarrow \modt$ is a conservative homology theory. 
     
-    Let $J$ be an injective $I_n$-power torsion $E_*$-module. We can embed $J\longrightarrow Q$ into an injective $E_*$-module $Q$, as $\modE$ has enough injectives. After applying the torsion functor $T^{E_*}_{I_n}$ this map has a section, as $J \cong T^{E_*}_{I_n}J$ is injective. In particular, any injective $J$ is a retract of $T^{E_*}_{I_n}Q$ for some injective $E_*$-module $Q$, hence we can assume $J$ to be of that form. By \cite[2.1.4]{brodmann-sharp_1998} any such $J = T^{E_*}_{I_n}Q$ is injective as an object of $\modE$. 
+    Let $J$ be an injective $I_n$-power torsion $E_*$-module. We can embed $J\longrightarrow Q$ into an injective $E_*$-module $Q$, as $\modE$ has enough injective objects. After applying the torsion functor $T^{E_*}_{I_n}$ this map has a section, as $J \cong T^{E_*}_{I_n}J$ is injective. In particular, any injective $J$ is a retract of $T^{E_*}_{I_n}Q$ for some injective $E_*$-module $Q$, hence we can assume $J$ to be of that form. By \cite[2.1.4]{brodmann-sharp_1998} any such $J = T^{E_*}_{I_n}Q$ is injective as an object of $\modE$. 
     
     Now, as $\pi_*$ is adapted on $\ModE$ we can chose a faithful injective lift $\bar{J}$ of $J$ to $\ModE$, and since $\bar{J}$ was assumed to have $I_n$-torsion homotopy groups we know by \cref{ch1:lm:monochromatic-iff-torsion-modules} that $\bar{J}$ is an object of $\Modt$. In particular, we have faithful lifts for any injective in $\modt$, which means that $\pi_*\colon \Modt\longrightarrow \modt$ is adapted. 
 \end{proof}
@@ -133,7 +133,7 @@ We can also phrase this dually in terms of $\Kpn$-local $E$-modules.
     where we have used that an equivalence of $\infty$-categories induces an equivalence on homotopy $k$-categories.
 \end{proof}
 
-Now, let $HE_*$ be the Eilenberg--MacLane spectrum of $E_*$. By Schwede--Shipleys's derived Morita theory, see \cite[7.1.1.16]{Lurie_HA}, there is a symmetric monoidal equivalence of categories 
+Now, let $HE_*$ be the Eilenberg--MacLane spectrum of $E_*$. By Schwede--Shipley's derived Morita theory, see \cite[7.1.1.16]{Lurie_HA}, there is a symmetric monoidal equivalence of categories 
 \[\Der(E_*)\simeq \Mod_{HE_*},\] 
 and we can form a local duality diagram for $\Mod_{HE_*}$ corresponding to \cref{ch1:ex:local-duality-comod} for the discrete Hopf algebroid $(E_*, E_*)$. By arguments similar to \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:lm:conservative-adapted-torsion-modules} one can show that the homotopy groups functor $\pi_*\colon \Mod_{HE_*}\longrightarrow \modE$ restricts to a conservative adapted homology theory 
 \[\pi_* \colon \Mod_{HE_*}\Int\longrightarrow \modt.\]
@@ -150,13 +150,13 @@ In the same range as \cref{ch1:thm:main-modules} this is also $k$-exotic. We can
 \subsection{Monochromatic spectra}
 \label{ch1:ssec:algebraicity-spectra}
 
-Having proven that monochromatic $E$-modules are algebraic at large primes, we now turn to the larger category of all monochromatic spectra $\M\np$ with the same goal. The strategy is exactly the same as in \cref{ch1:ssec:algebraicity-modules}: we first prove that the conservative adapted homology theory $E_*\colon \Sp\np\longrightarrow \comod\EE$ restricts to a conservative adapted homology theory on $\M\np$, before proving that $\Comod\EE\Int$ has a splitting and finite cohomological dimension. This will prove \cref{ch1:thm:B}, which we then convert into a proof of \cref{ch1:thm:A}, as in \cref{ch1:cor:main-modules-dual}. 
+Having proven that monochromatic $E$-modules are algebraic at large primes, we now turn to the larger category of all monochromatic spectra $\M\np$ with the same goal. The strategy is exactly the same as in \cref{ch1:ssec:algebraicity-modules}: we first prove that the conservative adapted homology theory $E_*\colon \Sp\np\longrightarrow \comod\EE$ restricts to a conservative adapted homology theory on $\M\np$, before proving that $\Comod\EE\Int$ has a splitting and finite cohomological dimension. This will prove \cref{ch1:thm:B}, which we then convert into a proof of \cref{ch1:thm:A}---just as in \cref{ch1:cor:main-modules-dual}. 
 
 In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ does not matter, as the categories $\Sp\np$ and $\comod\EE$ are equivalent for all such spectra---see \cite[1.12]{hovey_95} and \cite[4.2]{hovey-strickland_2005a} respectively. However, to make the interaction with \cref{ch1:ssec:algebraicity-modules} as simple as possible we will continue to use the height $n$ Johnson--Wilson spectrum $E_p(n)$.
 
 \begin{lemma}
     \label{ch1:lm:monochromatic-iff-torsion-comodules}
-    If $X$ is a $E$-local spectrum, then $X\in \M\np$ if and only if $E_*X\in \Comodt$. 
+    If $X$ is an $E$-local spectrum, then $X\in \M\np$ if and only if $E_*X\in \Comodt$. 
 \end{lemma}
 \begin{proof}
     Assume first that $X\in \M\np$. We have $E\otimes X\in \Modt$ as
@@ -175,7 +175,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 \begin{proof}
     First note that the image of $E_*\colon \Sp\np\longrightarrow \comod\EE$, restricted to $\M\np$, is contained in $\Comodt$ by \cref{ch1:lm:monochromatic-iff-torsion-comodules}. The functor 
     \[E_*\colon \M\np\longrightarrow \Comodt\] 
-    is then automatically a conservative homology theory. The category $\Comodt$ has enough injectives as it is Grothendieck by \cref{ch1:rm:torsion-comodules-grothendieck-monoidal}. Hence, it only remains to prove that we have faithful lifts for all injective objects. 
+    is then automatically a conservative homology theory. The category $\Comodt$ has enough injective objects as it is Grothendieck by \cref{ch1:rm:torsion-comodules-grothendieck-monoidal}. Hence, it only remains to prove that we have faithful lifts for all injective objects. 
 
     Let $J$ be an injective in $\Comodt$. As in the proof of \cref{ch1:lm:conservative-adapted-torsion-modules} we can assume that $J$ has the form $J = T^{E_*E}_{I_n} P$ for some injective $E_*E$-comodule $P$, as being torsion is a property of the underlying module. By \cite[2.1(c)]{hovey-strickland_2005b} any injective $E_*E$-comodule is a retract of $E_*E\otimes_{E_*} Q$ for some injective $E_*$-module $Q$. Hence, we can further assume that $J$ has the form $J = T^{E_*E}_{I_n}(E_*E\otimes_{E_*}Q)$.
 
@@ -221,13 +221,13 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 
     By the Landweber filtration theorem, see for example \cite[5.7]{hovey-strickland_2005a}, we know that any finitely presented comodule $M$ has a finite filtration 
     \[0=M_0 \subseteq M_1 \subseteq \cdots \subseteq M_{s-1}\subseteq M_s=M,\]
-    where $M_r/M_{r-1} \cong E_*/I_{j_r}[t_r]$ and $j_r\leq n$. When $M$ is $I_n$-power torsion we get $j_r=n$ for all $r$, as noted in \cite[4.3]{hovey-strickland_2005a}. For primes $p$ not dividing $n+1$ Morava's vanishing theorem, see for example \cite[6.2.10]{ravenel_86}, gives us that $\Ext_{E_*E}^{s,t}(E_*, E_*/I_n) = 0$ for all $s>n^2$. As the generators for the ideal $I_i$ form a regular sequence, we get short exact sequences of the form 
+    where $M_r/M_{r-1} \cong E_*/I_{j_r}[t_r]$ and $j_r\leq n$. When $M$ is $I_n$-power torsion we get $j_r=n$ for all $r$, as noted in \cite[4.3]{hovey-strickland_2005a}. For primes such that $p-1\nmid n$ Morava's vanishing theorem, see for example \cite[6.2.10]{ravenel_86}, gives us that $\Ext_{E_*E}^{s,t}(E_*, E_*/I_n) = 0$ for all $s>n^2$. As the generators for the ideal $I_i$ form a regular sequence, we get short exact sequences of the form 
     \[0\longrightarrow E_*/I_{i-1} \overset{v_i}\longrightarrow E_*/I_{i-1} \longrightarrow E_*/I_i\longrightarrow 0\]
     for $0\leq i\leq n$. By the induced long exact sequence in $\Ext$-groups, we get that 
     \[\Ext_{E_*E}^{s,t}(E_*/I_n, E_*/I_n) = 0\] 
     for $s>n^2+n$, which by the Landweber filtration implies that any finitely presented $I_n$-power torsion comodule is a good target.
     
-    The comodule $E_*/I_n$ has a finite resolution of $E_*E$-comodules that are projective as modules over $E_*$. The $\Ext$-functor out of these projectives can be computed using the cobar complex, see \cite[A1.2.12]{ravenel_86}, implying that the functor $\Ext_{E_*E}^{s,t}(E_*/I_n, -)$ commutes with filtered colimits. By \cref{ch1:lm:torsion-comodules-generated-by-compacts} any $I_n$-power torsion comodule is a filtered colimit of finitely presented ones, hence any $I_n$-power torsion comodule is a good target. 
+    The comodule $E_*/I_n$ has a finite resolution of $E_*E$-comodules that are projective as modules over $E_*$. The $\Ext$-functor out of these projective objects can be computed using the cobar complex, see \cite[A1.2.12]{ravenel_86}, implying that the functor $\Ext_{E_*E}^{s,t}(E_*/I_n, -)$ commutes with filtered colimits. By \cref{ch1:lm:torsion-comodules-generated-by-compacts} any $I_n$-power torsion comodule is a filtered colimit of finitely presented ones, hence any $I_n$-power torsion comodule is a good target. 
 
     Note that the above argument also proves that $E_*/I_n$ is a good source, which by the Landweber filtration argument implies that any finitely presented $I_n$-torsion comodule is a good source. Again, by \cref{ch1:lm:torsion-comodules-generated-by-compacts}, the category $\Comodt$ is generated under filtered colimits by finitely presented comodules. Hence, we can apply \cite[2.4]{pstragowski_2021} to any injective resolution 
     \[0\longrightarrow M \longrightarrow J_0 \longrightarrow J_1\longrightarrow \cdots\]
@@ -262,7 +262,9 @@ We can now summarize the above results with our second main result, which is the
 \begin{remark}
     \label{ch1:rm:monochromatic-corresponds-to-torsion}
     By \cref{ch1:thm:pulling-out-torsion} there is an equivalence $\Dper(E_*E\Int)\simeq \Fr\np\Int$ and by \cref{ch1:ex:local-duality-chromatic} there is an equivalence $\M\np\simeq \Sp\np\Int$. This means that we can write the equivalence in \cref{ch1:thm:main-spectra} as 
-    \[h_k\Sp\np\Int\simeq h_k\Fr\np\Int\]
+    \[h_k\Sp\np\Int\simeq h_k\Fr\np\Int,\]
+    or alternatively, 
+    \[h_k \Loc^\otimes_{\Sp\np}(L\np F(n)) \simeq h_k \Loc^\otimes_{\Fr\np}(P(E_*/I_n))\]
     for $k=2p-2-n^2-n>0$. This is more in line with thinking about \cref{ch1:thm:main-spectra} as ``coming from'' the chromatic algebraicity of \cref{ch1:ex:chromatic-algebraicity} on localizing ideals. This formulation is perhaps also easier to connect to the limiting case $p\to \infty$ as described using ultra-products in \cite{barthel-schlank-stapleton_2021}, which can be stated informally as 
     \[\lim_{p\to \infty} \Sp\np\Int\simeq \lim_{p\to \infty} \Fr\np\Int.\]
 \end{remark}
@@ -317,21 +319,21 @@ Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebra
 
 \subsection*{Some remarks on future work}
 
-The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there is a deformation of stable $\infty$-categories lurking behind the scenes. One does not need this in order to apply the theorem, but it is there regardless. In the case of some $v_n$-periodic Landweber exact ring spectrum $E$, the deformation associated with the adapted homology theory $E_*\colon \Sp\np \longrightarrow \comod\EE$ is equivalent to the category of hypercomplete $E$-based synthetic spectra, $\hSynE$\index{Synthetic spectra}, introduced in \cite{pstragowski_2022}. As both $\Sp\np$ and $\comod\EE$ are invariant under the choice of such $E$, we conjecture that this is true also for $\hSynE$. 
+The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there is a deformation of stable $\infty$-categories lurking behind the scenes. One does not need this in order to apply the theorem, but it is there regardless. In the case of some $v_n$-periodic Landweber exact ring spectrum $E$, the deformation associated with the conservative adapted homology theory $E_*\colon \Sp\np \longrightarrow \comod\EE$ is equivalent to the category of $E$-local synthetic spectra, $\LSynE$\index{Synthetic spectra}---a variant of the category of $E$-based synthetic spectra introduced in \cite{pstragowski_2022}. As both $\Sp\np$ and $\ComodE$ are invariant under the choice of such $E$, we conjecture that this is true also for $\LSynE$. 
 
-Our restricted homology theory $E_*\colon \M_{n,p}\longrightarrow \Comodt$ should then be associated to a deformation $\hSynE\Int$ coming from a local duality theory for $\hSynE$, in the sense that there is a diagram of stable $\infty$-categories 
+Our restricted homology theory $E_*\colon \M\np\longrightarrow \Comodt$ should then be associated to a deformation $\MSynE$ coming from a local duality theory for $\LSynE$, in the sense that there is a diagram of stable $\infty$-categories 
 \begin{center}
     \begin{tikzcd}
-        \M_{n,p}\simeq\Sp\np\Int & \hSynE\Int \arrow[l, "\tau^{-1}"'] \arrow[r, "\tau\sim 0"] & \Fr\np\Int.
+        \M\np & \MSynE \arrow[l, "\tau^{-1}"'] \arrow[r, "C\tau\otimes -"] & \StableE\Int.
     \end{tikzcd}    
 \end{center}
-Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr{\k a}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
+Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to monochromatic synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
 
 \begin{addendum}
-    Since writing this paper we have investigated this idea further. We have added a construction of a category we call \emph{monochromatic syntehtic spectra} in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\hSynE$, that it has the correct deformation properties as above, and that it has a universal property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}.  
+    Since writing this paper we have investigated this idea further. We have added a construction of a category we call \emph{monochromatic synthetic spectra} in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}.  
 \end{addendum}
 
-In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. His deformation $\mathscr{E}\np$ is equivalent to $\hSynE$, which by the above remarks hints towards a monoidal version of \cref{ch1:thm:main-spectra} as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. We do, however, state the conjectured monoidal result, which we hope to pursue in future work.
+In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. We conjecture that his deformation $\mathscr{E}\np$ is equivalent to $\LSynE$ for big enough primes, which by the above remarks hints towards a monoidal version of \cref{ch1:thm:main-spectra} as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. We do, however, state the conjectured monoidal result, which we hope to pursue in future work.
 
 \begin{conjecture}
     \label{ch1:conj:monochromatic-monoidally-algebraic}
@@ -343,8 +345,8 @@ In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:frank
 As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $\Kpn$-local category, i.e., a symmetric monoidal equivalence 
 \[h_k \SpKpn\simeq h_k \Fr\np\Inc.\]
 
-Since $E$-based synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
+Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\LSynE$ to give a category $\LSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
 
 \begin{addendum}
-    We were reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence, which we feel is still an interesting problem, hence the conjecture stands, at least morally. 
+    We were reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence, which we feel is still an interesting problem, hence the conjecture stands---at least morally. 
 \end{addendum}

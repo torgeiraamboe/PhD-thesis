@@ -40,14 +40,6 @@ Adapted homology theories are particularly well behaved homology theories that h
     \[R_*\colon \Sp_R\to \Comod_{R_*R}.\]
 \end{example}
 
-\begin{remark}
-    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra. The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory $\Kpn_*\colon \SpKpn\longrightarrow \Mod_{\Kpn_*}$ is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. We learnt the argument for why this is the case from \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
-    
-    There is, however, a version of $E_*$-homology on $\SpKpn$, defined by sending a $K(n)$-local spectrum $X$ to 
-    \[E_*^\vee (X) := \pi_*L_{\Kpn}(E\otimes X).\]
-    The functor does land in a category of comodules, specifically over the $L$-complete Hopf algebroid $(E_*, E_*^\vee E)$, see \cite[5.3]{baker_2009}. However, the category $\Comod_{E_*^\vee E}$ is not abelian. This is the reason for instead using the monochromatic category $\M\np$ and the category of $I_n$-power torsion comodules, as these inherit nicer homological properties we can exploit. 
-\end{remark}
-
 \begin{definition}
     \label{ch1:def:faithful-lift}
     \index{Faithful lift}
@@ -69,16 +61,16 @@ Adapted homology theories are particularly well behaved homology theories that h
 
 \begin{remark}
     The definition of an adapted homology theory $H$ states that for any injective $J\in \A$, there is some object $\bar{J}\in \C$ together with an equivalence 
-    \[[X,\bar{J}]\simeq \Hom_\A(HX, J)\] 
+    \[[X,\bar{J}]\simeq \Hom_\A(H(X), J)\] 
     induced by $H$. Because $\A$ has enough injective objects, we can use these equivalences to approximate homotopy classes of maps by repeatedly mapping into injectives. This gives precisely an associated Adams spectral sequence for the homology theory $H$. In fact, Patchkoria and Pstr{\k a}gowski proved that there is a bijection between adapted homology theories and Adams spectral sequences, see \cite[3.24, 3.25]{patchkoria-pstragowski_2021}. The construction of the Adams spectral sequence associated to an adapted homology theory $H\colon \C\longrightarrow \A$ is given in \cite[2.24]{patchkoria-pstragowski_2021}, or alternatively as a totalization spectral sequence in \cite[2.27]{patchkoria-pstragowski_2021}. 
 \end{remark}
 
-In our particular interest $R=E\np$, the associated adapted homology theories $\pi_*$ and $E_*$ are even nicer than a general adapted homology theory. This is because the category of comodules is particularly simple. 
+In our particular interest $R=E\np$, the associated adapted homology theories $\pi_*$ and $E_*$ are even nicer than a general adapted homology theory. This is because the cohomological information in the associated category of comodules is particularly simple. 
 
 \begin{definition}
     \label{ch1:def:cohomological-dimension}
     \index{Cohomological dimension}
-    Let $\A$ be a locally graded abelian category with enough injective objects. Then the \emph{cohomological dimension} of $\A$ is the smallest integer $d$ such that $\Ext^{s,t}_\A(-,-) \cong 0$ for all $s>d$. 
+    Let $\A$ be a locally graded abelian category with enough injective objects. Then the \emph{cohomological dimension} of $\A$ is the smallest integer $d\in \N\cup \{\infty\}$ such that $\Ext^{s,t}_\A(-,-) \cong 0$ for all $s>d$. 
 \end{definition}
 
 \begin{example}
@@ -86,7 +78,15 @@ In our particular interest $R=E\np$, the associated adapted homology theories $\
     Let $n$ be an integer, $p$ a prime such that $p>n+1$ and $E=E\np$ Morava $E$-theory at height $n$. Then by \cite[2.5]{pstragowski_2021} the category $\Comod\EE$ has cohomological dimension $n^2+n$. 
 \end{example}
 
-For certain Adams type ring spectra $R$ we get decompositions of the category $\Comod_{R_*R}$ into periodic families of subcategories. Such decompositions allows for the construction of partial inverses to the associated homology theories. 
+\begin{remark}
+    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra. The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory $\Kpn_*\colon \SpKpn\longrightarrow \Mod_{\Kpn_*}$ is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. This can be seen via the following argument of \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
+    
+    There is, however, a version of $E_*$-homology on $\SpKpn$, defined by sending a $K(n)$-local spectrum $X$ to 
+    \[E_*^\vee (X) := \pi_*L_{\Kpn}(E\otimes X).\]
+    The functor does land in a category of comodules, specifically over the $L$-complete Hopf algebroid $(E_*, E_*^\vee E)$, see \cite[5.3]{baker_2009}. However, the category $\Comod_{E_*^\vee E}$ is not abelian. This is the reason for instead using the monochromatic category $\M\np$ and the category of $I_n$-power torsion comodules, as these inherit nicer homological properties we can exploit. 
+\end{remark}
+
+For certain Adams type ring spectra $R$, we get decompositions of the category $\Comod_{R_*R}$ into periodic families of subcategories. Such decompositions allows for the construction of partial inverses to the associated homology theories. 
 
 \begin{construction}
     \label{ch1:const:splitting-of-comodules}
@@ -114,7 +114,7 @@ In order to mimic this behavior for a general adapted homology theory, Franke in
     
 \begin{example}
     \label{ch1:ex:splitting-modules}
-    As we saw above in \cref{ch1:const:splitting-of-comodules}, the category of comodules over an Adams Hopf algebroid $(R_*, R_*R)$, where $R_*$ is concentrated in degrees divisible by $q+1$, has a splitting of order $q+1$. This, then, also holds for the discrete Hopf algebroid $(R_*, R_*)$, giving the module category $\Mod_{R_*}$ a splitting of order $q+1$ as well. 
+    As we saw in \cref{ch1:const:splitting-of-comodules}, the category of comodules over an Adams Hopf algebroid $(R_*, R_*R)$, where $R_*$ is concentrated in degrees divisible by $q+1$, has a splitting of order $q+1$. This, then, also holds for the discrete Hopf algebroid $(R_*, R_*)$, giving the module category $\Mod_{R_*}$ a splitting of order $q+1$ as well. 
 \end{example}
 
 \begin{example}

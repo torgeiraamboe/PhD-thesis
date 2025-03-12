@@ -8,7 +8,7 @@ In this appendix we prove that the monoidal Barr--Beck theorem---a monoidal vers
 \begin{theorem}[{\cite[5.29]{mathew-naumann-noel_2017}}]
     \label{ch1:thm:modular-bb}
     \index{Barr--Beck!Monoidal}
-    Let $\C, \D \in \CAlg(\PrLs)$ and $(F\dashv G)\colon \C\longrightarrow \D$ be a monoidal adjunction. If in addition 
+    Let $\C$ and $\D$ be presentably symmetric monoidal stable $\infty$-categories, and $(F\dashv G)\colon \C\longrightarrow \D$ a monoidal adjunction. If in addition 
     \begin{enumerate}
         \item $G$ is conservative, 
         \item $G$ preserves colimits, and
@@ -37,7 +37,7 @@ Let $(\C, \K)$ be a local duality context. We wish to prove that the associated 
 Given a local duality context and an appropriate functor, one can always extend the functor to a strict map of local duality context in the following way. 
 
 \begin{construction}
-    Let $(\C, \K)$ be a local duality context, $\D \in \Alg(\PrLs)$ and $F\colon \C\longrightarrow \D$ be a symmetric monoidal colimit-preserving functor. The image of $\K$ under $F$ generates a localizing ideal $\Loc^\otimes_\D(F(\K))$ in $\D$, which makes $F$ a map of local duality contexts. We call this the local duality context on $\D$ induced by $\C$ via $F$. 
+    Let $(\C, \K)$ be a local duality context, $\D$ a presentably symmetric monoidal stable $\infty$-category and $F\colon \C\longrightarrow \D$ a symmetric monoidal colimit-preserving functor. The image of $\K$ under $F$ generates a localizing ideal $\Loc^\otimes_\D(F(\K))$ in $\D$, which makes $F$ a strict map of local duality contexts. We call this the local duality context on $\D$ \emph{induced} by $\C$ via $F$. 
 \end{construction}
 
 The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{balmer-sanders_2017}. The proof is also similar, but as we have phrased it in a different and slightly more general language, we present a full proof. 
@@ -74,7 +74,7 @@ The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{
     Since the ideals are equivalent, and the unit is unique, we must have $F(\Gamma_\K\1_\C)\simeq \Gamma_\L \1_D$, which finishes the proof. 
 \end{proof}
 
-The key feature for us is that such an induced adjunction inherits the property of being a Barr--Beck adjunction, i.e., that the right adjoint is conservative, preserves colimits, and has a projection formula. An analogous, but not equivalent, statement was proven in \cite[4.5]{behrens-shaw_2020}. Another related, but not equivalent statement, is Greenlees--Shipley's Cellularization principle, see \cite{greenlees-shipley_2013}. 
+The key feature for us is that such an induced adjunction inherits the property of being a Barr--Beck adjunction, i.e., that the right adjoint is conservative, preserves colimits, and has a projection formula. An analogous, but not equivalent, statement was proven in \cite[4.5]{behrens-shaw_2020}. Another related, but not equivalent statement, is Greenlees--Shipley's cellularization principle, see \cite{greenlees-shipley_2013}. 
 
 \begin{theorem}
     \label{ch1:thm:modular-bb-torsion}

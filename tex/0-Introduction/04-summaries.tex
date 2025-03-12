@@ -1,131 +1,134 @@
 \section{Summaries}
 
-Even though each of the papers contain an introduction with their respective results, we include a short summary of the main ideas from each paper here in the introduction. As to not repeat ourselves too much we have made these summaries more focused on the ideas and concepts, and not that much on technicalities and specificity. They still contain the main results from each paper, but also include some descriptions of why they are as they are. 
+Even though each of the papers contain their own introduction, we include an individual summary using the material from the introduction. The focus here is on themes, intuition and the connection to chromatic homotopy theory, not on overly technical details---there are plenty of these in the rest of the thesis. 
 
 \subsection{Paper I}
 
-In \cite{patchkoria-pstragowski_2021} the authors prove, among other things, an algebraicity result for chromatic homotopy theory, based on earlier work by Franke in \cite{franke_96} and Pstr\a{}gowski in \cite{pstragowski_2021}. More precisely they prove that there is an equivalence of homotopy $k$-categories 
-\[h_k \Sp\np \simeq h_k \Fr\np\]
-for all primes $p$ and chromatic heights $n$ such that 
-\[k = 2p-2-n^2-n > 0.\] 
-Here the category $\Fr\np$ denotes the Franke category, which is the derived category of periodic comodules over the Hopf algrbroid $E_*E$ associated to height $n$ Morava $E$-theory. Alternatively, this is the derived category of twisted sheaves on the open substack $\mathrm{M}_{\mathrm{fg}}^{\leq n}$ of the moduli stack of formal groups, which is more in line with the original formulation used by Franke in \cite{franke_96}. 
+In the introduction we set up a way to compare the symmetric monoidal stable $\infty$-category $\Sp\np$ to the Grothendieck abelian category $\ComodE$, via the $E$-homology functor
+\begin{align*}
+    E_*\: \Sp\np &\to \ComodE \\
+    X &\longmapsto \pi_*(E\otimes X)
+\end{align*}
+see \cref{ch0:ex:E-homology-functor}. There are many uses for such homology theories in general, but this one is particularly nice---it is possible to lift injective resolutions in $\ComodE$ to resolutions in $\Sp\np$. This property allows one to set up an $E$-based Adams spectral sequence for computing homotopy classes of maps in $\Sp\np$. For the sphere we obtain a spectral sequence with signature 
+\[E_2^{s,t} := \Ext^{s,t}_{E_*E}(E_*, E_*) \implies \pi_{t-s}L\np \S,\]
+where the $\Ext$-groups are computed in $\ComodE$. At large enough primes $p \gg n$ this spectral sequence collapses to an isomorphism $\pi_* L\np \S \cong \Ext_{E_*E}^{*,*}(E_*, E_*)$, hinting at the fact that $\Sp\np$ acts in a more and more algebraic fashion at large primes. 
 
-The main goal of the first paper of this thesis, \cite{aambo_2024_algebraicity}, is to prove a similar result for the category $\SpKpn$. 
+The precise formulation of this conjectured relationship is due to Franke in \cite{franke_96}, where he conjectures that at large primes there should be an equivalence between the homotopy categories $h\Sp\np \simeq h\Dper(\ComodE)$---the latter being a certain periodic version of the derived category of the Hopf algebroid $E_*E$. By work of Pstr\a{}gowski and Patchkoria--Pstr\a{}gowski, see \cite{pstragowski_2021} and \cite{patchkoria-pstragowski_2021}, this conjectured relationship was proven to hold. This equivalence can not be lifted to an equivalence on the level of $\infty$-categories, hence it is often said to be an \emph{exotic} equivalence. 
+
+The resulting sloan is then: \emph{chromatic homotopy theory is exotically algebraic at large primes.} 
+
+In the introduction we saw that we have well-behaved local duality theories for both the category $\Sp\np$ and the category $\Der(E_*E)$. These were respectively given by $(\Sp\np, L\np F(n))$ for a type $n$ spectrum $F(n)$, and $(\Der(E_*E), E_*/I_n)$ for the Landweber ideal $I_n=(p, v_1, \ldots, v_{n-1})\subseteq E_*= \pi_* E\np$.
+
+For certain values of $n$ and $p$, the type $n$ spectrum $F(n)$ can be chosen to be a \emph{Smith--Toda} complex, defined by satisfying $E_*(L\np F(n)) \cong E_*/I_n$. For example, at $n=1$ and $p>2$ we can chose $L\np F(n) = L\np\S/p$. Such Smith--Toda complexes do not always exist, but it still hints at a relationship between the two local duality theories: they should be connected via $E$-homology. 
+
+The goal of \hyperref[ch1]{paper I} is to make this connection come to life. 
+
+The compact object $L_n F(n)\in \Sp\np^\omega$ generates the localizing $\otimes$-ideal $\M\np$, and the compact object $E_*/I_n \in \Der(E_*E)^\omega$ generates the localizing $\otimes$-ideal $\Der(E_*E)\Int$, which by \cref{ch0:lm:derived-torsion-if-homology-torsion} is equivalent to $\Der(E_*E\Int)$. We prove that $E$-homology restricts to a well-behaved homology theory 
+\[E_*\: \M\np\to \Comodt\] 
+which by the general machinery set up in \cite{patchkoria-pstragowski_2021} proves that also the localizing ideals $\M\np$ and $\Der(E_*E\Int)$ have to be exotically equivalent---up to again switching the latter for a periodic version. 
+
+\begin{theorem}[{\cref{ch1:thm:B}}]
+    \label{ch0:summary1:thm:B}
+    For $p\gg n$ there is an equivalence of homotopy categories
+    \[h \M\np \simeq h \Dper(E_*E\Int).\]
+\end{theorem}
+
+By utilizing the local duality equivalences $\M\np \simeq \Sp_\Kpn$ and $\Der(E_*E)\Int \simeq \Der(E_*E)\Inc$ we can then obtain a version of this exotic algebraicity result for the category of $\Kpn$-local spectra: 
 
 \begin{theorem}[{\cref{ch1:thm:A}}]
-    \label{ch0:summary1:thm:main}
-    If $p$ is a prime number, and $n$ a non-negative integer such that $k = 2p-2-n^2-n > 0$, then there is an equivalence of homotopy $k$-categories 
-    \[h_k \SpKpn \simeq h_k\Fr\np^{I_n-comp},\]
-    where $I_n \subseteq \pi_* E_n$ is the height $n$ Landweber ideal. 
+    \label{ch0:summary1:thm:A}
+    For $p \gg n$ there is an equivalence of homotopy categories
+    \[h \Sp_\Kpn \simeq h \Dper(E_*E)\Inc.\]
 \end{theorem}
 
-It is a well known idea that $K(n)$-localization acts on spectra similar til how $I_n$-completion acts on the derived category. For example, by \cite[3.14]{barthel-frankland_15} we know that an $E_n$-module $M$ is $K(n)$-local if and only if its homotopy groups $\pi_* M$ are $I_n$-complete. The above theorem should then be thought of as a more global reason for why $K(n)$-localization and $I_n$-completion are related. 
+This gives a new slogan: \emph{monochromatic homotopy theory is exotically algebraic at large primes.}
 
-An analogous result was proven by Barthel--Schlank--Stapleton in \cite{barthel-schlank-stapleton_2021}, where the authors prove that taking the ultraproduct over all primes gives an equivalence of symmetric monoidal stable $\infty$-categories 
-\[\prod \SpKpn \simeq \prod \Fr\np^{I_n-comp}.\]
-Their result can be thought of as an ``asymptotic'' version of \cref{ch0:summary1:thm:main}. To prove this equivalence the authors pass to the dual category of monochromatic spectra, $\M\np$, which has some properties in connection with the derived categories that are easier to work with. We also take the same route, but combine it with the approach of Patchkoria--Pstr\a{}gowsi in \cite{patchkoria-pstragowski_2021}. 
 
-Our first main result is that the conservative adapted homology theory $\pi_* \: \ModE \to \modE$ restricts to a conservative adapted homology theory $\pi_* \: \Modt\to \modt$, and that the Grothendieck abelian category $\modt$ satisfies similar cohomological finiteness properties as $\modE$. We then use this to prove the same statement for the more complicated category of monochromatic spectra, $\M\np$. 
 
-\begin{theorem}
-    The conservative adapted homology theory 
-    \[E_*\: \Sp\np\to \ComodE\]
-    restricts to a conservative adapted homology theory 
-    \[E_*\: \M\np\to \Comodt.\] 
-    Furthermore, the category $\Comodt$ has cohomological dimension $n^2+n$ whenever $p-1$ does not divide $n$. 
-\end{theorem}
 
-Using the general machinery set up in \cite{patchkoria-pstragowski_2021}, this immediately implies that there is an equivalence of homotopy $k$-categories
-\[h_k \M\np \simeq h_k\Fr\np^{I_n-tors}\]
-whenever $k= 2p-2-n^2-2>0$. Using a sequence of local duality arguments, as recalled in \cref{ch0:ssec:local-duality}, together with some results about interactions with Barr--Beck monadicity --- which can be found in \cref{ch1:app:barr-beck} --- this implies \cref{ch0:summary1:thm:main}. 
 
 
 
 
 \subsection{Paper II}
 
-Positselski's comodule-contramodule correspondence gives an adjunction between comodules and contramodules over coalgebras in certain categories --- like vector spaces over a field. In many nice cases this adjunction is actually an equivalence, for example when the coalgebra $K$ is co-separable. 
+In the introduction we saw that $E\np$-localization is a smashing localization, see \cref{ch0:const:chromatic-fracture-square} or \cite[7.5.6]{ravenel_92}. This gives, via \cref{ch0:rm:smashing-then-modules-over-unit}, an equivalence 
+\[\Sp_{n-1,p} \simeq \Mod_{L_{n-1,p}\S}(\Sp\np).\]
 
-We had two central goals for the second paper, \cite{aambo_2024_positselski}: 
-\begin{enumerate}
-    \item Set up a similar duality theory for cocommutative coalgebras in presentably symmetric monoidal $\infty$-categories, which we have called Positselski duality. 
-    \item Prove that for compactly generated symmetric monoidal stable $\infty$-categories, Positselski duality recovers local duality, in the sense of \cite{hovey-palmiery-strickland_97} --- see also \cref{ch0:ssec:local-duality}. 
-\end{enumerate}
+We know by \cref{ch0:prop:torsion-is-monochromatic} that the kernel of $L_{n-1,p}$ is the category of monochromatic spectra $\M\np$, hence one can wonder if there is an analogous description of this category in terms of the category of some other type of ``module''. This turns out to be true: it is equivalent to the category of comodules over the monochromatization of the sphere, $M\np \S$, treated as a cocommutative coalgebra in $\Sp\np$. 
 
-Most mathematicians know the concept of a module over a ring $R$, as an abelian group with a unital associative action of $R$. Dually, given a coalgebra $C$ one can define comodules to be abelian groups with a counital coassociative coaction from $C$. The concept of a contramodule was introduced by Eilenberg and Moore in \cite{eilenberg-moore_65}, but was not much used or studied until the early 2000's, when Positselski found several important uses for them. A contramodule over a coalgebra $C$ is an abelian group with a ``contraaction'' $\Hom(C, G)\to G$, satisfying some natural axioms similar to unitality and associativity. 
+This means that we have ``algebraic'', or module-like, descriptions for two out of the three categories appearing in the local duality diagram associated to the local duality context $(\Sp\np, L\np F(n))$, see \cref{ch0:const:chromatic-duality}. 
 
-One way to phrase this action is to say it is a module over the monad $\Hom(C,-)$ as an endofunctor on abelian groups. This definition is easy to generalize to the $\infty$-categorical setting, as the internal hom functor $\iHom_\C(C,-)$ for any cocommutative coalgebra in a presentably symmetric monoidal $\infty$-category $\C$, is still a monad. 
+\hyperref[ch2]{Paper II} concerns the following question: is there a module-like description of the last part of the local duality diagram, $\Sp_\Kpn$? 
 
-However, in the $\infty$-categorical setting the monoidal structure on $\Comod_C$ is more evasive for general coalegbras $C$, as one would need the tensor product in $\C$ to preserve cosifted limits, which rarely holds. To avoid this issue we restrict ourselves to coidempotent coalebras, and obtain the following $\infty$-categorical version of Positselski's co-contra correspondence. 
+One answer is given by taking inspiration from algebra, where one has the concept of a contramodule. These were introduced by Eilenberg and Moore in \cite{eilenberg-moore_65}, but was not much used or studied until the early 2000's, when Positselski found several important uses for them. Positselski's comodule-contramodule correspondence gives an adjunction between comodules and contramodules over coalgebras in certain categories---like the category of vector spaces over a field. In many nice cases this adjunction is actually a symmetric monoidal equivalence, for example when the coalgebra $C$ is coseparable and cocommutative. 
+
+The notion of contramodules has not yet been studied in the context of $\infty$-categories, so we first need a suitable definition. We define a contramodule over a cocommutative coalgebra $C$ to be a module over the internal hom functor $\iHom_\C(C,-)$, which is a monad on $\C$. To be certain of the existence of symmetric monoidal structures on the categories of comodules and contramodules, we restrict ourselves to coidempotent coalebras. We then obtain the following $\infty$-categorical version of Positselski's co-contra correspondence, which we call \emph{Positselski duality}. 
 
 \begin{theorem}[{\cref{ch2:introthm:A}}]
-    If $\C$ is a presentably symmetric monoidal $\infty$-category, and $C\in \C$ a cocummutative coidempotent coalgebra, then there is an equivalence 
+    If $\C$ is a presentably symmetric monoidal $\infty$-category, and $C\in \C$ a cocommutative coidempotent coalgebra, then there is an equivalence 
     \[\Comod_C(\C)\simeq \Contra_C(\C)\]
     of symmetric monoidal $\infty$-categories. 
 \end{theorem}
 
-This takes care of the first goal for the paper, so let us move on to the second. Recall from \cref{ch0:ssec:local-duality} that a local duality context is a pair $(\C, \K)$, where $\C$ is a presentably symmetric monoidal stable $\infty$-category compactly generated by dualizable objects, and $\K\subseteq \Co$ is a subset of compact objects. The second goal is to prove that we can recover the equivalence 
-\[\C^{\K-tors}\simeq \C^{\K-comp},\] 
-see \cref{ch0:const:local-duality-categories} and \cref{ch0:thm:local-duality}, as the Positselski duality from a naturally associated coidempotent coalgebra. 
+Now, we can then try to relate this back to the original motivation, which was to have a module-like description of $\Kpn$-local spectra. In fact, we prove this much more generally, for any local duality context $(\C, \K)$. 
 
 \begin{theorem}[{\cref{ch2:introthm:B}}]
     If $(\C, \K)$ is a local duality context, then there are equivalences 
-    \[\C^{\K-tors}\simeq \Comod_{i\Gamma \1_\C} \text{ and } \C^{\K-comp}\simeq \Contra_{i\Gamma \1_\C},\]
-    where $\Gamma$ is the smashing colocalization associated to $(\C, \K)$. In particular, $i\Gamma \1_\C$ is a coidempotent coalgebra in $\C$, hence Positselski duality implies that there is an equivalence 
+    \[\C^{\K-tors}\simeq \Comod_{\Gamma \1_\C}(\C) \text{ and } \C^{\K-comp}\simeq \Contra_{\Gamma \1_\C}(\C),\]
+    where $\Gamma$ is the smashing colocalization associated to $(\C, \K)$. In particular, $\Gamma \1_\C$ can be treated as a coidempotent coalgebra in $\C$, hence Positselski duality implies that there is an equivalence 
     \[\C^{\K-tors}\simeq \C^{\K-comp}\]
     of symmetric monoidal stable $\infty$-categories. 
 \end{theorem}
 
-This gives some new categorical descriptions of categories of interest, like $\SpKpn$ and $\Der(R)^\wedge_p$, as certain categories of contramodules. Admittedly, these new descriptions does not offer any great new insight into the categories, but having a description of ``algebraic nature'' can often be enlightening in itself, as it could allow us to pull in ideas from other areas of mathematics. 
+This finally gives the description we were after, and we can conclude that there is an equivalence 
+\[\Sp_\Kpn \simeq \Contra_{\M\np \S}(\Sp\np)\]
+of symmetric monoidal stable $\infty$-categories. 
 
-\begin{example}
-    In the case $\C= \Spn$ and $C = \Mn\S$, we get symmetric monoidal equivalences 
-    \[\Comod_{\Mn\S}(\Spn) \simeq \Mn \text{ and } \Contra_{\Mn\S}(\Spn)\simeq \SpKpn.\]
-\end{example}
+This description is all well and good, but there is a conceptual peculiarity at play. It would be more intuitive that $\Sp_\Kpn$ should be dependent on a module-like structure over its unit $L_\Kpn \S$, and not the unit $M\np \S$ in the dual category $\M\np$---this is after all the case for the other two categories in the local duality diagram. 
 
-As an added bonus we have in \cref{ch2:addendum} included some work on defining contramodules over topological algebras in the $\infty$-categorical setting. This is not featured in the original paper, but tries to answer some of the questions that arose. We prove that there is an equivalence between comodules over $C$, and the opposite category of modules over the $\C$-linear dual of $C$, which is a pro-dualizable commutative alebra in $\C$ --- which is a way to incorporate a topology on it in the $\infty$-categorical setting. We also argue why this category deserves to be called the category of contramodules over these pro-dualizable algebras. The main takeaway from this added content is that there is an equivalence between $K(n)$-local spectra, $\SpKn$ and contramodules over the $K(n)$-local sphere $\S_{K(n)}$. 
+We have, as an added bonus for this thesis, added \cref{ch2:addendum}, which included some work on defining contramodules over topological algebras in the $\infty$-categorical setting. This is not featured in the original paper, but tries to answer some of the questions that arose. We prove that there is an equivalence between comodules over $C$, and the opposite category of modules over the $\C$-linear dual of $C$, which is a pro-dualizable commutative algebra in $\C$---which is a way to incorporate a topology on it in the $\infty$-categorical setting. We also argue why this category deserves to be called the category of contramodules over these pro-dualizable algebras. The main takeaway from this added content is that we do in fact obtain an equivalence between $\SpKn$ and contramodules over $L_\Kpn\S$. 
+
+
+
+
+
 
 
 
 
 \subsection{Paper III}
 
-In paper I we studied a specific interaction between a localizing subcategory of an abelian category, and a localizing subcategory of a stable $\infty$-category. More precicely, we studied how the adapted homology theory 
-\[E_* \: \Spn \to \ComodE\]
-could be restricted to an adapted homology theory 
-\[E_* \: \Mn \to \Comodt\] 
-where $\Mn$ is a localizing subcategory of $\Spn$, while $\Comodt$ is a localizing subcategory of $\ComodE$. 
+The way Patchkoria--Pstr\a{}gowski proved the exotic equivalence $h\Sp\np \simeq h\Dper(E_*E)$, as discussed above, was to construct a ``categorification'' of the homology theory 
+\[E_* \: \Spn \to \ComodE,\]
+consisting---at least intuitively---of formal $E$-based Adams spectral sequences. This categorification can be interpreted as a local version of Pstr\a{}gowski's category of synthetic spectra, $\LSynE$. This is a rigidly compactly generated symmetric monoidal stable $\infty$-category, which incorporates both homotopical information $\Sp\np$ and algebraic information from $E_*E$; it has, in particular, a $t$-structure with heart $\ComodE$. 
 
-The former homology theory has an associated category of synthetic spectra, $\SynE$, which is a presentable stable $\infty$-category with a right complete $t$-structure compatible with filtered colimits. The heart of this category is precicely $\ComodE$. 
+In the first paper we prove that the $E$-homology functor above could be restricted to a well behaved homology theory 
+\[E_* \: \M\np \to \Comodt.\]
+We know that $\M\np$ is a localizing subcategory of $\Sp\np$, and that $\Comodt$ is a localizing subcategory of $\ComodE$. Hence, we want to show that there is a similar ``categorification'' of the restricted homology theory, and that the resulting category is a localizing subcategory of $\SynE$.  
 
-Motivated by this setup we wanted to understand the interactions between localizing subcategories in a presentable stable $\infty$-category $\C$ with a well-behaved $t$-structure $(\C\geqz, \C\leqz)$, and localizing subcategories of the Grothendieck abelian heart, defined as 
-\[\C^\heart = \C\geqz\cap \C\leqz.\]
-The main goal of the third paper, \cite{aambo_2024_localizing}, is to classify which subcategories in $\C$ that are uniquely determined by information in $\C^\heart$. 
+Motivated by the setup above, the goal of \hyperref[ch3]{paper III} is understand the interactions between localizing subcategories in a presentable stable $\infty$-category $\C$ with a well-behaved $t$-structure $(\C\geqz, \C\leqz)$, and localizing subcategories of the Grothendieck abelian heart, defined as 
+\[\C^\heart = \C\geqz\cap \C\leqz.\] 
+In particular, we want to classify which localizing subcategories in $\C$ that are uniquely determined by a localizing subcategory in $\C^\heart$. 
 
-There are two levels to such a classification. A localizing subcategory of $\C$ determines a weak localizing subcategory of $\C^\heart$, and our first result attempts to classify which of the localizing subcategories that are uniquely determined by its associated weak localizing subcategory. 
-
-As a short hand name we say a category $\C$ is $t$-stable if it is a presentable stable $\infty$-category with a right complete $t$-structure $(\C\geqz, \C\leqz)$, that is compatible with filtered colimits. A localizing ideal $\L\subseteq \C$ is said to be $\pi$-stable, if $X\in \L$ if and only if $\pi_k^\heart X \in \L^\heart$ for all $k\in \Z$.  
+There are two levels to such a classification. A $t$-structure compatible localizing subcategory $\L$ of $\C$ determines a weak localizing subcategory $\L^\heart$ of $\C^\heart$, and our first result classifies those $\L$ who are uniquely determined by $\L^\heart$. 
 
 \begin{theorem}[{\cref{ch3:thm:premain}}]
-    If $\C$ is a $t$-stable $\infty$-category, then there is a one-to-one correspondence
-    \[\pistable \simeq \weaklocalizing\]
-    between $\pi$-stable localizing subcategories in $\C$ and weak localizing subcategories in $\C^\heart$. 
+    There is a one-to-one correspondence
+    \[\pistable \simeq \weaklocalizing,\]
+    where a localizing ideal $\L\subseteq \C$ is said to be $\pi$-stable if $X\in \L$ if and only if $\pi_k^\heart X \in \L^\heart$ for all $k\in \Z$.  
 \end{theorem}
 
-This generalizes a correspondence for noetherian commutative rings, due to Takahashi in \cite{takahashi_2009}, where he proves that there is a bijection between $\pi$-stable localizing subcategories of $\Der(R)$ and weak localizing subcategories of $\Mod_R$. For example, it lifts Takahashi's correspondence to noetherian schemes. 
+The second level comes from starting with a localizing subcategory $\L^\heart$ of $\C^\heart$, and try to understand how to lift such a category to a localizing subcategory of $\C$. The difference between a weak localizing subcategory and a localizing subcategory is given by certain exact sequences in $\C^\heart$. One should then perhaps expect that the difference between a classification of localizing subcategories of $\C$ that have a weak localizing heart, compared to a localizing heart, is also detected by certain exact sequences. This is precisely what happens.
 
-The second level comes from starting with a localizing subcategory $\L^\heart$ of $\C^\heart$, and try to understand how to lift such a category to a localizing subcategory of $\C$. The difference between a weak localizing subcategory and a localizing subcategory is given by certain exact sequences in $\C^\heart$. One should then perhaps expect that the difference between a classification of localizing subcategories of $\C$ that have a weak localizing heart, compared to a localizing heart, is also detected by certian exact sequences. This is precisely what happens. 
-
-A localizing subcategory $\L\subseteq \C$ is said to be $\pi$-exact if it is $\pi$-stable and is the kernel of a $t$-exact functor on $\C$. 
-
-\begin{theorem}
-    If $\C$ is a $t$-stable $\infty$-category, then there is a one-to-one correspondence
+\begin{theorem}[{\cref{ch3:thm:main}}]
+    There is a one-to-one correspondence
     \[\piexact \simeq \ablocalizing,\]
-    which factors through the correspondence
+    where a localizing subcategory $\L\subseteq \C$ is said to be $\pi$-exact if it is $\pi$-stable and is the kernel of a $t$-exact functor on $\C$. This correspondence factors through the correspondence
     \[\separating \simeq \ablocalizing\]
-    due to Lurie.  
+    due to Lurie. 
 \end{theorem}
 
-As an added bonus, we have in this thesis included an addendum on the motivating example $\Syn_E$, see \cref{ch3:addendum}, which is not featured in the original paper. There we prove some added results about compact generation of the $\pi$-exact lift, as well as relate these ideas back to their source in Paper I. In particular, we prove that the $\pi$-exact lift of $\Comodt$ in $\SynE$ is a compactly generated localizing $\otimes$-ideal, which allows us to compute its deformation theoretical properties: it has generic fiber $\Mn$ and special fiber $\Der(\Comodt)$. This is exactly the properties one would expect for it to be the underlying deformation associated to the adapted homology theory $E_* \: \Mn \to \Comodt$, as studied in \cref{ch1}. 
+The paper itself is written without the explicit goal of understanding the category of synthetic spectra. We have thus added \cref{ch3:addendum}---which is not featured in the original paper---where we focus on synthetic spectra specifically. Therein we prove some added results about compact generation of the $\pi$-exact lift, as well as relate these ideas back to their source in the first paper. In particular, we prove that the $\pi$-exact lift of $\Comodt$ in $\LSynE$ is a compactly generated localizing $\otimes$-ideal, which allows us to compute its deformation theoretical properties: it has generic fiber $\Mn$ and special fiber $\StableE$. This is exactly the properties one would expect for it to be the categorification of the homology theory $E_* \: \Mn \to \Comodt$. 
 
 

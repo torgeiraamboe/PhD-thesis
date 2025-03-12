@@ -5,7 +5,7 @@
 
 As mentioned in the abstract, all of the three papers in this thesis are motivated by understanding certain aspects of chromatic homotopy theory. Even though good introductions to this topic abound, we give here an overview, trying in particular to tie it to the ideas already introduced. Our approach is inspired by \cite{barthel-beaudry_19}. 
 
-Chromatic homotopy theory, in very crude words, is really a perspective---or maybe a toolbox---to study the $\infty$-category of spectra, $\Sp$, in which one decomposes it to its smalles fundamental pieces. An often repeated analogy is that of a prism. If $\Sp$ consists of pure white light, then shining it through the ``chromatic lens'' decomposes it to distinct colors, labeled by an integer $n$ called the \emph{chromatic height}. 
+Chromatic homotopy theory, in very crude words, is really a perspective---or maybe a toolbox---to study the $\infty$-category of spectra, $\Sp$, in which one decomposes it to its smallest fundamental pieces. An often repeated analogy is that of a prism. If $\Sp$ consists of pure white light, then shining it through the ``chromatic lens'' decomposes it to distinct colors, labeled by an integer $n$ called the \emph{chromatic height}. 
 
 \begin{center}
 \begin{tikzcd}
@@ -49,7 +49,7 @@ In \cite{bousfield_1979_localization}, Bousfield developed a general machinery f
 %Via the lens of tensor-triangulated geometry, one could think of $\sp$ as the category of quasi-coherent sheaves of tensor-triangulated categories over the Balmer spectrum $\mathrm{Spc}(\sp)$, and similarily for $D(\Z)$. On a spectrum $X$, $p$-localization is given by restricting the corresponding sheaf to the subspectrum lying under the closed point corresponding to $p$. Similarily, for $D(\Z)$: its balmer spectrum is homeomorphic to $\mathrm{Spec}(\Z)$, and localization is restriction to the closed(?) set containing only $p$ and the generic point.
 
 
-By using the classical artithmetic fracture square, 
+By using the classical arithmetic fracture square, 
 \begin{center}
     \begin{tikzcd}
         \Z_{(p)} \arrow[r] \arrow[d] & \Z_p \arrow[d]  \\
@@ -75,7 +75,7 @@ where $(A)_p^\wedge$ denotes derived $p$-completion of $A$, as in \cref{ch0:ex:d
     If $\L$ is a minimal localizing subcategory, then any non-zero object $K\in \L$ generates $\L$ as a localizing subcategory: $\Loc_\C(K)\simeq \L$.
 \end{remark}
 
-The study of minimal localizing subcategories is tightly connected to local duality, as in \cref{ch0:ssec:local-duality}. By \cite[2.26]{barthel-heard-valenzuela_2018}, we get from any local duality diagram a fracture square, which for the local duality context $(\Der(\Z_{(p)}), \F_p)$ gives precicely the classical arithmetic fracture square above. 
+The study of minimal localizing subcategories is tightly connected to local duality, as in \cref{ch0:ssec:local-duality}. By \cite[2.26]{barthel-heard-valenzuela_2018}, we get from any local duality diagram a fracture square, which for the local duality context $(\Der(\Z_{(p)}), \F_p)$ gives precisely the classical arithmetic fracture square above. 
 
 \begin{proposition}
     Let $\L$ be a minimal localizing subcategory of $\Der(\Z_{(p)})$. Then either $\L \simeq \Der(\Q)$ or $\L$ is equivalent to the category of derived $p$-complete objects, $\L\simeq \Der(\Z_{(p)})^{p-\mathrm{comp}}$.
@@ -83,7 +83,7 @@ The study of minimal localizing subcategories is tightly connected to local dual
 
 Now, if $\Sp_{(p)}$ is supposed to be a homotopical enrichment of $\Der(\Z_{(p)})$, we should expect there to be an analogy of this decomposition for $p$-local spectra, which is indeed the case. The first to study such squares in topology was Sullivan in his 1970 MIT notes, where he constructed the analogous square for nilpotent spaces, see \cite[3.20]{sullivan_05}. This was later lifted up to spectra by Bousfield in \cite[2.9]{bousfield_1979_localization}, and takes the following form. 
 
-If $\S_{(p)}$ denotes the $p$-local sphere spectrum, we have a spectral artithmetic fracture square\index{Arithmetic fracture square}
+If $\S_{(p)}$ denotes the $p$-local sphere spectrum, we have a spectral arithmetic fracture square\index{Arithmetic fracture square}
 
 \begin{center}
     \begin{tikzcd}
@@ -135,6 +135,7 @@ These field objects $\Kpn$ were constructed by Morava in the early 70's, by topo
 It now remains to understand how these field objects $\Kpn$ are related to the spectral arithmetic fracture square above. If the $\Sp_\Kpn$'s all form minimal localizing subcategories, and they in some sense interpolate between rational information at height $0$, and $p$-local information at height $\infty$, then we should perhaps expect there to be an infinite sequence of fracture squares---starting from $L_\Q \S \simeq H\Q$, and converging to $\S_{(p)}$. This is indeed the case. 
 
 \begin{construction}
+    \label{ch0:const:chromatic-fracture-square}
     Let $L\np := L_{K_p(0)\vee \cdots \vee \Kpn}$. By Ravenel's smash product theorem, see \cite[7.5.6]{ravenel_92}, the functor $L\np\colon \Sp_{(p)}\longrightarrow \Sp_{(p)}$ is a smashing localization. The \emph{chromatic fracture square}\index{Chromatic fracture square}, generally attributed to Hopkins, is then of the form 
     \begin{center}
         \begin{tikzcd}
@@ -173,7 +174,7 @@ We will not explain in detail how Morava obtained such a spectrum, and instead c
 
 \begin{construction}
     \index{Johnson--Wilson theory}
-    Let $p$ be a prime, $n$ a natural number and $E_p(n)_* := \Z_{(p)}[v_1, \ldots, v_{n-1}, v_n^{\pm}]$. This is obtained from the coefficient ring of the Brown--Peterson spectrum $\BP$---essentially a $p$-local version of the complex cobordism spectrum $\MU$---by quotienting out all the generators $v_k$ for $k>n$ and inverting $v_n$. This ring is a $\BP_*$-module, and satisfies a certain flatness condition called \emph{Landweber flatness}, see \cite{landweber_76}. Tensoring with $E_p(n)_*$ is not exact as a $\Mod_{\BP_*}\to \Mod_{E_p(n)_*}$, but it \emph{is} exact as a functor on $\Comod_{\BP_*\BP}$. Hence, as $\BP$-homology lands in this Grothendieck abelian category---$\BP$ is Adams type---we can define a functor 
+    Let $p$ be a prime, $n$ a natural number and $E_p(n)_* := \Z_{(p)}[v_1, \ldots, v_{n-1}, v_n^{\pm}]$. This is obtained from the coefficient ring of the Brown--Peterson spectrum $\BP$---essentially a $p$-local version of the complex cobordism spectrum $\MU$---by killing all the generators $v_k$ for $k>n$ and inverting $v_n$. This ring is a $\BP_*$-module, and satisfies a certain flatness condition called \emph{Landweber flatness}, see \cite{landweber_76}. Tensoring with $E_p(n)_*$ is not exact as a $\Mod_{\BP_*}\to \Mod_{E_p(n)_*}$, but it \emph{is} exact as a functor on $\Comod_{\BP_*\BP}$. Hence, as $\BP$-homology lands in this Grothendieck abelian category---$\BP$ is Adams type---we can define a functor 
     \[\Sp \overset{\BP_*}\to \Comod_{\BP_*\BP}\overset{E_p(n)_*\otimes_{\BP_*}-}\to \mathrm{gr}\Ab,\]
     which by the properties mentioned is a homology theory. Via Brown's representability theorem, see \cite[Theorem 1]{brown_1962}, this homology theory is governed by a spectrum $E_p(n)$ such that $\pi_* E_p(n) \simeq E_p(n)_*$. This spectrum is called the height $n$ \emph{Johnson-Wilson theory}. 
 \end{construction}
@@ -353,7 +354,7 @@ We wanted to construct a local duality diagram that categorified the chromatic f
 \end{remark}
 
 \begin{proof}
-    By definition the category $\M\np$ is the full subcategory of $L_{n-1,p}$-acyclics in $\Sp\np$ and $M\np$ coincides with the $L_{n-1,p}$-acyclification. By \cite[6.10]{hovey-strickland_99} $L_{n-1,p}$-localization is the finite localization away from $L\np F(n)$, which proves equivalence $(2)$. This also means that the $L_{n-1,p}$-acyclics are precicely the objects in 
+    By definition the category $\M\np$ is the full subcategory of $L_{n-1,p}$-acyclic objects in $\Sp\np$ and $M\np$ coincides with the $L_{n-1,p}$-acyclification. By \cite[6.10]{hovey-strickland_99} $L_{n-1,p}$-localization is the finite localization away from $L\np F(n)$, which proves equivalence $(2)$. This also means that the $L_{n-1,p}$-acyclic objects are precisely the objects in 
     \[\Loc^\otimes_{\Sp\np}(L\np F(n))=:\Sp\np\Ktors,\]
     giving the equivalences $\M\np \simeq \Sp\np\Ktors$ and $\Gamma \simeq M\np$, proving $(1)$. One can also see this by the fact that $M\np$ preserves compact objects, as it is smashing by \cref{ch0:prop:monochromatization-is-smashing}, which also implies that $\M\np$ is closed under colimits. The compact objects $L\np X\in \Sp\np$ for $X$ any finite spectrum of type $n$ are also monochromatic, as 
     \[E_{n-1,p *} L\np X \cong E_{n-1,p *}X\cong 0,\]
@@ -400,7 +401,7 @@ We have a similar construction in the case of modules over any of the models for
 
 \begin{construction}
     \label{ch0:const:chromatic-duality-modules}
-    Let $n$ be a non-negative integer, $p$ a prime, and $E$ some height $n$ Morava $E$ theory (eg. Johnson--Wilson theory or Lubin--tate theory). The object $E/I_n$ is compact in $\ModE$ and generates a localizing tensor ideal 
+    Let $n$ be a non-negative integer, $p$ a prime, and $E$ some height $n$ Morava $E$ theory (eg. Johnson--Wilson theory or Lubin--Tate theory). The object $E/I_n$ is compact in $\ModE$ and generates a localizing tensor ideal 
     \[\Modt := \Loc^\otimes_{\ModE}(E/I_n),\] 
     where we use the superscript $I_n$ for simplicity. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\ModE, \{E/I_n\})$:
     \begin{center}
