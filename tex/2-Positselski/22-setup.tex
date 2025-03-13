@@ -1,14 +1,14 @@
 
 \section{General preliminaries}
 
-The goal of this section is to introduce comodules and contramodules over an $\E_\infty$-coalgebra in some $\infty$-category $\C$. In order to do this we first review some basic facts about coalgebras, monads and comonads. 
+The goal of this section is to introduce comodules and contramodules over an cocommutative coalgebra in some $\infty$-category $\C$. In order to do this we first review some basic facts about coalgebras, monads and comonads. 
 
 We will for the rest of this section work in some fixed presentably symmetric monoidal $\infty$-category $\C$. In other words, $\C$ is an commutative algebra object in $\PrL$, the category of presentable $\infty$-categories and left adjoint functors. In particular, the monoidal product, which we denote by $-\otimes-\:\C\times \C\to\C$ preserves colimits in both variables. We denote the unit of the monoidal structure by $\1$. 
 
 
 \subsection{Coalgebras, monads and comonads}
 
-We denote the category of commutative algebras in $\C$ by $\CAlg(\C)$. These are the coherently commutative ring objects in $\C$. By \cite[2.4.2.7]{Lurie_HA} there is a symmetric monoidal structure on $\C\op$, and we define the category of $\E_\infty$-coalgebras in $\C$ to be the category $\cCAlg(\C):= \CAlg(\C\op)\op$. We will from now on omit the prefix $\E_\infty$ and refer to objects in $\cCAlg(\C)$ as \emph{commutative coalgebras}\index{Coalgebra!Cocommutative}, or simply just \emph{coalgebras}\index{Coalgebra}. Classical coalgebras will be referred to as \emph{discrete}\index{Coalgebra!Discrete} in order to avoid confusion. 
+We denote the category of commutative algebras in $\C$ by $\CAlg(\C)$. These are the coherently commutative ring objects in $\C$. By \cite[2.4.2.7]{Lurie_HA} there is a symmetric monoidal structure on $\C\op$, and we define the category of cocommutative coalgebras in $\C$ to be the category $\cCAlg(\C):= \CAlg(\C\op)\op$. Classical coalgebras will be referred to as \emph{discrete}\index{Coalgebra!Discrete} in order to avoid confusion. 
 
 \begin{proposition}
     The following properties hold for the category $\cCAlg(\C)$. 
@@ -32,7 +32,7 @@ Given any $\infty$-category $\D$, the category of endofunctors $\Fun(\D, \D)$ ca
 \begin{definition}
     \index{Monad}
     \index{Comonad}
-    A monad $M$ on $\D$ is an $\E_1$-algebra in $\Fun(\D, \D)$, and a comonad $C$ is an $\E_1$-coalgebra in $\Fun(\D, \D)$. 
+    A monad $M$ on $\D$ is an associative algebra in $\Fun(\D, \D)$, and a comonad $C$ is a coassociative coalgebra in $\Fun(\D, \D)$. 
 \end{definition}
 
 \begin{example}
@@ -55,7 +55,7 @@ The category $\D$ is left tensored over $\Fun(\D, \D)$ via evaluation of functor
 
 Given a monad $M$ on $\D$ we have a forgetful functor 
 \[U_M\: \LMod_M(\D)\to \D.\] 
-By \cite[4.2.4.8]{Lurie_HA} this functor admits a left adjoint $F_M\: \D\to \LMod_M(\D)$ given by $X\longmapsto MX$. We call this the free module functor. The adjunction $F_M\dashv U_M$ is called the \emph{free-forgetful} adjunction of $M$. 
+By \cite[4.2.4.8]{Lurie_HA} this functor admits a left adjoint $F_M\: \D\to \LMod_M(\D)$ given by $X\longmapsto MX$. We call this the \emph{free module} functor. The adjunction $F_M\dashv U_M$ is called the \emph{free-forgetful} adjunction of $M$. 
 
 \begin{definition}
     \index{Monad!-ic adjunction}
@@ -139,7 +139,7 @@ Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-como
 
 \begin{definition}
     \index{Contramodule}
-    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra. A \emph{contramodule} over $C$ is a module over the internal hom-monad $\iHom_\C(C,-)\:\C\to \C$. The category of contramodules over $C$ in $\C$ is the corresponding Eilenberg--Moore category, which will be denoted $\ContraC(\C)$. 
+    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra. A \emph{contramodule} over $C$ is a module over the internal hom-monad $\iHom(C,-)\:\C\to \C$. The category of contramodules over $C$ in $\C$ is the corresponding Eilenberg--Moore category, which will be denoted $\ContraC(\C)$. 
 \end{definition}
 
 \begin{notation}
@@ -175,9 +175,9 @@ The following proposition is standard for monads and comonads, see for example \
 
 Lurie's version of the Barr--Beck monadicity theorem, see \cite[Section 4.7]{Lurie_HA}, allows us to recognize monadic functors from simple criteria. Combined with a recognition theorem for when a monoidal monadic functor is equivalent to $R\otimes -$ for some commutative ring $R$, Mathew--Neumann--Noel extended the Barr--Beck theorem to a monoidal version. In this short section we prove a categorical dual version of their result. 
 
-Let $F:\C\rightleftarrows \D:G$ pair of adjoint functors between symmetric monoidal categories, such that the left adjoint $F$ is symmetric monoidal. This means that the right adjoint $G$ is lax-monoidal, and does in particular preserve algebra objects. There is for any two objects $X\in \C$ and $Y\in \D$, a natural map
+Let $F:\C\rightleftarrows \D:G$ be a pair of adjoint functors between presentably symmetric monoidal $\infty$-categories, such that the left adjoint $F$ is symmetric monoidal. This means that the right adjoint $G$ is lax-monoidal, and does in particular preserve algebra objects. There is for any two objects $X\in \C$ and $Y\in \D$, a natural map
 \[F(G(Y)\otimes_\C X)\overset{\simeq}\to FG(Y)\otimes_\D F(X) \to Y\otimes_\D F(X)\]
-where the last map is given by the adjunction counit. By the adjunction property, there is an adjoint map 
+where the first map is by the symmetric monoidality of $F$, and the second is given by the adjunction counit. By the adjunction property, there is an adjoint map 
 \[G(Y)\otimes_\C X \to G(Y\otimes_\D F(X)).\]
 
 \begin{definition}
@@ -198,7 +198,7 @@ We now state the monoidal Barr--Beck theorem of Mathew--Neumann--Noel.
         \item $G$ preserves arbitrary colimits, and
         \item $F\dashv G$ satisfies the monadic projection formula,
     \end{enumerate}
-    then the adjunction is monadic, and there is an equivalence of monads 
+    then the adjunction is monoidally monadic, and there is an equivalence of monads 
     \[GF \simeq G(\1_\D)\otimes_\C(-).\]
     In particular, there is an equivalence $\D\simeq \Mod_{G(\1_\D)}(\C)$ of symmetric monoidal $\infty$-categories. 
 \end{theorem}
@@ -210,14 +210,14 @@ We now state the monoidal Barr--Beck theorem of Mathew--Neumann--Noel.
 There is also a dual version of the classical Barr--Beck theorem, see for example \cite[4.5]{brantner-mathew_2023}. We wish to extend this to a monoidal version. 
 
 Let $F:\C\rightleftarrows \D:G$ pair of adjoint functors between symmetric monoidal categories, such that the right adjoint $G$ is symmetric monoidal. This means that the left adjoint $F$ is op-lax-monoidal, and does in particular preserve coalgebra objects. There is for any two objects $X\in \C$ and $Y\in \D$, a natural map
-\[G(F(X)\otimes_\D Y)\overset{\simeq}\to GF(X)\otimes_\C G(Y) \to X\otimes_\C G(Y)\]
-where the last map is given by the adjunction unit. By the adjunction property, there is an adjoint map 
-\[F(X)\otimes_\D Y \to F(X\otimes_\C G(Y)).\]
+\[X\otimes_\C G(Y)\to GF(X)\otimes_\C G(Y) \overset{\simeq}\to G(F(X)\otimes_\D Y)\]
+where the first map is given by the adjunction unit and the second by the symmetric monoidality of $G$. By the adjunction property, there is an adjoint map 
+\[F(X\otimes_\C G(Y)) \to F(X)\otimes_\D Y .\]
 
 \begin{definition}
     \index{Projection formula!Comonadic}
     An adjoint pair $F\dashv G$ as above is said to satisfy the \emph{comonadic projection formula} if the map 
-    \[F(X)\otimes_\D Y \to F(X\otimes_\C G(Y))\]
+    \[F(X\otimes_\C G(Y)) \to F(X)\otimes_\D Y\]
     is an equivalence for all $X\in \C$ and $Y\in \D$. 
 \end{definition}
 
@@ -236,7 +236,7 @@ where the last map is given by the adjunction unit. By the adjunction property, 
 \end{theorem}
 
 \begin{remark}
-    Before the proof we just remark why the above statement makes sense. The unit $\1_\C$ in a presentably symmetric monoidal $\infty$-category $\C$ is both a commutative algebra\index{Algebra!Commutative} and a cocommutative coalgebra\index{Coalgebra!Cocommutative}. In the above adjunction we have that the right adjoint $G$ is symmetric monoidal, hence its left adjoint $F$ is op-lax monoidal. In particular, it sends coalgebras to coalgebras, meaning that $F(\1_\C)$ is an $\E_\infty$-coalgebra in $\D$. By \cref{ch2:ex:coalgebra-comonad} tensoring with $F(\1_\C)$ is a comonad, not a monad, as for \cref{ch2:thm:monoidal-BB}. 
+    Before the proof, let us explain intuitively why the statement makes sense. The unit $\1_\C$ in a presentably symmetric monoidal $\infty$-category $\C$ is both a commutative algebra\index{Algebra!Commutative} and a cocommutative coalgebra\index{Coalgebra!Cocommutative}. In the above adjunction we have that the right adjoint $G$ is symmetric monoidal, hence its left adjoint $F$ is op-lax monoidal. In particular, it sends coalgebras to coalgebras, meaning that $F(\1_\C)$ is an cocommutative coalgebra in $\D$. By \cref{ch2:ex:coalgebra-comonad} tensoring with $F(\1_\C)$ is a comonad, not a monad, as for \cref{ch2:thm:monoidal-BB}. 
 \end{remark}
 
 \begin{proof}

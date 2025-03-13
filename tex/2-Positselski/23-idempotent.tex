@@ -40,7 +40,7 @@ The first reason for our focus on coidempotent coalgebras is that their categori
     The symmetric monoidal structure on the category $\Comod_C$ is closed. 
 \end{lemma}
 \begin{proof}
-    As the cofree-forgetful adjunction creates colimits in $\Comod_C$ the functor 
+    As the cofree-forgetful adjunction creates colimits in the category $\Comod_C$, the functor 
     \[-\otimes_C- \simeq C\otimes (-\otimes -)\: \Comod_C \times \Comod_C \to \Comod_C\] 
     preserves colimits separately in each variable. In particular, the functor $M\otimes_C (-)$ preserves colimits, hence has a right adjoint $\iHom_C(M,-)$ for any comodule $M$ by the adjoint functor theorem, \cite[5.5.2.9]{lurie_09}. This determines a functor 
     \[\iHom_C(-,-)\: \Comod_C\op\times \Comod_C\to \Comod_C\]
@@ -101,7 +101,7 @@ can be given the structure of a symmetric monoidal functor when the coalgebra $C
 
 \begin{lemma}
     \label{ch2:lm:free-contra-monoidal}
-    Let $C$ be a coidempotent cocommutative coalgebra in $\C$. The category of $C$-contramodules $\Contra_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category making the free contramodule functor a symmetric monoidal localization.
+    Let $C$ be a coidempotent cocommutative coalgebra in $\C$. The category of $C$-contramodules $\Contra_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category, making the free contramodule functor a symmetric monoidal localization.
 \end{lemma}
 \begin{proof}
     The functor $\iHom(C,-)\: \C \to \C$ is an idempotent functor, as we have
@@ -169,7 +169,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
     \[\Hom(B, \iHom(C, C\otimes A)) \simeq \Hom(C\otimes B, C\otimes A).\]
     Both of these are in the image of the forgetful functor 
     \[U_C\:\Comod_C\to \C.\]
-    As it is fully faithful whenever $C$ is coidempotent we get 
+    As $U_C$ is fully faithful whenever $C$ is coidempotent, we get 
     \[\Hom(C\otimes B, C\otimes A) \simeq \Hom_C(C\otimes B, C\otimes A),\]
     where we recall that the latter denotes maps of comodules. By the cofree-forgetful adjunction we have 
     \[\Hom_C(C\otimes B, C\otimes A) \simeq \Hom(C\otimes B, A),\]
