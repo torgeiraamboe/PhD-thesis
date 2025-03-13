@@ -1,5 +1,5 @@
 
-\section{Addendum: Modules over pro-algebras}
+\section{Addendum: Contramodules over topological rings}
 \label{ch2:addendum}
 
 We ended the last section by wishing for a way to construct a well behaved category of contramodules over the $K_p(n)$-local and $T_p(n)$-local spheres, $L_\Kpn\S$ and $L_{T_p(n)}\S$. The current section is not a part of the paper \cite{aambo_2024_positselski}, but we wanted to include some progress on the above question. 
@@ -18,11 +18,12 @@ Let us make this heuristic more precise. For the rest of this section we let $\C
 
 \begin{definition}
     \index{Algebra!Pro-dualizable}
-    A \emph{pro-dualizable algebra} in $\C$ is a commutative algebra in $\Pro(\C\dual)$. 
+    A commutative algebra $R\in \CAlg(\C)$ is said to be \emph{pro-dualizable algebra}, if there is a commutative algebra $\prolim R_j \in \Pro(\C\dual)$ such that $R\simeq \lim_j R_j$ as commutative algebras.  
 \end{definition}
 
 \begin{definition}
-    Given a pro-dualizable algebra $R$, we define the category of contramodules over $R$ to be the category opposite to modules over $R$, i.e., $\Contra_R := \Mod_{R}(\Pro(\C\dual))\op.$
+    Given a pro-dualizable algebra $R \simeq \lim_j R_j$, we define the category of contramodules over $R$ to be the category opposite to modules over its pro-dualizable presentation $\prolim R_j$. In other words, 
+    \[\Contra_R := \Mod_{\prolim R_j}(\Pro(\C\dual))\op.\]
 \end{definition}
 
 \begin{remark}
@@ -77,11 +78,21 @@ The right adjoint functor is rather opaque, but on dualizable coalgebras we have
 \end{proof}
 
 \begin{remark}
+    This is the $\infty$-categorical version of the analog statement in vectorspaces over fields. There is always a dual of a coalgebra in $\Vect_k$, but a general algebra only dualizes to a coalgebra once one remembers the pro-topology. 
+\end{remark}
+
+\begin{remark}
     \label{ch2:rm:coalebra-in-Ind}
     Analyzing the definitions one can see that the $\C$-linear dual $(-)^\vee$ sends a coalgebra $C$ presented by an ind-system $\indcolim C_j$ to the algebra $C^\vee$ presented by the pro-tower $\prolim C_j^\vee$. The inverse to $(-)^\vee$ is given by applying $(-)^\vee$ point-wise to the dualizable objects in the pro-tower, and taking the limit in the opposite category, i.e. the colimit in $\C$. 
 \end{remark}
 
 The goal is to recover more global information about general objects in $\C$, not just algebras and coalgebras. In order to do this we utilize a duality between stabilization and costabilization of $\infty$-categories. 
+
+\begin{definition}
+    Let $\mathcal{E}$ be a presentable $\infty$-category. Its stabilization, denoted $\Sp(\mathcal{E})$, is defined to be the presentable stable $\infty$-category $\mathcal{E}\otimes^L \Sp$. Its costabilization is defined by $\coSp(\mathcal{E}):= \Sp(\mathcal{E}\op)\op$. 
+\end{definition}
+
+The costabilizaton is always a stable $\infty$-category, as the opposite of a stable category is still stable. However, the costabilization of a non-zero category $\mathcal{E}$ might be zero, as is the case for $\Spaces_*$---the category of pointed spaces. 
 
 \begin{proposition}
     \label{ch2:prop:comodules-and-promodules}
@@ -90,12 +101,12 @@ The goal is to recover more global information about general objects in $\C$, no
 \end{proposition}
 \begin{proof}
     The equivalence from \cref{ch2:lm:sweedler-duality} induces an equivalence of slice categories 
-    \[(\cCAlg(\C)\op)_{/C}\simeq \CAlg(\Pro(\C\dual))_{/C^\vee},\]
+    \[(\cCAlg(\C))_{/C}\op \simeq \CAlg(\Pro(\C\dual))_{/C^\vee},\]
     see \cite[5.2.5.1]{lurie_09}. The slice category over $C$ of the opposite category is equivalent to the opposite category of the coslice category over $C$, giving 
     \[(\cCAlg(\C)\op)_{/C} \simeq \cCAlg(\C)\op_{C/}.\]
     Taking spectrum objects on both sides induces an equivalence
     \[\Sp(\cCAlg(\C)_{C/}\op)\simeq \Sp(\CAlg(\Pro(\C\dual))_{/C^\vee})\]
-    The left hand side is equivalent to the opposite category of cospectrum objects $\cCAlg(\C)$, in other words, 
+    The left hand side is by definition equivalent to the opposite category of cospectrum objects:
     \[\Sp(\cCAlg(\C)_{C/}\op)\simeq \coSp(\cCAlg(\C)_{C/})\op,\]
     which together gives an equivalence
     \[\coSp(\cCAlg(\C)_{C/})\op \simeq \Sp(\CAlg(\Pro(\C\dual))_{/C^\vee}).\]
@@ -106,83 +117,63 @@ The goal is to recover more global information about general objects in $\C$, no
     This should be viewed as an $\infty$-categorical analog of the anti-equivalence between comodules over a cocommutative coalgebra $C\in \Vect_k$ and the category of linearly compact modules over $C^\vee$, see \cite[II.29]{lefschetz_1942}. 
 \end{remark}
 
-Using the version of local duality in \cref{ch2:introthm:B}, this means that we have the following visually beautiful depiction of local duality: 
+\begin{corollary}
+    There is an equivalence $\Comod_C \simeq \Contra_{C^\vee}$. 
+\end{corollary}
 
-\begin{center}
-    \begin{tikzcd}
-        & 
-        \Mod_{L\1} 
-        \arrow[d, xshift=-2pt] 
-        \arrow[rdd, dotted, bend left] 
-        & \\
-        & 
-        \C \arrow[u, xshift=2pt] 
-        \arrow[ld, yshift=-2pt, xshift=1pt] 
-        \arrow[rd, yshift=2pt, xshift=1pt]                  
-        & \\
-        \Comod_{\Gamma \1} 
-        \arrow[ru, yshift=2pt, xshift=-1pt] 
-        \arrow[rr, yshift=2pt, "\simeq"] 
-        \arrow[ruu, dotted, bend left] 
-        &                                                     
-        & \Contra_{\Lambda\1} 
-        \arrow[lu, yshift=-2pt, xshift=-1pt] 
-        \arrow[ll, yshift=-2pt]
-    \end{tikzcd}
-\end{center}
 
 \subsection{Monochromatic contramodules}
 
-Let us now turn our attention to the setting of chromatic homotopy theory. As $M\np\S$ is a cocommutative coalgebra we know that its dual $M\np\S^\vee$ is a commutative ring spectrum in $\Sp\np$. By \cite[2.21(4)]{barthel-heard-valenzuela_2018} the $K_p(n)$-localization functor, treated as an endofunctor on $\Sp\np$, is equivalent to $\iHom(M\np\S,-)$. Applied to the $E\np$-local sphere $L\np\S$ this is exactly the dual of $M\np\S$
+Let us now turn our attention to the setting of chromatic homotopy theory. As $M\np\S$ is a cocommutative coalgebra we know that its dual $M\np\S^\vee$ is a commutative ring spectrum in $\Sp\np$. By \cite[2.21(4)]{barthel-heard-valenzuela_2018} the $K_p(n)$-localization functor, treated as an endofunctor on $\Sp\np$, is equivalent to $\iHom(M\np\S,-)$. Applied to the $E\np$-local sphere $L\np\S$ this is exactly the dual of $M\np\S$:
 \[M\np \S^\vee \simeq \iHom(M\np\S, L\np\S)\simeq L_\Kpn L\np\S \simeq L_\Kpn\S.\]
-Note that, as an endofunctor on $\Sp\np$, the $K_p(n)$-localization functor is not symmetric monoidal. But, as the inclusion $\Sp_\Kpn\hookrightarrow \Sp\np$ is lax symmetric monoidal it sends algebras to algebras, which in particular means that $L_\Kpn\S$ is also an $\E_\infty$-ring spectrum in $\Sp\np$. 
+Note that, as an endofunctor on $\Sp\np$, the $K_p(n)$-localization functor is not symmetric monoidal. But, as the inclusion $\Sp_\Kpn\hookrightarrow \Sp\np$ is lax symmetric monoidal it sends algebras to algebras, which in particular means that $L_\Kpn\S$ is also a commutative ring spectrum in $\Sp\np$. We want to more properly understand the pro-dualizable structure that arises by the above equivalences, and tie it to previous such constructions. 
 
 Let $X$ be any spectrum. By \cite[7.10]{hovey-strickland_99} there is a tower of generalized Moore spectra 
-\[\cdots \to M_2 \to M_1 \to M_0\]
-such that $L_\Kpn X \simeq \lim_j (L\np X \otimes M_j)$. In particular, any $K_p(n)$-local spectrum\index{$K_p(n)$-local spectra} is a pro-spectrum indexed by the generalized Moore tower. Now, consider the pro-tower $\prolim (L\np X \otimes M_j)$ for $X=\S$. As $E\np$-localization is smashing, there is an equivalence 
-\[\prolim (L\np \S \otimes M_j)\simeq \prolim L\np M_j.\]
+\[\cdots \to F_2 \to F_1 \to F_0\]
+such that $L_\Kpn X \simeq \lim_j (L\np X \otimes F_j)$. These are usually denoted by $M_j$, but in order to try to keep these separate from the monochromatic notation we have chosen to instead use $F_j$. In particular, any $K_p(n)$-local spectrum\index{$K_p(n)$-local spectra} is a pro-spectrum indexed by the generalized Moore tower. Now, consider the pro-tower $\prolim (L\np X \otimes F_j)$ for $X=\S$. As $E\np$-localization is smashing, there is an equivalence 
+\[\prolim (L\np \S \otimes F_j)\simeq \prolim L\np F_j.\]
 
 \begin{lemma}
     \label{ch2:lm:Moore-tower-in-local-dualizable}
-    The pro-tower $\prolim L\np M_j$ is a commutative algebra in $\Pro(\Sp\np\dual)$. 
+    The pro-tower $\prolim L\np F_j$ is a commutative algebra in $\Pro(\Sp\np\dual)$. 
 \end{lemma}
 \begin{proof}
-    By \cite[6.3]{davis-lawson_2014} the Moore tower $\prolim M_j$ is a commutative algebra in $\Pro(\Sp)$. As each generalized Moore spectrum is a finite spectrum it is dualizable, and as $E\np$-localization is symmetric monoidal it preserves dualizable objects. Hence, the tower $\prolim L\np M_j$ is a commutative algebra in $\Pro(\Sp\np\dual)$. 
+    By \cite[6.3]{davis-lawson_2014} the Moore tower $\prolim F_j$ is a commutative algebra in $\Pro(\Sp)$. As each generalized Moore spectrum is a finite spectrum it is dualizable, and as $E\np$-localization is symmetric monoidal it preserves dualizable objects. Hence, the tower $\prolim L\np F_j$ is a commutative algebra in $\Pro(\Sp\np\dual)$. 
 \end{proof}
 
 \begin{lemma}
     \label{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}
-    The ind-system $\indcolim L\np M_j^\vee$ dual to the pro-tower $\prolim L\np M_j$ is an cocommutative coalgebra in $\Ind(\Sp\np\dual)$, and taking the colimit gives an equivalence 
-    \[\colim_j L\np M_j^\vee \simeq M\np\S\] 
+    The ind-system $\indcolim L\np F_j^\vee$ dual to the pro-tower $\prolim L\np F_j$ is an cocommutative coalgebra in $\Ind(\Sp\np\dual)$, and taking the colimit gives an equivalence 
+    \[\colim_j L\np F_j^\vee \simeq F\np\S\] 
     of cocommutative coalgebras in $\Sp\np$. 
 \end{lemma}
 \begin{proof}
-    By incorporating the multiplicative structure on Moore spectra constructed by Burklund in \cite{burklund_2022}, Li--Zhang proves in \cite[2.1.4]{li-zhang_2023} that we can choose the pro-tower in such a way that each $M_j$ is an $\E_j$-$M_k$-algebra for any $2\geq j \geq k$. In particular, it is an $\E_j$-ring spectrum in $\Sp\np\dual$. This implies that the similar statement holds for the localized pro-tower $\prolim L\np M_j$. In particular, $L\np M_j \in \Alg_{\E_j}(\Sp\np\dual)$. 
+    By incorporating the multiplicative structure on Moore spectra constructed by Burklund in \cite{burklund_2022}, Li--Zhang proves in \cite[2.1.4]{li-zhang_2023} that we can choose the pro-tower in such a way that each $F_j$ is an $\E_j$-$F_k$-algebra for any $2\geq j \geq k$. In particular, it is an $\E_j$-ring spectrum in $\Sp\np\dual$. This implies that the similar statement holds for the localized pro-tower $\prolim L\np F_j$. In particular, $L\np F_j \in \Alg_{\E_j}(\Sp\np\dual)$. 
     
-    By the $\E_j$-operadic version of the equivalence in \cref{lm:florian-dualizable} as proved in \cite[2.21]{peroux_2022}, the dual of each generalized Moore spectrum $M_j$ is an $\E_j$-coalgebra in $\Sp\np\dual$. Hence, the pro-tower $\prolim L\np M_j$ gets sent to an ind-system $\indcolim L_n M_j^\vee$ in $\Sp\np\dual$ under the linear dual functor. By \cite[7.10(c)]{hovey-strickland_99} this ind-system is a presentation of $M\np\S$, as there is an equivalence 
-    \[M\np \S \simeq \colim_j M_j^\vee \otimes L\np\S \simeq \colim_j L\np M_j^\vee.\]
-    Hence it remains to show that $\indcolim L\np M_j^\vee$ is a cocommutative coalgebra in $\Ind(\Sp\np\dual)$ and that the equivalence above is an equivalence of cocommutative coalgebras. 
+    By the $\E_j$-operadic version of the equivalence in \cref{lm:florian-dualizable} as proved in \cite[2.21]{peroux_2022}, the dual of each generalized Moore spectrum $F_j$ is an $\E_j$-coalgebra in $\Sp\np\dual$. Hence, the pro-tower $\prolim L\np M_j$ gets sent to an ind-system $\indcolim L_n F_j^\vee$ in $\Sp\np\dual$ under the linear dual functor. By \cite[7.10(c)]{hovey-strickland_99} this ind-system is a presentation of $M\np\S$, as there is an equivalence 
+    \[M\np \S \simeq \colim_j F_j^\vee \otimes L\np\S \simeq \colim_j L\np F_j^\vee.\]
+    Hence it remains to show that $\indcolim L\np F_j^\vee$ is a cocommutative coalgebra in $\Ind(\Sp\np\dual)$ and that the equivalence above is an equivalence of cocommutative coalgebras. 
 
-    By \cref{ch2:lm:Moore-tower-in-local-dualizable} the pro-tower $\prolim L\np M_j$ is a commutative algebra in $\Pro(\Sp\np\dual)$, hence \cref{ch2:rm:coalebra-in-Ind} implies that the linear dual, which is $\indcolim L\np M_j^\vee$, is a cocommutative coalgebra in $\Ind(\Sp\np\dual)$. As the equivalence $\Ind(\Sp\np\dual)\simeq \Sp\np$ is symmetric monoidal, and given by taking the colimit of the ind-systems, the equivalence $\colim_j L\np M_j^\vee \simeq M\np \S$ is an equivalence of cocommutative coalgebras.  
+    By \cref{ch2:lm:Moore-tower-in-local-dualizable} the pro-tower $\prolim L\np F_j$ is a commutative algebra in $\Pro(\Sp\np\dual)$, hence \cref{ch2:rm:coalebra-in-Ind} implies that the linear dual, which is $\indcolim L\np F_j^\vee$, is a cocommutative coalgebra in $\Ind(\Sp\np\dual)$. As the equivalence $\Ind(\Sp\np\dual)\simeq \Sp\np$ is symmetric monoidal, and given by taking the colimit of the ind-systems, the equivalence $\colim_j L\np F_j^\vee \simeq M\np \S$ is an equivalence of cocommutative coalgebras.  
 \end{proof}
 
 \begin{remark}
-    Li--Zhang also proved in \cite[2.1.5]{li-zhang_2023} that there is an equivalence $L_\Kpn\S \simeq \lim_j M_j$ as $\Kpn$-local ring spectra. As the inclusion $\SpKpn\hookrightarrow \Sp\np$ is lax symmetric monoidal, these are also equivalent as $E\np$-local ring spectra, which is where our story takes place. Alternatively one can prove this directly using \cite[2.1.6]{li-zhang_2023}. 
+    Li--Zhang also proved in \cite[2.1.5]{li-zhang_2023} that there is an equivalence $L_\Kpn\S \simeq \lim_j F_j$ as $\Kpn$-local ring spectra. As the inclusion $\SpKpn\hookrightarrow \Sp\np$ is lax symmetric monoidal, these are also equivalent as $E\np$-local ring spectra, which is where our story takes place. Alternatively one can prove this directly using \cite[2.1.6]{li-zhang_2023}. 
 \end{remark}
 
-We can now summarize the discussion above as follows. The monochromatic sphere $M\np\S$ is a cocommutative coalgebra in $\Sp\np$. It is presented by the ind-system $\indcolim L\np M_j^\vee$, which is a cocommutative coalgebra in $\Ind(\Sp\np\dual)$. The linear dual is a pro-tower $\prolim L\np M_j$ which is a commutative algebra in $\Pro(\Sp\np\dual)$. Its materialization is the $\Kpn$-local sphere as an commutative algebra in $\Sp\np$. 
+We can now summarize the discussion above as follows. The monochromatic sphere $M\np\S$ is a cocommutative coalgebra in $\Sp\np$. It is presented by the ind-system $\indcolim L\np F_j^\vee$, which is a cocommutative coalgebra in $\Ind(\Sp\np\dual)$. The linear dual is a pro-tower $\prolim L\np F_j$ which is a commutative algebra in $\Pro(\Sp\np\dual)$. Its materialization is the $\Kpn$-local sphere as an commutative algebra in $\Sp\np$. 
 
 This allows us to conclude with our wanted description of the category of $K_p(n)$-local spectra. 
 
 \begin{theorem}
     \label{ch2:thm:Kn-is-pro-modules}
     There is a symmetric monoidal equivalence 
-    \[\SpKpn \simeq \Mod_{\prolim L\np M_j}(\Pro(\Sp\np\dual))\op\]
-    between $\Kpn$-local spectra and modules over the pro-dualizable algebra $\prolim L\np M_j$ presenting the $\Kpn$-local sphere $L_\Kpn\S$. 
+    \[\SpKpn \simeq \Mod_{\prolim L\np F_j}(\Pro(\Sp\np\dual))\op\]
+    between $\Kpn$-local spectra and modules over the pro-dualizable algebra $\prolim L\np F_j$ presenting the $\Kpn$-local sphere $L_\Kpn\S$. 
 \end{theorem}
 \begin{proof}
-    \cref{ch2:prop:comodules-and-promodules} gives an equivalence between the category of comodules over the monochromatic sphere, $\Comod_{M\np \S}(\Sp\np)$, and modules over its linear dual. By choosing the ind-presentation of $M\np \S$ constructed in \cref{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}, the linear dual is precisely the pro-tower $\prolim L\np M_j$, which is a commutative algebra in $\Pro(\Sp\np\dual)$. Hence we have a symmetric monoidal equivalence 
-    \[\Comod_{M\np\S}(\Sp\np)\simeq \Mod_{\prolim L\np M_j}(\Pro(\Sp\np\dual))\op.\]
+    \cref{ch2:prop:comodules-and-promodules} gives an equivalence between the category of comodules over the monochromatic sphere, $\Comod_{M\np \S}(\Sp\np)$, and modules over its linear dual. By choosing the ind-presentation of $M\np \S$ constructed in \cref{ch2:lm:coalgebra-ind-presentation-of-monochromatic-sphere}, the linear dual is precisely the pro-tower $\prolim L\np F_j$, which is a commutative algebra in $\Pro(\Sp\np\dual)$. Hence we have a symmetric monoidal equivalence 
+    \[\Comod_{M\np\S}(\Sp\np)\simeq \Mod_{\prolim L\np F_j}(\Pro(\Sp\np\dual))\op.\]
     By \cref{ch2:thm:dual-monoidal-BB} there is a symmetric monoidal equivalence $\Comod_{M\np\S}(\Sp\np)\simeq \M\np$, and by \cite[6.19]{hovey-strickland_99} there is a symmetric monoidal equivalence $\M\np \simeq \SpKpn$. 
 \end{proof}
 
@@ -191,6 +182,34 @@ This allows us to conclude with our wanted description of the category of $K_p(n
 \end{remark}
 
 \begin{remark}
-    The above construction works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch2:thm:Positselski-duality-coidempotent}. In particular, there is a similar pro-presentation of $L_{T_p(n)}\S$, giving rise to an equivalence $\Sp_{T_p(n)}\simeq \Contra_{L_{T_p(n)}\S}$.
+    The above construction works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch2:thm:Positselski-duality-coidempotent}. For a general local duality context $(\C, \K)$, this gives the following visually beautiful depiction of the associated local duality diagram:
+    \begin{center}
+    \begin{tikzcd}
+        & 
+        \Mod_{L_\K\1_\C} 
+        \arrow[d, xshift=-2pt] 
+        \arrow[rdd, dotted, bend left] 
+        & \\
+        & 
+        \C \arrow[u, xshift=2pt] 
+        \arrow[ld, yshift=-2pt, xshift=1pt] 
+        \arrow[rd, yshift=2pt, xshift=1pt]                  
+        & \\
+        \Comod_{\Gamma_\K\1_\C} 
+        \arrow[ru, yshift=2pt, xshift=-1pt] 
+        \arrow[rr, yshift=2pt, "\simeq"] 
+        \arrow[ruu, dotted, bend left] 
+        &                                                     
+        & \Contra_{\Lambda_\K\1_\C} 
+        \arrow[lu, yshift=-2pt, xshift=-1pt] 
+        \arrow[ll, yshift=-2pt]
+    \end{tikzcd}
+    \end{center}
+\end{remark}
+
+\begin{remark}
+    There is a similar pro-dualizable presentation of the $T_p(n)$-local sphere $L_{T_p(n)}\S$, giving rise to an equivalence
+    \[\Sp_{T_p(n)}\simeq \Contra_{L_{T_p(n)}\S}(\Sp\np^f).\]
+    The failure of the telescope conjecture, see \cite{antieau-gepner-heller_2019}, then implies that the two pro-dualizable ring spectra $L_{K_p(n)}\S$ and $L_{T_p(n)}\S$ are not pro-Morita equivalent.  
 \end{remark}
 

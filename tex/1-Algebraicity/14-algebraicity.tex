@@ -329,10 +329,6 @@ Our restricted homology theory $E_*\colon \M\np\longrightarrow \Comodt$ should t
 \end{center}
 Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to monochromatic synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
 
-\begin{addendum}
-    Since writing this paper we have investigated this idea further. We have added a construction of a category we call \emph{monochromatic synthetic spectra} in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}.  
-\end{addendum}
-
 In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. We conjecture that his deformation $\mathscr{E}\np$ is equivalent to $\LSynE$ for big enough primes, which by the above remarks hints towards a monoidal version of \cref{ch1:thm:main-spectra} as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. We do, however, state the conjectured monoidal result, which we hope to pursue in future work.
 
 \begin{conjecture}
@@ -342,11 +338,15 @@ In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:frank
     of $k$-categories. 
 \end{conjecture}
 
+
+
 As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $\Kpn$-local category, i.e., a symmetric monoidal equivalence 
 \[h_k \SpKpn\simeq h_k \Fr\np\Inc.\]
 
 Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\LSynE$ to give a category $\LSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
 
 \begin{addendum}
-    We were reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence, which we feel is still an interesting problem, hence the conjecture stands---at least morally. 
+    \label{ch1:add:shaul-comment-monoidal}
+    We were reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. Since writing this paper we have investigated this idea further. We have added a construction of a category we call \emph{monochromatic synthetic spectra} in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation, see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}
 \end{addendum}
+
