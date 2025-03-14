@@ -2,7 +2,7 @@
 \section{Central ideas}
 \label{ch0:sec:Central-ideas}
 
-As a backdrop for this entire thesis lies the ubiquitous concept of \emph{$\infty$-categories}, as developed by Joyal, Lurie and others---the canonical references being \cite{joyal_02}, \cite{lurie_09} and \cite{Lurie_HA}. We will assume familiarity with $\infty$-categories and their associated standard constructions, and use them all willy-nilly throughout the rest of the thesis. We will sometimes drop the prefix, and hope that the distinction between $\infty$-categories and classical categories will be clear from context.  
+As a backdrop for this entire thesis lies the ubiquitous concept of \emph{$\infty$-categories}, as developed by Joyal, Lurie and others---the canonical references being \cite{joyal_02}, \cite{lurie_09} and \cite{Lurie_HA}. We will assume familiarity with $\infty$-categories and their associated standard constructions, and use them all willy-nilly throughout the rest of the thesis. We will sometimes omit the prefix. The distinction between $\infty$-categories and classical categories should hopefully be clear from context.  
 
 Most $\infty$-categories considered will be \emph{presentable}, in the sense of \cite[Chapter 5]{lurie_09}. 
 
@@ -12,7 +12,9 @@ Most $\infty$-categories considered will be \emph{presentable}, in the sense of 
 
 The $(\infty, 2)$-category of presentable $\infty$-categories, where the morphisms are the colimit-preserving functors, is denoted $\PrL$. It has a symmetric monoidal structure via the Lurie tensor product $\otimes^L$, and we will say a presentable $\infty$-category is \emph{presentably symmetric monoidal} if it is a commutative monoid in $\PrL$. Any such category $\C$ has a symmetric monoidal structure, with the property that the tensor product in $\C$ preserves colimits separately in each variable. The symmetric monoidal product will usually be denoted $-\otimes_\C -$, and its associated unit by $\1_\C$. 
 
-We will also assume knowledge about \emph{stable} $\infty$-categories\index{Stable category}, which are $\infty$-categorical enhancements of triangulated categories. One can, for example, construct presentable stable $\infty$-categories from presentable $\infty$-categories via \emph{stabilization}, defined by formally inverting the desuspension functor $\Omega$. The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, denoted $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
+We will also assume knowledge about \emph{stable} $\infty$-categories\index{Stable category}, which are $\infty$-categorical enhancements of triangulated categories. One can, for example, construct presentable stable $\infty$-categories from presentable $\infty$-categories via \emph{stabilization}. The stabilization of a pointed category $\mathcal{E}$ is defined by formally inverting the desuspension functor $\Omega$:
+\[\Sp(\mathcal{E}) = \colim (\cdots\overset{\Omega}\to\mathcal{E}\overset{\Omega}\to\mathcal{E}).\] 
+The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, denoted $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
 
 \begin{example}
     The stabilization of the $\infty$-category of spaces is the $\infty$-category of \emph{spectra}, denoted $\Sp$. It is the unit for the Lurie tensor product on $\PrLs$, and it is the initial presentably symmetric monoidal stable $\infty$-category. The unit of the symmetric monoidal structure is the \emph{sphere spectrum} $\S$, which is the suspension spectrum of $S^0$.  
@@ -22,7 +24,7 @@ We will also assume knowledge about \emph{stable} $\infty$-categories\index{Stab
     Another example is the derived $\infty$-category of abelian groups, $\Der(\Z)$. This is an $\infty$-categorical version of the classical triangulated derived category of $\Z$. It is a presentably symmetric monoidal stable $\infty$-category, and the unit is the integers $\Z$, treated as a chain complex concentrated in degree $0$. 
 \end{example}
 
-The derived $\infty$-category of $\Z$, as well as the $\infty$-categories of spaces, spectra, and many other interesting $\infty$-categories, satisfy some even nicer conditions than merely being presentable: they have an explicit collection of generators, which satisfy some ``smallness'' condition. 
+The derived $\infty$-category of $\Z$, as well as the $\infty$-categories of spaces, spectra, and many other interesting $\infty$-categories, satisfy some even nicer conditions than merely being presentable: they have an explicit collection of generators, which satisfy some ``smallness'' condition, defined as follows. 
 
 \begin{definition}
     \label{ch0:def:compact-object}
@@ -80,10 +82,10 @@ If we were to assign this thesis a single protagonist, it would be the idea of a
 \begin{enumerate}
     \item In \hyperref[ch1]{paper I} we study how a specific localizing subcategory, appearing in chromatic homotopy theory, interacts with a specific homological functor.
     \item In \hyperref[ch2]{paper II} we study how, in certain situations, the category of comodules over a coalgebra in a stable $\infty$-category forms a localizing subcategory. 
-    \item In \hyperref[ch3]{paper III} we prove a classification result for certain localizing subcategories along nicely behaved $t$-structures on stable $\infty$-categories. 
+    \item In \hyperref[ch3]{paper III} we prove a classification for certain localizing subcategories along nicely behaved $t$-structures on stable $\infty$-categories. 
 \end{enumerate}
 
-Given a presentable stable $\infty$-category $\C$, one should think about a localizing subcategory as being a collection of objects in $\C$, that themselves form a nice presentable stable $\infty$-category, compatible with $\C$. In other words, they are the ``structure preserving subcategories'', in a certain precise way. 
+Given a presentable stable $\infty$-category $\C$, one should think about a localizing subcategory as being a collection of objects in $\C$, that themselves form a nice presentable stable $\infty$-category, compatible with $\C$. In other words, they are the ``structure preserving subcategories''.
 
 \begin{definition}
     \label{ch0:def:localizing-subcategory}
@@ -97,11 +99,16 @@ This means that $\L$ is itself a presentable stable $\infty$-category, and that 
     Let $\C$ be a presentable stable $\infty$-category. Given a collection of objects $\K\subseteq \C$ we denote by $\Loc_\C(\K)$ the smallest localizing subcategory of $\C$ containing $\K$. We will often call it the localizing subcategory \emph{generated} by $\K$. If the category $\C$ is understood, we will sometimes just write $\Loc(\K)$ for simplicity.
 \end{definition}
 
-Localizing subcategories are often very interconnected with the idea of ``primeness''. We give some examples for $\Der(\Z)$. 
+Localizing subcategories are interconnected with the idea of ``primeness''. We give some examples for $\Der(\Z)$. 
 
 \begin{example}
     \label{ch0:ex:p-local-ab}
-    Given a chain complex of abelian groups $A$ one can form its $p$-localization $A_{(p)}$ by inverting the map $q\: A\to A$ for all other primes $q\neq p$. The derived category of all $p$-local abelian groups, denoted $\Der(\Z)^{p-\mathrm{loc}}$, is a localizing subcategory of $\Der(\Z)$. In fact, it is equivalent to $\Der(\Z_{(p)})$, the derived category of the $p$-local integers, hence also generated by $\Z_{(p)}$, treated as a complex in degree $0$. 
+    Given a chain complex of abelian groups $A$, one can form its $p$-localization $A_{(p)}$ by inverting the map $q\: A\to A$ for all other primes $q\neq p$. The derived category of all $p$-local abelian groups, denoted $\Der(\Z)^{p-\mathrm{loc}}$, is a localizing subcategory of $\Der(\Z)$. In fact, it is equivalent to $\Der(\Z_{(p)})$, the derived category of the $p$-local integers, hence also generated by $\Z_{(p)}$, treated as a complex in degree $0$. 
+\end{example}
+
+\begin{example}
+    \label{ch0:ex:localizing-away-from-p}
+    For a prime $p$ we can also invert only the map $p\: A\to A$, which is called localizing \emph{away} from $p$. The associated derived category denoted $\Der(\Z[\frac{1}{p}])$, is a localizing subcategory of $\Der(\Z)$. 
 \end{example}
 
 \begin{example}
@@ -109,10 +116,10 @@ Localizing subcategories are often very interconnected with the idea of ``primen
     Inverting all primes $p$ gives the \emph{rationalization} of the complex $A$, often denoted $A_\Q$. The derived category of rational abelian groups is equivalent to the derived category of $\Q$, and is also a localizing subcategory of $\Der(\Z)$. This is also generated by the object $\Q$, treated as a chain complex in degree $0$. 
 \end{example}
 
-\begin{example}
-    \label{ch0:ex:p-torsion-ab}
-    The $p$-power torsion of a complex $A$ is defined as $T_p A := \{a\in A \mid p^k a = 0 \text{ for some }k > 0\}$. There is a natural map $T_p A\to A$, and the complex $A$ is said to be $p$-power torsion if this map is an equivalence. The full subcategory of $p$-power torsion objects in $\Der(Z)$, denoted $\Der(\Z)^{p-\mathrm{tors}}$, is a localizing subcategory.  
-\end{example}
+% \begin{example}
+%     \label{ch0:ex:p-torsion-ab}
+%     The $p$-power torsion of an abelian group $A$ is defined as $T_p A := \{a\in A \mid p^k a = 0 \text{ for some }k > 0\}$. There is a natural map $T_p A\to A$, and $A$ is said to be $p$-power torsion if this map is an isomorphism. The full subcategory of complexes in $\Der(\Z)$, whose homology is $p$-power torsion, denoted $\Der_{H}^p(\Z)$, is a localizing subcategory.  
+% \end{example}
 
 \begin{remark}
     \label{ch0:rm:compactly-generated-localizing-subcategory}
@@ -121,7 +128,7 @@ Localizing subcategories are often very interconnected with the idea of ``primen
 \end{remark}
 
 \begin{example}
-    Even though $\Z_{(p)}$ and $\Q$ are not perfect complexes in $\Der(\Z)$, their associated localizing subcategories are in fact compactly generated. The same is true for $\Der(\Z)^{p-\mathrm{tors}}$. We will come back to this in the next section. 
+    Even though neither $\Z_{(p)}$ or $\Q$ are perfect complexes in $\Der(\Z)$, their associated localizing subcategories are in fact compactly generated. 
 \end{example}
 
 \begin{remark}
@@ -145,7 +152,7 @@ The definition of an ideal here is completely analogous to the classical setting
 Any ideal $I$ in a discrete ring $R$ is a non-unital subring of $R$. This is also the case for a localizing $\otimes$-ideal $\L\subseteq \C$, which becomes a non-unital presentably symmetric monoidal stable $\infty$-category. However, in some good cases $\L$ is actually unital, but the unit $\1_\L$ will naturally have to be different than the unit $\1_\C$, otherwise we would have $\L=\C$. The localizing ideals we study in \cref{ch1}, as well as some of the ones in \cref{ch2}, will have this property. In particular, as we will see in the next section, any localizing $\otimes$-ideal which is compactly generated in the sense of \cref{ch0:rm:compactly-generated-localizing-subcategory} will have this property.
 
 \begin{example}
-    The three examples we saw earlier, \cref{ch0:ex:p-local-ab}, \cref{ch0:ex:rational-ab} and \cref{ch0:ex:p-torsion-ab}, are all localizing $\otimes$-ideals. We will see in the next section that they, or some slight variation of these categories, are compactly generated localizing $\otimes$-ideals, which by the above comment mean they are all presentably symmetric monoidal stable $\infty$-categories themselves. 
+    The examples we saw earlier, \cref{ch0:ex:p-local-ab} and \cref{ch0:ex:rational-ab}, are all localizing $\otimes$-ideals. We will see in the next section that they, or some slight variation of these categories, are compactly generated localizing $\otimes$-ideals, which by the above comment mean they are all presentably symmetric monoidal stable $\infty$-categories themselves. 
 \end{example}
 
 
@@ -177,12 +184,12 @@ There are several ways to construct localizations, but one method particularly i
 
 \begin{example}
     \label{ch0:ex:localization-from-localizing-subcategory}
-    Let $\L\subseteq \C$ be a localizing subcategory. The inclusion of the complement $\L^\perp \hookrightarrow \C$ is fully faithful and has a left adjoint $L\colon \C\longrightarrow \L^\perp$. Hence, $L$ is a localization, and its kernel is precisely $\L$. 
+    Let $\L\subseteq \C$ be a localizing subcategory. The inclusion of the complement $\L^\perp \hookrightarrow \C$ is fully faithful and has a left adjoint $f\colon \C\longrightarrow \L^\perp$. Hence, $f$ is a localization, and its kernel is precisely $\L$. 
 \end{example}
 
 \begin{example}
     \label{ch0:ex:derived-p-completion}
-    Let $\C=\Der(\Z)$ and $\L = \Der(\Z_{(p)})$ the derived category of $p$-local abelian groups. The right orthogonal complement of $\Der(\Z_{(p)})$ is the category of derived $p$-complete abelian groups, $\Der(\Z)^{p-\mathrm{comp}}$. The associated localization $\Lambda_p$ is the total left derived functor of the $p$-adic completion functor $C^p$, defined by sending an abelian group $A$ to the colimit $A^\wedge_p = \colim_k A/p^k$. In other words, we have a localization 
+    Let $\C=\Der(\Z)$ and $\L = \Der(\Z[\frac{1}{p}])$ as in \cref{ch0:ex:localizing-away-from-p}. The right orthogonal complement is the category of derived $p$-complete abelian groups, $\Der(\Z)^{p-\mathrm{comp}}$. The associated localization $\Lambda_p$ is the total left derived functor of the $p$-adic completion functor $C^p$, defined by sending an abelian group $A$ to the colimit $A^\wedge_p = \colim_k A/p^k$. In other words, we have a localization 
     \[\Lambda_p \simeq \bbL C^p \: \Der(\Z)\to \Der(\Z)^{p-\mathrm{comp}}.\]
 \end{example}
 

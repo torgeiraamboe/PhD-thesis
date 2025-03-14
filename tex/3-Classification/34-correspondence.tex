@@ -37,7 +37,7 @@ This map is in general not injective, meaning we have to restrict our domain. As
 \end{remark}
 
 \begin{remark}
-    The above definition is equivalent to Zhang--Cai's generalization of Takahashi's $H$-stable subcategories, see \cite{zhang-cai_2017}. Note that the authors of loc. cit. do not consider the subcategories themselves to have $t$-structures, but rather just includes the image of $\pi_k^\heart$ back into the stable category. 
+    The above definition is also equivalent to Zhang--Cai's generalization of Takahashi's $H$-stable subcategories, see \cite{zhang-cai_2017}. Note that the authors of loc. cit. do not consider the subcategories themselves to have $t$-structures, but rather just includes the image of $\pi_k^\heart$ back into the stable category. 
 \end{remark}
 
 \begin{example}
@@ -155,11 +155,11 @@ It remains to show that the map is also surjective.
     
     Let $\A$ be a weak localizing subcategory of $\C^\heart$. Define $\L\subseteq \C$ to be the full subcategory spanned by objects $X$ such that $\pi_n^\heart X\in \A$. We prove that it is a stable localizing subcategory---it will obviously be $\pi$-stable by definition. In particular we prove that it is closed under cofiber sequences, desuspension and colimits. 
 
-    Let $A\rightarrow B\rightarrow C$ be a cofiber sequence in $\C$. We need to show that if two of the objects $A, B, C$ is in $\L$, then also the last one is. The long exact sequence of heart-valued homotopy groups has the form 
+    Let $A\rightarrow B\rightarrow C$ be a cofiber sequence in $\C$. We need to show that if two of the objects $A, B, C$ lie in $\L$, then also the last one does. The long exact sequence of heart-valued homotopy groups has the form 
     \[\cdots\rightarrow \pi^{\heart}_{n}A \rightarrow \pi^{\heart}_{n}B \rightarrow \pi^{\heart}_{n}C \rightarrow \pi^{\heart}_{n+1}A\rightarrow \pi^{\heart}_{n+1}B \rightarrow \cdots \]
-    Assuming that $A, B$ are in $\L$ we get by the definition of $\L$ that the four objects $\pi^{\heart}_{n}A, \pi^{\heart}_{n}B, \pi^{\heart}_{n+1}A, \pi^{\heart}_{n+1}B$ are in $\A$. Hence, as $\A$ is a weak Serre subcategory we have $\pi^\heart_n C\in \A$. This works for all $n$, hence we must have $C\in \L$ as well. The proof is identical in the case that $A, C$ or $B, C$ are in $\L$. 
+    Assuming that $A, B$ are in $\L$ we get by the definition of $\L$ that the four objects $\pi^{\heart}_{n}A, \pi^{\heart}_{n}B, \pi^{\heart}_{n+1}A, \pi^{\heart}_{n+1}B$ are in $\A$. Hence, as $\A$ is a weak Serre subcategory we have $\pi^\heart_n C\in \A$. This works for all $n$, hence we must have $C\in \L$ as well. The proof is identical in the case that $A, C$ or $B, C$ lie in $\L$. 
     
-    The full subcategory $\L$ is also closed under desuspension, as we have $\pi_n^\heart (\Omega X)\simeq \pi_{n+1}^\heart(X)$ by the long exact sequence in heart-valued homotopy groups. Hence $\L$ is a full stable subcategory of $\C$. In particular this means it is closed under finite colimits. Now, as $\pi_n^\heart$ preserves coproducts, and $\A$ is closed under coproducts, we also get that $\L$ is closed under coproducts. This implies that $\L$ is closed under colimits, which finishes the proof. 
+    The full subcategory $\L$ is also closed under desuspension, as we have $\pi_n^\heart (\Sigma^{-1} X)\simeq \pi_{n+1}^\heart(X)$ by the long exact sequence in heart-valued homotopy groups. Hence $\L$ is a full stable subcategory of $\C$. In particular this means it is closed under finite colimits. Now, as $\pi_n^\heart$ preserves coproducts, and $\A$ is closed under coproducts, we also get that $\L$ is closed under coproducts. This implies that $\L$ is closed under colimits, which finishes the proof. 
 \end{proof}
 
 \begin{remark}
@@ -173,16 +173,18 @@ It remains to show that the map is also surjective.
     If $R$ is a commutative noetherian ring, then there is a bijection between the set of $H$-stable localizing subcategories of $\Der(R)$ and the set of weak localizing subcategories in $\Mod_R$. 
 \end{corollary}
 
-A theorem of Krause---see \cite[3.1]{krause_2008}---shows that these two collections are also in bijection with certain subsets of $\Spec R$, which Krause calls the \emph{coherent subsets}. In light of \cref{ch3:thm:A} we can generalize Takahashi's result to a noetherian scheme $X$, and we conjecture that these are also in bijection with the coherent subsets of $X$---generalizing the result by Krause.  
+In light of \cref{ch3:thm:A} we can now generalize Takahashi's result to a noetherian scheme $X$. 
 
 \begin{corollary}
     \label{ch3:cor:noetherian-scheme-weak-localizing}
     If $X$ noetherian scheme, then there is a bijection between the set of stable localizing subcategories of $\Der_{qc}(X)$ closed under homology, and the set of weak localizing subcategories in $\QCoh(X)$. 
 \end{corollary}
 
+A theorem of Krause---see \cite[3.1]{krause_2008}---shows that the weak localizing subcategories of $\Mod_R$ are bijection with certain subsets of $\Spec R$, which Krause calls the \emph{coherent subsets}. By the above corollary it is natural to conjecture that this also holds for noetherian schemes. 
+
 \begin{conjecture}
     \label{ch3:conj:coherent-noetherian-scheme}
-    For a noetherian scheme $X$, there is a bijection between the collection of coherent subsets of $X$ and weak localizing subcategories of $\QCoh(X)$. 
+    If $X$ is a noetherian scheme, then there is a bijection between the collection of coherent subsets of $X$ and the collectio of weak localizing subcategories of $\QCoh(X)$. 
 \end{conjecture}
 
 \begin{remark}
@@ -244,7 +246,9 @@ Let $\C$ be a presentable stable $\infty$-category and $\A$ be a graded Grothend
 The main example of these come from the category of spectra, $\Sp$, where the associated homology theory to any spectrum is a Grothendieck homology theory.
 
 \begin{example}
-    Let $\C=\Sp$ and $R$ be a graded commutative ring. The Eilenberg--MacLane spectrum $HR$ is a commutative ring spectrum, and the associated homology theory $HR_* := [\S, HR\otimes (-)]_*\: \Sp \to \Mod_R$ is a Grothendieck homology theory. This homology theory is equivalent to singular homology with $R$ coefficients. 
+    Let $\C=\Sp$ and $R$ be a graded commutative ring. The Eilenberg--MacLane spectrum $HR$ is a commutative ring spectrum, and the associated homology theory 
+    \[HR_* := [\S, HR\otimes (-)]_*\: \Sp \to \Mod_R\] 
+    is a Grothendieck homology theory. This homology theory is equivalent to singular homology with $R$ coefficients. 
 \end{example}
 
 The above example holds more generally as well. 

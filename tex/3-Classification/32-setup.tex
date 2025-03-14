@@ -16,7 +16,7 @@ For the rest of the paper we fix a stable category $\C$. We wish to equip this w
 
 This is equivalent to choosing a $t$-structure on the homotopy category $h\C$, which is a triangulated category. Hence the contents of this paper should be equally useful to those familiar with $t$-structures on triangulated categories. 
 
-We will assume all $t$-structures to be accessible, in the sense that the connected part $\C\geqz$ is presentable. By \cite[1.2.16]{Lurie_HA} the inclusions $\C\geqz\to \C$ and $\C\leqz\to \C$ have a right adjoint $\tau\geqz$ and a left adjoint $\tau\leqz$ respectively. We denote $\C_{\geq n} := \C\geqz[n]$ and $\C_{\leq n} := \C\leqz[n]$. 
+We will assume all $t$-structures to be accessible, in the sense that the connected part $\C\geqz$ is presentable. By \cite[1.2.16]{Lurie_HA} the inclusions $\C\geqz\to \C$ and $\C\leqz\to \C$ have a right adjoint $\tau\geqz$ and a left adjoint $\tau\leqz$ respectively. We denote $\C_{\geqn} := \C\geqz[n]$ and $\C_{\leqn} := \C\leqz[n]$. 
 
 \begin{definition}
     \index{$t$-structure!Heart}
@@ -38,6 +38,10 @@ The last definition we will need, before going on to prestable categories is the
     \index{$t$-structure!Compatible with filtered colimits}
     A $t$-structure $(\C\geqz, \C\leqz)$ on a stable category $\C$ is said to be \emph{compatible with filtered colimits} if $\C\leqz$ is closed under all filtered colimits in $\C$. 
 \end{definition}
+
+\begin{remark}
+    This ensures, among other things, that the functor $\pi_0^\heart$ preserves filtered colimits. 
+\end{remark}
 
 We now recall the notion of prestable $\infty$-categories, which, similarly to the stable $\infty$-categories, we will simply call \emph{prestable categories}. The theory of prestable categories was developed by Lurie in \cite[App. C]{lurie_SAG}, and has since been applied in a varied range of areas. We define these as follows. 
 
@@ -71,6 +75,10 @@ The following example is perhaps the main reason for the naming convention.
     For any Grothendieck abelian category $\A$, the derived category category $\Der(\A)$ has a natural $t$-structure with heart $\A$. The connected component $\Der(\A)\geqz$, which consists of complexes $X_\bullet$ such that $H_i(X_\bullet) = 0$ for $i<0$ is a Grothendieck prestable category.  
 \end{example}
 
+\begin{example}
+    Let $X$ be a noetherian scheme. The derived category of all $\O_X$-modules has a full subcategory consisting of the complexes with quasi-coherent homology. which we denote by $\Der_{qc}(X)$. There is a natural $t$-structure on $\Der_{qc}(X)$, defined similarly to the natural $t$-structure on $\Der(R)$, and the connected component $\Der_{qc}(X)\geqz$ is a Grothendieck prestable category. 
+\end{example}
+
 We also have some examples showing up in stable homotopy theory. 
 
 \begin{example}
@@ -79,7 +87,7 @@ We also have some examples showing up in stable homotopy theory.
 
 \begin{example}
     \index{Synthetic spectra}
-    Important for modern homotopy theory is the category of $E$-based synthetic spectra $\SynE$ for some Landweber exact homology theory $E$, see \cite{pstragowski_2022}. This has a naturally occurring $t$-structure with heart $\Comod\EE$, and its connected component $\SynE^{\geq 0}$ is Grothendieck prestable. This example is one of our main motivations for this work, and we plan to study the applications of the contents in this paper to synthetic spectra in future work. 
+    Important for modern homotopy theory is the category of $E$-based synthetic spectra $\SynE$ for some Landweber exact homology theory $E$, see \cite{pstragowski_2022}. This has a naturally occurring $t$-structure with heart $\ComodE$, and its connected component $\Syn_{E, \geq 0}$ is Grothendieck prestable. This example is one of our main motivations for this work, and we plan to study the applications of the contents in this paper to synthetic spectra in future work. 
 \end{example}
 
 % \begin{construction}
@@ -105,9 +113,9 @@ We also have some examples showing up in stable homotopy theory.
     For any Grothendieck prestable category $\C\geqz$ the functor $\Sp(-)$, sending $\C\geqz$ to its stabilization, $\Sp(\C\geqz)$, provides a one-to-one correspondence between Grothendieck prestable categories and stable categories equipped with a right complete $t$-structure compatible with filtered colimits. This is one of the main reasons to study prestable categories, as being prestable is a property, while having a $t$-structure is extra structure. 
 \end{remark}
 
-\begin{remark}
-    If $\C$ is a stable category with a $t$-structure compatible with filtered colimits, then the heart-valued homotopy groups functors $\pi_n^\heart$ preserve filtered colimits. 
-\end{remark}
+% \begin{remark}
+%     If $\C$ is a stable category with a $t$-structure compatible with filtered colimits, then the heart-valued homotopy groups functors $\pi_n^\heart$ preserve filtered colimits. 
+% \end{remark}
 
 
 
@@ -123,9 +131,9 @@ We also have some examples showing up in stable homotopy theory.
 
 \subsection{Bridging the gap}
 
-In this section we study the passage from stable to prestable and vice versa. In particular we look into when they determine each other. 
+In this section we study the passage from stable to prestable and vice versa, particularly focusing on when they determine each other. 
 
-If $\C$ is a stable category with a right complete $t$-structure $(\C\geqz, \C\leqz)$, we can reconstruct it from its connected component. 
+If $\C$ is a stable category with a right complete $t$-structure $(\C\geqz, \C\leqz)$, then we can reconstruct it from its connected component. 
 
 \begin{lemma}[{\cite[C.1.2.10]{lurie_SAG}}]
     \label{ch3:lm:right-complete-then-equiv-to-sp}
@@ -139,25 +147,19 @@ This fact also extends to equivalences of categories, as proven by Antieau.
     Let $\C$ and $\D$ be stable categories equipped with right complete $t$-structures. If $\C\geqz\simeq \D\geqz$, then also $\C\simeq \D$. 
 \end{lemma}
 
-\begin{remark}
-    In particular both the above results hold for any $\C$ such that $\C\geqz$ is Grothendieck. 
-\end{remark}
-
-We can also naturally go in the other direction. If we have an equivalence of stable categories $\C\simeq \D$, that is compatible with the $t$-structures, then we get an induced equivalence on the connected components. The precise definition of being compatible with the $t$-structures is as follows. 
+We also have a natural converse statement: if we have an equivalence of stable categories $\C\simeq \D$, that is compatible with the $t$-structures, then we get an induced equivalence on the connected components $\C\geqz\simeq \D\geqz$. The precise definition of being compatible with the $t$-structures is as follows. 
 
 \begin{definition}
     \index{$t$-exact functor}
-    Let $\C, \D$ be stable categories with $t$-structures. An exact functor $F\:\C\to\D$ is \emph{right $t$-exact} if $F(\C\geqz)\subseteq \D\geqz$. The notion of \emph{left $t$-exactness} is defined similarly. If $F$ satisfies both, we say that it is a \emph{$t$-exact functor}. 
+    Let $\C, \D$ be stable categories with $t$-structures. An exact functor $F\:\C\to\D$ is \emph{right $t$-exact} if $F(\C\geqz)\subseteq \D\geqz$. The notion of \emph{left $t$-exactness} is defined similarly. If $F$ is both left and right $t$-exact, we say that it is a \emph{$t$-exact functor}. 
 \end{definition}
 
 \begin{remark}
     This convention might seem wrong to readers with a background in homological algebra, as the role of left and right $t$-exact functors are usually the opposite. This flip is a consequence of using the homological indexing convention rather than cohomological indexing. 
 \end{remark}
 
-The above can then be made precise as follows. 
-
 \begin{lemma}
-    Let $\C, \D$ be stable categories with $t$-structures. If $F\:\C\to\D$ is a right $t$-exact functor, then we have an induced functor of prestable categories $F\geqz\:\C\geqz\to\D\geqz$. If $F$ is an equivalence, then so is $F\geqz$. 
+    Let $\C$ and $\D$ be stable categories with $t$-structures. If $F\:\C\to\D$ is a right $t$-exact functor, then we have an induced functor of prestable categories $F\geqz\:\C\geqz\to\D\geqz$. If $F$ is an equivalence, then so is $F\geqz$. 
 \end{lemma}
 
 For the rest of the paper we will use the following terminology. 
@@ -168,13 +170,7 @@ For the rest of the paper we will use the following terminology.
 \end{definition}
 
 \begin{example}
-    Let us see some examples of $t$-stable categories. 
-    \begin{enumerate}
-        \item For every commutative noetherian ring $R$, the derived category $\Der(R)$ together with its natural $t$-structure, is a $t$-stable category. 
-        \item The category of spectra, together with its natural $t$-structure, is a $t$-stable category.
-        \item The category of synthetic spectra, $\SynE$, together with its natural $t$-structure is a $t$-stable category. 
-        \item For a noetherian scheme $X$, its associated derived category of quasi-coherent $\mathcal{O}_X$-modules, $\Der_{qc}(X)$, is $t$-stable. 
-    \end{enumerate}
+    All of the examples mentioned earlier---being $\Der(R)$, $\Der_{qc}(X)$, $\Sp$ and $\SynE$---are $t$-stable categories. 
 \end{example}
 
 \begin{remark}
@@ -200,7 +196,7 @@ For the rest of the paper we will use the following terminology.
 \subsection{Localizing subcategories}
 \label{ch3:ssec:localizing-subcategories}
 
-We now turn our attention to localizing subcategories. As we are working in three interconnected settings---stable, prestable and abelian---and all settings use the same terminology, we feel that this section is very ripe for confusions to occur . In an attempt to clarify which setting we are in, we will usually refer to localizing subcategories of stable categories as \emph{stable localizing subcategories}, localizing subcategories of prestable categories as \emph{prestable localizing subcategories} and localizing subcategories of abelian categories as \emph{abelian localizing subcategories}. We will, however, sometimes omit the categorical prefix when we feel that it is clear from context. 
+We now turn our attention to localizing subcategories. As we are working in three interconnected settings---stable, prestable and abelian---and all settings use the same terminology, we feel that this section is very ripe for confusions to occur. In an attempt to clarify which setting we are in, we will usually refer to localizing subcategories of stable categories as \emph{stable localizing subcategories}, localizing subcategories of prestable categories as \emph{prestable localizing subcategories} and localizing subcategories of abelian categories as \emph{abelian localizing subcategories}. We will, however, sometimes omit the categorical prefix when we feel that it is clear from context. 
 
 \begin{definition}
     \index{Thick subcategory!Stable}
@@ -366,7 +362,7 @@ The first thing we need is to be able to recognize stable localizing subcategori
 
 \begin{corollary}
     \label{ch3:cor:t-stable-implies-equiv-to-sp}
-    Let $\C$ be a stable category with a right complete $t$-structure and $\L$ a $t$-stable localizing subcategory. In this situation there is an equivalence $\L\simeq \Sp(\L\geqz)$. 
+    If $\C$ is a stable category with a right complete $t$-structure and $\L$ a $t$-stable localizing subcategory, then there is an equivalence $\L\simeq \Sp(\L\geqz)$. 
 \end{corollary}
 \begin{proof}
     This follows directly from \cref{ch3:prop:induced-t-structure-on-stable-localizing} and \cref{ch3:lm:right-complete-then-equiv-to-sp}.
@@ -431,7 +427,7 @@ We can then relate this to the prestable situation via the following lemma.
 
 \begin{lemma}[{\cite[C.2.4.4]{lurie_SAG}}]
     \label{ch3:lm:exact-functor-induces-left-exact-functor}
-    If $F\:\C\to \D$ is an $t$-exact functor between $t$-stable categories, then the induced functor of Grothendieck prestable categories $F\geqz\:\C\geqz\to\D\geqz$ is left exact. 
+    If $F\:\C\to \D$ is a $t$-exact functor between $t$-stable categories, then the induced functor of Grothendieck prestable categories $F\geqz\:\C\geqz\to\D\geqz$ is left exact. 
 \end{lemma}
 
 \begin{remark}
@@ -471,7 +467,7 @@ We can then conclude this section with the following bijection.
 
 \begin{corollary}
     \label{ch3:cor:t-exact-corresponds-to-prestable-localizing}
-    For any $t$-stable category $\C$, there is a bijection between the collection of $t$-exact stable localizing subcategories $\L\subseteq \C$, and prestable localizing subcategories of $\C\geqz$, given by the mutually inverse functors $(-)\geqz$ and $\Sp(-)$. 
+    For any $t$-stable category $\C$, there is a bijection between the collection of $t$-exact stable localizing subcategories $\L\subseteq \C$, and prestable localizing subcategories of $\C\geqz$, given by the mutually inverse assignments $(-)\geqz$ and $\Sp(-)$. 
 \end{corollary}
 \begin{proof}
     From \cref{ch3:rm:kernel-of-t-exact-then-prestable-localizing} and \cref{ch3:lm:prestable-localizing-then-kernel-of-t-exact} we have maps 
