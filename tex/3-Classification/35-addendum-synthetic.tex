@@ -18,7 +18,7 @@ We can equip the category $\Sp\fp$ with a Grothendieck topology, defined by cove
 
 \begin{definition}
     \index{Synthetic spectra}
-    An \emph{synthetic spectrum} is an additive sheaf $X\: \Sp^{\mathrm{fp}, \mathrm{op}}\to \Sp$. The category of synthetic spectra will be denoted $\SynE := \mathrm{P}_\Sigma(\Sp\np\fp;\Sp)$. 
+    An \emph{synthetic spectrum} is an additive sheaf $X\: \Sp^{\mathrm{fp}, \mathrm{op}}\to \Sp$. The category of synthetic spectra will be denoted $\SynE := \mathrm{P}_\Sigma(\Sp\fp;\Sp)$. 
 \end{definition}
 
 Localizing all of the finite projective spectra at $E$ gives us another excellent $\infty$-site, which we denote by $\Sp\np\fp$. To be clear, objects in $\Sp\np\fp$ are of the form $L\np P$, for $P\in \Sp\fp$. 
@@ -32,9 +32,9 @@ Localizing all of the finite projective spectra at $E$ gives us another excellen
     As mentioned, the category of $E$-local synthetic spectra is slightly different from the categories already appearing in the literature. It should be thought of as living somewhere between normal synthetic spectra and hypercomplete synthetic spectra. This category is used to avoid the bad properties of the hypercompletion functor, which for example, is not smashing, meaning compact generation for hypercomplete synthetic spectra is a bit tricky. 
 \end{remark}
 
-\begin{remark}
-    A slightly more high-brow perspective on $E$-local synthetic spectra is the following. One reason normal synthetic spectra based on $\MU$ work so well is that the sphere $\S$ is $\MU$-nilpotent complete, meaning that the Adams--Novikov spectral sequence converges to $\pi_*\S$. For $E$ this is not the case: the sphere is not $E$-nilpotent complete. But, as $E$-localization is smashing, the $E$-nilpotent completion of the sphere is precisely the $E$-local sphere $L\np \S$. Hence one can think about $\LSynE$ as the natural category of formal ``conditionally convergent'' $E$-Adams spectral sequences, similarly to how $\Syn_\MU$ is the category of formal ``conditionally convergent'' Adams--Novikov spectral sequences. 
-\end{remark}
+% \begin{remark}
+%     A slightly more high-brow perspective on $E$-local synthetic spectra is the following. One reason normal synthetic spectra based on $\MU$ work so well is that the sphere $\S$ is $\MU$-nilpotent complete, meaning that the Adams--Novikov spectral sequence converges to $\pi_*\S$. For $E$ this is not the case: the sphere is not $E$-nilpotent complete. But, as $E$-localization is smashing, the $E$-nilpotent completion of the sphere is precisely the $E$-local sphere $L\np \S$. Hence one can think about $\LSynE$ as the natural category of formal ``conditionally convergent'' $E$-Adams spectral sequences, similarly to how $\Syn_\MU$ is the category of formal ``conditionally convergent'' Adams--Novikov spectral sequences. 
+% \end{remark}
 
 Most of the theory for synthetic spectra work straight out of the box also for $\LSynE$, and their proofs are completely analogous. We mention only the most important ones.  
 
@@ -90,9 +90,9 @@ In a certain sense, this makes $\LSynE$ a categorification of the \emph{conserva
 
 \subsection{Monochromatic synthetic spectra}
 
-In \cite{hovey-strickland_2005a} Hovey and Strickland construct a partial classification of the lcoalizing subcategories of $\Comod_{\BP_*\BP}$---partial in the sense of requiring the containment of compact objects. This result was then used by Barthel--Heard to make a complete classification of the localizing subcategories of $\ComodE$, which we now recall. 
+In \cite{hovey-strickland_2005a} Hovey and Strickland construct a partial classification of the localizing subcategories of $\Comod_{\BP_*\BP}$---partial in the sense of requiring the containment of compact objects. This result was then used by Barthel--Heard to make a complete classification of the localizing subcategories of $\ComodE$, which we now recall. 
 
-For any $0\leq k\leq n$ we have an ideal $I_k \subseteq \pi_* E_n$, called the Landweber ideals of $E$. More precisely these are given by $I_k = (p, v_1, v_2, \ldots, v_{k-1})$. These ideals are finitely generated regular invariant ideals, hence \cref{ch0:sssec:torsion-and-completion-for-comodules} gives us for any such $k$ a localizing subcategory $\ComodE^{I_k-\mathrm{tors}}\subseteq \ComodE$, called the category of $I_k$-power torsion comodules. \index{$I$-power torsion!Comodules}
+For any $0\leq k\leq n$ we have an ideal $I_k \subseteq \pi_* E_n$. These ideals are called the Landweber ideals of $E$. More precisely these are given by $I_k = (p, v_1, v_2, \ldots, v_{k-1})$. These ideals are finitely generated regular invariant ideals, hence \cref{ch0:sssec:torsion-and-completion-for-comodules} gives us for any such $k$ a localizing subcategory $\ComodE^{I_k-\mathrm{tors}}\subseteq \ComodE$, called the category of $I_k$-power torsion comodules. \index{$I$-power torsion!Comodules}
 
 \begin{theorem}[{\cite[2.21]{barthel-heard_2018}}]
     \label{ch3:add:thm:classification-of-abelian-localizing}
@@ -204,7 +204,7 @@ The first thing we need is to compare prestable and stable compact objects.
     \end{center}
     meaning that there is an equivalence
     \[\Ind(\SW(\LSyn_{E, \geq 0}^\omega))\simeq \Sp(\Ind(\LSyn_{E, \geq 0}^\omega)).\]
-    As all functors are symmetric monoidal, the equivalence is also symmetric monoidal. The category $\Ind(\LSyn_{E, \geq 0}^\omega)$ is $\LSyn_{E, \geq 0}$---as it is compactly generated---which we know stabilizes to $\LSynE$. This category we know has a collection of compact generators, $\LSynE^\omega$, which is a small stable $\infty$-category, giving an equivalence $\Ind(\LSynE^\omega)\simeq \LSynE$ by definition. As the functor $\Ind$ is an equivalence between small stable $\infty$-categories and compactly generated $\infty$-categories, we get our wanted equivalence $\SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega$. 
+    As all functors are symmetric monoidal, the equivalence is also symmetric monoidal. The category $\Ind(\LSyn_{E, \geq 0}^\omega)$ is $\LSyn_{E, \geq 0}$---as it is compactly generated---which we know stabilizes to $\LSynE$. This category we know has a collection of compact generators, $\LSynE^\omega$, which is a small stable $\infty$-category, giving an equivalence $\Ind(\LSynE^\omega)\simeq \LSynE$ by definition. By \cite[5.3.2.11(3)]{Lurie_HA} the functor $\Ind$ is an equivalence between small stable $\infty$-categories and compactly generated $\infty$-categories. The inverse is given by $(-)^\omega$, hence we get our wanted equivalence $\SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega$. 
 \end{proof}
 
 We can now lift all the way from the abelian level to the stable level. 
@@ -422,7 +422,7 @@ The computations for the generic and special fibers of the deformation parameter
 Recall the definition of the derived $I_n$-torsion stable category of comodules in \cite[2.4]{barthel-heard-valenzuela_2020} as 
 \[\StableE\Int := \Loc_{\StableE}^\otimes(E_{*}/I_n)\] 
 as a localizing subcategory of $\Stable\EE$. We furthermore recall the definition of the stable category of $I_n$-power torsion comodules, see \cite[3.5]{barthel-heard-valenzuela_2020}, as 
-\[\Stable(\Comodt) := \Ind(\Thick^\otimes(\TorsE),\]
+\[\Stable(\Comodt) := \Ind(\Thick^\otimes(\TorsE)),\]
 where $\TorsE$ denotes the collection of compact generators for $\Comodt$, see \cref{ch1:lm:torsion-comodules-generated-by-compacts}. 
 
 \begin{theorem}
