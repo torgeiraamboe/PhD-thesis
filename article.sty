@@ -9,7 +9,10 @@
 				url=false,%
 				isbn=false,%
 				doi=false,%
-				maxnames=4,%
+				maxnames=99,%
+				mincitenames=1,%
+				%maxcitenames=99,%	
+				abbreviate=false,%
 				style=alphabetic,%
 				sorting=nyt,%
 				backref=true%
@@ -46,7 +49,7 @@
 \RequirePackage{euscript}
 \RequirePackage{parskip}
 \RequirePackage{pgfplots}
-%\RequirePackage{adjustbox}
+\RequirePackage{adjustbox}
 \RequirePackage{tikz-cd}
 \usetikzlibrary{decorations.pathmorphing}
 \RequirePackage{xcolor}
@@ -327,6 +330,7 @@ urlcolor=myblack
 \newcommand{\BP}{\mathrm{BP}}
 \newcommand{\MU}{\mathrm{MU}}
 \newcommand{\KO}{\mathrm{KO}}
+\newcommand{\KU}{\mathrm{KU}}
 
 % Sheaves 
 \newcommand{\Sh}{\mathrm{Sh}}
@@ -520,17 +524,15 @@ t\text{-exact localizing}\\
 
 \def\QCohlocalizingthree{\left\{
 \begin{matrix}
-\text{localizing}\\
-\text{subcategories}\\
-\text{of }\QCoh(X)
+\text{localizing subcate-}\\
+\text{gories of }\QCoh(X)
 \end{matrix}
 \right\}}
 
 \def\QCohweak{\left\{
 \begin{matrix}
-\text{weak localizing}\\
-\text{subcategories}\\
-\text{of }\QCoh(X)
+\text{weak localizing sub-}\\
+\text{categories of }\QCoh(X)
 \end{matrix}
 \right\}}
 

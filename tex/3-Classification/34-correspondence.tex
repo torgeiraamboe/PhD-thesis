@@ -477,6 +477,7 @@ Utilizing this, together with \cref{ch3:thm:main}, we obtain the following gener
 Using \cref{ch3:cor:noetherian-scheme-weak-localizing} we then get a partial extension of the two bottom rows in the main result of \cite{takahashi_2009} to the case of noetherian schemes.  
 
 \begin{center}
+    \adjustbox{scale=0.9,center}{
     \begin{tikzcd}
         \DXstable 
         \arrow[r, lightgray, "\simeq"]
@@ -497,6 +498,7 @@ Using \cref{ch3:cor:noetherian-scheme-weak-localizing} we then get a partial ext
         \QCohlocalizingthree 
         \arrow[u, hook, "\subseteq", swap]
     \end{tikzcd}
+}
 \end{center}
 
 Here the grey color indicates the conjectured relationship from \cref{ch3:conj:coherent-noetherian-scheme}. 
@@ -507,7 +509,7 @@ By work of Kanda we can almost extend this to the locally noetherian setting. In
 
 \begin{corollary}
     For $X$ a locally noetherian scheme, there are bijections
-    \[\DXlocalizing\simeq \subsetsX \simeq \QCohlocalizing.\]
+    \[\DXlocalizing\simeq \subsetsX \simeq \QCohlocalizing\]
 \end{corollary}
 
 \begin{remark}
@@ -542,13 +544,16 @@ By work of Kanda we can almost extend this to the locally noetherian setting. In
 
 To summarize this section, we construct the bottom part of the diagram from the introduction. By \cref{ch3:lm:pi-exact-then-separating} the bijection from \cref{ch3:thm:B} factors through the bijection of \cref{ch3:thm:Lurie-correspondence}. In particular, we get bijections 
 \begin{center}
+    \adjustbox{scale=0.95,center}{
     \begin{tikzcd}
         \piexact \arrow[r, "(-)\geqz", yshift=2pt] & \separating \arrow[r, "(-)\leqz"] \arrow[l, "\Sp(-)", yshift=-2pt] & \ablocalizing
     \end{tikzcd}
+}
 \end{center}
 such that the composite map from the left to the right is the map $(-)^\heart$ from \cref{ch3:thm:B}. This finally gives the wanted diagram. 
 
 \begin{center}
+    \adjustbox{scale=0.95,center}{
     \begin{tikzcd}
         \piexact 
         \arrow[r, "\simeq"] 
@@ -567,6 +572,7 @@ such that the composite map from the left to the right is the map $(-)^\heart$ f
         \arrow[ru, "(-)\leqz", swap] 
         &                                
     \end{tikzcd}
+    }
 \end{center}
 
 

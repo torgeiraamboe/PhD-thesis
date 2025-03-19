@@ -174,7 +174,7 @@
       \strng{authornamehash}{c1f2666f76567c50375b60e9c91567b4}
       \strng{authorfullhash}{c1f2666f76567c50375b60e9c91567b4}
       \field{extraname}{2}
-      \field{labelalpha}{Ada95}
+      \field{labelalpha}{Ada74}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
@@ -182,7 +182,7 @@
       \field{note}{ISBN: 978-0-226-00524-9}
       \field{series}{Chicago {Lectures} in {Mathematics}}
       \field{title}{Stable {Homotopy} and {Generalised} {Homology}}
-      \field{year}{1995}
+      \field{year}{1974}
       \verb{urlraw}
       \verb https://press.uchicago.edu/ucp/books/book/chicago/S/bo21302708.html
       \endverb
@@ -1287,6 +1287,33 @@
       \verb https://www.cambridge.org/core/books/local-cohomology/58A833CCD2D0F834644781AFB1351657
       \endverb
     \endentry
+    \entry{brown_1962}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7076d5f81c6e2d92e6fc649875b71417}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Edgar\bibnamedelima H.},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{7076d5f81c6e2d92e6fc649875b71417}
+      \strng{fullhash}{7076d5f81c6e2d92e6fc649875b71417}
+      \strng{bibnamehash}{7076d5f81c6e2d92e6fc649875b71417}
+      \strng{authorbibnamehash}{7076d5f81c6e2d92e6fc649875b71417}
+      \strng{authornamehash}{7076d5f81c6e2d92e6fc649875b71417}
+      \strng{authorfullhash}{7076d5f81c6e2d92e6fc649875b71417}
+      \field{labelalpha}{Bro62}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Mathematics}
+      \field{number}{3}
+      \field{title}{Cohomology theories}
+      \field{volume}{75}
+      \field{year}{1962}
+      \field{pages}{467\bibrangedash 484}
+      \range{pages}{18}
+    \endentry
     \entry{brzezinski_2010}{article}{}
       \name{author}{1}{}{%
         {{hash=7da6b3730324ec11a5377c71dff2743d}{%
@@ -1375,13 +1402,14 @@
       \strng{authorbibnamehash}{131ab5840e1bcbebc73463423276065a}
       \strng{authornamehash}{131ab5840e1bcbebc73463423276065a}
       \strng{authorfullhash}{131ab5840e1bcbebc73463423276065a}
-      \field{labelalpha}{Bur+23}
+      \field{labelalpha}{BHLS23}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{math.AT}
       \field{eprinttype}{arXiv}
+      \field{label}{BHLS}
       \field{title}{$K$-theoretic counterexamples to {Ravenel}'s telescope conjecture}
       \field{year}{2023}
       \verb{eprint}
@@ -1444,6 +1472,48 @@
       \field{title}{Spherical monadic adjunctions of stable infinity categories}
       \field{volume}{2023}
       \field{year}{2023}
+    \endentry
+    \entry{clausen-mathew_2021}{article}{}
+      \name{author}{2}{}{%
+        {{hash=eceb31742276392c92b1d68d2f0bf521}{%
+           family={Clausen},
+           familyi={C\bibinitperiod},
+           given={Dustin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4c679d47d58562ea8fc92d47566a57c6}{%
+           family={Mathew},
+           familyi={M\bibinitperiod},
+           given={Akhil},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2de86622dabbb0b96a821a5d92a76d1f}
+      \strng{fullhash}{2de86622dabbb0b96a821a5d92a76d1f}
+      \strng{bibnamehash}{2de86622dabbb0b96a821a5d92a76d1f}
+      \strng{authorbibnamehash}{2de86622dabbb0b96a821a5d92a76d1f}
+      \strng{authornamehash}{2de86622dabbb0b96a821a5d92a76d1f}
+      \strng{authorfullhash}{2de86622dabbb0b96a821a5d92a76d1f}
+      \field{labelalpha}{CM21}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1432-1297}
+      \field{journaltitle}{Inventiones Mathematicae}
+      \field{number}{3}
+      \field{title}{Hyperdescent and étale {K}-theory}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{981\bibrangedash 1076}
+      \range{pages}{96}
+      \verb{doi}
+      \verb 10.1007/s00222-021-01043-3
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00222-021-01043-3
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00222-021-01043-3
+      \endverb
     \endentry
     \entry{davis-lawson_2014}{article}{}
       \name{author}{2}{}{%
@@ -1516,6 +1586,29 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0040938303000296
       \endverb
     \endentry
+    \entry{joy-division_79}{music}{}
+      \name{author}{1}{}{%
+        {{hash=b93ae4c80f6112393ac41e05b0648209}{%
+           family={Division},
+           familyi={D\bibinitperiod},
+           given={Joy},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b93ae4c80f6112393ac41e05b0648209}
+      \strng{fullhash}{b93ae4c80f6112393ac41e05b0648209}
+      \strng{bibnamehash}{b93ae4c80f6112393ac41e05b0648209}
+      \strng{authorbibnamehash}{b93ae4c80f6112393ac41e05b0648209}
+      \strng{authornamehash}{b93ae4c80f6112393ac41e05b0648209}
+      \strng{authorfullhash}{b93ae4c80f6112393ac41e05b0648209}
+      \field{labelalpha}{Div79}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Factory Records}
+      \field{title}{Unknown Pleasures}
+      \field{year}{1979}
+    \endentry
     \entry{dyckerhoff-kaparanov-schechtman-soibelman_2024}{article}{}
       \name{author}{4}{}{%
         {{hash=632bbf0794333806ca7b4b34f3cdd864}{%
@@ -1545,13 +1638,14 @@
       \strng{authorbibnamehash}{0e44c9da0f6811bdcf9fe4c206f4600b}
       \strng{authornamehash}{0e44c9da0f6811bdcf9fe4c206f4600b}
       \strng{authorfullhash}{0e44c9da0f6811bdcf9fe4c206f4600b}
-      \field{labelalpha}{Dyc+24}
+      \field{labelalpha}{DKSS24}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1432-1823}
       \field{journaltitle}{Mathematische Zeitschrift}
+      \field{label}{DKSS}
       \field{number}{4}
       \field{title}{Spherical adjunctions of stable $\infty$-categories and the relative {S}-construction}
       \field{urlday}{6}
@@ -1631,6 +1725,62 @@
       \field{year}{2020}
       \field{pages}{327\bibrangedash 355}
       \range{pages}{29}
+    \endentry
+    \entry{ekmm_2007}{book}{}
+      \name{author}{4}{}{%
+        {{hash=21bacc0d41f1c83b6ff7cbfbdd8cfd4e}{%
+           family={Elmendorf},
+           familyi={E\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5bbb7575af1788150f50c2b6524e7b88}{%
+           family={Kriz},
+           familyi={K\bibinitperiod},
+           given={Igor},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e660cd2a7cd8c80a7af339744b2b2722}{%
+           family={Mandell},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=041ecc4c67fc74950ffc88530a4316df}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Jon\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Providence, Rhode Island}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{709ace27ffe29442626e04c2a6cd4f92}
+      \strng{fullhash}{709ace27ffe29442626e04c2a6cd4f92}
+      \strng{bibnamehash}{709ace27ffe29442626e04c2a6cd4f92}
+      \strng{authorbibnamehash}{709ace27ffe29442626e04c2a6cd4f92}
+      \strng{authornamehash}{709ace27ffe29442626e04c2a6cd4f92}
+      \strng{authorfullhash}{709ace27ffe29442626e04c2a6cd4f92}
+      \field{labelalpha}{EKMM07}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-8218-4303-1 978-1-4704-1278-4}
+      \field{label}{EKMM}
+      \field{series}{Mathematical {Surveys} and {Monographs}}
+      \field{title}{Rings, {Modules}, and {Algebras} in {Stable} {Homotopy} {Theory}}
+      \field{volume}{47}
+      \field{year}{2007}
+      \verb{doi}
+      \verb 10.1090/surv/047
+      \endverb
+      \verb{urlraw}
+      \verb http://www.ams.org/surv/047
+      \endverb
+      \verb{url}
+      \verb http://www.ams.org/surv/047
+      \endverb
     \endentry
     \entry{franke_96}{article}{}
       \name{author}{1}{}{%
@@ -2576,6 +2726,43 @@
       \verb https://doi.org/10.1007/s00208-007-0166-3
       \endverb
     \endentry
+    \entry{landweber_76}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cd71ca499ec2b4f6daa95beb90eaa837}{%
+           family={Landweber},
+           familyi={L\bibinitperiod},
+           given={Peter\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Johns Hopkins University Press}%
+      }
+      \strng{namehash}{cd71ca499ec2b4f6daa95beb90eaa837}
+      \strng{fullhash}{cd71ca499ec2b4f6daa95beb90eaa837}
+      \strng{bibnamehash}{cd71ca499ec2b4f6daa95beb90eaa837}
+      \strng{authorbibnamehash}{cd71ca499ec2b4f6daa95beb90eaa837}
+      \strng{authornamehash}{cd71ca499ec2b4f6daa95beb90eaa837}
+      \strng{authorfullhash}{cd71ca499ec2b4f6daa95beb90eaa837}
+      \field{labelalpha}{Lan76}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00029327, 10806377}
+      \field{journaltitle}{American Journal of Mathematics}
+      \field{number}{3}
+      \field{title}{Homological Properties of Comodules Over $MU^*(MU)$ and $BP^*(BP)$}
+      \field{volume}{98}
+      \field{year}{1976}
+      \field{pages}{591\bibrangedash 610}
+      \range{pages}{20}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2373808
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2373808
+      \endverb
+    \endentry
     \entry{lefschetz_1942}{book}{}
       \name{author}{1}{}{%
         {{hash=7d8a0c5addc2c706c6549e76bff41991}{%
@@ -2886,6 +3073,44 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0001870815300062
       \endverb
     \endentry
+    \entry{milnor_1958}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6ed546ba346b01635423d8131e45906b}{%
+           family={Milnor},
+           familyi={M\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ed546ba346b01635423d8131e45906b}
+      \strng{fullhash}{6ed546ba346b01635423d8131e45906b}
+      \strng{bibnamehash}{6ed546ba346b01635423d8131e45906b}
+      \strng{authorbibnamehash}{6ed546ba346b01635423d8131e45906b}
+      \strng{authornamehash}{6ed546ba346b01635423d8131e45906b}
+      \strng{authorfullhash}{6ed546ba346b01635423d8131e45906b}
+      \field{labelalpha}{Mil58}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0003486X}
+      \field{journaltitle}{The Annals of Mathematics}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{The {Steenrod} {Algebra} and {Its} {Dual}}
+      \field{volume}{67}
+      \field{year}{1958}
+      \field{pages}{150\bibrangedash 171}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.2307/1969932
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/1969932?origin=crossref
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/1969932?origin=crossref
+      \endverb
+    \endentry
     \entry{naumann_07}{article}{}
       \name{author}{1}{}{%
         {{hash=171e2d222dc0b20aad6d7b1a05bdf0d9}{%
@@ -2924,45 +3149,37 @@
       \endverb
     \endentry
     \entry{neeman_1992}{article}{}
-      \name{author}{2}{}{%
+      \name{author}{1}{}{%
         {{hash=b0653a87bc1b4236dc840bab79449849}{%
            family={Neeman},
            familyi={N\bibinitperiod},
            given={Amnon},
            giveni={A\bibinitperiod}}}%
-        {{hash=0fc2cfee7ee29159094dd0e7046c1c6c}{%
-           family={Bökstedt},
-           familyi={B\bibinitperiod},
-           given={Marcel},
-           giveni={M\bibinitperiod}}}%
       }
-      \strng{namehash}{48268c8018eecd218d9488a639188383}
-      \strng{fullhash}{48268c8018eecd218d9488a639188383}
-      \strng{bibnamehash}{48268c8018eecd218d9488a639188383}
-      \strng{authorbibnamehash}{48268c8018eecd218d9488a639188383}
-      \strng{authornamehash}{48268c8018eecd218d9488a639188383}
-      \strng{authorfullhash}{48268c8018eecd218d9488a639188383}
-      \field{labelalpha}{NB92}
+      \strng{namehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{fullhash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{bibnamehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{authorbibnamehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{authornamehash}{b0653a87bc1b4236dc840bab79449849}
+      \strng{authorfullhash}{b0653a87bc1b4236dc840bab79449849}
+      \field{labelalpha}{Nee92}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0040-9383}
-      \field{journaltitle}{Topology}
-      \field{number}{3}
-      \field{title}{The chromatic tower for $D(R)$}
-      \field{volume}{31}
+      \field{issn}{0012-9593}
+      \field{journaltitle}{Annales scientifiques de l'École Normale Supérieure}
+      \field{number}{5}
+      \field{title}{The connection between the $K$-theory localization theorem of {Thomason}, {Trobaugh} and {Yao} and the smashing subcategories of {Bousfield} and {Ravenel}}
+      \field{volume}{25}
       \field{year}{1992}
-      \field{pages}{519\bibrangedash 532}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1016/0040-9383(92)90047-L
-      \endverb
+      \field{pages}{547\bibrangedash 566}
+      \range{pages}{20}
       \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/004093839290047L
+      \verb https://eudml.org/doc/82328
       \endverb
       \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/004093839290047L
+      \verb https://eudml.org/doc/82328
       \endverb
     \endentry
     \entry{nikolaus_2016}{misc}{}
@@ -3407,6 +3624,40 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0001870821005375
       \endverb
     \endentry
+    \entry{quillen_1969}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e12a679e0498b1d4773d54dcfa27e817}{%
+           family={Quillen},
+           familyi={Q\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e12a679e0498b1d4773d54dcfa27e817}
+      \strng{fullhash}{e12a679e0498b1d4773d54dcfa27e817}
+      \strng{bibnamehash}{e12a679e0498b1d4773d54dcfa27e817}
+      \strng{authorbibnamehash}{e12a679e0498b1d4773d54dcfa27e817}
+      \strng{authornamehash}{e12a679e0498b1d4773d54dcfa27e817}
+      \strng{authorfullhash}{e12a679e0498b1d4773d54dcfa27e817}
+      \field{labelalpha}{Qui69}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0002-9904, 1936-881X}
+      \field{journaltitle}{Bulletin of the American Mathematical Society}
+      \field{number}{6}
+      \field{title}{On the formal group laws of unoriented and complex cobordism theory}
+      \field{volume}{75}
+      \field{year}{1969}
+      \field{pages}{1293\bibrangedash 1298}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society/volume-75/issue-6/On-the-formal-group-laws-of-unoriented-and-complex-cobordism/bams/1183530915.full
+      \endverb
+      \verb{url}
+      \verb https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society/volume-75/issue-6/On-the-formal-group-laws-of-unoriented-and-complex-cobordism/bams/1183530915.full
+      \endverb
+    \endentry
     \entry{ramzi_2023}{misc}{}
       \name{author}{1}{}{%
         {{hash=c85660dc9dcb69b03a6c5f4174ddf0da}{%
@@ -3621,6 +3872,7 @@
       \strng{authorbibnamehash}{d7f48a0f35573c9ff06eb79ca1269c0a}
       \strng{authornamehash}{d7f48a0f35573c9ff06eb79ca1269c0a}
       \strng{authorfullhash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \field{extraname}{1}
       \field{labelalpha}{Rog08}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
@@ -3639,6 +3891,36 @@
       \endverb
       \verb{url}
       \verb https://www.ams.org/memo/0898
+      \endverb
+    \endentry
+    \entry{rognes_2023}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d7f48a0f35573c9ff06eb79ca1269c0a}{%
+           family={Rognes},
+           familyi={R\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \strng{fullhash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \strng{bibnamehash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \strng{authorbibnamehash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \strng{authornamehash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \strng{authorfullhash}{d7f48a0f35573c9ff06eb79ca1269c0a}
+      \field{extraname}{2}
+      \field{labelalpha}{Rog23}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{MAT4580/MAT9580 Lecture notes}
+      \field{title}{Chromatic homotopy theory}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.mn.uio.no/math/personer/vit/rognes/kurs.html
+      \endverb
+      \verb{url}
+      \verb https://www.mn.uio.no/math/personer/vit/rognes/kurs.html
       \endverb
     \endentry
     \entry{roitzheim_07}{article}{}

@@ -6,10 +6,18 @@
 As mentioned before, this thesis is about understanding certain relationship between stable homotopy theory and homological algebra. One of these relationships---perhaps the most well known one---comes from the notion of \emph{homology}. 
 
 \begin{definition}
-    Let $R$ be a ring spectrum. Associated to $R$ we have an \emph{$R$-homology} functor 
+    Let $R$ be a ring spectrum. Associated to $R$ we a functor
     \[R_* \: \Sp \to \Ab\]
-    defined by $R_*(X):= \pi_*(R\otimes X)$. 
+    defined by $R_*(X):= \pi_*(R\otimes X)$, called the \emph{$R$-homology}. 
 \end{definition}
+
+\begin{example}
+    Letting $R = H\F_p$, then $H\F_p$-homology coincides with standard cellular homology with $\F_p$-coefficients. 
+\end{example}
+
+\begin{example}
+    If $R=\KU$, then $\KU$-homology coincides with complex topological $K$-theory. 
+\end{example}
 
 As $R\otimes X$ is an $R$-module for any spectrum $X$, the $R$-homology functor actually lands in the category of $R_*$-modules, where 
 \[R_*:= R_*(\S) = \pi_* R.\] 
@@ -23,22 +31,24 @@ In fact, even more is true: the image of a spectrum $X$ under $R_*(-)$ has certa
     is an isomorphism.
 \end{definition}
 
-In particular, all Adams type ring spectra are flat, as the filtered colimit $R\simeq \colim_\alpha R_\alpha$ gives a filtered colimit 
-\[R_*R\cong \colim_\alpha R_*R_\alpha\] 
-of projective objects. 
+\begin{remark}
+    In particular, all Adams type ring spectra are flat, as the presentation $R\simeq \colim_\alpha R_\alpha$ gives a presentation
+    \[R_*R\cong \colim_\alpha R_*R_\alpha\] 
+    of projective objects. 
+\end{remark}
 
 Most of the following examples were given by Adams in \cite[III.13.4]{adams_74}---except for the Morava theories.
 
 \begin{example}[{\cite[1.4.7, 1.4.9]{hovey_04}}]
     \label{ch0:ex:adams-type-ring-spectra}
-    The ring spectra $\MU$, $\mathrm{MSp}$, $\KO$, $H\F_p$, $K_p(n)$, $E_p(n)$, $E\np$ are all of Adams type. We also have the following class of examples: if $R$ is Adams type, then any Landweber exact $R$-algebra is also Adams type. 
+    The ring spectra $\MU$, $\mathrm{MSp}$, $\KU$, $\KO$, $H\F_p$, $K_p(n)$, $E_p(n)$, $E\np$ are all of Adams type. We also have the following class of examples: if $R$ is Adams type, then any Landweber exact $R$-algebra is also Adams type. 
 \end{example}
 
 Given a flat ring spectrum $R$, we can now make the following constructions. 
 
 \begin{construction}
     \label{ch0:const:hopf-algebroid-maps-from-spectra}
-    From the unit map $\S\longrightarrow R$, the multiplication map $\mu\: R\otimes R\longrightarrow R$ and the twist map $\tau\: R\otimes R\longrightarrow R\otimes R$, we get maps on $R_*$-homology
+    From the unit map $\S\longrightarrow R$, the ring spectrum multiplication map $\mu\: R\otimes R\longrightarrow R$ and the twist map $\tau\: R\otimes R\longrightarrow R\otimes R$, we get maps on $R_*$-homology
     \begin{enumerate}
         \item $\eta_L\: R_*\longrightarrow R_*R$, from the identification $R\otimes \S\simeq R$
         \item $\eta_R\: R_*\longrightarrow R_*R$, from the identification $\S\otimes R\simeq R$
@@ -51,9 +61,9 @@ Given a flat ring spectrum $R$, we can now make the following constructions.
     which is an isomorphism precisely when $R$ is flat. There is also a map 
     \[R\otimes R \to R\otimes \S \otimes R \to R\otimes R\otimes R\]
     induced by the unit map, which on homotopy groups gives 
-    \[\nabla\: R_*R \to \pi_*(R\otimes R\otimes R)\overset{\cong}\longleftarrow R_*R\otimes_{R_*}R_*R.\]
+    \[\Delta\: R_*R \to \pi_*(R\otimes R\otimes R)\overset{\cong}\longleftarrow R_*R\otimes_{R_*}R_*R.\]
     The left and right unit maps $\eta_L$ and $\eta_R$ make $R_*R$ a bimodule over $R_*$, hence this map is a \emph{comultiplication} on $R_*R$. As $R\otimes R$ is again a ring spectrum, we also get an induced multiplication map  
-    \[\Delta \: R_*R\otimes_{R_*}R_*R\longrightarrow R_*R\]
+    \[\nabla \: R_*R\otimes_{R_*}R_*R\longrightarrow R_*R\]
     The relations on ring spectra also induce relations on the pair $(R_*, R_*R)$, like coassociativity, counitality, and the antipode relation.   
 \end{construction}
 
@@ -67,8 +77,20 @@ Not all flat ring spectra are field objects, so we cannot expect to obtain a Hop
 \begin{definition}
     \label{ch0:def:hopf-algebroid}
     \index{Hopf algebroid}
-    A (graded) \emph{Hopf algebroid} is a cogroupoid object $(A, \Psi)$ in the category of graded commutative rings. 
+    A (graded) \emph{Hopf algebroid} is a cogroupoid object $(A, \Psi)$ in the category of graded commutative rings. More precisely it consists of two graded commutative rings $A$ and $\Psi$, together with maps 
+    \begin{enumerate}
+        \item $\eta_L\: A\longrightarrow \Psi$, 
+        \item $\eta_R\: A\longrightarrow \Psi$,
+        \item $\epsilon\: \Psi\longrightarrow A$,
+        \item $c\: \Psi\longrightarrow \Psi$,
+        \item $\Delta\: \Psi\longrightarrow \Psi\otimes_A\Psi$
+    \end{enumerate}
+    satisfying natural unitality, coassociativity, twist and antipode relations. 
 \end{definition}
+
+\begin{remark}
+    Any Hopf algebra corepresents a functor from commutative rings into groups. Hopf algebroids instead corepresent functors from commutative rings into groupoids, hence the name. 
+\end{remark}
 
 By now the use of Hopf algebroids in situations related to homotopy theory has a long tradition. Good introductions can be found in \cite[A.1]{ravenel_86} and \cite{hovey_04}. 
 
@@ -99,13 +121,13 @@ Given a Hopf algebroid $(A,\Psi)$ we can always talk about modules over the ring
 \begin{example}
     \label{ch0:ex:modules-as-discrete-Hopf-algebroids}
     \index{Hopf algebroid!Discrete}
-    For any commutative graded ring $A$, the pair $(A, A)$ is a called a \emph{discrete Hopf algebroid}. The category of comodules over this Hopf algebroid is the normal Grothendieck  abelian category $\Mod_A$ of modules over $A$. 
+    For any commutative graded ring $A$, the pair $(A, A)$ is a called a \emph{discrete Hopf algebroid}. The category of comodules over this Hopf algebroid is the normal Grothendieck  abelian category $\Mod_A$ of modules over $A$. The prefix ``discrete'' again comes from the functor perspective. A discrete Hopf algebroid corepresents a functor into discrete groupoids, which are the groupoids with only identity morphisms. 
 \end{example}
 
 \begin{construction}
     \label{ch0:const:discretization-adjunction}
     \index{Hopf algebroid!Extended comodule}
-    Given an Adams Hopf algebroid $(A, \Psi)$, we can define a discretization map $\epsilon\: (A, \Psi)\longrightarrow (A, A)$, which is given by the identity on $A$ and the counit on $\Psi$. By \cite[A1.2.1]{ravenel_86} and \cite[4.6]{barthel-heard-valenzuela_2018} it induces a faithful exact forgetful functor $\epsilon_* \: \Comod_\Psi \longrightarrow \Mod_A$ with a right adjoint $\epsilon^*$ given by $\epsilon^*(M)\simeq \Psi\otimes_A M$. A comodule in the essential image of $\epsilon^*$ is called an \emph{extended comodule}, or sometimes a \emph{cofree comodule}. Given a $\Psi$-comodule $N$, the $A$-module $\epsilon_* N$ is called the \emph{underlying module} of $N$.  
+    Given an Adams Hopf algebroid $(A, \Psi)$, we can define a discretization map $(A, \Psi)\longrightarrow (A, A)$, which is given by the identity on $A$ and the counit $\epsilon$ on $\Psi$. By abuse of notation we also denote the discretization map by $\epsilon$. From \cite[A1.2.1]{ravenel_86} and \cite[4.6]{barthel-heard-valenzuela_2018} we know that $\epsilon$ induces a faithful exact forgetful functor $\epsilon_* \: \Comod_\Psi \longrightarrow \Mod_A$ with a right adjoint $\epsilon^*$ given by $\epsilon^*(M)\simeq \Psi\otimes_A M$. A comodule in the essential image of $\epsilon^*$ is called an \emph{extended comodule}, or sometimes a \emph{cofree comodule}. Given a $\Psi$-comodule $N$, the $A$-module $\epsilon_* N$ is called the \emph{underlying module} of $N$.  
 \end{construction}
 
 It is not true that the category $\Comod_\Psi$ is Grothendieck abelian in general. But, it will be the case in the examples we are interested in. 
@@ -148,8 +170,8 @@ In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and
 
 \begin{remark}
     In \cref{ch0:ex:adams-type-ring-spectra} we saw that the complex cobordism spectrum $\MU$ was an Adams type ring spectrum. In light of \cref{ch0:rm:presenting-stacks} we can then state the celebrated result of Quillen, see \cite{quillen_1969}, relating stable homotopy theory to formal groups:
-    \[\mathrm{Spec}(\MU_*\MU)\rightrightarrows \mathrm{Spec}(\MU*)\rightarrow \M_{\mathrm{fg}},\]
-    where $\M_{fg}$ is the moduli stack of formal groups. Note that we are brushing some technical details under the rug here, but this is correct at least in spirit. Under these ideas, the category $\ComodE$ corresponds to quasi-coherent sheaves on the open substack $\M_{\mathrm{fg}}^{\leq n} \subset \M_{\mathrm{fg}}$ consisting of formal groups of height less than or equal to $n$. 
+    \[\mathrm{Spec}(\MU_*\MU)\rightrightarrows \mathrm{Spec}(\MU_*)\rightarrow \EuScript{M}_{\mathrm{fg}},\]
+    where $\EuScript{M}_{\mathrm{fg}}$ is the moduli stack of formal groups. Note that we are brushing some technical details under the rug here, but this is correct at least in spirit. Under these ideas, the category $\ComodE$ corresponds to quasi-coherent sheaves on the open substack $\EuScript{M}_{\mathrm{fg}}^{\leq n} \subset \EuScript{M}_{\mathrm{fg}}$ consisting of formal groups of height less than or equal to $n$. 
 \end{remark}
 
 As in \cref{ch0:ssec:local-duality}, we have certain objects that are especially important---the compact objects and the dualizable objects. In Grothendieck abelian categories it is, in addition, important to understand the injective objects. This will also become important later in \cref{ch1}, as we will use injective objects to approximate other objects and to build certain spectral sequences.  
@@ -188,14 +210,14 @@ Given an Adams Hopf algebroid $(A, \Psi)$, we also have an associated derived ca
 \end{notation}
 
 \begin{remark}
-    We warn the reader that some authors use the notation $\Der(\Psi)$ to refer to a periodic version of derived category of $(A, \Psi)$, especially in the case of $\Psi = E_*E$. This is the case, for example, in \cite{pstragowski_2021}. We will use this periodic category in \cref{ch1}, and will keep the two derived categories notationally distinct. 
+    We warn the reader that some authors use the notation $\Der(\Psi)$ to refer to a periodic version of derived category of $(A, \Psi)$, especially in the case of $\Psi = E_*E$. This is the case, for example, in \cite{pstragowski_2021}. We will use this periodic category in \cref{ch1}, but will keep the two derived categories notationally distinct by adding a super script: $\Dper(\Psi)$. 
 \end{remark}
 
 The discretization adjunction of \cref{ch0:const:discretization-adjunction} also induces an adjunction on the level of derived categories, allowing us to compare the derived category of $(A, \Psi)$ to the derived category of $A$. 
 
 \begin{proposition}
     \index{Hopf algebroid!Discretization}
-    Let $(A,\psi)$ be an Adams Hopf algebroid. Then the discretization adjunction $(\epsilon_*\dashv \epsilon^*)\: \Comod_\Psi\longrightarrow \Mod_A$ induces an adjunction $(\epsilon_*\dashv \epsilon^*)\: \Der(\Psi)\longrightarrow \Der(A).$
+    Let $(A,\Psi)$ be an Adams Hopf algebroid. In this situation the discretization adjunction $(\epsilon_*\dashv \epsilon^*)\: \Comod_\Psi\longrightarrow \Mod_A$ induces an adjunction $(\epsilon_*\dashv \epsilon^*)\: \Der(\Psi)\longrightarrow \Der(A).$
 \end{proposition}
 \begin{proof}
     This follows from the fact that $\Psi$ is flat over $A$, which implies that both $\epsilon_*$ and $\epsilon^*$ on the abelian categories are exact. 
@@ -222,7 +244,7 @@ We first review the abelian situation: the internal approach. We follow \cite{ba
 \end{definition}
 
 \begin{example}
-    Of particular importance for \cref{ch1} is the category $\modt$, where $E$ is the Johnson--Wilson spectrum $E_p(n)$, and $I_n$ is the Landweber ideal 
+    Of particular importance for \hyperref[ch1]{the first paper} is the category $\modt$, where $E$ is the Johnson--Wilson spectrum $E_p(n)$, and $I_n$ is the Landweber ideal 
     \[I_n = (p, v_1, \ldots, v_{n-1})\subseteq \pi_* E_p(n).\]
 \end{example}
 
@@ -276,7 +298,7 @@ We want to extend the construction of $I$-torsion and $L$-complete modules to ge
 \end{example}
 
 \begin{notation}
-    Since $\Comod_\Psi\Itors$ is Grothendieck abelian we have an associated derived stable $\infty$-category $\Der(\Comod_\Psi\Itors)$ which we denote simply by $\Der(\Psi\Itors)$.
+    Since $\Comod_\Psi\Itors$ is a Grothendieck abelian category, we have an associated derived stable $\infty$-category $\Der(\Comod_\Psi\Itors)$. We will usually simplify the notation and denote it by $\Der(\Psi\Itors)$.
 \end{notation}
 
 \begin{remark}
@@ -285,7 +307,7 @@ We want to extend the construction of $I$-torsion and $L$-complete modules to ge
 \end{remark}
 
 \begin{remark}
-    As for the case of modules, the inclusion $\Comod_\Psi\Itors\hookrightarrow \Comod_\Psi$ has a right adjoint that corresponds to the $I$-power torsion construction $T_I^\Psi$. This, by \cite[5.5]{barthel-heard-valenzuela_2018} also has the alternative description
+    As for modules, the inclusion $\Comod_\Psi\Itors\hookrightarrow \Comod_\Psi$ has a right adjoint that corresponds to the $I$-power torsion construction $T_I^\Psi$. This, by \cite[5.5]{barthel-heard-valenzuela_2018} also has the alternative description
     \[T_I^\Psi M \cong \colim_k \iHom_\Psi (A/I^k, M).\]
     This again means that the category $\Comod_\Psi\Itors$ is a localizing subcategory of $\Comod_\Psi$. 
 \end{remark}
@@ -310,7 +332,7 @@ As mentioned above, we will later make use of injective objects in $\Comod_\Psi\
     \end{enumerate} 
 \end{lemma}
 \begin{proof}
-    The first point is \cite[2.1.4]{brodmann-sharp_1998}, while the second is a consequence of $\Comod_\Psi\Itors$ being Grothendieck abelian, as mentioned in \cref{ch0:rm:torsion-comodules-grothendieck-monoidal}. The third point is stated in the proof of \cite[3.16]{barthel-heard-valenzuela_2020}. 
+    The first point is \cite[2.1.4]{brodmann-sharp_1998}. The second follows from $\Comod_\Psi\Itors$ being Grothendieck abelian, as mentioned in \cref{ch0:rm:torsion-comodules-grothendieck-monoidal}. The third point is stated in the proof of \cite[3.16]{barthel-heard-valenzuela_2020}. 
 \end{proof}
 
 \begin{remark}
@@ -346,7 +368,7 @@ We now move to the external approach, using local duality as in \cref{ch0:ssec:l
 \begin{construction}
     \label{ch0:const:local-duality-hopf-algebroid}
     \index{Local duality!Diagram}
-    If $(A, \Psi)$ is an Adams Hopf algebroid and $I\subseteq A$ a regular invariant ideal, then $A/I$, treated as a complex concentrated in degree zero, is by \cite[5.13]{barthel-heard-valenzuela_2018} a compact object in $\Der(\Psi)$. Thus, $(\Der(\Psi), \{A/I\})$ is a local duality context, and we can consider the corresponding local duality diagram
+    If $(A, \Psi)$ is an Adams Hopf algebroid and $I\subseteq A$ a regular invariant ideal, then $A/I$, treated as a complex concentrated in degree zero, is by \cite[5.13]{barthel-heard-valenzuela_2018} a compact object in $\Der(\Psi)$. Thus, $(\Der(\Psi), A/I)$ is a local duality context, and we can consider the corresponding local duality diagram
     \begin{equation*}
         \begin{tikzcd}
             & {\Der(\Psi)\Iloc} \\
@@ -363,7 +385,7 @@ We now move to the external approach, using local duality as in \cref{ch0:ssec:l
             \arrow["\simeq"', swap, from=3-1, to=3-3]
         \end{tikzcd}    
     \end{equation*}
-    where we have used the superscript $I$ instead of $A/I$ for simplicity. This gives, in particular, a definition of $I$-torsion objects in $\Der(\Psi)$ as $\Der(\Psi)\Itors$. 
+    where we have used the superscript $I$ instead of $A/I$ for simplicity, and to invoke the connection to $I$-power torsion and $L$-complete objects. This gives, in particular, an alternative notion of $I$-torsion objects in $\Der(\Psi)$ as $\Der(\Psi)\Itors$. 
 \end{construction}
 
 Our goal was to give two constructions and prove that they were equal in the cases we were interested in. 

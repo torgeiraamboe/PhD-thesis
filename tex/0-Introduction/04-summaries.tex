@@ -11,7 +11,7 @@ In the introduction we set up a way to compare the symmetric monoidal stable $\i
 \end{align*}
 see \cref{ch0:ex:E-homology-functor}. There are many uses for such homology theories in general, but this one is particularly nice---it is possible to lift injective resolutions in $\ComodE$ to resolutions in $\Sp\np$. This property allows one to set up an $E$-based Adams spectral sequence for computing homotopy classes of maps in $\Sp\np$. For the sphere we obtain a spectral sequence with signature 
 \[E_2^{s,t} := \Ext^{s,t}_{E_*E}(E_*, E_*) \implies \pi_{t-s}L\np \S,\]
-where the $\Ext$-groups are computed in $\ComodE$. At large enough primes $p \gg n$ this spectral sequence collapses to an isomorphism $\pi_* L\np \S \cong \Ext_{E_*E}^{*,*}(E_*, E_*)$, hinting at the fact that $\Sp\np$ acts in a more and more algebraic fashion at large primes. 
+where the $\Ext$-groups are computed in $\ComodE$. When the prime is significantly bigger than the chromatic height $n$, this spectral sequence collapses to an isomorphism $\pi_* L\np \S \cong \Ext_{E_*E}^{*,*}(E_*, E_*)$, hinting at the fact that $\Sp\np$ acts in a more and more algebraic fashion at large primes. 
 
 The precise formulation of this conjectured relationship is due to Franke in \cite{franke_96}, where he conjectures that at large primes there should be an equivalence between the homotopy categories $h\Sp\np \simeq h\Dper(\ComodE)$---the latter being a certain periodic version of the derived category of the Hopf algebroid $E_*E$. By work of Pstr\a{}gowski and Patchkoria--Pstr\a{}gowski, see \cite{pstragowski_2021} and \cite{patchkoria-pstragowski_2021}, this conjectured relationship was proven to hold. This equivalence can not be lifted to an equivalence on the level of $\infty$-categories, hence it is often said to be an \emph{exotic} equivalence. 
 
@@ -33,7 +33,7 @@ which by the general machinery set up in \cite{patchkoria-pstragowski_2021} prov
     \[h \M\np \simeq h \Dper(E_*E\Int).\]
 \end{theorem}
 
-By utilizing the local duality equivalences $\M\np \simeq \Sp_\Kpn$ and $\Der(E_*E)\Int \simeq \Der(E_*E)\Inc$ we can then obtain a version of this exotic algebraicity result for the category of $\Kpn$-local spectra: 
+By utilizing the equivalences $\M\np \simeq \Sp_\Kpn$ and $\Der(E_*E)\Int \simeq \Der(E_*E)\Inc$ obtained from local duality, we can then conclude with a version of this exotic algebraicity result for the category of $\Kpn$-local spectra: 
 
 \begin{theorem}[{\cref{ch1:thm:A}}]
     \label{ch0:summary1:thm:A}
@@ -41,7 +41,9 @@ By utilizing the local duality equivalences $\M\np \simeq \Sp_\Kpn$ and $\Der(E_
     \[h \Sp_\Kpn \simeq h \Dper(E_*E)\Inc.\]
 \end{theorem}
 
-This gives a new slogan: \emph{monochromatic homotopy theory is exotically algebraic at large primes.}
+This gives a new slogan: \emph{monochromatic homotopy theory is exotically algebraic at large primes.} 
+
+In fact, we prove slightly stronger claims, using their homotopy $k$-categories rather than simply the homotopy categories---just as in the work of Pstr\a{}gowski and Patchkoria--Pstr\a{}gowski. 
 
 
 
@@ -99,7 +101,7 @@ As an added bonus for this thesis, we have added \cref{ch2:addendum}, which incl
 
 \subsection{Paper III}
 
-The way Patchkoria--Pstr\a{}gowski proved the exotic equivalence $h\Sp\np \simeq h\Dper(E_*E)$, as discussed above, was to construct a ``categorification'' of the homology theory 
+Patchkoria--Pstr\a{}gowski proved the exotic equivalence $h\Sp\np \simeq h\Dper(E_*E)$ discussed above by constructing a ``categorification'' of the homology theory 
 \[E_* \: \Spn \to \ComodE,\]
 consisting---at least intuitively---of formal $E$-based Adams spectral sequences. This categorification can be interpreted as a local version of Pstr\a{}gowski's category of synthetic spectra, $\LSynE$. This is a rigidly compactly generated symmetric monoidal stable $\infty$-category, which incorporates both homotopical information $\Sp\np$ and algebraic information from $E_*E$; it has, in particular, a $t$-structure with heart $\ComodE$. 
 
