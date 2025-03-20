@@ -3,7 +3,7 @@
 \label{ch1:sec:exotic-algebraic-models}
 
 We now have two sets of local duality diagrams, one coming from chromatic homotopy theory, see \cref{ch1:ex:local-duality-chromatic}, and one from the homological algebra of Adams Hopf algebroids, see \cref{ch1:ex:local-duality-comod}. We can also pass between these duality theories, by using homology theories. In particular, if we let $E=E\np$ be height $n$ Morava $E$-theory at a prime $p$, then we have the $E$-homology functor 
-\[E_*\colon \Sp\np\longrightarrow \Comod\EE\] 
+\[E_*\: \Sp\np\longrightarrow \Comod\EE\] 
 converting between homotopy theory and algebra. We can, in some sense, say that $E_*$ approximates homotopical information by algebraic information. 
 
 The goal of this section is to set up an abstract framework for studying how good such approximations are. The version we recall below was developed in \cite{patchkoria-pstragowski_2021}, taking inspiration from \cite{franke_96} and \cite{pstragowski_2022}. 
@@ -16,7 +16,7 @@ Adapted homology theories are particularly well behaved homology theories that h
 \begin{definition}
     \label{ch1:def:homology-theory}
     \index{Homology theory}
-    Let $\C$ be a presentable symmetric monoidal stable $\infty$-category and $\A$ an abelian category with a local grading $[1]$. A functor $H\colon \C\longrightarrow \A$ is called a \emph{conservative homology theory} if:
+    Let $\C$ be a presentable symmetric monoidal stable $\infty$-category and $\A$ an abelian category with a local grading $[1]$. A functor $H\: \C\longrightarrow \A$ is called a \emph{conservative homology theory} if:
     \begin{enumerate}
         \item $H$ is additive
         \item for a cofiber sequence $X\to Y\to Z$ in $\C$, then the induced sequence $HX\to HY\to HZ$ is exact in $\A$
@@ -30,39 +30,39 @@ Adapted homology theories are particularly well behaved homology theories that h
 \end{remark}
 
 \begin{example}
-    Let $R$ be a ring spectrum. Then the functor $\pi_*\colon \Mod_R\longrightarrow \Mod_{R_*}$ defined as $\pi_* M = [\S, M]_*$ is a conservative homology theory. 
+    Let $R$ be a ring spectrum. Then the functor $\pi_*\: \Mod_R\longrightarrow \Mod_{R_*}$ defined as $\pi_* M = [\S, M]_*$ is a conservative homology theory. 
 \end{example}
 
 \begin{example}
-    Let $R$ be a ring spectrum. The $R$-homology functor $R_*(-)\colon \Sp \longrightarrow \Mod_R$, defined as the composition 
+    If $R$ is a ring spectrum, then the functor $R_*(-)\: \Sp \longrightarrow \Mod_R$, defined as the composition 
     $$\Sp\overset{R\otimes (-)}\longrightarrow \Mod_R \overset{\pi_*}\longrightarrow \Mod_{R_*},$$
-    is a homology theory. If $R$ is of Adams type, then $R_*(-)$ naturally lands in the subcategory $\Comod_{R_*R}$. If we restrict the domain of $R_*$ to the category of $R$-local spectra, then it is a conservative homology theory. For the rest of the paper we will use $R_*$ to denote the restricted conservative homology theory 
-    \[R_*\colon \Sp_R\to \Comod_{R_*R}.\]
+    is a homology theory. We call this the $R$-homology functor. If $R$ is of Adams type, then $R_*(-)$ naturally lands in the subcategory $\Comod_{R_*R}$. If we restrict the domain of $R_*$ to the category of $R$-local spectra, then it is a conservative homology theory. For the rest of the paper we will use $R_*$ to denote the restricted conservative homology theory 
+    \[R_*\: \Sp_R\to \Comod_{R_*R}.\]
 \end{example}
 
 \begin{definition}
     \label{ch1:def:faithful-lift}
     \index{Faithful lift}
-    Let $H\colon \C\longrightarrow \A$ be a homology theory and $J$ an injective object in $\A$. An object $\bar{J}\in \C$ is said to be an \emph{injective lift} of $J$ if it represents the functor 
-    $$\Hom_\A(H(-),J)\colon \C^{op}\longrightarrow \A b$$
+    Let $H\: \C\longrightarrow \A$ be a homology theory and $J$ an injective object in $\A$. An object $\bar{J}\in \C$ is said to be an \emph{injective lift} of $J$ if it represents the functor 
+    $$\Hom_\A(H(-),J)\: \C^{op}\longrightarrow \A b$$
     in the homotopy category $h \C$, i.e. $\Hom_\A(H(-),J)\cong [-,\bar{J}]$. We call $\bar{J}$ a \emph{faithful lift} if the map $H(\bar{J})\longrightarrow J$ coming from the identity on $\bar{J}$ is an equivalence. 
 \end{definition}
 
 \begin{definition}
     \label{ch1:def:adapted-homology-theory}
     \index{Homology theory!Adapted}
-    A homology theory $H\colon \C\longrightarrow \A$ is said to be \emph{adapted} if $\A$ has enough injective objects, and for any injective $J \in \A$ there is a faithful lift $\bar{J}\in \C$. 
+    A homology theory $H\: \C\longrightarrow \A$ is said to be \emph{adapted} if $\A$ has enough injective objects, and for any injective $J \in \A$ there is a faithful lift $\bar{J}\in \C$. 
 \end{definition}
 
 \begin{example}
-    We again return to our two guiding examples $\pi_*\colon \Mod_R\longrightarrow \Mod_{R_*}$ and $R_*\colon \Sp_R\longrightarrow \Comod_{R_*R}$, where $R$ is an Adams type ring spectrum. Both functors are conservative adapted homology theories, with faithful lifts provided by Brown representability, see \cite[8.2]{patchkoria-pstragowski_2021} and \cite[8.13]{patchkoria-pstragowski_2021} respectively. 
+    We again return to this papers two guiding examples, being $\pi_*\: \Mod_R\longrightarrow \Mod_{R_*}$ and $R_*\: \Sp_R\longrightarrow \Comod_{R_*R}$, where $R$ is an Adams type ring spectrum. Both functors are conservative adapted homology theories, with faithful lifts provided by Brown representability, see \cite[8.2]{patchkoria-pstragowski_2021} and \cite[8.13]{patchkoria-pstragowski_2021} respectively. 
 \end{example}
 
 
 \begin{remark}
     The definition of an adapted homology theory $H$ states that for any injective $J\in \A$, there is some object $\bar{J}\in \C$ together with an equivalence 
     \[[X,\bar{J}]\simeq \Hom_\A(H(X), J)\] 
-    induced by $H$. Because $\A$ has enough injective objects, we can use these equivalences to approximate homotopy classes of maps by repeatedly mapping into injectives. This gives precisely an associated Adams spectral sequence for the homology theory $H$. In fact, Patchkoria and Pstr{\k a}gowski proved that there is a bijection between adapted homology theories and Adams spectral sequences, see \cite[3.24, 3.25]{patchkoria-pstragowski_2021}. The construction of the Adams spectral sequence associated to an adapted homology theory $H\colon \C\longrightarrow \A$ is given in \cite[2.24]{patchkoria-pstragowski_2021}, or alternatively as a totalization spectral sequence in \cite[2.27]{patchkoria-pstragowski_2021}. 
+    induced by $H$. Because $\A$ has enough injective objects, we can use these equivalences to approximate homotopy classes of maps by repeatedly mapping into injectives. This gives precisely an associated Adams spectral sequence for the homology theory $H$. In fact, Patchkoria and Pstr{\k a}gowski proved that there is a bijection between adapted homology theories and Adams spectral sequences, see \cite[3.24, 3.25]{patchkoria-pstragowski_2021}. The construction of the Adams spectral sequence associated to an adapted homology theory $H\: \C\longrightarrow \A$ is given in \cite[2.24]{patchkoria-pstragowski_2021}, or alternatively as a totalization spectral sequence in \cite[2.27]{patchkoria-pstragowski_2021}. 
 \end{remark}
 
 In our particular interest $R=E\np$, the associated adapted homology theories $\pi_*$ and $E_*$ are even nicer than a general adapted homology theory. This is because the cohomological information in the associated category of comodules is particularly simple. 
@@ -70,7 +70,7 @@ In our particular interest $R=E\np$, the associated adapted homology theories $\
 \begin{definition}
     \label{ch1:def:cohomological-dimension}
     \index{Cohomological dimension}
-    Let $\A$ be a locally graded abelian category with enough injective objects. Then the \emph{cohomological dimension} of $\A$ is the smallest integer $d\in \N\cup \{\infty\}$ such that $\Ext^{s,t}_\A(-,-) \cong 0$ for all $s>d$. 
+    Let $\A$ be a locally graded abelian category with enough injective objects. Then the \emph{cohomological dimension} of $\A$ is the smallest number $d\in \N\cup \{\infty\}$ such that $\Ext^{s,t}_\A(-,-) \cong 0$ for all $s>d$. 
 \end{definition}
 
 \begin{example}
@@ -79,9 +79,11 @@ In our particular interest $R=E\np$, the associated adapted homology theories $\
 \end{example}
 
 \begin{remark}
-    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra. The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory $\Kpn_*\colon \SpKpn\longrightarrow \Mod_{\Kpn_*}$ is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. This can be seen via the following argument of \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
+    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra. The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory 
+    \[\Kpn_*\: \SpKpn\longrightarrow \Mod_{\Kpn_*}\] 
+    is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. This can be seen via the following argument of \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
     
-    There is, however, a version of $E_*$-homology on $\SpKpn$, defined by sending a $K(n)$-local spectrum $X$ to 
+    There is, however, a version of $E_*$-homology on $\SpKpn$, defined by sending a $\Kpn$-local spectrum $X$ to 
     \[E_*^\vee (X) := \pi_*L_{\Kpn}(E\otimes X).\]
     The functor does land in a category of comodules, specifically over the $L$-complete Hopf algebroid $(E_*, E_*^\vee E)$, see \cite[5.3]{baker_2009}. However, the category $\Comod_{E_*^\vee E}$ is not abelian. This is the reason for instead using the monochromatic category $\M\np$ and the category of $I_n$-power torsion comodules, as these inherit nicer homological properties we can exploit. 
 \end{remark}
@@ -96,7 +98,7 @@ For certain Adams type ring spectra $R$, we get decompositions of the category $
     
     Let $h_k \C$ denote the homotopy $k$-category of $\C$, obtained by $k+1$-truncating all the mapping spaces in $\C$.  
     The lift associated with each injective via the Adapted homology theory $R_*$ allows us to construct a partial inverse to $R_*$, called the Bousfield functor $\beta^{inj}$ in \cite{patchkoria-pstragowski_2021}. It is a functor 
-    \[\beta^{inj}\colon \Comod_{R_*R}^{inj}\longrightarrow h_{q+1} \Sp_R^{inj},\]
+    \[\beta^{inj}\: \Comod_{R_*R}^{inj}\longrightarrow h_{q+1} \Sp_R^{inj},\]
     where the latter category is the homotopy $(q+1)$-category of the full subcategory of $\Sp_R$ containing all spectra $X$ such that $R_*X$ is injective. % and $[X,Y]\to \Hom_{R_*R}(R_*X, R_*Y)$ is a bijection for all $Y\in \Sp_R$. 
 \end{construction}
     
@@ -128,7 +130,7 @@ In order to mimic this behavior for a general adapted homology theory, Franke in
 \end{definition}
     
 \begin{remark}
-    Just as for $\Comod_{R_*R}$, a splitting of order $q+1$ of a locally graded abelian category $\A$ is enough to define, for any adapted homology theory $H\colon \C\longrightarrow \A$, a partial inverse Bousfield functor $\beta^{inj}$, see \cite[Section 7.2]{patchkoria-pstragowski_2021}. 
+    Just as for $\Comod_{R_*R}$, a splitting of order $q+1$ of a locally graded abelian category $\A$ is enough to define, for any adapted homology theory $H\: \C\longrightarrow \A$, a partial inverse Bousfield functor $\beta^{inj}$, see \cite[Section 7.2]{patchkoria-pstragowski_2021}. 
 \end{remark}
 
 
@@ -148,37 +150,37 @@ In order to make some statements about exotic equivalences a bit simpler, we int
 \begin{definition}
     \label{ch1:def:k-exotic-homology-theory}
     \index{Homology theory!$k$-exotic}
-     Let $H\colon \C\longrightarrow \A$ be a homology theory. We say $H$ is \emph{$k$-exotic} if $H$ is adapted, conservative, $\A$ has finite cohomological dimension $d$ and a splitting of order $q+1$ such that $k=d+1-q>0$. 
+     Let $H\: \C\longrightarrow \A$ be a homology theory. We say $H$ is \emph{$k$-exotic} if $H$ is adapted, conservative, $\A$ has finite cohomological dimension $d$ and a splitting of order $q+1$ such that $k=d+1-q>0$. 
 \end{definition}
     
-One of the remarkable things about the existence of a $k$-exotic homology theory $H\colon \C\longrightarrow \A$, is that it forces the stable $\infty$-category $\C$ to be approximately algebraic. Intuitively: As the order of the splitting is greater than the cohomological dimension, the $H$-Adams spectral sequence is very sparse and well-behaved. There is a partial inverse of $H$ via the Bousfield functor $\beta\colon \A^{inj}\to h_{q+1} \C^{inj}$, which forces a certain subcategory of a categorified deformation of $H$ to be equivalent to both $h_k \C$ and $h_k \Dper(\A)$. This is the contents of Franke's algebraicity theorem. 
+One of the remarkable things about the existence of a $k$-exotic homology theory $H\: \C\longrightarrow \A$, is that it forces the stable $\infty$-category $\C$ to be approximately algebraic. Intuitively: As the order of the splitting is greater than the cohomological dimension, the $H$-Adams spectral sequence is very sparse and well-behaved. There is a partial inverse of $H$ via the Bousfield functor $\beta\: \A^{inj}\to h_{q+1} \C^{inj}$, which forces a certain subcategory of a categorified deformation of $H$ to be equivalent to both $h_k \C$ and $h_k \Dper(\A)$. This is the contents of Franke's algebraicity theorem. 
     
 \begin{theorem}[{\cite[7.56]{patchkoria-pstragowski_2021}}]
     \label{ch1:thm:franke-algebraicity}
     \index{Franke algebraicity theorem}
-    Let $H\colon \C\longrightarrow \A$ be a $k$-exotic homology theory. Then there is an equivalence  
+    Let $H\: \C\longrightarrow \A$ be a $k$-exotic homology theory. Then there is an equivalence  
     \[h_k \C \simeq h_k \Dper(\A)\]
     of homotopy $k$-categories
 \end{theorem}
     
-There are several interesting examples of homology theories satisfying \cref{ch1:thm:franke-algebraicity}, see Section 8 in \cite{patchkoria-pstragowski_2021}. We highlight again our two guiding examples but focus specifically on certain Morava $E$-theories. 
+There are many interesting examples of homology theories satisfying \cref{ch1:thm:franke-algebraicity}, see Section 8 in \cite{patchkoria-pstragowski_2021}. We highlight again our two guiding examples, but focus specifically on certain Morava $E$-theories. 
 
 \begin{example}[{\cite[8.7]{patchkoria-pstragowski_2021}}]
     \label{ch1:ex:chromatic-algebraicity-modules}
     Let $p$ be a prime, $n$ be a non-negative integer, and $E$ a height $n$ Morava $E$-theory concentrated in degrees divisible by $2p-2$, for example Johnson-Wilson theory $E_p(n)$. If $k=2p-2-n>0$, then the functor 
-    \[\pi_* \colon \ModE \longrightarrow \modE\]
+    \[\pi_* \: \ModE \longrightarrow \modE\]
     is a $k$-exotic homology theory, giving an equivalence 
     \[h_k \ModE \simeq h_k \Dper(\modE).\]
 \end{example}
     
 \begin{notation}
     \index{Franke category}
-    For the following example and the rest of the paper, we follow the notation of \cite{barthel-schlank-stapleton_2020}, \cite{barthel-schlank-stapleton_2021} and \cite{barkan_2023} and denote the category $\Dper(\Comod\EE)$ by $\Fr\np$. 
+    For the following example, and the rest of the paper, we follow the notation of \cite{barthel-schlank-stapleton_2020}, \cite{barthel-schlank-stapleton_2021} and \cite{barkan_2023} and denote the category $\Dper(\Comod\EE)$ by $\Fr\np$. 
 \end{notation}
     
 \begin{example}[{\cite[8.13]{patchkoria-pstragowski_2021}}]
     \label{ch1:ex:chromatic-algebraicity}
-    Let $p$ be a prime, $n$ be a non-negative integer, and $E$ any height $n$ Morava $E$-theory. If $k=2p-2-n^2-n>0$, then the functor $E_* \colon \Sp\np\longrightarrow \Comod\EE$ is a $k$-exotic homology theory, giving an equivalence 
+    Let $p$ be a prime, $n$ be a non-negative integer, and $E$ any height $n$ Morava $E$-theory. If $k=2p-2-n^2-n>0$, then the functor $E_* \: \Sp\np\longrightarrow \Comod\EE$ is a $k$-exotic homology theory, giving an equivalence 
     \[h_k \Sp\np \simeq h_k \Fr\np.\]
 \end{example}
 
@@ -188,7 +190,7 @@ There are several interesting examples of homology theories satisfying \cref{ch1
     
 \begin{definition}
     \index{Exotic algebraic model}
-    Let $H\colon \C\longrightarrow \A$ be a $k$-exotic homology theory. The category $\Dper(\A)$ is called an \emph{exotic algebraic model} of $\C$ if the equivalence $h_k \C \simeq h_k \Dper(\A)$ can not be enhanced to an equivalence of $\infty$-categories $\C\simeq \Dper(\A).$
+    Let $H\: \C\longrightarrow \A$ be a $k$-exotic homology theory. The category $\Dper(\A)$ is called an \emph{exotic algebraic model} of $\C$ if the equivalence $h_k \C \simeq h_k \Dper(\A)$ can not be enhanced to an equivalence of $\infty$-categories $\C\simeq \Dper(\A).$
 \end{definition}
 
 \begin{remark}

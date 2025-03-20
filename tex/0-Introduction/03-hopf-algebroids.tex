@@ -146,11 +146,14 @@ It is not true that the category $\Comod_\Psi$ is Grothendieck abelian in genera
 
 In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and by \cref{ch0:prop:all-E-local-cats-are-equivalent} we know that all their corresponding $E$-local categories are equivalent. The same occurs for the categories of comodules associated to their respective Adams Hopf algebroid.
 
-\begin{proposition}[{\cite[4.2]{hovey-strickland_2005a}}]
-    If $p$ is a prime and $n$ a positive natural number, then the categories of comodules over the Hopf algebroids associated to $E\np$, $E_p(n)$ and $A = E\np^{h\F_p^\times}$ are all equivalent: 
-    \[\Comod_{E{\np}_*\E\np}\simeq \Comod_{E_p(n)_*E_p(n)}\simeq \Comod_{A_*A}.\]
+\begin{proposition}
+    If $p$ is a prime and $n$ a positive natural number, then the categories of comodules over the Hopf algebroids associated to $E\np$, $E_p(n)$ and $A = E\np^{h\F_p^\times}$ are all equivalent as symmetric monoidal categories: 
+    \[\Comod_{E{\np}_*E\np}\simeq \Comod_{E_p(n)_*E_p(n)}\simeq \Comod_{A_*A}.\]
     Furthermore, given any Landweber exact $v_n$-periodic $\BP$-algebra $E$, then its associated category of comodules is equivalent to the ones above. 
 \end{proposition}
+\begin{proof}
+    The equivalence is given by \cite[4.2]{hovey-strickland_2005a}. This equivalence is given by induction along the weak equivalence of Hopf algebroid from \cite[6.5]{hovey-strickland_2005a}, which makes it symmetric monoidal. 
+\end{proof}
 
 \begin{notation}
     When the chromatic height $n$ and the prime $p$ is understood, we will use the common notation $\ComodE$ for any of the above categories. 
@@ -159,7 +162,7 @@ In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and
 \begin{example}
     \label{ch0:ex:E-homology-functor}
     As we will use this functor a lot, we hammer in the fact that the above Morava $E$-theories are of Adams type. This means that the $E$-homology functor lands naturally in $\ComodE$. We will mostly focus on the homology theory
-    \[E_*\: \Sp \to \ComodE,\]
+    \[E_*\: \Sp\np \to \ComodE,\]
     where we have restricting the domain to $\Sp\np$. This is because it is a \emph{conservative} functor, meaning that it detects equivalences. 
 \end{example}
 
@@ -174,7 +177,7 @@ In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and
     where $\EuScript{M}_{\mathrm{fg}}$ is the moduli stack of formal groups. Note that we are brushing some technical details under the rug here, but this is correct at least in spirit. Under these ideas, the category $\ComodE$ corresponds to quasi-coherent sheaves on the open substack $\EuScript{M}_{\mathrm{fg}}^{\leq n} \subset \EuScript{M}_{\mathrm{fg}}$ consisting of formal groups of height less than or equal to $n$. 
 \end{remark}
 
-As in \cref{ch0:ssec:local-duality}, we have certain objects that are especially important---the compact objects and the dualizable objects. In Grothendieck abelian categories it is, in addition, important to understand the injective objects. This will also become important later in \cref{ch1}, as we will use injective objects to approximate other objects and to build certain spectral sequences.  
+In a presentably symmetric monoidal stable $\infty$-category we had certain objects of special importance---the compact objects and the dualizable objects. These types of objects are also important in the setting of Grothendieck abelian categories. In addition it is important to understand the injective objects. These will become important later in \cref{ch1}, as we will use injective objects to approximate other objects and to build certain spectral sequences.  
 
 \begin{proposition}
     \label{ch0:rm:dualizable/compact-comodules}
@@ -210,7 +213,7 @@ Given an Adams Hopf algebroid $(A, \Psi)$, we also have an associated derived ca
 \end{notation}
 
 \begin{remark}
-    We warn the reader that some authors use the notation $\Der(\Psi)$ to refer to a periodic version of derived category of $(A, \Psi)$, especially in the case of $\Psi = E_*E$. This is the case, for example, in \cite{pstragowski_2021}. We will use this periodic category in \cref{ch1}, but will keep the two derived categories notationally distinct by adding a super script: $\Dper(\Psi)$. 
+    We warn the reader that some authors use the notation $\Der(\Psi)$ to refer to a periodic version of derived category of $(A, \Psi)$, especially in the case of $\Psi = E_*E$. This is the case, for example, in \cite{pstragowski_2021}. We will use this periodic category in \hyperref[ch1]{paper I}, but will keep the two derived categories notationally distinct by adding a super script: $\Dper(\Psi)$. 
 \end{remark}
 
 The discretization adjunction of \cref{ch0:const:discretization-adjunction} also induces an adjunction on the level of derived categories, allowing us to compare the derived category of $(A, \Psi)$ to the derived category of $A$. 
@@ -404,7 +407,7 @@ One can wonder whether the same is true for the $I$-complete derived category, b
     Recall that $\Mod_A\Icomp$ denotes the category of $I$-complete $A$-modules for $I\subseteq A$ a regular ideal. By \cite[2.11]{barthel-heard-valenzuela_2020} the category has enough projective objects, hence by \cite[1.3.2]{Lurie_HA} we can associate to it the right bounded category $\Der^-(\Mod_A\Icomp)$. This has a by \cite[1.3.2.19, 1.3.3.16]{Lurie_HA} a left complete $t$-structure with heart equivalent to $\Mod_A\Icomp$. We can then form its right completion, which we denote $\overline{\Der}(\Mod_A\Icomp)$, and call the completed derived category of $\Mod_A\Icomp$. 
 \end{construction}
 
-This is what allows for a partial version of \cref{ch0:lm:derived-torsion-if-homology-torsion} in the case of $I$-completion. 
+This is what allows for a partial version of \cref{ch0:lm:derived-torsion-if-homology-torsion} in the present case. 
 
 \begin{proposition}[{\cite[3.7(1)]{barthel-heard-valenzuela_2020}}]
     \label{ch0:prop:pulling-out-completion}

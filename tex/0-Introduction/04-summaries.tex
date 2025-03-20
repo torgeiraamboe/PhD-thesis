@@ -84,12 +84,10 @@ Now, we can then try to relate this back to the original motivation, which was t
 \end{theorem}
 
 This finally gives the description we were after, and we can conclude that there is an equivalence 
-\[\Sp_\Kpn \simeq \Contra_{\M\np \S}(\Sp\np)\]
+\[\Sp_\Kpn \simeq \Contra_{M\np \S}(\Sp\np)\]
 of symmetric monoidal stable $\infty$-categories. 
 
-This description is all well and good, but there is a conceptual peculiarity at play. It would be more intuitive that $\Sp_\Kpn$ should be dependent on a module-like structure over its unit $L_\Kpn \S$, and not the unit $M\np \S$ in the dual category $\M\np$---this is after all the case for the other two categories in the local duality diagram. 
-
-As an added bonus for this thesis, we have added \cref{ch2:addendum}, which includes some work on defining contramodules over topological algebras in the $\infty$-categorical setting. This is not featured in the original paper, but tries to answer some of the questions that arose. We prove that there is an equivalence between comodules over $C$, and the opposite category of modules over the $\C$-linear dual of $C$, which is a pro-dualizable commutative algebra in $\C$---which is a way to incorporate a topology on it in the $\infty$-categorical setting. We also argue why this category deserves to be called the category of contramodules over these pro-dualizable algebras. The main takeaway from this added content is that we do in fact obtain an equivalence between $\SpKn$ and contramodules over $L_\Kpn\S$. 
+This description is all well and good, but there is a conceptual peculiarity at play. It would be more intuitive that $\Sp_\Kpn$ should be dependent on a module-like structure over its unit $L_\Kpn \S$, and not the unit $M\np \S$ in the dual category $\M\np$---this is after all the case for the other two categories in the local duality diagram. As an added bonus for this thesis, we have thus added \cref{ch2:addendum}, which includes some work on defining contramodules over topological algebras in the $\infty$-categorical setting. This is not featured in the original paper, but tries to answer some of the questions that arose. We prove that there is an equivalence between comodules over $C$, and the opposite category of modules over the $\C$-linear dual of $C$, which is a pro-dualizable commutative algebra in $\C$---which is a way to incorporate a topology on it in the $\infty$-categorical setting. We also argue why this category deserves to be called the category of contramodules over these pro-dualizable algebras. The main takeaway from this added content is that we do in fact obtain an equivalence between $\SpKpn$ and contramodules over $L_\Kpn\S$. 
 
 
 
@@ -103,9 +101,9 @@ As an added bonus for this thesis, we have added \cref{ch2:addendum}, which incl
 
 Patchkoria--Pstr\a{}gowski proved the exotic equivalence $h\Sp\np \simeq h\Dper(E_*E)$ discussed above by constructing a ``categorification'' of the homology theory 
 \[E_* \: \Spn \to \ComodE,\]
-consisting---at least intuitively---of formal $E$-based Adams spectral sequences. This categorification can be interpreted as a local version of Pstr\a{}gowski's category of synthetic spectra, $\LSynE$. This is a rigidly compactly generated symmetric monoidal stable $\infty$-category, which incorporates both homotopical information $\Sp\np$ and algebraic information from $E_*E$; it has, in particular, a $t$-structure with heart $\ComodE$. 
+consisting---at least intuitively---of formal $E$-based Adams spectral sequences. This categorification can be interpreted as a local version of Pstr\a{}gowski's category of synthetic spectra, $\LSynE$. This is a rigidly compactly generated symmetric monoidal stable $\infty$-category, which incorporates both homotopical information FROM $\Sp\np$ and algebraic information from $E_*E$; it has, in particular, a $t$-structure with heart $\ComodE$. 
 
-In the first paper we prove that the $E$-homology functor above could be restricted to a well behaved homology theory 
+In the first paper we proved that the $E$-homology functor above could be restricted to a well behaved homology theory 
 \[E_* \: \M\np \to \Comodt.\]
 We know that $\M\np$ is a localizing subcategory of $\Sp\np$, and that $\Comodt$ is a localizing subcategory of $\ComodE$. Hence, we want to show that there is a similar ``categorification'' of the restricted homology theory, and that the resulting category is a localizing subcategory of $\SynE$.  
 
@@ -113,7 +111,7 @@ Motivated by the setup above, the goal of \hyperref[ch3]{paper III} is understan
 \[\C^\heart = \C\geqz\cap \C\leqz.\] 
 In particular, we want to classify which localizing subcategories in $\C$ that are uniquely determined by a localizing subcategory in $\C^\heart$. 
 
-There are two levels to such a classification. A $t$-structure compatible localizing subcategory $\L$ of $\C$ determines a weak localizing subcategory $\L^\heart$ of $\C^\heart$, and our first result classifies those $\L$ who are uniquely determined by $\L^\heart$. 
+There are two levels to such a classification. A localizing subcategory $\L$ of $\C$, which is compatible with the $t$-structure, determines a weak localizing subcategory $\L^\heart$ of $\C^\heart$. Our first result classifies those $\L$ who are uniquely determined by $\L^\heart$. 
 
 \begin{theorem}[{\cref{ch3:thm:premain}}]
     There is a one-to-one correspondence
@@ -121,7 +119,7 @@ There are two levels to such a classification. A $t$-structure compatible locali
     where a localizing ideal $\L\subseteq \C$ is said to be $\pi$-stable if $X\in \L$ if and only if $\pi_k^\heart X \in \L^\heart$ for all $k\in \Z$.  
 \end{theorem}
 
-The second level comes from starting with a localizing subcategory $\L^\heart$ of $\C^\heart$, and try to understand how to lift such a category to a localizing subcategory of $\C$. The difference between a weak localizing subcategory and a localizing subcategory is given by certain exact sequences in $\C^\heart$. One should then perhaps expect that the difference between a classification of localizing subcategories of $\C$ that have a weak localizing heart, compared to a localizing heart, is also detected by certain exact sequences. This is precisely what happens.
+The second level comes from starting with a localizing subcategory $\L^\heart$ of $\C^\heart$, and then trying to understand how to lift such a category to a localizing subcategory of $\C$. The difference between a weak localizing subcategory and a localizing subcategory is given by certain exact sequences in $\C^\heart$. One should then perhaps expect that the difference between a classification of localizing subcategories of $\C$ that have a weak localizing heart, compared to a localizing heart, is also detected by certain exact sequences. This is precisely what happens.
 
 \begin{theorem}[{\cref{ch3:thm:main}}]
     There is a one-to-one correspondence

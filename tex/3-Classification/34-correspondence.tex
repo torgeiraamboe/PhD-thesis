@@ -69,7 +69,7 @@ This map is in general not injective, meaning we have to restrict our domain. As
 
 \begin{remark}
     \label{ch3:rm:pi-stable-implies-t-stable}
-    In particular, if $\L$ is a $\pi$-stable localizing subcategory then \cref{ch3:lm:localizing-inherits-completeness-and-colimits} implies that $\L$ is itself a $t$-stable category. This is rather convenient, as it allows us to treat nested pairs of $\pi$-stable localizing subcategories $\L_2 \subseteq \L_1 \subseteq \C$ either as both being subcategories of $\C$, or as $\L_2$ being a $\pi$-stable localizing subcategory of $\L_1$. 
+    If $\L$ is a $\pi$-stable localizing subcategory then \cref{ch3:lm:localizing-inherits-completeness-and-colimits} implies that $\L$ is itself a $t$-stable category. This is rather convenient, as it allows us to treat nested pairs of $\pi$-stable localizing subcategories $\L_2 \subseteq \L_1 \subseteq \C$ either as both being subcategories of $\C$, or as $\L_2$ being a $\pi$-stable localizing subcategory of $\L_1$. 
 \end{remark}
 
 % Now, we want to relate stable localizing subcategories and prestable localizing subcategories to certain subcategories in the Grothendieck abelian heart. Hence we need to know what the corresponding notion of ``abelian localizing subcategory'' is. In fact, we need two such notions, because we will have two slightly different classification results for stable and prestable localizing subcategories. 
@@ -159,7 +159,7 @@ It remains to show that the map is also surjective.
     \[\cdots\rightarrow \pi^{\heart}_{n}A \rightarrow \pi^{\heart}_{n}B \rightarrow \pi^{\heart}_{n}C \rightarrow \pi^{\heart}_{n+1}A\rightarrow \pi^{\heart}_{n+1}B \rightarrow \cdots \]
     Assuming that $A, B$ are in $\L$ we get by the definition of $\L$ that the four objects $\pi^{\heart}_{n}A, \pi^{\heart}_{n}B, \pi^{\heart}_{n+1}A, \pi^{\heart}_{n+1}B$ are in $\A$. Hence, as $\A$ is a weak Serre subcategory we have $\pi^\heart_n C\in \A$. This works for all $n$, hence we must have $C\in \L$ as well. The proof is identical in the case that $A, C$ or $B, C$ lie in $\L$. 
     
-    The full subcategory $\L$ is also closed under desuspension, as we have $\pi_n^\heart (\Sigma^{-1} X)\simeq \pi_{n+1}^\heart(X)$ by the long exact sequence in heart-valued homotopy groups. Hence $\L$ is a full stable subcategory of $\C$. In particular this means it is closed under finite colimits. Now, as $\pi_n^\heart$ preserves coproducts, and $\A$ is closed under coproducts, we also get that $\L$ is closed under coproducts. This implies that $\L$ is closed under colimits, which finishes the proof. 
+    The full subcategory $\L$ is also closed under desuspension, as we have an isomorphism $\pi_n^\heart (\Sigma^{-1} X)\cong \pi_{n+1}^\heart(X)$ by the long exact sequence in heart-valued homotopy groups. Hence $\L$ is a full stable subcategory of $\C$. In particular this means it is closed under finite colimits. Now, as $\pi_n^\heart$ preserves coproducts, and $\A$ is closed under coproducts, we also get that $\L$ is closed under coproducts. This implies that $\L$ is closed under colimits, which finishes the proof. 
 \end{proof}
 
 \begin{remark}
@@ -365,7 +365,7 @@ The $\pi$-exact localizing subcategories are the stable analogs of Lurie's notio
 
 \begin{definition}
     \index{Localizing subcategory!Separating}
-    Let $\C\geqz$ be a Grothendieck prestable category. A prestable localizing subcategory $\L\geqz \subseteq \C\geqz$ is \emph{separating} if for every $X\in \C\geqz$ such that $\pi_n^\heart X\in \L^\heart$ for all $n$, then $X\in \L\geqz$. 
+    Let $\C\geqz$ be a Grothendieck prestable category. A prestable localizing subcategory $\L\geqz \subseteq \C\geqz$ is said to be \emph{separating}, if for every $X\in \C\geqz$ such that $\pi_n^\heart X\in \L^\heart$ for all $n$, then $X\in \L\geqz$. 
 \end{definition}
 
 What we mean by saying that these are the stable analogs, is that the bijection
@@ -596,9 +596,7 @@ The above correspondence might not be induced by a functor between $\C$ and $\D$
 \begin{lemma}
     \label{ch3:lm:restricted-functor-on-pi-localizing}
     Let $\C$ and $\D$ be $t$-stable categories with $\A^\heart\subseteq \C^\heart$ and $\T^\heart\subseteq \D^\heart$ abelian weak localizing subcategories of the respective hearts. 
-    If there is a $t$-exact functor $F\:\C\to \D$ such that the functor on hearts $F^\heart\: \C^\heart\to \D^\heart$ restricts to a functor 
-    \[F^\heart_{\vert \A^\heart}\: \A^\heart \to \T^\heart,\]
-    then the functor $F$ restricts to the unique $\pi$-stable localizing subcategories $F_{\vert \A}\:\A\to \T$. 
+    If there is a $t$-exact functor $F\:\C\to \D$ such that the functor on hearts $F^\heart\: \C^\heart\to \D^\heart$ restricts to a functor $F^\heart_{\vert \A^\heart}\: \A^\heart \to \T^\heart$, then the functor $F$ restricts to the unique $\pi$-stable localizing subcategories $F_{\vert \A}\:\A\to \T$. 
 \end{lemma}
 \begin{proof}
     As $F$ is $t$-exact we have $F(\pi_{\C,n}^\heart X)\simeq \pi_{\D, n}^\heart F(X)$. By assumption we know that $F(\pi_{\C,n}^{\heart}X) \simeq F^\heart(\pi_{\C,n}^\heart X) \in \T^\heart$, hence any $Y$ in the image of $F$ has $\pi_{\D,n}^\heart Y \in \T^\heart$ for any $n$. Since $\T$ is $\pi$-stable this implies that $Y\in \T$, proving the claim.
@@ -619,14 +617,13 @@ The following argument is due to Maxime Ramzi.
     Let $\C$ be a $t$-stable category and $\Der(\C^\heart)$ the derived category of its heart. In this situation there is a realization functor $R\:\Der(\C^{\heart})\to \C$ extending the inclusion $\C^\heart\hookrightarrow \C$. 
 \end{lemma}
 \begin{proof}
-     The inclusion of the heart $\C^\heart\hookrightarrow \C$ extends to a functor $\Fun(\Delta\op, \C^\heart)\to \C$ via geometric realization, which preserves weak equivalences by \cite[1.2.4.4, 1.2.4.5]{Lurie_HA}. Via the Dold--Kan correspondence this gives a essentially unique colimit preserving functor $\Der(\C^\heart)\geqz\to \C$, which extends uniquely to a functor $\Der(\C^\heart)\to \C$ by \cite[1.4.4.5]{Lurie_HA}, as $\C$ is stable. This functor preserves both colimits and the heart $\C^\heart$. 
+     The inclusion $\C^\heart\hookrightarrow \C$ extends to a functor $\Fun(\Delta\op, \C^\heart)\to \C$ via geometric realization, which preserves weak equivalences by \cite[1.2.4.4, 1.2.4.5]{Lurie_HA}. Via the Dold--Kan correspondence this gives a essentially unique colimit preserving functor $\Der(\C^\heart)\geqz\to \C$, which extends uniquely to a functor $\Der(\C^\heart)\to \C$ by \cite[1.4.4.5]{Lurie_HA}, as $\C$ is stable. This functor preserves both colimits and the heart $\C^\heart$. 
 \end{proof}
 
 We can then functorially relate the $\pi$-stable localizing subcategories of $\Der(\C^\heart)$ and $\C$ via the realization functor. 
 
 \begin{corollary}
-    Let $\C$ be a $t$-stable category and let
-    \[R\: \Der(\C^\heart)\to \C\]
+    Let $\C$ be a $t$-stable category and let $R\: \Der(\C^\heart)\to \C$
     be the realization functor from \cref{ch3:lm:realization-functor}. For any weak localizing subcategory $\A\subseteq \C^\heart$, the functor $R$ restricts to a functor
     \[R\: \A_{\Der(\C^\heart)}\to \A_\C,\]
     where the former category denotes the unique $\pi$-stable lift of $\A$ to $\Der(\C^\heart)$, and the latter the unique $\pi$-stable lift of $\A$ to $\C$. 
@@ -642,11 +639,11 @@ We can then functorially relate the $\pi$-stable localizing subcategories of $\D
 \begin{addendum}
     \index{$I$-power torsion!Comodules}
     To add some credibility to the above remark we recall 
-    the localizing subcategory $\Comodt$ of $I_n$-torsion comodules in $\ComodE$, that we studied in \cref{ch1}. We know that $\Der(\A)$ comes equipped with a natural $t$-structure for any Grothendieck abelian category $\A$, making $\Der(\A)$ into a $t$-stable category. In particular, this holds for $\Der(\ComodE)$. By \cref{ch3:thm:main} we know that there is a unique $\pi$-exact localizing subcategory $\L \subseteq \Der(\ComodE)$ such that $\L^\heart \simeq \Comodt$. By \cite[3.7(2)]{barthel-heard-valenzuela_2020} this localizing subcategory is precisely 
+    the localizing subcategory $\Comodt$ of $I_n$-torsion comodules in $\ComodE$, that we studied in \cref{ch1}. We know that $\Der(\A)$ comes equipped with a natural $t$-structure for any Grothendieck abelian category $\A$, making $\Der(\A)$ into a $t$-stable category. In particular, this holds for $\Der(\ComodE)$. By \cref{ch3:thm:main} we know that there is a unique $\pi$-exact localizing subcategory $\L \subseteq \Der(\ComodE)$ with heart $\L^\heart \simeq \Comodt$. By \cite[3.7(2)]{barthel-heard-valenzuela_2020} this localizing subcategory is precisely 
     \[\Der(\ComodE)^{I_n-tors} \simeq \Der(\Comodt),\]
     as it is $\pi$-stable, hence equivalent to $\L$ by a maximality argument---see \cref{ch3:lm:pi-stable-are-the-biggest}. 
 
-    By \cref{ch1:thm:pulling-out-torsion} this example also holds for the periodic derived category $\Dper(\Comodt)$, which we also studied in \cref{ch1}. 
+    By \cref{ch1:thm:pulling-out-torsion} this also holds for the periodic category $\Dper(\Comodt)$, which we also studied in \cref{ch1}. 
 \end{addendum}
 
 

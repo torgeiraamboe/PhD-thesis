@@ -16,16 +16,20 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
 
 \begin{lemma}
     \label{ch1:lm:monochromatic-iff-torsion-modules}
-    If $M$ is an $E$-module, then $M\in \Modt$ if and only if $\pi_* M\in \modt$. 
+    If $M$ is an $E$-module, then we have $M\in \Modt$ if and only if $\pi_* M\in \modt$. 
 \end{lemma}
 \begin{proof}
     Let $X\in \Modt$. By \cite[3.19]{barthel-heard-valenzuela_2018} there is a strongly convergent spectral sequence of $E_*$-modules with signature 
     \[E_2^{s,t} = (H_{I_n}^{-s}\pi_* X)_t \implies \pi_{s+t}M_n X,\]
     where $H_{I_n}^{-s}$ denotes local cohomology. By \cite[2.1.3(ii)]{brodmann-sharp_1998} the $E_2$-page consist of only $I_n$-power torsion modules. As $\modt$ is abelian, it is closed under quotients and subobjects, as as the higher pages are created from the $E_2$-page using quotients and subobjects, they must also consist of only $I_n$-power torsion modules. In particular, the $E_\infty$-page is all $I_n$-power torsion. By Grothendieck's vanishing theorem, see for example \cite[6.1.2]{brodmann-sharp_1998}, $H_{I_n}^s(-)\cong 0$ for $s>n$, hence the abutment of the spectral sequence $\pi_* M_n X$ is a finite filtration of $I_n$-power torsion $E_*$-modules, and is therefore itself an $I_n$-power torsion module. Since $X$ was assumed to be monochromatic, i.e. $X\in \Modt$, we have $\pi_* M_n X\cong \pi_* X$, and thus $\pi_* X\in \modt$. 
 
-    Assume now $X\in \ModE$ such that its homotopy groups are $I_n$-power torsion. Monochromatization gives a map $\phi\colon M_n X\longrightarrow X$, and as $\pi_*M_nX$ is $I_n$-power torsion this map factors on homotopy groups as 
+    Now, assume we have an $E$-module $X$ such that its homotopy groups are $I_n$-power torsion. Monochromatization gives a map $\phi\colon M_n X\longrightarrow X$, and as $\pi_*M_nX$ is $I_n$-power torsion this map factors on homotopy groups as 
     \[\pi_* M_n X\longrightarrow H^0_{I_n}\pi_* X\longrightarrow \pi_* X,\]
-    where the first map is the edge morphism in the above-mentioned spectral sequence. As $\pi_* X$ was assumed to be $I_n$-power torsion we have $\pi_*X\cong H^0_{I_n}\pi_* X$, and $H^s_{I_n}\pi_* X \cong 0$ for $s>0$. Hence the spectral sequence collapses to give the isomorphism $\pi_* M_n X\cong H^0_{I_n}\pi_* X$, which shows that $\pi_* \phi$ is an isomorphism. As $\pi_*$ is conservative, $\phi$ was already an isomorphism, hence we have $X\in \Modt$. 
+    where the first map is the edge morphism in the above-mentioned spectral sequence. As $\pi_* X$ was assumed to be $I_n$-power torsion we have 
+    \[\pi_*X\cong H^0_{I_n}\pi_* X,\] 
+    and $H^s_{I_n}\pi_* X \cong 0$ for $s>0$. Hence the spectral sequence collapses to give the isomorphism 
+    \[\pi_* M_n X\cong H^0_{I_n}\pi_* X,\] 
+    which shows that $\pi_* \phi$ is an isomorphism. As $\pi_*$ is conservative, $\phi$ was already an isomorphism, hence we have $X\in \Modt$. 
 \end{proof}
 
 \begin{lemma}
@@ -118,7 +122,7 @@ We can also phrase this dually in terms of $\Kpn$-local $E$-modules.
     In particular, $\Kpn$-local $E$-modules are exotically algebraic at large primes. 
 \end{corollary}
 \begin{proof}
-    The equivalence is constructed from the equivalences obtained from \cref{ch1:rm:local-duality-modules}, \cref{ch1:thm:main-modules}, \cref{ch1:thm:pulling-out-torsion} and \cref{ch1:const:periodic-derived-local-duality}. In particular, we have
+    The equivalence is constructed by composing the sequence of equivalences obtained from \cref{ch1:rm:local-duality-modules}, \cref{ch1:thm:main-modules}, \cref{ch1:thm:pulling-out-torsion} and \cref{ch1:const:periodic-derived-local-duality}. In particular, we have
     \begin{align*}
         h_k \Modc
         &\hspace{2pt}\overset{\ref{ch1:rm:local-duality-modules}}\simeq 
@@ -135,12 +139,12 @@ We can also phrase this dually in terms of $\Kpn$-local $E$-modules.
 
 Now, let $HE_*$ be the Eilenberg--MacLane spectrum of $E_*$. By Schwede--Shipley's derived Morita theory, see \cite[7.1.1.16]{Lurie_HA}, there is a symmetric monoidal equivalence of categories 
 \[\Der(E_*)\simeq \Mod_{HE_*},\] 
-and we can form a local duality diagram for $\Mod_{HE_*}$ corresponding to \cref{ch1:ex:local-duality-comod} for the discrete Hopf algebroid $(E_*, E_*)$. By arguments similar to \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:lm:conservative-adapted-torsion-modules} one can show that the homotopy groups functor $\pi_*\colon \Mod_{HE_*}\longrightarrow \modE$ restricts to a conservative adapted homology theory 
+and we can form a local duality diagram for $\Mod_{HE_*}$ corresponding to \cref{ch1:ex:local-duality-comod} for the discrete Hopf algebroid $(E_*, E_*)$. By arguments similar to \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:lm:conservative-adapted-torsion-modules} one can show that the functor $\pi_*\colon \Mod_{HE_*}\longrightarrow \modE$ restricts to a conservative adapted homology theory 
 \[\pi_* \colon \Mod_{HE_*}\Int\longrightarrow \modt.\]
-In the same range as \cref{ch1:thm:main-modules} this is also $k$-exotic. We can then combine the algebraicity for $\Modt$ and $\Mod_{HE_*}$ to get the following statement. 
+This is also $k$-exotic in the same range as \cref{ch1:thm:main-modules}. We can then combine the algebraicity for $\Modt$ and $\Mod_{HE_*}$ to get the following statement. 
 
 \begin{corollary}
-    Let $p$ be a prime and $n$ a non-negative integer. If $k=2p-2-n>0$, then there is an exotic equivalence 
+    Let $p$ be a prime, $n$ a non-negative integer and $E = E_p(n)$ the associated Johnson--Wilson theory. If $k=2p-2-n>0$, then there is an exotic equivalence 
     \[h_k \Modt \simeq h_k \Mod_{HE_*}\Int\]
     of homotopy $k$-categories. 
 \end{corollary}
@@ -156,12 +160,12 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 
 \begin{lemma}
     \label{ch1:lm:monochromatic-iff-torsion-comodules}
-    If $X$ is an $E$-local spectrum, then $X\in \M\np$ if and only if $E_*X\in \Comodt$. 
+    If $X$ is an $E$-local spectrum, then we have $X\in \M\np$ if and only if $E_*X\in \Comodt$. 
 \end{lemma}
 \begin{proof}
     Assume first that $X\in \M\np$. We have $E\otimes X\in \Modt$ as
-    $$E\otimes X\simeq E\otimes M_n X\simeq M_n (E\otimes X),$$
-    where the last equivalence follows from $M_n$ being smashing. In particular, the restricted functor $E_*\colon \M\np\longrightarrow \ComodE$ factors through $\Modt$. By \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:rm:torsion-iff-underlying-is-torsion} this means that $E_*X$ is an $I_n$-power torsion $E_*E$-comodule. 
+    \[E\otimes X\simeq E\otimes M_n X\simeq M_n (E\otimes X),\]
+    where the last equivalence follows from $M_n$ being smashing. In particular, the restricted functor $E_*\colon \M\np\longrightarrow \ComodE$ factors through the category $\Modt$. By \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:rm:torsion-iff-underlying-is-torsion} this means that $E_*X$ is an $I_n$-power torsion $E_*E$-comodule. 
 
     For the converse, assume that we have $X\in \Sp\np$ such that $E_*X\in \Comodt$. Using the monochromatization functor we obtain a comparison map $M_n X\longrightarrow X$, which induces a map on $E$-modules $E\otimes M_n X\longrightarrow E\otimes X$. This map is an isomorphism on homotopy groups, as $E_*X$ was assumed to be $I_n$-power torsion. As $E_*$ is conservative on $\Sp\np$, the original comparison map $M_n X\longrightarrow X$ was an isomorphism, meaning that $X\in \M\np$. 
 \end{proof}
@@ -203,9 +207,9 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
     \[T^{E_*E}_{I_n} (E_*E\otimes_{E_*}M) \cong \colim_k \iHom_{E_*E}(E_*/I_n^k, E_*E\otimes_{E_*}M),\]
     which by \cite[4.4]{barthel-heard-valenzuela_2018} gives
     \[\colim_k \iHom_{E_*E}(E_*/I_n^k, E_*E\otimes_{E_*}M) \cong \colim_k (E_*E \otimes_{E_*} \Hom_{E_*}(E_*/I_n^k, M)).\]
-    As the tensor product $-\otimes_{E_*}-$ commutes with filtered colimits separately in each variable, and $M$ was assumed to be $I_n$-power torsion, the right hand side is $E_*E\otimes_{E_*}M$.    
+    As the tensor product $-\otimes_{E_*}-$ commutes with filtered colimits separately in each variable, and $M$ was assumed to be $I_n$-power torsion, the right hand side is precisely $E_*E\otimes_{E_*}M$.    
     
-    Now, choosing the injective $Q$ in the top right corner and going through the square gives an isomorphism 
+    Now, choosing the injective $Q$ in the top right corner and going through the square, gives an isomorphism 
     \[T^{E_*E}_{I_n}(E_*E\otimes_{E_*}Q)\cong E_*E\otimes_{E_*}T_{I_n}^{E_*}Q.\] 
     By \cite[2.1.4]{brodmann-sharp_1998} we know that $T^{E_*}_{I_n}Q$ is an injective $E_*$-module, and by \cite[2.1(a)]{hovey-strickland_2005b} the cofree comodule $E_*E\otimes_{E_*} T^{E_*}_{I_n}Q$ is an injective $E_*E$-comodule. Hence, $J=T^{E_*E}_{I_n}(E_*E\otimes_{E_*}Q)$ is injective also as an object in $\comod\EE$.
 
@@ -240,7 +244,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 
 \begin{lemma}
     \label{ch1:lm:splitting-torsion-comodules}
-    For any prime $p$ and non-negative integer $n$, the category $\Comodt$ has a splitting of order $2p-2$. 
+    The category $\Comodt$ has a splitting of order $2p-2$ for any prime $p$ and non-negative integer $n$.
 \end{lemma}
 \begin{proof}
     As $E$ is concentrated in degrees divisible by $2p-2$, \cite[8.13]{patchkoria-pstragowski_2021} shows that $\ComodE$ has a splitting of order $2p-2$. The proof of the induced splitting on the $I_n$-torsion category is then identical to \cref{ch1:lm:splitting-torsion-modules}. 
@@ -251,7 +255,7 @@ We can now summarize the above results with our second main result, which is the
 \begin{theorem}[\cref{ch1:thm:B}]
     \label{ch1:thm:main-spectra}
     \index{Exotic algebraic model}
-    Let $p$ be a prime and $n$ a non-negative integer. If we have $k=2p-2-n^2-n>0$, then the restricted functor $E_*\colon \M\np\longrightarrow \Comodt$ is $k$-exotic. In particular, there is an equivalence 
+    Let $p$ be a prime and $n$ a non-negative integer. If $k=2p-2-n^2-n>0$, then the restricted functor $E_*\colon \M\np\longrightarrow \Comodt$ is $k$-exotic. In particular, there is an equivalence 
     \[h_k \M\np \simeq h_k\Dper(E_*E\Int),\]
     meaning that monochromatic homotopy theory is exotically algebraic at large primes. 
 \end{theorem}
@@ -261,7 +265,9 @@ We can now summarize the above results with our second main result, which is the
 
 \begin{remark}
     \label{ch1:rm:monochromatic-corresponds-to-torsion}
-    By \cref{ch1:thm:pulling-out-torsion} there is an equivalence $\Dper(E_*E\Int)\simeq \Fr\np\Int$ and by \cref{ch1:ex:local-duality-chromatic} there is an equivalence $\M\np\simeq \Sp\np\Int$. This means that we can write the equivalence in \cref{ch1:thm:main-spectra} as 
+    By \cref{ch1:thm:pulling-out-torsion} there is an equivalence 
+    \[\Dper(E_*E\Int)\simeq \Fr\np\Int\] 
+    and by \cref{ch1:ex:local-duality-chromatic} there is an equivalence $\M\np\simeq \Sp\np\Int$. This means that we can write the equivalence in \cref{ch1:thm:main-spectra} as 
     \[h_k\Sp\np\Int\simeq h_k\Fr\np\Int,\]
     or alternatively, 
     \[h_k \Loc^\otimes_{\Sp\np}(L\np F(n)) \simeq h_k \Loc^\otimes_{\Fr\np}(P(E_*/I_n))\]
@@ -319,17 +325,15 @@ Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebra
 
 \subsection*{Some remarks on future work}
 
-The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there is a deformation of stable $\infty$-categories lurking behind the scenes. One does not need this in order to apply the theorem, but it is there regardless. In the case of some $v_n$-periodic Landweber exact ring spectrum $E$, the deformation associated with the conservative adapted homology theory $E_*\colon \Sp\np \longrightarrow \comod\EE$ is equivalent to the category of $E$-local synthetic spectra, $\LSynE$\index{Synthetic spectra}---a variant of the category of $E$-based synthetic spectra introduced in \cite{pstragowski_2022}. As both $\Sp\np$ and $\ComodE$ are invariant under the choice of such $E$, we conjecture that this is true also for $\LSynE$. 
-
-Our restricted homology theory $E_*\colon \M\np\longrightarrow \Comodt$ should then be associated to a deformation $\MSynE$ coming from a local duality theory for $\LSynE$, in the sense that there is a diagram of stable $\infty$-categories 
+The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there is a deformation of stable $\infty$-categories lurking behind the scenes. One does not need this in order to apply the theorem, but it is there regardless. In the case of some $v_n$-periodic Landweber exact ring spectrum $E$, the deformation associated with the conservative adapted homology theory $E_*\colon \Sp\np \longrightarrow \ComodE$ is equivalent to the category of hypercomplete $E$-based synthetic spectra, $\hSynE$\index{Synthetic spectra}, introduced in \cite{pstragowski_2022}. Our restricted homology theory $E_*\colon \M\np\longrightarrow \Comodt$ should then be associated to a deformation $\hSynE\Int$ coming from a local duality theory for $\hSynE$, in the sense that there is a diagram of stable $\infty$-categories 
 \begin{center}
     \begin{tikzcd}
-        \M\np & \MSynE \arrow[l, "\tau^{-1}"'] \arrow[r, "C\tau\otimes -"] & \StableE\Int.
+        \M\np\simeq \Sp\np\Int & \hSynE\Int \arrow[l, "\tau^{-1}"'] \arrow[r, "\tau \simeq 0"] & \Fr\np\Int.
     \end{tikzcd}    
 \end{center}
-Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to monochromatic synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
+Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria-Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
 
-In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. We conjecture that his deformation $\mathscr{E}\np$ is equivalent to $\LSynE$ for big enough primes, which by the above remarks hints towards a monoidal version of \cref{ch1:thm:main-spectra} as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. We do, however, state the conjectured monoidal result, which we hope to pursue in future work.
+In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. His deformation $\mathscr{E}\np$ is equivalent to $\hSynE$, which by the above remarks hints towards a monoidal version of \cref{ch1:thm:main-spectra} as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. We do, however, state the conjectured monoidal result, which we hope to pursue in future work.
 
 \begin{conjecture}
     \label{ch1:conj:monochromatic-monoidally-algebraic}
@@ -343,10 +347,12 @@ In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:frank
 As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $\Kpn$-local category, i.e., a symmetric monoidal equivalence 
 \[h_k \SpKpn\simeq h_k \Fr\np\Inc.\]
 
-Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\LSynE$ to give a category $\LSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
+Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
 
 \begin{addendum}
     \label{ch1:add:shaul-comment-monoidal}
-    We were reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. Since writing this paper we have investigated this idea further. We have added a construction of a category we call \emph{monochromatic synthetic spectra} in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation, see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}
+    In the time since writing the paper we have learnt more about the situation described above. We were, for example, reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. 
+    
+    Also, we learnt from Sven van Nigtevecht that Barkan's model $\mathscr{E}\np$ is most likely not equivalent to hypercomplete synthetic spectra, as there is a problem with the compactness of the unit in the latter. Based on this we introduce a category of \emph{$E$-local synthetic spectra} $\LSynE$ in \cref{ch3:addendum}, which we think solves these issues. We introduce this category as the natural framework to construct a category of \emph{monochromatic synthetic spectra}, which we also do in \cref{ch3:addendum}.There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \cref{ch3}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation, see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}. 
 \end{addendum}
 

@@ -62,7 +62,7 @@ Since we will discuss both stable and prestable categories, and their interactio
     Any stable category $\C$ is prestable, as seen by choosing the trivial $t$-structure $(\C,0)$. This is both a blessing, as it allows us to talk about both in a common language, and a curse, as using common language can be rather confusing when trying to study their interactions.
 \end{remark}
 
-We will restrict our attention to Grothendieck prestable categories, which are prestable categories that work well with colimits. There are numerous different equivalent definition of these, see \cite[C.1.4.1]{lurie_SAG}, but the one best related to the above definition of a prestable category is the following. 
+We will restrict our attention to Grothendieck prestable categories, which intuitively are the prestable categories that work well with colimits. There are numerous different equivalent definition of these, see \cite[C.1.4.1]{lurie_SAG}, but the one best related to the above definition of a prestable category is the following. 
 
 \begin{definition}
     \index{Prestable category!Grothendieck}
@@ -237,7 +237,7 @@ The definition of a localizing subcategory of a prestable category is very simil
 
 \begin{remark}
     \label{ch3:rm:prestable-localizing-is-Grothendieck}
-    Any prestable localizing subcategory $\L\geqz$ of a Grothendieck prestable category $\C\geqz$ is by \cite[C.5.2.1]{lurie_SAG} itself a Grothendieck prestable category. This means, in particular, that $\L\geqz$ is the connected part of a colimit-compatible $t$-structure on a stable category, hence using the notation $\L\geqz$ is not abusive. 
+    If $\C\geqz$ is Grothendieck prestable, then any prestable localizing subcategory $\L\geqz$ is by \cite[C.5.2.1]{lurie_SAG} itself a Grothendieck prestable category. This means, in particular, that $\L\geqz$ is the connected part of a colimit-compatible $t$-structure on a stable category, hence using the notation $\L\geqz$ is not abusive. 
 \end{remark}
 
 \begin{remark}
@@ -341,7 +341,7 @@ As one perhaps should expect at this point, Abelian localizing subcategories are
 
 \begin{proposition}[{\cite[C.5.1.1, C.5.1.6]{lurie_SAG}}]
     \label{ch3:prop:abelian-localizing-iff-kernel-of-localization}
-    A full subcategory $\T$ of a Grothendieck abelian category $\A$ is an abelian localizing subcategory if and only if there is an exact localization functor $L\:\A\to \B$, where $\B$ is a Grothendieck abelian category, such that $\T$ is the kernel of $L$. 
+    A full subcategory $\T\subseteq \A$, where $\A$ is Grothendieck abelian, is an abelian localizing subcategory if and only if there is an exact localization functor $L\:\A\to \B$, such that $\B$ is a Grothendieck abelian category and $\T$ is the kernel of $L$. 
 \end{proposition}
 
 % Later in the paper we will need the following technical lemma, which allows us to define weak Serre subcategories via short exact sequences instead of $5$-term ones. 
@@ -491,9 +491,7 @@ We can then conclude this section with the following bijection.
 
 \begin{remark}
     \label{ch3:rm:t-exact-approximation}
-    The above corollary gives us a $t$-exact approximation result for $t$-stable localizing subcategories. Suppose we have a $t$-stable localizing subcategory $\L\subseteq \C$. We can choose the smallest prestable localizing subcategory of $\C\geqz$ containing $\L\geqz$, which we denote $\Loc\geqz(\L\geqz)$. Upon stabilization we obtain by \cref{ch3:cor:t-exact-corresponds-to-prestable-localizing} a stable localizing subcategory $\L^t$
-    %\[\L^t := \Sp(\Loc\geqz(\L\geqz))\] 
-    that is the kernel of a $t$-exact functor. As $\Sp(\L\geqz)\simeq \L$, we know that $\L\subseteq \L^t$, making $\L^t$ a $t$-exact approximation of $\L$. It is also the smallest such approximation, and, naturally, $\L$ is $t$-exact if and only if $\L\simeq \L^t$. 
+    The above corollary gives us a $t$-exact approximation result for $t$-stable localizing subcategories. Suppose we have a $t$-stable localizing subcategory $\L\subseteq \C$. We can choose the smallest prestable localizing subcategory of $\C\geqz$ containing $\L\geqz$, which we denote $\Loc\geqz(\L\geqz)$. Upon stabilization we obtain by \cref{ch3:cor:t-exact-corresponds-to-prestable-localizing} a stable localizing subcategory $\L^t$ which is the kernel of a $t$-exact localization. As $\Sp(\L\geqz)\simeq \L$, we know that $\L\subseteq \L^t$, making $\L^t$ a $t$-exact approximation of $\L$. It is also the smallest such approximation, and, naturally, $\L$ is $t$-exact if and only if $\L\simeq \L^t$. 
 \end{remark}
 
 

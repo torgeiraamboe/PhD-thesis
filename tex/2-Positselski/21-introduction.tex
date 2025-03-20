@@ -7,7 +7,7 @@ While modules and comodules got their fair share of fame throughout the decades 
 
 In \cite{positselski_2010} Positselski introduced the co/contra correspondence, which is an adjunction between the category of comodules and the category of contramodules over a cocommutative coalgebra $C$. This correspondence sat existing duality theories on a common footing, for example Serre--Grothendieck duality and Feigin--Fuchs central charge duality. Positselski also introduced the coderived and contraderived categories of $C$-comodules and $C$-contramodules respectively, and used this to prove a derived co/contra correspondence of the form 
 \[\Der^{co}(\ComodC)\simeq \Der^{contra}(\ContraC),\]
-generalizing for example Matlis--Greenlees--May duality and Dwyer--Greenlees duality---see \cite{positselski_2016}. 
+generalizing for Matlis--Greenlees--May duality and Dwyer--Greenlees duality---see \cite{positselski_2016}. 
 
 The goal of the present paper is to extend the co/contra correspondence---which we will refer to as Positselski duality---to cocommutative coalgebras in $\infty$-categories. We will also use the correspondence in stable $\infty$-categories, which are natural enhancements of triangulated categories. These serve as the natural place to study similar correspondences and equivalences as in the derived co/contra correspondence. The canonical references for $\infty$-categories is \cite{lurie_09} and \cite{Lurie_HA}, which we will freely use throughout the paper. 
 
@@ -18,7 +18,7 @@ The goal of the present paper is to extend the co/contra correspondence---which 
 
 Let us try to both make a motivation for the traditional Positselski duality theory and for the connection to coalgebras in stable $\infty$-categories. 
 
-We let $X$ be a separated noetherian scheme, $U\subset X$ an open subscheme and $Z = X\backslash U$ its closed complement. The derived category of all $\O_X$-modules, $\Der(\O_X)$, has a full subcategory $\Der(X)$ consisting of complexes with quasi-coherent homology. We define $\Der(U)$ similarly. These are all stable $\infty$-categories. The homotopy category $h\Der(X)$ is precisely the more traditional triangulated derived category of $X$. 
+We let $X$ be a separated noetherian scheme, $U\subset X$ an open subscheme and denote by $Z = X\backslash U$ its closed complement. The derived category of all $\O_X$-modules, $\Der(\O_X)$, has a full subcategory $\Der(X)$ consisting of complexes with quasi-coherent homology. We define $\Der(U)$ similarly. These are all stable $\infty$-categories. The homotopy category $h\Der(X)$ is precisely the more traditional triangulated derived category of $X$. 
 
 Letting $i\:U\to X$ denote the inclusion we get an induced functor 
 \[i^*\: \Der(X)\to \Der(U)\]
@@ -52,7 +52,7 @@ This equivalence does not on the surface have anything to do with comodules or c
 
 The above motivates the classical co/contra correspondence, so let us now see how we wish to abstract this.  
 
-As $i^*$ is a symmetric monoidal localization the category $\Der_Z(X)$ is a localizing ideal. By \cite[6.8]{rouquier_2008} there is a compact object $F\in \Der(X)$ with homology supported on $Z$ such that $F$ generates $\Der_Z(X)$ under colimits. Now, as $\Der_Z(X)$ is a compactly generated localizing ideal of a compactly generated symmetric monoidal stable $\infty$-category, the right adjoint $j^!\: \Der(X)\to \Der_Z(X)$ is smashing, hence given as $j_! j^!(\1)\otimes_{\Der(X)} (-)$, where $\1$ denotes the unit in $\Der(X)$. In $\Der(X)$ the object $j_! j^! (\1)$ is the fiber of the unit map $\1\to i_! i^! (\1)$. In fact, $i_* i^* (\1)$ is an idempotent commutative algebra in $\Der(X)$, hence the fiber of the unit map, i.e. $j_! j^!(\1)$, is a coidempotent cocommutative coalgebra. 
+As $i^*$ is a symmetric monoidal localization the category $\Der_Z(X)$ is a localizing ideal. By \cite[6.8]{rouquier_2008} there is a compact object $F\in \Der(X)$ with homology supported on $Z$ such that $F$ generates $\Der_Z(X)$ under colimits. Now, as $\Der_Z(X)$ is a compactly generated localizing ideal of a compactly generated symmetric monoidal stable $\infty$-category, the right adjoint $j^!\: \Der(X)\to \Der_Z(X)$ is smashing, hence given as $j_! j^!(\1)\otimes_{\Der(X)} (-)$, where $\1$ denotes the unit in $\Der(X)$. In $\Der(X)$ the object $j_! j^! (\1)$ is the fiber of the unit map $\1\to i_* i^* (\1)$. In fact, $i_* i^* (\1)$ is an idempotent commutative algebra in $\Der(X)$, hence the fiber of the unit map, i.e. $j_! j^!(\1)$, is a coidempotent cocommutative coalgebra. 
 
 Using a dual version of Barr--Beck monadicity, see \cref{ch2:ssec:dual-barr-beck}, one can prove that 
 \[\Der_Z(X)\simeq \Comod_{j_! j^! (\1)}(\Der(X)).\] 
@@ -69,10 +69,10 @@ As mentioned, the main goal of this paper is to introduce the notion of comodule
 
 \begin{introthm}[{\cref{ch2:thm:Positselski-duality-coidempotent}}]
     \label{ch2:introthm:A}
-    Let $\C$ be a presentably symmetric monoidal $\infty$-category. For any coidempotent cocommutative coalgebra $C$, there are mutually inverse equivalences
+    Let $\C$ be a presentably symmetric monoidal $\infty$-category. For any coidempotent cocommutative coalgebra $C$, there are mutually inverse symmetric monoidal equivalences
     \begin{center}
         \begin{tikzcd}
-            \Comod_C(\C) \arrow[r, yshift=2pt] & \Contra_C(\C) \arrow[l, yshift=-2pt]
+            \Comod_C(\C) \arrow[r, yshift=2pt, "\simeq"] & \Contra_C(\C) \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}
     given by the free contramodule and cofree comodule functor respectively. 
@@ -85,10 +85,12 @@ Our main application of this is to give an alternative perspective on local dual
     Let $(\C, \K)$ be a pair consisting of a rigidly compactly generated symmetric monoidal stable $\infty$-category $(\C, \otimes, \1)$ and $\K\subseteq \C$ a set of compact objects. If $\Gamma$ denotes the right adjoint to the fully faithful inclusion of the localizing tensor ideal generated by $\K$, i.e. $i\:\C\Ktors:= \Loc_\C^\otimes (\K)\hookrightarrow \C$, then Positselski duality for the cocommutative coalgebra $i\Gamma \1$, recovers the local duality equivalence $\C\Kloc \simeq \C\Kcomp$. 
 \end{introthm}
 
-As an example of why the two theorems above might be interesting, we have the following descriptions of the categories $\Sp_{K(n)}$ and $\Sp_{T(n)}$ in chromatic homotopy theory. 
+As an example of why the two theorems above might be interesting, we have the following descriptions of the categories $\Sp_\Kpn$ and $\Sp_{T_p(n)}$ in chromatic homotopy theory. 
 
 \begin{introcor}
-    There are equivalences $\SpKpn\simeq \Contra_{M\np\S}(\Sp\np)$ and $\Sp_{T_p(n)}\simeq \Contra_{M\np^f \S}(\Sp\np^f)$ of symmetric monoidal stable $\infty$-categories. 
+    If $p$ is a prime, $n$ a non-negative integer, $\Kpn$ the associated Morava $K$-theory and $T_p(n)$ an associated telescope spectrum, then there are equivalences 
+    \[\SpKpn\simeq \Contra_{M\np\S}(\Sp\np) \text{ and } \Sp_{T_p(n)}\simeq \Contra_{M\np^f \S}(\Sp\np^f)\]
+    of symmetric monoidal stable $\infty$-categories. 
 \end{introcor}
 
 

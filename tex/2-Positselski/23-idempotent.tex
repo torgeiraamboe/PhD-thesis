@@ -81,7 +81,7 @@ We get a similar statement for contramodules over $C$. Recall that a contramodul
     \label{ch2:prop:contra-over-separable-are-free}
     Let $C\in \cCAlg(\C)$ be a separable coalgebra. Then every contramodule over $C$ is a retract of a free contramodule. In particular, there is an equivalence 
     \[\ContraC(\C)\simeq \ContraC\fr(\C)\]
-    between the Eilenberg--Moore category and the Kleisli category of the monad $\iHom(C,-)$ on $\C$. 
+    between the Eilenberg--Moore and Kleisli category of the monad $\iHom(C,-)$ on $\C$. 
 \end{proposition}
 \begin{proof}
     We can prove this by showing that the section for the separable coalgebra $C$ gives a section of the forgetful functor $U^C\:\Contra_C\to \C$. The section is, for a contramodule $X$, given by the adjoint map $M\to \iHom(C, M)$ to the section of the forgetful functor $U_C$ on $\Comod_C$ from \cref{ch2:lm:comod-over-separable-are-cofree}.  
@@ -155,7 +155,7 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
     given on the underlying objects by the free contramodule functor and the cofree comodule functor respectively. 
 \end{theorem}
 \begin{proof}
-    By \cref{ch2:lm:comod-over-separable-are-cofree} and \cref{ch2:prop:contra-over-separable-are-free} every $C$-comodule (resp. $C$-contramodule) is a retract of a cofree comodule (resp. free contramodule). Hence, it is enough to prove that the functors are mutually inverse equivalences between cofree and free objects.  
+    By \cref{ch2:lm:comod-over-separable-are-cofree} and \cref{ch2:prop:contra-over-separable-are-free} every $C$-comodule is a retract of a cofree comodule, and every $C$-contramodule is a retract of a free contramodule. Hence, it is enough to prove that the functors are mutually inverse equivalences between cofree and free objects.  
     
     Let $A$ be any object in $\C$. Denote by $C\otimes A$ the corresponding cofree comodule and $\iHom(C, A)$ the corresponding free contramodule. A simple adjunction argument, using both the cofree-forgetful adjunction and the hom-tensor adjunctions in $\C$ and $\Comod_C$, shows that there is an equivalence 
     \[\iHom_C(M, C\otimes A)\simeq C\otimes \iHom(U_C M, A)\]
