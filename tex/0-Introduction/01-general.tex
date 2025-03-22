@@ -7,16 +7,26 @@ As a backdrop for this entire thesis lies the ubiquitous concept of \emph{$\inft
 Most $\infty$-categories considered will be \emph{presentable}, in the sense of \cite[Chapter 5]{lurie_09}. 
 
 \begin{example}
+    \index{Space}
     The most important example is perhaps the $\infty$-category of \emph{spaces}, denoted $\Spaces$. This is an $\infty$-categorical version of the classical category of topological spaces. 
 \end{example}
 
-The $(\infty, 2)$-category of presentable $\infty$-categories, where the morphisms are the colimit-preserving functors, is denoted $\PrL$. It has a symmetric monoidal structure via the Lurie tensor product $\otimes^L$, and we will say a presentable $\infty$-category is \emph{presentably symmetric monoidal} if it is a commutative algebra in $\PrL$. Any such category $\C$ has a symmetric monoidal structure, with the property that the tensor product in $\C$ preserves colimits separately in each variable. The symmetric monoidal product will usually be denoted $-\otimes_\C -$, and its associated unit by $\1_\C$. 
+The $(\infty, 2)$-category of presentable $\infty$-categories, where the morphisms are the colimit-preserving functors, is denoted $\PrL$. It has a symmetric monoidal structure via the Lurie tensor product $\otimes^L$, allowing us to make the following definition, which will be one of the main objects of study for this thesis. 
 
-We will also assume knowledge about \emph{stable} $\infty$-categories\index{Stable category}, which are $\infty$-categorical enhancements of triangulated categories. One can, for example, construct presentable stable $\infty$-categories from presentable $\infty$-categories via \emph{stabilization}. The stabilization of a pointed category $\mathcal{E}$ is defined by formally inverting the desuspension functor $\Omega$:
+\begin{definition}
+    \index{$\infty$-category!Presentably symmetric monoidal}
+    A presentable $\infty$-category $\C$ is \emph{presentably symmetric monoidal} if it is a commutative algebra in $\PrL$ under the Lurie tensor product. 
+\end{definition}
+
+Any such category $\C$ has a symmetric monoidal structure, with the property that the tensor product in $\C$ preserves colimits separately in each variable. The symmetric monoidal product will usually be denoted $-\otimes_\C -$, and its associated unit by $\1_\C$. 
+
+We will also assume knowledge about \emph{stable} $\infty$-categories\index{$\infty$-category!Stable}, which are $\infty$-categorical enhancements of triangulated categories. One can, for example, construct presentable stable $\infty$-categories from presentable $\infty$-categories via \emph{stabilization}\index{Stabilization}. The stabilization of a pointed category $\mathcal{E}$ is defined by formally inverting the desuspension functor $\Omega$:
 \[\Sp(\mathcal{E}) = \colim (\cdots\overset{\Omega}\to\mathcal{E}\overset{\Omega}\to\mathcal{E}\overset{\Omega}\to\mathcal{E}).\] 
-The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, denoted $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
+The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, denoted $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category}\index{$\infty$-category!Presentably symmetric monoidal stable} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
 
 \begin{example}
+    \index{Spectra}
+    \index{Sphere spectrum}
     The stabilization of the $\infty$-category of spaces is the $\infty$-category of \emph{spectra}, denoted $\Sp$. It is the unit for the Lurie tensor product on $\PrLs$, and it is the initial presentably symmetric monoidal stable $\infty$-category. The unit of the symmetric monoidal structure is the \emph{sphere spectrum} $\S$, which is the suspension spectrum of $S^0$.  
 \end{example}
 
@@ -33,12 +43,13 @@ The derived $\infty$-category of $\Z$, as well as the $\infty$-categories of spa
 \end{definition}
 
 \begin{example}
+    \index{Spectra!Finite}
     The compact objects in $\Spaces$ are the \emph{finite spaces}, which correspond to the classical finite CW-complexes. The compact generators in $\Sp$ are the \emph{finite spectra}, where a spectrum is finite if it is the desuspension of a suspension spectrum $\Sigma^{-n}\Sigma^\infty K$ for some number $n$, where $K$ is a finite space. The compact objects in $\Der(\Z)$ are the \emph{perfect complexes}, which are the bounded complexes of finitely generated projective abelian groups. 
 \end{example}
 
 \begin{definition}
     \label{ch0:def:compactly-generated-category}
-    \index{Compactly generated}
+    \index{$\infty$-category!Compactly generated}
     A presentable $\infty$-category $\C$ is \emph{compactly generated} if $\Co$ generates $\C$ under filtered colimits. 
 \end{definition}
 
@@ -56,7 +67,7 @@ In a certain sense, being compact is about being small with respect to colimits,
 
 \begin{definition}
     \label{ch0:rigidly-generated-category}
-    \index{Compactly generated!Rigid}
+    \index{$\infty$-category!Rigidly compactly generated}
     A presentably symmetric monoidal stable $\infty$-category $\C$ is \emph{rigidly compactly generated} if it is compactly generated and $\Co\simeq \C\dual$. 
 \end{definition}
 
@@ -146,7 +157,8 @@ If our presentable stable $\infty$-category is also symmetric monoidal, then we 
 The definition of an ideal here is completely analogous to the classical setting of discrete rings. 
 
 \begin{definition}
-    Let $\C$ be a presentably symmetric monoidal stable $\infty$-category. Given a collection of objects $\K\subseteq \C$ we denote by $\Loc_\C^\otimes(\K)$ the smallest localizing $\otimes$-ideal of $\C$ containing $\K$. We will, as before, often refer to this as the localizing $\otimes$-ideal \emph{generated} by $\K$. 
+    \index{Localizing subcategory!Compactly generated $\otimes$-ideal}
+    Let $\C$ be a presentably symmetric monoidal stable $\infty$-category. Given a collection of objects $\K\subseteq \C$ we denote by $\Loc_\C^\otimes(\K)$ the smallest localizing $\otimes$-ideal of $\C$ containing $\K$. We will, as before, often refer to this as the localizing $\otimes$-ideal \emph{generated} by $\K$. If $\K$ consists of compact objects we will say that $\Loc^\otimes_\C(\K)$ is a \emph{compactly generated localizing $\otimes$-ideal}. 
 \end{definition}
 
 Any ideal $I$ in a discrete ring $R$ is a non-unital subring of $R$. This is also the case for a localizing $\otimes$-ideal $\L\subseteq \C$, which becomes a non-unital presentably symmetric monoidal stable $\infty$-category. However, in some good cases $\L$ is actually unital, but the unit $\1_\L$ will naturally have to be different than the unit $\1_\C$, otherwise we would have $\L=\C$. The localizing ideals we study in \hyperref[ch1]{the first paper}, as well as some of the ones in \hyperref[ch2]{the second}, will have this property. In particular, as we will see in the next section, any localizing $\otimes$-ideal which is compactly generated in the sense of \cref{ch0:rm:compactly-generated-localizing-subcategory} will have this property.
@@ -188,6 +200,7 @@ There are several ways to construct localizations, but one method particularly i
 \end{example}
 
 \begin{example}
+    \index{$p$-completion}
     \label{ch0:ex:derived-p-completion}
     Let $\C=\Der(\Z)$ and $\L = \Der(\Z[\frac{1}{p}])$ as in \cref{ch0:ex:localizing-away-from-p}. The right orthogonal complement is the category of derived $p$-complete abelian groups, $\Der(\Z)^{p-\mathrm{comp}}$. The associated localization $\Lambda_p$ is the total left derived functor of the $p$-adic completion functor $C^p$, defined by sending an abelian group $A$ to the colimit $A^\wedge_p = \colim_k A/p^k$. In other words, we have a localization 
     \[\Lambda_p \simeq \bbL C^p \: \Der(\Z)\to \Der(\Z)^{p-\mathrm{comp}}.\]
@@ -202,7 +215,7 @@ We will mostly focus on localizations of presentably symmetric monoidal stable $
 
 \begin{definition}
     \label{ch0:def:monoidal-localization}
-    \index{Localization}
+    \index{Localization!Monoidal}
     Let $\C$ and $\D$ be two presentably symmetric monoidal stable $\infty$-categories. A \emph{monoidal localization} is a tensor-compatible functor $f\colon \C\longrightarrow \D$ with a fully faithful right adjoint $i$. 
 \end{definition}
 
@@ -248,6 +261,7 @@ Let $\C$ be a presentably symmetric monoidal stable $\infty$-category. For any l
 
 \begin{example}
     \label{ch0:ex:p-localization-ab-smashing}
+    \index{$p$-localization}
     There is a $p$-localization functor $L\:\Der(\Z)\to \Der(\Z_{(p)})$ given by inverting all primes $q\neq p$. This is a smashing localization, and is then given by $L \simeq \Z_{(p)}\otimes_\Z (-)$. 
 \end{example}
 
@@ -289,7 +303,6 @@ Any choice of local duality context allows us to assign to it three new categori
 
 \begin{construction}
     \label{ch0:const:local-duality-categories}
-    \index{Local duality!Torsion}
     \index{Local duality!Torsion objects}
     \index{Local duality!Local objects}
     \index{Local duality!Complete objects}

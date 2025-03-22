@@ -6,6 +6,7 @@
 As mentioned before, this thesis is about understanding certain relationship between stable homotopy theory and homological algebra. One of these relationships---perhaps the most well known one---comes from the notion of \emph{homology}. 
 
 \begin{definition}
+    \index{Homology theory}
     Let $R$ be a ring spectrum. Associated to $R$ we a functor
     \[R_* \: \Sp \to \Ab\]
     defined by $R_*(X):= \pi_*(R\otimes X)$, called the \emph{$R$-homology}. 
@@ -25,7 +26,7 @@ In fact, even more is true: the image of a spectrum $X$ under $R_*(-)$ has certa
 
 \begin{definition}
     \label{ch0:def:flat-and-adams-type-ring}
-    \index{Ring spectrum!Adams type}
+    \index{Spectra!Adams type}
     A ring spectrum $R$ is called \emph{flat} if $R_*R$ is a flat module over $R_*$. We say $R$ is of \emph{Adams type} if it can be written as a filtered colimit $R\simeq \colim_\alpha R_\alpha$, where each $R_\alpha$ is a finite spectrum such that $R_*R_\alpha$ is a finitely generated projective $R_*$-module and the natural map 
     \[R^*R_\alpha \longrightarrow \Hom_{R_*}(R_*R_\alpha, R_*)\] 
     is an isomorphism.
@@ -69,6 +70,7 @@ Given a flat ring spectrum $R$, we can now make the following constructions.
 
 \begin{remark}
     \label{ch0:rm:fields-give-hopf-algebras}
+    \index{Morava $K$-theory}
     If $R$ is a field object, for example, $K_p(n)$ or $H\F_p$, then the operations described above, together with the associated relations, make $(R_*, R_*R)$ into a Hopf algebra. In particular, the left and right unit maps are equal: $\eta_L=\eta_R$. In the case of $H\F_p$, the Hopf algebra $H\F_{p*}H\F_p$ is the dual Steenrod algebra $\mathcal{A}^*_p$, see \cite{milnor_1958}. 
 \end{remark}
 
@@ -106,7 +108,6 @@ The key feature, which by now hopefully is expected, is that the maps in \cref{c
 
 \begin{proposition}[{\cite[1.4.6]{hovey_04}}]
     \label{ch0:prop:hopf-algebroid-from-spectra}
-    \index{Hopf algebroid!Ring spectrum}
     If $R$ is a flat ring spectrum, then the pair $(R_*, R_*R)$ is a Hopf algebroid. If $R$ is Adams type, then $(R_*, R_*R)$ is an Adams Hopf algebroid. 
 \end{proposition}
 
@@ -161,6 +162,7 @@ In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and
 
 \begin{example}
     \label{ch0:ex:E-homology-functor}
+    \index{Homology theory!Conservative}
     As we will use this functor a lot, we hammer in the fact that the above Morava $E$-theories are of Adams type. This means that the $E$-homology functor lands naturally in $\ComodE$. We will mostly focus on the homology theory
     \[E_*\: \Sp\np \to \ComodE,\]
     where we have restricting the domain to $\Sp\np$. This is because it is a \emph{conservative} functor, meaning that it detects equivalences. 
@@ -240,7 +242,7 @@ We first review the abelian situation: the internal approach. We follow \cite{ba
 
 \begin{definition}
     \label{def:I-power-torsion-module}
-    \index{$I$-power torsion!Module}
+    \index{I-power torsion!Module}
     Let $A$ be a commutative ring and $I\subseteq R$ a finitely generated ideal. The $I$-power torsion of an $A$-module $M$ is defined as
     \[T_I^A M = \{x\in M \mid I^k x = 0 \text{ for some } k\in \N\}.\]
     We say a module $M$ is \emph{$I$-power torsion} if the natural comparison map $T_I^A M\longrightarrow M$ is an isomorphism. We denote the full subcategory consisting of $I$-power torsion $A$-modules by $\Mod_A\Itors$. 
@@ -252,7 +254,7 @@ We first review the abelian situation: the internal approach. We follow \cite{ba
 \end{example}
 
 \begin{definition}
-    \index{$I$-adically complete module}
+    \index{I-adically complete module}
     Let $A$ be a commutative ring and $I\subseteq R$ a finitely generated ideal. The $I$-adic completion of an $A$-module $M$ is defined as
     \[C_I^A M = \lim_k A/I^k\otimes_A M.\]
     We say a module $M$ is \emph{$I$-adically complete} if the natural map $M\longrightarrow C_I^A M$ is an isomorphism. 
@@ -260,12 +262,13 @@ We first review the abelian situation: the internal approach. We follow \cite{ba
 
 \begin{remark}
     \label{ch0:rm:I-complete-vs-I-adically-complete}
-    \index{$I$-complete module}
-    \index{$L$-complete module}
+    \index{I-complete module}
+    \index{L-complete module}
     The resulting category of $I$-adically complete modules is not very well-behaved. The $I$-adic completion functor is usually neither left nor right exact, and the category is often not abelian. To fix these issues, Greenlees and May introduced the notion of $L$-complete modules in \cite{greenlees-may_92}, using instead the zeroth left derived functor $L=\mathbb{L}_0 C_I^A$. One then defines \emph{$I$-complete} modules, also called $L$-complete modules, to be those $R$-modules such that the natural map $M\longrightarrow L M$ is an equivalence. The full subcategory of $I$-complete $A$-modules is denoted by $\Mod_A\Icomp$
 \end{remark}
 
 \begin{remark}
+    \index{Grothendieck abelian}
     In nice cases the abelian category $\Mod_A\Itors$ is even Grothendieck. The category $\Mod_A\Icomp$ is abelian, but not Grothendieck in general. It is, however, a locally presentable abelian category with enough projective objects, which is kind of ``dual'' to being Grothendieck abelian. 
 \end{remark}
 
@@ -285,7 +288,7 @@ We want to extend the construction of $I$-torsion and $L$-complete modules to ge
 
 \begin{definition}
     \label{ch0:def:I-power-torsion-comodule}
-    \index{$I$-power torsion!Comodule}
+    \index{I-power torsion!Comodule}
     Let $(A,\Psi)$ be an Adams Hopf algebroid and $I\subseteq A$ a regular invariant ideal. The $I$-power torsion of a comodule $M$ is defined as 
     \[T_I^\Psi M = \{x\in M \mid I^kx = 0 \text{ for some } k\in \N\}.\]
     We say a comodule $M$ is \emph{$I$-power torsion} if the natural map $T_I^\Psi M\longrightarrow M$ is an equivalence. The full subcategory of $I$-power torsion comodules is denoted $\Comod_\Psi\Itors$. 
@@ -395,6 +398,7 @@ Our goal was to give two constructions and prove that they were equal in the cas
 
 \begin{lemma}[{\cite[3.7(2)]{barthel-heard-valenzuela_2020}}]
     \label{ch0:lm:derived-torsion-if-homology-torsion}
+    \index{Invariant ideal!Regular}
     Let $(A,\Psi)$ be an Adams Hopf algebroid and $I\subseteq A$ a regular invariant ideal. There is an equivalence of categories 
     \[\Der(\Psi)\Itors\simeq \Der(\Psi\Itors).\] 
     Furthermore, an object $M\in \Der(\Psi)$ is $I$-torsion if and only if the homology groups $H_* M$ are $I$-power torsion $\Psi$-comodules.
@@ -404,6 +408,8 @@ One can wonder whether the same is true for the $I$-complete derived category, b
 
 \begin{construction}
     \label{ch0:const:completed-derived-category}
+    \index{I-complete module}
+    \index{L-complete module}
     Recall that $\Mod_A\Icomp$ denotes the category of $I$-complete $A$-modules for $I\subseteq A$ a regular ideal. By \cite[2.11]{barthel-heard-valenzuela_2020} the category has enough projective objects, hence by \cite[1.3.2]{Lurie_HA} we can associate to it the right bounded category $\Der^-(\Mod_A\Icomp)$. This has a by \cite[1.3.2.19, 1.3.3.16]{Lurie_HA} a left complete $t$-structure with heart equivalent to $\Mod_A\Icomp$. We can then form its right completion, which we denote $\overline{\Der}(\Mod_A\Icomp)$, and call the completed derived category of $\Mod_A\Icomp$. 
 \end{construction}
 
