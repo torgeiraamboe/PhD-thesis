@@ -7,7 +7,7 @@ Our main interest for constructing an $\infty$-categorical version of Positselsk
 
 Let $(\C, \otimes, \1)$ be a presentably symmetric monoidal $\infty$-category. The tensor product $\otimes$ preserves filtered colimits separately in each variable, which by the adjoint functor theorem (\cite[5.5.2.9]{lurie_09}) means that the functor $X\otimes (-)$ has a right adjoint $\iHom(X, -)$, making $\C$ a closed symmetric monoidal category. From this internal hom-object we get a functor 
 \[(-)^\vee = \iHom(-, \1)\: \C\op \to \C,\] 
-which we call \emph{the linear dual}\index{The linear dual}. 
+which we call \emph{the linear dual}\index{Linear dual}. 
 
 \begin{definition}
     \index{Compact object}
@@ -41,6 +41,8 @@ The following is usually referred to as the local duality theorem, see \cite[3.3
 \begin{theorem}
     \label{ch2:thm:local-duality-co-contra}
     \index{Local duality!Theorem}
+    \index{Localization!Smashing}
+    \index{Colocalization!Smashing}
     For any local duality context $(\C, \K)$, 
     \begin{enumerate}
         \item the functor $L$ is a smashing localization,
@@ -56,10 +58,12 @@ The following is usually referred to as the local duality theorem, see \cite[3.3
 
 \begin{remark}
     The result will essentially follow from recognizing $(\Gamma, \Lambda)$, viewed as endofunctors on $\C$, as the adjoint comonad-monad pair $C\otimes (-)\dashv \iHom(C,-)$ for a certain coidempotent cocommutative coalgebra $C$, and then applying \cref{ch2:thm:Positselski-duality-coidempotent}. 
+    \index{Cocommutative coalgebra!Coidempotent}
+    \index{Positselski duality}
 \end{remark}
 
 \begin{proof}
-    By \cite[3.3.3]{hovey-palmiery-strickland_97} the functor $L$ is smashing, as it is a finite localization away from $\K$. By construction the functor $\Gamma$ is determined by the kernel of the localization $X\to LX$, hence is also smashing. The functor $L$ has a fully faithful right adjoint, hence is a localization---similarly for $\Gamma$. 
+    By \cite[3.3.3]{hovey-palmiery-strickland_97} the functor $L$ is smashing, as it is a finite localization\index{Localization} away from $\K$. By construction the functor $\Gamma$ is determined by the kernel of the localization $X\to LX$, hence is also smashing. The functor $L$ has a fully faithful right adjoint, hence is a localization---similarly for $\Gamma$. 
 
     As $\Gamma$ is smashing it is given by $\Gamma X \simeq \Gamma \1 \otimes X$, and as $\C\Ktors$ is an ideal, it inherits a symmetric monoidal structure from $\C$, making $\Gamma$ a symmetric monoidal functor. In particular, the object $\Gamma \1$ is the unit in $\C\Ktors$. The unit in a compactly generated symmetric monoidal stable $\infty$-category is both a commutative algebra and a cocommutative coalgebra. The inclusion $i_{\K-\mathrm{tors}}\: \C\Ktors\hookrightarrow \C$ is op-lax monoidal, as it is the left adjoint of a symmetric monoidal functor, meaning that it preserves coalgebras. In particular, $\Gamma\1$ treated as an object in $\C$ is a cocommutative coalgebra. Since $\Gamma$ is a smashing colocalization $\Gamma \1$ is a coidempotent coalgebra. 
 
@@ -91,7 +95,7 @@ The following is usually referred to as the local duality theorem, see \cite[3.3
     If the more general version of Positselski duality mentioned in \cref{ch2:rm:holds-generally-for-separable} holds, one could be able to generalize local duality to slightly more exotic situations, where the functors are not localizations. 
 \end{remark}
 
-The motivation for proving local duality in this setup was to have the following visually beautiful description of local duality. 
+The motivation for proving local duality in this setup was to have the following visually beautiful description of local duality. \index{Local duality!Diagram}
 
 \begin{center}
     \begin{tikzcd}
@@ -167,11 +171,11 @@ Our main interest in \cref{ch2:thm:local-duality-co-contra} is related to chroma
 
 \subsubsection*{Chromatic homotopy theory}
 
-The category of spectra, $\Sp$, is the initial presentably symmetric monoidal stable $\infty$-category. Fixing a prime $p$, one can describe chromatic homotopy theory as the study of $p$-local spectra together with a \emph{chromatic filtration}, coming from the height filtration of formal groups. In such a filtration there is a filtration component corresponding to each natural number $n$, which we will refer to as the $n$-th component. There are, at least, two different chromatic filtrations on $\Sp$, and their conjectural equivalence was recently disproven in \cite{burklund-hahn-levy-schlank_23}. For simplicity we will distinguish these two by referring to them as the \emph{compact filtration} and the \emph{finite filtration}. This latter is a bit misleading, as it is not a finite filtration---the word finite corresponds to a certain finite spectrum. The $n$-th filtration component in the compact filtration is controlled by the Morava $K$-theory spectrum $K_p(n)$, and the $n$-th filtration component in the finite filtration is controlled by the telescope spectrum $T_p(n)$. 
+The category of spectra, $\Sp$, is the initial presentably symmetric monoidal stable $\infty$-category. Fixing a prime $p$, one can describe chromatic homotopy theory as the study of $p$-local spectra together with a \emph{chromatic filtration}, coming from the height filtration of formal groups. In such a filtration there is a filtration component corresponding to each natural number $n$, which we will refer to as the $n$-th component. There are, at least, two different chromatic filtrations on $\Sp$, and their conjectural equivalence was recently disproven in \cite{burklund-hahn-levy-schlank_23}. For simplicity we will distinguish these two by referring to them as the \emph{compact filtration} and the \emph{finite filtration}. This latter is a bit misleading, as it is not a finite filtration---the word finite corresponds to a certain finite spectrum. The $n$-th filtration component in the compact filtration is controlled by the Morava $K$-theory\index{Morava $K$-theory} spectrum $K_p(n)$, and the $n$-th filtration component in the finite filtration is controlled by the telescope spectrum $T_p(n)$. 
 
-We denote the $n$-th component of the compact filtration by $\Sp\np$\index{$E\np$-local spectra} and the $n$-th component of the finite filtration by $\Sp\np^f$. The different components are related by smashing localization functors $L_{n-1,p}\:\Sp\np \to \Sp_{n-1,p}$ and $L\np^f\: \Sp\np^f \to \Sp_{n-1,p}^f$ respectively. 
+We denote the $n$-th component of the compact filtration by $\Sp\np$\index{Spectra!$E\np$-local} and the $n$-th component of the finite filtration by $\Sp\np^f$. The different components are related by smashing localization functors $L_{n-1,p}\:\Sp\np \to \Sp_{n-1,p}$ and $L\np^f\: \Sp\np^f \to \Sp_{n-1,p}^f$ respectively. 
 
-In the light of local duality, the category $\Sp_{n-1,p}$ is the category of local objects in $\Sp\np$ for a compact object $L\np F(n) \in \Sp\np$\index{Type $n$ spectrum}. The torsion objects with respect to $L\np F(n)$ is the category of \emph{monochromatic spectra}\index{Monochromatic spectrum}, denoted $\M\np$ and the category of complete objects are the $K_p(n)$-local spectra, $\Sp_\Kpn$\index{$K_p(n)$-local spectra}. For more details on monochromatic and $K_p(n)$-local spectra, see \cite{hovey-strickland_99}, and for the relationship to local duality, see \cite[Section 6.2]{barthel-heard-valenzuela_2018}. 
+In the light of local duality, the category $\Sp_{n-1,p}$ is the category of local objects in $\Sp\np$ for a compact object $L\np F(n) \in \Sp\np$\index{Type $n$ spectrum}. The torsion objects with respect to $L\np F(n)$ is the category of \emph{monochromatic spectra}\index{Spectra!Monochromatic}, denoted $\M\np$ and the category of complete objects are the $K_p(n)$-local spectra, $\Sp_\Kpn$\index{Spectra!$K_p(n)$-local}. For more details on monochromatic and $K_p(n)$-local spectra, see \cite{hovey-strickland_99}, and for the relationship to local duality, see \cite[Section 6.2]{barthel-heard-valenzuela_2018}. 
 
 \begin{proposition}
     For any prime $p$ and non-negative integer $n$, there are equivalences $\M\np \simeq \Comod_{M\np\S}(\Sp\np)$ and $\SpKpn\simeq \Contra_{M\np\S}(\Sp\np)$ of symmetric monoidal stable $\infty$-categories. 
@@ -183,6 +187,8 @@ In the light of local duality, the category $\Sp_{n-1,p}$ is the category of loc
 We also have a similar description of the objects coming from the finite chromatic filtration. 
 
 \begin{proposition}
+    \index{Spectra!$T_p(n)$-local}
+    \index{Contramodule}
     For any prime $p$ and non-negative integer $n$, there are equivalences $\M\np^f \simeq \Comod_{M\np^f\S}(\Sp\np^f)$ and $\Sp_{T_p(n)}\simeq \Contra_{M\np^f\S}(\Sp\np^f)$ of symmetric monoidal stable $\infty$-categories. 
 \end{proposition}
 \begin{proof}

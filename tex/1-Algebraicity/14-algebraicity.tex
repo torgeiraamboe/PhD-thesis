@@ -16,6 +16,7 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
 
 \begin{lemma}
     \label{ch1:lm:monochromatic-iff-torsion-modules}
+    \index{I-power torsion!Modules}
     If $M$ is an $E$-module, then we have $M\in \Modt$ if and only if $\pi_* M\in \modt$. 
 \end{lemma}
 \begin{proof}
@@ -34,6 +35,7 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
 
 \begin{lemma}
     \label{ch1:lm:conservative-adapted-torsion-modules}
+    \index{Homology theory!Adapted}
     For any prime $p$ and non-negative integer $n$, the functor 
     \[\pi_*\colon \Modt\longrightarrow \modt\]
     is a conservative adapted homology theory. 
@@ -46,10 +48,11 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
     Now, as $\pi_*$ is adapted on $\ModE$ we can chose a faithful injective lift $\bar{J}$ of $J$ to $\ModE$, and since $\bar{J}$ was assumed to have $I_n$-torsion homotopy groups we know by \cref{ch1:lm:monochromatic-iff-torsion-modules} that $\bar{J}$ is an object of $\Modt$. In particular, we have faithful lifts for any injective in $\modt$, which means that $\pi_*\colon \Modt\longrightarrow \modt$ is adapted. 
 \end{proof}
 
-Let $C^{I_n}$ denote the $I_n$-adic completion functor on $\modE$. It is neither left nor right exact, see \cite[Appendix A.]{hovey-strickland_99}. As $E_*$ is an integral domain, the higher right derived functors vanish by \cite[5.1]{greenlees-may_92}. For $i\geq 0$ we denote the $i$'th left derived functor of $C^{I_n}$ by $L^{I_n}_i$. For any $M\in \ModE$ there is a natural map $L^{I_n}_0 M \longrightarrow C^{I_n}M$. It is always an epimorphism, but usually not an isomorphism. 
+Let $C^{I_n}$ denote the $I_n$-adic completion\index{I-adically complete module} functor on $\modE$. It is neither left nor right exact, see \cite[Appendix A.]{hovey-strickland_99}. As $E_*$ is an integral domain, the higher right derived functors vanish by \cite[5.1]{greenlees-may_92}. For $i\geq 0$ we denote the $i$'th left derived functor of $C^{I_n}$ by $L^{I_n}_i$. For any $M\in \ModE$ there is a natural map $L^{I_n}_0 M \longrightarrow C^{I_n}M$. It is always an epimorphism, but usually not an isomorphism. 
 
 \begin{lemma}
     \label{ch1:lm:cohomological-dimension-torsion-modules}
+    \index{Cohomological dimension}
     For any prime $p$ and non-negative integer $n$, the category $\modt$ has cohomological dimension $n$. 
 \end{lemma}
 \begin{proof}
@@ -66,6 +69,7 @@ Let $C^{I_n}$ denote the $I_n$-adic completion functor on $\modE$. It is neither
 
 \begin{lemma}
     \label{ch1:lm:splitting-torsion-modules}
+    \index{Splitting}
     For any prime $p$ and non-negative integer $n$, the category $\modt$ has a splitting of order $2p-2$. 
 \end{lemma}
 \begin{proof}
@@ -100,6 +104,8 @@ We can now summarize the above discussion with the first of our main results.
 \begin{theorem}[\cref{ch1:thm:C}]
     \label{ch1:thm:main-modules}
     \index{Exotic algebraic model}
+    \index{Exotic equivalence}
+    \index{Homology theory!$k$-exotic}
     Let $p$ be a prime and $n$ a non-negative integer. If $k=2p-2-n>0$, then the functor 
     \[\pi_*\colon \Modt\longrightarrow\modt\]
     is a $k$-exotic homology theory, giving an equivalence 
@@ -117,6 +123,8 @@ We can also phrase this dually in terms of $\Kpn$-local $E$-modules.
 
 \begin{corollary}
     \label{ch1:cor:main-modules-dual}
+    \index{Morava $K$-theory}
+    \index{Local duality}
     Let $p$ be a prime, $n$ a positive integer and $\Kpn$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n>0$, then we have a $k$-exotic algebraic equivalence 
     \[h_k L_{\Kpn}\ModE \simeq h_k \Dper(\modE)\Inc.\]
     In particular, $\Kpn$-local $E$-modules are exotically algebraic at large primes. 
@@ -156,7 +164,7 @@ This is also $k$-exotic in the same range as \cref{ch1:thm:main-modules}. We can
 
 Having proven that monochromatic $E$-modules are algebraic at large primes, we now turn to the larger category of all monochromatic spectra $\M\np$ with the same goal. The strategy is exactly the same as in \cref{ch1:ssec:algebraicity-modules}: we first prove that the conservative adapted homology theory $E_*\colon \Sp\np\longrightarrow \comod\EE$ restricts to a conservative adapted homology theory on $\M\np$, before proving that $\Comod\EE\Int$ has a splitting and finite cohomological dimension. This will prove \cref{ch1:thm:B}, which we then convert into a proof of \cref{ch1:thm:A}---just as in \cref{ch1:cor:main-modules-dual}. 
 
-In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ does not matter, as the categories $\Sp\np$ and $\comod\EE$ are equivalent for all such spectra---see \cite[1.12]{hovey_95} and \cite[4.2]{hovey-strickland_2005a} respectively. However, to make the interaction with \cref{ch1:ssec:algebraicity-modules} as simple as possible we will continue to use the height $n$ Johnson--Wilson spectrum $E_p(n)$.
+In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ does not matter, as the categories $\Sp\np$ and $\comod\EE$ are equivalent for all such spectra---see \cite[1.12]{hovey_95} and \cite[4.2]{hovey-strickland_2005a} respectively. However, to make the interaction with \cref{ch1:ssec:algebraicity-modules} as simple as possible we will continue to use the height $n$ Johnson--Wilson spectrum $E_p(n)$.\index{Johnson--Wilson theory}
 
 \begin{lemma}
     \label{ch1:lm:monochromatic-iff-torsion-comodules}
@@ -172,6 +180,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 
 \begin{lemma}
     \label{ch1:lm:conservative-adapted-torsion-comodules}
+    \index{Homology theory!Adapted}
     For any prime $p$ and non-negative integer $n$, the functor 
     \[E_*\colon \M\np\longrightarrow \Comodt\]
     is a conservative adapted homology theory. 
@@ -217,6 +226,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 \end{proof}
 
 \begin{lemma}
+    \index{Cohomological dimension}
     \label{ch1:lm:cohomological-dimension-torsion-comodules}
     Let $p$ be a prime and $n$ a non-negative integer. If $p-1\nmid n$, then the category $\Comodt$ has cohomological dimension $n^2+n$. 
 \end{lemma}
@@ -244,6 +254,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 
 \begin{lemma}
     \label{ch1:lm:splitting-torsion-comodules}
+    \index{Splitting}
     The category $\Comodt$ has a splitting of order $2p-2$ for any prime $p$ and non-negative integer $n$.
 \end{lemma}
 \begin{proof}
@@ -255,6 +266,8 @@ We can now summarize the above results with our second main result, which is the
 \begin{theorem}[\cref{ch1:thm:B}]
     \label{ch1:thm:main-spectra}
     \index{Exotic algebraic model}
+    \index{Exotic equivalence}
+    \index{Homology theory!$k$-exotic}
     Let $p$ be a prime and $n$ a non-negative integer. If $k=2p-2-n^2-n>0$, then the restricted functor $E_*\colon \M\np\longrightarrow \Comodt$ is $k$-exotic. In particular, there is an equivalence 
     \[h_k \M\np \simeq h_k\Dper(E_*E\Int),\]
     meaning that monochromatic homotopy theory is exotically algebraic at large primes. 
@@ -280,11 +293,13 @@ Via \cref{ch1:thm:local-duality} we can now obtain the associated exotic algebra
 
 \begin{theorem}[\cref{ch1:thm:A}]
     \label{ch1:thm:main-spectra-dual}
+    \index{Spectra!$K_p(n)$-local}
     Let $p$ be a prime, $n$ a non-negative integer and $\Kpn$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n^2>0$, then we have a $k$-exotic algebraic equivalence 
     \[h_k \SpKpn \simeq h_k \Fr\np\Inc.\]
     In other words, $\Kpn$-local homotopy theory is exotically algebraic at large primes. 
 \end{theorem}
 \begin{proof}
+    \index{Local duality}
     As we did in \cref{ch1:cor:main-modules-dual}, we construct the equivalence from a sequence of equivalences coming from \cref{ch1:thm:local-duality} and \cref{ch1:thm:main-spectra}. More precisely we use equivalences coming from \cref{ch1:ex:local-duality-chromatic}, \cref{ch1:thm:main-spectra}, \cref{ch1:thm:pulling-out-torsion} and \cref{ch1:const:periodic-derived-local-duality}, which give
     \begin{align*}
         h_k \SpKpn
@@ -353,6 +368,6 @@ Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectra
     \label{ch1:add:shaul-comment-monoidal}
     In the time since writing the paper we have learnt more about the situation described above. We were, for example, reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. 
     
-    Also, we learnt from Sven van Nigtevecht that Barkan's model $\mathscr{E}\np$ is most likely not equivalent to hypercomplete synthetic spectra, as there is a problem with the compactness of the unit in the latter. Based on this we introduce a category of \emph{$E$-local synthetic spectra} $\LSynE$ in \cref{ch3:addendum}, which we think solves these issues. We introduce this category as the natural framework to construct a category of \emph{monochromatic synthetic spectra}, which we also do in \cref{ch3:addendum}.There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \hyperref[ch3]{Paper III}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation, see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}. 
+    Also, we learnt from Sven van Nigtevecht that Barkan's model $\mathscr{E}\np$ is most likely not equivalent to hypercomplete synthetic spectra, as there is a problem with the compactness of the unit in the latter. Based on this we introduce a category of \emph{$E$-local synthetic spectra} $\LSynE$ in \cref{ch3:addendum}, which we think solves these issues. We introduce this category as the natural framework to construct a category of \emph{monochromatic synthetic spectra}\index{Synthetic spectra!Monochromatic}, which we also do in \cref{ch3:addendum}.There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \hyperref[ch3]{Paper III}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation, see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}. 
 \end{addendum}
 

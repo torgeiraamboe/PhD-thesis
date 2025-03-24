@@ -596,14 +596,15 @@ t\text{-exact localizing}\\
 \right\}}
 
 
-\pagestyle{plain}
+%\pagestyle{plain}
 
-%\pagestyle{fancy}
-% \fancyhf{}
-%\setlength{\headheight}{28pt}
-
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{28pt}
 %\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\textit{\nouppercase{\leftmark}}}{\textit{\nouppercase{\rightmark}}}
-%\cfoot{\thepage}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\itshape\nouppercase{\rightmark}}
 
 
 

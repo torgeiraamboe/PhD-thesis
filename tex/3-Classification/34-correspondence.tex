@@ -12,6 +12,8 @@ The goal of this section is to prove \cref{ch3:thm:A}, and the following lemma i
 
 \begin{lemma}
     \label{ch3:lm:t-stable-then-weak-localizing-heart}
+    \index{Localizing subcategory!t-stable}
+    \index{Localizing subcategory!Abelian weak}
     Let $\C$ be a $t$-stable category. If $\L$ is a $t$-stable localizing subcategory, then $\L^\heart$ is a weak localizing subcategory of $\C^\heart$. 
 \end{lemma}
 \begin{proof}
@@ -201,10 +203,11 @@ Now, we want to mention that we also obtain a classification of weak Serre subca
     is a bijection. 
 \end{proposition}
 
-This recovers the following classification of weak Serre subcategories in the case where the $t$-structure on $\C$ is bounded, due to Zhang--Cai, see \cite{zhang-cai_2017}. 
+This recovers the following classification of weak Serre subcategories in the case where the $t$-structure on $\C$ is bounded, due to Zhang--Cai.
 
-\begin{corollary}
+\begin{corollary}[{ \cite{zhang-cai_2017}}]
     \label{ch3:cor:classification-weak-serre-bounded}
+    \index{Serre subcategory!Weak}
     Let $\C$ be a triangulated category with a bounded $t$-structure. In this situation there is a bijection between $\pi$-stable subcategories of $\C$ and weak Serre subcategories of $\C^\heart$.  
 \end{corollary}
 
@@ -294,6 +297,8 @@ The goal of this section is to prove \cref{ch3:thm:B}, and that it interacts wel
 
 \begin{lemma}
     \label{ch3:lm:pi-exact-then-abelian-localizing-heart}
+    \index{Localizing subcategory!t-exact}
+    \index{Localizing subcategory!Abelian}
     Let $\C$ be a $t$-stable category. If $\L$ is a $t$-exact localizing subcategory, then $\L^\heart$ is an abelian localizing subcategory of $\C^\heart$. 
 \end{lemma}
 \begin{proof}
@@ -426,6 +431,7 @@ It remains then to show that the map is also surjective. In order to do this we 
 
 \begin{theorem}[{\cite[C.5.2.7]{lurie_SAG}}]
     \label{ch3:thm:Lurie-correspondence}
+    \index{Prestable $\infty$-category!Grothendieck}
     For any Grothendieck prestable category $\C\geqz$, there is a bijection 
     \[\separating \to \ablocalizing\]
     given by $\L\geqz\longmapsto \L^\heart$. 
@@ -435,6 +441,7 @@ Using this, together with \cref{ch3:lm:separating-then-pi-exact} we finally get 
 
 \begin{theorem}[\cref{ch3:thm:B}]
     \label{ch3:thm:main}
+    \index{Presentable $\infty$-category!t-stable}
     Let $\C$ be a $t$-stable category. There is a bijective map
     \[\piexact\overset{(-)^\heart}\to \ablocalizing\]
     given by $\L\longmapsto \L^\heart$. 
@@ -450,6 +457,7 @@ From this we again obtain some natural corollaries. The first one is a partial c
 
 \begin{corollary}
     \label{ch3:cor:smashing-pi-exact}
+    \index{Localization!Smashing}
     Let $R$ be a commutative noetherian ring and equip $\Der(R)$ with its natural $t$-structure. In this situation there is a bijection between the collection of smashing localizing subcategories and the collection of $\pi$-exact localizing subcategories in $\Der(R)$. 
 \end{corollary}
 \begin{proof}
@@ -463,6 +471,7 @@ We can also obtain an extension of \cref{ch3:cor:smashing-pi-exact} to noetheria
     \[\DXsmashing\simeq \subsetsX \simeq \QCohlocalizing.\]
 \end{lemma}
 \begin{proof}
+    \index{Localizing subcategory!$\otimes$-ideal}
     The latter bijection is again due to Gabriel---\cite[VI.2.4(b)]{gabriel_1962}. By \cite[4.13]{tarrio-lopez-salorio_2004} the telescope conjecture holds for noetherian schemes. In particular, this means that there is a bijection between subsets of $X$ and localizing $\otimes$-ideals in $\Der_{qc}(X)$, see \cite[8.13]{stevenson_2013}, which restricts to a bijection
     \[\DXsmashing\simeq \subsetsX,\]
     giving the first bijection. 
@@ -585,7 +594,7 @@ such that the composite map from the left to the right is the map $(-)^\heart$ f
 We round off the paper by proving some easy corollaries of \cref{ch3:thm:A} and \cref{ch3:thm:B} for stable categories with $t$-structures with the same heart. The first immediate corollary is the following. 
 
 \begin{corollary}
-    \index{Grothendieck abelian category}
+    \index{Grothendieck abelian}
     Let $\A$ be any Grothendieck abelian category. For any two $t$-stable categories $\C$ and $\D$ with $\C^\heart \simeq \A\simeq \D^\heart$ there are one-to-one correspondences
     \[\pistable\to\pistableD\]
     and 
@@ -595,9 +604,9 @@ We round off the paper by proving some easy corollaries of \cref{ch3:thm:A} and 
 The above correspondence might not be induced by a functor between $\C$ and $\D$, but is just an abstract isomorphism. However, in the case when there is a functor, the $\pi$-stable localizing subcategories are also functorially related. We can set this up as follows. 
 
 \begin{lemma}
+    \index{t-exact functor}
     \label{ch3:lm:restricted-functor-on-pi-localizing}
-    Let $\C$ and $\D$ be $t$-stable categories with $\A^\heart\subseteq \C^\heart$ and $\T^\heart\subseteq \D^\heart$ abelian weak localizing subcategories of the respective hearts. 
-    If there is a $t$-exact functor $F\:\C\to \D$ such that the functor on hearts $F^\heart\: \C^\heart\to \D^\heart$ restricts to a functor $F^\heart_{\vert \A^\heart}\: \A^\heart \to \T^\heart$, then the functor $F$ restricts to the unique $\pi$-stable localizing subcategories $F_{\vert \A}\:\A\to \T$. 
+    Let $\C$ and $\D$ be $t$-stable categories with $\A^\heart\subseteq \C^\heart$ and $\T^\heart\subseteq \D^\heart$ abelian weak localizing subcategories of the respective hearts. If there is a $t$-exact functor $F\:\C\to \D$ such that the functor on hearts $F^\heart\: \C^\heart\to \D^\heart$ restricts to a functor $F^\heart_{\vert \A^\heart}\: \A^\heart \to \T^\heart$, then the functor $F$ restricts to the unique $\pi$-stable localizing subcategories $F_{\vert \A}\:\A\to \T$. 
 \end{lemma}
 \begin{proof}
     As $F$ is $t$-exact we have $F(\pi_{\C,n}^\heart X)\simeq \pi_{\D, n}^\heart F(X)$. By assumption we know that $F(\pi_{\C,n}^{\heart}X) \simeq F^\heart(\pi_{\C,n}^\heart X) \in \T^\heart$, hence any $Y$ in the image of $F$ has $\pi_{\D,n}^\heart Y \in \T^\heart$ for any $n$. Since $\T$ is $\pi$-stable this implies that $Y\in \T$, proving the claim.

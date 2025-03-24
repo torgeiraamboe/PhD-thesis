@@ -16,6 +16,7 @@ Adapted homology theories are particularly well behaved homology theories that h
 \begin{definition}
     \label{ch1:def:homology-theory}
     \index{Homology theory}
+    \index{Homology theory!Conservative}
     Let $\C$ be a presentable symmetric monoidal stable $\infty$-category and $\A$ an abelian category with a local grading $[1]$. A functor $H\: \C\longrightarrow \A$ is called a \emph{conservative homology theory} if:
     \begin{enumerate}
         \item $H$ is additive
@@ -35,7 +36,7 @@ Adapted homology theories are particularly well behaved homology theories that h
 
 \begin{example}
     If $R$ is a ring spectrum, then the functor $R_*(-)\: \Sp \longrightarrow \Mod_R$, defined as the composition 
-    $$\Sp\overset{R\otimes (-)}\longrightarrow \Mod_R \overset{\pi_*}\longrightarrow \Mod_{R_*},$$
+    \[\Sp\overset{R\otimes (-)}\longrightarrow \Mod_R \overset{\pi_*}\longrightarrow \Mod_{R_*},\]
     is a homology theory. We call this the $R$-homology functor. If $R$ is of Adams type, then $R_*(-)$ naturally lands in the subcategory $\Comod_{R_*R}$. If we restrict the domain of $R_*$ to the category of $R$-local spectra, then it is a conservative homology theory. For the rest of the paper we will use $R_*$ to denote the restricted conservative homology theory 
     \[R_*\: \Sp_R\to \Comod_{R_*R}.\]
 \end{example}
@@ -44,7 +45,7 @@ Adapted homology theories are particularly well behaved homology theories that h
     \label{ch1:def:faithful-lift}
     \index{Faithful lift}
     Let $H\: \C\longrightarrow \A$ be a homology theory and $J$ an injective object in $\A$. An object $\bar{J}\in \C$ is said to be an \emph{injective lift} of $J$ if it represents the functor 
-    $$\Hom_\A(H(-),J)\: \C^{op}\longrightarrow \A b$$
+    \[\Hom_\A(H(-),J)\: \C^{op}\longrightarrow \A b\]
     in the homotopy category $h \C$, i.e. $\Hom_\A(H(-),J)\cong [-,\bar{J}]$. We call $\bar{J}$ a \emph{faithful lift} if the map $H(\bar{J})\longrightarrow J$ coming from the identity on $\bar{J}$ is an equivalence. 
 \end{definition}
 
@@ -75,11 +76,12 @@ In our particular interest $R=E\np$, the associated adapted homology theories $\
 
 \begin{example}
     \label{ch1:ex:cohomological-dimension-comodEE}
+    \index{Morava $E$-theory}
     Let $n$ be an integer, $p$ a prime such that $p>n+1$ and $E=E\np$ Morava $E$-theory at height $n$. Then by \cite[2.5]{pstragowski_2021} the category $\Comod\EE$ has cohomological dimension $n^2+n$. 
 \end{example}
 
 \begin{remark}
-    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra. The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory 
+    Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra.\index{Spectra!$K_p(n)$-local} The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory 
     \[\Kpn_*\: \SpKpn\longrightarrow \Mod_{\Kpn_*}\] 
     is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. This can be seen via the following argument of \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
     
@@ -106,8 +108,8 @@ In order to mimic this behavior for a general adapted homology theory, Franke in
     
 \begin{definition}[\cite{franke_96}]
     \label{ch1:def:splitting-of-abelian-category}
-    \index{Serre splitting}
-    Let $\A$ be an abelian category with a local grading $[1]$. A \emph{splitting} of $\A$ of order $q+1$ is a collection of Serre subcategories $\A_\phi \subseteq \A$ indexed by $\phi \in \Z/(q+1)$ satisfying
+    \index{Splitting}
+    Let $\A$ be an abelian category with a local grading $[1]$. A \emph{splitting} of $\A$ of order $q+1$ is a collection of Serre subcategories\index{Serre subcategory} $\A_\phi \subseteq \A$ indexed by $\phi \in \Z/(q+1)$ satisfying
     \begin{enumerate}
         \item $[k]\A_n \subseteq \A_{n+k \mod (q+1)}$ for any $k\in \Z$, and 
         \item the functor $\prod_{\phi}\A_\phi\longrightarrow \A$, defined by $(a_\phi)\mapsto \oplus_\phi a_\phi$, is an equivalence of categories. 
@@ -157,7 +159,7 @@ One of the remarkable things about the existence of a $k$-exotic homology theory
     
 \begin{theorem}[{\cite[7.56]{patchkoria-pstragowski_2021}}]
     \label{ch1:thm:franke-algebraicity}
-    \index{Franke algebraicity theorem}
+    \index{Franke's algebraicity theorem}
     Let $H\: \C\longrightarrow \A$ be a $k$-exotic homology theory. Then there is an equivalence  
     \[h_k \C \simeq h_k \Dper(\A)\]
     of homotopy $k$-categories
@@ -167,6 +169,7 @@ There are many interesting examples of homology theories satisfying \cref{ch1:th
 
 \begin{example}[{\cite[8.7]{patchkoria-pstragowski_2021}}]
     \label{ch1:ex:chromatic-algebraicity-modules}
+    \index{Johnson--Wilson theory}
     Let $p$ be a prime, $n$ be a non-negative integer, and $E$ a height $n$ Morava $E$-theory concentrated in degrees divisible by $2p-2$, for example Johnson-Wilson theory $E_p(n)$. If $k=2p-2-n>0$, then the functor 
     \[\pi_* \: \ModE \longrightarrow \modE\]
     is a $k$-exotic homology theory, giving an equivalence 
@@ -180,6 +183,7 @@ There are many interesting examples of homology theories satisfying \cref{ch1:th
     
 \begin{example}[{\cite[8.13]{patchkoria-pstragowski_2021}}]
     \label{ch1:ex:chromatic-algebraicity}
+    \index{Exotic equivalence}
     Let $p$ be a prime, $n$ be a non-negative integer, and $E$ any height $n$ Morava $E$-theory. If $k=2p-2-n^2-n>0$, then the functor $E_* \: \Sp\np\longrightarrow \Comod\EE$ is a $k$-exotic homology theory, giving an equivalence 
     \[h_k \Sp\np \simeq h_k \Fr\np.\]
 \end{example}

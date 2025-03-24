@@ -5,16 +5,10 @@
 
 In the abstract we mentioned that the overarching goal of the thesis is to understand aspects of monochromatic homotopy theory. To do this we first need to situate ourselves into the chromatic viewpoint of stable homotopy theory. Our Our approach is inspired by \cite{barthel-beaudry_19}, and will particularly try to tie it to the ideas already introduced. 
 
-Chromatic homotopy theory, in very crude words, is really a perspective---or maybe a toolbox---to study the $\infty$-category of spectra, $\Sp$, in which one decomposes it to its smallest fundamental pieces. An often repeated analogy is that of a prism. If $\Sp$ consists of pure white light, then shining it through the ``chromatic lens'' decomposes it to distinct colors, labeled by an integer $n$ called the \emph{chromatic height}. 
+Chromatic homotopy theory, in very crude words, is really a perspective---or maybe a toolbox---to study the $\infty$-category of spectra, $\Sp$, in which one decomposes it to its smallest fundamental pieces. An often repeated analogy is that of a prism. If $\Sp$ consists of white light, then shining it through the ``chromatic lens'' decomposes it to distinct colors, labeled by a non-negative integer $n$ called the \emph{chromatic height}, analogous to the wavelength of a light wave. 
 
 \begin{center}
-\begin{tikzcd}
-        &                                                                                     &  & \C_\infty \\
-        &                                                                                     &  & \vdots     \\
-\Sp \arrow[r] & \text{Chromatic lens} \arrow[rruu] \arrow[rr] \arrow[rrd] \arrow[rrdd] \arrow[rru] &  & \C_n      \\
-        &                                                                                     &  & \vdots     \\
-        &                                                                                     &  & \C_0     
-\end{tikzcd}
+\input{tex/0-Introduction/99-prism.tex}
 \end{center}
 
 The key to this perspective is that the individual pieces of information can be reassembled back to give information about $\Sp$. This happens in the form of a filtration on the sphere spectrum $\S$, called the \emph{chromatic filtration}. The colimit of this filtration recovers the sphere, hence we can think of the main idea of chromatic homotopy theory as the following: in order to understand $\Sp$, it should be enough to understand the ``chromatic pieces'' individually. 
@@ -32,7 +26,7 @@ In light of Waldhausen's viewpoint of stable homotopy theory as an enhancement o
 In \cite{bousfield_1979_localization}, Bousfield developed a general machinery for studying localizations on $\Sp$, by inverting maps that are equivalences after tensoring with some spectrum $F$, now called \emph{Bousfield localizations}. The corresponding localization functor is denoted $L_F$. 
 
 \begin{example}
-    \index{$p$-localization}
+    \index{p-localization}
     We can create a version of $p$-localization on $\Sp$, by Bousfield localizing at the $p$-local Moore spectrum $M\Z_{(p)}$, giving a functor usually written 
     \[L_{(p)} \:\Sp \to \Sp_{(p)}.\] 
     On homotopy groups this has the effect of $p$-localizing, in the sense that 
@@ -113,12 +107,12 @@ where $\S_p^\wedge$ denotes the $p$-complete sphere. This also extends to any ob
 We can then ask the natural question: do these give all the minimal localizing subcategories of $\Sp_{(p)}$? This was indeed the case for $\Der(\Z_{(p)})$, but now, in the more complicated world of spectra, this is no longer true. We now have an infinite sequence of minimal localizing subcategories, indexed by a natural number $n$, that ``interpolates'' between the two minimal localizing subcategories of $\Der(\Z_{(p)})$. 
 
 \begin{remark}
-    In fact, even more is true: By the failure of the telescope conjecture, see \cite{burklund-hahn-levy-schlank_23}, there are at least two such infinite sequences. We can make sure that there is a single such sequence if we translate over to compactly generated $\otimes$-ideals, but for the above exposition, we have chosen to push these details under a big old telescope-shaped rug.
+    In fact, even more is true: By the failure of the telescope conjecture, see \cite{burklund-hahn-levy-schlank_23}, there are at least two such infinite sequences. We can make sure that there is a single such sequence if we translate over to compactly generated $\otimes$-ideals, but for the above exposition, we have chosen to sweep these details under a big old telescope-shaped rug.
 \end{remark}
 
 We can identify these ``intermediary'' subcategories by an analysis of field objects. For $\Der(\Z_{(p)})$ there are exactly two field objects associated to the unit $\Z_{(p)}$, namely $\Q$ and $\F_p$, each obtained by either killing or inverting $p$. 
 
-For $\Sp_{(p)}$ we have a field object for any number $n\in \N\cup \{\infty\}$, usually denoted $K(n)$, or $\Kpn$ if we want to remember the prime. We have $K_p(0)=H\Q$ and $K_p(\infty) = H\F_p$, which shows that this sequence of field objects really forms an interpolation between the two field objects coming from algebra. 
+For $\Sp_{(p)}$ we have a field object for any number $n\in \N\cup \{\infty\}$, which we denote by $\Kpn$. We have $K_p(0)=H\Q$ and $K_p(\infty) = H\F_p$, showing that this sequence of field objects really forms an interpolation between the two field objects coming from algebra. 
 
 \begin{notation}
     \index{Morava $K$-theory}
@@ -263,7 +257,7 @@ We have now introduced several versions of Morava $E$-theories, all in light of 
 \end{notation}
 
 \begin{remark}
-    \index{$\infty$-category!Rigidly compactly generated}
+    \index{Compactly generated!Rigid}
     The category $\Sp\np$ is rigidly compactly generated by the collection of dualizable objects $\{L\np F\}$, where $F$ is a finite spectrum---in stark contrast to $\SpKpn$, see \cref{ch0:rm:SpKn-not-rigidly-generated}. In fact, $\Sp\np$ is rigidly compactly generated by its unit $L\np\S$. 
 \end{remark}
 
@@ -327,7 +321,7 @@ We are now almost ready to construct local duality for chromatic homotopy theory
 
 \begin{definition}
     \label{ch0:def:type-n-spectrum}
-    \index{Spectra!Finite type $n$}
+    \index{Type $n$ spectrum}
     We say a finite $p$-local spectrum $X$ is of \emph{type $n$} if $\Kpn_* X\not\cong 0$ and $K_p(m)_*X\cong 0$ for all $m<n$. 
 \end{definition}
 

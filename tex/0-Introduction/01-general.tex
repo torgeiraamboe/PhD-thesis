@@ -14,15 +14,16 @@ Most $\infty$-categories considered will be \emph{presentable}, in the sense of 
 The $(\infty, 2)$-category of presentable $\infty$-categories, where the morphisms are the colimit-preserving functors, is denoted $\PrL$. It has a symmetric monoidal structure via the Lurie tensor product $\otimes^L$, allowing us to make the following definition, which will be one of the main objects of study for this thesis. 
 
 \begin{definition}
-    \index{$\infty$-category!Presentably symmetric monoidal}
+    \index{Presentable $\infty$-category!Symmetric monoidal}
+    \index{Commutative algebra}
     A presentable $\infty$-category $\C$ is \emph{presentably symmetric monoidal} if it is a commutative algebra in $\PrL$ under the Lurie tensor product. 
 \end{definition}
 
 Any such category $\C$ has a symmetric monoidal structure, with the property that the tensor product in $\C$ preserves colimits separately in each variable. The symmetric monoidal product will usually be denoted $-\otimes_\C -$, and its associated unit by $\1_\C$. 
 
-We will also assume knowledge about \emph{stable} $\infty$-categories\index{$\infty$-category!Stable}, which are $\infty$-categorical enhancements of triangulated categories. One can, for example, construct presentable stable $\infty$-categories from presentable $\infty$-categories via \emph{stabilization}\index{Stabilization}. The stabilization of a pointed category $\mathcal{E}$ is defined by formally inverting the desuspension functor $\Omega$:
+We will also assume knowledge about \emph{stable} $\infty$-categories\index{Presentable $\infty$-category!Stable}, which are $\infty$-categorical enhancements of triangulated categories. One can, for example, construct presentable stable $\infty$-categories from presentable $\infty$-categories via \emph{stabilization}\index{Stabilization}. The stabilization of a pointed category $\mathcal{E}$ is defined by formally inverting the desuspension functor $\Omega$:
 \[\Sp(\mathcal{E}) = \colim (\cdots\overset{\Omega}\to\mathcal{E}\overset{\Omega}\to\mathcal{E}\overset{\Omega}\to\mathcal{E}).\] 
-The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, denoted $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category}\index{$\infty$-category!Presentably symmetric monoidal stable} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
+The $(\infty, 2)$-category of presentable stable $\infty$-categories and exact colimit preserving functors, denoted $\PrLs$, inherits a symmetric monoidal structure from $\PrL$. An $\infty$-category $\C$ is a \emph{presentably symmetric monoidal stable $\infty$-category} if it is a commutative monoid in $\PrLs$. This means that it is presentably symmetric monoidal, and the tensor product preserves the stable structure. 
 
 \begin{example}
     \index{Spectra}
@@ -49,7 +50,7 @@ The derived $\infty$-category of $\Z$, as well as the $\infty$-categories of spa
 
 \begin{definition}
     \label{ch0:def:compactly-generated-category}
-    \index{$\infty$-category!Compactly generated}
+    \index{Compactly generated}
     A presentable $\infty$-category $\C$ is \emph{compactly generated} if $\Co$ generates $\C$ under filtered colimits. 
 \end{definition}
 
@@ -67,7 +68,7 @@ In a certain sense, being compact is about being small with respect to colimits,
 
 \begin{definition}
     \label{ch0:rigidly-generated-category}
-    \index{$\infty$-category!Rigidly compactly generated}
+    \index{Compactly generated!Rigid}
     A presentably symmetric monoidal stable $\infty$-category $\C$ is \emph{rigidly compactly generated} if it is compactly generated and $\Co\simeq \C\dual$. 
 \end{definition}
 
@@ -139,7 +140,7 @@ Localizing subcategories are interconnected with the idea of ``primeness''. We g
 \end{remark}
 
 \begin{example}
-    Even though neither $\Z_{(p)}$ or $\Q$ are perfect complexes in $\Der(\Z)$, their associated localizing subcategories are in fact compactly generated. 
+    Even though neither $\Z_{(p)}$ nor $\Q$ are perfect complexes in $\Der(\Z)$, their associated localizing subcategories are in fact compactly generated. 
 \end{example}
 
 \begin{remark}
@@ -200,7 +201,7 @@ There are several ways to construct localizations, but one method particularly i
 \end{example}
 
 \begin{example}
-    \index{$p$-completion}
+    \index{p-completion}
     \label{ch0:ex:derived-p-completion}
     Let $\C=\Der(\Z)$ and $\L = \Der(\Z[\frac{1}{p}])$ as in \cref{ch0:ex:localizing-away-from-p}. The right orthogonal complement is the category of derived $p$-complete abelian groups, $\Der(\Z)^{p-\mathrm{comp}}$. The associated localization $\Lambda_p$ is the total left derived functor of the $p$-adic completion functor $C^p$, defined by sending an abelian group $A$ to the colimit $A^\wedge_p = \colim_k A/p^k$. In other words, we have a localization 
     \[\Lambda_p \simeq \bbL C^p \: \Der(\Z)\to \Der(\Z)^{p-\mathrm{comp}}.\]
@@ -229,7 +230,7 @@ We will mostly focus on localizations of presentably symmetric monoidal stable $
 \end{remark}
 
 \begin{definition}
-    \index{Local object}
+    \index{Localization!Local object}
     Given a localization $L\colon \C\longrightarrow \C_L$, any object $X\in \C$ admits a map $X\longrightarrow LX$ coming from the unit of the adjunction, called its \emph{$L$-localization}. The object $X$ is said to be \emph{$L$-local} if this is an $L$-equivalence. By definition the category of $L$-local objects is $\C_L$. 
 \end{definition}
 
@@ -248,7 +249,7 @@ We will mostly focus on localizations of presentably symmetric monoidal stable $
 
 \begin{remark}
     \index{Colocalization}
-    Similarly to localizations, we can define \emph{colocalizations} as functors $g\colon \C\longrightarrow \D$ admitting a fully faithful left adjoint $i$. The composition $i\circ g$ is denoted $\Gamma$. The adjoint gives an equivalence between $\D$ and a full subcategory $\C^\Gamma$ of $\C$, and the datum of a colocalization is equivalent to the datum of a functor $\Gamma\colon \C\longrightarrow \C^\Gamma$ that is right adjoint to the inclusion. Dually to localizations, we get for any $X\in \C$ a colocalization map $\Gamma X\to X$, and we say $X$ is \emph{$\Gamma$-colocal}\index{Colocal object} if this is an equivalence. 
+    Similarly to localizations, we can define \emph{colocalizations} as functors $g\colon \C\longrightarrow \D$ admitting a fully faithful left adjoint $i$. The composition $i\circ g$ is denoted $\Gamma$. The adjoint gives an equivalence between $\D$ and a full subcategory $\C^\Gamma$ of $\C$, and the datum of a colocalization is equivalent to the datum of a functor $\Gamma\colon \C\longrightarrow \C^\Gamma$ that is right adjoint to the inclusion. Dually to localizations, we get for any $X\in \C$ a colocalization map $\Gamma X\to X$, and we say $X$ is \emph{$\Gamma$-colocal}\index{Colocalization!Colocal object} if this is an equivalence. 
 \end{remark}
 
 Let $\C$ be a presentably symmetric monoidal stable $\infty$-category. For any localization $L\colon \C\longrightarrow \C_L$, the image of the unit $L\1_\C$ is a ring object, and any $L$-local object $X$ admits the structure of an $L\1_\C$ module via the map of functors $L\1_\C \otimes L(-)\longrightarrow L(-)$. 
@@ -261,7 +262,7 @@ Let $\C$ be a presentably symmetric monoidal stable $\infty$-category. For any l
 
 \begin{example}
     \label{ch0:ex:p-localization-ab-smashing}
-    \index{$p$-localization}
+    \index{p-localization}
     There is a $p$-localization functor $L\:\Der(\Z)\to \Der(\Z_{(p)})$ given by inverting all primes $q\neq p$. This is a smashing localization, and is then given by $L \simeq \Z_{(p)}\otimes_\Z (-)$. 
 \end{example}
 

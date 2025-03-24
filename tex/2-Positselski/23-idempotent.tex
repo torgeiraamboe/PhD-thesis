@@ -10,8 +10,8 @@ Classical Positselski duality, usually called the co-contra correspondence, is a
 We now restrict our attention to the special class of coalgebras that we will focus on for the remainder of the paper. 
 
 \begin{definition}
-    \index{Coalgebra!Separable}
-    \index{Coalgebra!Coidempotent}
+    \index{Cocommutative coalgebra!Separable}
+    \index{Cocommutative coalgebra!Coidempotent}
     A cocommutative coalgebra $C\in \cCAlg(\C)$ is said to be \emph{coseparable} if the comultiplication map 
     \[\Delta\: C\to C\otimes C\op\] 
     admits a $(C,C)$-bicomodule section $s\: C\otimes C\to C$. It is \emph{coidempotent} if $\Delta$ is an equivalence. 
@@ -48,7 +48,7 @@ The first reason for our focus on coidempotent coalgebras is that their categori
 \end{proof}
 
 \begin{remark}
-    This adjunction, being a hom-tensor adjunction is also internally adjoint in the sense of \cref{ch2:rm:internal-adjunction}. Hence we have an equivalence 
+    This adjunction, being a hom-tensor adjunction is also internally adjoint in the sense of \cref{ch2:rm:internal-adjunction}\index{Internal adjunction}. Hence we have an equivalence 
     \[\iHom_C(M\otimes_C N, A) \simeq \iHom_C(M, \iHom_C(N, A))\]
     for all comodules $M, N$ and $A$. 
 \end{remark}
@@ -101,6 +101,7 @@ can be given the structure of a symmetric monoidal functor when the coalgebra $C
 
 \begin{lemma}
     \label{ch2:lm:free-contra-monoidal}
+    \index{Presentable $\infty$-category!Symmetric monoidal}
     Let $C$ be a coidempotent cocommutative coalgebra in $\C$. The category of $C$-contramodules $\Contra_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category, making the free contramodule functor a symmetric monoidal localization.
 \end{lemma}
 \begin{proof}
@@ -145,6 +146,8 @@ We can now deduce our main result, namely that Positselski duality is a symmetri
 
 \begin{theorem}
     \index{Positselski duality}
+    \index{Contramodule!Free}
+    \index{Comonad!Cofree comodule}
     \label{ch2:thm:Positselski-duality-coidempotent}
     Let $\C$ be a presentably symmetric monoidal category and $C\in \C$ a coidempotent cocommutative coalgebra. In this situation there are mutually inverse symmetric monoidal functors
     \begin{center}

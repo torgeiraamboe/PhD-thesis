@@ -3,12 +3,12 @@
 
 The goal of this section is to introduce comodules and contramodules over an cocommutative coalgebra in some $\infty$-category $\C$. In order to do this we first review some basic facts about coalgebras, monads and comonads. 
 
-We will for the rest of this section work in some fixed presentably symmetric monoidal $\infty$-category $\C$. In other words, $\C$ is an commutative algebra object in $\PrL$, the category of presentable $\infty$-categories and left adjoint functors. In particular, the monoidal product, which we denote by $-\otimes-\:\C\times \C\to\C$ preserves colimits in both variables. We denote the unit of the monoidal structure by $\1$. 
+We will for the rest of this section work in some fixed presentably symmetric monoidal $\infty$-category $\C$. In other words, $\C$ is an commutative algebra object in $\PrL$, the category of presentable $\infty$-categories and left adjoint functors. In particular, the monoidal product, which we denote by $-\otimes-\:\C\times \C\to\C$ preserves colimits in both variables. We denote the unit of the monoidal structure by $\1$. \index{Presentable $\infty$-category!Symmetric monoidal}
 
 
 \subsection{Coalgebras, monads and comonads}
 
-We denote the category of commutative algebras in $\C$ by $\CAlg(\C)$. These are the coherently commutative ring objects in $\C$. By \cite[2.4.2.7]{Lurie_HA} there is a symmetric monoidal structure on $\C\op$, and we define the category of cocommutative coalgebras in $\C$ to be the category $\cCAlg(\C):= \CAlg(\C\op)\op$. Classical coalgebras will be referred to as \emph{discrete}\index{Coalgebra!Discrete} in order to avoid confusion. 
+We denote the category of commutative algebras in $\C$ by $\CAlg(\C)$\index{Cocommutative coalgebra}. These are the coherently commutative ring objects in $\C$. By \cite[2.4.2.7]{Lurie_HA} there is a symmetric monoidal structure on $\C\op$, and we define the category of cocommutative coalgebras in $\C$ to be the category $\cCAlg(\C):= \CAlg(\C\op)\op$. Classical coalgebras will be referred to as \emph{discrete}\index{Cocommutative coalgebra!Discrete} in order to avoid confusion. 
 
 \begin{proposition}
     The following properties hold for the category $\cCAlg(\C)$. 
@@ -75,6 +75,7 @@ The free-forgetful adjunction restricts to an adjunction on the Kleisli Category
 
 \begin{theorem}[{\cite[4.7.3.5]{Lurie_HA}}]
     \label{ch2:thm:Lurie-BB}
+    \index{Barr--Beck}
     A functor $G\: \D\to \mathcal{E}$ of $\infty$-categories is monadic if and only if 
     \begin{enumerate}
         \item $G$ admits a left adjoint,
@@ -121,7 +122,7 @@ The above example changes in an interesting way when replacing the algebra $A$ w
     Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra in $\C$. By an $\infty$-categorical version of \cite[2.5]{hristova-jones-rumynin_2023} the endofunctor $C\otimes(-)\:\C\to\C$ is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, which we denote by $\Comod_C(\C)$. Since $C\otimes (-)$ preserves colimits there is a right adjoint $\iHom(C,-)$, and this functor is a comonad on $\C$, again by \cite[2.5]{hristova-jones-rumynin_2023}. Note that the category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}, as $C\otimes (-)$ is accessible. 
 \end{example}
 
-Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair---it is now an an adjoint comonad-monad pair. This means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows. 
+Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair---it is now an an adjoint comonad-monad pair. The difference is subtle, but it means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows. 
 
 % \begin{lemma}
 %     For any adjoint comonad-monad pair $C\dashv M$ on a presentable $\infty$-category $\C$, there is an equivalence 
@@ -236,7 +237,7 @@ where the first map is given by the adjunction unit and the second by the symmet
 \end{theorem}
 
 \begin{remark}
-    Before the proof, let us explain intuitively why the statement makes sense. The unit $\1_\C$ in a presentably symmetric monoidal $\infty$-category $\C$ is both a commutative algebra\index{Algebra!Commutative} and a cocommutative coalgebra\index{Coalgebra!Cocommutative}. In the above adjunction we have that the right adjoint $G$ is symmetric monoidal, hence its left adjoint $F$ is op-lax monoidal. In particular, it sends coalgebras to coalgebras, meaning that $F(\1_\C)$ is an cocommutative coalgebra in $\D$. By \cref{ch2:ex:coalgebra-comonad} tensoring with $F(\1_\C)$ is a comonad, not a monad, as for \cref{ch2:thm:monoidal-BB}. 
+    Before the proof, let us explain intuitively why the statement makes sense. The unit $\1_\C$ in a presentably symmetric monoidal $\infty$-category $\C$ is both a commutative algebra\index{Commutative algebra} and a cocommutative coalgebra\index{Cocommutative coalgebra}. In the above adjunction we have that the right adjoint $G$ is symmetric monoidal, hence its left adjoint $F$ is op-lax monoidal. In particular, it sends coalgebras to coalgebras, meaning that $F(\1_\C)$ is an cocommutative coalgebra in $\D$. By \cref{ch2:ex:coalgebra-comonad} tensoring with $F(\1_\C)$ is a comonad, not a monad, as for \cref{ch2:thm:monoidal-BB}. 
 \end{remark}
 
 \begin{proof}
