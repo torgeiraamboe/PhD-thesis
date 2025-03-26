@@ -12,40 +12,43 @@ a4paper,%
 
 \begin{document}
 \color{myblack}
-%\maketitle 
 
-% Information section
+\titlecontents{psection}[2.3em]
+{} {\contentslabel{2.3em}} {} {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{psubsection}[5.5em]
+{} {\contentslabel{3.2em}} {} {\titlerule*[1pc]{.}\contentspage}
+
 \frontmatter
 
 \input{tex/00-Information/titlepage.tex}
 %\input{tex/00-Information/formalities.tex}\newpage
 \input{tex/00-Information/abstract.tex}\newpage
 \input{tex/00-Information/information.tex}\newpage
-\input{tex/00-Information/acknowledgements.tex}\newpage
 \input{tex/00-Information/notation.tex}\newpage
 
 \vspace*{-1.1cm}
 {\hypersetup{linkcolor=myblack}
 \tableofcontents}
 
+
 \mainmatter
 
 % Introduction
 \fancyhead[L]{\itshape\nouppercase{Introduction}}
 
-\input{tex/0-Introduction/00-chapter1.tex}
+\input{tex/0-Introduction/00-chapter0.tex}
 \input{tex/0-Introduction/00-layperson.tex}\newpage
 \input{tex/0-Introduction/01-general.tex}
 \input{tex/0-Introduction/02-chromatic.tex}
 \input{tex/0-Introduction/03-hopf-algebroids.tex}\newpage
 \input{tex/0-Introduction/04-summaries.tex}
 
-
 % Algebraicity of monochromatic homotopy theory
 \fancyhead[L]{\itshape\nouppercase{Paper I}}
-\input{tex/1-Algebraicity/00-chapter2.tex}
+\input{tex/1-Algebraicity/00-chapter1.tex}
 \input{tex/1-Algebraicity/00-drawing.tex}
-\input{tex/1-Algebraicity/10-abstract.tex}
+{\hypersetup{linkcolor=black}
+\input{tex/1-Algebraicity/10-abstract.tex}}
 \input{tex/1-Algebraicity/11-introduction.tex}
 \input{tex/1-Algebraicity/12-setup.tex}
 \input{tex/1-Algebraicity/13-algebraic-models.tex}
@@ -58,9 +61,10 @@ a4paper,%
 
 % Positselski duality in stable categories
 \fancyhead[L]{\itshape\nouppercase{Paper II}}
-\input{tex/2-Positselski/00-chapter3.tex}
+\input{tex/2-Positselski/00-chapter2.tex}
 \input{tex/2-Positselski/00-drawing.tex}
-\input{tex/2-Positselski/20-abstract.tex}
+{\hypersetup{linkcolor=black}
+\input{tex/2-Positselski/20-abstract.tex}}
 \input{tex/2-Positselski/21-introduction.tex}
 \input{tex/2-Positselski/22-setup.tex}
 \input{tex/2-Positselski/23-idempotent.tex}
@@ -73,9 +77,10 @@ a4paper,%
 
 % Classification of localizing subcategories along t-structures
 \fancyhead[L]{\itshape\nouppercase{Paper III}}
-\input{tex/3-Classification/00-chapter4.tex}
+\input{tex/3-Classification/00-chapter3.tex}
 \input{tex/3-Classification/00-drawing.tex}
-\input{tex/3-Classification/30-abstract.tex}\newpage
+{\hypersetup{linkcolor=black}
+\input{tex/3-Classification/30-abstract.tex}}
 \input{tex/3-Classification/31-introduction.tex}
 \input{tex/3-Classification/32-setup.tex}
 \input{tex/3-Classification/33-stabilizing.tex}
@@ -85,8 +90,16 @@ a4paper,%
 \input{tex/3-Classification/35-addendum-synthetic.tex}
 \renewcommand\thesection{\thechapter.\arabic{section}}
 
-\fancyhead[L]{}
 
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+\startcontents[chapters]
+\cleardoublepage
+\input{tex/00-Information/00-lemmarick.tex}\newpage
+\input{tex/00-Information/acknowledgements.tex}\newpage
+
+\emergencystretch=2em
 \printbibliography[heading=bibintoc]{}
 
 \cleardoublepage

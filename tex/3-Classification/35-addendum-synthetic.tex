@@ -107,7 +107,7 @@ In a certain sense, this makes $\LSynE$ a categorification of the \emph{conserva
 
 In \cite{hovey-strickland_2005a} Hovey and Strickland construct a partial classification of the localizing subcategories of $\Comod_{\BP_*\BP}$---partial in the sense of requiring the containment of compact objects. This result was then used by Barthel--Heard to make a complete classification of the localizing subcategories of $\ComodE$, which we now recall. 
 
-For any $0\leq k\leq n$ we have an ideal $I_k \subseteq \pi_* E_n$. These ideals are called the Landweber ideals of $E$. More precisely these are given by $I_k = (p, v_1, v_2, \ldots, v_{k-1})$. These ideals are finitely generated regular invariant ideals, hence \cref{ch0:sssec:torsion-and-completion-for-comodules} gives us for any such $k$ a localizing subcategory $\ComodE^{I_k-\mathrm{tors}}\subseteq \ComodE$, called the category of $I_k$-power torsion comodules. \index{I-power torsion!Comodule}
+For any $0\leq k\leq n$ we have an ideal $I_k \subseteq \pi_* E_n$. These ideals are called the Landweber ideals of $E$. More precisely these are given by $I_k = (p, v_1, v_2, \ldots, v_{k-1})$. These ideals are finitely generated regular invariant ideals, hence we can obtain a localizing subcategory $\ComodE^{I_k-\mathrm{tors}}\subseteq \ComodE$, called the category of $I_k$-power torsion comodules---see \cref{ch0:sssec:torsion-and-completion-for-comodules} for details. \index{I-power torsion!Comodule}
 
 \begin{theorem}[{\cite[2.21]{barthel-heard_2018}}]
     \label{ch3:add:thm:classification-of-abelian-localizing}
@@ -444,7 +444,7 @@ We now show that $\MSynE$ has the desired deformation properties. First we need 
 \begin{remark}
     Thinking in terms of local duality it would be fitting to call the category $\Loc^\otimes_{\LSynE}(\nu L\np F(n))$ the category of $I_n$-torsion synthetic spectra. The above lemma then gives an equivalence 
     \[\MSynE \simeq \LSynE\Int,\]
-    reminiscent of \cref{ch0:const:chromatic-duality}. 
+    reminiscent of \cref{ch0:prop:torsion-is-monochromatic}. 
 \end{remark}
 
 The computations for the generic and special fibers of the deformation parameter $\tau$ now follow quite easily from the results in \cref{ch1:app:barr-beck}. Let us start with the special fibre. 
@@ -520,7 +520,7 @@ showing that the deformation theory plays well with the classification result fo
 
 \subsection{Monoidal algebraicity}
 
-It is now natural to wonder wether this solves \cref{ch1:conj:monochromatic-monoidally-algebraic}---which states that at large enough primes the equivalence of $k$-categories $h_k\M\np \simeq h_k\Fr\np\Int$ from \cref{ch1:thm:main-spectra} is symmetric monoidal---as the category $\MSynE$ seems to satisfy all the needed criteria to apply Barkan's monoidal algebraicity results of \cite{barkan_2023}. However, the category $\Comodt$ does not have enough flat objects, a requirement needed to use Barkan's result directly. Luckilly, this be avoided in this specific case. 
+It is now natural to wonder wether this solves \cref{ch1:conj:monochromatic-monoidally-algebraic}---which states that at large enough primes the equivalence of $k$-categories $h_k\M\np \simeq h_k\Fr\np\Int$ from \cref{ch1:thm:B} is symmetric monoidal---as the category $\MSynE$ seems to satisfy all the needed criteria to apply Barkan's monoidal algebraicity results of \cite{barkan_2023}. However, the category $\Comodt$ does not have enough flat objects, a requirement needed to use Barkan's result directly. Luckilly, this be avoided in this specific case. 
 
 To the best of our knowledge the only part of \cite[Theorem H]{barkan_2023} that requires the existence of flats, is to fix \cite[Warning 3..30]{barkan_2023}, which states that the categories $\Mod_{C\tau}(\C\geqz)$ and $\Der(\C^\heart)\geqz$---where $\C$ is some ``deformation''---might be equivalent, but not monoidally so. In the case $\C= \MSynE$ we can directly prove that these categories are equivalent as symmetric monoidal stable $\infty$-categories, hence avoiding the above issue. 
 
@@ -559,7 +559,7 @@ This now induces a symmetric monoidal equivalence on the respective localizing i
 \begin{theorem}
     \label{ch3:add:thm:monoidal-equivalence-of-ctau-modules}
     If $p-1>n$, then there is an equivalence 
-    \[\Mod_{C\tau}(\MSyn_{E, \geq 0}) \simeq \Der(\Comodt)\geqz\]
+    \[\Mod_{C\tau}(\MSyn_{E, \geq 0}) \simeq \Der(\Comodt)_{\geq 0}\]
     of symmetric monoidal stable $\infty$-categories. 
 \end{theorem}
 \begin{proof}
