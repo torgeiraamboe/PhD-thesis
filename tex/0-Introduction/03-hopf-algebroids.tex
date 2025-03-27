@@ -3,7 +3,7 @@
 \subsection{Hopf algebroids and their comodules}
 \label{ch0:ssec:hopf-algebroids-and-their-comodules}
 
-As mentioned before, this thesis is about understanding certain relationship between stable homotopy theory and homological algebra. One of these relationships---perhaps the most well known one---comes from the notion of \emph{homology}. 
+As mentioned before, this thesis is about understanding certain relationship between stable homotopy theory and homological algebra. One of these relationships---perhaps the most well known one---comes from the notion of \emph{homology}. Homology is a generalization of the Betti numbers, and ``connectedness numbers'' mentioned in \cref{ch0:layperson}. 
 
 \begin{definition}
     \index{Homology theory}
@@ -148,12 +148,12 @@ It is not true that the category $\Comod_\Psi$ is Grothendieck abelian in genera
 In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and by \cref{ch0:prop:all-E-local-cats-are-equivalent} we know that all their corresponding $E$-local categories are equivalent. The same occurs for the categories of comodules associated to their respective Adams Hopf algebroid.
 
 \begin{proposition}
-    If $p$ is a prime and $n$ a positive natural number, then the categories of comodules over the Hopf algebroids associated to the spectra $E\np$, $E_p(n)$ and $A = E\np^{h\F_p^\times}$, are all equivalent as symmetric monoidal categories: 
+    If $p$ is a prime and $n$ a non-negative integer, then the categories of comodules over the Hopf algebroids associated to the spectra $E\np$, $E_p(n)$ and $A = E\np^{h\F_p^\times}$, are all equivalent as symmetric monoidal categories: 
     \[\Comod_{E{\np}_*E\np}\simeq \Comod_{E_p(n)_*E_p(n)}\simeq \Comod_{A_*A}.\]
     Furthermore, given any Landweber exact $v_n$-periodic $\BP$-algebra $E$, then its associated category of comodules is equivalent to the ones above. 
 \end{proposition}
 \begin{proof}
-    The equivalence is given by \cite[4.2]{hovey-strickland_2005a}. This equivalence is given by induction along the weak equivalence of Hopf algebroid from \cite[6.5]{hovey-strickland_2005a}, which makes it symmetric monoidal. 
+    The equivalence is given by induction along a weak equivalence of Hopf algebroid, see \cite[4.2, 6.5]{hovey-strickland_2005a}; these are always symmetric monoidal. 
 \end{proof}
 
 \begin{notation}
@@ -163,7 +163,7 @@ In \cref{ch0:sssec:morava-E-theories} we saw several versions of $E$-theory, and
 \begin{example}
     \label{ch0:ex:E-homology-functor}
     \index{Homology theory!Conservative}
-    As we will use this functor a lot, we hammer in the fact that the above Morava $E$-theories are of Adams type. This means that the $E$-homology functor lands naturally in the symmetric monoidal Grothendieck abelian category $\ComodE$. We will mostly focus on the homology theory
+    As we will use this functor a lot, we hammer in the fact that the above Morava $E$-theories are of Adams type. This means that the $E$-homology functor naturally lands in the symmetric monoidal Grothendieck abelian category $\ComodE$. We will mostly focus on the homology theory
     \[E_*\: \Sp\np \to \ComodE,\]
     where we have restricting the domain to $\Sp\np$. This is because it is a \emph{conservative} functor, meaning that it detects equivalences. 
 \end{example}
@@ -238,7 +238,7 @@ As we have stated, the notion of localizing subcategories will be important in t
 
 We will consider two approaches to torsion in $\Der(\Psi)$: one ``internal'' and one ``external''. The internal approach uses the classical theory of torsion objects in abelian categories, while the external uses local duality, as in \cref{ch0:thm:local-duality}. These two will luckily be equivalent in the situations we are interested in. 
 
-We first review the abelian situation: the internal approach. We follow \cite{barthel-heard-valenzuela_2018} and \cite{barthel-heard-valenzuela_2020} in notation and results. 
+We first review the abelian situation---the internal approach. We follow \cite{barthel-heard-valenzuela_2018} and \cite{barthel-heard-valenzuela_2020} in notation and results. 
 
 \begin{definition}
     \label{def:I-power-torsion-module}
@@ -264,7 +264,7 @@ We first review the abelian situation: the internal approach. We follow \cite{ba
     \label{ch0:rm:I-complete-vs-I-adically-complete}
     \index{I-complete module}
     \index{L-complete module}
-    The resulting category of $I$-adically complete modules is not very well-behaved. The $I$-adic completion functor is usually neither left nor right exact, and the category is often not abelian. To fix these issues, Greenlees and May introduced the notion of $L$-complete modules in \cite{greenlees-may_92}, using instead the zeroth left derived functor $L=\mathbb{L}_0 C_I^A$. One then defines \emph{$I$-complete} modules, also called $L$-complete modules, to be those $R$-modules such that the natural map $M\longrightarrow L M$ is an equivalence. The full subcategory of $I$-complete $A$-modules is denoted by $\Mod_A\Icomp$
+    The resulting category of $I$-adically complete modules is not very well-behaved. The $I$-adic completion functor is usually neither left nor right exact; the resulting category is often not abelian. To fix these issues, Greenlees and May introduced the notion of $L$-complete modules in \cite{greenlees-may_92}, using instead the zeroth left derived functor $L=\mathbb{L}_0 C_I^A$. One then defines \emph{$I$-complete} modules, also called $L$-complete modules, to be those $R$-modules such that the natural map $M\longrightarrow L M$ is an equivalence. The full subcategory of $I$-complete $A$-modules is denoted by $\Mod_A\Icomp$
 \end{remark}
 
 \begin{remark}

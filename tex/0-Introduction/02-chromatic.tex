@@ -387,7 +387,7 @@ We wanted to construct a local duality diagram that categorified the chromatic f
     % \end{align*}
     % In particular this means that $\sp\np^{K-tors}\subseteq \M\np$. In fact, the same above sequence of equivalences holds for the $L_n$-localization of any finite spectrum of type $\geq n$. Hence, all these are monochromatic. These spectra also generate $\M\np$ under colimits, . Since all these are $K$-torsion
 
-    The equivalence in $(3)$ follows from \cite[2.34]{barthel-heard-valenzuela_2018}, which shows that $\Lambda_\K$ can be identified with the Bousfield localization $L_K$ whenever the set of compact objects in a local duality context $(\C, \K)$ consists of a single element $\K=\{K\}$. Note that the localization $L_K$ is not the same as the functor $L_\K$. This, together with the fact that the Bousfield localizations $L_\Kpn$ and $L_{L\np F(n)}$ agree, see \cite[7.1]{hovey-strickland_99}, proves $(3)$. 
+    The equivalence in $(3)$ follows from \cite[2.34]{barthel-heard-valenzuela_2018}, which shows that $\Lambda_\K$ can be identified with the Bousfield localization $L_K$ whenever the set of compact objects in a local duality context $(\C, \K)$ consists of a single element $\K=\{K\}$. Note that the localization $L_K$ is not the same as the functor $L_\K$. This, together with the fact that the Bousfield localizations $L_\Kpn$ and $L_{L\np F(n)}$ agree by \cite[7.1]{hovey-strickland_99}, proves $(3)$. 
 \end{proof}
 
 \begin{remark}
@@ -396,28 +396,26 @@ We wanted to construct a local duality diagram that categorified the chromatic f
 
 \begin{remark}
     \index{Chromatic fracture square}
-    The local duality diagram we obtained in \cref{ch0:const:chromatic-duality} gives via \cite[2.26]{barthel-heard-valenzuela_2018} precisely the chromatic fracture square
+    The local duality diagram we obtained in \cref{ch0:const:chromatic-duality}, gives via \cite[2.26]{barthel-heard-valenzuela_2018} precisely the chromatic fracture square
     \begin{center}
         \begin{tikzcd}
             L\np\S \arrow[r] \arrow[d] & L_{\Kpn}\S \arrow[d]  \\
             L_{n-1,p}\S \arrow[r] & L_{n-1,p}\S\otimes L_{\Kpn}\S 
         \end{tikzcd}    
     \end{center}
-    just as we wanted in \cref{ch0:rm:chromatic-square-from-duality}.   
+    ---exactly as we wanted in \cref{ch0:rm:chromatic-square-from-duality}.   
 \end{remark}
 
 \begin{remark}
     By \cref{ch0:rm:tors-loc-comp-compactly-generated}, all the categories in the local duality diagram are compactly generated. But, the unit $L_{\Kpn}\S$ in $\SpKpn$ is not compact, so by \cref{ch0:rm:compacts-equal-dualizable} the compact objects and the dualizables differ. The same is then necessarily true for $\M\np$.
 \end{remark}
 
-We have a similar construction in the case of $E$-modules, where $E$ is any of the models for Morava $E$-theory we presented in \cref{ch0:sssec:morava-E-theories}. For simplicity, let us assume $E= E_p(n)$, and recall that we have a maximal Landweber ideal $I_n = (p, v_1, \ldots, v_{n-1})\subseteq  \pi_* E$. Using the convention that $p = v_0$ we have for any $i$ a map $v_i \: \Sigma^{2p^i-2} E \to E$. We denote its cofiber by $E/v_i$. Letting $E/I_n = \bigotimes_{i=0}^n E/v_i$ we have the following local duality result---see also \cite{greenlees-may_1995} and \cite[Section 3.1]{barthel-heard-valenzuela_2018} for more details. 
+We have a similar construction in the case of $E$-modules, where $E$ is any of the models for Morava $E$-theory we presented in \cref{ch0:sssec:morava-E-theories}. For simplicity, let us assume $E= E_p(n)$, and recall that we have a unique maximal Landweber ideal $I_n = (p, v_1, \ldots, v_{n-1})\subseteq  \pi_* E$. Using the convention that $p = v_0$ we have for any $i$ a map $v_i \: \Sigma^{2p^i-2} E \to E$; we denote its cofiber by $E/v_i$. Letting $E/I_n = \bigotimes_{i=0}^n E/v_i$ we have the following local duality result---see also \cite{greenlees-may_1995} and \cite[Section 3.1]{barthel-heard-valenzuela_2018} for more details. 
 
 \begin{construction}
     \label{ch0:const:chromatic-duality-modules}
     \index{Johnson--Wilson theory}
-    Let $n$ be a non-negative integer, $p$ a prime, and $E$ some height $n$ Morava $E$ theory---for example Johnson--Wilson theory or Lubin--Tate theory. The object $E/I_n$ is compact in $\ModE$ and generates a localizing tensor ideal 
-    \[\Modt := \Loc^\otimes_{\ModE}(E/I_n),\] 
-    where we use the superscript $I_n$ for simplicity. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\ModE, E/I_n)$:
+    Let $n$ be a non-negative integer, $p$ a prime, and $E$ some height $n$ Morava $E$ theory---for example Johnson--Wilson theory or Lubin--Tate theory. The object $E/I_n$ is compact in $\ModE$ and generates a localizing tensor ideal $\Modt := \Loc^\otimes_{\ModE}(E/I_n)$, where we use the superscript $I_n$ for simplicity. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\ModE, E/I_n)$:
     \begin{center}
         \begin{tikzcd}
                 & {\ModE\Inl} \\
@@ -435,11 +433,11 @@ We have a similar construction in the case of $E$-modules, where $E$ is any of t
         \end{tikzcd}    
     \end{center}
     Just as in \cref{ch0:prop:torsion-is-monochromatic}, there are equivalences 
-    \begin{align}
-        \ModE\Int &\simeq \M\np\ModE\\ 
-        \ModE\Inl &\simeq L_{n-1,p}\ModE\\
-        \ModE\Inc&\simeq L_{\Kpn}\ModE
-    \end{align}
-    where the first category is the full subcategory of monochromatic $E$-modules, the second is the full subcategory of $E_{n-1,p}$-local $E$-modules and the third is the full subcategory of $\Kpn$-local $E$-modules. 
+    \begin{enumerate}
+        \item $\ModE\Int \simeq \M\np\ModE$,
+        \item $\ModE\Inl \simeq L_{n-1,p}\ModE$ and
+        \item $\ModE\Inc \simeq L_{\Kpn}\ModE$,
+    \end{enumerate}
+    being the full subcategories of monochromatic $E$-modules, $E_{n-1,p}$-local $E$-modules and $\Kpn$-local $E$-modules respectively. 
 \end{construction}
 
