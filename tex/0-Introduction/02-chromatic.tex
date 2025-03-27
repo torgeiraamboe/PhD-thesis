@@ -3,9 +3,9 @@
 \subsection{Chromatic homotopy theory}
 \label{ch0:ssec:chromatic-homotopy-theory}
 
-In the abstract we mentioned that the overarching goal of the thesis is to understand aspects of monochromatic homotopy theory. To do this we first need to situate ourselves into the chromatic viewpoint of stable homotopy theory. Our Our approach is inspired by \cite{barthel-beaudry_19}, and will particularly try to tie it to the ideas already introduced. 
+In the abstract we mentioned that the overarching goal of the thesis is to understand aspects of monochromatic homotopy theory. To do this we first need to situate ourselves into the chromatic viewpoint of stable homotopy theory; our approach is inspired by \cite{barthel-beaudry_19}, and will particularly try to tie it to the ideas already introduced. 
 
-Chromatic homotopy theory, in very crude words, is really a perspective---or maybe a toolbox---to study the $\infty$-category of spectra, $\Sp$, in which one decomposes it to its smallest fundamental pieces. An often repeated analogy is that of a prism. If $\Sp$ consists of white light, then shining it through the ``chromatic lens'' decomposes it to distinct colors, labeled by a non-negative integer $n$ called the \emph{chromatic height}, analogous to the wavelength of a light wave. 
+In very crude words one can describe chromatic homotopy theory as a reductionist perspective---or maybe a toolbox---for studying the $\infty$-category of spectra, $\Sp$, in which one decomposes it to its smallest fundamental pieces. An often repeated analogy is that of a prism. If $\Sp$ consists of white light, then shining it through the ``chromatic lens'' decomposes it to distinct colors, labeled by a non-negative integer $n$ called the \emph{chromatic height}, analogous to the wavelength of a light wave. 
 
 \begin{center}
 \input{tex/0-Introduction/99-prism.tex}
@@ -21,9 +21,9 @@ The key to this perspective is that the individual pieces of information can be 
 \subsubsection{Fracture squares and field objects}
 \label{ch0:sssec:fracture-squares}
 
-In light of Waldhausen's viewpoint of stable homotopy theory as an enhancement of algebra, usually called \emph{brave new algebra}, one should view the category of spectra $\Sp$ as a homotopical enrichment of the derived category of abelian groups $\Der(\Z)$. We have seen earlier that abelian groups can be studied one prime at the time, which corresponds to studying $\Der(\Z_{(p)})$, the $p$-local derived category. 
+In light of Waldhausen's viewpoint of stable homotopy theory as an enhancement of algebra, usually called \emph{brave new algebra}, one should view the category of spectra $\Sp$ as a homotopical enrichment of the derived category of abelian groups $\Der(\Z)$. We have seen earlier that abelian groups can be studied one prime at the time, which corresponds to studying $\Der(\Z_{(p)})$, the $p$-local derived category. We also want to do this in spectra. 
 
-In \cite{bousfield_1979_localization}, Bousfield developed a general machinery for studying localizations on $\Sp$, by inverting maps that are equivalences after tensoring with some spectrum $F$, now called \emph{Bousfield localizations}. The corresponding localization functor is denoted $L_F$. 
+In \cite{bousfield_1979_localization} Bousfield developed a general machinery for studying localizations on $\Sp$, by inverting maps that are equivalences after tensoring with some spectrum $F$, now called \emph{Bousfield localizations}. The corresponding localization functor is usually denoted $L_F$. 
 
 \begin{example}
     \index{p-localization}
@@ -73,7 +73,7 @@ we see that we can decompose the $p$-local integers into a rational part and a $
         \Q\otimes A \arrow[r] & \Q\otimes_\Z A^\wedge_p
     \end{tikzcd}    
 \end{center}
-where $(A)_p^\wedge$ denotes derived $p$-completion of $A$, as in \cref{ch0:ex:derived-p-completion}. We want to use this to decompose $\Der(\Z_{(p)})$ even further; reduce it to its ``atomic pieces''. These is done via its minimal localizing subcategories. 
+where $A_p^\wedge$ denotes derived $p$-completion of $A$, as in \cref{ch0:ex:derived-p-completion}. We want to use this to decompose $\Der(\Z_{(p)})$ even further; reduce it to its ``atomic pieces''. These is done via its minimal localizing subcategories. 
 
 \begin{definition}
     \label{ch0:def:minimal-localizing-subcategory}
@@ -104,13 +104,13 @@ If $\S_{(p)}$ denotes the $p$-local sphere spectrum, we have a spectral arithmet
 
 where $\S_p^\wedge$ denotes the $p$-complete sphere. This also extends to any object $X\in \Sp_{(p)}$, just like for $A\in \Der(\Z_{(p)})$. 
 
-We can then ask the natural question: do these give all the minimal localizing subcategories of $\Sp_{(p)}$? This was indeed the case for $\Der(\Z_{(p)})$, but now, in the more complicated world of spectra, this is no longer true. We now have an infinite sequence of minimal localizing subcategories, indexed by a natural number $n$, that ``interpolates'' between the two minimal localizing subcategories of $\Der(\Z_{(p)})$. 
+We can then ask the natural question: do these give all the minimal localizing subcategories of $\Sp_{(p)}$? This was indeed the case for $\Der(\Z_{(p)})$, but now, in the more complicated world of spectra, this is no longer true. We now have an infinite sequence of minimal localizing subcategories, indexed by a non-negative integer $n$, that ``interpolates'' between the two minimal localizing subcategories of $\Der(\Z_{(p)})$. 
 
 \begin{remark}
     In fact, even more is true: By the failure of the telescope conjecture, see \cite{burklund-hahn-levy-schlank_23}, there are at least two such infinite sequences. We can make sure that there is a single such sequence if we translate over to compactly generated $\otimes$-ideals, but for the above exposition, we have chosen to sweep these details under a big old telescope-shaped rug.
 \end{remark}
 
-We can identify these ``intermediary'' subcategories by an analysis of field objects. For $\Der(\Z_{(p)})$ there are exactly two field objects associated to the unit $\Z_{(p)}$, namely $\Q$ and $\F_p$, each obtained by either killing or inverting $p$. 
+We can identify these ``intermediary'' subcategories by an analysis of field objects. For $\Der(\Z_{(p)})$ there are exactly two field objects associated to the unit $\Z_{(p)}$, namely $\Q$ and $\F_p$; each is obtained by either killing or inverting $p$. 
 
 For $\Sp_{(p)}$ we have a field object for any number $n\in \N\cup \{\infty\}$, which we denote by $\Kpn$. We have $K_p(0)=H\Q$ and $K_p(\infty) = H\F_p$, showing that this sequence of field objects really forms an interpolation between the two field objects coming from algebra. 
 
@@ -120,11 +120,11 @@ For $\Sp_{(p)}$ we have a field object for any number $n\in \N\cup \{\infty\}$, 
     The object $\Kpn$ is called the \emph{Morava K-theory of height $n$}. The associated category of $\Kpn$-local spectra---meaning the category obtained by Bousfield localization at $\Kpn$---is denoted $\SpKpn$. 
 \end{notation}
 
-These field objects $\Kpn$ were constructed by Morava in the early 70's, by topologically interpreting the unique geometric point in the moduli stack of formal groups, determined by the height $n$ Honda formal group. The categories of $\Kpn$-local spectra have been under intense study ever since. We do not cover precise constructions here and instead refer the interested reader to \cite{hovey-strickland_99}. The Morava $K$-theory spectrum $\Kpn$ is, however, uniquely determined by the following properties. 
+These field objects $\Kpn$ were constructed by Morava in the early 70's, by topologically interpreting the unique geometric point in the moduli stack of formal groups, determined by the height $n$ Honda formal group; the categories of $\Kpn$-local spectra have been under intense study ever since. We do not cover precise constructions here and instead refer the interested reader to \cite{hovey-strickland_99}. The Morava $K$-theory spectrum $\Kpn$ is, however, uniquely determined by the following properties. 
 
 \begin{proposition}
     \label{ch0:prop:properties-of-K(n)}
-    Let $p$ be a prime and $n$ a natural number. The height $n$ Morava K-theory spectrum $\Kpn$ is a complex oriented $\E_1$-ring spectrum with coefficients 
+    Let $p$ be a prime and $n$ a non-negative integer. The height $n$ Morava K-theory spectrum $\Kpn$ is a complex oriented $\E_1$-ring spectrum with coefficients 
     \[\Kpn_*:=\pi_* \Kpn \simeq \F_p[v_n^{\pm}],\]
     with $|v_n|=2p^n-2$, whose associated formal group is the height $n$ Honda formal group. Furthermore, for any two spectra $X$ and $Y$, there is a Künneth isomorphism 
     \[\Kpn_*(X\times Y)\simeq \Kpn_*X\otimes_{\Kpn_*} \Kpn_*Y.\]
@@ -172,20 +172,20 @@ It now remains to understand how these field objects $\Kpn$ are related to the s
 \subsubsection{Morava \texorpdfstring{$E$}{E}-theories}
 \label{ch0:sssec:morava-E-theories}
 
-In the previous section, we obtained a localization functor $L\np$, which collected the information coming from height $0$ up to and including height $n$. This localization is good for many purposes, but when we later want to tie the homotopy theory to algebra, we need another approach. In particular, we want a spectrum $E$ such that the Bousfield localization $L_E$ is the same as $L\np$. There are several approaches to obtaining such a spectrum $E$, and the goal of this section is to give a brief overview of the ones we will need later. We will assume general knowledge about formal groups---all needed background can be found in \cite[Appendix 2]{ravenel_86}. Our overview is inspired by lecture notes made by Rognes, \cite{rognes_2023}. 
+In the previous section, we obtained a localization functor $L\np$, which collected the chromatic information from height $0$ up to and including height $n$. This localization is good for many purposes, but when we later want to tie the homotopy theory to algebra, we need another approach. In particular, we want a spectrum $E$ such that the Bousfield localization $L_E$ is the same as $L\np$. There are several approaches to obtaining such a spectrum $E$, and the goal of this section is to give a brief overview of the ones we will need later. We will assume general knowledge about formal groups---all needed background can be found in \cite[Appendix 2]{ravenel_86}. Our overview is inspired by lecture notes made by Rognes, \cite{rognes_2023}. 
 
-The first construction of a spectrum $E$ satisfying the above is due to Morava, and is based on the aforementioned connection between complex oriented cohomology theories and formal groups. In honor of this one usually refers to any conveniently nice spectrum with the property that $L_E \simeq L\np$ as \emph{Morava $E$-theory}.
+The first construction of a spectrum $E$ satisfying the above is due to Morava, and is based on the aforementioned connection between complex oriented cohomology theories and formal groups. In honor of this one usually refers to any conveniently nice spectrum with the property that $L_E \simeq L\np$ as \emph{Morava $E$-theory}\index{Morava $E$-theory}.
 
 \begin{construction}
     \index{Lubin--Tate ring}
-    Let $p$ be a prime and $k$ a perfect field of characteristic $p$. Lubin and Tate proved in \cite{lubin-tate_66} that for any formal group law $F$ of height $n$ over $k$, there is a universal deformation $\bar{F}$ over the ring $E(k, F)=\W(k)[\![ u_1, \ldots, u_{n-1}]\!]$ of formal power series over the Witt vectors of $k$. This ring is now usually called the \emph{Lubin-Tate ring} of $F$. Using the algebraic geometry of formal groups, Morava interpreted this universal deformation as a formal neighborhood of the height $n$ Honda formal group law, and via a topological realization process obtained a spectrum $E^{Mor}\np$.
+    Let $p$ be a prime and $\kappa$ a perfect field of characteristic $p$. Lubin and Tate proved in \cite{lubin-tate_66} that for any formal group law $F$ of height $n$ over $\kappa$, there is a universal deformation $\bar{F}$ over the ring $E(\kappa, F)=\W(k)[\![ u_1, \ldots, u_{n-1}]\!]$ of formal power series over the Witt vectors of $\kappa$. This ring is now usually called the \emph{Lubin-Tate ring} of $F$. Using the algebraic geometry of formal groups, Morava interpreted this universal deformation as a formal neighborhood of the height $n$ Honda formal group law $H_n$, and via a topological realization process obtained a spectrum $E^{Mor}\np$.
 \end{construction}
 
 We will not explain in detail how Morava obtained such a spectrum, and instead cover a more simple approach, yielding a slightly different spectrum. This spectrum was originally constructed by Johnson and Wilson in \cite{johnson-wilson_75}, by using the theory of manifolds with singularities developed by Baas-Sullivan (see \cite{baas_73a} and \cite{baas_73b}). We take a more modern approach, utilizing Brown representability. 
 
 \begin{construction}
     \index{Johnson--Wilson theory}
-    Let $p$ be a prime, $n$ a natural number and denote by $E_p(n)_*$ the graded ring $\Z_{(p)}[v_1, \ldots, v_{n-1}, v_n^{\pm}]$, where $|v_i| = 2p^i-2$. This is obtained from the coefficient ring of the Brown--Peterson spectrum $\BP$---essentially a $p$-local version of the complex cobordism spectrum $\MU$---by killing all the generators $v_k$ for $k>n$ and inverting $v_n$. This ring is a $\BP_*$-module, and satisfies a certain flatness condition called \emph{Landweber flatness}, see \cite{landweber_76}. Tensoring with $E_p(n)_*$ is not exact as a $\Mod_{\BP_*}\to \Mod_{E_p(n)_*}$, but it \emph{is} exact as a functor on $\Comod_{\BP_*\BP}$. Hence, as $\BP$-homology lands in this Grothendieck abelian category---$\BP$ is Adams type---we can define a functor 
+    Let $p$ be a prime, $n$ a non-negative integer and denote by $E_p(n)_*$ the graded ring $\Z_{(p)}[v_1, \ldots, v_{n-1}, v_n^{\pm}]$, where $|v_i| = 2p^i-2$. This is obtained from the coefficient ring of the Brown--Peterson spectrum $\BP$---essentially a $p$-local version of the complex cobordism spectrum $\MU$---by killing all the generators $v_k$ for $k>n$ and inverting $v_n$. This ring is a $\BP_*$-module, and satisfies a certain flatness condition called \emph{Landweber flatness}, see \cite{landweber_76}; tensoring with $E_p(n)_*$ is not exact as a $\Mod_{\BP_*}\to \Mod_{E_p(n)_*}$, but it \emph{is} exact as a functor on $\Comod_{\BP_*\BP}$. Hence, as $\BP$-homology lands in this Grothendieck abelian category, we can define a functor 
     \[\Sp \overset{\BP_*}\to \Comod_{\BP_*\BP}\overset{E_p(n)_*\otimes_{\BP_*}-}\to \mathrm{gr}\Ab,\]
     which by the properties mentioned is a homology theory. Via Brown's representability theorem, see \cite[Theorem 1]{brown_1962}, this homology theory is governed by a spectrum $E_p(n)$ such that $\pi_* E_p(n) \simeq E_p(n)_*$. This spectrum is called the height $n$ \emph{Johnson-Wilson theory}. 
 \end{construction}
@@ -201,18 +201,18 @@ We will not explain in detail how Morava obtained such a spectrum, and instead c
 
 \begin{proposition}
     \label{ch0:prop:Johnson-Wilson-properties}
-    Let $p$ be a prime and $n$ a natural number. Height $n$ Johnson--Wilson theory $E_p(n)$ is a complex oriented, Landweber exact $\E_1$-ring spectrum, concentrated in degrees divisible by $2p-2$. 
+    If $p$ is a prime and $n$ a non-negative integer, then the associated height $n$ Johnson--Wilson theory $E_p(n)$ is a complex oriented, Landweber exact $\E_1$-ring spectrum, concentrated in degrees divisible by $2p-2$. 
 \end{proposition}
 
 \begin{remark}
     The Johnson--Wilson spectrum $E_p(n)$ is also periodic, with period $2p^n-2$. This is the same periodicity as the Morava $K$-theory spectrum. 
 \end{remark}
 
-Later, using a $2$-periodic analogue of the universal deformation theory of Lubin and Tate, Hopkins and Miller constructed a $2$-periodic $\E_1$-version of Morava's spectrum, which was later enhanced to an $\E_\infty$-ring spectrum $E\np$ via Goerss--Hopkins theory, see \cite{goerss-hopkins_04}, or \cite{pstragowski_vankoughnett_2022} for a modern treatment. In essence, Hopkins and Miller constructed a functor from pairs $(k, F)$ of a perfect field $k$ of characteristic $p$, together with a choice of height $n$ formal group law $F$, to even periodic ring spectra. For a specific choice of $(k, F)$, we can summarize the properties as follows.  
+Later, using a $2$-periodic analogue of the universal deformation theory of Lubin and Tate, Hopkins and Miller constructed a $2$-periodic $\E_1$-version of Morava's spectrum, which was later enhanced to an $\E_\infty$-ring spectrum $E\np$ via Goerss--Hopkins theory, see \cite{goerss-hopkins_04}, or \cite{pstragowski_vankoughnett_2022} for a modern treatment. In essence, Hopkins and Miller constructed a functor from pairs $(\kappa, F)$ of a perfect field $\kappa$ of characteristic $p$, together with a choice of height $n$ formal group law $F$, to even periodic ring spectra. For a specific choice of $(\kappa, F)$, we can summarize the properties as follows.  
 
 \begin{proposition}
-    Let $p$ be a prime, $k$ a perfect field of characteristic $p$, and $F$ a formal group law of height $n$ over $k$. The spectrum $E(k,F)$ is a $2$-periodic, complex oriented, Landweber exact $\E_\infty$-ring spectrum, such that 
-    \[\pi_0 E(k,F)=\W(k)[\![ u_1, \ldots, u_{n-1}]\!]\] 
+    Let $p$ be a prime, $\kappa$ a perfect field of characteristic $p$, and $F$ a formal group law of height $n$ over $\kappa$. The spectrum $E(\kappa,F)$ is a $2$-periodic, complex oriented, Landweber exact $\E_\infty$-ring spectrum, such that 
+    \[\pi_0 E(\kappa,F)=\W(\kappa)[\![ u_1, \ldots, u_{n-1}]\!]\] 
     and the associated formal group law is the universal deformation of $F$. 
 \end{proposition}
 
@@ -225,7 +225,7 @@ Later, using a $2$-periodic analogue of the universal deformation theory of Lubi
 
 \begin{definition}
     \index{Lubin--Tate theory}
-    For the specific choice $(k,F) = (\F_{p^n}, H_n)$ we simply write $E(\F_{p^n}, H_n) = E\np$, and call it the height $n$ \emph{Lubin--Tate theory} at the prime $p$. 
+    For the specific choice $(\kappa,F) = (\F_{p^n}, H_n)$---here $H_n$ again denotes the height $n$ Honda formal group law---we simply write $E(\F_{p^n}, H_n) = E\np$, and call it the height $n$ \emph{Lubin--Tate theory} at the prime $p$. 
 \end{definition}
 
 \begin{remark}
@@ -246,14 +246,14 @@ We have now introduced several versions of Morava $E$-theories, all in light of 
 
 \begin{proposition}[{\cite[1.12]{hovey_95}}]
     \label{ch0:prop:all-E-local-cats-are-equivalent}
-    If $p$ is a prime and $n$ a natural number, then there are symmetric monoidal equivalences of stable $\infty$-categories 
+    If $p$ is a prime and $n$ a non-negative integer, then there are symmetric monoidal equivalences of stable $\infty$-categories 
     \[\Sp_{L\np} \simeq \Sp_{E_p(n)} \simeq \Sp_{E(k,F)}\simeq \Sp_{E\np} \simeq \Sp_{\widehat{E}_p(n)}\simeq \Sp_{E\np^{h\F_p^\times}}.\]
     In fact, all of these categories are equivalent as subcategories of $\Sp$. Furthermore, if $E$ is any Landweber exact $v_n$-periodic $\BP$-algebra, then $\Sp_E$ is equivalent to the above categories. 
 \end{proposition}
 
 \begin{notation}
     \index{Spectra!$E\np$-local}
-    We will use the common notation $\Sp\np$ for any of the above categories, and call it the category of $E\np$-local spectra, or sometimes the category of height $n$ spectra, or even just the category of $E$-local spectra, when the height and prime are understood. 
+    We will use the common notation $\Sp\np$ for any of the above categories. We will call it the category of $E\np$-local spectra, or sometimes the category of height $n$ spectra, or even just the category of $E$-local spectra when the height and prime are understood. 
 \end{notation}
 
 \begin{remark}
@@ -325,12 +325,12 @@ We are now almost ready to construct local duality for chromatic homotopy theory
     We say a finite $p$-local spectrum $X$ is of \emph{type $n$} if $\Kpn_* X\not\cong 0$ and $K_p(m)_*X\cong 0$ for all $m<n$. 
 \end{definition}
 
-As a consequence of the thick subcategory theorem of Hopkins--Smith, \cite[Theorem 7]{hopkins-smith_1998}, such spectra exist for all primes $p$ and natural numbers $n$. For example, if $n=1$, we can choose the mod $p$ Moore spectrum $\S/p$.  
+As a consequence of the thick subcategory theorem of Hopkins--Smith, \cite[Theorem 7]{hopkins-smith_1998}, such spectra exist for all primes $p$ and non-negative integers $n$. For example, if $n=1$, we can choose the mod $p$ Moore spectrum $\S/p$.  
 
 \begin{construction}
     \label{ch0:const:chromatic-duality}
     \index{Local duality!Diagram}
-    Let $n$ be a non-negative integer and $p$ a prime. For a finite type $n$ spectrum $F(n)$, its $L\np$-localization $L\np F(n)$ is a compact object in $\Sp\np$ and hence generates a localizing tensor ideal $\Sp\np\Ktors$ in $\Sp\np$, where $\K$ denotes the singleton set $\{L\np F(n)\}$. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\Sp\np, \K)$:
+    Let $n$ be a non-negative integer and $p$ a prime. For a finite type $n$ spectrum $F(n)$, its $L\np$-localization $L\np F(n)$ is a compact object in $\Sp\np$ and hence generates a localizing tensor ideal $\Sp\np\Ktors$, where $\K$ denotes the singleton set $\{L\np F(n)\}$. By \cref{ch0:thm:local-duality}, we have a corresponding local duality diagram for the local duality context $(\Sp\np, \K)$:
     \begin{center}
     \begin{tikzcd}
             & {\sp\np\Kloc} \\
@@ -367,7 +367,7 @@ We wanted to construct a local duality diagram that categorified the chromatic f
 \end{remark}
 
 \begin{proof}
-    By definition the category $\M\np$ is the full subcategory of $L_{n-1,p}$-acyclic objects in $\Sp\np$ and $M\np$ coincides with the $L_{n-1,p}$-acyclification. By \cite[6.10]{hovey-strickland_99} $L_{n-1,p}$-localization is the finite localization away from $L\np F(n)$, which proves equivalence $(2)$. This also means that the $L_{n-1,p}$-acyclic objects are precisely the objects in 
+    By definition the category $\M\np$ is the full subcategory of $L_{n-1,p}$-acyclic objects in $\Sp\np$, and $M\np$ coincides with the $L_{n-1,p}$-acyclification. By \cite[6.10]{hovey-strickland_99} $L_{n-1,p}$-localization is the finite localization away from $L\np F(n)$, which proves equivalence $(2)$. This also means that the $L_{n-1,p}$-acyclic objects are precisely the objects in 
     \[\Loc^\otimes_{\Sp\np}(L\np F(n))=:\Sp\np\Ktors,\]
     giving the equivalences $\M\np \simeq \Sp\np\Ktors$ and $\Gamma \simeq M\np$, proving $(1)$. One can also see this by the fact that $M\np$ preserves compact objects, as it is smashing by \cref{ch0:prop:monochromatization-is-smashing}, which also implies that $\M\np$ is closed under colimits. The compact objects $L\np X\in \Sp\np$ for $X$ any finite spectrum of type $n$ are also monochromatic, as 
     \[E_{n-1,p *} L\np X \cong E_{n-1,p *}X\cong 0,\]
