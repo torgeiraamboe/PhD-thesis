@@ -3,7 +3,7 @@
 
 The goal of this section is to introduce comodules and contramodules over an cocommutative coalgebra in some $\infty$-category $\C$. In order to do this we first review some basic facts about coalgebras, monads and comonads. 
 
-We will for the rest of this section work in some fixed presentably symmetric monoidal $\infty$-category $\C$. In other words, $\C$ is an commutative algebra object in $\PrL$, the category of presentable $\infty$-categories and left adjoint functors. In particular, the monoidal product, which we denote by $-\otimes-\:\C\times \C\to\C$ preserves colimits in both variables. We denote the unit of the monoidal structure by $\1$. \index{Presentable $\infty$-category!Symmetric monoidal}
+We will for the rest of this section work in some fixed presentably symmetric monoidal $\infty$-category $\C$. In other words, $\C$ is a commutative algebra object in $\PrL$, the category of presentable $\infty$-categories and left adjoint functors. In particular, the monoidal product, which we denote by $-\otimes-\:\C\times \C\to\C$ preserves colimits in both variables. We denote the unit of the monoidal structure by $\1$. \index{Presentable $\infty$-category!Symmetric monoidal}
 
 
 \subsection{Coalgebras, monads and comonads}
@@ -60,7 +60,7 @@ By \cite[4.2.4.8]{Lurie_HA} this functor admits a left adjoint $F_M\: \D\to \LMo
 \begin{definition}
     \index{Monad!-ic adjunction}
     \index{Monad!-ic functor}
-    An adjunction is said to be \emph{monadic} if it is equivalent to the free-forgetful adjunction $F_M\dashv U_M$ of a monad $M$. A functor $G\: \D\to \mathcal{E}$ is called \emph{monadic} if it is equivalent to the right adjoint $U_M$ for some monadic adjunction. 
+    An adjunction is said to be \emph{monadic} if it is equivalent to the free-forgetful adjunction $F_M\dashv U_M$ of a monad $M$. A functor $G\: \mathcal{E}\to \D$ is called \emph{monadic} if it is equivalent to the right adjoint $U_M$ for some monadic adjunction. 
 \end{definition}
 
 The existence of the free-forgetful adjunction for a monad $M$ implies that any monad is the adjunction monad of some adjunction. However, there can be more than one adjunction $F\dashv G$ such that $M$ is the adjunction monad for this adjunction.
@@ -76,42 +76,50 @@ The free-forgetful adjunction restricts to an adjunction on the Kleisli Category
 \begin{theorem}[{\cite[4.7.3.5]{Lurie_HA}}]
     \label{ch2:thm:Lurie-BB}
     \index{Barr--Beck}
-    A functor $G\: \D\to \mathcal{E}$ of $\infty$-categories is monadic if and only if 
+    A functor $G\: \mathcal{E}\to \D$ of $\infty$-categories is monadic if and only if 
     \begin{enumerate}
         \item $G$ admits a left adjoint,
         \item $G$ is conservative, and
-        \item the category $\D$ admits colimits of $G$-split simplicial objects, and these are preserved under $G$. 
+        \item the category $\mathcal{E}$ admits colimits of $G$-split simplicial objects, and these are preserved under $G$. 
     \end{enumerate}
 \end{theorem}
 
 \begin{remark}
-    By definition, if a functor $G\: \D\to \mathcal{E}$ is monadic, then there is an equivalence of categories $\mathcal{E}\simeq \LMod_{GF}(\D)$, where $F$ is the left adjoint of $G$. 
+    By definition, if a functor $G\: \mathcal{E}\to \D$ is monadic, then there is an equivalence of categories $\mathcal{E}\simeq \LMod_{GF}(\D)$, where $F$ is the left adjoint of $G$. 
 \end{remark}
 
 \begin{definition}
     \index{Comonad!Cofree comodule}
     \index{Comonad!-ic adjunction}
-    Dually, given any comonad $C$ on an $\infty$-category $\D$, there is a forgetful functor $U_C\: \LComod_C(\D)\to \D$, which admits a right adjoint 
-    \[F_C\: \D\to \LComod_C(\D).\] 
-    We call this the \emph{cofree comodule functor}, and hence the adjunction $U_C\dashv F_C$ is called the \emph{cofree-forgetful} adjunction of $C$. Any adjunction equivalent to a cofree-forgetful adjunction for some comonad $C$ is said to be \emph{comonadic}. A functor $G\: \D\to \mathcal{E}$ is said to be \emph{comonadic} if it is equivalent to the left adjoint of a comonadic adjunction. 
+    Dually, given any comonad $C$ on an $\infty$-category $\mathcal{E}$, there is a forgetful functor $U_C\: \LComod_C(\mathcal{E})\to \mathcal{E}$, which admits a right adjoint 
+    \[F_C\: \mathcal{E}\to \LComod_C(\mathcal{E}).\] 
+    We call this the \emph{cofree comodule functor}, and hence the adjunction $U_C\dashv F_C$ is called the \emph{cofree-forgetful} adjunction of $C$. Any adjunction $F: \D \rightleftarrows \mathcal{E}:G$ equivalent to a cofree-forgetful adjunction for some comonad $C$ on $\mathcal{E}$ is said to be \emph{comonadic}. A functor $F\: \D\to \mathcal{E}$ is said to be \emph{comonadic} if it is equivalent to the left adjoint of a comonadic adjunction. 
 \end{definition}
 
 \begin{remark}
     \index{Comonad!Kleisli category}
-    The essential image of $F_C$ in $\LComod_C(\D)$ determines the Kleisli category $\LComod_C\fr(\D)$ of cofree coalgebras. The cofree-forgetful adjunction restricts to an adjunction on cofree comodules, $U_C\fr : \LComod_C\fr(\D)\rightleftarrows \D: F_C$, which is the minimal adjunction whose adjunction comonad is $C$. 
+    The essential image of $F_C$ in $\LComod_C(\mathcal{E})$ determines the Kleisli category $\LComod_C\fr(\mathcal{E})$ of cofree coalgebras. The cofree-forgetful adjunction restricts to an adjunction on cofree comodules, $U_C\fr : \LComod_C\fr(\mathcal{E})\rightleftarrows \mathcal{E}: F_C$, which is the minimal adjunction whose adjunction comonad is $C$. 
 \end{remark}
 
 
 \subsection{Comodules and contramodules}
 
-Recall that we have fixed a presentably symmetric monoidal $\infty$-category $\C$. Let us now construct the monads and comonads of interest for this paper. 
+Recall that we have fixed a presentably symmetric monoidal $\infty$-category $\C$. Let us now construct the monads and comonads of interest for this paper. We want to mention that the paper \cite{hristova-jones-rumynin_2023} has been of influence for this section.
 
 \begin{example}
     \label{ch2:ex:algebra-module-monad}
-    Let $A\in \CAlg(\C)$ be a commutative algebra object in $\C$. The endofunctor $A\otimes(-)\:\C\to \C$ is a monad on $\C$. By \cite[1.17]{christ_2023} the Eilenberg--Moore category of this monad is equivalent to the category of modules over $A$ in $\C$. As $A$ is commutative we denote this by $\Mod_A(\C)$. As $\C$ is presentable and the monad $A\otimes(-)$ preserves colimits, there is a right adjoint $\iHom(A,-)\:\C\to \C$. This is a comonad on $\C$. Since these form an adjoint monad-comonad pair, their Eilenberg--Moore categories are equivalent,
+    Let $A\in \CAlg(\C)$ be a commutative algebra object in $\C$. The algebra structure on $A$ induces an algebra structure on the endofunctor $A\otimes(-)\:\C\to \C$, hence it is a monad on $\C$. By \cite[1.17]{christ_2023} the Eilenberg--Moore category of this monad is equivalent to the category of modules over $A$ in $\C$. As $A$ is commutative we denote this by $\Mod_A(\C)$. As $\C$ is presentable and the monad $A\otimes(-)$ preserves colimits, there is a right adjoint $\iHom(A,-)\:\C\to \C$. This is a comonad on $\C$. Since these form an adjoint monad-comonad pair, their Eilenberg--Moore categories are equivalent,
     \[\Mod_A(\C)\simeq \LMod_{A\otimes(-)}(\C)\simeq \LComod_{\iHom(A,-)}(\C),\]
     see \cite[V.8.2]{maclane-moerdijk_1994} in the $1$-categorical situation. The $\infty$-categorical version is exactly the same, and follows from the monadicity and comonadicity of the adjunctions. 
 \end{example}
+
+\begin{remark}
+    \label{ch2:rm:internal-adjunction}
+    \index{Internal adjunction}
+    We also mention that the hom-tensor adjunction is an \emph{internal adjunction}, in the sense that there is an equivalence of internal hom-objects 
+    \[\iHom(X\otimes Y, Z) \simeq \iHom(X, \iHom(Y, Z)).\]
+    This follows from the hom-tensor adjunction together with a Yoneda argument. 
+\end{remark}
 
 % Since $\C$ is a symmetric monoidal category, we can restrict our attention to \emph{monoidal monads} and \emph{monoidal comonads}. For us these are exactly the monads (resp. comonads) that appear as the adjunction monad for a monoidal adjunctions, i.e., $F:\C\rightleftarrows \D:G$ such that $F$ (resp. $G$) is symmetric monoidal. Given a monoidal monad $M$, the corresponding Eilenberg--Moore category $\LMod_M(\C)$ inherits the structure of a presentably symmetric monoidal $\infty$-category. Since $\C$ is symmetric monoidal, the tensor product of two free $M$-modules is still free, hence this restricts to a symmetric monoidal structure on $\LMod_M\fr(\C)$. 
 
@@ -119,10 +127,14 @@ The above example changes in an interesting way when replacing the algebra $A$ w
 
 \begin{example}
     \label{ch2:ex:coalgebra-comonad}
-    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra in $\C$. By an $\infty$-categorical version of \cite[2.5]{hristova-jones-rumynin_2023} the endofunctor $C\otimes(-)\:\C\to\C$ is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, which we denote by $\Comod_C(\C)$. Since $C\otimes (-)$ preserves colimits there is a right adjoint $\iHom(C,-)$, and this functor is a comonad on $\C$, again by \cite[2.5]{hristova-jones-rumynin_2023}. Note that the category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}, as $C\otimes (-)$ is accessible. 
+    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra object in $\C$. The coalgebra structure on $C$ induces a coalgebra structure on the endofunctor $C\otimes(-)\:\C\to\C$, hence it is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, which we denote by $\Comod_C(\C)$. The category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}, as $C\otimes (-)$ is accessible. 
 \end{example}
 
-Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair---it is now an an adjoint comonad-monad pair. The difference is subtle, but it means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows. 
+\begin{example}
+    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra in $\C$. The comonad $C\otimes (-)$ preserves colimits, hence it has a right adjoint $\iHom(C,-)$. The coalgebra structure on $C$, together with the internal adjunction equivalence from \cref{ch2:rm:internal-adjunction}, gives the endofunctor $\iHom(C,-)$ an algebra structure. It is an algebra structure and not a coalgebra structure, as the internal hom is contravariant in the first variable. Hence, $\iHom(C,-)$ is a monad on $\C$.
+\end{example} 
+
+Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-comonad pair---it is now an an adjoint comonad-monad pair. The difference is subtle, but it means, in particular, that their Eilenberg--Moore categories might not be equivalent. This possible non-equivalence is the \emph{raison d'être} for contramodules, which we can then define as follows.
 
 % \begin{lemma}
 %     For any adjoint comonad-monad pair $C\dashv M$ on a presentable $\infty$-category $\C$, there is an equivalence 
@@ -146,14 +158,6 @@ Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-como
 \begin{notation}
     Since we are working in a fixed category $\C$ we will often simply write $\ContraC$ for the category of contramodules, and $\ComodC$ for the category of comodules. 
 \end{notation}
-
-\begin{remark}
-    \label{ch2:rm:internal-adjunction}
-    \index{Internal adjunction}
-    We also mention that the hom-tensor adjunction is an \emph{internal adjunction}, in the sense that there is an equivalence of internal hom-objects 
-    \[\iHom(X\otimes Y, Z) \simeq \iHom(X, \iHom(Y, Z)).\]
-    This follows from the hom-tensor adjunction together with a Yoneda argument. 
-\end{remark}
 
 \begin{notation}
     We denote the mapping space in $\Comod_C$ by $\Hom_C$ and the mapping space in $\Contra_C$ by $\Hom^C$. Similarly, the forgetful functors will be denoted $U_C\:\Comod_C\to \C$ and $U^C\: \Contra_C\to \C$ respectively, while their adjoints---the cofree and free functors---will be denoted $C\otimes (-)\:\C\to \Comod_C$ and $\iHom(C, -)\: \C\to \Contra_C$, hoping that it is clear from context whether we use them as above or as endofunctors on $\C$.

@@ -22,7 +22,7 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
 \begin{proof}
     Let $X\in \Modt$. By \cite[3.19]{barthel-heard-valenzuela_2018} there is a strongly convergent spectral sequence of $E_*$-modules with signature 
     \[E_2^{s,t} = (H_{I_n}^{-s}\pi_* X)_t \implies \pi_{s+t}M_n X,\]
-    where $H_{I_n}^{-s}$ denotes local cohomology. By \cite[2.1.3(ii)]{brodmann-sharp_1998} the $E_2$-page consist of only $I_n$-power torsion modules. As $\modt$ is abelian, it is closed under quotients and subobjects, as as the higher pages are created from the $E_2$-page using quotients and subobjects, they must also consist of only $I_n$-power torsion modules. In particular, the $E_\infty$-page is all $I_n$-power torsion. By Grothendieck's vanishing theorem, see for example \cite[6.1.2]{brodmann-sharp_1998}, $H_{I_n}^s(-)\cong 0$ for $s>n$, hence the abutment of the spectral sequence $\pi_* M_n X$ is a finite filtration of $I_n$-power torsion $E_*$-modules, and is therefore itself an $I_n$-power torsion module. Since $X$ was assumed to be monochromatic, i.e. $X\in \Modt$, we have $\pi_* M_n X\cong \pi_* X$, and thus $\pi_* X\in \modt$. 
+    where $H_{I_n}^{-s}$ denotes local cohomology. By \cite[2.1.3(ii)]{brodmann-sharp_1998} the $E_2$-page consists of only $I_n$-power torsion modules. As $\modt$ is abelian, it is closed under quotients and subobjects, as as the higher pages are created from the $E_2$-page using quotients and subobjects, they must also consist of only $I_n$-power torsion modules. In particular, the $E_\infty$-page is all $I_n$-power torsion. By Grothendieck's vanishing theorem, see for example \cite[6.1.2]{brodmann-sharp_1998}, $H_{I_n}^s(-)\cong 0$ for $s>n$, hence the abutment of the spectral sequence $\pi_* M_n X$ is a finite filtration of $I_n$-power torsion $E_*$-modules, and is therefore itself an $I_n$-power torsion module. Since $X$ was assumed to be monochromatic, i.e. $X\in \Modt$, we have $\pi_* M_n X\cong \pi_* X$, and thus $\pi_* X\in \modt$. 
 
     Now, assume we have an $E$-module $X$ such that its homotopy groups are $I_n$-power torsion. Monochromatization gives a map $\phi\colon M_n X\longrightarrow X$, and as $\pi_*M_nX$ is $I_n$-power torsion this map factors on homotopy groups as 
     \[\pi_* M_n X\longrightarrow H^0_{I_n}\pi_* X\longrightarrow \pi_* X,\]
@@ -348,26 +348,37 @@ The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there i
 \end{center}
 Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria--Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
 
-In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. His deformation $\mathscr{E}\np$ is equivalent to $\hSynE$, which by the above remarks hints towards a monoidal version of \cref{ch1:thm:main-spectra} as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. We do, however, state the conjectured monoidal result, which we hope to pursue in future work.
+Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen.
 
-\begin{conjecture}
+In \cite{barkan_2023}, Barkan provides a monoidal version of \cref{ch1:thm:franke-algebraicity} by using filtered spectra. It is then natural to wonder whether we can strengthen \cref{ch1:thm:main-spectra} to a symmetric monoidal equivalence as well. We originally intended to incorporate such a result into this paper but decided against it in order to keep it free from deformation theory. 
+
+\begin{addendum}
+    \label{ch1:add:shaul-comment-monoidal}
+    In the time since writing the paper we have learnt more about the situation described above. We were, for example, reminded by Shaul Barkan that the symmetric monoidal version of \cref{ch1:thm:main-spectra} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. 
+
+    To remedy this we introduce a category of monochromatic synthetic spectra\index{Synthetic spectra!Monochromatic} in \cref{ch3:addendum}, based on some results from \hyperref[ch3]{the third paper}. We use this category to present a more direct approach to the symmetric monoidal version of \cref{ch1:thm:main-spectra}. 
+\end{addendum}
+
+More precisely, we will prove the following, see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}. 
+
+\begin{theorem}
     \label{ch1:conj:monochromatic-monoidally-algebraic}
     Let $p$ be a prime and $n$ a natural number. If $k$ is a positive natural number such that $2p-2>n^2+(k+3)n+k-1$, then we have a symmetric monoidal equivalence 
     \[h_k \M\np\simeq h_k \Fr\np\Int\]
     of $k$-categories. 
-\end{conjecture}
+\end{theorem}
 
 
 
-As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $\Kpn$-local category, i.e., a symmetric monoidal equivalence 
-\[h_k \SpKpn\simeq h_k \Fr\np\Inc.\]
+% As \cref{ch1:thm:local-duality} is monoidal, this would give a similar statement for the $\Kpn$-local category, i.e., a symmetric monoidal equivalence 
+% \[h_k \SpKpn\simeq h_k \Fr\np\Inc.\]
 
-Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen. 
+ 
 
-\begin{addendum}
-    \label{ch1:add:shaul-comment-monoidal}
-    In the time since writing the paper we have learnt more about the situation described above. We were, for example, reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. 
+% \begin{addendum}
+%     \label{ch1:add:shaul-comment-monoidal}
+%     In the time since writing the paper we have learnt more about the situation described above. We were, for example, reminded by Shaul Barkan that \cref{ch1:conj:monochromatic-monoidally-algebraic} holds by a localizing ideal argument. But, this approach does not give any new insight into the deformation underlying said equivalence. 
     
-    Also, we learnt from Sven van Nigtevecht that Barkan's model $\mathscr{E}\np$ is most likely not equivalent to hypercomplete synthetic spectra, as there is a problem with the compactness of the unit in the latter. Based on this we introduce a category of \emph{$E$-local synthetic spectra} $\LSynE$ in \cref{ch3:addendum}, which we think solves these issues. We introduce this category as the natural framework to construct a category of \emph{monochromatic synthetic spectra}\index{Synthetic spectra!Monochromatic}, which we also do in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \hyperref[ch3]{Paper III}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation---see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}. 
-\end{addendum}
+%     Also, we learnt from Sven van Nigtevecht that Barkan's model $\mathscr{E}\np$ is most likely not equivalent to hypercomplete synthetic spectra, as there is a problem with the compactness of the unit in the latter. Based on this we introduce a category of \emph{$E$-local synthetic spectra} $\LSynE$ in \cref{ch3:addendum}, which we think solves these issues. We introduce this category as the natural framework to construct a category of \emph{monochromatic synthetic spectra}\index{Synthetic spectra!Monochromatic}, which we also do in \cref{ch3:addendum}. There we prove that it comes from a local duality on $\LSynE$, that it has the correct deformation properties as above, and that it has a uniqueness property with respect to the abelian category $\Comodt$, coming from the theory constructed in \hyperref[ch3]{Paper III}. This allows us to prove \cref{ch1:conj:monochromatic-monoidally-algebraic} in the affirmative, by directly using $\MSynE$ as the underlying deformation---see \cref{ch3:add:thm:monochromatic-monoidally-algebraic}. 
+% \end{addendum}
 

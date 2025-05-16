@@ -73,7 +73,7 @@ we see that we can decompose the $p$-local integers into a rational part and a $
         \Q\otimes A \arrow[r] & \Q\otimes_\Z A^\wedge_p
     \end{tikzcd}    
 \end{center}
-where $A_p^\wedge$ denotes derived $p$-completion of $A$, as in \cref{ch0:ex:derived-p-completion}. We want to use this to decompose $\Der(\Z_{(p)})$ even further; reduce it to its ``atomic pieces''. These is done via its minimal localizing subcategories. 
+where $A_p^\wedge$ denotes derived $p$-completion of $A$, as in \cref{ch0:ex:derived-p-completion}. We want to use this to decompose $\Der(\Z_{(p)})$ even further; reduce it to its ``atomic pieces''. This is done via its minimal localizing subcategories. 
 
 \begin{definition}
     \label{ch0:def:minimal-localizing-subcategory}
@@ -305,7 +305,7 @@ If the height is understood, we will sometimes drop the $n$ from the notation. W
     is a smashing colocalization, in the sense of \cref{ch0:rm:smashing-colocalization}.
 \end{proposition}
 \begin{proof}
-    As far we are aware, this proposition was first proved in \cite[Sec 6.3]{bousfield_1996} in the case of finite monochromatization, i.e., the fiber functor of the finite localization $L\np^f$. The proof, however, uses the arguments from \cite[2.10]{bousfield_1979_bool}, which also work for the non-finite case. A simplified argument uses Ravenel's smash product theorem, see \cite[7.5.6]{ravenel_92}, stating that the localization $L_{n-1,p} = L_{E_{n-1,p}}$ is smashing. Hence, we can simply compare the two fiber sequences
+    As far as we are aware, this proposition was first proved in \cite[Sec 6.3]{bousfield_1996} in the case of finite monochromatization, i.e., the fiber functor of the finite localization $L\np^f$. The proof, however, uses the arguments from \cite[2.10]{bousfield_1979_bool}, which also work for the non-finite case. A simplified argument uses Ravenel's smash product theorem, see \cite[7.5.6]{ravenel_92}, stating that the localization $L_{n-1,p} = L_{E_{n-1,p}}$ is smashing. Hence, we can simply compare the two fiber sequences
     \[M\np \S \otimes X \longrightarrow X \longrightarrow L_{n-1,p}\S\otimes X\] 
     and 
     \[M\np X\longrightarrow X\longrightarrow L_{n-1,p} X,\]
@@ -317,7 +317,7 @@ If the height is understood, we will sometimes drop the $n$ from the notation. W
 %     One can also argue as follows: As $M_n(-)$ is a right adjoint to a fully faithful inclusion, it is, by definition, a colocalization. As $L_{n-1}$ is a smashing localization the localized unit $L_{n-1}\S_n$ is an idempotent algebra in $\sp\np$, and $L_{n-1}$ is equivalent to $L_{n-1}\S_n\otimes (-)$. Dually, then, the fiber of the unit map $\S_n\longrightarrow L_{n-1}\S_n$, which we denoted by $M_n\S_n$, is then an idempotent coalgebra, and the fiber functor $M_n(-)$ is identified with $M_n\S_n\otimes (-)$. 
 % \end{proof}
 
-We are now almost ready to construct local duality for chromatic homotopy theory. The last thing we need is is a good set of compact objects to form our local duality context. 
+We are now almost ready to construct local duality for chromatic homotopy theory. The last thing we need is a good set of compact objects to form our local duality context. 
 
 \begin{definition}
     \label{ch0:def:type-n-spectrum}
@@ -363,7 +363,7 @@ We wanted to construct a local duality diagram that categorified the chromatic f
 \end{proposition}
 
 \begin{remark}
-    These equivalences are by now classical, but we recall an arguments for the reader's convenience and for building intuition. 
+    These equivalences are by now classical, but we recall an argument for the reader's convenience and for building intuition. 
 \end{remark}
 
 \begin{proof}
@@ -407,7 +407,7 @@ We wanted to construct a local duality diagram that categorified the chromatic f
 \end{remark}
 
 \begin{remark}
-    By \cref{ch0:rm:tors-loc-comp-compactly-generated}, all the categories in the local duality diagram are compactly generated. But, the unit $L_{\Kpn}\S$ in $\SpKpn$ is not compact, so by \cref{ch0:rm:compacts-equal-dualizable} the compact objects and the dualizables differ. The same is then necessarily true for $\M\np$.
+    By \cref{ch0:rm:tors-loc-comp-compactly-generated}, all the categories in the local duality diagram are compactly generated. But, the unit $L_{\Kpn}\S$ in $\SpKpn$ is not compact, so by \cref{ch0:rm:compacts-equal-dualizable} the compact and dualizable objects differ. The same is then necessarily true for $\M\np$.
 \end{remark}
 
 We have a similar construction in the case of $E$-modules, where $E$ is any of the models for Morava $E$-theory we presented in \cref{ch0:sssec:morava-E-theories}. For simplicity, let us assume $E= E_p(n)$, and recall that we have a unique maximal Landweber ideal $I_n = (p, v_1, \ldots, v_{n-1})\subseteq  \pi_* E$. Using the convention that $p = v_0$ we have for any $i$ a map $v_i \: \Sigma^{2p^i-2} E \to E$; we denote its cofiber by $E/v_i$. Letting $E/I_n = \bigotimes_{i=0}^n E/v_i$ we have the following local duality result---see also \cite{greenlees-may_1995} and \cite[Section 3.1]{barthel-heard-valenzuela_2018} for more details. 

@@ -27,7 +27,7 @@ Adapted homology theories are particularly well behaved homology theories that h
 \end{definition}
 
 \begin{remark}
-    The first two axioms make $H$ a homological functor, the third makes $H$ into a locally graded functor, i.e., a functor that preserves the local grading, and the last makes it a conservative functor. 
+    The first two axioms makes $H$ a homological functor, the third makes $H$ into a locally graded functor, i.e., a functor that preserves the local grading, and the last makes it a conservative functor. 
 \end{remark}
 
 \begin{example}
@@ -83,14 +83,14 @@ In our particular interest $R=E\np$, the associated adapted homology theories $\
 \begin{remark}
     Recall that we are really interested in the category $\SpKpn$ of $\Kpn$-local spectra.\index{Spectra!$K_p(n)$-local} The spectrum $\Kpn$ is a field object in $\Sp$, and its homotopy groups $\pi_* \Kpn$ are graded fields. Hence the homology theory 
     \[\Kpn_*\: \SpKpn\longrightarrow \Mod_{\Kpn_*}\] 
-    is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have finite cohomological dimension, a feature we will need later. This can be seen via the following argument of \cite{barthel-pstragowski_2021}. Having finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
+    is too simple to exhibit the algebraicity properties that we want. As $\Kpn$ is Adams type $\Kpn_*(-)$ factors through $\Comod_{K_*K}$, but this category is very complicated. In particular, it does not have a finite cohomological dimension, a feature we will need later. This can be seen via the following argument of \cite{barthel-pstragowski_2021}. Having a finite cohomological dimension would imply that the $\Kpn$-Adams spectral sequence has a horizontal vanishing line at a finite page. The groups in this spectral sequence are all torsion, hence this would imply that, for example, the homotopy groups of the $\Kpn$-local sphere is a finite filtration of torsion groups. In particular there could be no rational homotopy groups. But, by \cite{barthel_schlank_stapleton_weinstein_2024} the rational homotopy groups of the $\Kpn$-local sphere are highly non-trivial, meaning that the original assumption that $\Comod_{K_*K}$ has finite cohomological dimension must be wrong. 
     
     There is, however, a version of $E_*$-homology on $\SpKpn$, defined by sending a $\Kpn$-local spectrum $X$ to 
     \[E_*^\vee (X) := \pi_*L_{\Kpn}(E\otimes X).\]
     The functor does land in a category of comodules, specifically over the $L$-complete Hopf algebroid $(E_*, E_*^\vee E)$, see \cite[5.3]{baker_2009}. However, the category $\Comod_{E_*^\vee E}$ is not abelian. This is the reason for instead using the monochromatic category $\M\np$ and the category of $I_n$-power torsion comodules, as these inherit nicer homological properties we can exploit. 
 \end{remark}
 
-For certain Adams type ring spectra $R$, we get decompositions of the category $\Comod_{R_*R}$ into periodic families of subcategories. Such decompositions allows for the construction of partial inverses to the associated homology theories. 
+For certain Adams type ring spectra $R$, we get decompositions of the category $\Comod_{R_*R}$ into periodic families of subcategories. Such decompositions allow for the construction of partial inverses to the associated homology theories. 
 
 \begin{construction}
     \label{ch1:const:splitting-of-comodules}
@@ -152,7 +152,7 @@ In order to make some statements about exotic equivalences a bit simpler, we int
 \begin{definition}
     \label{ch1:def:k-exotic-homology-theory}
     \index{Homology theory!$k$-exotic}
-     Let $H\: \C\longrightarrow \A$ be a homology theory. We say $H$ is \emph{$k$-exotic} if $H$ is adapted, conservative, $\A$ has finite cohomological dimension $d$ and a splitting of order $q+1$ such that $k=d+1-q>0$. 
+     Let $H\: \C\longrightarrow \A$ be a homology theory. We say $H$ is \emph{$k$-exotic} if $H$ is adapted, conservative, $\A$ has finite cohomological dimension $d$ and a splitting of order $q+1$ such that $k=q+1-d>0$. 
 \end{definition}
     
 One of the remarkable things about the existence of a $k$-exotic homology theory $H\: \C\longrightarrow \A$, is that it forces the stable $\infty$-category $\C$ to be approximately algebraic. Intuitively: As the order of the splitting is greater than the cohomological dimension, the $H$-Adams spectral sequence is very sparse and well-behaved. There is a partial inverse of $H$ via the Bousfield functor $\beta\: \A^{inj}\to h_{q+1} \C^{inj}$, which forces a certain subcategory of a categorified deformation of $H$ to be equivalent to both $h_k \C$ and $h_k \Dper(\A)$. This is the contents of Franke's algebraicity theorem. 
