@@ -2,12 +2,12 @@
 \section{Positselski duality}
 \label{ch2:sec:positselski-duality}
 
-Classical Positselski duality, usually called the co-contra correspondence, is an adjunction between comodules and contramodules over a discrete $R$-coalgebra $C$, where $R$ is an algebra over a field $k$. In particular, the categories involved are abelian, which makes some constructions easier. For example, the monoidal structure on $\Mod_R$ induces monoidal structures on $\Comod_C$ via the relative tensor construction---given by a certain equalizers. For $\infty$-categories the relative tensor construction is more complicated, as we need the monoidal structure to behave well with all higher coherencies, as mentioned in \cref{ch2:rm:monoidal-structure-comodules}. We can, however, restrict our attention to a certain type of coalgebra, fixing these issues. This also puts us in the setting we are interested in regarding local duality---see \cref{ch2:ssec:local-duality}. 
+Classical Positselski duality, usually called the co-contra correspondence, is an adjunction between comodules and contramodules over a discrete $R$-coalgebra $C$, where $R$ is an algebra over a field $k$. In particular, the categories involved are abelian, which makes some constructions easier. For example, the monoidal structure on $\Mod_R$ induces monoidal structures on $\Comod_C$ via the relative tensor construction---given by a certain equalizer. For $\infty$-categories the relative tensor construction is more complicated, as we need the monoidal structure to behave well with all higher coherencies, as mentioned in \cref{ch2:rm:monoidal-structure-comodules}. We can, however, restrict our attention to a certain type of coalgebra, fixing these issues. This also puts us in the setting we are interested in regarding local duality---see \cref{ch2:ssec:local-duality}. 
 
 \subsection{Coidempotent coalgebras}
 \label{ch2:ssec:coidempotent-coalgebras}
 
-We now restrict our attention to the special class of coalgebras that we will focus on for the remainder of the paper. 
+We now restrict our attention to a special class of coalgebras, which will be our focus on for the remainder of the paper. 
 
 \begin{definition}
     %\index{Cocommutative coalgebra!Separable}
@@ -24,20 +24,28 @@ We now restrict our attention to the special class of coalgebras that we will fo
 
 The first reason for our focus on coidempotent coalgebras is that their categories of comodules inherit a symmetric monoidal structure from $\C$, which is rarely the case for general coalgebras, see \cref{ch2:rm:monoidal-structure-comodules}. 
 
-\begin{remark}
-    \label{ch2:rm:unique-structure}
-    The existence of a symmetric monoidal structure will follow from the fact that comodules over coidempotent coalgebras admit unique comodule structures. In particular, if $M$ is a comodule, then the structure map $M \to C\otimes M$ is an equivalence, meaning that $M$ is equivalent to the cofree comodule on its underlying object. This means that any comodule over a coidempotent coalgebra is cofree, giving an equivalence 
-    \[\Comod_C \simeq \Comod_C\fr\]
-    between the Eilenberg--Moore category and the Kleisli category of the comonad $C\otimes (-)$ on $\C$. 
-\end{remark}
-
 \begin{lemma}
     \label{ch2:lm:coidempotent-then-comod-monoidal}
-    Let $C$ be a coidempotent cocommutative coalgebra in $\C$. The category of $C$-comodules $\Comod_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category making the cofree comodule functor a symmetric monoidal smashing colocalization.
+    \index{Colocalization!Smashing}
+    Let $C$ be a coidempotent cocommutative coalgebra in $\C$. The category of $C$-comodules $\Comod_C$ inherits the structure of a presentably symmetric monoidal $\infty$-category making the cofree comodule functor a symmetric monoidal smashing colocalization. Furthermore, any $C$-comodule is cofree, meaning that the fully faithful inclusion $\Comod_C\fr \hookrightarrow \Comod_C$ is a symmetric monoidal equivalence. 
 \end{lemma}
 \begin{proof}
-    The category $\Comod_C$ is presentable by \cite[2.1.11]{peroux_2020}. Let $M$ and $N$ be two comodules, and define the tensor product $M\otimes_C N$ to be the tensor product of their underlying objects. By the uniqueness of comodule structures, this still results in a comodule structure on the product, as $M \otimes_C N \simeq M \otimes N \otimes C$, which is the cofree comodule on the underlying object. This means, in particular, that the cofree comodule functor $C\otimes (-) \: \C \to \Comod_C$ is symmetric monoidal by \cite[2.2.1.9]{Lurie_HA}. As the endofunctor $C\otimes (-) \: \C \to \C$ is idempotent, and the forgetful functor $U_C\: \Comod_C\to \C$ is fully faithful whenever $C$ is coidempotent, we can conclude that the cofree comodule functor $C\otimes (-)\: \C\to \Comod_C$ is a smashing colocalization of $\C$. 
+    By a dual version of \cite[4.8.2.4]{Lurie_HA}, together with \cref{ch2:ex:coalgebra-comonad}, the category $\Comod_C$ is a colocalization of $\C$. This implies, by a dual version of \cite[4.8.2.7]{Lurie_HA}, that $\Comod_C$ inherits a symmetric monoidal structure from $\C$. Finally, a dual version of \cite[4.8.2.10]{Lurie_HA} implies that the inclusion of cofree comodules to all comodules is an equivalence. 
+
+    The category $\Comod_C$ is presentable by \cite[2.1.11]{peroux_2020}, which together with \cref{ch2:prop:creates-colimits-and-limits} implies that $\Comod_C$ is presentably symmetric monoidal. 
 \end{proof}
+
+\begin{remark}
+    \label{ch2:rm:unique-structure}
+    As stated in \cref{ch2:lm:coidempotent-then-comod-monoidal}, any comodule over a coidempotent coalgebra is cofree. This implies that any comodule has a unique comodule structure. In particular, the structure map $M \to C\otimes M$ for any $C$-comodule $M$ is an equivalence, meaning that the induced tensor product on $\Comod_C$ can be interpreted as simply taking the tensor product of the underlying objects in $\C$. More precisely, the monoidal structure on $\Comod_C$ is given by $M\otimes_C N := C\otimes (M\otimes N)$, but by the uniqueness of comodule structures, this is simply $M\otimes N$ when treated as an object in $\C$. 
+    % The existence of a symmetric monoidal structure will follow from the fact that comodules over coidempotent coalgebras admit unique comodule structures. In particular, if $M$ is a comodule, then the structure map $M \to C\otimes M$ is an equivalence, meaning that $M$ is equivalent to the cofree comodule on its underlying object. This means that any comodule over a coidempotent coalgebra is cofree, giving an equivalence 
+    % \[\Comod_C \simeq \Comod_C\fr\]
+    % between the Eilenberg--Moore category and the Kleisli category of the comonad $C\otimes (-)$ on $\C$. 
+\end{remark}
+
+    % Let $M$ and $N$ be two comodules, and define the tensor product $M\otimes_C N$ to be the tensor product of their underlying objects. By the uniqueness of comodule structures, this still results in a comodule structure on the product, as $M \otimes_C N \simeq M \otimes N \otimes C$, which is the cofree comodule on the underlying object. 
+    
+    % This means, in particular, that the cofree comodule functor $C\otimes (-) \: \C \to \Comod_C$ is symmetric monoidal by \cite[2.2.1.9]{Lurie_HA}. As the endofunctor $C\otimes (-) \: \C \to \C$ is idempotent, and the forgetful functor $U_C\: \Comod_C\to \C$ is fully faithful whenever $C$ is coidempotent, we can conclude that the cofree comodule functor $C\otimes (-)\: \C\to \Comod_C$ is a smashing colocalization of $\C$. 
 
 % The co-bar construction starts at n=0, hence this does not work (as commented by Irakli):
 
@@ -96,7 +104,7 @@ We know from \cref{ch2:lm:coidempotent-then-comod-monoidal} that the cofree como
 \[C\otimes(-)\: \C\to \Comod_C\]
 is a smashing colocalization whenever the coalgebra $C$ is coidempotent. We now wish to have a similar statement for the free contramodule functor 
 \[\iHom(C,-)\: \C\to \Contra_C.\]
-By definition, however, it will not be smashing in general, but otherwise it will have the same features. 
+Note that it will not be smashing in general, but otherwise it will have the same features. 
 
 \begin{remark}
     \label{ch2:rm:contramodule-structure-on-hom-from-comodule}
@@ -112,7 +120,7 @@ By definition, however, it will not be smashing in general, but otherwise it wil
 \begin{proof}
     The functor $\iHom(C,-)\: \C \to \C$ is an idempotent functor, as we have
     \[\iHom(C, \iHom(C,-))\simeq \iHom(C\otimes C, -)\simeq \iHom(C,-)\]
-    by the internal adjunction property together with the coidempotency of $C$. This means that the forgetful functor $U^C\: \Contra_C\to \C$ is fully faithful, and hence that the free contramodule functor $\iHom(C,-)\:\C\to \Contra_C$ is a localization. In particular, $\iHom(C, X) \simeq X$ for any $C$-contramodule $X$, meaning that any $C$-contramodule is free. 
+    by the internal adjunction property together with the coidempotency of $C$. This means that the forgetful functor $U^C\: \Contra_C\to \C$ is fully faithful by \cite[5.2.7.4]{lurie_09}, and hence that the free contramodule functor $\iHom(C,-)\:\C\to \Contra_C$ is a localization. In particular, $\iHom(C, X) \simeq X$ for any $C$-contramodule $X$, meaning that any $C$-contramodule is free. 
     
     In order to determine that it induces a symmetric monoidal structure on $\Contra_C$ we need to check that the free functor is compatible with the monoidal structure in $\C$, in the sense of \cite[2.2.1.7]{Lurie_HA}. More precisely we need to show that if a map $V \to V'$ in $\C$ is a $\iHom(C,-)$-equivalence, then also $V\otimes W \to V' \otimes W$ is. By \cite[2.12(3)]{nikolaus_2016} this property holds whenever $\iHom(V,X)\in \Contra_C$ for any $X\in \Contra_C$ and $V\in \C$, which we now show. 
     

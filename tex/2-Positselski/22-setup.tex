@@ -27,7 +27,7 @@ We denote the category of commutative algebras in $\C$ by $\CAlg(\C)$\index{Coco
 % \cref{ch2:prop:properties-coalgebras:item1} follows from \cite[3.2.2.5, 3.2.2.6]{Lurie_HA} while \cref{ch2:prop:properties-coalgebras:item2} follows from \cite[3.2.4.7]{Lurie_HA}. \cref{ch2:prop:properties-coalgebras:item3} is \cite[3.1.4]{lurie_2018_ELL1}, while \cref{ch2:prop:properties-coalgebras:item4} follows from \cref{ch2:prop:properties-coalgebras:item1} and \cref{ch2:prop:properties-coalgebras:item3} via the adjoint functor theorem \cite[5.5.2.9]{lurie_09}. 
 
 
-Given any $\infty$-category $\D$, the category of endofunctors $\Fun(\D, \D)$ can be given the structure of a monoidal category via composition of functors. 
+Given any $\infty$-category $\D$, the category of endofunctors $\Fun(\D, \D)$ can be given the structure of a monoidal category via composition of functors, see \cite[1.15]{christ_2023}. 
 
 \begin{definition}
     \index{Monad}
@@ -55,7 +55,7 @@ The category $\D$ is left tensored over $\Fun(\D, \D)$ via evaluation of functor
 
 Given a monad $M$ on $\D$ we have a forgetful functor 
 \[U_M\: \LMod_M(\D)\to \D.\] 
-By \cite[4.2.4.8]{Lurie_HA} this functor admits a left adjoint $F_M\: \D\to \LMod_M(\D)$ given by $X\longmapsto MX$. We call this the \emph{free module} functor. The adjunction $F_M\dashv U_M$ is called the \emph{free-forgetful} adjunction of $M$. 
+By \cite[4.2.4.8]{Lurie_HA} this functor admits a left adjoint $F_M\: \D\to \LMod_M(\D)$ given on objects by $X\longmapsto MX$. We call this the \emph{free module} functor. The adjunction $F_M\dashv U_M$ is called the \emph{free-forgetful} adjunction of $M$. 
 
 \begin{definition}
     \index{Monad!-ic adjunction}
@@ -71,7 +71,9 @@ The existence of the free-forgetful adjunction for a monad $M$ implies that any 
     Let $\D$ be an $\infty$-category and $M$ a monad on $\D$. A left $M$-module $B\in \LMod_M(\D)$ is \emph{free} if it is equivalent to an object in the image of $F_M$. The full subcategory of free modules is called the \emph{Kleisli category} of $M$, and is denoted $\LMod_M\fr(\D)$. 
 \end{definition}
 
-The free-forgetful adjunction restricts to an adjunction on the Kleisli Category: $F_M:\D\rightleftarrows \LMod_M\fr(\D):U_M\fr$. By \cite[1.8]{christ_2023} this is the minimal adjunction with adjunction monad equivalent to $M$. Using Lurie's $\infty$-categorical version of the Barr--Beck theorem we can also identify the free-forgetful adjunction as the maximal adjunction with adjunction monad $M$. 
+The free-forgetful adjunction restricts to an adjunction on the Kleisli category: $F_M:\D\rightleftarrows \LMod_M\fr(\D):U_M\fr$. By \cite[1.8]{christ_2023} this is the minimal adjunction with adjunction monad equivalent to $M$---in particular, the forgetful functor $U_M\fr$ is fully faithful.  
+
+Using Lurie's $\infty$-categorical version of the Barr--Beck theorem we can also identify the free-forgetful adjunction as the maximal adjunction with adjunction monad $M$. 
 
 \begin{theorem}[{\cite[4.7.3.5]{Lurie_HA}}]
     \label{ch2:thm:Lurie-BB}
@@ -108,7 +110,7 @@ Recall that we have fixed a presentably symmetric monoidal $\infty$-category $\C
 
 \begin{example}
     \label{ch2:ex:algebra-module-monad}
-    Let $A\in \CAlg(\C)$ be a commutative algebra object in $\C$. The algebra structure on $A$ induces an algebra structure on the endofunctor $A\otimes(-)\:\C\to \C$, hence it is a monad on $\C$. By \cite[1.17]{christ_2023} the Eilenberg--Moore category of this monad is equivalent to the category of modules over $A$ in $\C$. As $A$ is commutative we denote this by $\Mod_A(\C)$. As $\C$ is presentable and the monad $A\otimes(-)$ preserves colimits, there is a right adjoint $\iHom(A,-)\:\C\to \C$. This is a comonad on $\C$. Since these form an adjoint monad-comonad pair, their Eilenberg--Moore categories are equivalent,
+    Let $A\in \CAlg(\C)$ be a commutative algebra object in $\C$. The algebra structure on $A$ induces an algebra structure on the endofunctor $A\otimes(-)\:\C\to \C$, hence it is a monad on $\C$---see \cite[1.15]{christ_2023}. By \cite[1.17]{christ_2023} the Eilenberg--Moore category of this monad is equivalent to the category of modules over $A$ in $\C$. As $A$ is commutative we denote this by $\Mod_A(\C)$. As $\C$ is presentable and the monad $A\otimes(-)$ preserves colimits, there is a right adjoint $\iHom(A,-)\:\C\to \C$. This is a comonad on $\C$. Since these form an adjoint monad-comonad pair, their Eilenberg--Moore categories are equivalent,
     \[\Mod_A(\C)\simeq \LMod_{A\otimes(-)}(\C)\simeq \LComod_{\iHom(A,-)}(\C),\]
     see \cite[V.8.2]{maclane-moerdijk_1994} in the $1$-categorical situation. The $\infty$-categorical version is exactly the same, and follows from the monadicity and comonadicity of the adjunctions. 
 \end{example}
@@ -127,7 +129,7 @@ The above example changes in an interesting way when replacing the algebra $A$ w
 
 \begin{example}
     \label{ch2:ex:coalgebra-comonad}
-    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra object in $\C$. The coalgebra structure on $C$ induces a coalgebra structure on the endofunctor $C\otimes(-)\:\C\to\C$, hence it is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, which we denote by $\Comod_C(\C)$. The category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}, as $C\otimes (-)$ is accessible. 
+    Let $C\in \cCAlg(\C)$ be a cocommutative coalgebra object in $\C$. The coalgebra structure on $C$ induces a coalgebra structure on the endofunctor $C\otimes(-)\:\C\to\C$, hence it is a comonad on $\C$. By an argument dual to \cite[1.17]{christ_2023} the Eilenberg--Moore category of this comonad is equivalent to the category of comodules over the coalgebra $C$, defined as $\Comod_C(\C):= (\Mod_{C}(\C\op))\op$. As the functor $C\otimes (-)$ is accessible, the category $\Comod_C(\C)$ is presentable by \cite[3.8]{ramzi_2024}. 
 \end{example}
 
 \begin{example}
@@ -166,6 +168,7 @@ Notice that the pair $C\otimes(-)\dashv \iHom(C,-)$ is not an adjoint monad-como
 The following proposition is standard for monads and comonads, see for example \cite[5.7]{riehl-verity_2015}. 
 
 \begin{proposition}
+    \label{ch2:prop:creates-colimits-and-limits}
     If $C$ is a cocommutative coalgebra in $\C$, then the forgetful functor $U_C\:\Comod_C\to \C$ creates colimits. Similarly, the forgetful functor $U^C\:\Contra_C\to \C$ creates limits. 
 \end{proposition}
 
@@ -192,7 +195,7 @@ where the first map is by the symmetric monoidality of $F$, and the second is gi
     is an equivalence for all $X\in \C$ and $Y\in \D$. 
 \end{definition}
 
-We now state the monoidal Barr--Beck theorem of Mathew--Neumann--Noel. 
+We now state the monoidal Barr--Beck theorem of Mathew--Naumann--Noel. 
 
 \begin{theorem}[{\cite[5.29]{mathew-naumann-noel_2017}}]
     \label{ch2:thm:monoidal-BB}
@@ -256,6 +259,6 @@ where the first map is given by the adjunction unit and the second by the symmet
 
 \begin{remark}
     \label{ch2:rm:monoidal-structure-comodules}
-    We want to specify when the above equivalence is an equivalence of symmetric monoidal categories. We could hope for the existence of a symmetric monoidal structure on $\Comod_C$ for a cocommutative coalgebra $C\in \C$. For the category $\Mod_R(\C)$ of modules over a commutative algebra $R\in \C$ this is done by Lurie's relative tensor product, see \cite[Section 4.5.2]{Lurie_HA}. But, for such a relative monoidal product to exist on $\Comod_C$ one needs the tensor product in $\C$ to commute with cosifted limits, which is rarely the case. But, as we will see in \cref{ch2:ssec:coidempotent-coalgebras} we sometimes get a monoidal structure, and when this is the case, the equivalence in \cref{ch2:thm:dual-monoidal-BB} is symmetric monoidal. 
+    It would be nice to understand when the above result gives an equivalence of symmetric monoidal categories. For this one would first need a symmetric monoidal structure on $\Comod_C$. In the dual situation of $\Mod_R(\C)$---the category of modules over a commutative algebra $R\in \C$---this is done by Lurie's relative tensor product, see \cite[Section 4.5.2]{Lurie_HA}. But, for such a relative monoidal product to exist on $\Comod_C$ one needs the tensor product in $\C$ to commute with cosifted limits, which is rarely the case. However, as we will see in the following section, we can in fact obtain a symmetric monoidal structure and a symmetric monoidal equivalence in certain situations---for example when the comonad is idempotent. 
 \end{remark}
 
