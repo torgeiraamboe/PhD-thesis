@@ -522,7 +522,7 @@ showing that the deformation theory plays well with the classification result fo
 
 It is now natural to wonder whether this solves \cref{ch1:conj:monochromatic-monoidally-algebraic}---which states that at large enough primes the equivalence of $k$-categories $h_k\M\np \simeq h_k\Fr\np\Int$ from \cref{ch1:thm:B} is symmetric monoidal---as the category $\MSynE$ seems to satisfy all the needed criteria to apply Barkan's monoidal algebraicity results of \cite{barkan_2023}. However, the category $\Comodt$ does not have enough flat objects, a requirement needed to use Barkan's result directly. Luckily, this can be avoided in this specific case. 
 
-To the best of our knowledge the only part of \cite[Theorem H]{barkan_2023} that requires the existence of flats, is to fix \cite[Warning 3.30]{barkan_2023}, which states that the categories $\Mod_{C\tau}(\C\geqz)$ and $\Der(\C^\heart)\geqz$---where $\C$ is some ``deformation''---might be equivalent, but not monoidally so. In the case $\C= \MSynE$ we can directly prove that these categories are equivalent as symmetric monoidal stable $\infty$-categories, hence avoiding the above issue. 
+To the best of our knowledge the only part of \cite[Theorem H]{barkan_2023} that requires the existence of flats, is to fix \cite[Warning 3.30]{barkan_2023}, which states that the categories $\Mod_{C\tau}(\C\geqz)$ and $\Der(\C^\heart)\geqz$---where $\C$ is some ``deformation''---might be equivalent, but not monoidally so. In the case $\C= \MSynE$ we can directly prove that these categories are equivalent as symmetric monoidal prestable $\infty$-categories, hence avoiding the above issue. 
 
 First, we need to pass to large enough primes. By \cite[4.11]{barthel-heard_2018} there is for large enough primes a symmetric monoidal equivalence
 \[\StableE \simeq \Der(E_*E),\]
@@ -537,7 +537,8 @@ which with more modern techniques has a very simple proof.
     is a symmetric monoidal equivalence of stable $\infty$-categories.  
 \end{lemma}
 \begin{proof}
-    The former category is given by spherical sheaves on the site $\ComodE\fp$, see \cite[3.7]{pstragowski_2022}, and by the proof of \cite[4.54]{pstragowski_2022} the localization above is the hypercompletion functor. By \cite[2.5]{pstragowski_2021} the category $\ComodE$ has finite cohomological dimension $n^2+n$ whenever $p-1>n$, which by \cite[2.10]{clausen-mathew_2021} implies that all sheaves of spectra on $\ComodE\fp$ are already hypercomplete, finishing the claim. \index{Cohomological dimension}
+    \index{Cohomological dimension}
+    The former category is given by spherical sheaves on the site $\ComodE\fp$, see \cite[3.7]{pstragowski_2022}, and by the proof of \cite[4.54]{pstragowski_2022} the localization above is the hypercompletion functor. By \cite[2.5]{pstragowski_2021} the category $\ComodE$ has finite cohomological dimension $n^2+n$ whenever $p-1>n$. By \cite[2.10]{clausen-mathew_2021} this implies that being hypercomplete is equivalent to being Postnikov complete for sheaves of spectra on $\ComodE\fp$. The Postnikov completion follows the argument in \cite[7.4, 7.5]{pstragowski_vankoughnett_2022} applied to $\StableE$, by incorporating \cite[6.10]{hovey_04}. 
 \end{proof}
 
 This now induces a symmetric monoidal equivalence on the respective localizing ideals. 
@@ -566,7 +567,25 @@ This now induces a symmetric monoidal equivalence on the respective localizing i
     This follows from \cref{ch3:add:thm:monochromatic-synthetic-special-fiber} and \cref{ch3:add:cor:torsion-hypercomplete-at-large-primes}. 
 \end{proof}
 
-We can then conclude with a symmetric monoidal algebraicity result for $\M\np$. 
+We need one final piece of information in order to apply Barkan's algebraicity result, namely that $\MSynE$ needs to be a \emph{complete} Goerss--Hopkins deformation. Being complete means that the connective part $\MSyn_{E, \geq 0}$ is Postnikov complete, in the sense of \cite[A.7.2.1, C.1.2.12]{lurie_SAG}. This will follow from the fact that $\LSynE$ is complete. 
+
+\begin{lemma}
+    The category of connected $E$-local synthetic spectra $\LSynE$ is Postnikov complete.  
+\end{lemma}
+\begin{proof}
+    By \cite[7.3]{pstragowski_vankoughnett_2022} and the proof of \cite[7.2]{pstragowski_vankoughnett_2022} all of the generators $\nu L_n P$ of $\LSynE$ are colimits of $E$-local finite projective objects $L_n S$ such that the Ext-groups $\Ext^{s,t}(E_* S, N) = 0$ for all $s>n^2+n$ and all comodules $N$. 
+
+    The claim now follows from following the proof of \cite[7.4]{pstragowski_vankoughnett_2022} for $\LSynE$, where one incorporates \cite[6.10]{hovey_04}. 
+\end{proof}
+
+\begin{corollary}
+    The category of connected monochromatic synthetic spectra $\MSynE$ is Postnikov complete. 
+\end{corollary}
+\begin{proof}
+    Add
+\end{proof}
+
+Finally, we can conclude with a symmetric monoidal version of \cref{ch1:thm:B} as stated in \cref{ch1:conj:monochromatic-monoidally-algebraic}. 
 
 \begin{theorem}
     \label{ch3:add:thm:monochromatic-monoidally-algebraic}
