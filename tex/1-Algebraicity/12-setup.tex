@@ -64,9 +64,14 @@ The following theorem is a slightly restricted version of the abstract local dua
     \index{Colocalization!Smashing}
     Let $(\C, \K)$ be a local duality context. Then
     \begin{enumerate}
-        \item the functors $\Gamma$ and $L$ are smashing, meaning that there are natural equivalences of functors $\Gamma X\simeq X\otimes \Gamma \1$ and $LX\simeq X\otimes L\1,$
-        \item the functors $\Lambda$ and $V$ are cosmashing, meaning there are natural equivalences $\Lambda X\simeq \iHom(\Gamma \1,X)$ and $VX\simeq \iHom(L\1, X),$ and
-        \item the functors $\Gamma\: \C\Kcomp\longrightarrow \C\Kcomp$ and $\Lambda\: \C\Ktors\longrightarrow \C\Kcomp$ are mutually inverse symmetric monoidal equivalences of categories.
+        \item the functors $\Gamma$ and $L$ are smashing, meaning that there are natural equivalences of functors 
+        \[\Gamma X\simeq X\otimes \Gamma \1 \quad\text{ and }\quad LX\simeq X\otimes L\1,\]
+        \item the functors $\Lambda$ and $V$ are cosmashing, meaning there are natural equivalences 
+        \[\Lambda X\simeq \iHom(\Gamma \1,X) \quad\text{ and }\quad VX\simeq \iHom(L\1, X),\] 
+        and
+        \item the functors 
+        \[\Gamma\: \C\Kcomp\longrightarrow \C\Ktors \quad\text{ and }\quad \Lambda\: \C\Ktors\longrightarrow \C\Kcomp\] 
+        are mutually inverse symmetric monoidal equivalences of categories.
     \end{enumerate}
     This can be summarized by the following diagram of adjoints\index{Local duality!Diagram}
     \begin{center}
@@ -108,7 +113,7 @@ We have two main examples of interest for this paper.
     \index{Local duality!Hopf algebroid}
     \index{Hopf algebroid!Adams type}
     \index{Invariant ideal!Regular}
-    Let $(A,\Psi)$ be an Adams type Hopf algebroid, for example the Hopf algebroid $(R_*, R_*R)$ for an Adams type ring spectrum $R$---see \cite[A.1]{ravenel_86} and \cite{hovey_04} for details. Denote by $\Der(\Psi)$ the derived $\infty$-category associated to the symmetric monoidal Grothendieck abelian category $\Comod_\Psi$. This is defined using the model structure from \cite{barnes-roitzheim_2011}. If $I\subseteq A$ is a finitely generated invariant regular ideal, then $(\Der(\Psi), A/I)$ is a local duality context, with associated local duality diagram
+    Let $(A,\Psi)$ be an Adams type Hopf algebroid, for example the Hopf algebroid $(R_*, R_*R)$ for an Adams type ring spectrum $R$---see \cite[A.1]{ravenel_86} and \cite{hovey_04} for details. Denote by $\Der(\Psi)$ the derived stable $\infty$-category associated to the symmetric monoidal Grothendieck abelian category $\Comod_\Psi$. This is defined using the model structure from \cite{barnes-roitzheim_2011}. If $I\subseteq A$ is a finitely generated invariant regular ideal, then $(\Der(\Psi), A/I)$ is a local duality context, with associated local duality diagram
     \begin{center}
         \begin{tikzcd}
             & {\Der(\Psi)\Iloc} \\
@@ -138,7 +143,7 @@ The following example comes from chromatic homotopy theory. For a good introduct
 \begin{example}
     \label{ch1:ex:local-duality-chromatic}
     \index{Local duality!Chromatic}
-    Let $E$ denote Morava $E$-theory at prime $p$ and height $n$. If $F(n)$ is a finite type $n$ spectrum, then the pair $(\Sp\np, L\np F(n))$ is a local duality context. The corresponding diagram can be recognized as
+    Let $E$ denote Morava $E$-theory at a prime $p$ and a height $n$. If $F(n)$ is a finite spectrum of type $n$, then the pair $(\Sp\np, L\np F(n))$ is a local duality context. The corresponding diagram can be recognized as
     \begin{center}
         \begin{tikzcd}
                 & {\Sp_{n-1,p}} \\
@@ -346,7 +351,7 @@ There is now some ambiguity to take care of for our category of interest $\Dper(
 \begin{proof}
     As $\Comod_\Psi$ is symmetric monoidal we have by \cref{ch1:rm:periodic-derived-as-modules} an equivalence
     \[\Dper(\Psi)\simeq \Mod_{P\1}(\Der(\Psi)),\]
-    coming from the periodicity Barr--Beck adjunction.
+    coming from the periodicity Barr--Beck adjunction on $\Der(\Psi)$.
     By \cref{ch1:thm:modular-bb-torsion} this induces a Barr--Beck adjunction on the torsion subcategories, which gives an equivalence 
     \[[\Dper(\Psi)]\Itors\simeq \Mod_{\Gamma_I^\Psi (P\1)}(\Der(\Psi)\Itors).\]
     Since $\Gamma_I^\Psi$ is a smashing colocalization, and $P$ is given by tensoring with $P(\1)$, they do in fact commute. By \cref{ch1:lm:derived-torsion-if-homology-torsion} we have $\Der(\Psi)\Itors\simeq \Der(\Psi\Itors)$, hence the above equivalence can be rewritten as
@@ -356,7 +361,7 @@ There is now some ambiguity to take care of for our category of interest $\Dper(
 \end{proof}
 
 \begin{addendum}
-    This result, and other similar results like \cref{ch1:lm:derived-torsion-if-homology-torsion}, was one of the inspirations for writing \hyperref[ch3]{the third paper} of this thesis. There we prove some uniqueness results for localizing subcategories that have the property that objects can be detected on the heart. For the above example, both categories have the property that an object $X\in \Dper(\Psi)$ lies in $[\Dper(\Psi)]\Itors$ or $\Dper(\Psi\Itors)$ if and only if its homology groups $H_k X$ lies in the heart $\Comod_\Psi\Itors$, which is a localizing subcategory of $\Comod_\Psi$. By \cref{ch3:thm:main} this means that the categories have to be equivalent, which gives another proof of the above result. 
+    This result, and other similar results, for example \cref{ch1:lm:derived-torsion-if-homology-torsion}, was one of the inspirations for writing \hyperref[ch3]{the third paper} of this thesis. There we prove some uniqueness results for localizing subcategories that have the property that objects can be detected on the heart. For the above example, both categories have the property that an object $X\in \Dper(\Psi)$ lies in $[\Dper(\Psi)]\Itors$ or $\Dper(\Psi\Itors)$ if and only if its homology groups $H_k X$ lies in the heart $\Comod_\Psi\Itors$, which is a localizing subcategory of $\Comod_\Psi$. By \cref{ch3:thm:main} this means that the categories have to be equivalent, which gives another proof of the above result. 
 \end{addendum}
 
 

@@ -1,8 +1,8 @@
 \documentclass[%
-12pt,%
-a4paper,%
-%b5paper,%
-%twoside,%
+11pt,%
+%a4paper,%
+b5paper,%
+twoside,%
 ]{book}
 \usepackage{article}
 \addbibresource{references.bib}
@@ -20,72 +20,107 @@ a4paper,%
 
 \frontmatter
 
-\input{tex/00-Information/titlepage.tex}
+\input{tex/00-Information/titlepage.tex}\cleardoublepage
 %\input{tex/00-Information/formalities.tex}\newpage
-\input{tex/00-Information/abstract.tex}\newpage
-\input{tex/00-Information/information.tex}\newpage
-\input{tex/00-Information/notation.tex}\newpage
+\input{tex/00-Information/abstract.tex}\cleardoublepage
+\input{tex/00-Information/information.tex}\cleardoublepage
+\input{tex/00-Information/notation.tex}\cleardoublepage
 
 \vspace*{-1.1cm}
-{\hypersetup{linkcolor=myblack}
-\tableofcontents}
+\tableofcontents
 
 
 \mainmatter
 
-% Introduction
-\fancyhead[L]{\itshape\nouppercase{Introduction}}
 
-\input{tex/0-Introduction/00-chapter0.tex}
-\input{tex/0-Introduction/00-layperson.tex}\newpage
+% Introduction
+
+
+\fancyhead[LE]{\itshape\nouppercase{Introduction}}
+\fancyhead[RO]{\itshape\nouppercase{\rightmark}}
+%\fancyhead[LE]{\itshape\nouppercase{\thesubsection}}
+
+\input{tex/0-Introduction/00-chapter0.tex}\cleardoublepage
+\input{tex/0-Introduction/00-layperson.tex}\cleardoublepage
 \input{tex/0-Introduction/01-general.tex}
 \input{tex/0-Introduction/02-chromatic.tex}
-\input{tex/0-Introduction/03-hopf-algebroids.tex}\newpage
+\input{tex/0-Introduction/03-hopf-algebroids.tex}\cleardoublepage
 \input{tex/0-Introduction/04-summaries.tex}
 
+
+
 % Algebraicity of monochromatic homotopy theory
-\fancyhead[L]{\itshape\nouppercase{Paper I}}
-\input{tex/1-Algebraicity/00-chapter1.tex}
-\input{tex/1-Algebraicity/00-drawing.tex}
-{\hypersetup{linkcolor=black}
-\input{tex/1-Algebraicity/10-abstract.tex}}
+
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+
+\input{tex/1-Algebraicity/00-chapter1.tex}\cleardoublepage
+\input{tex/1-Algebraicity/00-drawing.tex}\cleardoublepage
+\input{tex/1-Algebraicity/10-abstract.tex}\cleardoublepage
+
+\fancyhead[LE]{\itshape\nouppercase{Paper I: Algebraicity in monochromatic homotopy theory}}
+\fancyhead[RO]{\itshape\nouppercase{\rightmark}}
+
 \input{tex/1-Algebraicity/11-introduction.tex}
 \input{tex/1-Algebraicity/12-setup.tex}
 \input{tex/1-Algebraicity/13-algebraic-models.tex}
-\input{tex/1-Algebraicity/14-algebraicity.tex}
+\input{tex/1-Algebraicity/14-algebraicity.tex}\cleardoublepage
+
 \renewcommand\thesection{\thechapter.A}
 \input{tex/1-Algebraicity/15-barr-beck.tex}
-\renewcommand\thesection{\thechapter.\arabic{section}}\newpage
+\renewcommand\thesection{\thechapter.\arabic{section}}\cleardoublepage
 \input{tex/1-Algebraicity/00-lemmarick.tex}
 
 
+
 % Positselski duality in stable categories
-\fancyhead[L]{\itshape\nouppercase{Paper II}}
-\input{tex/2-Positselski/00-chapter2.tex}
-\input{tex/2-Positselski/00-drawing.tex}
-{\hypersetup{linkcolor=black}
-\input{tex/2-Positselski/20-abstract.tex}}
+
+
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+
+\input{tex/2-Positselski/00-chapter2.tex}\cleardoublepage
+\input{tex/2-Positselski/00-drawing.tex}\cleardoublepage
+\input{tex/2-Positselski/20-abstract.tex}\cleardoublepage
+
+\fancyhead[LE]{\itshape\nouppercase{Paper II: Positselski duality in stable $\infty$-categories}}
+\fancyhead[RO]{\itshape\nouppercase{\rightmark}}
+
 \input{tex/2-Positselski/21-introduction.tex}
 \input{tex/2-Positselski/22-setup.tex}
 \input{tex/2-Positselski/23-idempotent.tex}
-\input{tex/2-Positselski/25-examples.tex}\newpage
-\input{tex/2-Positselski/00-lemmarick.tex}\newpage
+\input{tex/2-Positselski/25-examples.tex}\cleardoublepage
+
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+\input{tex/2-Positselski/00-lemmarick.tex}\cleardoublepage
+\fancyhead[LE]{\itshape\nouppercase{Paper II: Positselski duality in stable $\infty$-categories}}
+\fancyhead[RO]{\itshape\nouppercase{\rightmark}}
 \renewcommand\thesection{\thechapter.A}
 \input{tex/2-Positselski/26-addendum-proalgebras.tex}
 \renewcommand\thesection{\thechapter.\arabic{section}}
 
 
+
 % Classification of localizing subcategories along t-structures
-\fancyhead[L]{\itshape\nouppercase{Paper III}}
-\input{tex/3-Classification/00-chapter3.tex}
-\input{tex/3-Classification/00-drawing.tex}
-{\hypersetup{linkcolor=black}
-\input{tex/3-Classification/30-abstract.tex}}
+
+
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+
+\input{tex/3-Classification/00-chapter3.tex}\cleardoublepage
+\input{tex/3-Classification/00-drawing.tex}\cleardoublepage
+\input{tex/3-Classification/30-abstract.tex}
+
+\fancyhead[LE]{\itshape\nouppercase{Paper III: Classification of localizing subcategories along $t$-structures}}
+\fancyhead[RO]{\itshape\nouppercase{\rightmark}}
+
 \input{tex/3-Classification/31-introduction.tex}
 \input{tex/3-Classification/32-setup.tex}
 \input{tex/3-Classification/33-stabilizing.tex}
-\input{tex/3-Classification/34-correspondence.tex}\newpage
-\input{tex/3-Classification/00-lemmarick.tex}\newpage
+\input{tex/3-Classification/34-correspondence.tex}\cleardoublepage
+\input{tex/3-Classification/00-lemmarick.tex}\cleardoublepage
+
 \renewcommand\thesection{\thechapter.A}
 \input{tex/3-Classification/35-addendum-synthetic.tex}
 \renewcommand\thesection{\thechapter.\arabic{section}}
@@ -96,8 +131,8 @@ a4paper,%
 
 \startcontents[chapters]
 \cleardoublepage
-\input{tex/00-Information/00-lemmarick.tex}\newpage
-\input{tex/00-Information/acknowledgements.tex}\newpage
+\input{tex/00-Information/00-lemmarick.tex}\cleardoublepage
+\input{tex/00-Information/acknowledgements.tex}
 
 \emergencystretch=2em
 \printbibliography[heading=bibintoc]{}

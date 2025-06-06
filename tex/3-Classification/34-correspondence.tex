@@ -17,7 +17,9 @@ The goal of this section is to prove \cref{ch3:thm:A}, and the following lemma i
     Let $\C$ be a $t$-stable category. If $\L$ is a $t$-stable localizing subcategory, then $\L^\heart$ is a weak localizing subcategory of $\C^\heart$. 
 \end{lemma}
 \begin{proof}
-    As $\L$ is $t$-stable we know that the fully faithful inclusion $\L\to \C$ is $t$-exact. By \cite[2.19]{antieau-gepner-heller_2019} the induced functor $\L^\heart\to\C^\heart$ is exact and fully faithful, and $\L^\heart$ is closed under extensions. In particular, $\L^\heart$ is an abelian subcategory closed under extensions, so it remains only to show that $\L^\heart$ is closed under coproducts.
+    As $\L$ is $t$-stable we know that the fully faithful inclusion $\L\to \C$ is $t$-exact. By \cite[2.19]{antieau-gepner-heller_2019} the induced functor 
+    \[\L^\heart\to\C^\heart\] 
+    is exact and fully faithful, and $\L^\heart$ is closed under extensions. In particular, $\L^\heart$ is an abelian subcategory closed under extensions, so it remains only to show that $\L^\heart$ is closed under coproducts.
 
     As $\L^\heart \subseteq \L$ we can include a coproduct of objects in $\L^\heart$ into $\L$. The inclusion and $\pi_n^\heart$ preserves coproducts for all $n$. Hence, as $\L$ is localizing it is closed under coproducts, implying that also $\L^\heart$ is. 
 \end{proof}
@@ -194,7 +196,7 @@ A theorem of Krause---see \cite[3.1]{krause_2008}---shows that the weak localizi
     A hint towards the truth of this conjecture comes from a theorem by Gabriel (\cite[VI.2.4(b)]{gabriel_1962}), where he shows that the above proposed bijection restricts to a bijection between specialization closed subsets of $X$ and localizing subcategories of $\QCoh(X)$. 
 \end{remark}
 
-Now, we want to mention that we also obtain a classification of weak Serre subcategories of $\C$. This is done by recognizing that the proofs of \cref{ch3:lm:t-stable-then-weak-localizing-heart}, \cref{ch3:cor:pi-stable-heart-injective} and \cref{ch3:thm:A} also hold without the assumption about coproducts. The proofs treats coproducts as a separate part, hence just omitting it from the proofs gives the following result. 
+Now, we want to mention that we also obtain a classification of weak Serre subcategories of $\C$. This is done by recognizing that the proofs of \cref{ch3:lm:t-stable-then-weak-localizing-heart}, \cref{ch3:cor:pi-stable-heart-injective} and \cref{ch3:thm:A} also hold without the assumption about coproducts. The proofs treat coproducts as a separate part, hence just omitting it from the proofs gives the following result. 
 
 \begin{proposition}
     \label{ch3:prop:classification-weak-serre}
@@ -228,7 +230,8 @@ We can summarize the contents of this section with half of the diagram from the 
 
 \subsection*{Digression on Grothendieck homology theories}
 
-There is a slight generalization of the surjectivity result above, which we decided to include here for future reference. The generalization comes from realizing that there are other functors that have similar properties to the heart valued homotopy group functor $\pi_*^\heart \: \C\to \C^\heart$. 
+There is a slight generalization of the surjectivity result above, which we decided to include here for future reference. The generalization comes from realizing that there are other functors that have similar properties to the heart valued homotopy group functor 
+\[\pi_*^\heart \: \C\to \C^\heart.\]
 
 Let $\C$ be a presentable stable $\infty$-category and $\A$ be a graded Grothendieck abelian category---meaning it comes equipped with an autoequivalence $[1]\: \A\to \A$, which we think of as a grading shift functor. 
 
@@ -237,7 +240,10 @@ Let $\C$ be a presentable stable $\infty$-category and $\A$ be a graded Grothend
     A functor $H\: \C\to \A$ is called a \emph{Grothendieck homology theory} if it satisfies the following properties:
     \begin{enumerate}
         \item It is additive.
-        \item It sends cofiber sequences $X\rightarrow Y \rightarrow Z$ to exact sequences $HX\rightarrow HY\rightarrow HZ$.
+        \item It sends cofiber sequences 
+        \[X\to Y \to Z\] 
+        to exact sequences 
+        \[HX\to HY\to HZ.\]
         \item It is a graded functor, i.e. $H(\Sigma X) \cong (HX)[1]$.
         \item It preserves coproducts. 
     \end{enumerate}
@@ -627,23 +633,31 @@ The following argument is due to Maxime Ramzi.
     Let $\C$ be a $t$-stable category and $\Der(\C^\heart)$ the derived category of its heart. In this situation there is a realization functor $R\:\Der(\C^{\heart})\to \C$ extending the inclusion $\C^\heart\hookrightarrow \C$. 
 \end{lemma}
 \begin{proof}
-     The inclusion $\C^\heart\hookrightarrow \C$ extends to a functor $\Fun(\Delta\op, \C^\heart)\to \C$ via geometric realization, which preserves weak equivalences by \cite[1.2.4.4, 1.2.4.5]{Lurie_HA}. Via the Dold--Kan correspondence this gives a essentially unique colimit preserving functor $\Der(\C^\heart)\geqz\to \C$, which extends uniquely to a functor $\Der(\C^\heart)\to \C$ by \cite[1.4.4.5]{Lurie_HA}, as $\C$ is stable. This functor preserves both colimits and the heart $\C^\heart$. 
+     The inclusion $\C^\heart\hookrightarrow \C$ extends to a functor 
+     \[\Fun(\Delta\op, \C^\heart)\to \C\] 
+     via geometric realization, which preserves weak equivalences by \cite[1.2.4.4, 1.2.4.5]{Lurie_HA}. Via the Dold--Kan correspondence this gives a essentially unique colimit preserving functor $\Der(\C^\heart)\geqz\to \C$, which extends uniquely to a functor $\Der(\C^\heart)\to \C$ by \cite[1.4.4.5]{Lurie_HA}, as $\C$ is stable. This functor preserves both colimits and the heart $\C^\heart$. 
 \end{proof}
 
 We can then functorially relate the $\pi$-stable localizing subcategories of $\Der(\C^\heart)$ and $\C$ via the realization functor. 
 
 \begin{corollary}
-    Let $\C$ be a $t$-stable category and let $R\: \Der(\C^\heart)\to \C$
+    Let $\C$ be a $t$-stable category and let 
+    \[R\: \Der(\C^\heart)\to \C\]
     be the realization functor from \cref{ch3:lm:realization-functor}. For any weak localizing subcategory $\A\subseteq \C^\heart$, the functor $R$ restricts to a functor
     \[R\: \A_{\Der(\C^\heart)}\to \A_\C,\]
     where the former category denotes the unique $\pi$-stable lift of $\A$ to $\Der(\C^\heart)$, and the latter the unique $\pi$-stable lift of $\A$ to $\C$. 
 \end{corollary}
 \begin{proof}
-    This follows immediately from \cref{ch3:lm:restricted-functor-on-pi-localizing}, the $\pi$-stability of $\A_\C$ and the fact that the identity restricts to the identity functor $\A\simeq\A_{\Der(\C^\heart)}^\heart \to \A_\C^\heart\simeq \A$. 
+    This follows immediately from \cref{ch3:lm:restricted-functor-on-pi-localizing}, the $\pi$-stability of $\A_\C$ and the fact that the identity restricts to the identity functor 
+    \[\A\simeq\A_{\Der(\C^\heart)}^\heart \overset{\Id}\to \A_\C^\heart\simeq \A.\] 
 \end{proof}
 
 \begin{remark}
-    By \cref{ch3:prop:pi-stable-then-t-stable} the $\pi$-stable localizing subcategory $\A_\C$ is also $t$-stable, with heart $\A$. Hence, there is also a realization functor $R'\: \Der(\A)\to \A_\C$, and a natural question to ask is whether this coincides with the above restricted functor $R\: \A_{\Der(\C^\heart)}\to \A_\C$. There is an inclusion $\Der(\A)\subseteq \A_{\Der(\C^\heart)}$, as the latter is a $\pi$-stable localizing subcategory of $\Der(\C^\heart)$, but we do not know if this is always an equivalence. In particular, we don't know whether $\D(\A)$, treated as a subcategory of $\Der(\C^\heart)$, is always a $\pi$-stable localizing subcategory. 
+    By \cref{ch3:prop:pi-stable-then-t-stable} the $\pi$-stable localizing subcategory $\A_\C$ is also $t$-stable, with heart $\A$. Hence, there is also a realization functor 
+    \[R'\: \Der(\A)\to \A_\C,\] 
+    and a natural question to ask is whether this coincides with the above restricted functor 
+    \[R\: \A_{\Der(\C^\heart)}\to \A_\C.\] 
+    There is an inclusion $\Der(\A)\subseteq \A_{\Der(\C^\heart)}$, as the latter is a $\pi$-stable localizing subcategory of $\Der(\C^\heart)$, but we do not know if this is always an equivalence. In particular, we don't know whether $\D(\A)$, treated as a subcategory of $\Der(\C^\heart)$, is always a $\pi$-stable localizing subcategory. 
 \end{remark}
 
 \begin{addendum}

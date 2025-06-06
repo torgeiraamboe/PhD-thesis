@@ -35,7 +35,9 @@ Adapted homology theories are particularly well behaved homology theories that h
 \end{example}
 
 \begin{example}
-    If $R$ is a ring spectrum, then the functor $R_*(-)\: \Sp \longrightarrow \Mod_R$, defined as the composition 
+    If $R$ is a ring spectrum, then the functor 
+    \[R_*(-)\: \Sp \longrightarrow \Mod_R,\] 
+    defined as the composition 
     \[\Sp\overset{R\otimes (-)}\longrightarrow \Mod_R \overset{\pi_*}\longrightarrow \Mod_{R_*},\]
     is a homology theory. We call this the $R$-homology functor. If $R$ is of Adams type, then $R_*(-)$ naturally lands in the subcategory $\Comod_{R_*R}$. If we restrict the domain of $R_*$ to the category of $R$-local spectra, then it is a conservative homology theory. For the rest of the paper we will use $R_*$ to denote the restricted conservative homology theory 
     \[R_*\: \Sp_R\to \Comod_{R_*R}.\]
@@ -56,7 +58,9 @@ Adapted homology theories are particularly well behaved homology theories that h
 \end{definition}
 
 \begin{example}
-    We again return to this papers two guiding examples, being $\pi_*\: \Mod_R\longrightarrow \Mod_{R_*}$ and $R_*\: \Sp_R\longrightarrow \Comod_{R_*R}$, where $R$ is an Adams type ring spectrum. Both functors are conservative adapted homology theories, with faithful lifts provided by Brown representability, see \cite[8.2]{patchkoria-pstragowski_2021} and \cite[8.13]{patchkoria-pstragowski_2021} respectively. 
+    We again return to this papers two guiding examples, being 
+    \[\pi_*\: \Mod_R\longrightarrow \Mod_{R_*} \quad\text{ and }\quad R_*\: \Sp_R\longrightarrow \Comod_{R_*R},\] 
+    where $R$ is an Adams type ring spectrum. Both functors are conservative adapted homology theories, with faithful lifts provided by Brown representability, see \cite[8.2]{patchkoria-pstragowski_2021} and \cite[8.13]{patchkoria-pstragowski_2021} respectively. 
 \end{example}
 
 
@@ -95,8 +99,8 @@ For certain Adams type ring spectra $R$, we get decompositions of the category $
 \begin{construction}
     \label{ch1:const:splitting-of-comodules}
     Let $R$ be an Adams-type ring spectrum such that $\pi_*R$ is concentrated in degrees divisible by some positive number $q+1$, i.e., $\pi_m R = 0$ for all $m\neq 0 \mod q+1$. Any comodule $M$ in the category $\Comod_{R_*R}$ splits uniquely into a direct sum of subcomodules $\bigoplus_{\phi \in \Z/q+1} M_\phi$ such that $M_\phi$ is concentrated in degrees divisible by $\phi$. Such a splitting induces a decomposition of the full subcategory of injective objects 
-    $$\Comod_{R_*R}^{inj} \simeq \Comod_{R_*R, 0}^{inj}\times \Comod_{R_*R, 1}^{inj}\times \cdots \times \Comod_{R_*R, q}^{inj}$$ 
-    where the category $\Comod_{R_*R, \phi}^{inj}$ denotes the full subcategory spanned by injective comodules concentrated in degrees divisible by $\phi$. 
+    \[\Comod_{R_*R}^{inj} \simeq \Comod_{R_*R, 0}^{inj}\times \Comod_{R_*R, 1}^{inj}\times \cdots \times \Comod_{R_*R, q}^{inj}\]
+    where $\Comod_{R_*R, \phi}^{inj}$ denotes the full subcategory spanned by injective comodules concentrated in degrees divisible by $\phi$. 
     
     Let $h_k \C$ denote the homotopy $k$-category of $\C$, obtained by $k+1$-truncating all the mapping spaces in $\C$.  
     The lift associated with each injective via the Adapted homology theory $R_*$ allows us to construct a partial inverse to $R_*$, called the Bousfield functor $\beta^{inj}$ in \cite{patchkoria-pstragowski_2021}. It is a functor 

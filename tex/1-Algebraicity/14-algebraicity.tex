@@ -1,5 +1,5 @@
 
-\section{Algebraicity for monochromatic categories}
+\section{Algebraicity in monochromatic categories}
 
 We are now ready to prove our main results. We start by proving \cref{ch1:thm:C}, which we will later use to prove \cref{ch1:thm:B}. The main result, \cref{ch1:thm:A} will then follow by using certain local duality arguments. 
 
@@ -24,7 +24,9 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
     \[E_2^{s,t} = (H_{I_n}^{-s}\pi_* X)_t \implies \pi_{s+t}M_n X,\]
     where $H_{I_n}^{-s}$ denotes local cohomology. By \cite[2.1.3(ii)]{brodmann-sharp_1998} the $E_2$-page consists of only $I_n$-power torsion modules. As $\modt$ is abelian, it is closed under quotients and subobjects, as as the higher pages are created from the $E_2$-page using quotients and subobjects, they must also consist of only $I_n$-power torsion modules. In particular, the $E_\infty$-page is all $I_n$-power torsion. By Grothendieck's vanishing theorem, see for example \cite[6.1.2]{brodmann-sharp_1998}, $H_{I_n}^s(-)\cong 0$ for $s>n$, hence the abutment of the spectral sequence $\pi_* M_n X$ is a finite filtration of $I_n$-power torsion $E_*$-modules, and is therefore itself an $I_n$-power torsion module. Since $X$ was assumed to be monochromatic, i.e. $X\in \Modt$, we have $\pi_* M_n X\cong \pi_* X$, and thus $\pi_* X\in \modt$. 
 
-    Now, assume we have an $E$-module $X$ such that its homotopy groups are $I_n$-power torsion. Monochromatization gives a map $\phi\colon M_n X\longrightarrow X$, and as $\pi_*M_nX$ is $I_n$-power torsion this map factors on homotopy groups as 
+    Now, assume we have an $E$-module $X$ such that its homotopy groups are $I_n$-power torsion. Monochromatization gives a map 
+    \[\phi\colon M_n X\longrightarrow X,\] 
+    and as $\pi_*M_nX$ is $I_n$-power torsion this map factors on homotopy groups as 
     \[\pi_* M_n X\longrightarrow H^0_{I_n}\pi_* X\longrightarrow \pi_* X,\]
     where the first map is the edge morphism in the above-mentioned spectral sequence. As $\pi_* X$ was assumed to be $I_n$-power torsion we have 
     \[\pi_*X\cong H^0_{I_n}\pi_* X,\] 
@@ -41,7 +43,9 @@ The following lemma is the $I_n$-power torsion version \cite[3.14]{barthel-frank
     is a conservative adapted homology theory. 
 \end{lemma}
 \begin{proof}
-    We first note that the functor $\pi_*\colon \ModE\longrightarrow \modE$ is a conservative adapted homology theory. By \cref{ch1:lm:monochromatic-iff-torsion-modules} its restriction to $\Modt$ lands in $\modt$, hence automatically $\pi_*\colon \Modt\longrightarrow \modt$ is a conservative homology theory. 
+    We first note that the functor $\pi_*\colon \ModE\longrightarrow \modE$ is a conservative adapted homology theory. By \cref{ch1:lm:monochromatic-iff-torsion-modules} its restriction to $\Modt$ lands in $\modt$, hence automatically 
+    \[\pi_*\colon \Modt\longrightarrow \modt\]
+    is a conservative homology theory. 
     
     Let $J$ be an injective $I_n$-power torsion $E_*$-module. We can embed $J\longrightarrow Q$ into an injective $E_*$-module $Q$, as $\modE$ has enough injective objects. After applying the torsion functor $T^{E_*}_{I_n}$ this map has a section, as $J \cong T^{E_*}_{I_n}J$ is injective. In particular, any injective $J$ is a retract of $T^{E_*}_{I_n}Q$ for some injective $E_*$-module $Q$, hence we can assume $J$ to be of that form. By \cite[2.1.4]{brodmann-sharp_1998} any such $J = T^{E_*}_{I_n}Q$ is injective as an object of $\modE$. 
     
@@ -145,7 +149,7 @@ We can also phrase this dually in terms of $\Kpn$-local $E$-modules.
     where we have used that an equivalence of $\infty$-categories induces an equivalence on homotopy $k$-categories.
 \end{proof}
 
-Now, let $HE_*$ be the Eilenberg--MacLane spectrum of $E_*$. By Schwede--Shipley's derived Morita theory, see \cite[7.1.1.16]{Lurie_HA}, there is a symmetric monoidal equivalence of categories 
+Now, let $HE_*$ be the Eilenberg--MacLane spectrum of the ring $E_*$. By Schwede--Shipley's derived Morita theory, see \cite[7.1.1.16]{Lurie_HA}, there is a symmetric monoidal equivalence of categories 
 \[\Der(E_*)\simeq \Mod_{HE_*},\] 
 and we can form a local duality diagram for $\Mod_{HE_*}$ corresponding to \cref{ch1:ex:local-duality-comod} for the discrete Hopf algebroid $(E_*, E_*)$. By arguments similar to \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:lm:conservative-adapted-torsion-modules} one can show that the functor $\pi_*\colon \Mod_{HE_*}\longrightarrow \modE$ restricts to a conservative adapted homology theory 
 \[\pi_* \colon \Mod_{HE_*}\Int\longrightarrow \modt.\]
@@ -190,7 +194,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
     \[E_*\colon \M\np\longrightarrow \Comodt\] 
     is then automatically a conservative homology theory. The category $\Comodt$ has enough injective objects as it is Grothendieck by \cref{ch1:rm:torsion-comodules-grothendieck-monoidal}. Hence, it only remains to prove that we have faithful lifts for all injective objects. 
 
-    Let $J$ be an injective in $\Comodt$. As in the proof of \cref{ch1:lm:conservative-adapted-torsion-modules} we can assume that $J$ has the form $J = T^{E_*E}_{I_n} P$ for some injective $E_*E$-comodule $P$, as being torsion is a property of the underlying module. By \cite[2.1(c)]{hovey-strickland_2005b} any injective $E_*E$-comodule is a retract of $E_*E\otimes_{E_*} Q$ for some injective $E_*$-module $Q$. Hence, we can further assume that $J$ has the form $J = T^{E_*E}_{I_n}(E_*E\otimes_{E_*}Q)$.
+    Let $J$ be an injective object in $\Comodt$. As in the proof of \cref{ch1:lm:conservative-adapted-torsion-modules} we can assume that $J$ has the form $J = T^{E_*E}_{I_n} P$ for some injective $E_*E$-comodule $P$, as being torsion is a property of the underlying module. By \cite[2.1(c)]{hovey-strickland_2005b} any injective $E_*E$-comodule is a retract of $E_*E\otimes_{E_*} Q$ for some injective $E_*$-module $Q$. Hence, we can further assume that $J$ has the form $J = T^{E_*E}_{I_n}(E_*E\otimes_{E_*}Q)$.
 
     From \cite[5.7]{barthel-heard-valenzuela_2018} it follows that there is a commutative diagram of adjoint functors 
     \begin{center}
