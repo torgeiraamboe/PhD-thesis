@@ -26,7 +26,7 @@ by pulling back along $i$. This has a fully faithful right adjoint
 \[i_*\: \Der(U)\to \Der(X),\] which itself has a further right adjoint 
 \[i^!\: \Der(X)\to \Der(U).\] The kernels of $i^*$ and $i^!$ determine two equivalent subcategories of $\Der(X)$, the former of which is the full subcategory $\Der_Z(X)\subseteq \Der(X)$ consisting of complexes with homology supported on $Z$. Denoting by $j\: Z\to X$ the other inclusion we obtain symmetric monoidal stable recollement
 \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \Der_Z(X) 
         \arrow[rd, yshift=2pt, xshift=1pt, "j_!"] 
         \arrow[dd, "\simeq"] 
@@ -46,7 +46,7 @@ by pulling back along $i$. This has a fully faithful right adjoint
 where $\Der(X)^\wedge_Z$ denotes the quasi-coherent sheaves on a formal open neighborhood of $Z$. As mentioned, the categories on the left are equivalent, and are the kernels of $i^*$ and $i^!$. 
 
 This equivalence does not on the surface have anything to do with comodules or contramodules, so let us fix this. For simplicity we assume that $X = \Spec(\Z)$, such that $\Der(X)\simeq \Der(\Z)$. Any prime $p$ determines a closed subscheme $P$ of $X$. With this setup we can identify 
-\[\Der_P(X) \simeq \Der(\Comod_{\Z/p^\infty}) \quad\text{and}\quad\Der(X)^\wedge_Z\simeq \Der(\Contra_{\Z/p^\infty}),\] 
+\[\Der_P(X) \simeq \Der(\Comod_{\Z/p^\infty}) \quad\text{and}\quad\Der(X)^\wedge_P \simeq \Der(\Contra_{\Z/p^\infty}),\] 
 where $\Z/p^\infty$ is the $p$-Prüfer coalgebra of $\Z$. It is the Pontryagin dual of the $p$-adic completion of $\Z$, often denoted $\Z_p$. 
 
 \begin{introrm}
@@ -75,7 +75,7 @@ As mentioned, the main goal of this paper is to introduce the notion of comodule
     \label{ch2:introthm:A}
     Let $\C$ be a presentably symmetric monoidal $\infty$-category. For any coidempotent cocommutative coalgebra $C$, there are mutually inverse symmetric monoidal equivalences
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Comod_C(\C) \arrow[r, yshift=2pt, "\simeq"] & \Contra_C(\C) \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}

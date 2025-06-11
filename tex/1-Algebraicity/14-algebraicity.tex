@@ -1,5 +1,5 @@
 
-\section{Algebraicity in monochromatic categories}
+\section{\hspace{-2pt}Algebraicity in monochromatic categories}
 
 We are now ready to prove our main results. We start by proving \cref{ch1:thm:C}, which we will later use to prove \cref{ch1:thm:B}. The main result, \cref{ch1:thm:A} will then follow by using certain local duality arguments. 
 
@@ -64,9 +64,9 @@ Let $C^{I_n}$ denote the $I_n$-adic completion\index{I-adically complete module}
     
     By \cite[A.2(d)]{hovey-strickland_99} we have $L^{I_n}_0 M \cong \Ext_{E_*}^n(H_{I_n}^n(E_*), M)$ for any $E_*$module $M$. In other words, the derived completion of an $E_*$-module is the $n$'th derived functor of maps from the $I_n$-local cohomology of $E_*$ into $M$. Choosing $M=E_*/I_n$ we get 
     \[L^{I_n}_0 (E_*/I_n)\cong \Ext_{E_*}^n(H^n_{I_n}(E_*), E_*/I_n).\]
-    As any bounded $I_n$-torsion $E_*$-module is $I_n$-adically complete we have, as remarked in \cite[1.4]{barthel-heard_16}, an isomorphism 
+    As any bounded $I_n$-power torsion $E_*$-module is $I_n$-adically complete we have, as remarked in \cite[1.4]{barthel-heard_16}, an isomorphism 
     \[L^{I_n}_0 (E_*/I_n)\cong E_*/I_n.\] 
-    The local cohomology of $E_*$ is also $I_n$-torsion, in particular $H_{I_n}^n E_* = E_*/I_n^\infty$. Hence we have 
+    The local cohomology of $E_*$ is also $I_n$-power torsion, in particular $H_{I_n}^n E_* \cong E_*/I_n^\infty$. Hence we have 
     \[\Ext_{E_*}^n(E_*/I_n^\infty, E_*/I_n)\cong E_*/I_n \not \cong 0,\]
     showing that there are two $I_n$-power torsion $E_*$-modules with non-trivial $n$'th $\Ext$, which concludes the proof.
 \end{proof}
@@ -129,7 +129,7 @@ We can also phrase this dually in terms of $\Kpn$-local $E$-modules.
     \label{ch1:cor:main-modules-dual}
     \index{Morava $K$-theory}
     \index{Local duality}
-    Let $p$ be a prime, $n$ a positive integer and $\Kpn$ be height $n$ Morava $K$-theory at the prime $p$. If $k=2p-2-n>0$, then we have a $k$-exotic algebraic equivalence 
+    Let $p$ be a prime, $n$ a non-negative integer and $\Kpn$ be height $n$ Morava $K$-theory at the prime $p$. If we have $k=2p-2-n>0$, then there is a $k$-exotic algebraic equivalence 
     \[h_k L_{\Kpn}\ModE \simeq h_k \Dper(\modE)\Inc.\]
     In particular, $\Kpn$-local $E$-modules are exotically algebraic at large primes. 
 \end{corollary}
@@ -156,7 +156,7 @@ and we can form a local duality diagram for $\Mod_{HE_*}$ corresponding to \cref
 This is also $k$-exotic in the same range as \cref{ch1:thm:main-modules}. We can then combine the algebraicity for $\Modt$ and $\Mod_{HE_*}$ to get the following statement. 
 
 \begin{corollary}
-    Let $p$ be a prime, $n$ a non-negative integer and $E = E_p(n)$ the associated Johnson--Wilson theory. If $k=2p-2-n>0$, then there is an exotic equivalence 
+    Let $p$ be a prime, $n$ a non-negative integer and $E = E_p(n)$ denote the associated Johnson--Wilson theory. If we have $k=2p-2-n>0$, then there is a $k$-exotic equivalence 
     \[h_k \Modt \simeq h_k \Mod_{HE_*}\Int\]
     of homotopy $k$-categories. 
 \end{corollary}
@@ -179,7 +179,9 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
     \[E\otimes X\simeq E\otimes M_n X\simeq M_n (E\otimes X),\]
     where the last equivalence follows from $M_n$ being smashing. In particular, the restricted functor $E_*\colon \M\np\longrightarrow \ComodE$ factors through the category $\Modt$. By \cref{ch1:lm:monochromatic-iff-torsion-modules} and \cref{ch1:rm:torsion-iff-underlying-is-torsion} this means that $E_*X$ is an $I_n$-power torsion $E_*E$-comodule. 
 
-    For the converse, assume that we have $X\in \Sp\np$ such that $E_*X\in \Comodt$. Using the monochromatization functor we obtain a comparison map $M_n X\longrightarrow X$, which induces a map on $E$-modules $E\otimes M_n X\longrightarrow E\otimes X$. This map is an isomorphism on homotopy groups, as $E_*X$ was assumed to be $I_n$-power torsion. As $E_*$ is conservative on $\Sp\np$, the original comparison map $M_n X\longrightarrow X$ was an isomorphism, meaning that $X\in \M\np$. 
+    For the converse, assume that we have a spectrum $X\in \Sp\np$ such that $E_*X\in \Comodt$. Using the monochromatization functor we obtain a comparison map $M_n X\longrightarrow X$, which induces a map on $E$-modules 
+    \[E\otimes M_n X\longrightarrow E\otimes X.\] 
+    This map is an isomorphism on homotopy groups, as $E_*X$ was assumed to be $I_n$-power torsion. As $E_*$ is conservative on $\Sp\np$, the original comparison map $M_n X\longrightarrow X$ was an isomorphism, meaning that $X\in \M\np$. 
 \end{proof}
 
 \begin{lemma}
@@ -198,7 +200,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
 
     From \cite[5.7]{barthel-heard-valenzuela_2018} it follows that there is a commutative diagram of adjoint functors 
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \comod\EE 
             \arrow[r, yshift=2pt, "\epsilon_*"] 
             \arrow[d, xshift=2pt, "T_{I_n}^{E_*E}"] 
@@ -219,7 +221,7 @@ In this section the choice of $v_n$-periodic Landweber exact ring spectrum $E$ d
     By \cite[5.5]{barthel-heard-valenzuela_2018} there is an isomorphism
     \[T^{E_*E}_{I_n} (E_*E\otimes_{E_*}M) \cong \colim_k \iHom_{E_*E}(E_*/I_n^k, E_*E\otimes_{E_*}M),\]
     which by \cite[4.4]{barthel-heard-valenzuela_2018} gives
-    \[\colim_k \iHom_{E_*E}(E_*/I_n^k, E_*E\otimes_{E_*}M) \cong \colim_k (E_*E \otimes_{E_*} \Hom_{E_*}(E_*/I_n^k, M)).\]
+    \[\underset{k}\colim \iHom_{E_* \! E}(E_*/I_n^k, E_* E\underset{E_*}\otimes M) \cong \underset{k}\colim (E_* E \underset{E_*}\otimes \Hom_{E_*}(E_*/I_n^k, M)\hspace{-1pt}).\]
     As the tensor product $-\otimes_{E_*}-$ commutes with filtered colimits separately in each variable, and $M$ was assumed to be $I_n$-power torsion, the right hand side is precisely $E_*E\otimes_{E_*}M$.    
     
     Now, choosing the injective $Q$ in the top right corner and going through the square, gives an isomorphism 
@@ -350,7 +352,10 @@ The reason why \cref{ch1:thm:franke-algebraicity} works so well, is that there i
         \M\np\simeq \Sp\np\Int & \hSynE\Int \arrow[l, "\tau^{-1}"'] \arrow[r, "\tau \simeq 0"] & \Fr\np\Int.
     \end{tikzcd}    
 \end{center}
-Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria--Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences $\M\np\simeq \Sp\np\Int$ and $\Der(E_*E)\Int\simeq \Der(E_*E\Int)$. 
+Since $E_*$ is adapted on $\M\np$, we abstractly know that there is a deformation $\Der^\omega(\M\np)$ arising out of the work of Patchkoria--Pstr\a{}gowski in \cite{patchkoria-pstragowski_2021}, called the perfect derived category. This should give an equivalent ``internal'' approach to $I_n$-torsion synthetic spectra, much akin to the equivalences 
+\[\M\np\simeq \Sp\np\Int\] 
+and 
+\[\Der(E_*E)\Int\simeq \Der(E_*E\Int).\]
 
 Since $E$-local synthetic spectra are categorifications of the $E$-Adams spectral sequence, one should expect the above-mentioned local duality for $\hSynE$ to give a category $\hSynE\Inc$, which categorifies the $\Kpn$-local $E$-Adams spectral sequence. We plan to study such categorifications of the $\Kpn$-local $E$-Adams spectral sequence in future work joint with Marius Nielsen.
 

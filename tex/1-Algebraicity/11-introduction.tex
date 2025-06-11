@@ -24,7 +24,7 @@ Franke expanded upon this in \cite{franke_96} by conjecturing---and attempting t
 \[h \Sp\np\simeq h \Fr\np.\]
 Unfortunately, a subtle error was discovered in the proof by Patchkoria in \cite{patchkoria_2013}, but the result was recovered in \cite{pstragowski_2021} with a slightly worse bound: $2p-2>2n^2+2n$. Pstr\a{}gowski also proved that this equivalence gets ``stronger'' the larger the prime, where we not only get an equivalence of categories but an equivalence of $k$-categories 
 \[h_k \Sp\np\simeq h_k \Fr\np,\]
-for $k=2p-2-2n^2-2n$. Here $h_k \C$ denotes taking the homotopy $k$-category, given by $(k-1)$-truncating the mapping spaces in $\C$. At $k=1$, this gives the classical situation of taking the homotopy category $h\C$. Using and developing a more general machinery, Pstr\a{}gowski and Patchkoria proved in \cite{patchkoria-pstragowski_2021} that the above equivalence holds in Franke's conjectured bound:
+for $k=2p-2-2n^2-2n$. Here $h_k \C$ denotes taking the homotopy $k$-category, given by $(k-1)$-truncating the mapping spaces in $\C$. When $k=1$, this gives the classical situation of taking the homotopy category $h\C$. Using and developing a more general machinery, Pstr\a{}gowski and Patchkoria proved in \cite{patchkoria-pstragowski_2021} that the above equivalence holds in Franke's conjectured bound:
 \[2p-2>n^2+n.\] 
 
 The current belief is that these bounds are optimal. We know this to be true at the prime $2$, as Roitzheim proved in \cite{roitzheim_07} that the category $\Sp_{1,2}$ is \emph{rigid}, in the sense that any equivalence of homotopy categories $h\Sp_{1,2} \simeq h\C$ lifts to an equivalence $\Sp_{1,2}\simeq \C$. The $K_p(n)$-local analogue of Roitzheim's result also holds, as Ishak proved in \cite{ishak_19} that $\Sp_{K_2(1)}$ is rigid as well. Hence, exotic equivalences for $\Sp\np$ or $\SpKpn$ can only exist at primes that are large compared to the height. 
@@ -33,10 +33,11 @@ The above results imply that increasing the prime $p$ decreases how destructive 
 \[\prod_{\mathcal{F}}\Sp\np \simeq \prod_{\mathcal{F}}\Fr\np.\] 
 Expanding on their work, Barthel, Schlank, and Stapleton proved in \cite{barthel-schlank-stapleton_2021} a $\Kpn$-local version of the above result. More precisely, they show that there is a symmetric monoidal equivalence of $\infty$-categories
 \[\prod_{\mathcal{F}}\SpKpn \simeq \prod_{\mathcal{F}}\Frc,\]
-where the right-hand side consists of derived complete twisted comodules for the naturally occurring Landweber ideal $I_n\subseteq E_*$. 
+where the right-hand side consists of derived complete twisted comodules for the naturally occurring Landweber ideal 
+\[I_n = (p, v_1, v_2, \ldots, v_{n-1})\subseteq E_* .\] 
 
 \textbf{Statement of results:} We can summarize the most general of the above algebraicity results in the following table,
-\vspace{-10pt}
+
 \begin{table}[h]
     \centering
     \begin{tabular}{c|ccc}

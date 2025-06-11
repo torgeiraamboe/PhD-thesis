@@ -49,7 +49,7 @@ Most of the theory for synthetic spectra works straight out of the box also for 
 
 There is a map of excellent $\infty$-sites $f\: \Sp\fp\to \Sp\np\fp$ given by $E$-localizaton, which satisfies the covering lifting property of \cite[A.1.5]{pstragowski_2022}. Hence, the associated adjunction 
 \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \SynE \arrow[r, yshift=2pt, "f^*"] & \LSynE \arrow[l, yshift=-2pt, "f_*"]
     \end{tikzcd}
 \end{center}
@@ -87,7 +87,7 @@ The functor $\nu$ induces a deformation parameter $\tau$ on any synthetic spectr
 
     For the second we note that $E$-localization does not alter the $E_*$-homology. Via \cite[2.22, 4.43]{pstragowski_2022} this gives an adjunction 
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \LSynE \arrow[r, yshift=2pt] & \StableE, \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}
@@ -97,7 +97,7 @@ The functor $\nu$ induces a deformation parameter $\tau$ on any synthetic spectr
 In a certain sense, this makes $\LSynE$ a categorification of the \emph{conservative} adapted homology theory 
 \[E_{n*}\: \Sp\np\to \ComodE,\] 
 instead of normal synthetic spectra $\SynE$ being a categorification of 
-\[E_* \: \Sp\to \ComodE.\] \index{Homology theory!Adapted}
+\[E_* \: \Sp\to \ComodE.\index{Homology theory!Adapted}\] 
 
 % Given any $E_n$-finite projective $P$ we can localize it at $E_n$ to obtain a compact $E_n$-local spectrum $L_n P$. As $E_n$-homology is invariant under $E_n$-localization, this still has finitely generated and projective $E_n$-homology. We will denote by $\Sp_n\fp$ the full subcategory of $\Sp_n^\omega$ consisting of $E_n$-localizations of $E_n$-finite projectives. This still has a Grothendieck topology given by single $E_n$-epimorphisms, which, as $E_n$-localization is smashing, still is an excellent $\infty$-site. 
 
@@ -166,7 +166,7 @@ The justification for this name also in the synthetic setting is due to the foll
 
 \subsection{Compact generation}
 
-By \cref{ch1:lm:torsion-comodules-generated-by-compacts} from \hyperref[ch1]{Paper I} we know that the category $\Comodt$ is compactly generated, with an explicit set of compact generators given by 
+By \cref{ch1:lm:torsion-comodules-generated-by-compacts} from \hyperref[ch1]{Paper I} we know that the category of $I_n$-power torsion $E_*E$-comodules $\Comodt$ is compactly generated, with an explicit set of compact generators given by 
 \[\TorsE := \{G\otimes E_*/I_n^k \mid G\in \ComodE\fp, k\geq 1\}.\]
 For the moment we want to avoid any near-lying problematic telescopes in $E$-local synthetic spectra, and prove that the unique lift of $\Comodt$---which was our definition of $\MSynE$---is also a compactly generated localizing subcategory. This will require a more refined analysis compared to just lifting the localizing subcategories via \cref{ch3:thm:main}. 
 
@@ -226,7 +226,7 @@ The first thing we need is to compare prestable and stable compact objects.
 
     By \cite[C.1.1.6]{lurie_SAG} there is a commutative diagram
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Cat^{\mathrm{rex}}_\infty \arrow[r, "\SW(-)"] \arrow[d, "\Ind(-)"'] & \Cat^{\mathrm{rex}}_\infty \arrow[d, "\Ind(-)"] \\
             \PrL \arrow[r, "\Sp(-)"']                                                    & \PrL                                           
         \end{tikzcd}
@@ -236,7 +236,7 @@ The first thing we need is to compare prestable and stable compact objects.
     As all functors are symmetric monoidal, the equivalence is also symmetric monoidal. The category $\Ind(\LSyn_{E, \geq 0}^\omega)$ is $\LSyn_{E, \geq 0}$---as it is compactly generated---which we know stabilizes to $\LSynE$. We already know a collection of compact generators for $\LSynE$, namely $\LSynE^\omega$. This is a small stable $\infty$-category, and there is an equivalence 
     \[\Ind(\LSynE^\omega)\simeq \LSynE.\] 
     By \cite[5.3.2.11(3)]{Lurie_HA} the functor $\Ind$ is an equivalence between small stable $\infty$-categories and compactly generated $\infty$-categories. The inverse is given by taking compact objects $(-)^\omega$, hence we get our wanted equivalence 
-    \[\SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega.\]
+    \[\SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega. \qedhere\]
 \end{proof}
 
 We can now lift all the way from the abelian level to the stable level. 
@@ -257,19 +257,28 @@ We have now defined our lift, and it remains to prove that it has the expected p
     Let $\T^\heart\subseteq \ComodE^\omega$ be a Serre subcategory. The stable lift $\T$ is a thick subcategory of $\LSynE^\omega$. 
 \end{lemma}
 \begin{proof}
-    We have a fully faithful inclusion $\T\geqz\hookrightarrow\LSyn_{E, \geq 0}^\omega$, which gives a fully faithful inclusion 
-    \[\T = \SW(\T\geqz)\hookrightarrow \SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega\]
+    We have a fully faithful inclusion 
+    \begin{tikzcd}[sep = scriptsize]
+        \T\geqz \arrow[r, hook] & \LSyn_{E, \geq 0}^\omega,
+    \end{tikzcd}
+    which gives a fully faithful inclusion
+    \begin{center}
+    \begin{tikzcd}[sep = scriptsize]
+        \T = \SW(\T\geqz) \arrow[r, hook] & \SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega
+    \end{tikzcd}
+    \end{center}
+    %\[\T = \SW(\T\geqz)\hookrightarrow \SW(\LSyn_{E, \geq 0}^\omega)\simeq \LSynE^\omega\]
     by \cref{ch3:add:thm:prestable-freyd-stabilizes-to-stable-Freyd}. As $\T$ is a stable $\infty$-category by definition, we need only to check that it is closed under finite colimits in $\LSynE^\omega$. 
     
     Given a finite colimit in $\T = \SW(\T\geqz)$, it has to factor through $\T\geqz$ at some finite stage in the diagram 
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \T\geqz \arrow[r, "\Sigma"] & \T\geqz \arrow[r, "\Sigma"] & \T\geqz \arrow[r, "\Sigma"] & \cdots
         \end{tikzcd}
     \end{center}
     As $\T\geqz$ is closed under finite colimits in $\LSyn_{E, \geq 0}^\omega$, together with the fact that
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \T\geqz \arrow[r, "\Sigma"] \arrow[d] & \T\geqz \arrow[d] \\
             \LSyn_{E, \geq 0}^\omega \arrow[r, "\Sigma"']                  & \LSyn_{E, \geq 0}^\omega                  
         \end{tikzcd}
@@ -411,7 +420,7 @@ It is certainly nice to know that $\MSynE$ is compactly generated, but for compu
     There is a finite type $n$ spectrum $F(n)$, whose $E$-local synthetic analog $\nu L\np F(n)$ is compact. 
 \end{lemma}
 \begin{proof}
-    Let $I_n$ be the Landweber ideal $(p,v_1, v_2, \ldots, v_{n-1})$. By \cite[4.14]{hovey-strickland_99} there is a finite type $n$ generalized Moore spectrum $L\np\S/J$ for $J=(p^{i_0}, v_1^{i_1}, \ldots, v_{n-1}^{i_{n-1}})$ constructed by iterated fiber sequences. These fiber sequences all induce short exact sequences on $E_{*}$-homology, hence we can lift them to fiber sequences in synthetic $\LSynE$ by \cite[4.23]{pstragowski_2022}. In particular we have 
+    Let $I_n$ be the Landweber ideal $(p,v_1, v_2, \ldots, v_{n-1}) \subseteq E_*$. By \cite[4.14]{hovey-strickland_99} there is a finite type $n$ generalized Moore spectrum $L\np\S/J$ for $J=(p^{i_0}, v_1^{i_1}, \ldots, v_{n-1}^{i_{n-1}})$ constructed by iterated fiber sequences. These fiber sequences all induce short exact sequences on $E_{*}$-homology, hence we can lift them to fiber sequences in synthetic $\LSynE$ by \cite[4.23]{pstragowski_2022}. In particular we have 
     \[\nu (L\np\S/J) \simeq (\nu L\np\S)/\widetilde{J},\] 
     where $\widetilde{J}$ denotes $(\widetilde{p}^{i_0}, \widetilde{v}_1^{i_1}, \ldots, \widetilde{v}_{n-1}^{i_{n-1}})$. Since we used a finite number of shifts and cofiber sequences, $\nu (L\np\S/J)$ is a compact object in $\LSynE$. 
 \end{proof}
@@ -475,7 +484,7 @@ We recall the definition of the $I_n$-torsion stable category of comodules, as i
 \[\StableE\Int := \Loc_{\StableE}^\otimes(E_{*}/I_n).\] 
 We furthermore recall the definition of the stable category of $I_n$-power torsion comodules, see \cite[3.5]{barthel-heard-valenzuela_2020}, as 
 \[\Stable(\Comodt) := \Ind(\Thick^\otimes(\TorsE)),\]
-where $\TorsE$ denotes the collection of compact generators for $\Comodt$, see \cref{ch1:lm:torsion-comodules-generated-by-compacts}. 
+where $\TorsE$ denotes the collection of compact generators for the category $\Comodt$, see \cref{ch1:lm:torsion-comodules-generated-by-compacts}. 
 
 \begin{theorem}
     \label{ch3:add:thm:monochromatic-synthetic-special-fiber}
@@ -485,21 +494,22 @@ where $\TorsE$ denotes the collection of compact generators for $\Comodt$, see \
 \end{theorem}
 \begin{proof}
     By \cref{ch3:add:thm:deformation-properties-of-LSynE} there is a monoidal Barr--Beck adjunction \index{Barr--Beck!Monoidal adjunction}
+    \vspace{-10pt}
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \LSynE \arrow[r, yshift=2pt] & \StableE \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}
     As $\nu X \otimes C\tau \simeq E_{*} X$ by \cite[4.45]{pstragowski_2022}, we get a local duality adjunction 
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             (\LSynE, \nu L\np F(n)) \arrow[r, yshift=2pt] & (\Stable\EE, E_{*}F(n)) \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}
     %\[(\LSynE, \nu L\np F(n))\rightleftarrows (\Stable\EE, E_{*}F(n)).\]
     By \cref{ch1:thm:modular-bb-torsion} there is an induced monoidal Barr--Beck adjunction\index{Barr--Beck!Localizing $\otimes$-ideals}
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Loc_{\LSynE}^\otimes(\nu L\np F(n)) \arrow[r, yshift=2pt] & \Loc_{\StableE}^\otimes(E_{*}F(n)) \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center} 
@@ -511,7 +521,7 @@ where $\TorsE$ denotes the collection of compact generators for $\Comodt$, see \
     finishing the proof. 
 \end{proof}
 
-The computation of the generic fibre is very similar to \cref{ch3:add:thm:monochromatic-synthetic-special-fiber}, but we include it for completion. 
+The computation of the generic fibre of $\MSynE$ is very similar to \cref{ch3:add:thm:monochromatic-synthetic-special-fiber}, but we include it for completion. 
 
 \begin{theorem}
     Inverting the deformation parameter $\tau$ gives an equivalence $\MSynE[\tau^{-1}] \simeq \M\np$ of symmetric monoidal stable $\infty$-categories. 
@@ -520,14 +530,14 @@ The computation of the generic fibre is very similar to \cref{ch3:add:thm:monoch
     It follows from \cref{ch3:add:thm:deformation-properties-of-LSynE} that there is a local duality adjunction 
     %\[(\LSynE, \nu L\np F(n)) \rightleftarrows (\Sp\np, \tau^{-1}\nu L\np F(n))\]
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             (\LSynE, \nu L\np F(n)) \arrow[r,yshift=2pt] & (\Sp\np, \tau^{-1}\nu L\np F(n)) \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}
     which by \cref{ch1:thm:modular-bb-torsion} induces a Barr--Beck adjunction on the respective localizing $\otimes$-ideals. By \cite[4.40]{pstragowski_2022} there is an equivalence $\tau^{-1}\nu X \simeq X$, hence we get a monoidal Barr--Beck adjunction 
     %\[\Loc_{\LSynE}^\otimes(\nu L\np F(n))\rightleftarrows \Loc_{\Sp\np}^\otimes(L\np F(n)).\]
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Loc_{\LSynE}^\otimes(\nu L\np F(n)) \arrow[r,yshift=2pt] & \Loc_{\Sp\np}^\otimes(L\np F(n)) \arrow[l, yshift=-2pt]
         \end{tikzcd}
     \end{center}
@@ -542,7 +552,7 @@ showing that the deformation theory plays well with the classification result fo
 
 \subsection{Monoidal algebraicity}
 
-It is now natural to wonder whether this solves \cref{ch1:conj:monochromatic-monoidally-algebraic}---which states that at large enough primes the equivalence of $k$-categories 
+It is now natural to attempt to prove \cref{ch1:conj:monochromatic-monoidally-algebraic}---which states that at large enough primes the equivalence of $k$-categories 
 \[h_k\M\np \simeq h_k\Fr\np\Int\] 
 from \cref{ch1:thm:B} is symmetric monoidal---as the category $\MSynE$ seems to satisfy all the needed criteria to apply Barkan's monoidal algebraicity results of \cite{barkan_2023}. However, the category $\Comodt$ does not have enough flat objects, a requirement needed to use Barkan's result directly. Luckily, this can be avoided in this specific case. 
 
@@ -574,11 +584,11 @@ This now induces a symmetric monoidal equivalence on the respective localizing i
     is a symmetric monoidal equivalence of stable $\infty$-categories.  
 \end{corollary}
 \begin{proof}
-    The symmetric monoidal equivalence is immediate from \cref{ch3:add:cor:hypercomplete-at-large-primes}. The $t$-exactness also follows from this equivalence, as $\Der(E_*E\Int)$ is a $\pi$-stable localizing subcategory by \cite[3.7(2)]{barthel-heard-valenzuela_2020}, hence also compatible with the $t$-structure. 
+    The symmetric monoidal equivalence follows directly from \cref{ch3:add:cor:hypercomplete-at-large-primes}. The $t$-exactness also follows from this equivalence, as $\Der(E_*E\Int)$ is a $\pi$-stable localizing subcategory by \cite[3.7(2)]{barthel-heard-valenzuela_2020}, hence also compatible with the $t$-structure. 
 \end{proof}
 
 \begin{remark}
-    It is possible to interpret $\Stable(\Comodt)$ as a category of sheaves itself, and run the same argument as for $\StableE$. This gives an even stronger claim, as $\Comodt$ has finite cohomological dimension $n^2+n$ whenever $p-1\nmid n$---see \cref{ch1:lm:cohomological-dimension-torsion-comodules}. This makes the situation very reminiscent of \cite[4.7]{barthel-heard_2018}, where Barthel--Heard prove an analogous statement for the Hopf algebroid $(E_*, K_*E)$. \index{Hopf algebroid}
+    It is possible to interpret $\Stable(\Comodt)$ as a category of sheaves itself, and run the same argument as for $\StableE$. This gives an even stronger claim, as $\Comodt$ has finite cohomological dimension $n^2+n$ whenever $p-1\nmid n$, as we proved in \cref{ch1:lm:cohomological-dimension-torsion-comodules}. This makes the situation very reminiscent of \cite[4.7]{barthel-heard_2018}, where Barthel--Heard prove an analogous statement for the Hopf algebroid $(E_*, K_*E)$. \index{Hopf algebroid}
 \end{remark}
 
 \begin{theorem}
@@ -607,7 +617,15 @@ We need one final piece of information in order to apply Barkan's algebraicity r
     The category of connected monochromatic synthetic spectra $\MSyn_{E, \geq 0}$ is Postnikov complete. 
 \end{corollary}
 \begin{proof}
-    Recall that we have a fully faithful $t$-exact inclusion $\MSynE \hookrightarrow \LSynE$. This functor has a right adjoint $M_n^\Syn \: \LSynE \to \MSynE$. As $M_n^\Syn$ is right adjoint to a $t$-exact functor, it is both left $t$-exact and limit-preserving. Hence, the claim follows from \cref{ch3:add:lm:LSynE-complete}.
+    Recall that we have a fully faithful $t$-exact inclusion 
+    \begin{center}
+    \begin{tikzcd}[sep = scriptsize]
+        \MSynE \arrow[r, hook] &\LSynE.
+    \end{tikzcd}
+    \end{center}
+    This functor has a right adjoint 
+    \[M_n^\Syn \: \LSynE \to \MSynE.\] 
+    As $M_n^\Syn$ is right adjoint to a $t$-exact functor, it is both left $t$-exact and limit-preserving. Hence, the claim follows from \cref{ch3:add:lm:LSynE-complete}.
 \end{proof}
 
 Finally, we can conclude with a symmetric monoidal version of \cref{ch1:thm:B} as stated in \cref{ch1:conj:monochromatic-monoidally-algebraic}. 

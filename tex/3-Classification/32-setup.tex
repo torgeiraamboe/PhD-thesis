@@ -29,7 +29,9 @@ The heart $\C^\heart$ is always equivalent to the nerve of its homotopy category
     \index{t-structure!Homotopy groups}
     The composite functor 
     \[\tau\geqz\circ\tau\leqz\simeq\tau\leqz\circ\tau\geqz \: \C\to \C^\heart\]
-    is denoted by $\pi_0^\heart$ and its composition with the shift functor $X\to X[-n]$ by $\pi_n^\heart$. These are called the \emph{heart-valued homotopy groups} of $X$. 
+    is denoted by $\pi_0^\heart$ and its composition with the shift functor 
+    \[X\to X[-n]\] 
+    by $\pi_n^\heart$. These are called the \emph{heart-valued homotopy groups} of $X$. 
 \end{definition}
 
 The last definition we will need, before going on to prestable categories is the following niceness condition. 
@@ -116,7 +118,7 @@ We also have some examples showing up in stable homotopy theory.
 \begin{remark}
     \label{ch3:rm:grothendieck-iff-right-complete-and-colims}
     \index{Stabilization}
-    For any Grothendieck prestable category $\C\geqz$ the functor $\Sp(-)$, sending $\C\geqz$ to its stabilization, $\Sp(\C\geqz)$, provides a one-to-one correspondence between Grothendieck prestable categories and stable categories equipped with a right complete $t$-structure compatible with filtered colimits. This is one of the main reasons to study prestable categories, as being prestable is a property, while having a $t$-structure is extra structure. 
+    For any Grothendieck prestable category $\C\geqz$ the functor $\Sp(-)$, sending $\C\geqz$ to its stabilization, $\Sp(\C\geqz)$, provides a one-to-one correspondence between Grothendieck prestable categories and stable categories that are equipped with a right complete $t$-structure compatible with filtered colimits. This is one of the main reasons to study prestable categories, as being prestable is a property, while having a $t$-structure is extra structure. 
 \end{remark}
 
 % \begin{remark}
@@ -143,7 +145,7 @@ If $\C$ is a stable category with a right complete $t$-structure $(\C\geqz, \C\l
 
 \begin{lemma}[{\cite[C.1.2.10]{lurie_SAG}}]
     \label{ch3:lm:right-complete-then-equiv-to-sp}
-    Let $\C$ be a stable category. If $\C$ has a right complete $t$-structure, then there is an equivalence $\Sp(\C\geqz)\simeq \C$. 
+    Let $\C$ be a stable category. If $\C$ has a right complete $t$-structure $(\C\geqz, \C\leqz)$, then there is an equivalence $\Sp(\C\geqz)\simeq \C$. 
 \end{lemma}
 
 This fact also extends to equivalences of categories, as proven by Antieau. 
@@ -185,8 +187,9 @@ For the rest of the paper we will use the following terminology.
 
 \begin{remark}
     In \cite[Section C.3.1]{lurie_SAG} Lurie constructs a category of $t$-stable categories. If we denote this by $t\Cat$ then the contents of \cref{ch3:rm:grothendieck-iff-right-complete-and-colims} can be described as an adjoint pair of equivalences
+    \vspace{-1em}
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Groth \arrow[r, "\Sp(-)", yshift=2pt] & t\Cat \arrow[l, "(-)\geqz", yshift=-2pt].
         \end{tikzcd}
     \end{center}
@@ -202,7 +205,7 @@ For the rest of the paper we will use the following terminology.
 \subsection{Localizing subcategories}
 \label{ch3:ssec:localizing-subcategories}
 
-We now turn our attention to localizing subcategories. As we are working in three interconnected settings---stable, prestable and abelian---and all settings use the same terminology, we feel that this section is very ripe for confusions to occur. In an attempt to clarify which setting we are in, we will usually refer to localizing subcategories of stable categories as \emph{stable localizing subcategories}, localizing subcategories of prestable categories as \emph{prestable localizing subcategories} and localizing subcategories of abelian categories as \emph{abelian localizing subcategories}. We will, however, sometimes omit the categorical prefix when we feel that it is clear from context. 
+Let us now turn our attention to localizing subcategories. As we are working in three interconnected settings---stable, prestable and abelian---and all settings use the same terminology, we feel that this section is very ripe for confusions to occur. In an attempt to clarify which setting we are in, we will usually refer to localizing subcategories of stable categories as \emph{stable localizing subcategories}, localizing subcategories of prestable categories as \emph{prestable localizing subcategories} and localizing subcategories of abelian categories as \emph{abelian localizing subcategories}. We will, however, sometimes omit the categorical prefix when we feel that it is clear from context. 
 
 \begin{definition}
     \index{Thick subcategory}
@@ -234,7 +237,7 @@ The definition of a localizing subcategory of a prestable category is very simil
 \end{definition}
 
 \begin{remark}
-    For Grothendieck prestable categories, this is equivalent to the assertion that $C'$ is a $(-1)$-truncated object in $\C_{/C}$ via the map $f$, which is the more standard definition of being a sub-object---see \cite[C.2.3.4]{lurie_SAG}
+    In a Grothendieck prestable category $\C\geqz$, this is equivalent to the assertion that $C'$ is a $(-1)$-truncated object in $\C_{/C}$ via the map $f$, which is the more standard definition of being a sub-object---see \cite[C.2.3.4]{lurie_SAG}
 \end{remark}
 
 \begin{definition}[{\cite[C.2.3.3]{lurie_SAG}}]
@@ -244,7 +247,7 @@ The definition of a localizing subcategory of a prestable category is very simil
 
 \begin{remark}
     \label{ch3:rm:prestable-localizing-is-Grothendieck}
-    If $\C\geqz$ is Grothendieck prestable, then any prestable localizing subcategory $\L\geqz$ is by \cite[C.5.2.1]{lurie_SAG} itself a Grothendieck prestable category. This means, in particular, that $\L\geqz$ is the connected part of a colimit-compatible $t$-structure on a stable category, hence using the notation $\L\geqz$ is not abusive. 
+    If $\C\geqz$ is a Grothendieck prestable category, then any prestable localizing subcategory $\L\geqz$ is by \cite[C.5.2.1]{lurie_SAG} itself a Grothendieck prestable category. This means, in particular, that $\L\geqz$ is the connected part of a colimit-compatible $t$-structure on a stable category, hence using the notation $\L\geqz$ is not abusive. 
 \end{remark}
 
 \begin{remark}
@@ -336,7 +339,9 @@ As one perhaps should expect at this point, Abelian localizing subcategories are
 \begin{proposition}[{\cite[C.5.1.1, C.5.1.6]{lurie_SAG}}]
     \label{ch3:prop:abelian-localizing-iff-kernel-of-localization}
     \index{Localization}
-    A full subcategory $\T\subseteq \A$, where $\A$ is Grothendieck abelian, is an abelian localizing subcategory if and only if there is an exact localization functor $L\:\A\to \B$, such that $\B$ is a Grothendieck abelian category and $\T$ is the kernel of $L$. 
+    A full subcategory $\T\subseteq \A$, where $\A$ is Grothendieck abelian, is an abelian localizing subcategory if and only if there is an exact localization functor 
+    \[L\:\A\to \B,\] 
+    such that $\B$ is a Grothendieck abelian category and $\T$ is the kernel of $L$. 
 \end{proposition}
 
 % Later in the paper we will need the following technical lemma, which allows us to define weak Serre subcategories via short exact sequences instead of $5$-term ones. 
@@ -358,9 +363,9 @@ The first thing we need is to be able to recognize stable localizing subcategori
 \begin{corollary}
     \label{ch3:cor:t-stable-implies-equiv-to-sp}
     If $\C$ is a stable category with a right complete $t$-structure and $\L$ a $t$-stable localizing subcategory, then there is an equivalence $\L\simeq \Sp(\L\geqz)$. 
-\end{corollary}
+\end{corollary} 
 \begin{proof}
-    This follows directly from \cref{ch3:prop:induced-t-structure-on-stable-localizing} and \cref{ch3:lm:right-complete-then-equiv-to-sp}.
+    This holds by \cref{ch3:prop:induced-t-structure-on-stable-localizing} and \cref{ch3:lm:right-complete-then-equiv-to-sp}.
 \end{proof}
 
 Using this we can increase the strength of \cref{ch3:prop:induced-t-structure-on-stable-localizing} by also incorporating compatibility with filtered colimits. Recall that we use the name $t$-stable category for a stable category with a right complete $t$-structure compatible with filtered colimits. 
@@ -422,7 +427,9 @@ We can then relate this to the prestable situation via the following lemma.
 
 \begin{lemma}[{\cite[C.2.4.4]{lurie_SAG}}]
     \label{ch3:lm:exact-functor-induces-left-exact-functor}
-    If $F\:\C\to \D$ is a $t$-exact functor between $t$-stable categories, then the induced functor of Grothendieck prestable categories $F\geqz\:\C\geqz\to\D\geqz$ is left exact. 
+    If $F\:\C\to \D$ is a $t$-exact functor between $t$-stable categories, then the induced functor 
+    \[F\geqz\:\C\geqz\to\D\geqz\] 
+    of Grothendieck prestable categories is left exact. 
 \end{lemma}
 
 \begin{remark}
@@ -468,9 +475,17 @@ We can then conclude this section with the following bijection.
 \end{corollary}
 \begin{proof}
     From \cref{ch3:rm:kernel-of-t-exact-then-prestable-localizing} and \cref{ch3:lm:prestable-localizing-then-kernel-of-t-exact} we have maps 
-    \[\texact\overset{(-)\geqz}\to \prlocalizing\] 
+    \begin{center}
+    \begin{tikzcd}[sep = large]
+        \texact \arrow[r, "(-)\geqz"] &\prlocalizing
+    \end{tikzcd}
+    \end{center}
     and 
-    \[\prlocalizing\overset{\Sp(-)}\to \texact\] 
+    \begin{center}
+    \begin{tikzcd}[sep = large]
+        \prlocalizing \arrow[r, "\Sp(-)"] &\texact
+    \end{tikzcd}
+    \end{center}
     These are mutually inverse functors by \cref{ch3:cor:t-stable-implies-equiv-to-sp}, and the fact that any prestable localizing subcategory of a Grothendieck prestable category is itself a Grothendieck prestable category, see \cref{ch3:rm:prestable-localizing-is-Grothendieck}. 
 \end{proof}
 

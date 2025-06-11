@@ -65,23 +65,22 @@ The following theorem is a slightly restricted version of the abstract local dua
     Let $(\C, \K)$ be a local duality context. Then
     \begin{enumerate}
         \item the functors $\Gamma$ and $L$ are smashing, meaning that there are natural equivalences of functors 
-        \[\Gamma X\simeq X\otimes \Gamma \1 \quad\text{ and }\quad LX\simeq X\otimes L\1,\]
+        \[\Gamma X\simeq X\otimes \Gamma \1 \quad\text{ and }\quad LX\simeq X\otimes L\1;\]
         \item the functors $\Lambda$ and $V$ are cosmashing, meaning there are natural equivalences 
-        \[\Lambda X\simeq \iHom(\Gamma \1,X) \quad\text{ and }\quad VX\simeq \iHom(L\1, X),\] 
-        and
+        \[\Lambda X\simeq \iHom(\Gamma \1,X) \quad\text{ and }\quad VX\simeq \iHom(L\1, X);\] 
         \item the functors 
         \[\Gamma\: \C\Kcomp\longrightarrow \C\Ktors \quad\text{ and }\quad \Lambda\: \C\Ktors\longrightarrow \C\Kcomp\] 
         are mutually inverse symmetric monoidal equivalences of categories.
     \end{enumerate}
     This can be summarized by the following diagram of adjoints\index{Local duality!Diagram}
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
                 & {\C\Kloc} \\
                 & {\C} \\
                 {\C\Ktors} && {\C\Kcomp}
-                \arrow["L", xshift=-4pt, from=2-2, to=1-2]
+                \arrow["L", xshift=-5pt, from=2-2, to=1-2]
                 \arrow[from=1-2, to=2-2]
-                \arrow["V", xshift=4pt, from=2-2, to=1-2, swap]
+                \arrow["V", xshift=5pt, from=2-2, to=1-2, swap]
 
                 \arrow["\Lambda", yshift=2pt, xshift=2pt, from=2-2, to=3-3]
                 \arrow[yshift=-2pt, xshift=0pt, from=3-3, to=2-2]
@@ -115,7 +114,7 @@ We have two main examples of interest for this paper.
     \index{Invariant ideal!Regular}
     Let $(A,\Psi)$ be an Adams type Hopf algebroid, for example the Hopf algebroid $(R_*, R_*R)$ for an Adams type ring spectrum $R$---see \cite[A.1]{ravenel_86} and \cite{hovey_04} for details. Denote by $\Der(\Psi)$ the derived stable $\infty$-category associated to the symmetric monoidal Grothendieck abelian category $\Comod_\Psi$. This is defined using the model structure from \cite{barnes-roitzheim_2011}. If $I\subseteq A$ is a finitely generated invariant regular ideal, then $(\Der(\Psi), A/I)$ is a local duality context, with associated local duality diagram
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             & {\Der(\Psi)\Iloc} \\
             & {\Der(\Psi)} \\
             {\Der(\Psi)\Itors} && {\Der(\Psi)\Icomp}
@@ -145,7 +144,7 @@ The following example comes from chromatic homotopy theory. For a good introduct
     \index{Local duality!Chromatic}
     Let $E$ denote Morava $E$-theory at a prime $p$ and a height $n$. If $F(n)$ is a finite spectrum of type $n$, then the pair $(\Sp\np, L\np F(n))$ is a local duality context. The corresponding diagram can be recognized as
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
                 & {\Sp_{n-1,p}} \\
                 & {\Sp\np} \\
                 {\M\np} && {\SpKpn}
@@ -205,7 +204,7 @@ In this section we identify the category $\Der(\Psi)\Itors$---as obtained in \cr
 \begin{definition}
     \label{ch1:def:I-power-torsion-comodule}
     \index{I-power torsion!Comodule}
-    Let $(A,\Psi)$ be an Adams Hopf algebroid and $I\subseteq A$ a regular invariant ideal. The\emph{$I$-power torsion} of a comodule $M$ is defined as 
+    Let $(A,\Psi)$ be an Adams Hopf algebroid and let $I\subseteq A$ a regular invariant ideal. The \emph{$I$-power torsion} of a comodule $M$ is defined as 
     \[T_I^\Psi M = \{x\in M \mid I^k x = 0 \text{ for some } k\in \N\}.\]
     We say a comodule $M$ is \emph{$I$-power torsion} if the natural comparison map $T_I^\Psi M\longrightarrow M$ is an equivalence. 
 \end{definition}
@@ -285,7 +284,7 @@ We will also need local duality  for the periodic derived category associated to
     Let $(A, \Psi)$ be an Adams type (graded) Hopf algebroid. Then the shift functor $[1]\: \Comod_\Psi\longrightarrow \Comod_\Psi$
     defined by $(TM)_k = M_{k-1}$ is a local grading on $\Comod_\Psi$. Denote the corresponding periodic derived category by $\Dper(\Psi)$. The pair $(\Dper(\Psi), P(A/I))$ is a local duality context with associated local duality diagram\index{Local duality!Diagram}
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         & {\Dper(\Psi)\Iloc} \\
         & {\Dper(\Psi)} \\
         {\Dper(\Psi)\Itors} && {\Dper(\Psi)\Icomp}
@@ -306,7 +305,7 @@ We will also need local duality  for the periodic derived category associated to
     \end{center}
     The functors in the diagram are induced by the functors from \cref{ch1:ex:local-duality-comod}. In fact, there is a diagram 
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Der(\Psi)\Itors 
             \arrow[d, xshift=-2pt, "P", swap] 
             \arrow[r, yshift=2pt]       
@@ -333,7 +332,7 @@ We will also need local duality  for the periodic derived category associated to
 \end{construction} 
 
 \begin{remark}
-    In the specific case of $(A, \Psi) = (E_0, E_0E)$ and $I\subseteq E_0$ the Landweber ideal $I_n$, then the above construction is \cite[3.12]{barthel-schlank-stapleton_2021}. 
+    In the specific case where $(A, \Psi) = (E_0, E_0E)$ and $I\subseteq E_0$ is the Landweber ideal $I_n$, then the above construction is \cite[3.12]{barthel-schlank-stapleton_2021}. 
 \end{remark}
 
 There is now some ambiguity to take care of for our category of interest $\Dper(\Psi)\Itors$. In the picture above, we do mean that we take $I$-torsion objects in $\Dper(\Psi)$, i.e., $[\Dper(\Psi)]\Itors$, but we could also take the periodization of the category $\Der(\Psi\Itors)$ as our model. Luckily, there is no choice, as they are equivalent. This can be thought of as the periodic version of \cref{ch1:lm:derived-torsion-if-homology-torsion}.

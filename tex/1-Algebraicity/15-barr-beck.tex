@@ -10,7 +10,7 @@ In this appendix we prove that the monoidal Barr--Beck theorem---a monoidal vers
     \index{Barr--Beck!Monoidal}
     Let $\C$ and $\D$ be presentably symmetric monoidal stable $\infty$-categories, and 
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \C \arrow[r, yshift=2pt, "F"] & \D \arrow[l, yshift=-2pt, "G"]
     \end{tikzcd}
     \end{center}
@@ -38,7 +38,7 @@ Let $(\C, \K)$ be a local duality context. We wish to prove that the associated 
     \index{Local duality!Adjunction}
     Let $(\C, \K)$ and $(\D, \L)$ be local duality contexts. A \emph{map of local duality contexts} is a symmetric monoidal colimit-preserving functor $F\colon \C\longrightarrow \D$ such that $F(\K)\subseteq \L$. If, in addition $\Loc_\D^\otimes(F(\K)) = \Loc_\D^\otimes(\L)$, then we say $F$ is a \emph{strict} map of local duality contexts. A monoidal adjunction $(F\dashv G)\colon \C\longrightarrow \D$ such that $F$ is a strict map of local duality contexts is called a \emph{local duality adjunction}, sometimes denoted 
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         (\C, \K) \arrow[r, yshift=2pt, "F"] & (\D, \L) \arrow[l, yshift=-2pt, "G"]
     \end{tikzcd}
     \end{center}
@@ -57,7 +57,7 @@ The following lemma is essentially the ``non-geometric'' version of \cite[5.11]{
     \index{Localizing subcategory!$\otimes$-ideal}
     Let $(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L)$ be a local duality adjunction. Then, the adjunction induces a monoidal adjunction on localizing $\otimes$-ideals
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \Loc_\C^\otimes(\K) \arrow[r, "F'", yshift=2] &  \Loc_\D^\otimes(\L) \arrow[l, "G'", yshift=-2].
     \end{tikzcd}
     \end{center}
@@ -96,7 +96,7 @@ The key feature for us is that such an induced adjunction inherits the property 
     \index{Barr--Beck!Localizing $\otimes$-ideals}
     Let $(F\dashv G)\colon (\C, \K)\longrightarrow (\D, \L)$ be a local duality adjunction. If $(F\dashv G)$ satisfies the Barr--Beck criteria, then the induced monoidal adjunction on localizing $\otimes$-ideals
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Loc_\C^\otimes(\K) \arrow[r, "F'", yshift=2] & \Loc_\D^\otimes(\L) \arrow[l, "G'", yshift=-2]
         \end{tikzcd}
     \end{center}

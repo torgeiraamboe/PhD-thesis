@@ -228,13 +228,13 @@ The discretization adjunction of \cref{ch0:const:discretization-adjunction} also
     \index{Hopf algebroid!Discretization}
     Let $(A,\Psi)$ be an Adams Hopf algebroid. In this situation the discretization adjunction 
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \Comod_\Psi \arrow[r, yshift = 2pt, "\epsilon_*"] & \Mod_A \arrow[l, yshift=-2pt, "\epsilon^*"]
     \end{tikzcd}
     \end{center}
     induces an adjunction
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \Der(\Psi) \arrow[r, yshift = 2pt, "\epsilon_*"] & \Der(A) \arrow[l, yshift=-2pt, "\epsilon^*"].
     \end{tikzcd}
     \end{center}
@@ -290,9 +290,15 @@ We first review the abelian situation---the internal approach. We follow \cite{b
 \end{remark}
 
 \begin{remark}
-    The inclusion of the full subcategory 
-    \[\Mod_A\Itors\hookrightarrow \Mod_A\] 
-    has a right adjoint, which coincides with the $I$-power torsion $T_I^A(-)$. This gives the $I$-power torsion another description as the colimit 
+    The inclusion of the full subcategory
+    \begin{center}
+        \begin{tikzcd}
+            \Mod_A\Itors \arrow[r, hook] &\Mod_A
+        \end{tikzcd}
+    \end{center}
+    has a right adjoint, which coincides with the $I$-power torsion functor 
+    \[T_I^A(-)\: \Mod_A \to \Mod_A\Itors.\] 
+    This gives the $I$-power torsion another description as the colimit 
     \[T_I^A M \cong \colim_k \iHom_A (A/I^k, M).\]
     Furthermore, it means that the category $\Mod_R\Itors$ is a localizing subcategory of $\Mod_R$, in the sense that it is a full subcategory closed under quotients, subobjects, extensions and arbitrary coproducts. 
 \end{remark}
@@ -335,8 +341,14 @@ We want to extend the construction of $I$-torsion and $L$-complete modules to ge
 
 \begin{remark}
     As for modules, the inclusion 
-    \[\Comod_\Psi\Itors\hookrightarrow \Comod_\Psi\] 
-    has a right adjoint that corresponds to the $I$-power torsion construction $T_I^\Psi$. This, by \cite[5.5]{barthel-heard-valenzuela_2018} also has the alternative description
+    \begin{center}
+        \begin{tikzcd}
+            \Comod_\Psi\Itors \arrow[r, hook] &\Comod_\Psi
+        \end{tikzcd}
+    \end{center}
+    has a right adjoint that corresponds to the $I$-power torsion construction 
+    \[T_I^\Psi\: \Comod_\Psi \to \Comod_\Psi\Itors.\] 
+    This, by \cite[5.5]{barthel-heard-valenzuela_2018} also has the alternative description
     \[T_I^\Psi M \cong \colim_k \iHom_\Psi (A/I^k, M).\]
     This again means that the category $\Comod_\Psi\Itors$ is a localizing subcategory of $\Comod_\Psi$. 
 \end{remark}
@@ -399,8 +411,8 @@ We now move to the external approach, using local duality as in \cref{ch0:ssec:l
     \label{ch0:const:local-duality-hopf-algebroid}
     \index{Local duality!Diagram}
     If $(A, \Psi)$ is an Adams Hopf algebroid and $I\subseteq A$ a regular invariant ideal, then $A/I$, treated as a complex concentrated in degree zero, is by \cite[5.13]{barthel-heard-valenzuela_2018} a compact object in $\Der(\Psi)$. Thus, $(\Der(\Psi), A/I)$ is a local duality context, and we can consider the corresponding local duality diagram
-    \begin{equation*}
-        \begin{tikzcd}
+    \begin{center}
+        \begin{tikzcd}[sep = large]
             & {\Der(\Psi)\Iloc} \\
             & {\Der(\Psi)} \\
             {\Der(\Psi)\Itors} && {\Der(\Psi)\Icomp}
@@ -414,7 +426,7 @@ We now move to the external approach, using local duality as in \cref{ch0:ssec:l
             \arrow[bend left=35, dashed, from=1-2, to=3-3]
             \arrow["\simeq"', swap, from=3-1, to=3-3]
         \end{tikzcd}    
-    \end{equation*}
+    \end{center}
     where we have used the superscript $I$ instead of $A/I$ for simplicity, and to invoke the connection to $I$-power torsion and $L$-complete objects. This gives, in particular, an alternative notion of $I$-torsion objects in $\Der(\Psi)$ as $\Der(\Psi)\Itors$. 
 \end{construction}
 

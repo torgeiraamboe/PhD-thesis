@@ -44,7 +44,7 @@ Given any $\infty$-category $\D$, the category of endofunctors $\Fun(\D, \D)$ ca
 \begin{example}
     Any adjunction of $\infty$-categories
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \D \arrow[r, yshift=2pt, "F"] & \mathcal{E} \arrow[l, yshift=-2pt, "G"]
     \end{tikzcd}
     \end{center}
@@ -87,7 +87,7 @@ The existence of the free-forgetful adjunction for a monad $M$ implies that any 
 
 The free-forgetful adjunction restricts to an adjunction on the Kleisli category: 
 \begin{center}
-\begin{tikzcd}
+\begin{tikzcd}[sep = large]
     \D \arrow[r, yshift=2pt, "{F_M}"] & \LMod_M\fr(\D) \arrow[l, yshift=-2pt, "{U_M\fr}"].
 \end{tikzcd}
 \end{center}
@@ -117,7 +117,7 @@ Using Lurie's $\infty$-categorical version of the Barr--Beck theorem we can also
     \[F_C\: \mathcal{E}\to \LComod_C(\mathcal{E}).\] 
     We call this the \emph{cofree comodule functor}, and hence the adjunction $U_C\dashv F_C$ is called the \emph{cofree-forgetful} adjunction of $C$. Any adjunction 
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \D \arrow[r, yshift=2pt, "F"] & \mathcal{E} \arrow[l, yshift=-2pt, "G"]
     \end{tikzcd}
     \end{center}
@@ -128,7 +128,7 @@ Using Lurie's $\infty$-categorical version of the Barr--Beck theorem we can also
     \index{Comonad!Kleisli category}
     The essential image of $F_C$ in $\LComod_C(\mathcal{E})$ determines the Kleisli category $\LComod_C\fr(\mathcal{E})$ of cofree coalgebras. The cofree-forgetful adjunction restricts to an adjunction on cofree comodules, 
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \Comod_C\fr(\mathcal{E}) \arrow[r, yshift=2pt, "{U_C\fr}"] & \mathcal{E} \arrow[l, yshift=-2pt, "F_C"]
     \end{tikzcd}
     \end{center}
@@ -290,7 +290,7 @@ where the first map is given by the adjunction unit and the second by the symmet
     \[\phi\: FG \to F(\1_\C)\otimes_\D (-),\] 
     and consequently an adjunction 
     \begin{center}
-        \begin{tikzcd}
+        \begin{tikzcd}[sep = large]
             \Comod_{FG}(\D) \arrow[r, yshift=2pt, "\phi_*"] & \Comod_{F(\1_\C)\otimes_\D (-)}(\D) \arrow[l, yshift=-2pt, "\phi^*"]
         \end{tikzcd}
     \end{center}

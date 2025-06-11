@@ -15,11 +15,11 @@ We want to compare these localizing subcategories of $\C$ to subcategories of $\
 
 The above theorem also holds when we exclude the existence of coproducts, giving a one-to-one correspondence between $\pi$-stable thick subcategories of $\C$ and weak Serre subcategories of $\C^\heart$. This generalizes the similar result of Zhang--Cai (\cite{zhang-cai_2017}) to the setting of unbounded $t$-structures, see \cref{ch3:prop:classification-weak-serre} and \cref{ch3:cor:classification-weak-serre-bounded}. 
 
-There is also a notion of \emph{localizing subcategories} of the abelian category $\C^\heart$---being Serre subcategories closed under arbitrary coproducts---and we want to understand how the correspondence in \cref{ch3:thm:A} can be restricted to this setting. In order to do this we use the bridge between stable $\infty$-categories with a $t$-structure and prestable $\infty$-categories, as developed mainly by Lurie in \cite[App. C]{lurie_SAG}. A prestable $\infty$-category acts as the connected part of the $t$-structure, denoted $\C\geqz$, and they allow us to study $t$-structures on $\C$ indirectly, without carrying around extra data. 
+There is also a notion of \emph{localizing subcategories} of the abelian category $\C^\heart$---which are the Serre subcategories closed under arbitrary coproducts---and we want to understand how the correspondence in \cref{ch3:thm:A} can be restricted to this setting. In order to do this we use the bridge between stable $\infty$-categories with a $t$-structure and prestable $\infty$-categories, as developed mainly by Lurie in \cite[App. C]{lurie_SAG}. A prestable $\infty$-category acts as the connected part of the $t$-structure, denoted $\C\geqz$, and they allow us to study $t$-structures on $\C$ indirectly, without carrying around extra data. 
 
-Lurie introduced the notion of localizing subcategories of the prestable $\infty$-category $\C\geqz$, which more closely mimics the construction of localizing subcategories of abelian categories. The prestable analog of a $\pi$-stable localizing subcategory are the \emph{separating localizing subcategories}. Lurie classified the separating localizing subcategories of $\C\geqz$ in \cite[C.5.2.7]{lurie_SAG}, by proving that there is a one-to-one correspondence
+In \textit{op. cit.} Lurie introduced the notion of localizing subcategories of the prestable $\infty$-category $\C\geqz$, which more closely mimics the construction of localizing subcategories of abelian categories. The prestable analog of a $\pi$-stable localizing subcategory are the \emph{separating localizing subcategories}. Lurie classified the separating localizing subcategories of $\C\geqz$ in \cite[C.5.2.7]{lurie_SAG}, by proving that there is a one-to-one correspondence
 \[\separating \simeq \ablocalizing.\]
-Our second main theorem provides an extension of this correspondence to the stable $\infty$-category $\C$, allowing us to strengthen \cref{ch3:thm:A} to non-weak localizing subcategories. This interacts well with existing classifications of localizing subcategories in modules over noetherian rings and quasicoherent sheaves on noetherian schemes. 
+Our second main theorem provides an extension of this correspondence to the stable $\infty$-category $\C$, allowing us to strengthen \cref{ch3:thm:A} to non-weak localizing subcategories. This interacts well with existing classifications of localizing subcategories in categories of modules over noetherian rings and quasicoherent sheaves on noetherian schemes. 
 
 % In order to avoid confusion we follow \cite{hovey-strickland_2005a} and \cite{barthel-heard_2018} in using the name \emph{hereditary torsion theories} instead of localizing subcategories of the heart $\C^\heart$. These two notions are equivalent in Grothendieck abelian categories, hence a natural alternative. 
 
@@ -32,41 +32,44 @@ Note that any stable $\infty$-category is prestable, hence the above result migh
 
 The results of the paper can be summarized in the following diagram, showcasing the bijections ($\simeq$) and the inclusions ($\subseteq$) between the different types of subcategories. 
 
+\newpage 
 
 \begin{center}
-    \adjustbox{scale=0.98,center}{
-    \begin{tikzcd}
+    \scalebox{1.2}{
+    \rotatebox{90}{
+    \begin{tikzcd}[ampersand replacement=\&, sep = large]
         \tcompatible 
         \arrow[rrd, "(-)^\heart"]
-        &&\\
+        \&\&\\
         \pistable 
         \arrow[rr, "\simeq"] 
         \arrow[u, hook, "\subseteq", swap] 
-        && 
+        \&\& 
         \weaklocalizing  
         \\
         \piexact 
         \arrow[r, "\simeq"] 
         \arrow[d, hook, "\subseteq"]
         \arrow[u, hook, "\subseteq", swap] 
-        & 
+        \& 
         \separating 
         \arrow[r, "\simeq"]
         \arrow[d, hook, "\subseteq"]
-        & 
+        \& 
         \ablocalizing
         \arrow[u, hook, "\subseteq", swap]
         \\
         \texact 
         \arrow[r, "(-)\geqz"]
-        & 
+        \& 
         \prlocalizing 
         \arrow[ru, "(-)\leqz", swap] 
-        &                                
+        \&                                
         \end{tikzcd}
     }
+    }
 \end{center}
-
+\newpage
 
 
 

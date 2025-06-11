@@ -24,7 +24,7 @@ For any essentially small idempotent complete $\infty$-category, there is a well
 
 There is by \cite[A.8.1.3]{lurie_SAG} a fully faithful Yoneda embedding 
 \[c\: \C\dual \to \Pro(\C\dual)\] 
-given by taking corepresentables, which by \cite[A.8.1.5]{lurie_SAG} allows us to think about any pro-object $X \in \Pro(\C\dual)$ as a filtered limit of objects in the image of $c$. Hence, following \cite{kerz-saito-tamme_2019} in notation we denote pro-objects as $\prolim X_j$, for $X_j \in \C\dual$. There is a partially defined adjoint $M$, given by taking the limit of $\prolim X_j$. 
+given by taking corepresentables, which by \cite[A.8.1.5]{lurie_SAG} allows us to think about any pro-object $X \in \Pro(\C\dual)$ as a filtered limit of objects in the image of $c$. Hence, following \cite{kerz-saito-tamme_2019} in notation we denote pro-objects as $\prolim X_j$, for $X_j \in \C\dual$. There is a partially defined adjoint $\mathrm{M}$, given by taking the limit of $\prolim X_j$. 
 
 \begin{remark}
     It is also common in the literature to denote a pro-object by $\{X_j\}$. We chose the above ``limit'' notation to make the relationship to ind-systems more transparent. In particular, we will denote an ind-object by $\indcolim X_j$. We will sometimes refer to pro-objects as \emph{pro-towers}, and ind-objects as \emph{ind-systems}.  
@@ -34,7 +34,7 @@ When $\C$ is symmetric monoidal, then $\Pro(\C\dual)$ inherits a symmetric monoi
 
 \begin{definition}
     \index{Commutative algebra!Pro-dualizable}
-    A commutative algebra $R\in \CAlg(\C)$ is said to be \emph{pro-dualizable}, if there is a commutative algebra $\prolim R_j \in \CAlg(\Pro(\C\dual))$ such that $R\simeq \lim_j R_j$ as commutative algebras.  
+    A commutative algebra $R\in \CAlg(\C)$ is said to be \emph{pro-dualizable}, if there exists a commutative algebra object $\prolim R_j \in \CAlg(\Pro(\C\dual))$ such that $R\simeq \mathrm{M}(\prolim R_j) = \lim_j R_j$ as commutative algebras.  
 \end{definition}
 
 \begin{definition}
@@ -59,7 +59,7 @@ as it sends coalgebras to algebras. Choosing $A=\1_\C$ defines a functor
 \[(-)^\vee:=\iHom(-,\1_\C)\: \cCAlg(\C)\op\to \CAlg(\C)\] 
 which we call the \emph{linear dual}\index{Linear dual}. Colimits of coalgebras, as well as limits of algebras are computed underlying, hence the functor $(-)^\vee$ sends colimits to limits. In particular we get a right adjoint $(-)^\circ$ by the adjoint functor theorem: 
 \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         \cCAlg(\C)\op \arrow[r, yshift=2pt, "(-)^\vee"] & \CAlg(\C) \arrow[l, yshift=-2pt,"(-)^\circ"]
     \end{tikzcd}
 \end{center}
@@ -238,7 +238,7 @@ This allows us to conclude with our wanted description of the category of $K_p(n
 \begin{remark}
     The story here told for $\Sp\np$ works more generally for any local duality context, and for any Positselski-duality in the sense of \cref{ch2:thm:Positselski-duality-coidempotent}. For a general local duality context $(\C, \K)$, this gives the following visually beautiful depiction of the associated local duality diagram:
     \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[sep = large]
         & 
         \Mod_{L_\K\1_\C} 
         \arrow[d, xshift=-2pt] 
